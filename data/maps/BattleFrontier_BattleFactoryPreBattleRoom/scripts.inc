@@ -257,6 +257,8 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_CommentOnOpponentType::
 	call_if_eq BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesDragon
 	compare VAR_0x8005, TYPE_DARK
 	call_if_eq BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesDark
+	compare VAR_0x8005, TYPE_LIGHT
+	call_if_eq BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesLight
 	compare VAR_0x8005, NUMBER_OF_MON_TYPES
 	call_if_eq BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentHasNoMostCommonType
 	return
@@ -327,6 +329,10 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesDragon::
 
 BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesDark::
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDarkType, MSGBOX_DEFAULT
+	return
+
+BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesLight::
+	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInLightType, MSGBOX_DEFAULT
 	return
 
 BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentHasNoMostCommonType::
@@ -601,6 +607,10 @@ BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDragonType:
 BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDarkType:
 	.string "The TRAINER is apparently skilled\n"
 	.string "in the handling of the DARK type.$"
+
+BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInLightType:
+	.string "The TRAINER is apparently skilled\n"
+	.string "in the handling of the LIGHT type.$"
 
 BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInSteelType:
 	.string "The TRAINER is apparently skilled\n"
