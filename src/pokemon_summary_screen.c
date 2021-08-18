@@ -820,7 +820,7 @@ static const union AnimCmd sSpriteAnim_TypeDark[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeLight[] = {
-    ANIMCMD_FRAME(TYPE_DARK * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_LIGHT * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_CategoryCool[] = {

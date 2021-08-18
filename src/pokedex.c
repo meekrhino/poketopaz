@@ -1428,6 +1428,7 @@ static const u8 sDexSearchTypeIds[NUMBER_OF_MON_TYPES] =
     TYPE_ICE,
     TYPE_DRAGON,
     TYPE_DARK,
+    TYPE_LIGHT,
 };
 
 // Number pairs are the task data for tracking the cursor pos and scroll offset of each option list
