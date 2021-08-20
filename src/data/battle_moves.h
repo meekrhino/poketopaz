@@ -269,7 +269,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_FLY] =
     {
         .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = 70,
+        .power = 90,
         .type = TYPE_FLYING,
         .accuracy = 95,
         .pp = 15,
@@ -367,7 +367,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_JUMP_KICK] =
     {
         .effect = EFFECT_RECOIL_IF_MISS,
-        .power = 70,
+        .power = 85,
         .type = TYPE_FIGHTING,
         .accuracy = 95,
         .pp = 25,
@@ -1122,7 +1122,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_PETAL_DANCE] =
     {
         .effect = EFFECT_RAMPAGE,
-        .power = 70,
+        .power = 90,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 20,
@@ -1164,7 +1164,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_FIRE_SPIN] =
     {
         .effect = EFFECT_TRAP,
-        .power = 15,
+        .power = 35,
         .type = TYPE_FIRE,
         .accuracy = 70,
         .pp = 15,
@@ -1276,7 +1276,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_DIG] =
     {
         .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = 60,
+        .power = 80,
         .type = TYPE_GROUND,
         .accuracy = 100,
         .pp = 10,
@@ -1905,7 +1905,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_HI_JUMP_KICK] =
     {
         .effect = EFFECT_RECOIL_IF_MISS,
-        .power = 85,
+        .power = 100,
         .type = TYPE_FIGHTING,
         .accuracy = 90,
         .pp = 20,
@@ -2689,7 +2689,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_ZAP_CANNON] =
     {
         .effect = EFFECT_PARALYZE_HIT,
-        .power = 100,
+        .power = 120,
         .type = TYPE_ELECTRIC,
         .accuracy = 50,
         .pp = 5,
@@ -2801,7 +2801,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_OUTRAGE] =
     {
         .effect = EFFECT_RAMPAGE,
-        .power = 90,
+        .power = 120,
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = 15,
@@ -3486,7 +3486,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_ROCK_SMASH] =
     {
         .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 20,
+        .power = 40,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
         .pp = 15,
@@ -3555,7 +3555,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_STOCKPILE] =
     {
-        .effect = EFFECT_STOCKPILE,
+        .effect = EFFECT_STOCKPILE, // TODO -- also increases defense and sp. def
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -3569,7 +3569,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SPIT_UP] =
     {
-        .effect = EFFECT_SPIT_UP,
+        .effect = EFFECT_SPIT_UP, // TODO - removes def ups in addition to stockpile charges.  can crit
         .power = 100,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -3583,7 +3583,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SWALLOW] =
     {
-        .effect = EFFECT_SWALLOW,
+        .effect = EFFECT_SWALLOW, // TODO - removes def ups in addition to stockpile charges
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -4074,7 +4074,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_DIVE] =
     {
         .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = 60,
+        .power = 80,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 10,
@@ -4592,7 +4592,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_SAND_TOMB] =
     {
         .effect = EFFECT_TRAP,
-        .power = 15,
+        .power = 35,
         .type = TYPE_GROUND,
         .accuracy = 70,
         .pp = 15,
@@ -4634,7 +4634,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_BULLET_SEED] =
     {
         .effect = EFFECT_MULTI_HIT,
-        .power = 10,
+        .power = 18,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 30,
@@ -4662,7 +4662,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_ICICLE_SPEAR] =
     {
         .effect = EFFECT_MULTI_HIT,
-        .power = 10,
+        .power = 18,
         .type = TYPE_ICE,
         .accuracy = 100,
         .pp = 30,
@@ -4871,7 +4871,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_LEAF_BLADE] =
     {
         .effect = EFFECT_HIGH_CRITICAL,
-        .power = 70,
+        .power = 90,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 15,
@@ -4964,5 +4964,1026 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_AFTERBURN] = 
+    {
+        .effect = EFFECT_FUTURE_SIGHT,
+        .power = 80,
+        .type = TYPE_FIRE,
+        .accuracy = 90,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = 0,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_ALPHA_SHOCK] = 
+    {
+        .effect = EFFECT_PARALYZE_HIT,
+        .power = 50,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_BETA_FLAME] = 
+    {
+        .effect = EFFECT_BURN_HIT,
+        .power = 50,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_GAMMA_SPORE] = 
+    {
+        .effect = EFFECT_POISON_HIT,
+        .power = 50,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_DELTA_WAVE] = 
+    {
+        .effect = EFFECT_CONFUSE_HIT,
+        .power = 50,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_AMBUSH] = 
+    {
+        .effect = EFFECT_SEMI_INVULNERABLE,
+        .power = 100,
+        .type = TYPE_DARK,
+        .accuracy = 95,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_BLACK_HOLE] = 
+    {
+        .effect = EFFECT_EXPLOSION,
+        .power = 250,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_BLINDING_RAY] = 
+    {
+        .effect = EFFECT_ACCURACY_DOWN_2,
+        .power = 0,
+        .type = TYPE_LIGHT,
+        .accuracy = 80,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_BRIGHT_SLASH] = 
+    {
+        .effect = EFFECT_ALWAYS_HIT,
+        .power = 60,
+        .type = TYPE_LIGHT,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_CHERRY_BOMB] = 
+    {
+        .effect = EFFECT_HIT, // TODO -- implement EFFECT_LEECH_SEED_HIT
+        .power = 80,
+        .type = TYPE_NORMAL,
+        .accuracy = 90,
+        .pp = 15,
+        .secondaryEffectChance = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_CASCADE] = 
+    {
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_CALM_WIND] = 
+    {
+        .effect = EFFECT_SUNNY_DAY, // TODO -- EFFECT_CALM_WIND (clear weather)
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = 0,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_BURNOUT] = 
+    {
+        .effect = EFFECT_FLAIL,
+        .power = 1,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_BUG_BURN] = 
+    {
+        .effect = EFFECT_BURN_HIT,
+        .power = 70,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_CINDERS] = 
+    {
+        .effect = EFFECT_SPIKES, // TODO - EFFECT_CINDERS; burn chance (10% per stack), absorbed by fire mon, fire and waterveil don't get burned
+        .power = 0,
+        .type = TYPE_FIRE,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_OPPONENTS_FIELD,
+        .priority = 0,
+        .flags = 0,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_COLD_WIND] = 
+    {
+        .effect = EFFECT_FREEZE_HIT,
+        .power = 65,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_CREVASSE] = 
+    {
+        .effect = EFFECT_DOUBLE_EDGE,
+        .power = 120,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_DOOM_SCYTHE] = 
+    {
+        .effect = EFFECT_HIT, // TODO - EFFECT_CURSE_HIT
+        .power = 60,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_DRAGON_GALE] = 
+    {
+        .effect = EFFECT_ROAR, // TODO - EFFECT_ROAR_HIT
+        .power = 50,
+        .type = TYPE_DRAGON,
+        .accuracy = 90,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -6,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_ENLIGHTEN] = 
+    {
+        .effect = EFFECT_ALL_STATS_UP_HIT, // TODO - EFFECT_ENLIGHTEN; all stats up, recharge
+        .power = 0,
+        .type = TYPE_LIGHT,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_EQUILIBRIUM] = 
+    {
+        .effect = EFFECT_HAZE,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 0,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_FAULT_LINE] = 
+    {
+        .effect = EFFECT_RECOIL_IF_MISS, // TODO - EFFECT_FAULT_LINE; 50% recoil, 33% on miss
+        .power = 180,
+        .type = TYPE_GROUND,
+        .accuracy = 55,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_FIREBALL] = 
+    {
+        .effect = EFFECT_MAGNITUDE,
+        .power = 1,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_FIRE_BATH] = 
+    {
+        .effect = EFFECT_CHARGE, // TODO - EFFECT_FIRE_BATH; charge but fire
+        .power = 0,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_FLORAL_STORM] = 
+    {
+        .effect = EFFECT_HIT, // TODO - EFFECT_LEECH_SEED_HIT
+        .power = 95,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_FLASH_PUNCH] = 
+    {
+        .effect = EFFECT_ACCURACY_DOWN_HIT,
+        .power = 70,
+        .type = TYPE_LIGHT,
+        .accuracy = 85,
+        .pp = 10,
+        .secondaryEffectChance = 50,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_FRICTION] = 
+    {
+        .effect = EFFECT_DEFENSE_DOWN_HIT,
+        .power = 60,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 25,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_HOLY_FIST] = 
+    {
+        .effect = EFFECT_HIGH_CRITICAL,
+        .power = 70,
+        .type = TYPE_LIGHT,
+        .accuracy = 95,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_ICICLE_WHIP] = 
+    {
+        .effect = EFFECT_FLINCH_HIT,
+        .power = 70,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_INITIATIVE] = 
+    {
+        .effect = EFFECT_CHARGE, // TODO - EFFECT_INITIATIVE; elevate next turn attack to maximum priority
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_INFERNO] = 
+    {
+        .effect = EFFECT_TRAP,
+        .power = 50,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_LIGHT_WAVE] = 
+    {
+        .effect = EFFECT_ACCURACY_DOWN_HIT,
+        .power = 60,
+        .type = TYPE_LIGHT,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_MAGIC_DUST] = 
+    {
+        .effect = EFFECT_SLEEP, // TODO - EFFECT_MAGIC_DUST; 20 burn, 20 poison, 10 freeze, 30 sleep, 20 paralyze
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 75,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_MARIONETTE] = 
+    {
+        .effect = EFFECT_HIT, // TODO - EFFECT_MARIONETTE; double damage to substitute, 40bp to behind
+        .power = 60,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_MAGNET_BLAST] = 
+    {
+        .effect = EFFECT_FOCUS_PUNCH, // TODO - fix test?
+        .power = 150,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -3,
+        .flags = FLAG_PROTECT_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_MEGAFRICTION] = 
+    {
+        .effect = EFFECT_BURN_HIT, // TODO - EFFECT_BURN_SELF_HIT
+        .power = 120,
+        .type = TYPE_ROCK,
+        .accuracy = 80,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_MYSTIC_POWER] = 
+    {
+        .effect = EFFECT_SPECIAL_ATTACK_UP_2,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_NIGHTFALL] = 
+    {
+        .effect = EFFECT_SUNNY_DAY, // TODO - EFFECT_NIGHTFALL; make darkness weather for 5 turns
+        .power = 0,
+        .type = TYPE_DARK,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = 0,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_ORION_SWORD] = 
+    {
+        .effect = EFFECT_HIT, // TODO - EFFECT_ORION_SWORD; happiness scaled damage
+        .power = 1,
+        .type = TYPE_LIGHT,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_POLARIZE] = 
+    {
+        .effect = EFFECT_ROAR,
+        .power = 0,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = -6,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_PURIFY] = 
+    {
+        .effect = EFFECT_HEAL_BELL,
+        .power = 0,
+        .type = TYPE_LIGHT,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_QUICKBOLT ] = 
+    {
+        .effect = EFFECT_QUICK_ATTACK,
+        .power = 40,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_RIPTIDE] = 
+    {
+        .effect = EFFECT_ROAR, // TODO - EFFECT_ROAR_HIT
+        .power = 50,
+        .type = TYPE_WATER,
+        .accuracy = 90,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -6,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_ROCKET_PUNCH] = 
+    {
+        .effect = EFFECT_HIT, // TODO - EFFECT_ROCKET_PUNCH; happiness scaled damage, opposite of orion sword
+        .power = 1,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_SCORN] = 
+    {
+        .effect = EFFECT_SPECIAL_DEFENSE_UP_2,
+        .power = 0,
+        .type = TYPE_DARK,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_SERENADE] =  
+    {
+        .effect = EFFECT_TAUNT, // TODO - EFFECT_SERENADE; target cannot use FLAG_MAKES_CONTACT moves next turn
+        .power = 0,
+        .type = TYPE_LIGHT,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_SHINE] = 
+    {
+        .effect = EFFECT_EVASION_DOWN_HIT,
+        .power = 40,
+        .type = TYPE_LIGHT,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags =  FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_SMITE] = 
+    {
+        .effect = EFFECT_FLINCH_HIT,
+        .power = 95,
+        .type = TYPE_LIGHT,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_SOOTHE_SONG] = 
+    {
+        .effect = EFFECT_TAUNT, // TODO - EFFECT_SOOTHE_SONG; target stops ongoing moves (petal dance etc) and charging moves (solarbeam etc). blocked by soundproof
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 90,
+        .pp = 40,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_SOUL_BURN] = 
+    {
+        .effect = EFFECT_ABSORB,
+        .power = 60,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+    },
+
+    [MOVE_SPECTRAL_RAY] = 
+    {
+        .effect = EFFECT_SOLARBEAM, // TODO - EFFECT_SPECTRAL_RAY; burn chance on hit. 120 power in sun, 80 in rain or night
+        .power = 100,
+        .type = TYPE_LIGHT,
+        .accuracy = 95,
+        .pp = 10,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_SOLAR_FLARE] = 
+    {
+        .effect = EFFECT_SOLARBEAM, // TODO - EFFECT_SOLOR_FLARE; burn chance on hit
+        .power = 100,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_STATRONOME] = 
+    {
+        .effect = EFFECT_CALM_MIND, // TODO - EFFECT_STATRONOME; random stat up or down 1 or 2 levels
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_SQUALL] = 
+    {
+        .effect = EFFECT_QUICK_ATTACK,
+        .power = 40,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_SPIRAL_KICK] = 
+    {
+        .effect = EFFECT_MULTI_HIT, // TODO - EFFECT_SPIRAL_KICK; 20|100, 20|85, 30|70, 40|40, 70|20 (total max 180)
+        .power = 20,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_SPIKE_WALL] = 
+    {
+        .effect = EFFECT_SPIKES, // TODO -- EFFECT_SPIKE_WALL; deal 1/8 damage taken by physical contact moves
+        .power = 0,
+        .type = TYPE_STEEL,
+        .accuracy = 0,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_OPPONENTS_FIELD,
+        .priority = 0,
+        .flags = 0,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_TERRA_STRIKE] = 
+    {
+        .effect = EFFECT_FUTURE_SIGHT, // TODO -- text
+        .power = 80,
+        .type = TYPE_GROUND,
+        .accuracy = 90,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = 0,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_TIDAL_WAVE] = 
+    {
+        .effect = EFFECT_MAGNITUDE,
+        .power = 1,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_UMBRAGE] = 
+    {
+        .effect = EFFECT_CONFUSE_HIT,
+        .power = 95,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_VENOM_STRIKE] = 
+    {
+        .effect = EFFECT_FLAIL, // TODO - EFFECT_VENOM_STRIKE; varies severe poison chance instead of damage
+        .power = 50,
+        .type = TYPE_POISON,
+        .accuracy = 90,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_WINDWHISTLE] = 
+    {
+        .effect = EFFECT_CONFUSE, // TODO - EFFECT_WINDWHISTLE; 50% chance to lower defense in addition
+        .power = 0,
+        .type = TYPE_FLYING,
+        .accuracy = 75,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_WATER_WALL] = 
+    {
+        .effect = EFFECT_REFLECT, // TODO - EFFECT_WATER_WALL; reduces fire, water, and ice damage.  broken by brick break
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_WRATH] = 
+    {
+        .effect = EFFECT_FLINCH_HIT,
+        .power = 120,
+        .type = TYPE_LIGHT,
+        .accuracy = 80,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_ZIGZAG] = 
+    {
+        .effect = EFFECT_ACCURACY_DOWN_2, // TODO - EFFECT_ZIGZAG; also lower user defense
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_FLARE] = 
+    {
+        .effect = EFFECT_FURY_CUTTER,
+        .power = 10,
+        .type = TYPE_FIRE,
+        .accuracy = 95,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_GRAVITY_BOND] = 
+    {
+        .effect = EFFECT_INGRAIN, // TODO - EFFECT_GRAVITY_BOND; lose the healing bit. grounded effect?
+        .power = 0,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_FOCUS_SIGHT] = 
+    {
+        .effect = EFFECT_ACCURACY_DOWN, // TODO - EFFECT_ACCURACY_UP
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_IRON_FIST] = 
+    {
+        .effect = EFFECT_DEFENSE_DOWN_HIT,
+        .power = 80,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_OVERLOAD] = 
+    {
+        .effect = EFFECT_OVERHEAT,
+        .power = 140,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 90,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_SACRIFICE] = 
+    {
+        .effect = EFFECT_MEMENTO, // TODO - EFFECT_SACRIFICE; revive to half hp next pokemon or fully heal (o god hard one)
+        .power = 0,
+        .type = TYPE_LIGHT,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_OTHER,
+    },
+
+    [MOVE_TEMPER] = 
+    {
+        .effect = EFFECT_RAMPAGE,
+        .power = 85,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_RANDOM,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
+    },
+
+    [MOVE_TEMPEST] = 
+    {
+        .effect = EFFECT_GUST,
+        .power = 80,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_SPECIAL,
+    },
+
+    [MOVE_DIVE_BOMB] = 
+    {
+        .effect = EFFECT_RECOIL,
+        .power = 120,
+        .type = TYPE_FLYING,
+        .accuracy = 75,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .physicality = MOVE_PHYSICALITY_PHYSICAL,
     },
 };

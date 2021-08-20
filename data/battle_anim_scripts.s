@@ -370,7 +370,80 @@ gBattleAnims_Moves::
 	.4byte Move_WATER_PULSE
 	.4byte Move_DOOM_DESIRE
 	.4byte Move_PSYCHO_BOOST
-	.4byte Move_COUNT @ cannot be reached, because last move is Psycho Boost
+    .4byte Move_AFTERBURN
+    .4byte Move_ALPHA_SHOCK
+    .4byte Move_BETA_FLAME
+    .4byte Move_GAMMA_SPORE
+    .4byte Move_DELTA_WAVE
+    .4byte Move_AMBUSH
+    .4byte Move_BLACK_HOLE
+    .4byte Move_BLINDING_RAY
+    .4byte Move_BRIGHT_SLASH
+    .4byte Move_CHERRY_BOMB
+    .4byte Move_CASCADE
+    .4byte Move_CALM_WIND
+    .4byte Move_BURNOUT
+    .4byte Move_BUG_BURN
+    .4byte Move_CINDERS
+    .4byte Move_COLD_WIND
+    .4byte Move_CREVASSE
+    .4byte Move_DOOM_SCYTHE
+    .4byte Move_DRAGON_GALE
+    .4byte Move_ENLIGHTEN
+    .4byte Move_EQUILIBRIUM
+    .4byte Move_FAULT_LINE
+    .4byte Move_FIREBALL
+    .4byte Move_FIRE_BATH
+    .4byte Move_FLORAL_STORM
+    .4byte Move_FLASH_PUNCH
+    .4byte Move_FRICTION
+    .4byte Move_HOLY_FIST
+    .4byte Move_ICICLE_WHIP
+    .4byte Move_INITIATIVE
+    .4byte Move_INFERNO
+    .4byte Move_LIGHT_WAVE
+    .4byte Move_MAGIC_DUST
+    .4byte Move_MARIONETTE
+    .4byte Move_MAGNET_BLAST
+    .4byte Move_MEGAFRICTION
+    .4byte Move_MYSTIC_POWER
+    .4byte Move_NIGHTFALL
+    .4byte Move_ORION_SWORD
+    .4byte Move_POLARIZE
+    .4byte Move_PURIFY
+    .4byte Move_QUICKBOLT 
+    .4byte Move_RIPTIDE
+    .4byte Move_ROCKET_PUNCH
+    .4byte Move_SCORN
+    .4byte Move_SERENADE
+    .4byte Move_SHINE
+    .4byte Move_SMITE
+    .4byte Move_SOOTHE_SONG
+    .4byte Move_SOUL_BURN
+    .4byte Move_SPECTRAL_RAY
+    .4byte Move_SOLAR_FLARE
+    .4byte Move_STATRONOME
+    .4byte Move_SQUALL
+    .4byte Move_SPIRAL_KICK
+    .4byte Move_SPIKE_WALL
+    .4byte Move_TERRA_STRIKE
+    .4byte Move_TIDAL_WAVE
+    .4byte Move_UMBRAGE
+    .4byte Move_VENOM_STRIKE
+    .4byte Move_WINDWHISTLE
+    .4byte Move_WATER_WALL
+    .4byte Move_WRATH
+    .4byte Move_ZIGZAG
+    .4byte Move_FLARE
+    .4byte Move_GRAVITY_BOND
+    .4byte Move_FOCUS_SIGHT
+    .4byte Move_IRON_FIST
+    .4byte Move_OVERLOAD
+    .4byte Move_SACRIFICE
+    .4byte Move_TEMPER
+    .4byte Move_TEMPEST
+    .4byte MOVE_DIVE_BOMB
+	.4byte Move_COUNT @ cannot be reached, because last move is Dive Bomb
 
 	.align 2
 gBattleAnims_StatusConditions::
@@ -9547,6 +9620,81 @@ Move_PSYCHO_BOOST:
 	blendoff
 	call UnsetPsychicBackground
 	end
+
+Move_AFTERBURN:
+Move_ALPHA_SHOCK:
+Move_BETA_FLAME:
+Move_GAMMA_SPORE:
+Move_DELTA_WAVE:
+Move_AMBUSH:
+Move_BLACK_HOLE:
+Move_BLINDING_RAY:
+Move_BRIGHT_SLASH:
+Move_CHERRY_BOMB:
+Move_CASCADE:
+Move_CALM_WIND:
+Move_BURNOUT:
+Move_BUG_BURN:
+Move_CINDERS:
+Move_COLD_WIND:
+Move_CREVASSE:
+Move_DOOM_SCYTHE:
+Move_DRAGON_GALE:
+Move_ENLIGHTEN:
+Move_EQUILIBRIUM:
+Move_FAULT_LINE:
+Move_FIREBALL:
+Move_FIRE_BATH:
+Move_FLORAL_STORM:
+Move_FLASH_PUNCH:
+Move_FRICTION:
+Move_HOLY_FIST:
+Move_ICICLE_WHIP:
+Move_INITIATIVE:
+Move_INFERNO:
+Move_LIGHT_WAVE:
+Move_MAGIC_DUST:
+Move_MARIONETTE:
+Move_MAGNET_BLAST:
+Move_MEGAFRICTION:
+Move_MYSTIC_POWER:
+Move_NIGHTFALL:
+Move_ORION_SWORD:
+Move_POLARIZE:
+Move_PURIFY:
+Move_QUICKBOLT :
+Move_RIPTIDE:
+Move_ROCKET_PUNCH:
+Move_SCORN:
+Move_SERENADE:
+Move_SHINE:
+Move_SMITE:
+Move_SOOTHE_SONG:
+Move_SOUL_BURN:
+Move_SPECTRAL_RAY:
+Move_SOLAR_FLARE:
+Move_STATRONOME:
+Move_SQUALL:
+Move_SPIRAL_KICK:
+Move_SPIKE_WALL:
+Move_TERRA_STRIKE:
+Move_TIDAL_WAVE:
+Move_UMBRAGE:
+Move_VENOM_STRIKE:
+Move_WINDWHISTLE:
+Move_WATER_WALL:
+Move_WRATH:
+Move_ZIGZAG:
+Move_FLARE:
+Move_GRAVITY_BOND:
+Move_FOCUS_SIGHT:
+Move_IRON_FIST:
+Move_OVERLOAD:
+Move_SACRIFICE:
+Move_TEMPER:
+Move_TEMPEST:
+Move_DIVE_BOMB:
+    goto Move_TACKLE
 
 Move_KNOCK_OFF:
 	loadspritegfx ANIM_TAG_SLAM_HIT_2
