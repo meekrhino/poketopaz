@@ -5094,12 +5094,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_CHERRY_BOMB] = 
     {
-        .effect = EFFECT_HIT, // TODO -- implement EFFECT_LEECH_SEED_HIT
+        .effect = EFFECT_LEECH_SEED_HIT,
         .power = 80,
-        .type = TYPE_NORMAL,
+        .type = TYPE_GRASS,
         .accuracy = 90,
         .pp = 15,
-        .secondaryEffectChance = 20,
+        .secondaryEffectChance = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
@@ -5304,7 +5304,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_FLORAL_STORM] = 
     {
-        .effect = EFFECT_HIT, // TODO - EFFECT_LEECH_SEED_HIT
+        .effect = EFFECT_LEECH_SEED_HIT,
         .power = 95,
         .type = TYPE_GRASS,
         .accuracy = 100,

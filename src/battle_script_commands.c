@@ -622,6 +622,7 @@ static const u32 sStatusFlagsForMoveEffects[NUM_MOVE_EFFECTS] =
     [MOVE_EFFECT_PREVENT_ESCAPE] = STATUS2_ESCAPE_PREVENTION,
     [MOVE_EFFECT_NIGHTMARE]      = STATUS2_NIGHTMARE,
     [MOVE_EFFECT_THRASH]         = STATUS2_LOCK_CONFUSE,
+    [MOVE_EFFECT_LEECH_SEED]     = STATUS3_LEECHSEED,
 };
 
 static const u8* const sMoveEffectBS_Ptrs[] =
@@ -665,6 +666,7 @@ static const u8* const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_REMOVE_PARALYSIS] = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_ATK_DEF_DOWN]     = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_RECOIL_33]        = BattleScript_MoveEffectRecoil,
+    [MOVE_EFFECT_LEECH_SEED]       = BattleScript_MoveEffectLeechSeed,
 };
 
 static const struct WindowTemplate sUnusedWinTemplate = {0, 1, 3, 7, 0xF, 0x1F, 0x3F};
@@ -2480,6 +2482,19 @@ void SetMoveEffect(bool8 primary, u8 certain)
             return;
         }
         return;
+    }
+    else if (gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_LEECH_SEED)
+    {
+        if (gStatuses3[gBattlerTarget] & sStatusFlagsForMoveEffects[gBattleCommunication[MOVE_EFFECT_BYTE]]
+         || IS_BATTLER_OF_TYPE(gEffectBattler, TYPE_GRASS))
+        {
+            gBattlescriptCurrInstr++;
+        }
+        else
+        {
+            BattleScriptPush(gBattlescriptCurrInstr + 1);
+            gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
+        }
     }
     else
     {

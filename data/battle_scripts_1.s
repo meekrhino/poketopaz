@@ -231,6 +231,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectCalmMind               @ EFFECT_CALM_MIND
 	.4byte BattleScript_EffectDragonDance            @ EFFECT_DRAGON_DANCE
 	.4byte BattleScript_EffectCamouflage             @ EFFECT_CAMOUFLAGE
+    .4byte BattleScript_EffectLeechSeedHit           @ EFFECT_LEECH_SEED_HIT
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -360,6 +361,10 @@ BattleScript_AbsorbTryFainting::
 
 BattleScript_EffectBurnHit::
 	setmoveeffect MOVE_EFFECT_BURN
+	goto BattleScript_EffectHit
+
+BattleScript_EffectLeechSeedHit::
+    setmoveeffect MOVE_EFFECT_LEECH_SEED
 	goto BattleScript_EffectHit
 
 BattleScript_EffectFreezeHit::
@@ -3924,6 +3929,12 @@ BattleScript_MoveEffectWrap::
 BattleScript_MoveEffectConfusion::
 	chosenstatus2animation BS_EFFECT_BATTLER, STATUS2_CONFUSION
 	printstring STRINGID_PKMNWASCONFUSED
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_MoveEffectLeechSeed::
+	setseeded
+	printstring STRINGID_PKMNSEEDED
 	waitmessage B_WAIT_TIME_LONG
 	return
 
