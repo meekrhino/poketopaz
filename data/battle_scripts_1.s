@@ -232,6 +232,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDragonDance            @ EFFECT_DRAGON_DANCE
 	.4byte BattleScript_EffectCamouflage             @ EFFECT_CAMOUFLAGE
     .4byte BattleScript_EffectLeechSeedHit           @ EFFECT_LEECH_SEED_HIT
+    .4byte BattleScript_EffectCurseHit               @ EFFECT_CURSE_HIT
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -1774,6 +1775,10 @@ BattleScript_EffectAttackUpHit::
 
 BattleScript_EffectAllStatsUpHit::
 	setmoveeffect MOVE_EFFECT_ALL_STATS_UP | MOVE_EFFECT_AFFECTS_USER
+	goto BattleScript_EffectHit
+
+BattleScript_EffectCurseHit::
+    setmoveeffect MOVE_EFFECT_CURSE
 	goto BattleScript_EffectHit
 
 BattleScript_EffectBellyDrum::
@@ -3937,6 +3942,11 @@ BattleScript_MoveEffectLeechSeed::
 	printstring STRINGID_PKMNSEEDED
 	waitmessage B_WAIT_TIME_LONG
 	return
+
+BattleScript_MoveEffectCurse::
+    printstring STRINGID_PKMNLAIDCURSEEFFECT
+    waitmessage B_WAIT_TIME_LONG
+    return
 
 BattleScript_MoveEffectRecoil::
 	jumpifmove MOVE_STRUGGLE, BattleScript_DoRecoil

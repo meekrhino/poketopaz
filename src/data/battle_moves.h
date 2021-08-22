@@ -5206,12 +5206,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DOOM_SCYTHE] = 
     {
-        .effect = EFFECT_HIT, // TODO - EFFECT_CURSE_HIT
-        .power = 60,
-        .type = TYPE_GHOST,
+        .effect = EFFECT_CURSE_HIT,
+        .power = 10,
+        .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
-        .secondaryEffectChance = 10,
+        .secondaryEffectChance = 50,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
@@ -5751,7 +5751,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_TERRA_STRIKE] = 
     {
-        .effect = EFFECT_FUTURE_SIGHT, // TODO -- text
+        .effect = EFFECT_FUTURE_SIGHT, // TODO -- text?
         .power = 80,
         .type = TYPE_GROUND,
         .accuracy = 90,

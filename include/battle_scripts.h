@@ -130,6 +130,7 @@ extern const u8 BattleScript_MoveEffectToxic[];
 extern const u8 BattleScript_MoveEffectPayDay[];
 extern const u8 BattleScript_MoveEffectWrap[];
 extern const u8 BattleScript_MoveEffectConfusion[];
+extern const u8 BattleScript_MoveEffectCurse[];
 extern const u8 BattleScript_MoveEffectLeechSeed[];
 extern const u8 BattleScript_MoveEffectRecoil[];
 extern const u8 BattleScript_DoRecoil33[];

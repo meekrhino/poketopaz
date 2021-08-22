@@ -622,6 +622,7 @@ static const u32 sStatusFlagsForMoveEffects[NUM_MOVE_EFFECTS] =
     [MOVE_EFFECT_PREVENT_ESCAPE] = STATUS2_ESCAPE_PREVENTION,
     [MOVE_EFFECT_NIGHTMARE]      = STATUS2_NIGHTMARE,
     [MOVE_EFFECT_THRASH]         = STATUS2_LOCK_CONFUSE,
+    [MOVE_EFFECT_CURSE]          = STATUS2_CURSED,
     [MOVE_EFFECT_LEECH_SEED]     = STATUS3_LEECHSEED,
 };
 
@@ -666,6 +667,7 @@ static const u8* const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_REMOVE_PARALYSIS] = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_ATK_DEF_DOWN]     = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_RECOIL_33]        = BattleScript_MoveEffectRecoil,
+    [MOVE_EFFECT_CURSE]            = BattleScript_MoveEffectCurse,
     [MOVE_EFFECT_LEECH_SEED]       = BattleScript_MoveEffectLeechSeed,
 };
 
@@ -2712,6 +2714,11 @@ void SetMoveEffect(bool8 primary, u8 certain)
             case MOVE_EFFECT_RAGE:
                 gBattleMons[gBattlerAttacker].status2 |= STATUS2_RAGE;
                 gBattlescriptCurrInstr++;
+                break;
+            case MOVE_EFFECT_CURSE:
+                gBattleMons[gEffectBattler].status2 |= STATUS2_CURSED;
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
                 break;
             case MOVE_EFFECT_STEAL_ITEM:
                 {
