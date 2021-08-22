@@ -233,6 +233,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectCamouflage             @ EFFECT_CAMOUFLAGE
     .4byte BattleScript_EffectLeechSeedHit           @ EFFECT_LEECH_SEED_HIT
     .4byte BattleScript_EffectCurseHit               @ EFFECT_CURSE_HIT
+    .4byte BattleScript_EffectBurnSelfHit            @ EFFECT_BURN_SELF_HIT
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -362,6 +363,9 @@ BattleScript_AbsorbTryFainting::
 
 BattleScript_EffectBurnHit::
 	setmoveeffect MOVE_EFFECT_BURN
+	goto BattleScript_EffectHit
+BattleScript_EffectBurnSelfHit::
+	setmoveeffect MOVE_EFFECT_BURN_SELF
 	goto BattleScript_EffectHit
 
 BattleScript_EffectLeechSeedHit::
@@ -3897,6 +3901,14 @@ BattleScript_MoveEffectBurn::
 	printfromtable gGotBurnedStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_UpdateEffectStatusIconRet
+
+BattleScript_MoveEffectBurnSelf::
+    statusanimation BS_ATTACKER
+	printstring STRINGID_PKMNBURNEDITSELF
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_ATTACKER
+	waitstate
+	return
 
 BattleScript_MoveEffectFreeze::
 	statusanimation BS_EFFECT_BATTLER

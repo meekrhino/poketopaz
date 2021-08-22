@@ -301,7 +301,8 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_DRAGON_DANCE] = 1, 
     [EFFECT_CAMOUFLAGE] = 3,
     [EFFECT_LEECH_SEED_HIT] = 2,
-    [EFFECT_CURSE_HIT] = 1
+    [EFFECT_CURSE_HIT] = 1,
+    [EFFECT_BURN_SELF_HIT] = 1,
 };
 
 static const u16 sPoints_Effectiveness[] =

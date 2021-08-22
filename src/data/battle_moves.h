@@ -5207,11 +5207,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_DOOM_SCYTHE] = 
     {
         .effect = EFFECT_CURSE_HIT,
-        .power = 10,
+        .power = 60,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
-        .secondaryEffectChance = 50,
+        .secondaryEffectChance = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
@@ -5444,7 +5444,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_MAGNET_BLAST] = 
     {
-        .effect = EFFECT_FOCUS_PUNCH, // TODO - fix test?
+        .effect = EFFECT_FOCUS_PUNCH,
         .power = 150,
         .type = TYPE_STEEL,
         .accuracy = 100,
@@ -5458,7 +5458,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_MEGAFRICTION] = 
     {
-        .effect = EFFECT_BURN_HIT, // TODO - EFFECT_BURN_SELF_HIT
+        .effect = EFFECT_BURN_SELF_HIT,
         .power = 120,
         .type = TYPE_ROCK,
         .accuracy = 80,
