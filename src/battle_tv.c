@@ -607,6 +607,7 @@ void BattleTv_SetDataBasedOnString(u16 stringId)
         tvPtr->side[atkSide].futureSightMoveSlot = moveSlot;
         break;
     case STRINGID_PKMNCHOSEXASDESTINY:
+    case STRINGID_PKMNSENTSEISMICWAVES:
         tvPtr->side[atkSide].doomDesireMonId = gBattlerPartyIndexes[gBattlerAttacker] + 1;
         tvPtr->side[atkSide].doomDesireMoveSlot = moveSlot;
         break;

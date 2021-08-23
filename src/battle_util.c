@@ -1783,8 +1783,11 @@ bool8 HandleWishPerishSongOnTurnEnd(void)
             {
                 if (gWishFutureKnock.futureSightMove[gActiveBattler] == MOVE_FUTURE_SIGHT)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
-                else
+                else if (gWishFutureKnock.futureSightMove[gActiveBattler] == MOVE_DOOM_DESIRE)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
+                else 
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRA_STRIKE;
+
 
                 PREPARE_MOVE_BUFFER(gBattleTextBuff1, gWishFutureKnock.futureSightMove[gActiveBattler]);
 

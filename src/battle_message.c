@@ -221,6 +221,7 @@ static const u8 sText_PkmnFledFromBattle[] = _("{B_ATK_NAME_WITH_PREFIX} fled fr
 static const u8 sText_PkmnForesawAttack[] = _("{B_ATK_NAME_WITH_PREFIX} foresaw\nan attack!");
 static const u8 sText_PkmnTookAttack[] = _("{B_DEF_NAME_WITH_PREFIX} took the\n{B_BUFF1} attack!");
 static const u8 sText_PkmnChoseXAsDestiny[] = _("{B_ATK_NAME_WITH_PREFIX} chose\n{B_CURRENT_MOVE} as its destiny!");
+static const u8 sText_PkmnSentSeismicWaves[] = _("{B_ATK_NAME_WITH_PREFIX} sent seismic\nwaves through the ground!");
 static const u8 sText_PkmnAttack[] = _("{B_BUFF1}'s attack!");
 static const u8 sText_PkmnCenterAttention[] = _("{B_ATK_NAME_WITH_PREFIX} became the\ncenter of attention!");
 static const u8 sText_PkmnChargingPower[] = _("{B_ATK_NAME_WITH_PREFIX} began\ncharging power!");
@@ -848,6 +849,7 @@ const u8 * const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_YOUTHROWABALLNOWRIGHT - 12] = sText_YouThrowABallNowRight,
     [STRINGID_PKMNSXTOOKATTACK - 12] = sText_PkmnsXTookAttack,
     [STRINGID_PKMNCHOSEXASDESTINY - 12] = sText_PkmnChoseXAsDestiny,
+    [STRINGID_PKMNSENTSEISMICWAVES - 12] = sText_PkmnSentSeismicWaves,
     [STRINGID_PKMNLOSTFOCUS - 12] = sText_PkmnLostFocus,
     [STRINGID_USENEXTPKMN - 12] = sText_UseNextPkmn,
     [STRINGID_PKMNFLEDUSINGITS - 12] = sText_PkmnFledUsingIts,
@@ -1149,7 +1151,8 @@ const u16 gPartyStatusHealStringIds[] =
 const u16 gFutureMoveUsedStringIds[] =
 {
     [B_MSG_FUTURE_SIGHT] = STRINGID_PKMNFORESAWATTACK,
-    [B_MSG_DOOM_DESIRE]  = STRINGID_PKMNCHOSEXASDESTINY
+    [B_MSG_DOOM_DESIRE]  = STRINGID_PKMNCHOSEXASDESTINY,
+    [B_MSG_TERRA_STRIKE] = STRINGID_PKMNSENTSEISMICWAVES
 };
 
 const u16 gBallEscapeStringIds[] =

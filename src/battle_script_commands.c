@@ -670,6 +670,7 @@ static const u8* const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_CURSE]            = BattleScript_MoveEffectCurse,
     [MOVE_EFFECT_LEECH_SEED]       = BattleScript_MoveEffectLeechSeed,
     [MOVE_EFFECT_BURN_SELF]        = BattleScript_MoveEffectBurnSelf,
+    [MOVE_EFFECT_DEF_SP_DEF_UP]    = BattleScript_MoveEffectSleep,
 };
 
 static const struct WindowTemplate sUnusedWinTemplate = {0, 1, 3, 7, 0xF, 0x1F, 0x3F};
@@ -2857,6 +2858,10 @@ void SetMoveEffect(bool8 primary, u8 certain)
             case MOVE_EFFECT_ATK_DEF_DOWN: // SuperPower
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_AtkDefDown;
+                break;
+            case MOVE_EFFECT_DEF_SP_DEF_UP: // Stockpile
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = BattleScript_DefSpDefUp;
                 break;
             case MOVE_EFFECT_RECOIL_33: // Double Edge
                 gBattleMoveDamage = gHpDealt / 3;
@@ -6871,12 +6876,17 @@ static void Cmd_stockpiletobasedamage(void)
                                                     gSideStatuses[GET_BATTLER_SIDE(gBattlerTarget)], 0,
                                                     0, gBattlerAttacker, gBattlerTarget)
                                 * gDisableStructs[gBattlerAttacker].stockpileCounter;
+            gBattleMoveDamage = gBattleMoveDamage * gCritMultiplier * gBattleScripting.dmgMultiplier;
             gBattleScripting.animTurn = gDisableStructs[gBattlerAttacker].stockpileCounter;
 
             if (gProtectStructs[gBattlerAttacker].helpingHand)
                 gBattleMoveDamage = gBattleMoveDamage * 15 / 10;
         }
-
+        ChangeStatBuffs(SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE, 2, affectsUser, 0)
+        ChangeStatBuffs(SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE, 5, affectsUser, 0)
+        gBattleScripting.animArg1 = gBattleCommunication[MOVE_EFFECT_BYTE] & ~(MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN);
+        gBattleScripting.animArg2 = 0;
+        BattleScriptPush(gBattlescriptCurrInstr + 1);
         gDisableStructs[gBattlerAttacker].stockpileCounter = 0;
         gBattlescriptCurrInstr += 5;
     }
@@ -6906,6 +6916,11 @@ static void Cmd_stockpiletohpheal(void)
             gBattleMoveDamage = 1;
         gBattleMoveDamage *= -1;
 
+        ChangeStatBuffs(SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE, 2, affectsUser, 0)
+        ChangeStatBuffs(SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE, 5, affectsUser, 0)
+        gBattleScripting.animArg1 = gBattleCommunication[MOVE_EFFECT_BYTE] & ~(MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN);
+        gBattleScripting.animArg2 = 0;
+        BattleScriptPush(gBattlescriptCurrInstr + 1);
         gBattleScripting.animTurn = gDisableStructs[gBattlerAttacker].stockpileCounter;
         gDisableStructs[gBattlerAttacker].stockpileCounter = 0;
         gBattlescriptCurrInstr += 5;
@@ -8872,8 +8887,10 @@ static void Cmd_trysetfutureattack(void)
 
         if (gCurrentMove == MOVE_DOOM_DESIRE)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
-        else
+        else if(gCurrentMove == MOVE_FUTURE_SIGHT)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
+        else 
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRA_STRIKE;
 
         gBattlescriptCurrInstr += 5;
     }

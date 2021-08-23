@@ -1619,6 +1619,7 @@ BattleScript_EffectSwagger::
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	attackstring
 	ppreduce
+	jumpifmove MOVE_WINDWHISTLE, BattleScript_EffectWindwhistle
 	jumpifconfusedandstatmaxed STAT_ATK, BattleScript_ButItFailed
 	attackanimation
 	waitanimation
@@ -1635,6 +1636,19 @@ BattleScript_SwaggerTryConfuse::
 	setmoveeffect MOVE_EFFECT_CONFUSION
 	seteffectprimary
 	goto BattleScript_MoveEnd
+
+BattleScript_EffectWindwhistle::
+	jumpifstatus2 BS_TARGET, STATUS2_CONFUSION, BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	setstatchanger STAT_DEF, 1, TRUE
+	statbuffchange STAT_BUFF_ALLOW_PTR, BattleScript_SwaggerTryConfuse
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_SwaggerTryConfuse
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_SwaggerTryConfuse
 
 BattleScript_EffectFuryCutter::
 	attackcanceler
@@ -2101,6 +2115,7 @@ BattleScript_EffectStockpile::
 	waitanimation
 	printfromtable gStockpileUsedStringIds
 	waitmessage B_WAIT_TIME_LONG
+	setmoveeffect MOVE_EFFECT_DEF_SP_DEF_UP
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectSpitUp::
@@ -3518,7 +3533,11 @@ BattleScript_MonTookFutureAttack::
 	accuracycheck BattleScript_FutureAttackMiss, MOVE_FUTURE_SIGHT
 	goto BattleScript_FutureAttackAnimate
 BattleScript_CheckDoomDesireMiss::
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_DOOM_DESIRE, BattleScript_CheckTerraStrikeMiss
 	accuracycheck BattleScript_FutureAttackMiss, MOVE_DOOM_DESIRE
+	goto BattleScript_FutureAttackAnimate
+BattleScript_CheckTerraStrikeMiss::
+	accuracycheck BattleScript_FutureAttackMiss, MOVE_TERRA_STRIKE
 BattleScript_FutureAttackAnimate::
 	adjustnormaldamage2
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_FUTURE_SIGHT, BattleScript_FutureHitAnimDoomDesire
@@ -3644,6 +3663,25 @@ BattleScript_AtkDefDown_TryDef::
 	printfromtable gStatDownStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_AtkDefDown_End::
+	return
+
+BattleScript_DefSpDefUp::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_DEF | BIT_SPDEF, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_POSITIVE | STAT_CHANGE_MULTIPLE_STATS
+	playstatchangeanimation BS_ATTACKER, BIT_SPDEF, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_POSITIVE
+	setstatchanger STAT_SPDEF, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN | STAT_BUFF_ALLOW_PTR, BattleScript_DefSpDefUp_TryDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_DefSpDefUp_TryDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DefSpDefUp_TryDef::
+	playstatchangeanimation BS_ATTACKER, BIT_DEF, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_POSITIVE
+	setstatchanger STAT_DEF, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN | STAT_BUFF_ALLOW_PTR, BattleScript_DefSpDefUp_End
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_DefSpDefUp_End
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DefSpDefUp_End::
 	return
 
 BattleScript_KnockedOff::

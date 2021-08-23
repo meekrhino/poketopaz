@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 #define GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 
-#define BATTLESTRINGS_COUNT     371
+#define BATTLESTRINGS_COUNT     372
 
 #define BATTLESTRINGS_ID_ADDER  12 // all battlestrings have its ID + 12, because first 5 are reserved
 
@@ -384,6 +384,7 @@
 #define STRINGID_TRAINER2WINTEXT            380
 #define STRINGID_PKMNLAIDCURSEEFFECT        381
 #define STRINGID_PKMNBURNEDITSELF           382
+#define STRINGID_PKMNSENTSEISMICWAVES       383
 
 
 // The below IDs are all indexes into battle message tables,
@@ -518,6 +519,7 @@
 // gFutureMoveUsedStringIds
 #define B_MSG_FUTURE_SIGHT 0
 #define B_MSG_DOOM_DESIRE  1
+#define B_MSG_TERRA_STRIKE 2
 
 // gItemSwapStringIds
 #define B_MSG_ITEM_SWAP_TAKEN 0

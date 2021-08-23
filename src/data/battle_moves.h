@@ -3555,7 +3555,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_STOCKPILE] =
     {
-        .effect = EFFECT_STOCKPILE, // TODO -- also increases defense and sp. def
+        .effect = EFFECT_STOCKPILE, 
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -5751,7 +5751,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_TERRA_STRIKE] = 
     {
-        .effect = EFFECT_FUTURE_SIGHT, // TODO -- text?
+        .effect = EFFECT_FUTURE_SIGHT,
         .power = 80,
         .type = TYPE_GROUND,
         .accuracy = 90,
@@ -5807,7 +5807,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_WINDWHISTLE] = 
     {
-        .effect = EFFECT_CONFUSE, // TODO - EFFECT_WINDWHISTLE; 50% chance to lower defense in addition
+        .effect = EFFECT_SWAGGER, // TODO - only lower defense half the time
         .power = 0,
         .type = TYPE_FLYING,
         .accuracy = 75,
