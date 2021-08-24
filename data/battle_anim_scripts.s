@@ -9677,7 +9677,6 @@ Move_STATRONOME:
 Move_SQUALL:
 Move_SPIRAL_KICK:
 Move_SPIKE_WALL:
-Move_TERRA_STRIKE:
 Move_TIDAL_WAVE:
 Move_UMBRAGE:
 Move_VENOM_STRIKE:
@@ -9717,6 +9716,7 @@ Move_KNOCK_OFF:
 	waitforvisualfinish
 	end
 
+MOVE_TERRA_STRIKE:
 Move_DOOM_DESIRE:
 	createvisualtask GetIsDoomDesireHitTurn, 2
 	delay 1
