@@ -923,6 +923,7 @@ BattleScript_EffectConfuse::
 	seteffectprimary
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
+	jumpifmove MOVE_WINDWHISTLE, BattleScript_EffectWindwhistle
 	goto BattleScript_MoveEnd
 
 BattleScript_AlreadyConfused::
@@ -1619,7 +1620,6 @@ BattleScript_EffectSwagger::
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	attackstring
 	ppreduce
-	jumpifmove MOVE_WINDWHISTLE, BattleScript_EffectWindwhistle
 	jumpifconfusedandstatmaxed STAT_ATK, BattleScript_ButItFailed
 	attackanimation
 	waitanimation
@@ -1637,18 +1637,10 @@ BattleScript_SwaggerTryConfuse::
 	seteffectprimary
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectWindwhistle::
-	jumpifstatus2 BS_TARGET, STATUS2_CONFUSION, BattleScript_ButItFailed
-	attackanimation
-	waitanimation
-	setstatchanger STAT_DEF, 1, TRUE
-	statbuffchange STAT_BUFF_ALLOW_PTR, BattleScript_SwaggerTryConfuse
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_SwaggerTryConfuse
-	setgraphicalstatchangevalues
-	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
-	printfromtable gStatDownStringIds
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_SwaggerTryConfuse
+BattleScript_EffectWindwhistle:: 
+    setmoveeffect MOVE_EFFECT_DEF_MINUS_1
+	seteffectwithchance
+	goto BattleScript_MoveEnd
 
 BattleScript_EffectFuryCutter::
 	attackcanceler

@@ -5807,12 +5807,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_WINDWHISTLE] = 
     {
-        .effect = EFFECT_SWAGGER, // TODO - only lower defense half the time
+        .effect = EFFECT_CONFUSE, // TODO - only lower defense half the time
         .power = 0,
         .type = TYPE_FLYING,
         .accuracy = 75,
         .pp = 20,
-        .secondaryEffectChance = 0,
+        .secondaryEffectChance = 50,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,

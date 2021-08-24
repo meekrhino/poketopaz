@@ -9716,7 +9716,7 @@ Move_KNOCK_OFF:
 	waitforvisualfinish
 	end
 
-MOVE_TERRA_STRIKE:
+Move_TERRA_STRIKE:
 Move_DOOM_DESIRE:
 	createvisualtask GetIsDoomDesireHitTurn, 2
 	delay 1
