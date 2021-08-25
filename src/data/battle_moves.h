@@ -5640,7 +5640,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SOOTHE_SONG] = 
     {
-        .effect = EFFECT_TAUNT, // TODO - EFFECT_SOOTHE_SONG; target stops ongoing moves (petal dance etc) and charging moves (solarbeam etc). blocked by soundproof
+        .effect = EFFECT_SOOTHE_SONG, // TODO - EFFECT_SOOTHE_SONG; target stops ongoing moves (petal dance etc) and charging moves (solarbeam etc). blocked by soundproof
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 90,

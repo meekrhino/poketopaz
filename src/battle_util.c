@@ -863,6 +863,20 @@ void MarkBattlerReceivedLinkData(u8 battlerId)
 
 void CancelMultiTurnMoves(u8 battler)
 {
+    if (gBattleMons[battler].status2 & STATUS2_MULTIPLETURNS
+     || gBattleMons[battler].status2 & STATUS2_LOCK_CONFUSE
+     || gBattleMons[battler].status2 & STATUS2_UPROAR
+     || gBattleMons[battler].status2 & STATUS2_BIDE
+     || gStatuses3[battler] & (STATUS3_SEMI_INVULNERABLE)
+     || gDisableStructs[battler].rolloutTimer != 0
+     || gDisableStructs[battler].furyCutterCounter != 0) 
+    {
+        gBattleCommunication[MULTISTRING_CHOOSER] = TRUE;
+    }
+    else
+    {
+        gBattleCommunication[MULTISTRING_CHOOSER] = FALSE;
+    }
     gBattleMons[battler].status2 &= ~(STATUS2_MULTIPLETURNS);
     gBattleMons[battler].status2 &= ~(STATUS2_LOCK_CONFUSE);
     gBattleMons[battler].status2 &= ~(STATUS2_UPROAR);

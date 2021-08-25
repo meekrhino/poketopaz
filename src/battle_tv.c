@@ -308,6 +308,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_ZIGZAG] = 1,
     [EFFECT_CALM_WIND] = 4,
     [EFFECT_FAULT_LINE] = 1,
+    [EFFECT_SOOTHE_SONG] = 1,
 };
 
 static const u16 sPoints_Effectiveness[] =

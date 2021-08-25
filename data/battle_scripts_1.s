@@ -238,6 +238,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectZigzag                 @ EFFECT_ZIGZAG
     .4byte BattleScript_EffectCalmWind               @ EFFECT_CALM_WIND
     .4byte BattleScript_EffectFaultLine              @ EFFECT_FAULT_LINE
+    .4byte BattleScript_EffectSootheSong             @ EFFECT_SOOTHE_SONG
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -1736,6 +1737,19 @@ BattleScript_EffectAttract::
 	waitanimation
 	printstring STRINGID_PKMNFELLINLOVE
 	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectSootheSong::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	attackanimation
+	waitanimation
+    cancelmultiturnmoves BS_TARGET
+    jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, TRUE, BattleScript_ButItFailed
+    printstring STRINGID_DEFENDERWASSOOTHED
+    waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectReturn::
