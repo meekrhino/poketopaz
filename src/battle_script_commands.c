@@ -9306,14 +9306,17 @@ static void Cmd_trysetroots(void) // ingrain
             gBattlescriptCurrInstr += 5;
         }
     }
-    if (gStatuses3[gBattlerAttacker] & STATUS3_ROOTED)
+    else 
     {
-        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
-    }
-    else
-    {
-        gStatuses3[gBattlerAttacker] |= STATUS3_ROOTED;
-        gBattlescriptCurrInstr += 5;
+        if (gStatuses3[gBattlerAttacker] & STATUS3_ROOTED)
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        }
+        else
+        {
+            gStatuses3[gBattlerAttacker] |= STATUS3_ROOTED;
+            gBattlescriptCurrInstr += 5;
+        }
     }
 }
 
