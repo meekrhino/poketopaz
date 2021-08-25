@@ -80,7 +80,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSpeedDown2             @ EFFECT_SPEED_DOWN_2
 	.4byte BattleScript_EffectHit                    @ EFFECT_SPECIAL_ATTACK_DOWN_2
 	.4byte BattleScript_EffectSpecialDefenseDown2    @ EFFECT_SPECIAL_DEFENSE_DOWN_2
-	.4byte BattleScript_EffectHit                    @ EFFECT_ACCURACY_DOWN_2
+	.4byte BattleScript_EffectAccuracyDown2          @ EFFECT_ACCURACY_DOWN_2
 	.4byte BattleScript_EffectHit                    @ EFFECT_EVASION_DOWN_2
 	.4byte BattleScript_EffectReflect                @ EFFECT_REFLECT
 	.4byte BattleScript_EffectPoison                 @ EFFECT_POISON
@@ -235,6 +235,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectCurseHit               @ EFFECT_CURSE_HIT
     .4byte BattleScript_EffectBurnSelfHit            @ EFFECT_BURN_SELF_HIT
     .4byte BattleScript_EffectWaterWall              @ EFFECT_WATER_WALL
+    .4byte BattleScript_EffectZigzag                 @ EFFECT_ZIGZAG
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -537,6 +538,35 @@ BattleScript_EffectSpeedDown::
 BattleScript_EffectAccuracyDown::
 	setstatchanger STAT_ACC, 1, TRUE
 	goto BattleScript_EffectStatDown
+
+BattleScript_EffectAccuracyDown2::
+	setstatchanger STAT_ACC, 2, TRUE
+	goto BattleScript_EffectStatDown
+
+BattleScript_EffectZigzag::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_ZigzagTryDef
+	jumpifstat BS_TARGET, CMP_EQUAL, STAT_ACC, MIN_STAT_STAGE, BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+BattleScript_ZigzagDoStatEffects::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_TARGET, BIT_ACC, STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_ACC, 2, TRUE
+	statbuffchange STAT_BUFF_ALLOW_PTR, BattleScript_ZigzagTryDef
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ZigzagTryDef::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_DEF, STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_DEF, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_ZigzagEnd
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ZigzagEnd::
+	goto BattleScript_MoveEnd
 
 BattleScript_EffectEvasionDown::
 	setstatchanger STAT_EVASION, 1, TRUE

@@ -305,6 +305,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_CURSE_HIT] = 1,
     [EFFECT_BURN_SELF_HIT] = 1,
     [EFFECT_WATER_WALL] = 7,
+    [EFFECT_ZIGZAG] = 1,
 };
 
 static const u16 sPoints_Effectiveness[] =

@@ -5821,7 +5821,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_WATER_WALL] = 
     {
-        .effect = EFFECT_WATER_WALL, // TODO - reduces fire, water, and ice damage.  broken by brick break
+        .effect = EFFECT_WATER_WALL,
         .power = 0,
         .type = TYPE_WATER,
         .accuracy = 0,
@@ -5849,7 +5849,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_ZIGZAG] = 
     {
-        .effect = EFFECT_ACCURACY_DOWN_2, // TODO - EFFECT_ZIGZAG; also lower user defense
+        .effect = EFFECT_ZIGZAG,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,

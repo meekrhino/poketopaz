@@ -3570,7 +3570,7 @@ static const u16 sSpecies276LevelUpLearnset[] = {
 };
 
 static const u16 sTreeckoLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_WATER_WALL),
+    LEVEL_UP_MOVE( 1, MOVE_ZIGZAG),
     LEVEL_UP_MOVE( 1, MOVE_WINDWHISTLE),
     LEVEL_UP_MOVE( 1, MOVE_SWALLOW),
     LEVEL_UP_MOVE( 1, MOVE_LIGHT_SCREEN),
