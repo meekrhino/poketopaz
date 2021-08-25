@@ -1149,6 +1149,7 @@ enum
     ENDTURN_ORDER,
     ENDTURN_REFLECT,
     ENDTURN_LIGHT_SCREEN,
+    ENDTURN_WATER_WALL,
     ENDTURN_MIST,
     ENDTURN_SAFEGUARD,
     ENDTURN_WISH,
@@ -1211,6 +1212,32 @@ u8 DoFieldEndTurnEffects(void)
                         gSideStatuses[side] &= ~SIDE_STATUS_REFLECT;
                         BattleScriptExecute(BattleScript_SideStatusWoreOff);
                         PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_REFLECT);
+                        effect++;
+                    }
+                }
+                gBattleStruct->turnSideTracker++;
+                if (effect)
+                    break;
+            }
+            if (!effect)
+            {
+                gBattleStruct->turnCountersTracker++;
+                gBattleStruct->turnSideTracker = 0;
+            }
+            break;
+        case ENDTURN_WATER_WALL:
+            while (gBattleStruct->turnSideTracker < 2)
+            {
+                side = gBattleStruct->turnSideTracker;
+                gActiveBattler = gBattlerAttacker = gSideTimers[side].waterwallBattlerId;
+                if (gSideStatuses[side] & SIDE_STATUS_WATERWALL)
+                {
+                    if (--gSideTimers[side].waterwallTimer == 0)
+                    {
+                        gSideStatuses[side] &= ~SIDE_STATUS_WATERWALL;
+                        BattleScriptExecute(BattleScript_SideStatusWoreOff);
+                        gBattleCommunication[MULTISTRING_CHOOSER] = side;
+                        PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_WATER_WALL);
                         effect++;
                     }
                 }

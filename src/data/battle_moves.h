@@ -5807,7 +5807,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_WINDWHISTLE] = 
     {
-        .effect = EFFECT_CONFUSE, // TODO - only lower defense half the time
+        .effect = EFFECT_CONFUSE, 
         .power = 0,
         .type = TYPE_FLYING,
         .accuracy = 75,
@@ -5821,7 +5821,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_WATER_WALL] = 
     {
-        .effect = EFFECT_REFLECT, // TODO - EFFECT_WATER_WALL; reduces fire, water, and ice damage.  broken by brick break
+        .effect = EFFECT_WATER_WALL, // TODO - reduces fire, water, and ice damage.  broken by brick break
         .power = 0,
         .type = TYPE_WATER,
         .accuracy = 0,

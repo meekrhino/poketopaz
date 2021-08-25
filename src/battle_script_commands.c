@@ -7438,21 +7438,43 @@ static void Cmd_givepaydaymoney(void)
 
 static void Cmd_setlightscreen(void)
 {
-    if (gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] & SIDE_STATUS_LIGHTSCREEN)
+    if (gCurrentMove == MOVE_WATER_WALL)
     {
-        gMoveResultFlags |= MOVE_RESULT_MISSED;
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SIDE_STATUS_FAILED;
+        if (gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] & SIDE_STATUS_WATERWALL)
+        {
+            gMoveResultFlags |= MOVE_RESULT_MISSED;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SIDE_STATUS_FAILED;
+        }
+        else
+        {
+            gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_WATERWALL;
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].waterwallTimer = 5;
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].waterwallBattlerId = gBattlerAttacker;
+
+            if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_ATK_SIDE) == 2)
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SET_WATERWALL_DOUBLE;
+            else
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SET_WATERWALL_SINGLE;
+        }
     }
     else
     {
-        gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_LIGHTSCREEN;
-        gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenTimer = 5;
-        gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenBattlerId = gBattlerAttacker;
-
-        if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_ATK_SIDE) == 2)
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SET_LIGHTSCREEN_DOUBLE;
+        if (gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] & SIDE_STATUS_LIGHTSCREEN)
+        {
+            gMoveResultFlags |= MOVE_RESULT_MISSED;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SIDE_STATUS_FAILED;
+        }
         else
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SET_LIGHTSCREEN_SINGLE;
+        {
+            gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_LIGHTSCREEN;
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenTimer = 5;
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenBattlerId = gBattlerAttacker;
+
+            if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_ATK_SIDE) == 2)
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SET_LIGHTSCREEN_DOUBLE;
+            else
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SET_LIGHTSCREEN_SINGLE;
+        }
     }
 
     gBattlescriptCurrInstr++;
@@ -9810,12 +9832,14 @@ static void Cmd_removelightscreenreflect(void) // brick break
 {
     u8 opposingSide = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
 
-    if (gSideTimers[opposingSide].reflectTimer || gSideTimers[opposingSide].lightscreenTimer)
+    if (gSideTimers[opposingSide].reflectTimer || gSideTimers[opposingSide].lightscreenTimer || gSideTimers[opposingSide].waterwallTimer)
     {
         gSideStatuses[opposingSide] &= ~(SIDE_STATUS_REFLECT);
         gSideStatuses[opposingSide] &= ~(SIDE_STATUS_LIGHTSCREEN);
+        gSideStatuses[opposingSide] &= ~(SIDE_STATUS_WATERWALL);
         gSideTimers[opposingSide].reflectTimer = 0;
         gSideTimers[opposingSide].lightscreenTimer = 0;
+        gSideTimers[opposingSide].waterwallTimer = 0;
         gBattleScripting.animTurn = 1;
         gBattleScripting.animTargetsHit = 1;
     }

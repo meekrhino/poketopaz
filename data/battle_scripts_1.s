@@ -234,6 +234,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectLeechSeedHit           @ EFFECT_LEECH_SEED_HIT
     .4byte BattleScript_EffectCurseHit               @ EFFECT_CURSE_HIT
     .4byte BattleScript_EffectBurnSelfHit            @ EFFECT_BURN_SELF_HIT
+    .4byte BattleScript_EffectWaterWall              @ EFFECT_WATER_WALL
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -730,6 +731,13 @@ BattleScript_EffectPayDay::
 	goto BattleScript_EffectHit
 
 BattleScript_EffectLightScreen::
+	attackcanceler
+	attackstring
+	ppreduce
+	setlightscreen
+	goto BattleScript_PrintReflectLightScreenSafeguardString
+
+BattleScript_EffectWaterWall::
 	attackcanceler
 	attackstring
 	ppreduce

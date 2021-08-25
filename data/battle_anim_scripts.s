@@ -5089,6 +5089,7 @@ SnoreEffect:
 	createsprite gSnoreZSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 42, -38, 24, 0, 0
 	return
 
+Move_WATER_WALL:
 Move_LIGHT_SCREEN:
 	loadspritegfx ANIM_TAG_SPARKLE_3
 	loadspritegfx ANIM_TAG_GREEN_LIGHT_WALL
@@ -9681,7 +9682,6 @@ Move_TIDAL_WAVE:
 Move_UMBRAGE:
 Move_VENOM_STRIKE:
 Move_WINDWHISTLE:
-Move_WATER_WALL:
 Move_WRATH:
 Move_ZIGZAG:
 Move_FLARE:

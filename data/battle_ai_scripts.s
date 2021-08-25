@@ -122,6 +122,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_ROAR, AI_CBM_Roar
 	if_effect EFFECT_TOXIC, AI_CBM_Toxic
 	if_effect EFFECT_LIGHT_SCREEN, AI_CBM_LightScreen
+	if_effect EFFECT_WATER_WALL, AI_CBM_WaterWall
 	if_effect EFFECT_OHKO, AI_CBM_OneHitKO
 	if_effect EFFECT_RAZOR_WIND, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_SUPER_FANG, AI_CBM_HighRiskForDamage
@@ -351,6 +352,10 @@ AI_CBM_Toxic:
 
 AI_CBM_LightScreen:
 	if_side_affecting AI_USER, SIDE_STATUS_LIGHTSCREEN, Score_Minus8
+	end
+
+AI_CBM_WaterWall:
+	if_side_affecting AI_USER, SIDE_STATUS_WATERWALL, Score_Minus8
 	end
 
 AI_CBM_OneHitKO:

@@ -36,6 +36,7 @@ enum {
     PTS_MUD_SPORT,
     PTS_REFLECT,
     PTS_LIGHT_SCREEN,
+    PTS_WATER_WALL,
     PTS_SAFEGUARD,
     PTS_MIST,
     PTS_BREAK_WALL,
@@ -303,6 +304,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_LEECH_SEED_HIT] = 2,
     [EFFECT_CURSE_HIT] = 1,
     [EFFECT_BURN_SELF_HIT] = 1,
+    [EFFECT_WATER_WALL] = 7,
 };
 
 static const u16 sPoints_Effectiveness[] =
@@ -428,6 +430,7 @@ static const u16 sPoints_WaterSport[] = { 5 };
 static const u16 sPoints_MudSport[] = { 5 };
 static const u16 sPoints_Reflect[] = { 3 };
 static const u16 sPoints_LightScreen[] = { 3 };
+static const u16 sPoints_WaterWall[] = { 3 };
 static const u16 sPoints_Safeguard[] = { 4 };
 static const u16 sPoints_Mist[] = { 3 };
 static const u16 sPoints_BreakWall[] = { 6 };
@@ -513,6 +516,7 @@ static const u16 *const sPointsArray[] =
     [PTS_MUD_SPORT]              = sPoints_MudSport,
     [PTS_REFLECT]                = sPoints_Reflect,
     [PTS_LIGHT_SCREEN]           = sPoints_LightScreen,
+    [PTS_WATER_WALL]             = sPoints_WaterWall,
     [PTS_SAFEGUARD]              = sPoints_Safeguard,
     [PTS_MIST]                   = sPoints_Mist,
     [PTS_BREAK_WALL]             = sPoints_BreakWall,
@@ -909,6 +913,11 @@ void BattleTv_SetDataBasedOnString(u16 stringId)
             tvPtr->side[atkSide].lightScreenMonId = 0;
             tvPtr->side[atkSide].lightScreenMoveSlot = 0;
         }
+        if (*finishedMoveId == MOVE_WATER_WALL)
+        {
+            tvPtr->side[atkSide].waterWallMonId = 0;
+            tvPtr->side[atkSide].waterWallMoveSlot = 0;
+        }
         if (*finishedMoveId == MOVE_MIST)
         {
             tvPtr->side[atkSide].mistMonId = 0;
@@ -940,6 +949,8 @@ void BattleTv_SetDataBasedOnString(u16 stringId)
         tvPtr->side[defSide].reflectMoveSlot = 0;
         tvPtr->side[defSide].lightScreenMonId = 0;
         tvPtr->side[defSide].lightScreenMoveSlot = 0;
+        tvPtr->side[defSide].waterWallMonId = 0;
+        tvPtr->side[defSide].waterWallMoveSlot = 0;
         AddMovePoints(PTS_BREAK_WALL, 0, gBattlerPartyIndexes[gBattlerAttacker], moveSlot);
         break;
     case STRINGID_PKMNFLINCHED:
@@ -1016,6 +1027,7 @@ void BattleTv_SetDataBasedOnMove(u16 move, u16 weatherFlags, struct DisableStruc
 
     AddMovePoints(PTS_REFLECT,      move, gBattleMoves[move].power, 0);
     AddMovePoints(PTS_LIGHT_SCREEN, move, gBattleMoves[move].power, 0);
+    AddMovePoints(PTS_WATER_WALL,   gBattleMoves[move].type, gBattleMoves[move].power, 0);
     AddMovePoints(PTS_WATER_SPORT,  gBattleMoves[move].type, 0,                        0);
     AddMovePoints(PTS_MUD_SPORT,    gBattleMoves[move].type, 0,                        0);
 }
@@ -1267,6 +1279,16 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         }
         break;
 #undef move
+#define type arg1
+    case PTS_WATER_WALL:
+        // If hit Water Wall with damaging elemental move
+        if ((type == TYPE_FIRE || type == TYPE_ICE || type == TYPE_WATER) && power != 0 && tvPtr->side[defSide].waterWallMonId != 0)
+        {
+            u32 id = (tvPtr->side[defSide].waterWallMonId - 1) * 4;
+            movePoints->points[defSide][id + tvPtr->side[defSide].waterWallMoveSlot] += sPointsArray[caseId][0];
+        }
+        break;
+#undef type
 #undef power
     }
 }

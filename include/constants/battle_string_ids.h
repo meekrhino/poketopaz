@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 #define GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 
-#define BATTLESTRINGS_COUNT     372
+#define BATTLESTRINGS_COUNT     374
 
 #define BATTLESTRINGS_ID_ADDER  12 // all battlestrings have its ID + 12, because first 5 are reserved
 
@@ -385,6 +385,8 @@
 #define STRINGID_PKMNLAIDCURSEEFFECT        381
 #define STRINGID_PKMNBURNEDITSELF           382
 #define STRINGID_PKMNSENTSEISMICWAVES       383
+#define STRINGID_PKMNRAISEDELEMDEF          384
+#define STRINGID_PKMNRAISEDELEMDEFALITTLE   385
 
 
 // The below IDs are all indexes into battle message tables,
@@ -457,7 +459,9 @@
 #define B_MSG_SET_REFLECT_DOUBLE     2
 #define B_MSG_SET_LIGHTSCREEN_SINGLE 3
 #define B_MSG_SET_LIGHTSCREEN_DOUBLE 4
-#define B_MSG_SET_SAFEGUARD          5
+#define B_MSG_SET_WATERWALL_SINGLE   5
+#define B_MSG_SET_WATERWALL_DOUBLE   6
+#define B_MSG_SET_SAFEGUARD          7
 
 // gProtectLikeUsedStringIds
 #define B_MSG_PROTECTED_ITSELF 0
