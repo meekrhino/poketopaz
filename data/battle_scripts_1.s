@@ -237,6 +237,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectWaterWall              @ EFFECT_WATER_WALL
     .4byte BattleScript_EffectZigzag                 @ EFFECT_ZIGZAG
     .4byte BattleScript_EffectCalmWind               @ EFFECT_CALM_WIND
+    .4byte BattleScript_EffectFaultLine              @ EFFECT_FAULT_LINE
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -914,6 +915,32 @@ BattleScript_MoveMissedDoDamage::
 	typecalc
 	adjustnormaldamage
 	manipulatedamage DMG_RECOIL_FROM_MISS
+	bicbyte gMoveResultFlags, MOVE_RESULT_MISSED
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	tryfaintmon BS_ATTACKER, FALSE, NULL
+	orbyte gMoveResultFlags, MOVE_RESULT_MISSED
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectFaultLine::
+	attackcanceler
+	accuracycheck BattleScript_MoveMissedDamageSelf, ACC_CURR_MOVE
+    setmoveeffect MOVE_EFFECT_RECOIL_50 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	goto BattleScript_HitFromAtkString
+BattleScript_MoveMissedDamageSelf::
+	attackstring
+	ppreduce
+	pause B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	jumpifbyte CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE, BattleScript_MoveEnd
+	printstring STRINGID_PKMNHITSELFINSTEAD
+	waitmessage B_WAIT_TIME_LONG
+	damagecalc
+	typecalc
+	adjustnormaldamage
+	manipulatedamage DMG_DIVIDED_BY_3
 	bicbyte gMoveResultFlags, MOVE_RESULT_MISSED
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
 	healthbarupdate BS_ATTACKER

@@ -670,6 +670,7 @@ static const u8* const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_CURSE]            = BattleScript_MoveEffectCurse,
     [MOVE_EFFECT_LEECH_SEED]       = BattleScript_MoveEffectLeechSeed,
     [MOVE_EFFECT_BURN_SELF]        = BattleScript_MoveEffectBurnSelf,
+    [MOVE_EFFECT_RECOIL_50]        = BattleScript_MoveEffectRecoil,
 };
 
 static const struct WindowTemplate sUnusedWinTemplate = {0, 1, 3, 7, 0xF, 0x1F, 0x3F};
@@ -2860,6 +2861,14 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 break;
             case MOVE_EFFECT_RECOIL_33: // Double Edge
                 gBattleMoveDamage = gHpDealt / 3;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
+                break;
+            case MOVE_EFFECT_RECOIL_50: // Fault Line
+                gBattleMoveDamage = gHpDealt / 2;
                 if (gBattleMoveDamage == 0)
                     gBattleMoveDamage = 1;
 
@@ -6756,6 +6765,13 @@ static void Cmd_manipulatedamage(void)
         break;
     case DMG_DOUBLED:
         gBattleMoveDamage *= 2;
+        break;
+    case DMG_DIVIDED_BY_3:
+        gBattleMoveDamage /= 3;
+        if (gBattleMoveDamage == 0)
+            gBattleMoveDamage = 1;
+        if ((gBattleMons[gBattlerTarget].maxHP / 3) < gBattleMoveDamage)
+            gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 3;
         break;
     }
 

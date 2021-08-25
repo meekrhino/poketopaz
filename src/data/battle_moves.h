@@ -5262,7 +5262,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_FAULT_LINE] = 
     {
-        .effect = EFFECT_RECOIL_IF_MISS, // TODO - EFFECT_FAULT_LINE; 50% recoil, 33% on miss
+        .effect = EFFECT_FAULT_LINE,
         .power = 180,
         .type = TYPE_GROUND,
         .accuracy = 55,

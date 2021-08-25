@@ -290,7 +290,8 @@
 #define MOVE_EFFECT_LEECH_SEED          60
 #define MOVE_EFFECT_CURSE               61
 #define MOVE_EFFECT_BURN_SELF           62
-#define NUM_MOVE_EFFECTS                63
+#define MOVE_EFFECT_RECOIL_50           63
+#define NUM_MOVE_EFFECTS                64
 
 #define MOVE_EFFECT_AFFECTS_USER        (1 << 6) // 64
 #define MOVE_EFFECT_CERTAIN             (1 << 7) // 128
