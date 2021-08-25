@@ -1354,6 +1354,10 @@
 	.macro playtrainerdefeatbgm battler:req
 	various \battler, VARIOUS_PLAY_TRAINER_DEFEATED_MUSIC
 	.endm
+
+    .macro endweather
+    various BS_ATTACKER, VARIOUS_CLEAR_WEATHER
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req

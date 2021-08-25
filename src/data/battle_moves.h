@@ -3569,7 +3569,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SPIT_UP] =
     {
-        .effect = EFFECT_SPIT_UP, // TODO - removes def ups in addition to stockpile charges.  can crit
+        .effect = EFFECT_SPIT_UP,
         .power = 100,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -3583,7 +3583,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SWALLOW] =
     {
-        .effect = EFFECT_SWALLOW, // TODO - removes def ups in addition to stockpile charges
+        .effect = EFFECT_SWALLOW,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -5122,7 +5122,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_CALM_WIND] = 
     {
-        .effect = EFFECT_SUNNY_DAY, // TODO -- EFFECT_CALM_WIND (clear weather)
+        .effect = EFFECT_CALM_WIND,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -5877,7 +5877,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_GRAVITY_BOND] = 
     {
-        .effect = EFFECT_INGRAIN, // TODO - EFFECT_GRAVITY_BOND; lose the healing bit. grounded effect?
+        .effect = EFFECT_INGRAIN,
         .power = 0,
         .type = TYPE_STEEL,
         .accuracy = 100,

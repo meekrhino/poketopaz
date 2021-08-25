@@ -1484,8 +1484,9 @@ u8 DoBattlerEndTurnEffects(void)
             {
             case ENDTURN_INGRAIN:  // ingrain
                 if ((gStatuses3[gActiveBattler] & STATUS3_ROOTED)
-                 && gBattleMons[gActiveBattler].hp != gBattleMons[gActiveBattler].maxHP
-                 && gBattleMons[gActiveBattler].hp != 0)
+                && !(gStatuses3[gActiveBattler] & STATUS3_GRAVITY_BOUND)
+                &&  gBattleMons[gActiveBattler].hp != gBattleMons[gActiveBattler].maxHP
+                &&  gBattleMons[gActiveBattler].hp != 0)
                 {
                     gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 16;
                     if (gBattleMoveDamage == 0)

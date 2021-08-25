@@ -236,6 +236,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectBurnSelfHit            @ EFFECT_BURN_SELF_HIT
     .4byte BattleScript_EffectWaterWall              @ EFFECT_WATER_WALL
     .4byte BattleScript_EffectZigzag                 @ EFFECT_ZIGZAG
+    .4byte BattleScript_EffectCalmWind               @ EFFECT_CALM_WIND
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -1815,6 +1816,13 @@ BattleScript_EffectSunnyDay::
 	attackstring
 	ppreduce
 	setsunny
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_EffectCalmWind::
+	attackcanceler
+	attackstring
+	ppreduce
+    endweather
 	goto BattleScript_MoveWeatherChange
 
 BattleScript_EffectDefenseUpHit::

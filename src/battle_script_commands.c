@@ -6488,6 +6488,18 @@ static void Cmd_various(void)
         BtlController_EmitPlayFanfareOrBGM(0, MUS_VICTORY_TRAINER, TRUE);
         MarkBattlerForControllerExec(gActiveBattler);
         break;
+    case VARIOUS_CLEAR_WEATHER:
+        if (!(gBattleWeather & WEATHER_ANY))
+        {
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;
+        }
+        else
+        {
+            gBattleWeather = 0;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_CLEARED;
+            gWishFutureKnock.weatherDuration = 0;
+        }
+        break;
     }
 
     gBattlescriptCurrInstr += 3;
@@ -9281,6 +9293,19 @@ static void Cmd_trywish(void)
 
 static void Cmd_trysetroots(void) // ingrain
 {
+    if (gCurrentMove == MOVE_GRAVITY_BOND)
+    {
+        if (gStatuses3[gBattlerAttacker] & STATUS3_ROOTED
+         && gStatuses3[gBattlerAttacker] & STATUS3_GRAVITY_BOUND)
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        }
+        else
+        {
+            gStatuses3[gBattlerAttacker] |= STATUS3_GRAVITY_BOUND | STATUS3_ROOTED;
+            gBattlescriptCurrInstr += 5;
+        }
+    }
     if (gStatuses3[gBattlerAttacker] & STATUS3_ROOTED)
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);

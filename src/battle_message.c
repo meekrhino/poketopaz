@@ -354,6 +354,7 @@ static const u8 sText_SandstormSubsided[] = _("The sandstorm subsided.");
 static const u8 sText_SunlightGotBright[] = _("The sunlight got bright!");
 static const u8 sText_SunlightStrong[] = _("The sunlight is strong.");
 static const u8 sText_SunlightFaded[] = _("The sunlight faded.");
+static const u8 sText_WeatherCleared[] = _("The weather was cleared.");
 static const u8 sText_StartedHail[] = _("It started to hail!");
 static const u8 sText_HailContinues[] = _("Hail continues to fall.");
 static const u8 sText_HailStopped[] = _("The hail stopped.");
@@ -759,6 +760,7 @@ const u8 * const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_SUNLIGHTGOTBRIGHT - 12] = sText_SunlightGotBright,
     [STRINGID_SUNLIGHTSTRONG - 12] = sText_SunlightStrong,
     [STRINGID_SUNLIGHTFADED - 12] = sText_SunlightFaded,
+    [STRINGID_WEATHERCLEARED - 12] = sText_WeatherCleared,
     [STRINGID_STARTEDHAIL - 12] = sText_StartedHail,
     [STRINGID_HAILCONTINUES - 12] = sText_HailContinues,
     [STRINGID_HAILSTOPPED - 12] = sText_HailStopped,
@@ -927,6 +929,7 @@ const u16 gMoveWeatherChangeStringIds[] =
     [B_MSG_STARTED_SANDSTORM] = STRINGID_SANDSTORMBREWED,
     [B_MSG_STARTED_SUNLIGHT]  = STRINGID_SUNLIGHTGOTBRIGHT,
     [B_MSG_STARTED_HAIL]      = STRINGID_STARTEDHAIL,
+    [B_MSG_WEATHER_CLEARED]   = STRINGID_WEATHERCLEARED,
 };
 
 const u16 gSandStormHailContinuesStringIds[] =
