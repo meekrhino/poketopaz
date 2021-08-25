@@ -5891,7 +5891,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_FOCUS_SIGHT] = 
     {
-        .effect = EFFECT_ACCURACY_DOWN, // TODO - EFFECT_ACCURACY_UP
+        .effect = EFFECT_ACCURACY_UP,
         .power = 0,
         .type = TYPE_BUG,
         .accuracy = 0,
