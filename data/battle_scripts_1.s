@@ -1836,9 +1836,18 @@ BattleScript_EffectMagnitude::
 	selectfirstvalidtarget
 	magnitudedamagecalculation
 	pause B_WAIT_TIME_SHORT
+	jumpifnotmove MOVE_MAGNITUDE, BattleScript_EffectTidalWave
 	printstring STRINGID_MAGNITUDESTRENGTH
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_HitsAllWithUndergroundBonusLoop
+BattleScript_EffectTidalWave::
+    printstring STRINGID_INTENSITY
+	waitmessage B_WAIT_TIME_LONG
+	jumpifnotmove MOVE_TIDAL_WAVE, BattleScript_HitFromAccCheck
+	jumpifnostatus3 BS_TARGET, STATUS3_UNDERWATER, BattleScript_HitFromAccCheck
+	orword gHitMarker, HITMARKER_IGNORE_UNDERWATER
+	setbyte sDMG_MULTIPLIER, 2
+    goto BattleScript_HitFromAccCheck 
 
 BattleScript_EffectBatonPass::
 	attackcanceler
