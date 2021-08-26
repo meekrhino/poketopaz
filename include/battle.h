@@ -93,6 +93,8 @@ struct DisableStruct
     u8 chargeTimerStartValue:4;
     u8 tauntTimer:4;
     u8 tauntTimer2:4;
+    u8 serenadeTimer:4;
+    u8 serenadeTimer2:4;
     u8 battlerPreventingEscape;
     u8 battlerWithSureHit;
     u8 isFirstTurn;
@@ -122,6 +124,7 @@ struct ProtectStruct
     u32 loveImmobility:1;
     u32 usedDisabledMove:1;
     u32 usedTauntedMove:1;
+    u32 usedSpellboundMove:1;
     u32 flag2Unknown:1; // Only set to 0 once. Checked in 'WasUnableToUseMove' function.
     u32 flinchImmobility:1;
     u32 notFirstStrike:1;

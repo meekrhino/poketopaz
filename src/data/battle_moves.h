@@ -5416,7 +5416,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_MAGIC_DUST] = 
     {
-        .effect = EFFECT_MAGIC_DUST, // TODO - EFFECT_MAGIC_DUST; 20 burn, 20 poison, 10 freeze, 30 sleep, 20 paralyze
+        .effect = EFFECT_MAGIC_DUST,
         .power = 0,
         .type = TYPE_GRASS,
         .accuracy = 75,
@@ -5598,7 +5598,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SERENADE] =  
     {
-        .effect = EFFECT_TAUNT, // TODO - EFFECT_SERENADE; target cannot use FLAG_MAKES_CONTACT moves next turn
+        .effect = EFFECT_SERENADE,
         .power = 0,
         .type = TYPE_LIGHT,
         .accuracy = 100,

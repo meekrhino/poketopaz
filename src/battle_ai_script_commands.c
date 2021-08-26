@@ -2219,7 +2219,8 @@ static void Cmd_if_level_cond(void)
 
 static void Cmd_if_target_taunted(void)
 {
-    if (gDisableStructs[gBattlerTarget].tauntTimer != 0)
+    if (gDisableStructs[gBattlerTarget].tauntTimer != 0
+     || gDisableStructs[gBattlerTarget].serenadeTimer != 0)
         gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 1);
     else
         gAIScriptPtr += 5;
@@ -2227,7 +2228,8 @@ static void Cmd_if_target_taunted(void)
 
 static void Cmd_if_target_not_taunted(void)
 {
-    if (gDisableStructs[gBattlerTarget].tauntTimer == 0)
+    if (gDisableStructs[gBattlerTarget].tauntTimer == 0
+     || gDisableStructs[gBattlerTarget].serenadeTimer == 0)
         gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 1);
     else
         gAIScriptPtr += 5;

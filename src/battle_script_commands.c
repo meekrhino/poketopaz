@@ -9191,11 +9191,21 @@ static void Cmd_jumpifnodamage(void)
 
 static void Cmd_settaunt(void)
 {
-    if (gDisableStructs[gBattlerTarget].tauntTimer == 0)
+    if (gDisableStructs[gBattlerTarget].tauntTimer == 0
+     && gDisableStructs[gBattlerTarget].serenadeTimer == 0)
     {
-        gDisableStructs[gBattlerTarget].tauntTimer = 2;
-        gDisableStructs[gBattlerTarget].tauntTimer2 = 2;
-        gBattlescriptCurrInstr += 5;
+        if (gCurrentMove == MOVE_SERENADE)
+        {
+            gDisableStructs[gBattlerTarget].serenadeTimer = 2;
+            gDisableStructs[gBattlerTarget].serenadeTimer2 = 2;
+            gBattlescriptCurrInstr += 5;
+        }
+        else
+        {
+            gDisableStructs[gBattlerTarget].tauntTimer = 2;
+            gDisableStructs[gBattlerTarget].tauntTimer2 = 2;
+            gBattlescriptCurrInstr += 5;
+        }
     }
     else
     {

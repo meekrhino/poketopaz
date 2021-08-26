@@ -312,6 +312,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_STATRONOME] = 1,
     [EFFECT_ENLIGHTEN] = 5,
     [EFFECT_MAGIC_DUST] = 1,
+    [EFFECT_SERENADE] = 3,
 };
 
 static const u16 sPoints_Effectiveness[] =

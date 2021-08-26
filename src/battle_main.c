@@ -3251,6 +3251,7 @@ void FaintClearSetData(void)
     gProtectStructs[gActiveBattler].loveImmobility = 0;
     gProtectStructs[gActiveBattler].usedDisabledMove = 0;
     gProtectStructs[gActiveBattler].usedTauntedMove = 0;
+    gProtectStructs[gActiveBattler].usedSpellboundMove = 0;
     gProtectStructs[gActiveBattler].flag2Unknown = 0;
     gProtectStructs[gActiveBattler].flinchImmobility = 0;
     gProtectStructs[gActiveBattler].notFirstStrike = 0;

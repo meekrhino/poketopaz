@@ -242,6 +242,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectStatronome             @ EFFECT_STATRONOME
     .4byte BattleScript_EffectEnlighten              @ EFFECT_ENLIGHTEN
     .4byte BattleScript_EffectMagicDust              @ EFFECT_MAGIC_DUST
+    .4byte BattleScript_EffectSerenade               @ EFFECT_SERENADE
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2476,6 +2477,18 @@ BattleScript_EffectTaunt::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectSerenade::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	settaunt BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_PKMNSPELLBOUND
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectHelpingHand::
 	attackcanceler
 	attackstring
@@ -3743,6 +3756,19 @@ BattleScript_MoveUsedIsTaunted::
 
 BattleScript_SelectingNotAllowedMoveTauntInPalace::
 	printstring STRINGID_PKMNCANTUSEMOVETAUNT
+	goto BattleScript_SelectingUnusableMoveInPalace
+
+BattleScript_SelectingNotAllowedMoveSerenade::
+	printselectionstring STRINGID_PKMNCANTUSEMOVESERENADE
+	endselectionscript
+
+BattleScript_MoveUsedIsSpellbound::
+	printstring STRINGID_PKMNCANTUSEMOVESERENADE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_SelectingNotAllowedMoveSerenadeInPalace::
+	printstring STRINGID_PKMNCANTUSEMOVESERENADE
 	goto BattleScript_SelectingUnusableMoveInPalace
 
 BattleScript_WishComesTrue::

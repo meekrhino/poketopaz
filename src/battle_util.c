@@ -896,6 +896,7 @@ bool8 WasUnableToUseMove(u8 battler)
         || gProtectStructs[battler].loveImmobility
         || gProtectStructs[battler].usedDisabledMove
         || gProtectStructs[battler].usedTauntedMove
+        || gProtectStructs[battler].usedSpellboundMove
         || gProtectStructs[battler].flag2Unknown
         || gProtectStructs[battler].flinchImmobility
         || gProtectStructs[battler].confusionSelfDmg)
@@ -1028,6 +1029,21 @@ u8 TrySetCantSelectMoveBattleScript(void)
         }
     }
 
+    if (gDisableStructs[gActiveBattler].serenadeTimer != 0 && gBattleMoves[move].flags & FLAG_MAKES_CONTACT)
+    {
+        gCurrentMove = move;
+        if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
+        {
+            gPalaceSelectionBattleScripts[gActiveBattler] = BattleScript_SelectingNotAllowedMoveSerenadeInPalace;
+            gProtectStructs[gActiveBattler].palaceUnableToUseMove = 1;
+        }
+        else
+        {
+            gSelectionBattleScripts[gActiveBattler] = BattleScript_SelectingNotAllowedMoveSerenade;
+            limitations++;
+        }
+    }
+
     if (GetImprisonedMovesCount(gActiveBattler, move))
     {
         gCurrentMove = move;
@@ -1105,6 +1121,8 @@ u8 CheckMoveLimitations(u8 battlerId, u8 unusableMoves, u8 check)
         if (gBattleMons[battlerId].moves[i] == gLastMoves[battlerId] && check & MOVE_LIMITATION_TORMENTED && gBattleMons[battlerId].status2 & STATUS2_TORMENT)
             unusableMoves |= gBitTable[i];
         if (gDisableStructs[battlerId].tauntTimer && check & MOVE_LIMITATION_TAUNT && gBattleMoves[gBattleMons[battlerId].moves[i]].power == 0)
+            unusableMoves |= gBitTable[i];
+        if (gDisableStructs[battlerId].serenadeTimer && check & MOVE_LIMITATION_SERENADE && gBattleMoves[gBattleMons[battlerId].moves[i]].flags & FLAG_MAKES_CONTACT)
             unusableMoves |= gBitTable[i];
         if (GetImprisonedMovesCount(battlerId, gBattleMons[battlerId].moves[i]) && check & MOVE_LIMITATION_IMPRISON)
             unusableMoves |= gBitTable[i];
@@ -1475,6 +1493,7 @@ enum
     ENDTURN_LOCK_ON,
     ENDTURN_CHARGE,
     ENDTURN_TAUNT,
+    ENDTURN_SERENADE,
     ENDTURN_YAWN,
     ENDTURN_ITEMS2,
     ENDTURN_BATTLER_COUNT
@@ -1770,6 +1789,11 @@ u8 DoBattlerEndTurnEffects(void)
                     gDisableStructs[gActiveBattler].tauntTimer--;
                 gBattleStruct->turnEffectsTracker++;
                 break;
+            case ENDTURN_SERENADE:  // serenade
+                if (gDisableStructs[gActiveBattler].serenadeTimer)
+                    gDisableStructs[gActiveBattler].serenadeTimer--;
+                gBattleStruct->turnEffectsTracker++;
+                break;
             case ENDTURN_YAWN:  // yawn
                 if (gStatuses3[gActiveBattler] & STATUS3_YAWN)
                 {
@@ -2010,6 +2034,7 @@ enum
     CANCELLER_FLINCH,
     CANCELLER_DISABLED,
     CANCELLER_TAUNTED,
+    CANCELLER_SPELLBOUND,
     CANCELLER_IMPRISONED,
     CANCELLER_CONFUSED,
     CANCELLER_PARALYSED,
@@ -2157,6 +2182,17 @@ u8 AtkCanceller_UnableToUseMove(void)
                 gProtectStructs[gBattlerAttacker].usedTauntedMove = 1;
                 CancelMultiTurnMoves(gBattlerAttacker);
                 gBattlescriptCurrInstr = BattleScript_MoveUsedIsTaunted;
+                gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
+                effect = 1;
+            }
+            gBattleStruct->atkCancellerTracker++;
+            break;
+        case CANCELLER_SPELLBOUND: // serenade
+            if (gDisableStructs[gBattlerAttacker].serenadeTimer && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT)
+            {
+                gProtectStructs[gBattlerAttacker].usedSpellboundMove = 1;
+                CancelMultiTurnMoves(gBattlerAttacker);
+                gBattlescriptCurrInstr = BattleScript_MoveUsedIsSpellbound;
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 effect = 1;
             }
