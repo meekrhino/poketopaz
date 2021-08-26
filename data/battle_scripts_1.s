@@ -245,6 +245,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectSerenade               @ EFFECT_SERENADE
     .4byte BattleScript_EffectOrionSword             @ EFFECT_ORION_SWORD
     .4byte BattleScript_EffectRocketPunch            @ EFFECT_ROCKET_PUNCH
+    .4byte BattleScript_EffectRoarHit                @ EFFECT_ROAR_HIT
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -642,14 +643,24 @@ BattleScript_EffectRampage2:
 	confuseifrepeatingattackends
 	goto BattleScript_HitFromCritCalc
 
+BattleScript_EffectRoarHit::
+    setmoveeffect MOVE_EFFECT_ROAR
+	goto BattleScript_EffectHit
+
+BattleScript_MoveEffectRoar::
+	jumpifability BS_TARGET, ABILITY_SUCTION_CUPS, BattleScript_MoveEffectRoarEnd
+	jumpifstatus3 BS_TARGET, STATUS3_ROOTED, BattleScript_MoveEffectRoarEnd
+	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_MoveEffectRoarEnd
+	forcerandomswitch BattleScript_MoveEffectRoarEnd
+BattleScript_MoveEffectRoarEnd::
+    return
+
 BattleScript_EffectRoar::
 	attackcanceler
 	attackstring
 	ppreduce
 	jumpifability BS_TARGET, ABILITY_SUCTION_CUPS, BattleScript_AbilityPreventsPhasingOut
 	jumpifstatus3 BS_TARGET, STATUS3_ROOTED, BattleScript_PrintMonIsRooted
-	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
-	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
 	forcerandomswitch BattleScript_ButItFailed
 

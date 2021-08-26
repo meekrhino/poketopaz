@@ -5220,7 +5220,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DRAGON_GALE] = 
     {
-        .effect = EFFECT_ROAR, // TODO - EFFECT_ROAR_HIT
+        .effect = EFFECT_ROAR_HIT, 
         .power = 50,
         .type = TYPE_DRAGON,
         .accuracy = 90,
@@ -5500,7 +5500,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_ORION_SWORD] = 
     {
-        .effect = EFFECT_ORION_SWORD, // TODO - EFFECT_ORION_SWORD; happiness scaled damage
+        .effect = EFFECT_ORION_SWORD,
         .power = 1,
         .type = TYPE_LIGHT,
         .accuracy = 100,
@@ -5556,7 +5556,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_RIPTIDE] = 
     {
-        .effect = EFFECT_ROAR, // TODO - EFFECT_ROAR_HIT
+        .effect = EFFECT_ROAR_HIT,
         .power = 50,
         .type = TYPE_WATER,
         .accuracy = 90,
@@ -5570,7 +5570,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_ROCKET_PUNCH] = 
     {
-        .effect = EFFECT_ROCKET_PUNCH, // TODO - EFFECT_ROCKET_PUNCH; happiness scaled damage, opposite of orion sword
+        .effect = EFFECT_ROCKET_PUNCH,
         .power = 1,
         .type = TYPE_DARK,
         .accuracy = 100,

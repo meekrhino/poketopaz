@@ -671,6 +671,7 @@ static const u8* const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_LEECH_SEED]       = BattleScript_MoveEffectLeechSeed,
     [MOVE_EFFECT_BURN_SELF]        = BattleScript_MoveEffectBurnSelf,
     [MOVE_EFFECT_RECOIL_50]        = BattleScript_MoveEffectRecoil,
+    [MOVE_EFFECT_ROAR]             = BattleScript_MoveEffectRoar,
 };
 
 static const struct WindowTemplate sUnusedWinTemplate = {0, 1, 3, 7, 0xF, 0x1F, 0x3F};
@@ -3000,6 +3001,10 @@ void SetMoveEffect(bool8 primary, u8 certain)
             case MOVE_EFFECT_SP_ATK_TWO_DOWN: // Overheat
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_SAtkDown2;
+                break;
+            case MOVE_EFFECT_ROAR: // Dragon Gale, etc
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = BattleScript_MoveEffectRoar;
                 break;
             }
         }

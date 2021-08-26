@@ -314,7 +314,8 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_MAGIC_DUST] = 1,
     [EFFECT_SERENADE] = 3,
     [EFFECT_ORION_SWORD] = 1, 
-    [EFFECT_ROCKET_PUNCH] = 1, 
+    [EFFECT_ROCKET_PUNCH] = 1,
+    [EFFECT_ROAR_HIT] = 2,
 };
 
 static const u16 sPoints_Effectiveness[] =
