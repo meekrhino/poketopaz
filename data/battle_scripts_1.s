@@ -239,6 +239,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectCalmWind               @ EFFECT_CALM_WIND
     .4byte BattleScript_EffectFaultLine              @ EFFECT_FAULT_LINE
     .4byte BattleScript_EffectSootheSong             @ EFFECT_SOOTHE_SONG
+    .4byte BattleScript_EffectStatronome             @ EFFECT_STATRONOME
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -841,9 +842,15 @@ BattleScript_TwoTurnMovesSecondTurn::
 	setbyte sB_ANIM_TURN, 1
 	clearstatusfromeffect BS_ATTACKER
 	orword gHitMarker, HITMARKER_NO_PPDEDUCT
+    jumpifmove MOVE_SPECTRAL_RAY, BattleScript_TwoTurnMovesSecondTurnBurn
+    jumpifmove MOVE_SOLAR_FLARE, BattleScript_TwoTurnMovesSecondTurnBurn
 	jumpifnotmove MOVE_SKY_ATTACK, BattleScript_HitFromAccCheck
 	setmoveeffect MOVE_EFFECT_FLINCH
-	goto BattleScript_HitFromAccCheck
+	goto BattleScript_HitFromAccCheck 
+
+BattleScript_TwoTurnMovesSecondTurnBurn::
+    setmoveeffect MOVE_EFFECT_BURN
+	goto BattleScript_HitFromAccCheck 
 
 BattleScriptFirstChargingTurn::
 	attackcanceler
@@ -1233,6 +1240,17 @@ BattleScript_EffectMetronome::
 	setbyte sB_ANIM_TURN, 0
 	setbyte sB_ANIM_TARGETS_HIT, 0
 	metronome
+
+BattleScript_EffectStatronome::
+	attackcanceler
+	attackstring
+	ppreduce
+	pause B_WAIT_TIME_SHORT
+	attackanimation
+	waitanimation
+    statronome
+    seteffectprimary
+	goto BattleScript_MoveEnd
 
 BattleScript_EffectLeechSeed::
 	attackcanceler

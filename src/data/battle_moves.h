@@ -5640,7 +5640,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SOOTHE_SONG] = 
     {
-        .effect = EFFECT_SOOTHE_SONG, // TODO - EFFECT_SOOTHE_SONG; target stops ongoing moves (petal dance etc) and charging moves (solarbeam etc). blocked by soundproof
+        .effect = EFFECT_SOOTHE_SONG,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 90,
@@ -5667,7 +5667,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SPECTRAL_RAY] = 
     {
-        .effect = EFFECT_SOLARBEAM, // TODO - EFFECT_SPECTRAL_RAY; burn chance on hit. 120 power in sun, 80 in rain or night
+        .effect = EFFECT_SOLARBEAM, // TODO - EFFECT_SPECTRAL_RAY; 120 power in sun, 80 in rain or night
         .power = 100,
         .type = TYPE_LIGHT,
         .accuracy = 95,
@@ -5681,7 +5681,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SOLAR_FLARE] = 
     {
-        .effect = EFFECT_SOLARBEAM, // TODO - EFFECT_SOLOR_FLARE; burn chance on hit
+        .effect = EFFECT_SOLARBEAM,
         .power = 100,
         .type = TYPE_FIRE,
         .accuracy = 100,
@@ -5695,7 +5695,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_STATRONOME] = 
     {
-        .effect = EFFECT_CALM_MIND, // TODO - EFFECT_STATRONOME; random stat up or down 1 or 2 levels
+        .effect = EFFECT_STATRONOME,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,

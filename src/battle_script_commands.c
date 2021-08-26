@@ -742,7 +742,34 @@ static const u16 sMovesForbiddenToCopy[] =
     MOVE_COVET,
     MOVE_TRICK,
     MOVE_FOCUS_PUNCH,
+    MOVE_MAGNET_BLAST,
     METRONOME_FORBIDDEN_END
+};
+
+#define STATRONOME_EFFECTS_CNT          20
+
+static const u16 sStatronomeEffects[] =
+{
+    MOVE_EFFECT_ATK_PLUS_1,
+    MOVE_EFFECT_DEF_PLUS_1,
+    MOVE_EFFECT_SPD_PLUS_1,
+    MOVE_EFFECT_SP_ATK_PLUS_1,
+    MOVE_EFFECT_SP_DEF_PLUS_1,
+    MOVE_EFFECT_ATK_MINUS_1,
+    MOVE_EFFECT_DEF_MINUS_1,
+    MOVE_EFFECT_SPD_MINUS_1,
+    MOVE_EFFECT_SP_ATK_MINUS_1,
+    MOVE_EFFECT_SP_DEF_MINUS_1,
+    MOVE_EFFECT_ATK_PLUS_2,
+    MOVE_EFFECT_DEF_PLUS_2,
+    MOVE_EFFECT_SPD_PLUS_2,
+    MOVE_EFFECT_SP_ATK_PLUS_2,
+    MOVE_EFFECT_SP_DEF_PLUS_2,
+    MOVE_EFFECT_ATK_MINUS_2,
+    MOVE_EFFECT_DEF_MINUS_2,
+    MOVE_EFFECT_SPD_MINUS_2,
+    MOVE_EFFECT_SP_ATK_MINUS_2,
+    MOVE_EFFECT_SP_DEF_MINUS_2
 };
 
 static const u8 sFlailHpScaleToPowerTable[] =
@@ -6508,6 +6535,9 @@ static void Cmd_various(void)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_CLEARED;
             gWishFutureKnock.weatherDuration = 0;
         }
+        break;
+    case VARIOUS_STATRONOME:
+        gBattleCommunication[MOVE_EFFECT_BYTE] = sStatronomeEffects[Random() % 20];
         break;
     }
 

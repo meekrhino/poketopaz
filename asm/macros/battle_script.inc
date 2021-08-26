@@ -1358,6 +1358,10 @@
     .macro endweather
     various BS_ATTACKER, VARIOUS_CLEAR_WEATHER
     .endm
+
+    .macro statronome
+    various BS_ATTACKER, VARIOUS_STATRONOME
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req
