@@ -798,6 +798,16 @@ static const u8 sFlailHpScaleToPowerTable[] =
     48, 20
 };
 
+static const u8 sVenomStrikeHpScaleToPercentTable[] =
+{
+    1, 100,
+    4, 50,
+    9, 40,
+    16, 30,
+    32, 20,
+    48, 10
+};
+
 static const u16 sNaturePowerMoves[] =
 {
     [BATTLE_TERRAIN_GRASS]      = MOVE_STUN_SPORE,
@@ -2978,11 +2988,26 @@ void SetMoveEffect(bool8 primary, u8 certain)
 static void Cmd_seteffectwithchance(void)
 {
     u32 percentChance;
+    s32 i;
+    s32 hpFraction;
 
+    percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;
+
+    if (gCurrentMove == MOVE_VENOM_STRIKE)
+    { 
+        hpFraction = GetScaledHPFraction(gBattleMons[gBattlerAttacker].hp, gBattleMons[gBattlerAttacker].maxHP, 48);
+
+        for (i = 0; i < (s32) sizeof(sVenomStrikeHpScaleToPercentTable); i += 2)
+        {
+            if (hpFraction <= sVenomStrikeHpScaleToPercentTable[i])
+                break;
+        }
+
+        percentChance = sVenomStrikeHpScaleToPercentTable[i + 1];
+        gBattlescriptCurrInstr++;
+    }
     if (gBattleMons[gBattlerAttacker].ability == ABILITY_SERENE_GRACE)
-        percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 2;
-    else
-        percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;
+        percentChance *= 2;
 
     if (gBattleCommunication[MOVE_EFFECT_BYTE] & MOVE_EFFECT_CERTAIN
         && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
