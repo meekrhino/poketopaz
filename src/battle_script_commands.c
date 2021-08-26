@@ -808,6 +808,29 @@ static const u8 sVenomStrikeHpScaleToPercentTable[] =
     48, 10
 };
 
+#define FRIENDSHIP_LEVELS_CNT           7
+
+static const u8 sFriendshipToLevelTable[] =
+{
+    0, 1,
+    49, 2,
+    99, 3,
+    149, 4,
+    199, 5,
+    254, 6,
+    255, 7
+};
+
+static const u8 sFriendshipDifferenceToPowerTable[] =
+{
+    0,
+    24,
+    48,
+    72,
+    96,
+    120
+};
+
 static const u16 sNaturePowerMoves[] =
 {
     [BATTLE_TERRAIN_GRASS]      = MOVE_STUN_SPORE,
@@ -8682,8 +8705,49 @@ static void Cmd_furycuttercalc(void)
 
 static void Cmd_friendshiptodamagecalculation(void)
 {
+    s32 i;
+    u8 fLevelAttacker, fLevelDefender;
+    u8 friendshipAttacker = gBattleMons[gBattlerAttacker].friendship;
+    u8 friendshipDefender = gBattleMons[gBattlerTarget].friendship;
+    u8 difference;
+
     if (gBattleMoves[gCurrentMove].effect == EFFECT_RETURN)
-        gDynamicBasePower = 10 * (gBattleMons[gBattlerAttacker].friendship) / 25;
+        gDynamicBasePower = 10 * (friendshipAttacker) / 25;
+    else if (gBattleMoves[gCurrentMove].effect == EFFECT_ORION_SWORD
+          || gBattleMoves[gCurrentMove].effect == EFFECT_ROCKET_PUNCH)
+    {
+        for (i = 0; i < (s32) sizeof(sFriendshipToLevelTable); i += 2)
+        {
+            if (friendshipAttacker <= sFriendshipToLevelTable[i])
+                break;
+        }
+
+        fLevelAttacker = sFriendshipToLevelTable[i + 1];
+
+        for (i = 0; i < (s32) sizeof(sFriendshipToLevelTable); i += 2)
+        {
+            if (friendshipDefender <= sFriendshipToLevelTable[i])
+                break;
+        }
+
+        fLevelDefender = sFriendshipToLevelTable[i + 1];
+
+        if (gBattleMoves[gCurrentMove].effect == EFFECT_ORION_SWORD) 
+        {
+            if (fLevelAttacker < fLevelDefender)
+                difference = 0;
+            else
+                difference = fLevelAttacker - fLevelDefender;
+        }
+        else
+        {
+            if (fLevelDefender < fLevelAttacker)
+                difference = 0;
+            else
+                difference = fLevelDefender - fLevelAttacker;
+        }
+        gDynamicBasePower = sFriendshipDifferenceToPowerTable[difference];
+    }
     else // EFFECT_FRUSTRATION
         gDynamicBasePower = 10 * (255 - gBattleMons[gBattlerAttacker].friendship) / 25;
 

@@ -243,6 +243,8 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectEnlighten              @ EFFECT_ENLIGHTEN
     .4byte BattleScript_EffectMagicDust              @ EFFECT_MAGIC_DUST
     .4byte BattleScript_EffectSerenade               @ EFFECT_SERENADE
+    .4byte BattleScript_EffectOrionSword             @ EFFECT_ORION_SWORD
+    .4byte BattleScript_EffectRocketPunch            @ EFFECT_ROCKET_PUNCH
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -1789,6 +1791,8 @@ BattleScript_EffectSootheSong::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectReturn::
+BattleScript_EffectOrionSword::
+BattleScript_EffectRocketPunch::
 BattleScript_EffectFrustration::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
