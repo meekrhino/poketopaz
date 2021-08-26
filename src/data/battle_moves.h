@@ -5234,12 +5234,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_ENLIGHTEN] = 
     {
-        .effect = EFFECT_ALL_STATS_UP_HIT, // TODO - EFFECT_ENLIGHTEN; all stats up, recharge
+        .effect = EFFECT_ENLIGHTEN, // TODO - EFFECT_ENLIGHTEN; all stats up, recharge
         .power = 0,
         .type = TYPE_LIGHT,
         .accuracy = 0,
         .pp = 5,
-        .secondaryEffectChance = 0,
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .flags = FLAG_SNATCH_AFFECTED,

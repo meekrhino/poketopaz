@@ -240,6 +240,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectFaultLine              @ EFFECT_FAULT_LINE
     .4byte BattleScript_EffectSootheSong             @ EFFECT_SOOTHE_SONG
     .4byte BattleScript_EffectStatronome             @ EFFECT_STATRONOME
+    .4byte BattleScript_EffectEnlighten              @ EFFECT_ENLIGHTEN
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -1895,6 +1896,20 @@ BattleScript_EffectAttackUpHit::
 BattleScript_EffectAllStatsUpHit::
 	setmoveeffect MOVE_EFFECT_ALL_STATS_UP | MOVE_EFFECT_AFFECTS_USER
 	goto BattleScript_EffectHit
+
+BattleScript_EffectEnlighten::
+    attackcanceler
+	attackstring
+	ppreduce
+    attackanimation
+    waitanimation
+	setmoveeffect MOVE_EFFECT_ALL_STATS_UP | MOVE_EFFECT_AFFECTS_USER
+	seteffectprimary
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	setmoveeffect MOVE_EFFECT_RECHARGE | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	seteffectwithchance
+    goto BattleScript_MoveEnd
 
 BattleScript_EffectCurseHit::
     setmoveeffect MOVE_EFFECT_CURSE

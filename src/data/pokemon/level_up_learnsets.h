@@ -3571,7 +3571,7 @@ static const u16 sSpecies276LevelUpLearnset[] = {
 
 static const u16 sTreeckoLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SOOTHE_SONG),
-    LEVEL_UP_MOVE( 1, MOVE_SPLASH),
+    LEVEL_UP_MOVE( 1, MOVE_ENLIGHTEN),
     LEVEL_UP_MOVE( 1, MOVE_SOLAR_FLARE),
     LEVEL_UP_MOVE( 1, MOVE_STATRONOME),
     LEVEL_UP_MOVE(16, MOVE_PURSUIT),
