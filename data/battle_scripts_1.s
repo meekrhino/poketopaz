@@ -241,6 +241,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectSootheSong             @ EFFECT_SOOTHE_SONG
     .4byte BattleScript_EffectStatronome             @ EFFECT_STATRONOME
     .4byte BattleScript_EffectEnlighten              @ EFFECT_ENLIGHTEN
+    .4byte BattleScript_EffectMagicDust              @ EFFECT_MAGIC_DUST
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -750,6 +751,21 @@ BattleScript_EffectToxic::
 	seteffectprimary
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectMagicDust::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstatus BS_TARGET, STATUS1_POISON, BattleScript_AlreadyPoisoned
+	jumpifstatus BS_TARGET, STATUS1_PARALYSIS, BattleScript_AlreadyParalyzed
+	jumpifstatus BS_TARGET, STATUS1_BURN, BattleScript_AlreadyBurned
+	jumpifstatus BS_TARGET, STATUS1_SLEEP, BattleScript_AlreadyAsleep
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+    setmagicdust
+    seteffectprimary
 	goto BattleScript_MoveEnd
 
 BattleScript_AlreadyPoisoned::

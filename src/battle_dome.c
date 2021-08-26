@@ -548,7 +548,7 @@ static const u8 sBattleStyleMovePoints[MOVES_COUNT][NUM_MOVE_POINT_TYPES] =
     [MOVE_SOUL_BURN]     = {[MOVE_POINTS_DMG] = 1},
     [MOVE_SPECTRAL_RAY]  = {[MOVE_POINTS_DMG] = 1},
     [MOVE_SOLAR_FLARE]   = {[MOVE_POINTS_DMG] = 1},
-    [MOVE_STATRONOME]    = {[MOVE_POINTS_DMG] = 1},
+    [MOVE_STATRONOME]    = {[MOVE_POINTS_EFFECT] = 1},
     [MOVE_SQUALL]        = {[MOVE_POINTS_DMG] = 1},
     [MOVE_SPIRAL_KICK]   = {[MOVE_POINTS_DMG] = 1},
     [MOVE_SPIKE_WALL]    = {[MOVE_POINTS_DMG] = 1},

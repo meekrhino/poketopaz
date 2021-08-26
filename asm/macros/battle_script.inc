@@ -1362,6 +1362,10 @@
     .macro statronome
     various BS_ATTACKER, VARIOUS_STATRONOME
     .endm
+
+    .macro setmagicdust
+    various BS_TARGET, VARIOUS_SET_MAGIC_DUST
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req

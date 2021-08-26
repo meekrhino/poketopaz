@@ -90,6 +90,7 @@
 #define VARIOUS_PLAY_TRAINER_DEFEATED_MUSIC     26
 #define VARIOUS_CLEAR_WEATHER                   27
 #define VARIOUS_STATRONOME                      28
+#define VARIOUS_SET_MAGIC_DUST                  29
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0

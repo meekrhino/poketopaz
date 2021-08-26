@@ -772,6 +772,22 @@ static const u16 sStatronomeEffects[] =
     MOVE_EFFECT_SP_DEF_MINUS_2
 };
 
+#define MAGIC_DUST_EFFECTS_CNT          10
+
+static const u16 sMagicDustEffects[] =
+{
+    MOVE_EFFECT_SLEEP,
+    MOVE_EFFECT_SLEEP,
+    MOVE_EFFECT_POISON,
+    MOVE_EFFECT_POISON,
+    MOVE_EFFECT_TOXIC,
+    MOVE_EFFECT_BURN,
+    MOVE_EFFECT_BURN,
+    MOVE_EFFECT_FREEZE,
+    MOVE_EFFECT_PARALYSIS,
+    MOVE_EFFECT_PARALYSIS
+};
+
 static const u8 sFlailHpScaleToPowerTable[] =
 {
     1, 200,
@@ -6537,7 +6553,10 @@ static void Cmd_various(void)
         }
         break;
     case VARIOUS_STATRONOME:
-        gBattleCommunication[MOVE_EFFECT_BYTE] = sStatronomeEffects[Random() % 20];
+        gBattleCommunication[MOVE_EFFECT_BYTE] = sStatronomeEffects[Random() % STATRONOME_EFFECTS_CNT];
+        break;
+    case VARIOUS_SET_MAGIC_DUST:
+        gBattleCommunication[MOVE_EFFECT_BYTE] = sMagicDustEffects[Random() % MAGIC_DUST_EFFECTS_CNT];
         break;
     }
 

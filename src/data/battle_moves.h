@@ -5234,7 +5234,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_ENLIGHTEN] = 
     {
-        .effect = EFFECT_ENLIGHTEN, // TODO - EFFECT_ENLIGHTEN; all stats up, recharge
+        .effect = EFFECT_ENLIGHTEN,
         .power = 0,
         .type = TYPE_LIGHT,
         .accuracy = 0,
@@ -5416,7 +5416,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_MAGIC_DUST] = 
     {
-        .effect = EFFECT_SLEEP, // TODO - EFFECT_MAGIC_DUST; 20 burn, 20 poison, 10 freeze, 30 sleep, 20 paralyze
+        .effect = EFFECT_MAGIC_DUST, // TODO - EFFECT_MAGIC_DUST; 20 burn, 20 poison, 10 freeze, 30 sleep, 20 paralyze
         .power = 0,
         .type = TYPE_GRASS,
         .accuracy = 75,
