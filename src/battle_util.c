@@ -1186,6 +1186,7 @@ enum
     ENDTURN_SAFEGUARD,
     ENDTURN_WISH,
     ENDTURN_RAIN,
+    ENDTURN_DARKNESS,
     ENDTURN_SANDSTORM,
     ENDTURN_SUN,
     ENDTURN_HAIL,
@@ -1404,6 +1405,24 @@ u8 DoFieldEndTurnEffects(void)
                 }
 
                 BattleScriptExecute(BattleScript_RainContinuesOrEnds);
+                effect++;
+            }
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_DARKNESS:
+            if (gBattleWeather & WEATHER_DARKNESS_ANY)
+            {
+                if (!(gBattleWeather & WEATHER_DARKNESS_PERMANENT) && --gWishFutureKnock.weatherDuration == 0)
+                {
+                    gBattleWeather &= ~WEATHER_DARKNESS_TEMPORARY;
+                    gBattlescriptCurrInstr = BattleScript_DarknessLifted;
+                }
+                else
+                {
+                    gBattlescriptCurrInstr = BattleScript_DarknessContinues;
+                }
+
+                BattleScriptExecute(gBattlescriptCurrInstr);
                 effect++;
             }
             gBattleStruct->turnCountersTracker++;
@@ -2586,6 +2605,15 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                         {
                             gBattleWeather = (WEATHER_SUN_PERMANENT | WEATHER_SUN_TEMPORARY);
                             gBattleScripting.animArg1 = B_ANIM_SUN_CONTINUES;
+                            gBattleScripting.battler = battler;
+                            effect++;
+                        }
+                        break;
+                    case WEATHER_DARKNESS:
+                        if (!(gBattleWeather & WEATHER_DARKNESS_ANY))
+                        {
+                            gBattleWeather = (WEATHER_DARKNESS_PERMANENT | WEATHER_DARKNESS_TEMPORARY);
+                            gBattleScripting.animArg1 = B_ANIM_DARKNESS_CONTINUES;
                             gBattleScripting.battler = battler;
                             effect++;
                         }

@@ -482,6 +482,7 @@ gBattleAnims_General::
 	.4byte General_FocusPunchSetUp          @ B_ANIM_FOCUS_PUNCH_SETUP
 	.4byte General_IngrainHeal              @ B_ANIM_INGRAIN_HEAL
 	.4byte General_WishHeal                 @ B_ANIM_WISH_HEAL
+	.4byte General_Sun                      @ B_ANIM_DARKNESS_CONTINUES
 
 	.align 2
 gBattleAnims_Special::

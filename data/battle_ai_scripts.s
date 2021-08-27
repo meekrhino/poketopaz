@@ -176,6 +176,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_SONICBOOM, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_RAIN_DANCE, AI_CBM_RainDance
 	if_effect EFFECT_SUNNY_DAY, AI_CBM_SunnyDay
+	if_effect EFFECT_NIGHTFALL, AI_CBM_Nightfall
 	if_effect EFFECT_BELLY_DRUM, AI_CBM_BellyDrum
 	if_effect EFFECT_PSYCH_UP, AI_CBM_Haze
 	if_effect EFFECT_MIRROR_COAT, AI_CBM_HighRiskForDamage
@@ -498,6 +499,11 @@ AI_CBM_RainDance:
 AI_CBM_SunnyDay:
 	get_weather
 	if_equal AI_WEATHER_SUN, Score_Minus8
+	end
+
+AI_CBM_Nightfall:
+	get_weather
+	if_equal AI_WEATHER_DARKNESS, Score_Minus8
 	end
 
 AI_CBM_FutureSight:
@@ -2034,6 +2040,7 @@ AI_CV_RainDance2:
 	get_weather
 	if_equal AI_WEATHER_HAIL, AI_CV_RainDance3
 	if_equal AI_WEATHER_SUN, AI_CV_RainDance3
+	if_equal AI_WEATHER_DARKNESS, AI_CV_RainDance3
 	if_equal AI_WEATHER_SANDSTORM, AI_CV_RainDance3
 	get_ability AI_USER
 	if_equal ABILITY_RAIN_DISH, AI_CV_RainDance3
@@ -2244,6 +2251,7 @@ AI_CV_Hail:
 	get_weather
 	if_equal AI_WEATHER_SUN, AI_CV_Hail2
 	if_equal AI_WEATHER_RAIN, AI_CV_Hail2
+	if_equal AI_WEATHER_DARKNESS, AI_CV_Hail2
 	if_equal AI_WEATHER_SANDSTORM, AI_CV_Hail2
 	goto AI_CV_Hail_End
 

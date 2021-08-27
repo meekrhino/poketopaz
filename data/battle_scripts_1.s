@@ -247,6 +247,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectRocketPunch            @ EFFECT_ROCKET_PUNCH
     .4byte BattleScript_EffectRoarHit                @ EFFECT_ROAR_HIT
 	.4byte BattleScript_EffectFireBath               @ EFFECT_FIRE_BATH
+    .4byte BattleScript_EffectNightfall              @ EFFECT_NIGHTFALL
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -377,8 +378,9 @@ BattleScript_AbsorbTryFainting::
 BattleScript_EffectBurnHit::
 	setmoveeffect MOVE_EFFECT_BURN
 	goto BattleScript_EffectHit
+
 BattleScript_EffectBurnSelfHit::
-	setmoveeffect MOVE_EFFECT_BURN_SELF
+	setmoveeffect MOVE_EFFECT_BURN | MOVE_EFFECT_AFFECTS_USER
 	goto BattleScript_EffectHit
 
 BattleScript_EffectLeechSeedHit::
@@ -1918,6 +1920,13 @@ BattleScript_MoveWeatherChange::
 	call BattleScript_WeatherFormChanges
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectNightfall::
+	attackcanceler
+	attackstring
+	ppreduce
+	setsunny
+	goto BattleScript_MoveWeatherChange
+
 BattleScript_EffectSunnyDay::
 	attackcanceler
 	attackstring
@@ -3443,7 +3452,18 @@ BattleScript_SunlightContinues::
 	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES, NULL
 	end2
 
+BattleScript_DarknessContinues::
+	printstring STRINGID_SUNLIGHTSTRONG
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES, NULL
+	end2
+
 BattleScript_SunlightFaded::
+	printstring STRINGID_SUNLIGHTFADED
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_DarknessLifted::
 	printstring STRINGID_SUNLIGHTFADED
 	waitmessage B_WAIT_TIME_LONG
 	end2
@@ -4176,18 +4196,17 @@ BattleScript_MoveEffectPoison::
 	goto BattleScript_UpdateEffectStatusIconRet
 
 BattleScript_MoveEffectBurn::
+    jumpifmove MOVE_MEGAFRICTION, BattleScript_MoveEffectBurnSelf
 	statusanimation BS_EFFECT_BATTLER
 	printfromtable gGotBurnedStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_UpdateEffectStatusIconRet
 
 BattleScript_MoveEffectBurnSelf::
-    statusanimation BS_ATTACKER
+	statusanimation BS_EFFECT_BATTLER
 	printstring STRINGID_PKMNBURNEDITSELF
 	waitmessage B_WAIT_TIME_LONG
-	updatestatusicon BS_ATTACKER
-	waitstate
-	return
+	goto BattleScript_UpdateEffectStatusIconRet
 
 BattleScript_MoveEffectFreeze::
 	statusanimation BS_EFFECT_BATTLER

@@ -669,7 +669,6 @@ static const u8* const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_RECOIL_33]        = BattleScript_MoveEffectRecoil,
     [MOVE_EFFECT_CURSE]            = BattleScript_MoveEffectCurse,
     [MOVE_EFFECT_LEECH_SEED]       = BattleScript_MoveEffectLeechSeed,
-    [MOVE_EFFECT_BURN_SELF]        = BattleScript_MoveEffectBurnSelf,
     [MOVE_EFFECT_RECOIL_50]        = BattleScript_MoveEffectRecoil,
     [MOVE_EFFECT_ROAR]             = BattleScript_MoveEffectRoar,
 };
@@ -2803,37 +2802,6 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
                 break;
-            case MOVE_EFFECT_BURN_SELF:
-                if (gBattleMons[gBattlerAttacker].ability == ABILITY_WATER_VEIL
-                    && (primary == TRUE || certain == MOVE_EFFECT_CERTAIN))
-                {
-                    gLastUsedAbility = ABILITY_WATER_VEIL;
-                    RecordAbilityBattle(gBattlerAttacker, ABILITY_WATER_VEIL);
-
-                    BattleScriptPush(gBattlescriptCurrInstr + 1);
-                    gBattlescriptCurrInstr = BattleScript_BRNPrevention;
-                    RESET_RETURN
-                }
-
-                if (gBattleMons[gBattlerAttacker].status1)
-                    break;
-                if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_FIRE))
-                    break;
-                if (gBattleMons[gBattlerAttacker].ability == ABILITY_WATER_VEIL)
-                    break;
-                BattleScriptPush(gBattlescriptCurrInstr + 1);
-                gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
-                    
-                gBattleMons[gBattlerAttacker].status1 |= STATUS1_BURN;
-
-                gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
-
-                gActiveBattler = gBattlerAttacker;
-                BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gBattlerAttacker].status1);
-                MarkBattlerForControllerExec(gBattlerAttacker);
-
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STATUSED;
-                break;
             case MOVE_EFFECT_STEAL_ITEM:
                 {
                     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
@@ -4149,7 +4117,8 @@ static void Cmd_playanimation(void)
     else if (gBattlescriptCurrInstr[2] == B_ANIM_RAIN_CONTINUES
              || gBattlescriptCurrInstr[2] == B_ANIM_SUN_CONTINUES
              || gBattlescriptCurrInstr[2] == B_ANIM_SANDSTORM_CONTINUES
-             || gBattlescriptCurrInstr[2] == B_ANIM_HAIL_CONTINUES)
+             || gBattlescriptCurrInstr[2] == B_ANIM_HAIL_CONTINUES
+             || gBattlescriptCurrInstr[2] == B_ANIM_DARKNESS_CONTINUES)
     {
         BtlController_EmitBattleAnimation(0, gBattlescriptCurrInstr[2], *argumentPtr);
         MarkBattlerForControllerExec(gActiveBattler);
@@ -4191,7 +4160,8 @@ static void Cmd_playanimation2(void) // animation Id is stored in the first poin
     else if (*animationIdPtr == B_ANIM_RAIN_CONTINUES
              || *animationIdPtr == B_ANIM_SUN_CONTINUES
              || *animationIdPtr == B_ANIM_SANDSTORM_CONTINUES
-             || *animationIdPtr == B_ANIM_HAIL_CONTINUES)
+             || *animationIdPtr == B_ANIM_HAIL_CONTINUES
+             || *animationIdPtr == B_ANIM_DARKNESS_CONTINUES)
     {
         BtlController_EmitBattleAnimation(0, *animationIdPtr, *argumentPtr);
         MarkBattlerForControllerExec(gActiveBattler);
@@ -10019,6 +9989,8 @@ static void Cmd_setweatherballtype(void)
             *(&gBattleStruct->dynamicMoveType) = TYPE_FIRE | 0x80;
         else if (gBattleWeather & WEATHER_HAIL_ANY)
             *(&gBattleStruct->dynamicMoveType) = TYPE_ICE | 0x80;
+        else if (gBattleWeather & WEATHER_DARKNESS_ANY)
+            *(&gBattleStruct->dynamicMoveType) = TYPE_DARK | 0x80;
         else
             *(&gBattleStruct->dynamicMoveType) = TYPE_NORMAL | 0x80;
     }

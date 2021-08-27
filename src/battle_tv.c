@@ -28,6 +28,7 @@ enum {
     PTS_SUN,
     PTS_SANDSTORM,
     PTS_HAIL,
+    PTS_DARKNESS,
     PTS_ELECTRIC,
     PTS_STATUS_DMG,
     PTS_STATUS,
@@ -319,6 +320,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_ROCKET_PUNCH] = 1,
     [EFFECT_ROAR_HIT] = 2,
     [EFFECT_FIRE_BATH] = 4,
+    [EFFECT_NIGHTFALL] = 4,
 };
 
 static const u16 sPoints_Effectiveness[] =
@@ -1679,4 +1681,6 @@ static void AddPointsBasedOnWeather(u16 weatherFlags, u16 moveId, u8 moveSlot)
         AddMovePoints(PTS_SANDSTORM, moveId, moveSlot, 0);
     else if (weatherFlags & WEATHER_HAIL_ANY)
         AddMovePoints(PTS_HAIL, moveId, moveSlot, 0);
+    else if (weatherFlags & WEATHER_DARKNESS_ANY)
+        AddMovePoints(PTS_DARKNESS, moveId, moveSlot, 0);
 }

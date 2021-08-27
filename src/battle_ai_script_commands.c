@@ -1640,6 +1640,8 @@ static void Cmd_get_weather(void)
         AI_THINKING_STRUCT->funcResult = AI_WEATHER_SUN;
     if (gBattleWeather & WEATHER_HAIL_ANY)
         AI_THINKING_STRUCT->funcResult = AI_WEATHER_HAIL;
+    if (gBattleWeather & WEATHER_DARKNESS_ANY)
+        AI_THINKING_STRUCT->funcResult = AI_WEATHER_DARKNESS;
 
     gAIScriptPtr += 1;
 }
