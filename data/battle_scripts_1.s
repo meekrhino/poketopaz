@@ -1677,7 +1677,12 @@ BattleScript_EffectSpikes::
 	ppreduce
 	attackanimation
 	waitanimation
+    jumpifnotmove MOVE_SPIKES, BattleScript_EffectCinders
 	printstring STRINGID_SPIKESSCATTERED
+    goto BattleScript_EffectSpikesEnd
+BattleScript_EffectCinders::
+	printstring STRINGID_CINDERSSCATTERED
+BattleScript_EffectSpikesEnd::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -3627,6 +3632,60 @@ BattleScript_PrintHurtBySpikes::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_CindersOnAttacker::
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_x100000
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	call BattleScript_PrintHurtByCinders
+	tryfaintmon BS_ATTACKER, FALSE, NULL
+	tryfaintmon BS_ATTACKER, TRUE, BattleScript_CindersOnAttackerFainted
+	return
+
+BattleScript_CindersOnAttackerFainted::
+	setbyte sGIVEEXP_STATE, 0
+	getexp BS_ATTACKER
+	moveendall
+	goto BattleScript_HandleFaintedMon
+
+BattleScript_CindersOnTarget::
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_x100000
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	call BattleScript_PrintHurtByCinders
+	tryfaintmon BS_TARGET, FALSE, NULL
+	tryfaintmon BS_TARGET, TRUE, BattleScript_CindersOnTargetFainted
+	return
+
+BattleScript_CindersOnTargetFainted::
+	setbyte sGIVEEXP_STATE, 0
+	getexp BS_TARGET
+	moveendall
+	goto BattleScript_HandleFaintedMon
+
+BattleScript_CindersOnFaintedBattler::
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_x100000
+	healthbarupdate BS_FAINTED
+	datahpupdate BS_FAINTED
+	call BattleScript_PrintHurtByCinders
+	tryfaintmon BS_FAINTED, FALSE, NULL
+	tryfaintmon BS_FAINTED, TRUE, BattleScript_CindersOnFaintedBattlerFainted
+	return
+
+BattleScript_CindersOnFaintedBattlerFainted::
+	setbyte sGIVEEXP_STATE, 0
+	getexp BS_FAINTED
+	moveendall
+	goto BattleScript_HandleFaintedMon
+
+BattleScript_PrintHurtByCinders::
+	printstring STRINGID_PKMNHURTBYCINDERS
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BurnByCinders::
+    jumpifbyteequal cEFFECT_CHOOSER, 0, BattleScript_BurnByCindersEnd
+    seteffectprimary
+BattleScript_BurnByCindersEnd::
+	return 
+
 BattleScript_PerishSongTakesLife::
 	printstring STRINGID_PKMNPERISHCOUNTFELL
 	waitmessage B_WAIT_TIME_LONG
@@ -3694,6 +3753,11 @@ BattleScript_LeechSeedFree::
 
 BattleScript_SpikesFree::
 	printstring STRINGID_PKMNBLEWAWAYSPIKES
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_CindersFree::
+	printstring STRINGID_PKMNBLEWAWAYCINDERS
 	waitmessage B_WAIT_TIME_LONG
 	return
 

@@ -167,6 +167,7 @@ struct SideTimer
     u8 followmeTimer;
     u8 followmeTarget;
     u8 spikesAmount;
+    u8 cindersAmount;
 };
 
 struct WishFutureKnock
@@ -268,6 +269,7 @@ struct BattleResults
 struct BattleTv_Side
 {
     u32 spikesMonId:3;
+    u32 cindersMonId:3;
     u32 reflectMonId:3;
     u32 lightScreenMonId:3;
     u32 waterWallMonId:3;
@@ -280,6 +282,7 @@ struct BattleTv_Side
     u32 grudgeMonId:3;
     u32 usedMoveSlot:2;
     u32 spikesMoveSlot:2;
+    u32 cindersMoveSlot:2;
     u32 reflectMoveSlot:2;
     u32 lightScreenMoveSlot:2;
     u32 waterWallMoveSlot:2;

@@ -3099,6 +3099,7 @@ static void Cmd_tryfaintmon(void)
             BattleScriptPop();
             gBattlescriptCurrInstr = BS_ptr;
             gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_SPIKES_DAMAGED);
+            gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_CINDERS_DAMAGED);
         }
         else
         {
@@ -5363,6 +5364,40 @@ static void Cmd_switchineffects(void)
         else
             gBattlescriptCurrInstr = BattleScript_SpikesOnFaintedBattler;
     }
+    else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_CINDERS_DAMAGED)
+        && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_CINDERS)
+        && !IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_FLYING)
+        && gBattleMons[gActiveBattler].ability != ABILITY_LEVITATE
+        && gBattleMons[gActiveBattler].ability != ABILITY_WATER_VEIL)
+    {
+        u8 cindersDmg;
+
+        gSideStatuses[GetBattlerSide(gActiveBattler)] |= SIDE_STATUS_CINDERS_DAMAGED;
+
+        gBattleMons[gActiveBattler].status2 &= ~(STATUS2_DESTINY_BOND);
+        gHitMarker &= ~(HITMARKER_DESTINYBOND);
+
+        cindersDmg = (5 - gSideTimers[GetBattlerSide(gActiveBattler)].cindersAmount) * 2;
+
+        gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / (cindersDmg);
+        if (gBattleMoveDamage == 0)
+            gBattleMoveDamage = 1;
+
+        if (Random() % 10 > (gSideTimers[GetBattlerSide(gActiveBattler)].cindersAmount - 1)) // 10-30% chance
+            gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_BURN;
+        else
+            gBattleCommunication[MOVE_EFFECT_BYTE] = 0;
+
+        gBattleScripting.battler = gActiveBattler;
+        BattleScriptPushCursor();
+
+        if (gBattlescriptCurrInstr[1] == BS_TARGET)
+            gBattlescriptCurrInstr = BattleScript_CindersOnTarget;
+        else if (gBattlescriptCurrInstr[1] == BS_ATTACKER)
+            gBattlescriptCurrInstr = BattleScript_CindersOnAttacker;
+        else
+            gBattlescriptCurrInstr = BattleScript_CindersOnFaintedBattler;
+    }
     else
     {
         // There is a hack here to ensure the truant counter will be 0 when the battler's next turn starts.
@@ -5376,6 +5411,7 @@ static void Cmd_switchineffects(void)
             && !ItemBattleEffects(ITEMEFFECT_ON_SWITCH_IN, gActiveBattler, FALSE))
         {
             gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_SPIKES_DAMAGED);
+            gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_CINDERS_DAMAGED);
 
             for (i = 0; i < gBattlersCount; i++)
             {
@@ -8594,16 +8630,33 @@ static void Cmd_trysetspikes(void)
 {
     u8 targetSide = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
 
-    if (gSideTimers[targetSide].spikesAmount == 3)
+    if (gCurrentMove == MOVE_CINDERS)
     {
-        gSpecialStatuses[gBattlerAttacker].ppNotAffectedByPressure = 1;
-        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        if (gSideTimers[targetSide].cindersAmount == 3)
+        {
+            gSpecialStatuses[gBattlerAttacker].ppNotAffectedByPressure = 1;
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        }
+        else
+        {
+            gSideStatuses[targetSide] |= SIDE_STATUS_CINDERS;
+            gSideTimers[targetSide].cindersAmount++;
+            gBattlescriptCurrInstr += 5;
+        }
     }
-    else
+    else 
     {
-        gSideStatuses[targetSide] |= SIDE_STATUS_SPIKES;
-        gSideTimers[targetSide].spikesAmount++;
-        gBattlescriptCurrInstr += 5;
+        if (gSideTimers[targetSide].spikesAmount == 3)
+        {
+            gSpecialStatuses[gBattlerAttacker].ppNotAffectedByPressure = 1;
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        }
+        else
+        {
+            gSideStatuses[targetSide] |= SIDE_STATUS_SPIKES;
+            gSideTimers[targetSide].spikesAmount++;
+            gBattlescriptCurrInstr += 5;
+        }
     }
 }
 
@@ -8985,6 +9038,13 @@ static void Cmd_rapidspinfree(void)
         gSideTimers[GetBattlerSide(gBattlerAttacker)].spikesAmount = 0;
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_SpikesFree;
+    }
+    else if (gSideStatuses[GetBattlerSide(gBattlerAttacker)] & SIDE_STATUS_CINDERS)
+    {
+        gSideStatuses[GetBattlerSide(gBattlerAttacker)] &= ~(SIDE_STATUS_CINDERS);
+        gSideTimers[GetBattlerSide(gBattlerAttacker)].cindersAmount = 0;
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_CindersFree;
     }
     else
     {

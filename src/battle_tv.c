@@ -32,6 +32,7 @@ enum {
     PTS_STATUS_DMG,
     PTS_STATUS,
     PTS_SPIKES,
+    PTS_CINDERS,
     PTS_WATER_SPORT,
     PTS_MUD_SPORT,
     PTS_REFLECT,
@@ -61,6 +62,7 @@ enum {
     FNT_NIGHTMARE,
     FNT_WRAP,
     FNT_SPIKES,
+    FNT_CINDERS,
     FNT_FUTURE_SIGHT,
     FNT_DOOM_DESIRE,
     FNT_PERISH_SONG,
@@ -437,6 +439,7 @@ static const u16 sPoints_Status[] =
 };
 
 static const u16 sPoints_Spikes[] = { 4 };
+static const u16 sPoints_Cinders[] = { 4 };
 static const u16 sPoints_WaterSport[] = { 5 };
 static const u16 sPoints_MudSport[] = { 5 };
 static const u16 sPoints_Reflect[] = { 3 };
@@ -523,6 +526,7 @@ static const u16 *const sPointsArray[] =
     [PTS_STATUS_DMG]             = sPoints_StatusDmg,
     [PTS_STATUS]                 = sPoints_Status,
     [PTS_SPIKES]                 = sPoints_Spikes,
+    [PTS_CINDERS]                = sPoints_Cinders,
     [PTS_WATER_SPORT]            = sPoints_WaterSport,
     [PTS_MUD_SPORT]              = sPoints_MudSport,
     [PTS_REFLECT]                = sPoints_Reflect,
@@ -867,6 +871,21 @@ void BattleTv_SetDataBasedOnString(u16 stringId)
     case STRINGID_PKMNBLEWAWAYSPIKES:
         tvPtr->side[atkSide].spikesMonId = 0;
         tvPtr->side[atkSide].spikesMoveSlot = 0;
+        break;
+    case STRINGID_CINDERSSCATTERED:
+        tvPtr->side[defSide].cindersMonId = gBattlerPartyIndexes[gBattlerAttacker] + 1;
+        tvPtr->side[defSide].cindersMoveSlot = moveSlot;
+        break;
+    case STRINGID_PKMNHURTBYCINDERS:
+        if (tvPtr->side[scriptingSide].cindersMonId != 0)
+        {
+            AddMovePoints(PTS_CINDERS, scriptingSide ^ BIT_SIDE, tvPtr->side[scriptingSide].cindersMonId - 1, tvPtr->side[scriptingSide].cindersMoveSlot);
+            tvPtr->side[scriptingSide].faintCause = FNT_CINDERS;
+        }
+        break;
+    case STRINGID_PKMNBLEWAWAYCINDERS:
+        tvPtr->side[atkSide].cindersMonId = 0;
+        tvPtr->side[atkSide].cindersMoveSlot = 0;
         break;
     case STRINGID_FIREWEAKENED:
         tvPtr->pos[atkSide][atkFlank].waterSportMonId = gBattlerPartyIndexes[gBattlerAttacker] + 1;
@@ -1234,6 +1253,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
     case PTS_FLINCHED:
         movePoints->points[atkSide ^ BIT_SIDE][arg2 * 4 + arg3] += sPointsArray[caseId][arg1];
         break;
+    case PTS_CINDERS:
     case PTS_SPIKES:
         movePoints->points[arg1][arg2 * 4 + arg3] += sPointsArray[caseId][0];
         break;
@@ -1371,6 +1391,13 @@ static void AddPointsOnFainting(bool8 targetFainted)
                 (tvPtr->side[atkSide].spikesMonId - 1) * 4 + tvPtr->side[atkSide].spikesMoveSlot);
             }
             break;
+        case FNT_CINDERS:
+            if (tvPtr->side[atkSide].cindersMonId != 0)
+            {
+                AddMovePoints(PTS_FAINT, 0, atkSide ^ BIT_SIDE,
+                (tvPtr->side[atkSide].cindersMonId - 1) * 4 + tvPtr->side[atkSide].cindersMoveSlot);
+            }
+            break;
         case FNT_FUTURE_SIGHT:
             if (tvPtr->side[atkSide].futureSightMonId != 0)
             {
@@ -1446,6 +1473,14 @@ static void AddPointsOnFainting(bool8 targetFainted)
             {
                 AddMovePoints(PTS_FAINT, 0, defSide ^ BIT_SIDE,
                 (tvPtr->side[defSide].spikesMonId - 1) * 4 + tvPtr->side[defSide].spikesMoveSlot);
+            }
+        }
+        else if (tvPtr->side[defSide].faintCause == FNT_CINDERS)
+        {
+            if (tvPtr->side[defSide].cindersMonId != 0)
+            {
+                AddMovePoints(PTS_FAINT, 0, defSide ^ BIT_SIDE,
+                (tvPtr->side[defSide].cindersMonId - 1) * 4 + tvPtr->side[defSide].cindersMoveSlot);
             }
         }
         else
