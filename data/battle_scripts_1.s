@@ -246,6 +246,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectOrionSword             @ EFFECT_ORION_SWORD
     .4byte BattleScript_EffectRocketPunch            @ EFFECT_ROCKET_PUNCH
     .4byte BattleScript_EffectRoarHit                @ EFFECT_ROAR_HIT
+	.4byte BattleScript_EffectFireBath               @ EFFECT_FIRE_BATH
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2491,6 +2492,17 @@ BattleScript_EffectCharge::
 	attackanimation
 	waitanimation
 	printstring STRINGID_PKMNCHARGINGPOWER
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectFireBath::
+	attackcanceler
+	attackstring
+	ppreduce
+	setcharge
+	attackanimation
+	waitanimation
+	printstring STRINGID_PKMNHEATINGITSELF
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

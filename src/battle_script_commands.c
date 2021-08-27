@@ -1371,6 +1371,8 @@ static void Cmd_damagecalc(void)
 
     if (gStatuses3[gBattlerAttacker] & STATUS3_CHARGED_UP && gBattleMoves[gCurrentMove].type == TYPE_ELECTRIC)
         gBattleMoveDamage *= 2;
+    if (gStatuses3[gBattlerAttacker] & STATUS3_HEATED_UP && gBattleMoves[gCurrentMove].type == TYPE_FIRE)
+        gBattleMoveDamage *= 2;
     if (gProtectStructs[gBattlerAttacker].helpingHand)
         gBattleMoveDamage = gBattleMoveDamage * 15 / 10;
 
@@ -1387,6 +1389,8 @@ void AI_CalcDmg(u8 attacker, u8 defender)
     gBattleMoveDamage = gBattleMoveDamage * gCritMultiplier * gBattleScripting.dmgMultiplier;
 
     if (gStatuses3[attacker] & STATUS3_CHARGED_UP && gBattleMoves[gCurrentMove].type == TYPE_ELECTRIC)
+        gBattleMoveDamage *= 2;
+    if (gStatuses3[attacker] & STATUS3_HEATED_UP && gBattleMoves[gCurrentMove].type == TYPE_FIRE)
         gBattleMoveDamage *= 2;
     if (gProtectStructs[attacker].helpingHand)
         gBattleMoveDamage = gBattleMoveDamage * 15 / 10;
@@ -9291,10 +9295,20 @@ static void Cmd_setforcedtarget(void) // follow me
 
 static void Cmd_setcharge(void)
 {
-    gStatuses3[gBattlerAttacker] |= STATUS3_CHARGED_UP;
-    gDisableStructs[gBattlerAttacker].chargeTimer = 2;
-    gDisableStructs[gBattlerAttacker].chargeTimerStartValue = 2;
-    gBattlescriptCurrInstr++;
+    if (gCurrentMove == MOVE_FIRE_BATH)
+    {
+        gStatuses3[gBattlerAttacker] |= STATUS3_HEATED_UP;
+        gDisableStructs[gBattlerAttacker].chargeTimer = 2;
+        gDisableStructs[gBattlerAttacker].chargeTimerStartValue = 2;
+        gBattlescriptCurrInstr++;
+    }
+    else
+    {
+        gStatuses3[gBattlerAttacker] |= STATUS3_CHARGED_UP;
+        gDisableStructs[gBattlerAttacker].chargeTimer = 2;
+        gDisableStructs[gBattlerAttacker].chargeTimerStartValue = 2;
+        gBattlescriptCurrInstr++;
+    }
 }
 
 static void Cmd_callterrainattack(void) // nature power

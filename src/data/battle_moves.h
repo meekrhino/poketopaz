@@ -5164,7 +5164,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_CINDERS] = 
     {
-        .effect = EFFECT_SPIKES, // TODO - EFFECT_CINDERS; burn chance (10% per stack), absorbed by fire mon, fire and waterveil don't get burned
+        .effect = EFFECT_SPIKES,
         .power = 0,
         .type = TYPE_FIRE,
         .accuracy = 0,
@@ -5290,7 +5290,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_FIRE_BATH] = 
     {
-        .effect = EFFECT_CHARGE, // TODO - EFFECT_FIRE_BATH; charge but fire
+        .effect = EFFECT_FIRE_BATH,
         .power = 0,
         .type = TYPE_FIRE,
         .accuracy = 100,

@@ -1781,7 +1781,10 @@ u8 DoBattlerEndTurnEffects(void)
                 break;
             case ENDTURN_CHARGE:  // charge
                 if (gDisableStructs[gActiveBattler].chargeTimer && --gDisableStructs[gActiveBattler].chargeTimer == 0)
+                {
                     gStatuses3[gActiveBattler] &= ~STATUS3_CHARGED_UP;
+                    gStatuses3[gActiveBattler] &= ~STATUS3_HEATED_UP;
+                }
                 gBattleStruct->turnEffectsTracker++;
                 break;
             case ENDTURN_TAUNT:  // taunt

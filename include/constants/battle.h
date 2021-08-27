@@ -160,6 +160,7 @@
 #define STATUS3_TRACE                   (1 << 20)
 #define STATUS3_SEMI_INVULNERABLE       (STATUS3_UNDERGROUND | STATUS3_ON_AIR | STATUS3_UNDERWATER)
 #define STATUS3_GRAVITY_BOUND           (1 << 21)
+#define STATUS3_HEATED_UP               (1 << 22)
 
 // Not really sure what a "hitmarker" is.
 #define HITMARKER_x10                   (1 << 4)

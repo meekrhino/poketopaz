@@ -318,6 +318,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_ORION_SWORD] = 1, 
     [EFFECT_ROCKET_PUNCH] = 1,
     [EFFECT_ROAR_HIT] = 2,
+    [EFFECT_FIRE_BATH] = 4,
 };
 
 static const u16 sPoints_Effectiveness[] =
@@ -1540,6 +1541,8 @@ static void TrySetBattleSeminarShow(void)
                                                     0, gBattlerAttacker, gBattlerTarget);
 
             if (gStatuses3[gBattlerAttacker] & STATUS3_CHARGED_UP && gBattleMoves[gCurrentMove].type == TYPE_ELECTRIC)
+                gBattleMoveDamage *= 2;
+            if (gStatuses3[gBattlerAttacker] & STATUS3_HEATED_UP && gBattleMoves[gCurrentMove].type == TYPE_FIRE)
                 gBattleMoveDamage *= 2;
             if (gProtectStructs[gBattlerAttacker].helpingHand)
                 gBattleMoveDamage = gBattleMoveDamage * 15 / 10;
