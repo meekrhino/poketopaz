@@ -104,6 +104,7 @@ struct DisableStruct
     u8 filler_18_2:2; // Unused field.
     u8 mimickedMoves:4;
     u8 rechargeTimer;
+    u8 initiativeTimer;
 };
 
 struct ProtectStruct

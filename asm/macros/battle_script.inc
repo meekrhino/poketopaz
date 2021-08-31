@@ -1370,6 +1370,10 @@
     .macro setdarkness
     various BS_TARGET, VARIOUS_SET_DARKNESS
     .endm
+
+    .macro setinitiative
+    various BS_TARGET, VARIOUS_SET_INITIATIVE
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req

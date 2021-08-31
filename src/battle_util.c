@@ -1511,6 +1511,7 @@ enum
     ENDTURN_ENCORE,
     ENDTURN_LOCK_ON,
     ENDTURN_CHARGE,
+    ENDTURN_INITIATIVE,
     ENDTURN_TAUNT,
     ENDTURN_SERENADE,
     ENDTURN_YAWN,
@@ -1803,6 +1804,13 @@ u8 DoBattlerEndTurnEffects(void)
                 {
                     gStatuses3[gActiveBattler] &= ~STATUS3_CHARGED_UP;
                     gStatuses3[gActiveBattler] &= ~STATUS3_HEATED_UP;
+                }
+                gBattleStruct->turnEffectsTracker++;
+                break;
+            case ENDTURN_INITIATIVE:  // initiative
+                if (gDisableStructs[gActiveBattler].initiativeTimer && --gDisableStructs[gActiveBattler].initiativeTimer == 0)
+                {
+                    gStatuses3[gActiveBattler] &= ~STATUS3_INITIATIVE;
                 }
                 gBattleStruct->turnEffectsTracker++;
                 break;

@@ -92,6 +92,7 @@
 #define VARIOUS_STATRONOME                      28
 #define VARIOUS_SET_MAGIC_DUST                  29
 #define VARIOUS_SET_DARKNESS                    30
+#define VARIOUS_SET_INITIATIVE                  31
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0

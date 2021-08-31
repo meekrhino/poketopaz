@@ -5374,7 +5374,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_INITIATIVE] = 
     {
-        .effect = EFFECT_CHARGE, // TODO - EFFECT_INITIATIVE; elevate next turn attack to maximum priority
+        .effect = EFFECT_INITIATIVE,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,

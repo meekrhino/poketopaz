@@ -248,6 +248,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectRoarHit                @ EFFECT_ROAR_HIT
 	.4byte BattleScript_EffectFireBath               @ EFFECT_FIRE_BATH
     .4byte BattleScript_EffectNightfall              @ EFFECT_NIGHTFALL
+    .4byte BattleScript_EffectInitiative             @ EFFECT_INITIATIVE
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2512,6 +2513,17 @@ BattleScript_EffectFireBath::
 	attackanimation
 	waitanimation
 	printstring STRINGID_PKMNHEATINGITSELF
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectInitiative::
+	attackcanceler
+	attackstring
+	ppreduce
+	setinitiative
+	attackanimation
+	waitanimation
+	printstring STRINGID_PKMNTOOKINITIATIVE
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

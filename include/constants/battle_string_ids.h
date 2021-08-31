@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 #define GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 
-#define BATTLESTRINGS_COUNT     387
+#define BATTLESTRINGS_COUNT     388
 
 #define BATTLESTRINGS_ID_ADDER  12 // all battlestrings have its ID + 12, because first 5 are reserved
 
@@ -400,6 +400,7 @@
 #define STRINGID_SHROUDEDINDARKNESS         396
 #define STRINGID_DARKNESSCONTINUES          397
 #define STRINGID_DARKNESSLIFTED             398
+#define STRINGID_PKMNTOOKINITIATIVE         399
 
 
 // The below IDs are all indexes into battle message tables,

@@ -6638,6 +6638,10 @@ static void Cmd_various(void)
             gWishFutureKnock.weatherDuration = 5;
         }
         break;
+    case VARIOUS_SET_INITIATIVE:
+        gStatuses3[gActiveBattler] |= STATUS3_INITIATIVE;
+        gDisableStructs[gActiveBattler].initiativeTimer = 2;
+        break;
     }
 
     gBattlescriptCurrInstr += 3;
