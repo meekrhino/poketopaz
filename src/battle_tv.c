@@ -39,6 +39,7 @@ enum {
     PTS_REFLECT,
     PTS_LIGHT_SCREEN,
     PTS_WATER_WALL,
+    PTS_SPIKE_WALL,
     PTS_SAFEGUARD,
     PTS_MIST,
     PTS_BREAK_WALL,
@@ -323,6 +324,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_NIGHTFALL] = 4,
     [EFFECT_INITIATIVE] = 1,
     [EFFECT_MARIONETTE] = 2,
+    [EFFECT_SPIKE_WALL] = 7,
 };
 
 static const u16 sPoints_Effectiveness[] =
@@ -953,6 +955,11 @@ void BattleTv_SetDataBasedOnString(u16 stringId)
             tvPtr->side[atkSide].waterWallMonId = 0;
             tvPtr->side[atkSide].waterWallMoveSlot = 0;
         }
+        if (*finishedMoveId == MOVE_SPIKE_WALL)
+        {
+            tvPtr->side[atkSide].spikeWallMonId = 0;
+            tvPtr->side[atkSide].spikeWallMoveSlot = 0;
+        }
         if (*finishedMoveId == MOVE_MIST)
         {
             tvPtr->side[atkSide].mistMonId = 0;
@@ -1313,6 +1320,14 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         {
             u32 id = (tvPtr->side[defSide].lightScreenMonId - 1) * 4;
             movePoints->points[defSide][id + tvPtr->side[defSide].lightScreenMoveSlot] += sPointsArray[caseId][0];
+        }
+        break;
+    case PTS_SPIKE_WALL:
+        // If hit spike wall with contact move
+        if (gBattleMoves[move].flags & FLAG_MAKES_CONTACT && tvPtr->side[defSide].spikeWallMonId != 0)
+        {
+            u32 id = (tvPtr->side[defSide].spikeWallMonId - 1) * 4;
+            movePoints->points[defSide][id + tvPtr->side[defSide].spikeWallMoveSlot] += sPointsArray[caseId][0];
         }
         break;
 #undef move

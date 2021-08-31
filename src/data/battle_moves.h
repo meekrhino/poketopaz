@@ -5737,7 +5737,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SPIKE_WALL] = 
     {
-        .effect = EFFECT_SPIKES, // TODO -- EFFECT_SPIKE_WALL; deal 1/8 damage taken by physical contact moves
+        .effect = EFFECT_SPIKE_WALL,
         .power = 0,
         .type = TYPE_STEEL,
         .accuracy = 0,

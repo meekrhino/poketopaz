@@ -250,6 +250,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectNightfall              @ EFFECT_NIGHTFALL
     .4byte BattleScript_EffectInitiative             @ EFFECT_INITIATIVE
     .4byte BattleScript_EffectMarionette             @ EFFECT_MARIONETTE
+    .4byte BattleScript_EffectSpikeWall              @ EFFECT_SPIKE_WALL
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -1109,6 +1110,18 @@ BattleScript_PrintReflectLightScreenSafeguardString::
 	attackanimation
 	waitanimation
 	printfromtable gReflectLightScreenSafeguardStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectSpikeWall::
+	attackcanceler
+	attackstring
+	ppreduce
+	setspikewall
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_SIDE_STATUS_FAILED, BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_PKMNFORMEDSPIKEWALL
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -4564,6 +4577,15 @@ BattleScript_RoughSkinActivates::
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	printstring STRINGID_PKMNHURTSWITH
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER, FALSE, NULL
+	return
+
+BattleScript_SpikeWallDamage::
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_x100000
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	printstring STRINGID_PKMNHITSPIKEWALL
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER, FALSE, NULL
 	return

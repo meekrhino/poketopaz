@@ -4572,6 +4572,22 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_SPIKE_WALL: // Damage on physical move
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                && gBattleMons[gBattlerAttacker].hp != 0
+                && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                && TARGET_TURN_DAMAGED
+                && (gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT))
+            {
+                gBattleMoveDamage = gHpDealt / 8;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_SpikeWallDamage;
+                effect = TRUE;
+            }
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_COUNT:
             break;
         }
@@ -6649,6 +6665,20 @@ static void Cmd_various(void)
             gDynamicBasePower = 120;
         else
             gDynamicBasePower = 100;
+        break;
+    case VARIOUS_SET_SPIKE_WALL:
+        if (gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] & SIDE_STATUS_SPIKE_WALL)
+        {
+            gMoveResultFlags |= MOVE_RESULT_MISSED;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SIDE_STATUS_FAILED;
+        }
+        else
+        {
+            gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_SPIKE_WALL;
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].spikeWallTimer = 5;
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].spikeWallBattlerId = gBattlerAttacker;
+            gBattleCommunication[MULTISTRING_CHOOSER] = 0xFF;
+        }
         break;
     }
 

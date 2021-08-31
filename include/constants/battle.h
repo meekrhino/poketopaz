@@ -203,6 +203,7 @@
 #define SIDE_STATUS_WATERWALL        (1 << 10)
 #define SIDE_STATUS_CINDERS          (1 << 11)
 #define SIDE_STATUS_CINDERS_DAMAGED  (1 << 12)
+#define SIDE_STATUS_SPIKE_WALL       (1 << 13)
 
 // Flags describing move's result
 #define MOVE_RESULT_MISSED             (1 << 0)

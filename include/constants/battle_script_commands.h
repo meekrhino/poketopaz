@@ -94,6 +94,7 @@
 #define VARIOUS_SET_DARKNESS                    30
 #define VARIOUS_SET_INITIATIVE                  31
 #define VARIOUS_SPECTRAL_RAY                    32
+#define VARIOUS_SET_SPIKE_WALL                  33
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0
@@ -144,6 +145,7 @@
 #define MOVEEND_UPDATE_LAST_MOVES                 14
 #define MOVEEND_MIRROR_MOVE                       15
 #define MOVEEND_NEXT_TARGET                       16
-#define MOVEEND_COUNT                             17
+#define MOVEEND_SPIKE_WALL                        17
+#define MOVEEND_COUNT                             18
 
 #endif // GUARD_CONSTANTS_BATTLE_SCRIPT_COMMANDS_H

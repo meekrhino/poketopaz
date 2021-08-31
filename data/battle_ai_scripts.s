@@ -144,6 +144,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_ACCURACY_DOWN_2, AI_CBM_AccDown
 	if_effect EFFECT_EVASION_DOWN_2, AI_CBM_EvasionDown
 	if_effect EFFECT_REFLECT, AI_CBM_Reflect
+	if_effect EFFECT_SPIKE_WALL, AI_CBM_SpikeWall
 	if_effect EFFECT_POISON, AI_CBM_Toxic
 	if_effect EFFECT_PARALYZE, AI_CBM_Paralyze
 	if_effect EFFECT_SUBSTITUTE, AI_CBM_Substitute
@@ -396,6 +397,10 @@ AI_CBM_Confuse:
 
 AI_CBM_Reflect:
 	if_side_affecting AI_USER, SIDE_STATUS_REFLECT, Score_Minus8
+	end
+
+AI_CBM_SpikeWall:
+	if_side_affecting AI_USER, SIDE_STATUS_SPIKE_WALL, Score_Minus8
 	end
 
 AI_CBM_Paralyze:
@@ -2445,6 +2450,8 @@ AI_CV_Revenge_End:
 
 AI_CV_BrickBreak:
 	if_side_affecting AI_TARGET, SIDE_STATUS_REFLECT, AI_CV_BrickBreak_ScoreUp1
+	if_side_affecting AI_TARGET, SIDE_STATUS_LIGHTSCREEN, AI_CV_BrickBreak_ScoreUp1
+	if_side_affecting AI_TARGET, SIDE_STATUS_WATERWALL, AI_CV_BrickBreak_ScoreUp1
 	goto AI_CV_BrickBreak_End
 
 AI_CV_BrickBreak_ScoreUp1:

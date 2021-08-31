@@ -1378,6 +1378,10 @@
     .macro spectralraydamagecalculation
     various BS_TARGET, VARIOUS_SPECTRAL_RAY
     .endm
+
+    .macro setspikewall
+    various BS_ATTACKER, VARIOUS_SET_SPIKE_WALL
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req
