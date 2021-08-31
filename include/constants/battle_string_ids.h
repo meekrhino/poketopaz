@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 #define GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 
-#define BATTLESTRINGS_COUNT     384
+#define BATTLESTRINGS_COUNT     387
 
 #define BATTLESTRINGS_ID_ADDER  12 // all battlestrings have its ID + 12, because first 5 are reserved
 
@@ -397,6 +397,9 @@
 #define STRINGID_PKMNHURTBYCINDERS          393
 #define STRINGID_CINDERSSCATTERED           394
 #define STRINGID_PKMNHEATINGITSELF          395
+#define STRINGID_SHROUDEDINDARKNESS         396
+#define STRINGID_DARKNESSCONTINUES          397
+#define STRINGID_DARKNESSLIFTED             398
 
 
 // The below IDs are all indexes into battle message tables,
@@ -453,7 +456,8 @@
 #define B_MSG_STARTED_SANDSTORM 3
 #define B_MSG_STARTED_SUNLIGHT  4
 #define B_MSG_STARTED_HAIL      5
-#define B_MSG_WEATHER_CLEARED   6
+#define B_MSG_STARTED_DARKNESS  6
+#define B_MSG_WEATHER_CLEARED   7
 
 // gRainContinuesStringIds
 #define B_MSG_RAIN_CONTINUES     0

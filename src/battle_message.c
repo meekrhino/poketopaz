@@ -363,6 +363,9 @@ static const u8 sText_SandstormSubsided[] = _("The sandstorm subsided.");
 static const u8 sText_SunlightGotBright[] = _("The sunlight got bright!");
 static const u8 sText_SunlightStrong[] = _("The sunlight is strong.");
 static const u8 sText_SunlightFaded[] = _("The sunlight faded.");
+static const u8 sText_ShroudedInDarkness[] = _("The field was shrouded\nin darkness!");
+static const u8 sText_DarknessContinues[] = _("The darkness continues\nto suffocate the field!");
+static const u8 sText_DarknessLifted[] = _("The darkness lifted.");
 static const u8 sText_WeatherCleared[] = _("The weather was calmed.");
 static const u8 sText_StartedHail[] = _("It started to hail!");
 static const u8 sText_HailContinues[] = _("Hail continues to fall.");
@@ -778,6 +781,9 @@ const u8 * const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_SUNLIGHTGOTBRIGHT - 12] = sText_SunlightGotBright,
     [STRINGID_SUNLIGHTSTRONG - 12] = sText_SunlightStrong,
     [STRINGID_SUNLIGHTFADED - 12] = sText_SunlightFaded,
+    [STRINGID_SHROUDEDINDARKNESS - 12] = sText_ShroudedInDarkness,
+    [STRINGID_DARKNESSCONTINUES - 12] = sText_DarknessContinues,
+    [STRINGID_DARKNESSLIFTED - 12] = sText_DarknessLifted,
     [STRINGID_WEATHERCLEARED - 12] = sText_WeatherCleared,
     [STRINGID_STARTEDHAIL - 12] = sText_StartedHail,
     [STRINGID_HAILCONTINUES - 12] = sText_HailContinues,
@@ -947,6 +953,7 @@ const u16 gMoveWeatherChangeStringIds[] =
     [B_MSG_STARTED_SANDSTORM] = STRINGID_SANDSTORMBREWED,
     [B_MSG_STARTED_SUNLIGHT]  = STRINGID_SUNLIGHTGOTBRIGHT,
     [B_MSG_STARTED_HAIL]      = STRINGID_STARTEDHAIL,
+    [B_MSG_STARTED_DARKNESS]  = STRINGID_SHROUDEDINDARKNESS,
     [B_MSG_WEATHER_CLEARED]   = STRINGID_WEATHERCLEARED,
 };
 
@@ -1208,7 +1215,8 @@ const u16 gWeatherStartsStringIds[] =
     [WEATHER_DROUGHT]            = STRINGID_SUNLIGHTSTRONG,
     [WEATHER_DOWNPOUR]           = STRINGID_ITISRAINING,
     [WEATHER_UNDERWATER_BUBBLES] = STRINGID_ITISRAINING,
-    [WEATHER_ABNORMAL]           = STRINGID_ITISRAINING
+    [WEATHER_ABNORMAL]           = STRINGID_ITISRAINING,
+    [WEATHER_DARKNESS]           = STRINGID_DARKNESSCONTINUES
 };
 
 const u16 gInobedientStringIds[] =

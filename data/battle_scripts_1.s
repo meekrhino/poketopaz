@@ -1924,7 +1924,7 @@ BattleScript_EffectNightfall::
 	attackcanceler
 	attackstring
 	ppreduce
-	setsunny
+	setdarkness
 	goto BattleScript_MoveWeatherChange
 
 BattleScript_EffectSunnyDay::
@@ -3453,7 +3453,7 @@ BattleScript_SunlightContinues::
 	end2
 
 BattleScript_DarknessContinues::
-	printstring STRINGID_SUNLIGHTSTRONG
+	printstring STRINGID_DARKNESSCONTINUES
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES, NULL
 	end2
@@ -3464,7 +3464,7 @@ BattleScript_SunlightFaded::
 	end2
 
 BattleScript_DarknessLifted::
-	printstring STRINGID_SUNLIGHTFADED
+	printstring STRINGID_DARKNESSLIFTED
 	waitmessage B_WAIT_TIME_LONG
 	end2
 

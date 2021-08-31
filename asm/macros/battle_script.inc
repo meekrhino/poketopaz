@@ -1366,6 +1366,10 @@
     .macro setmagicdust
     various BS_TARGET, VARIOUS_SET_MAGIC_DUST
     .endm
+
+    .macro setdarkness
+    various BS_TARGET, VARIOUS_SET_DARKNESS
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req

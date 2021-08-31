@@ -1230,6 +1230,10 @@ static void Cmd_accuracycheck(void)
             calc = (calc * 80) / 100; // 1.2 sand veil loss
         if (gBattleMons[gBattlerAttacker].ability == ABILITY_HUSTLE && IS_MOVE_PHYSICAL(gBattleMoves[move]))
             calc = (calc * 80) / 100; // 1.2 hustle loss
+        if ((WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_DARKNESS_ANY)
+         && (gBattleMons[gBattlerAttacker].type1 != TYPE_DARK && gBattleMons[gBattlerAttacker].type1 != TYPE_LIGHT
+          && gBattleMons[gBattlerAttacker].type2 != TYPE_DARK && gBattleMons[gBattlerAttacker].type2 != TYPE_LIGHT))
+            calc = (calc * 80) / 100; // 1.2 darkness loss
 
         if (gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY)
         {
@@ -6620,6 +6624,19 @@ static void Cmd_various(void)
         break;
     case VARIOUS_SET_MAGIC_DUST:
         gBattleCommunication[MOVE_EFFECT_BYTE] = sMagicDustEffects[Random() % MAGIC_DUST_EFFECTS_CNT];
+        break;
+    case VARIOUS_SET_DARKNESS:
+        if (gBattleWeather & WEATHER_DARKNESS_ANY)
+        {
+            gMoveResultFlags |= MOVE_RESULT_MISSED;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;
+        }
+        else
+        {
+            gBattleWeather = WEATHER_DARKNESS_TEMPORARY;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_DARKNESS;
+            gWishFutureKnock.weatherDuration = 5;
+        }
         break;
     }
 

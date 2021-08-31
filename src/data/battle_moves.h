@@ -18,7 +18,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     {
         .effect = EFFECT_HIT,
         .power = 40,
-        .type = TYPE_LIGHT,
+        .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 35,
         .secondaryEffectChance = 0,
@@ -5486,7 +5486,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_NIGHTFALL] = 
     {
-        .effect = EFFECT_NIGHTFALL, // TODO - EFFECT_NIGHTFALL; make darkness weather for 5 turns
+        .effect = EFFECT_NIGHTFALL,
         .power = 0,
         .type = TYPE_DARK,
         .accuracy = 0,
