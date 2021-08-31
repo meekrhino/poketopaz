@@ -322,6 +322,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_FIRE_BATH] = 4,
     [EFFECT_NIGHTFALL] = 4,
     [EFFECT_INITIATIVE] = 1,
+    [EFFECT_MARIONETTE] = 2,
 };
 
 static const u16 sPoints_Effectiveness[] =

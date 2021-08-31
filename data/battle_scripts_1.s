@@ -249,6 +249,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectFireBath               @ EFFECT_FIRE_BATH
     .4byte BattleScript_EffectNightfall              @ EFFECT_NIGHTFALL
     .4byte BattleScript_EffectInitiative             @ EFFECT_INITIATIVE
+    .4byte BattleScript_EffectMarionette             @ EFFECT_MARIONETTE
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -270,6 +271,7 @@ BattleScript_HitFromCritCalc::
 BattleScript_HitFromAtkAnimation::
 	attackanimation
 	waitanimation
+BattleScript_HitFromAfterAtkAnimation::
 	effectivenesssound
 	hitanimation BS_TARGET
 	waitstate
@@ -2947,6 +2949,42 @@ BattleScript_CosmicPowerEnd::
 BattleScript_EffectSkyUppercut::
 	orword gHitMarker, HITMARKER_IGNORE_ON_AIR
 	goto BattleScript_EffectHit
+
+BattleScript_EffectMarionette::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_EffectMarionetteHitSubstitute
+    goto BattleScript_HitFromCritCalc
+BattleScript_EffectMarionetteHitSubstitute::
+	setbyte sDMG_MULTIPLIER, 2
+	critcalc
+	damagecalc
+	typecalc
+	adjustnormaldamage
+BattleScript_EffectMarionetteHitFromAtkAnimation::
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	seteffectwithchance
+	tryfaintmon BS_TARGET, FALSE, NULL
+BattleScript_EffectMarionetteHitBehindSubstitute::
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	setbyte sDMG_MULTIPLIER, 1
+	critcalc
+	damagecalc
+	typecalc
+	adjustnormaldamage
+    goto BattleScript_HitFromAfterAtkAnimation
 
 BattleScript_EffectBulkUp::
 	attackcanceler

@@ -5430,8 +5430,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_MARIONETTE] = 
     {
-        .effect = EFFECT_HIT, // TODO - EFFECT_MARIONETTE; double damage to substitute, 40bp to behind
-        .power = 60,
+        .effect = EFFECT_MARIONETTE, // TODO - double damage to substitute, 40bp to behind
+        .power = 10,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 10,
