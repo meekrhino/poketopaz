@@ -6642,6 +6642,14 @@ static void Cmd_various(void)
         gStatuses3[gActiveBattler] |= STATUS3_INITIATIVE;
         gDisableStructs[gActiveBattler].initiativeTimer = 2;
         break;
+    case VARIOUS_SPECTRAL_RAY:
+        if (gBattleWeather & WEATHER_DARKNESS_ANY || gBattleWeather & WEATHER_RAIN_ANY)
+            gDynamicBasePower = 80;
+        else if (gBattleWeather & WEATHER_SUN_ANY)
+            gDynamicBasePower = 120;
+        else
+            gDynamicBasePower = 100;
+        break;
     }
 
     gBattlescriptCurrInstr += 3;

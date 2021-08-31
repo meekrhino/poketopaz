@@ -1374,6 +1374,10 @@
     .macro setinitiative
     various BS_TARGET, VARIOUS_SET_INITIATIVE
     .endm
+
+    .macro spectralraydamagecalculation
+    various BS_TARGET, VARIOUS_SPECTRAL_RAY
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req

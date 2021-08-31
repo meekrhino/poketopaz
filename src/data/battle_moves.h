@@ -5430,7 +5430,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_MARIONETTE] = 
     {
-        .effect = EFFECT_MARIONETTE, // TODO - double damage to substitute, 40bp to behind
+        .effect = EFFECT_MARIONETTE,
         .power = 10,
         .type = TYPE_GHOST,
         .accuracy = 100,
@@ -5667,7 +5667,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SPECTRAL_RAY] = 
     {
-        .effect = EFFECT_SOLARBEAM, // TODO - EFFECT_SPECTRAL_RAY; 120 power in sun, 80 in rain or night
+        .effect = EFFECT_SOLARBEAM,
         .power = 100,
         .type = TYPE_LIGHT,
         .accuracy = 95,

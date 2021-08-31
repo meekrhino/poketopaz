@@ -879,10 +879,15 @@ BattleScript_TwoTurnMovesSecondTurn::
 	setbyte sB_ANIM_TURN, 1
 	clearstatusfromeffect BS_ATTACKER
 	orword gHitMarker, HITMARKER_NO_PPDEDUCT
-    jumpifmove MOVE_SPECTRAL_RAY, BattleScript_TwoTurnMovesSecondTurnBurn
+    jumpifmove MOVE_SPECTRAL_RAY, BattleScript_SpectralRaySecondTurn
     jumpifmove MOVE_SOLAR_FLARE, BattleScript_TwoTurnMovesSecondTurnBurn
 	jumpifnotmove MOVE_SKY_ATTACK, BattleScript_HitFromAccCheck
 	setmoveeffect MOVE_EFFECT_FLINCH
+	goto BattleScript_HitFromAccCheck 
+
+BattleScript_SpectralRaySecondTurn::
+    spectralraydamagecalculation
+    setmoveeffect MOVE_EFFECT_BURN
 	goto BattleScript_HitFromAccCheck 
 
 BattleScript_TwoTurnMovesSecondTurnBurn::
