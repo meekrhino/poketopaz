@@ -10,6 +10,7 @@
 #define sB_ANIM_ARG1 gBattleScripting + 0x10
 #define sB_ANIM_ARG2 gBattleScripting + 0x11
 #define sTRIPLE_KICK_POWER gBattleScripting + 0x12
+#define sSPIRAL_KICK_ACC sTRIPLE_KICK_POWER
 #define sMOVEEND_STATE gBattleScripting + 0x14
 #define sBATTLER_WITH_ABILITY gBattleScripting + 0x15
 #define sMULTIHIT_EFFECT gBattleScripting + 0x16

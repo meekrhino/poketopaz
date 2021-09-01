@@ -1217,6 +1217,8 @@ static void Cmd_accuracycheck(void)
             buff = MAX_STAT_STAGE;
 
         moveAcc = gBattleMoves[move].accuracy;
+        if (gBattleMoves[move].effect == EFFECT_SPIRAL_KICK)
+            moveAcc = gBattleScripting.tripleKickPower;
         // check Thunder on sunny weather
         if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_ANY && gBattleMoves[move].effect == EFFECT_THUNDER)
             moveAcc = 50;
@@ -4574,6 +4576,7 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_SPIKE_WALL: // Damage on physical move
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                && gSideStatuses[GET_BATTLER_SIDE(gBattlerTarget)] & SIDE_STATUS_SPIKE_WALL
                 && gBattleMons[gBattlerAttacker].hp != 0
                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
                 && TARGET_TURN_DAMAGED

@@ -5723,7 +5723,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SPIRAL_KICK] = 
     {
-        .effect = EFFECT_MULTI_HIT, // TODO - EFFECT_SPIRAL_KICK; 20|100, 20|85, 30|70, 40|40, 70|20 (total max 180)
+        .effect = EFFECT_SPIRAL_KICK, // Max 180, average 67.702
         .power = 20,
         .type = TYPE_NORMAL,
         .accuracy = 100,

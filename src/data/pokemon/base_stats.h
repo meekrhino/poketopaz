@@ -8474,7 +8474,7 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_ZIGZAGOON] =
     {
-        .baseHP        = 38,
+        .baseHP        = 250,
         .baseAttack    = 30,
         .baseDefense   = 41,
         .baseSpeed     = 60,

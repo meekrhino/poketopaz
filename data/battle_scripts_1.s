@@ -251,6 +251,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectInitiative             @ EFFECT_INITIATIVE
     .4byte BattleScript_EffectMarionette             @ EFFECT_MARIONETTE
     .4byte BattleScript_EffectSpikeWall              @ EFFECT_SPIKE_WALL
+    .4byte BattleScript_EffectSpiralKick             @ EFFECT_SPIRAL_KICK
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -1585,6 +1586,82 @@ BattleScript_TripleKickPrintStrings::
 	printstring STRINGID_HITXTIMES
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_TripleKickEnd::
+	seteffectwithchance
+	tryfaintmon BS_TARGET, FALSE, NULL
+	moveendfrom MOVEEND_UPDATE_LAST_MOVES
+	end
+
+BattleScript_EffectSpiralKick::
+	attackcanceler
+	attackstring
+	ppreduce
+	initmultihitstring
+	setmultihit 5
+BattleScript_SpiralKickLoop::
+	jumpifhasnohp BS_ATTACKER, BattleScript_SpiralKickEnd
+	jumpifhasnohp BS_TARGET, BattleScript_SpiralKickNoMoreHits
+	jumpifhalfword CMP_EQUAL, gChosenMove, MOVE_SLEEP_TALK, BattleScript_DoSpiralKickAttack
+	jumpifstatus BS_ATTACKER, STATUS1_SLEEP, BattleScript_SpiralKickNoMoreHits
+BattleScript_DoSpiralKickAttack::
+	jumpifbyte CMP_GREATER_THAN, sMULTIHIT_STRING + 4, 0, BattleScript_SpiralKick2
+    sethword gDynamicBasePower, 20
+	sethword sSPIRAL_KICK_ACC, 100
+    goto BattleScript_SpiralKickDamage
+BattleScript_SpiralKick2::
+	jumpifbyte CMP_GREATER_THAN, sMULTIHIT_STRING + 4, 1, BattleScript_SpiralKick3
+    sethword gDynamicBasePower, 20
+	sethword sSPIRAL_KICK_ACC, 85
+    goto BattleScript_SpiralKickDamage
+BattleScript_SpiralKick3::
+	jumpifbyte CMP_GREATER_THAN, sMULTIHIT_STRING + 4, 2, BattleScript_SpiralKick4
+    sethword gDynamicBasePower, 30
+	sethword sSPIRAL_KICK_ACC, 70
+    goto BattleScript_SpiralKickDamage
+BattleScript_SpiralKick4::
+	jumpifbyte CMP_GREATER_THAN, sMULTIHIT_STRING + 4, 3, BattleScript_SpiralKick5
+    sethword gDynamicBasePower, 40
+	sethword sSPIRAL_KICK_ACC, 40
+    goto BattleScript_SpiralKickDamage
+BattleScript_SpiralKick5::
+    sethword gDynamicBasePower, 70
+	sethword sSPIRAL_KICK_ACC, 20
+BattleScript_SpiralKickDamage::
+	accuracycheck BattleScript_SpiralKickNoMoreHits, ACC_CURR_MOVE
+	addbyte sMULTIHIT_STRING + 4, 1
+	movevaluescleanup
+	critcalc
+	damagecalc
+	typecalc
+	adjustnormaldamage
+	jumpifmovehadnoeffect BattleScript_SpiralKickNoMoreHits
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_EMPTYSTRING3
+	waitmessage 1
+	moveendto MOVEEND_NEXT_TARGET
+	jumpifbyte CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_FOE_ENDURED, BattleScript_SpiralKickPrintStrings
+	decrementmultihit BattleScript_SpiralKickLoop
+	goto BattleScript_SpiralKickPrintStrings
+BattleScript_SpiralKickNoMoreHits::
+	pause B_WAIT_TIME_SHORT
+	jumpifbyte CMP_EQUAL, sMULTIHIT_STRING + 4, 0, BattleScript_SpiralKickPrintStrings
+	bicbyte gMoveResultFlags, MOVE_RESULT_MISSED
+BattleScript_SpiralKickPrintStrings::
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	jumpifbyte CMP_EQUAL, sMULTIHIT_STRING + 4, 0, BattleScript_SpiralKickEnd
+	jumpifbyte CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE, BattleScript_SpiralKickEnd
+	copyarray gBattleTextBuff1, sMULTIHIT_STRING, 6
+	printstring STRINGID_HITXTIMES
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_SpiralKickEnd::
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
 	moveendfrom MOVEEND_UPDATE_LAST_MOVES
