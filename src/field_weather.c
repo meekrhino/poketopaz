@@ -9,6 +9,7 @@
 #include "menu.h"
 #include "palette.h"
 #include "random.h"
+#include "field_camera.h"
 #include "script.h"
 #include "start_menu.h"
 #include "sound.h"
@@ -224,6 +225,7 @@ static void Task_WeatherInit(u8 taskId)
     // When the screen fades in, this is set to TRUE.
     if (gWeatherPtr->readyForInit)
     {
+        UpdateCameraPanning();
         sWeatherFuncs[gWeatherPtr->currWeather].initAll();
         gTasks[taskId].func = Task_WeatherMain;
     }
