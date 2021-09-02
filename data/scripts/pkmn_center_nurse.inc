@@ -26,7 +26,6 @@ EventScript_PkmnCenterNurse_HealPkmn::
     waitmessage
     call EventScript_PkmnCenterNurse_TakeAndHealPkmn
     goto_if_unset FLAG_POKERUS_EXPLAINED, EventScript_PkmnCenterNurse_CheckPokerus
-    goto EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom
     end
 
 EventScript_PkmnCenterNurse_IllTakeYourPkmn::
@@ -46,18 +45,6 @@ EventScript_PkmnCenterNurse_TakeAndHealPkmn::
     waitmovement 0
     special HealPlayerParty
     return
-
-EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom::
-    specialvar VAR_RESULT, PlayerNotAtTrainerHillEntrance
-    compare VAR_RESULT, 0
-    goto_if_eq EventScript_PkmnCenterNurse_ReturnPkmn
-    specialvar VAR_RESULT, BufferUnionRoomPlayerName
-    copyvar VAR_0x8008, VAR_RESULT
-    compare VAR_0x8008, 0
-    goto_if_eq EventScript_PkmnCenterNurse_ReturnPkmn
-    compare VAR_0x8008, 1
-    goto_if_eq EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom
-    end
 
 @ VAR_0x8004 is 1 when player has Gold Card
 EventScript_PkmnCenterNurse_ReturnPkmn::
@@ -94,7 +81,6 @@ EventScript_PkmnCenterNurse_CheckPokerus::
     compare VAR_RESULT, TRUE
     goto_if_eq EventScript_PkmnCenterNurse_ExplainPokerus
     compare VAR_RESULT, FALSE
-    goto_if_eq EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom
     end
 
 EventScript_PkmnCenterNurse_ExplainPokerus::
