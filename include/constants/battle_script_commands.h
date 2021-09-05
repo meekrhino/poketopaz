@@ -96,6 +96,7 @@
 #define VARIOUS_SET_INITIATIVE                  31
 #define VARIOUS_SPECTRAL_RAY                    32
 #define VARIOUS_SET_SPIKE_WALL                  33
+#define VARIOUS_SET_SACRIFICE                   34
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0

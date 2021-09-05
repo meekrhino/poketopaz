@@ -2407,7 +2407,8 @@ bool8 HasNoMonsToSwitch(u8 battler, u8 partyIdBattlerOn1, u8 partyIdBattlerOn2)
         id1 = ((battler & BIT_FLANK) / 2);
         for (i = id1 * 3; i < id1 * 3 + 3; i++)
         {
-            if (GetMonData(&party[i], MON_DATA_HP) != 0
+            if ((GetMonData(&party[i], MON_DATA_HP) != 0
+              || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SACRIFICE_PEND)
              && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_NONE
              && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_EGG)
                 break;

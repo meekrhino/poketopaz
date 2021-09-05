@@ -252,6 +252,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectMarionette             @ EFFECT_MARIONETTE
     .4byte BattleScript_EffectSpikeWall              @ EFFECT_SPIKE_WALL
     .4byte BattleScript_EffectSpiralKick             @ EFFECT_SPIRAL_KICK
+    .4byte BattleScript_EffectSacrifice              @ EFFECT_SACRIFICE
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2546,6 +2547,19 @@ BattleScript_MementoFailEnd:
 	tryfaintmon BS_ATTACKER, FALSE, NULL
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectSacrifice::
+	attackcanceler
+	attackstring
+	ppreduce
+	setatkhptozero
+	attackanimation
+	waitanimation
+    setsacrifice
+    printstring STRINGID_PKMNSACRIFICEDITSELF
+    waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER, FALSE, NULL
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectFacade::
 	jumpifstatus BS_ATTACKER, STATUS1_POISON | STATUS1_BURN | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON, BattleScript_FacadeDoubleDmg
 	goto BattleScript_EffectHit
@@ -3870,6 +3884,21 @@ BattleScript_BurnByCinders::
     seteffectprimary
 BattleScript_BurnByCindersEnd::
 	return 
+
+BattleScript_SacrificeRestoredHP::
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	printstring STRINGID_PKMNRESTOREDBYSACRIFICE
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_SacrificeHPFull::
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	printstring STRINGID_PKMNHPFULL
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_PerishSongTakesLife::
 	printstring STRINGID_PKMNPERISHCOUNTFELL

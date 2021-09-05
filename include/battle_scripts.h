@@ -68,6 +68,8 @@ extern const u8 BattleScript_DestinyBondTakesLife[];
 extern const u8 BattleScript_SpikesOnAttacker[];
 extern const u8 BattleScript_SpikesOnTarget[];
 extern const u8 BattleScript_SpikesOnFaintedBattler[];
+extern const u8 BattleScript_SacrificeRestoredHP[];
+extern const u8 BattleScript_SacrificeHPFull[];
 extern const u8 BattleScript_CindersOnAttacker[];
 extern const u8 BattleScript_CindersOnTarget[];
 extern const u8 BattleScript_CindersOnFaintedBattler[];

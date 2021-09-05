@@ -1382,6 +1382,10 @@
     .macro setspikewall
     various BS_ATTACKER, VARIOUS_SET_SPIKE_WALL
     .endm
+
+    .macro setsacrifice
+    various BS_ATTACKER, VARIOUS_SET_SACRIFICE
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req

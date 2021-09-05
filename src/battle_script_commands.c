@@ -52,6 +52,8 @@
 #include "constants/rgb.h"
 #include "data.h"
 #include "constants/party_menu.h"
+#include "printf.h"
+#include "mgba.h"
 
 extern struct MusicPlayerInfo gMPlayInfo_BGM;
 
@@ -3120,7 +3122,8 @@ static void Cmd_tryfaintmon(void)
                 gHitMarker |= HITMARKER_x400000;
                 if (gBattleResults.playerFaintCounter < 0xFF)
                     gBattleResults.playerFaintCounter++;
-                AdjustFriendshipOnBattleFaint(gActiveBattler);
+                if (gCurrentMove != MOVE_SACRIFICE)
+                    AdjustFriendshipOnBattleFaint(gActiveBattler);
             }
             else
             {
@@ -3664,7 +3667,7 @@ static void Cmd_unknown_24(void)
         }
     }
 
-    if (HP_count == 0)
+    if (HP_count == 0 && !(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_SACRIFICE_PEND))
         gBattleOutcome |= B_OUTCOME_LOST;
     
     HP_count = 0;
@@ -4973,11 +4976,18 @@ static void Cmd_jumpifcantswitch(void)
 // slotId is the Pokémon to replace
 static void ChooseMonToSendOut(u8 slotId)
 {
+    u8 partyAction = PARTY_ACTION_SEND_OUT;
+
     *(gBattleStruct->field_58 + gActiveBattler) = gBattlerPartyIndexes[gActiveBattler];
     *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
     gBattleStruct->field_93 &= ~(gBitTable[gActiveBattler]);
 
-    BtlController_EmitChoosePokemon(0, PARTY_ACTION_SEND_OUT, slotId, ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
+    if (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SACRIFICE_PEND)
+    {
+        partyAction = PARTY_ACTION_RESTORE_MON;
+    }
+
+    BtlController_EmitChoosePokemon(0, partyAction, slotId, ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
     MarkBattlerForControllerExec(gActiveBattler);
 }
 
@@ -5210,26 +5220,28 @@ static void Cmd_openpartyscreen(void)
     }
     else
     {
-        if (gBattlescriptCurrInstr[1] & PARTY_SCREEN_OPTIONAL)
+        battlerId = GetBattlerForBattleScript(gBattlescriptCurrInstr[1] & ~(PARTY_SCREEN_OPTIONAL));
+        gActiveBattler = battlerId;
+        
+        if(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SACRIFICE_PEND)
+            hitmarkerFaintBits = PARTY_ACTION_RESTORE_MON;
+        else if (gBattlescriptCurrInstr[1] & PARTY_SCREEN_OPTIONAL)
             hitmarkerFaintBits = PARTY_ACTION_CHOOSE_MON; // Used here as the caseId for the EmitChoose function.
         else
             hitmarkerFaintBits = PARTY_ACTION_SEND_OUT;
 
-        battlerId = GetBattlerForBattleScript(gBattlescriptCurrInstr[1] & ~(PARTY_SCREEN_OPTIONAL));
         if (gSpecialStatuses[battlerId].flag40)
         {
             gBattlescriptCurrInstr += 6;
         }
         else if (HasNoMonsToSwitch(battlerId, PARTY_SIZE, PARTY_SIZE))
         {
-            gActiveBattler = battlerId;
             gAbsentBattlerFlags |= gBitTable[gActiveBattler];
             gHitMarker &= ~(HITMARKER_FAINTED(gActiveBattler));
             gBattlescriptCurrInstr = jumpPtr;
         }
         else
         {
-            gActiveBattler = battlerId;
             *(gBattleStruct->field_58 + gActiveBattler) = gBattlerPartyIndexes[gActiveBattler];
             *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = 6;
             gBattleStruct->field_93 &= ~(gBitTable[gActiveBattler]);
@@ -5342,6 +5354,32 @@ static void Cmd_switchineffects(void)
 
     gHitMarker &= ~(HITMARKER_FAINTED(gActiveBattler));
     gSpecialStatuses[gActiveBattler].flag40 = 0;
+
+    if (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SACRIFICE_PEND)
+    {
+        gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_SACRIFICE_PEND);
+        if (GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
+        {
+            if (gBattleMons[gActiveBattler].hp != gBattleMons[gActiveBattler].maxHP)
+            {
+                if (gBattleMons[gActiveBattler].hp == 0)
+                    gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 2;
+                else
+                    gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP - gBattleMons[gActiveBattler].hp;
+
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+                gBattleMoveDamage *= -1;
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_SacrificeRestoredHP;
+            }
+            else
+            {
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_SacrificeHPFull;
+            }
+        }
+    }
 
     if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SPIKES_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SPIKES)
@@ -6714,6 +6752,9 @@ static void Cmd_various(void)
             gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].spikeWallBattlerId = gBattlerAttacker;
             gBattleCommunication[MULTISTRING_CHOOSER] = 0xFF;
         }
+        break;
+    case VARIOUS_SET_SACRIFICE:
+        gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_SACRIFICE_PEND;
         break;
     }
 
