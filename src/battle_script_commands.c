@@ -6735,16 +6735,9 @@ static void Cmd_various(void)
         MarkBattlerForControllerExec(gActiveBattler);
         break;
     case VARIOUS_CLEAR_WEATHER:
-        if (!(gBattleWeather & WEATHER_ANY))
-        {
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;
-        }
-        else
-        {
-            gBattleWeather = 0;
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_CLEARED;
-            gWishFutureKnock.weatherDuration = 0;
-        }
+        gBattleWeather = WEATHER_STILL;
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_CLEARED;
+        gWishFutureKnock.weatherDuration = 5;
         break;
     case VARIOUS_STATRONOME:
         gBattleCommunication[MOVE_EFFECT_BYTE] = sStatronomeEffects[Random() % STATRONOME_EFFECTS_CNT];
@@ -6753,7 +6746,7 @@ static void Cmd_various(void)
         gBattleCommunication[MOVE_EFFECT_BYTE] = sMagicDustEffects[Random() % MAGIC_DUST_EFFECTS_CNT];
         break;
     case VARIOUS_SET_DARKNESS:
-        if (gBattleWeather & WEATHER_DARKNESS_ANY)
+        if (gBattleWeather & WEATHER_DARKNESS_ANY || gBattleWeather & WEATHER_STILL)
         {
             gMoveResultFlags |= MOVE_RESULT_MISSED;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;
@@ -6990,7 +6983,7 @@ static void Cmd_trymirrormove(void)
 
 static void Cmd_setrain(void)
 {
-    if (gBattleWeather & WEATHER_RAIN_ANY)
+    if (gBattleWeather & WEATHER_RAIN_ANY || gBattleWeather & WEATHER_STILL)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;
@@ -7903,7 +7896,7 @@ static void Cmd_damagetohalftargethp(void) // super fang
 
 static void Cmd_setsandstorm(void)
 {
-    if (gBattleWeather & WEATHER_SANDSTORM_ANY)
+    if (gBattleWeather & WEATHER_SANDSTORM_ANY || gBattleWeather & WEATHER_STILL)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;
@@ -9118,7 +9111,7 @@ static void Cmd_jumpifnopursuitswitchdmg(void)
 
 static void Cmd_setsunny(void)
 {
-    if (gBattleWeather & WEATHER_SUN_ANY)
+    if (gBattleWeather & WEATHER_SUN_ANY || gBattleWeather & WEATHER_STILL)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;
@@ -9411,7 +9404,7 @@ static void Cmd_setminimize(void)
 
 static void Cmd_sethail(void)
 {
-    if (gBattleWeather & WEATHER_HAIL_ANY)
+    if (gBattleWeather & WEATHER_HAIL_ANY || gBattleWeather & WEATHER_STILL)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;

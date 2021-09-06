@@ -1191,6 +1191,7 @@ enum
     ENDTURN_SANDSTORM,
     ENDTURN_SUN,
     ENDTURN_HAIL,
+    ENDTURN_STILL_WEATHER,
     ENDTURN_FIELD_COUNT,
 };
 
@@ -1510,6 +1511,23 @@ u8 DoFieldEndTurnEffects(void)
                 effect++;
             }
             gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_STILL_WEATHER:
+            if (gBattleWeather & WEATHER_STILL)
+            {
+                if (--gWishFutureKnock.weatherDuration == 0)
+                {
+                    gBattleWeather &= ~WEATHER_STILL;
+                    gBattlescriptCurrInstr = BattleScript_StillWeatherEnds;
+                }
+                else
+                    gBattlescriptCurrInstr = BattleScript_StillWeatherContinues;
+                
+                BattleScriptExecute(gBattlescriptCurrInstr);
+                effect++;
+            }
+            gBattleStruct->turnCountersTracker++;
+            break;
             break;
         case ENDTURN_FIELD_COUNT:
             effect++;

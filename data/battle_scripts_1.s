@@ -3648,6 +3648,11 @@ BattleScript_SandStormHailEnds::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
+BattleScript_StillWeatherEnds::
+	printstring STRINGID_STILLWEATHERENDS
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
 BattleScript_SunlightContinues::
 	printstring STRINGID_SUNLIGHTSTRONG
 	waitmessage B_WAIT_TIME_LONG
@@ -3656,6 +3661,12 @@ BattleScript_SunlightContinues::
 
 BattleScript_DarknessContinues::
 	printstring STRINGID_DARKNESSCONTINUES
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES, NULL
+	end2
+
+BattleScript_StillWeatherContinues::
+	printstring STRINGID_STILLWEATHERCONTINUES
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES, NULL
 	end2
