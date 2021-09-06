@@ -1367,6 +1367,155 @@ static const u8 sTM50Desc[] = _(
     "attack, but sharply\n"
     "lowers SP. ATK.");
 
+static const u8 sTM51Desc[] = _(
+    "An attack that\n"
+    "intensifies on each\n"
+    "successive hit.");
+
+static const u8 sTM52Desc[] = _(
+    "An attack that\n"
+    "that leaves the foe\n"
+    "with at least 1 HP.");
+
+static const u8 sTM53Desc[] = _(
+    "User trains its eyes\n"
+    "on the foe, raising\n"
+    "its accuracy.");
+
+static const u8 sTM54Desc[] = _(
+    "Sharp icicles\n"
+    "slash the foe.\n"
+    "May cause flinch.");
+
+static const u8 sTM55Desc[] = _(
+    "Endures any attack\n"
+    "for 1 turn, leaving.\n"
+    "at least 1 HP.");
+
+static const u8 sTM56Desc[] = _(
+    "A shrill whistle\n"
+    "confuses the foe.\n"
+    "May lower DEFENSE.");
+
+static const u8 sTM57Desc[] = _(
+    "Strikes with a fist\n"
+    "as hard as iron.\n"
+    "May lower DEFENSE.");
+
+static const u8 sTM58Desc[] = _(
+    "Deep shadows block\n"
+    "out the sun\n"
+    "for 5 turns.");
+
+static const u8 sTM59Desc[] = _(
+    "A fierce attack\n"
+    "from the depths of\n"
+    "the user's soul.");
+
+static const u8 sTM60Desc[] = _(
+    "Rock pillars strike\n"
+    "at high speed. May\n"
+    "burn the user.");
+
+static const u8 sTM61Desc[] = _(
+    "Evil thoughts\n"
+    "are forced into\n"
+    "the foe's mind.");
+
+static const u8 sTM62Desc[] = _(
+    "Explosive seed pods\n"
+    "strike the foe. May\n"
+    "leave foe seeded.");
+
+static const u8 sTM63Desc[] = _(
+    "Creates an aquatic\n"
+    "shield against\n"
+    "the elements.");
+
+static const u8 sTM64Desc[] = _(
+    "A tornado of flora\n"
+    "envelops the foe.\n"
+    "May seed the foe.");
+
+static const u8 sTM65Desc[] = _(
+    "Move wildly to\n"
+    "lower foe accuracy\n"
+    "and user DEFENSE.");
+
+static const u8 sTM66Desc[] = _(
+    "A light-infused\n"
+    "punch with a high\n"
+    "critical-hit ratio.");
+
+static const u8 sTM67Desc[] = _(
+    "A powdery attack\n"
+    "that may raise\n"
+    "abilities.");
+
+static const u8 sTM68Desc[] = _(
+    "A strike that\n"
+    "becomes more \n"
+    "venomous at low HP.");
+
+static const u8 sTM69Desc[] = _(
+    "A gentle breeze\n"
+    "stills all weather.\n"
+    "for 5 turns.");
+
+static const u8 sTM70Desc[] = _(
+    "User cracks the\n"
+    "ground, taking and\n"
+    "dealing huge damage.");
+
+static const u8 sTM71Desc[] = _(
+    "Waggles a finger,\n"
+    "raising or lowering\n"
+    "any stat at random.");
+
+static const u8 sTM72Desc[] = _(
+    "User focuses to\n"
+    "ensure its next move\n"
+    "strikes first.");
+
+static const u8 sTM73Desc[] = _(
+    "Intense magnetic\n"
+    "pulse requiring\n"
+    "concentration.");
+
+static const u8 sTM74Desc[] = _(
+    "Pierces the foe\n"
+    "with sharp teeth.\n"
+    "May cause a burn.");
+
+static const u8 sTM75Desc[] = _(
+    "Uses an available\n"
+    "move randomly\n"
+    "while asleep.");
+
+static const u8 sTM76Desc[] = _(
+    "A blistering\n"
+    "winstorm\n"
+    "ravages foes.");
+
+static const u8 sTM77Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM78Desc[] = _(
+    "Creates a decoy\n"
+    "using 1/4 of the\n"
+    "user's maximum HP.");
+
+static const u8 sTM79Desc[] = _(
+    "Attack fails if\n"
+    "the user has\n"
+    "higher happiness.");
+
+static const u8 sTM80Desc[] = _(
+    "Damage depends on\n"
+    "the user and\n"
+    "foe's happiness.");
 
 static const u8 sHM01Desc[] = _(
     "Attacks the foe\n"

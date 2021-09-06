@@ -1454,7 +1454,7 @@ static const u8 sBrightSlashDescription[] = _(
     "of energy strikes the foe.");
     
 static const u8 sCherryBombDescription[] = _(
-    "Explosive seed pots strike\n"
+    "Explosive seed pods strike\n"
     "the foe. May seed the foe.");
     
 static const u8 sCascadeDescription[] = _(
@@ -1463,7 +1463,7 @@ static const u8 sCascadeDescription[] = _(
     
 static const u8 sCalmWindDescription[] = _(
     "A gentle breeze washes away\n"
-    "all weather effects.");
+    "all weather for 5 turns.");
     
 static const u8 sBurnoutDescription[] = _(
     "Inflicts more damage when\n"
@@ -1514,7 +1514,7 @@ static const u8 sFireBathDescription[] = _(
     "to empower the next attack.");
     
 static const u8 sFloralStormDescription[] = _(
-    "A tornade of flora envelops\n"
+    "A tornado of flora envelops\n"
     "the foe. May cause seed.");
     
 static const u8 sFlashPunchDescription[] = _(
@@ -1531,7 +1531,7 @@ static const u8 sHolyFistDescription[] = _(
     
 static const u8 sIcicleWhipDescription[] = _(
     "Sharp icicles slash the\n"
-    "for. May cause flinch.");
+    "foe. May cause flinch.");
     
 static const u8 sInitiativeDescription[] = _(
     "User focuses to ensure its\n"
@@ -1566,8 +1566,8 @@ static const u8 sMysticPowerDescription[] = _(
     "sharply raising SP. ATK.");
     
 static const u8 sNightfallDescription[] = _(
-    "Deep shadows block out the\n"
-    "the for 5 turns.");
+    "Deep shadows block out\n"
+    "the sun for 5 turns.");
     
 static const u8 sOrionSwordDescription[] = _(
     "Damage depends on the user\n"
