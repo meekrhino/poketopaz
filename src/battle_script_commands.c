@@ -5419,36 +5419,47 @@ static void Cmd_switchineffects(void)
     else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_CINDERS_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_CINDERS)
         && !IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_FLYING)
-        && gBattleMons[gActiveBattler].ability != ABILITY_LEVITATE
-        && gBattleMons[gActiveBattler].ability != ABILITY_WATER_VEIL)
+        && gBattleMons[gActiveBattler].ability != ABILITY_LEVITATE)
     {
-        u8 cindersDmg;
-
-        gSideStatuses[GetBattlerSide(gActiveBattler)] |= SIDE_STATUS_CINDERS_DAMAGED;
-
         gBattleMons[gActiveBattler].status2 &= ~(STATUS2_DESTINY_BOND);
         gHitMarker &= ~(HITMARKER_DESTINYBOND);
 
-        cindersDmg = (5 - gSideTimers[GetBattlerSide(gActiveBattler)].cindersAmount) * 2;
+        if (!IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_FIRE))
+        {
+            u8 cindersDmg;
 
-        gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / (cindersDmg);
-        if (gBattleMoveDamage == 0)
-            gBattleMoveDamage = 1;
+            gSideStatuses[GetBattlerSide(gActiveBattler)] |= SIDE_STATUS_CINDERS_DAMAGED;
 
-        if (Random() % 10 > (gSideTimers[GetBattlerSide(gActiveBattler)].cindersAmount - 1)) // 10-30% chance
-            gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_BURN;
+            cindersDmg = (5 - gSideTimers[GetBattlerSide(gActiveBattler)].cindersAmount) * 2;
+
+            gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / (cindersDmg);
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
+
+            if (Random() % 10 > (gSideTimers[GetBattlerSide(gActiveBattler)].cindersAmount - 1)) // 10-30% chance
+                gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_BURN;
+            else
+                gBattleCommunication[MOVE_EFFECT_BYTE] = 0;
+
+            gBattleScripting.battler = gActiveBattler;
+            BattleScriptPushCursor();
+
+            if (gBattlescriptCurrInstr[1] == BS_TARGET)
+                gBattlescriptCurrInstr = BattleScript_CindersOnTarget;
+            else if (gBattlescriptCurrInstr[1] == BS_ATTACKER)
+                gBattlescriptCurrInstr = BattleScript_CindersOnAttacker;
+            else
+                gBattlescriptCurrInstr = BattleScript_CindersOnFaintedBattler;
+        }
         else
-            gBattleCommunication[MOVE_EFFECT_BYTE] = 0;
+        {
+            gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_CINDERS);
+            gSideTimers[GetBattlerSide(gActiveBattler)].cindersAmount = 0;
 
-        gBattleScripting.battler = gActiveBattler;
-        BattleScriptPushCursor();
-
-        if (gBattlescriptCurrInstr[1] == BS_TARGET)
-            gBattlescriptCurrInstr = BattleScript_CindersOnTarget;
-        else if (gBattlescriptCurrInstr[1] == BS_ATTACKER)
-            gBattlescriptCurrInstr = BattleScript_CindersOnAttacker;
-        else
-            gBattlescriptCurrInstr = BattleScript_CindersOnFaintedBattler;
+            gBattleScripting.battler = gActiveBattler;
+            BattleScriptPushCursor();
+            gBattlescriptCurrInstr = BattleScript_CindersAbsorbed;
+        }
     }
     else
     {

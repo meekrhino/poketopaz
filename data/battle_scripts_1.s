@@ -3885,6 +3885,11 @@ BattleScript_BurnByCinders::
 BattleScript_BurnByCindersEnd::
 	return 
 
+BattleScript_CindersAbsorbed::
+    printstring STRINGID_PKMNABSORBEDCINDERS
+    waitmessage B_WAIT_TIME_LONG
+    return
+
 BattleScript_SacrificeRestoredHP::
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL

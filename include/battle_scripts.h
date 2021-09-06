@@ -73,6 +73,7 @@ extern const u8 BattleScript_SacrificeHPFull[];
 extern const u8 BattleScript_CindersOnAttacker[];
 extern const u8 BattleScript_CindersOnTarget[];
 extern const u8 BattleScript_CindersOnFaintedBattler[];
+extern const u8 BattleScript_CindersAbsorbed[];
 extern const u8 BattleScript_PerishSongTakesLife[];
 extern const u8 BattleScript_PerishSongCountGoesDown[];
 extern const u8 BattleScript_AllStatsUp[];
