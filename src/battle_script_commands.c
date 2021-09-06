@@ -9307,8 +9307,10 @@ static void Cmd_trysetfutureattack(void)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
         else if(gCurrentMove == MOVE_FUTURE_SIGHT)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
-        else 
+        else if(gCurrentMove == MOVE_TERRA_STRIKE)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRA_STRIKE;
+        else
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_AFTERBURN;
 
         gBattlescriptCurrInstr += 5;
     }

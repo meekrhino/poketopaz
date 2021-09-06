@@ -4026,7 +4026,11 @@ BattleScript_CheckDoomDesireMiss::
 	accuracycheck BattleScript_FutureAttackMiss, MOVE_DOOM_DESIRE
 	goto BattleScript_FutureAttackAnimate
 BattleScript_CheckTerraStrikeMiss::
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_TERRA_STRIKE, BattleScript_CheckAterburnMiss
 	accuracycheck BattleScript_FutureAttackMiss, MOVE_TERRA_STRIKE
+	goto BattleScript_FutureAttackAnimate
+BattleScript_CheckAterburnMiss::
+	accuracycheck BattleScript_FutureAttackMiss, MOVE_AFTERBURN
 BattleScript_FutureAttackAnimate::
 	adjustnormaldamage2
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_FUTURE_SIGHT, BattleScript_FutureHitAnimDoomDesire
