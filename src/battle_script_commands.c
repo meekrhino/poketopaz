@@ -3642,6 +3642,7 @@ static void Cmd_getexp(void)
 static void Cmd_unknown_24(void)
 {
     u16 HP_count = 0;
+    u8 monCount = 0;
     s32 i;
 
     if (gBattleControllerExecFlags)
@@ -3652,7 +3653,10 @@ static void Cmd_unknown_24(void)
         for (i = 0; i < MULTI_PARTY_SIZE; i++)
         {
             if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+            {
                 HP_count += GetMonData(&gPlayerParty[i], MON_DATA_HP);
+                monCount++;
+            }
         }
     }
     else
@@ -3663,11 +3667,13 @@ static void Cmd_unknown_24(void)
              && (!(gBattleTypeFlags & BATTLE_TYPE_ARENA) || !(gBattleStruct->arenaLostPlayerMons & gBitTable[i])))
             {
                 HP_count += GetMonData(&gPlayerParty[i], MON_DATA_HP);
+                monCount++;
             }
         }
     }
 
-    if (HP_count == 0 && !(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_SACRIFICE_PEND))
+    if (HP_count == 0
+     && !((gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_SACRIFICE_PEND) && monCount > 1))
         gBattleOutcome |= B_OUTCOME_LOST;
     
     HP_count = 0;
@@ -3678,10 +3684,12 @@ static void Cmd_unknown_24(void)
             && (!(gBattleTypeFlags & BATTLE_TYPE_ARENA) || !(gBattleStruct->arenaLostOpponentMons & gBitTable[i])))
         {
             HP_count += GetMonData(&gEnemyParty[i], MON_DATA_HP);
+                monCount++;
         }
     }
 
-    if (HP_count == 0)
+    if (HP_count == 0 
+     && !((gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_SACRIFICE_PEND) && monCount > 1))
         gBattleOutcome |= B_OUTCOME_WON;
 
     if (gBattleOutcome == 0 && (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))

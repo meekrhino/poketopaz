@@ -2656,8 +2656,7 @@ static const u16 sSunfloraLevelUpLearnset[] = {
 };
 
 static const u16 sYanmaLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
-    LEVEL_UP_MOVE( 1, MOVE_FORESIGHT),
+    LEVEL_UP_MOVE( 1, MOVE_SACRIFICE),
     LEVEL_UP_MOVE( 7, MOVE_QUICK_ATTACK),
     LEVEL_UP_MOVE(13, MOVE_DOUBLE_TEAM),
     LEVEL_UP_MOVE(19, MOVE_SONIC_BOOM),

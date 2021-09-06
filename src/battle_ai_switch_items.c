@@ -689,7 +689,7 @@ u8 GetMostSuitableMonToSwitchInto(void)
         {
             u16 species = GetMonData(&party[i], MON_DATA_SPECIES);
             if (species != SPECIES_NONE
-                && GetMonData(&party[i], MON_DATA_HP) != 0
+                && ((GetMonData(&party[i], MON_DATA_HP) != 0 || gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SACRIFICE_PEND))
                 && !(gBitTable[i] & invalidMons)
                 && gBattlerPartyIndexes[battlerIn1] != i
                 && gBattlerPartyIndexes[battlerIn2] != i
@@ -747,7 +747,7 @@ u8 GetMostSuitableMonToSwitchInto(void)
     {
         if ((u16)(GetMonData(&party[i], MON_DATA_SPECIES)) == SPECIES_NONE)
             continue;
-        if (GetMonData(&party[i], MON_DATA_HP) == 0)
+        if (GetMonData(&party[i], MON_DATA_HP) == 0 && !(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SACRIFICE_PEND))
             continue;
         if (gBattlerPartyIndexes[battlerIn1] == i)
             continue;
