@@ -4986,7 +4986,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_ALPHA_SHOCK] = 
     {
-        .effect = EFFECT_PARALYZE_HIT, // TODO: EFFECT_MOVE_SET -- double power and effect chance with special move set
+        .effect = EFFECT_ALPHA_SHOCK,
         .power = 50,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
@@ -5000,7 +5000,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_BETA_FLAME] = 
     {
-        .effect = EFFECT_BURN_HIT,
+        .effect = EFFECT_BETA_FLAME,
         .power = 50,
         .type = TYPE_FIRE,
         .accuracy = 100,
@@ -5014,7 +5014,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_GAMMA_SPORE] = 
     {
-        .effect = EFFECT_POISON_HIT,
+        .effect = EFFECT_GAMMA_SPORE,
         .power = 50,
         .type = TYPE_GRASS,
         .accuracy = 100,
@@ -5028,7 +5028,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DELTA_WAVE] = 
     {
-        .effect = EFFECT_CONFUSE_HIT,
+        .effect = EFFECT_DELTA_WAVE,
         .power = 50,
         .type = TYPE_WATER,
         .accuracy = 100,
@@ -5938,7 +5938,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SACRIFICE] = 
     {
-        .effect = EFFECT_SACRIFICE, // TODO - EFFECT_SACRIFICE; revive to half hp next pokemon or fully heal (o god hard one)
+        .effect = EFFECT_SACRIFICE,
         .power = 0,
         .type = TYPE_LIGHT,
         .accuracy = 100,

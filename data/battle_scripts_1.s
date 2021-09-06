@@ -253,6 +253,10 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectSpikeWall              @ EFFECT_SPIKE_WALL
     .4byte BattleScript_EffectSpiralKick             @ EFFECT_SPIRAL_KICK
     .4byte BattleScript_EffectSacrifice              @ EFFECT_SACRIFICE
+    .4byte BattleScript_EffectAlphaShock             @ EFFECT_ALPHA_SHOCK
+    .4byte BattleScript_EffectBetaFlame              @ EFFECT_BETA_FLAME    
+    .4byte BattleScript_EffectGammaSpore             @ EFFECT_GAMMA_SPORE
+    .4byte BattleScript_EffectDeltaWave              @ EFFECT_DELTA_WAVE
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2567,6 +2571,27 @@ BattleScript_EffectFacade::
 BattleScript_FacadeDoubleDmg::
 	setbyte sDMG_MULTIPLIER, 2
 	goto BattleScript_EffectHit
+
+BattleScript_EffectAlphaShock::
+    setmoveeffect MOVE_EFFECT_PARALYSIS
+    alphashockmodify
+    goto BattleScript_EffectHit
+
+ BattleScript_EffectBetaFlame::
+    setmoveeffect MOVE_EFFECT_BURN
+    alphashockmodify
+    goto BattleScript_EffectHit
+
+ BattleScript_EffectGammaSpore::
+    setmoveeffect MOVE_EFFECT_POISON
+    alphashockmodify
+    goto BattleScript_EffectHit
+
+ BattleScript_EffectDeltaWave::
+    setmoveeffect MOVE_EFFECT_CONFUSION
+    alphashockmodify
+    goto BattleScript_EffectHit
+
 
 BattleScript_EffectFocusPunch::
 	attackcanceler

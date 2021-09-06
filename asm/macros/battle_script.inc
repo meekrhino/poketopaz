@@ -1386,6 +1386,10 @@
     .macro setsacrifice
     various BS_ATTACKER, VARIOUS_SET_SACRIFICE
     .endm
+
+    .macro alphashockmodify
+    various BS_ATTACKER, VARIOUS_ALPHA_MODIFY_DAMAGE
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req

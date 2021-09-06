@@ -6543,6 +6543,7 @@ static void Cmd_various(void)
 {
     u8 side;
     s32 i;
+    u8 movesetCount = 0;
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
 
@@ -6774,6 +6775,19 @@ static void Cmd_various(void)
         break;
     case VARIOUS_SET_SACRIFICE:
         gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_SACRIFICE_PEND;
+        break;
+    case VARIOUS_ALPHA_MODIFY_DAMAGE:
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (gBattleMons[gActiveBattler].moves[i] == MOVE_ALPHA_SHOCK
+             || gBattleMons[gActiveBattler].moves[i] == MOVE_BETA_FLAME
+             || gBattleMons[gActiveBattler].moves[i] == MOVE_GAMMA_SPORE
+             || gBattleMons[gActiveBattler].moves[i] == MOVE_DELTA_WAVE)
+                movesetCount++;
+        }
+        
+        if (movesetCount == 4)
+            gBattleScripting.dmgMultiplier = 2;
         break;
     }
 
