@@ -5390,15 +5390,15 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .physicality = MOVE_PHYSICALITY_OTHER,
     },
 
-    [MOVE_INFERNO] = 
+    [MOVE_FIRESTORM] = 
     {
-        .effect = EFFECT_TRAP,
+        .effect = EFFECT_FIRESTORM,
         .power = 50,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .target = MOVE_TARGET_ALL,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .physicality = MOVE_PHYSICALITY_SPECIAL,

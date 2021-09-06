@@ -2471,7 +2471,8 @@ void AnimTask_SetAttackerTargetLeftPos(u8 taskId)
 
 void AnimTask_GetTrappedMoveAnimId(u8 taskId)
 {
-    if (gBattleSpritesDataPtr->animationData->animArg == MOVE_FIRE_SPIN)
+    if (gBattleSpritesDataPtr->animationData->animArg == MOVE_FIRE_SPIN
+     || gBattleSpritesDataPtr->animationData->animArg == MOVE_FIRESTORM)
         gBattleAnimArgs[0] = TRAP_ANIM_FIRE_SPIN;
     else if (gBattleSpritesDataPtr->animationData->animArg == MOVE_WHIRLPOOL)
         gBattleAnimArgs[0] = TRAP_ANIM_WHIRLPOOL;

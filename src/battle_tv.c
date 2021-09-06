@@ -326,6 +326,13 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_MARIONETTE] = 2,
     [EFFECT_SPIKE_WALL] = 7,
     [EFFECT_SPIRAL_KICK] = 1,
+    [EFFECT_FIRESTORM] = 4,
+    [EFFECT_SACRIFICE] = 0,
+    [EFFECT_ALPHA_SHOCK] = 1,
+    [EFFECT_BETA_FLAME] = 1,
+    [EFFECT_GAMMA_SPORE] = 1,
+    [EFFECT_DELTA_WAVE] = 1,
+    [EFFECT_CASCADE] = 1,
 };
 
 static const u16 sPoints_Effectiveness[] =

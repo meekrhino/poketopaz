@@ -1270,7 +1270,7 @@ static void Cmd_accuracycheck(void)
         {
             gMoveResultFlags |= MOVE_RESULT_MISSED;
             if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE &&
-                (gBattleMoves[move].target == MOVE_TARGET_BOTH || gBattleMoves[move].target == MOVE_TARGET_FOES_AND_ALLY))
+                (gBattleMoves[move].target == MOVE_TARGET_BOTH || gBattleMoves[move].target == MOVE_TARGET_FOES_AND_ALLY || gBattleMoves[move].target == MOVE_TARGET_ALL))
                 gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_ATK;
             else
                 gBattleCommunication[MISS_TYPE] = B_MSG_MISSED;
@@ -1306,6 +1306,7 @@ static void Cmd_ppreduce(void)
         switch (gBattleMoves[gCurrentMove].target)
         {
         case MOVE_TARGET_FOES_AND_ALLY:
+        case MOVE_TARGET_ALL:
             ppToDeduct += AbilityBattleEffects(ABILITYEFFECT_COUNT_ON_FIELD, gBattlerAttacker, ABILITY_PRESSURE, 0, 0);
             break;
         case MOVE_TARGET_BOTH:
@@ -1849,6 +1850,7 @@ static void Cmd_attackanimation(void)
     {
         if ((gBattleMoves[gCurrentMove].target & MOVE_TARGET_BOTH
              || gBattleMoves[gCurrentMove].target & MOVE_TARGET_FOES_AND_ALLY
+             || gBattleMoves[gCurrentMove].target & MOVE_TARGET_ALL
              || gBattleMoves[gCurrentMove].target & MOVE_TARGET_DEPENDS)
             && gBattleScripting.animTargetsHit)
         {
@@ -2706,7 +2708,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
 
                     for (gBattleCommunication[MULTISTRING_CHOOSER] = 0; ; gBattleCommunication[MULTISTRING_CHOOSER]++)
                     {
-                        if (gBattleCommunication[MULTISTRING_CHOOSER] > 4)
+                        if (gBattleCommunication[MULTISTRING_CHOOSER] > 5)
                             break;
                         if (gTrappingMoves[gBattleCommunication[MULTISTRING_CHOOSER]] == gCurrentMove)
                             break;
@@ -6892,11 +6894,11 @@ static void Cmd_jumpifnexttargetvalid(void)
 {
     const u8 *jumpPtr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
 
-    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE || gBattleMoves[gCurrentMove].target == MOVE_TARGET_ALL)
     {
         for (gBattlerTarget++; ; gBattlerTarget++)
         {
-            if (gBattlerTarget == gBattlerAttacker)
+            if (gBattlerTarget == gBattlerAttacker && gBattleMoves[gCurrentMove].target != MOVE_TARGET_ALL)
                 continue;
             if (!(gAbsentBattlerFlags & gBitTable[gBattlerTarget]))
                 break;
@@ -9269,7 +9271,7 @@ static void Cmd_selectfirstvalidtarget(void)
 {
     for (gBattlerTarget = 0; gBattlerTarget < gBattlersCount; gBattlerTarget++)
     {
-        if (gBattlerTarget == gBattlerAttacker)
+        if (gBattlerTarget == gBattlerAttacker && gBattleMoves[gCurrentMove].target != MOVE_TARGET_ALL)
             continue;
         if (!(gAbsentBattlerFlags & gBitTable[gBattlerTarget]))
             break;

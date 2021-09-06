@@ -258,6 +258,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectGammaSpore             @ EFFECT_GAMMA_SPORE
     .4byte BattleScript_EffectDeltaWave              @ EFFECT_DELTA_WAVE
     .4byte BattleScript_EffectCascade                @ EFFECT_CASCADE
+	.4byte BattleScript_EffectFirestorm              @ EFFECT_FIRESTORM
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2178,6 +2179,47 @@ BattleScript_HitAllWithUndergroundBonusMissed::
 	waitmessage B_WAIT_TIME_LONG
 	moveendto MOVEEND_NEXT_TARGET
 	jumpifnexttargetvalid BattleScript_HitsAllWithUndergroundBonusLoop
+	end
+
+BattleScript_EffectFirestorm::
+	attackcanceler
+	attackstring
+	ppreduce
+	selectfirstvalidtarget
+BattleScript_HitsAllWithFirestormLoop::
+	movevaluescleanup
+    setmoveeffect MOVE_EFFECT_WRAP
+	accuracycheck BattleScript_HitAllWithFirestormMissed, ACC_CURR_MOVE
+	critcalc
+	damagecalc
+	typecalc
+	adjustnormaldamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_EMPTYSTRING3
+	waitmessage 1
+	tryfaintmon BS_TARGET, FALSE, NULL
+	moveendto MOVEEND_NEXT_TARGET | MOVE_EFFECT_CERTAIN
+    seteffectwithchance
+	jumpifnexttargetvalid BattleScript_HitsAllWithFirestormLoop
+	end
+BattleScript_HitAllWithFirestormMissed::
+	pause B_WAIT_TIME_SHORT
+	typecalc
+	effectivenesssound
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	moveendto MOVEEND_NEXT_TARGET
+	jumpifnexttargetvalid BattleScript_HitsAllWithFirestormLoop
 	end
 
 BattleScript_EffectFutureSight::

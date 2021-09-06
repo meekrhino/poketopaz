@@ -400,7 +400,7 @@ gBattleAnims_Moves::
     .4byte Move_HOLY_FIST
     .4byte Move_ICICLE_WHIP
     .4byte Move_INITIATIVE
-    .4byte Move_INFERNO
+    .4byte Move_FIRESTORM
     .4byte Move_LIGHT_WAVE
     .4byte Move_MAGIC_DUST
     .4byte Move_MARIONETTE
@@ -1465,6 +1465,7 @@ DizzyPunchLunge:
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 7, 1
 	return
 
+Move_FIRESTORM:
 Move_FIRE_SPIN:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	playsewithpan SE_M_SACRED_FIRE2, SOUND_PAN_TARGET
@@ -9653,7 +9654,6 @@ Move_FRICTION:
 Move_HOLY_FIST:
 Move_ICICLE_WHIP:
 Move_INITIATIVE:
-Move_INFERNO:
 Move_LIGHT_WAVE:
 Move_MAGIC_DUST:
 Move_MARIONETTE:

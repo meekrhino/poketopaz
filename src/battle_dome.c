@@ -526,7 +526,7 @@ static const u8 sBattleStyleMovePoints[MOVES_COUNT][NUM_MOVE_POINT_TYPES] =
     [MOVE_HOLY_FIST]     = {[MOVE_POINTS_DMG] = 1},
     [MOVE_ICICLE_WHIP]   = {[MOVE_POINTS_DMG] = 1},
     [MOVE_INITIATIVE]    = {[MOVE_POINTS_DMG] = 1},
-    [MOVE_INFERNO]       = {[MOVE_POINTS_DMG] = 1},
+    [MOVE_FIRESTORM]       = {[MOVE_POINTS_DMG] = 1},
     [MOVE_LIGHT_WAVE]    = {[MOVE_POINTS_DMG] = 1},
     [MOVE_MAGIC_DUST]    = {[MOVE_POINTS_DMG] = 1},
     [MOVE_MARIONETTE]    = {[MOVE_POINTS_DMG] = 1},
