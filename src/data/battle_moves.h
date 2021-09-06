@@ -5112,7 +5112,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_CASCADE] = 
     {
-        .effect = EFFECT_HIT, // TODO - EFFECT_CASCADE
+        .effect = EFFECT_CASCADE,
         .power = 60,
         .type = TYPE_WATER,
         .accuracy = 100,

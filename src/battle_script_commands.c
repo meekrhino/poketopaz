@@ -667,6 +667,7 @@ static const u8* const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_ALL_STATS_UP]     = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_RAPIDSPIN]        = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_REMOVE_PARALYSIS] = BattleScript_MoveEffectSleep,
+    [MOVE_EFFECT_CURE_BURN]        = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_ATK_DEF_DOWN]     = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_RECOIL_33]        = BattleScript_MoveEffectRecoil,
     [MOVE_EFFECT_CURSE]            = BattleScript_MoveEffectCurse,
@@ -2940,6 +2941,23 @@ void SetMoveEffect(bool8 primary, u8 certain)
 
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
+                break;
+            case MOVE_EFFECT_CURE_BURN: // Cascade
+                if (!(gBattleMons[gBattlerTarget].status1 & STATUS1_BURN))
+                {
+                    gBattlescriptCurrInstr++;
+                }
+                else
+                {
+                    gBattleMons[gBattlerTarget].status1 &= ~(STATUS1_BURN);
+
+                    gActiveBattler = gBattlerTarget;
+                    BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
+                    MarkBattlerForControllerExec(gActiveBattler);
+
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_BurnSoothed;
+                }
                 break;
             case MOVE_EFFECT_THRASH:
                 if (gBattleMons[gEffectBattler].status2 & STATUS2_LOCK_CONFUSE)

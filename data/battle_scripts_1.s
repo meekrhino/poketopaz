@@ -257,6 +257,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectBetaFlame              @ EFFECT_BETA_FLAME    
     .4byte BattleScript_EffectGammaSpore             @ EFFECT_GAMMA_SPORE
     .4byte BattleScript_EffectDeltaWave              @ EFFECT_DELTA_WAVE
+    .4byte BattleScript_EffectCascade                @ EFFECT_CASCADE
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2577,17 +2578,17 @@ BattleScript_EffectAlphaShock::
     alphashockmodify
     goto BattleScript_EffectHit
 
- BattleScript_EffectBetaFlame::
+BattleScript_EffectBetaFlame::
     setmoveeffect MOVE_EFFECT_BURN
     alphashockmodify
     goto BattleScript_EffectHit
 
- BattleScript_EffectGammaSpore::
+BattleScript_EffectGammaSpore::
     setmoveeffect MOVE_EFFECT_POISON
     alphashockmodify
     goto BattleScript_EffectHit
 
- BattleScript_EffectDeltaWave::
+BattleScript_EffectDeltaWave::
     setmoveeffect MOVE_EFFECT_CONFUSION
     alphashockmodify
     goto BattleScript_EffectHit
@@ -2607,6 +2608,15 @@ BattleScript_EffectSmellingsalt::
 	jumpifstatus BS_TARGET, STATUS1_PARALYSIS, BattleScript_SmellingsaltDoubleDmg
 	goto BattleScript_EffectHit
 BattleScript_SmellingsaltDoubleDmg:
+	setbyte sDMG_MULTIPLIER, 2
+	goto BattleScript_EffectHit
+
+BattleScript_EffectCascade::
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_EffectHit
+    setmoveeffect MOVE_EFFECT_CURE_BURN | MOVE_EFFECT_CERTAIN
+	jumpifstatus BS_TARGET, STATUS1_BURN, BattleScript_FacadeDoubleDmg
+	goto BattleScript_EffectHit
+BattleScript_EffectCascadeDoubleDmg::
 	setbyte sDMG_MULTIPLIER, 2
 	goto BattleScript_EffectHit
 
@@ -4379,6 +4389,12 @@ BattleScript_CurseTurnDmg::
 
 BattleScript_TargetPRLZHeal::
 	printstring STRINGID_PKMNHEALEDPARALYSIS
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_TARGET
+	return
+
+BattleScript_BurnSoothed::
+	printstring STRINGID_PKMNSOOTHEDBURN
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_TARGET
 	return
