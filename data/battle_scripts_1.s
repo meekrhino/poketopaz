@@ -4679,6 +4679,14 @@ BattleScript_TookAttack::
 	orword gHitMarker, HITMARKER_ATTACKSTRING_PRINTED
 	return
 
+BattleScript_AerodynamicActivates::
+	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, NULL
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_AerodynamicDoStatUp
+BattleScript_AerodynamicDoStatUp::
+	setbyte cMULTISTRING_CHOOSER, B_MSG_STAT_ROSE_ABILITY
+	call BattleScript_StatUp
+	end2
+
 BattleScript_SturdyPreventsOHKO::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_PKMNPROTECTEDBY

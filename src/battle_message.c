@@ -272,6 +272,7 @@ static const u8 sText_SoothingAroma[] = _("A soothing aroma wafted\nthrough the 
 static const u8 sText_ItemsCantBeUsedNow[] = _("Items can't be used now.{PAUSE 64}");
 static const u8 sText_ForXCommaYZ[] = _("For {B_SCR_ACTIVE_NAME_WITH_PREFIX},\n{B_LAST_ITEM} {B_BUFF1}");
 static const u8 sText_PkmnUsedXToGetPumped[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} used\n{B_LAST_ITEM} to get pumped!");
+static const u8 sText_PkmnsAbilityRoseStat[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nmade its {B_BUFF1} rise!");
 static const u8 sText_PkmnLostFocus[] = _("{B_ATK_NAME_WITH_PREFIX} lost its\nfocus and couldn't move!");
 static const u8 sText_PkmnWasDraggedOut[] = _("{B_DEF_NAME_WITH_PREFIX} was\ndragged out!\p");
 static const u8 sText_TheWallShattered[] = _("The wall shattered!");
@@ -887,6 +888,7 @@ const u8 * const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_FORXCOMMAYZ - 12] = sText_ForXCommaYZ,
     [STRINGID_USINGITEMSTATOFPKMNROSE - 12] = sText_UsingItemTheStatOfPkmnRose,
     [STRINGID_PKMNUSEDXTOGETPUMPED - 12] = sText_PkmnUsedXToGetPumped,
+    [STRINGID_PKMNSABILITYROSESTAT - 12] = sText_PkmnsAbilityRoseStat,
     [STRINGID_PKMNSXMADEYUSELESS - 12] = sText_PkmnsXMadeYUseless,
     [STRINGID_PKMNTRAPPEDBYSANDTOMB - 12] = sText_PkmnTrappedBySandTomb,
     [STRINGID_EMPTYSTRING4 - 12] = sText_EmptyString4,
@@ -1078,7 +1080,8 @@ const u16 gStatUpStringIds[] =
     [B_MSG_STAT_WONT_INCREASE] = STRINGID_STATSWONTINCREASE,
     [B_MSG_STAT_ROSE_EMPTY]    = STRINGID_EMPTYSTRING3,
     [B_MSG_STAT_ROSE_ITEM]     = STRINGID_USINGITEMSTATOFPKMNROSE,
-    [B_MSG_USED_DIRE_HIT]     = STRINGID_PKMNUSEDXTOGETPUMPED,
+    [B_MSG_USED_DIRE_HIT]      = STRINGID_PKMNUSEDXTOGETPUMPED,
+    [B_MSG_STAT_ROSE_ABILITY]  = STRINGID_PKMNSABILITYROSESTAT,
 };
 
 const u16 gStatDownStringIds[] =
