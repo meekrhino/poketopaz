@@ -2789,7 +2789,18 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                 SET_STATCHANGER(STAT_SPEED, 2, FALSE);
                 gBattleScripting.animArg1 = 14 + STAT_SPEED;
                 gBattleScripting.animArg2 = 0;
-                BattleScriptExecute(BattleScript_AerodynamicActivates);
+                BattleScriptExecute(BattleScript_AbilityRaiseStat);
+                effect++;
+                break;
+            case ABILITY_CUNNING:
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPATK);
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff2, gLastUsedAbility)
+
+                gEffectBattler = battler;
+                SET_STATCHANGER(STAT_SPATK, 2, FALSE);
+                gBattleScripting.animArg1 = 14 + STAT_SPATK;
+                gBattleScripting.animArg2 = 0;
+                BattleScriptExecute(BattleScript_AbilityRaiseStat);
                 effect++;
                 break;
             }
