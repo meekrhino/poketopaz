@@ -1248,6 +1248,9 @@ static void Cmd_accuracycheck(void)
          && (gBattleMons[gBattlerAttacker].type1 != TYPE_DARK && gBattleMons[gBattlerAttacker].type1 != TYPE_LIGHT
           && gBattleMons[gBattlerAttacker].type2 != TYPE_DARK && gBattleMons[gBattlerAttacker].type2 != TYPE_LIGHT))
             calc = (calc * 80) / 100; // 1.2 darkness loss
+        if ((WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_DARKNESS_ANY)
+         && gBattleMons[gBattlerAttacker].ability == ABILITY_NIGHT_VISION)
+            calc = 100; // 100% night vision boost
 
         if (gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY)
         {
