@@ -1234,6 +1234,9 @@ static void Cmd_accuracycheck(void)
         // check Thunder on sunny weather
         if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_ANY && gBattleMoves[move].effect == EFFECT_THUNDER)
             moveAcc = 50;
+        if ((WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_DARKNESS_ANY)
+         && gBattleMons[gBattlerAttacker].ability == ABILITY_NIGHT_VISION)
+            moveAcc = 100; // 100% night vision boost
 
         calc = sAccuracyStageRatios[buff].dividend * moveAcc;
         calc /= sAccuracyStageRatios[buff].divisor;
@@ -1248,9 +1251,6 @@ static void Cmd_accuracycheck(void)
          && (gBattleMons[gBattlerAttacker].type1 != TYPE_DARK && gBattleMons[gBattlerAttacker].type1 != TYPE_LIGHT
           && gBattleMons[gBattlerAttacker].type2 != TYPE_DARK && gBattleMons[gBattlerAttacker].type2 != TYPE_LIGHT))
             calc = (calc * 80) / 100; // 1.2 darkness loss
-        if ((WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_DARKNESS_ANY)
-         && gBattleMons[gBattlerAttacker].ability == ABILITY_NIGHT_VISION)
-            calc = 100; // 100% night vision boost
 
         if (gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY)
         {
