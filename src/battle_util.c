@@ -78,7 +78,8 @@ static const u8 sGoNearCounterToEscapeFactor[] = {4, 4, 4, 4};
 void HandleAction_UseMove(void)
 {
     u8 side;
-    u8 var = 4;
+    u8 lightningRodTurn = 4;
+    u8 diversionTurn = 4;
 
     gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
 
@@ -157,22 +158,26 @@ void HandleAction_UseMove(void)
     else if ((gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
              && gSideTimers[side].followmeTimer == 0
              && (gBattleMoves[gCurrentMove].power != 0
-                 || gBattleMoves[gCurrentMove].target != MOVE_TARGET_USER)
-             && gBattleMons[*(gBattleStruct->moveTarget + gBattlerAttacker)].ability != ABILITY_LIGHTNING_ROD
-             && gBattleMoves[gCurrentMove].type == TYPE_ELECTRIC)
+                 || gBattleMoves[gCurrentMove].target != MOVE_TARGET_USER))
     {
         side = GetBattlerSide(gBattlerAttacker);
         for (gActiveBattler = 0; gActiveBattler < gBattlersCount; gActiveBattler++)
         {
             if (side != GetBattlerSide(gActiveBattler)
-                && *(gBattleStruct->moveTarget + gBattlerAttacker) != gActiveBattler
-                && gBattleMons[gActiveBattler].ability == ABILITY_LIGHTNING_ROD
-                && GetBattlerTurnOrderNum(gActiveBattler) < var)
+                && *(gBattleStruct->moveTarget + gBattlerAttacker) != gActiveBattler)
             {
-                var = GetBattlerTurnOrderNum(gActiveBattler);
+                if (gBattleMoves[gCurrentMove].type == TYPE_ELECTRIC
+                 && gBattleMons[gActiveBattler].ability == ABILITY_LIGHTNING_ROD
+                 && GetBattlerTurnOrderNum(gActiveBattler) < lightningRodTurn
+                 && (gBattleMons[*(gBattleStruct->moveTarget + gBattlerAttacker)].ability != ABILITY_LIGHTNING_ROD))
+                    lightningRodTurn = GetBattlerTurnOrderNum(gActiveBattler);
+                if (gBattleMons[gActiveBattler].ability == ABILITY_DIVERSION
+                 && GetBattlerTurnOrderNum(gActiveBattler) < diversionTurn
+                 && Random() & 1)
+                    diversionTurn = GetBattlerTurnOrderNum(gActiveBattler);
             }
         }
-        if (var == 4)
+        if (lightningRodTurn == 4 && diversionTurn == 4)
         {
             if (gBattleMoves[gChosenMove].target & MOVE_TARGET_RANDOM)
             {
@@ -212,10 +217,20 @@ void HandleAction_UseMove(void)
         }
         else
         {
-            gActiveBattler = gBattlerByTurnOrder[var];
-            RecordAbilityBattle(gActiveBattler, gBattleMons[gActiveBattler].ability);
-            gSpecialStatuses[gActiveBattler].lightningRodRedirected = 1;
-            gBattlerTarget = gActiveBattler;
+            if (lightningRodTurn < 4)
+            {
+                gActiveBattler = gBattlerByTurnOrder[lightningRodTurn];
+                RecordAbilityBattle(gActiveBattler, gBattleMons[gActiveBattler].ability);
+                gSpecialStatuses[gActiveBattler].lightningRodRedirected = 1;
+                gBattlerTarget = gActiveBattler;
+            }
+            else
+            {
+                gActiveBattler = gBattlerByTurnOrder[diversionTurn];
+                RecordAbilityBattle(gActiveBattler, gBattleMons[gActiveBattler].ability);
+                gSpecialStatuses[gActiveBattler].diversionRedirected = 1;
+                gBattlerTarget = gActiveBattler;
+            }
         }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
@@ -4121,6 +4136,12 @@ u8 GetMoveTarget(u16 move, u8 setTarget)
                 targetBattler ^= BIT_FLANK;
                 RecordAbilityBattle(targetBattler, gBattleMons[targetBattler].ability);
                 gSpecialStatuses[targetBattler].lightningRodRedirected = 1;
+            }
+            else if (AbilityBattleEffects(ABILITYEFFECT_COUNT_OTHER_SIDE, gBattlerAttacker, ABILITY_DIVERSION, 0, 0) && Random() & 1)
+            {
+                targetBattler ^= BIT_FLANK;
+                RecordAbilityBattle(targetBattler, gBattleMons[targetBattler].ability);
+                gSpecialStatuses[targetBattler].diversionRedirected = 1;
             }
         }
         break;

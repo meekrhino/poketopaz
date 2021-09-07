@@ -141,6 +141,7 @@ struct SpecialStatus
 {
     u32 statLowered:1;
     u32 lightningRodRedirected:1;
+    u32 diversionRedirected:1;
     u32 restoredBattlerSprite: 1;
     u32 intimidatedMon:1;
     u32 traced:1;

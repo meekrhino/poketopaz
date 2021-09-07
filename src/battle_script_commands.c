@@ -1068,7 +1068,16 @@ static void Cmd_attackcanceler(void)
         }
     }
 
-    if (gSpecialStatuses[gBattlerTarget].lightningRodRedirected)
+    if (gSpecialStatuses[gBattlerTarget].diversionRedirected)
+    {
+        gSpecialStatuses[gBattlerTarget].diversionRedirected = 0;
+        gSpecialStatuses[gBattlerTarget].lightningRodRedirected = 0;
+        gLastUsedAbility = ABILITY_DIVERSION;
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_TookAttack;
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+    }
+    else if (gSpecialStatuses[gBattlerTarget].lightningRodRedirected)
     {
         gSpecialStatuses[gBattlerTarget].lightningRodRedirected = 0;
         gLastUsedAbility = ABILITY_LIGHTNING_ROD;
