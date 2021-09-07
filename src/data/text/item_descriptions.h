@@ -1369,12 +1369,12 @@ static const u8 sTM50Desc[] = _(
 
 static const u8 sTM51Desc[] = _(
     "An attack that\n"
-    "intensifies on each\n"
-    "successive hit.");
+    "intensifies on\n"
+    "successive hits.");
 
 static const u8 sTM52Desc[] = _(
     "An attack that\n"
-    "that leaves the foe\n"
+    "leaves the foe\n"
     "with at least 1 HP.");
 
 static const u8 sTM53Desc[] = _(
@@ -1403,9 +1403,9 @@ static const u8 sTM57Desc[] = _(
     "May lower DEFENSE.");
 
 static const u8 sTM58Desc[] = _(
-    "Deep shadows block\n"
-    "out the sun\n"
-    "for 5 turns.");
+    "Deep shadows\n"
+    "block out the\n"
+    "sun for 5 turns.");
 
 static const u8 sTM59Desc[] = _(
     "A fierce attack\n"
