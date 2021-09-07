@@ -22,7 +22,7 @@ struct UnknownPokemonStruct4
 };
 
 #define TYPE_NAME_LENGTH 6
-#define ABILITY_NAME_LENGTH 12
+#define ABILITY_NAME_LENGTH 13
 
 // defines for the u8 array gTypeEffectiveness
 #define TYPE_EFFECT_ATK_TYPE(i)((gTypeEffectiveness[i + 0]))

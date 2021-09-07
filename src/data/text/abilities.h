@@ -1,3 +1,8 @@
+#ifdef _MSC_VER
+#include "battle_main.h"
+#include "constants/abilities.h"
+#endif
+
 static const u8 sNoneDescription[] = _("No special ability.");
 static const u8 sStenchDescription[] = _("Helps repel wild POKéMON.");
 static const u8 sDrizzleDescription[] = _("Summons rain in battle.");
@@ -76,6 +81,27 @@ static const u8 sPurePowerDescription[] = _("Raises ATTACK.");
 static const u8 sShellArmorDescription[] = _("Blocks critical hits.");
 static const u8 sCacophonyDescription[] = _("Avoids sound-based moves.");
 static const u8 sAirLockDescription[] = _("Negates weather effects.");
+static const u8 sAerodynamicDescription [] = _("Doubles DEFENSE in battle.");
+static const u8 sArachnophobiaDescription [] = _("Foe may become frightened.");
+static const u8 sBoilDescription [] = _("Unaffected by the rain.");
+static const u8 sCopycatDescription [] = _("Copies foe ability change.");
+static const u8 sDiversionDescription [] = _("May draw focus in battle.");
+static const u8 sDragonBloodDescription [] = _("Ups DRAGON moves in a pinch.");
+static const u8 sEarthenArmorDescription [] = _("Ups DEFENSE in battle.");
+static const u8 sEchoDescription [] = _("May attack twice at once.");
+static const u8 sEclipseDescription [] = _("Summons darkness in battle.");
+static const u8 sElementGuardDescription [] = _("Not hit by its own type.");
+static const u8 sEmptyHeadDescription [] = _("Prevents mental conditions.");
+static const u8 sIronWillDescription [] = _("Ups STEEL moves in a pinch.");
+static const u8 sLastEffortDescription [] = _("Maxes ATK when at 0 PP.");
+static const u8 sLightAbsorbDescription [] = _("Changes light into HP.");
+static const u8 sNightVisionDescription [] = _("Ups accuracy in darkness.");
+static const u8 sOverdriveDescription [] = _("Repeated moves gain power.");
+static const u8 sSereneFocusDescription [] = _("Ability change is doubled.");
+static const u8 sConfoundDescription [] = _("Lowers foe's SP. DEFENSE.");
+static const u8 sCunningDescription [] = _("Ups SP. ATTACK in battle.");
+static const u8 sColdSnapDescription [] = _("Summons hail in battle.");
+static const u8 sFinalWishDescription [] = _("Avenges weak attacks.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -157,6 +183,27 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SHELL_ARMOR] = _("SHELL ARMOR"),
     [ABILITY_CACOPHONY] = _("CACOPHONY"),
     [ABILITY_AIR_LOCK] = _("AIR LOCK"),
+    [ABILITY_AERODYNAMIC] = _("AERODYNAMIC"),
+    [ABILITY_ARACHNOPHOBIA] = _("ARACHNOPHOBIA"),
+    [ABILITY_BOIL] = _("BOIL"),
+    [ABILITY_COPYCAT] = _("COPYCAT"),
+    [ABILITY_DIVERSION] = _("DIVERSION"),
+    [ABILITY_DRAGON_BLOOD] = _("DRAGON BLOOD"),
+    [ABILITY_EARTHEN_ARMOR] = _("EARTHEN ARMOR"),
+    [ABILITY_ECHO] = _("ECHO"),
+    [ABILITY_ECLIPSE] = _("ECLIPSE"),
+    [ABILITY_ELEMENT_GUARD] = _("ELEMENT GUARD"),
+    [ABILITY_EMPTY_HEAD] = _("EMPTY HEAD"),
+    [ABILITY_IRON_WILL] = _("IRON WILL"),
+    [ABILITY_LAST_EFFORT] = _("LAST EFFORT"),
+    [ABILITY_LIGHT_ABSORB] = _("LIGHT ABSORB"),
+    [ABILITY_NIGHT_VISION] = _("NIGHT VISION"),
+    [ABILITY_OVERDRIVE] = _("OVERDRIVE"),
+    [ABILITY_SERENE_FOCUS] = _("SERENE FOCUS"),
+    [ABILITY_CONFOUND] = _("CONFOUND"),
+    [ABILITY_CUNNING] = _("CUNNING"),
+    [ABILITY_COLD_SNAP] = _("COLD SNAP"),
+    [ABILITY_FINAL_WISH] = _("FINAL WISH"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -239,4 +286,25 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SHELL_ARMOR] = sShellArmorDescription,
     [ABILITY_CACOPHONY] = sCacophonyDescription,
     [ABILITY_AIR_LOCK] = sAirLockDescription,
+    [ABILITY_AERODYNAMIC] = sAerodynamicDescription,
+    [ABILITY_ARACHNOPHOBIA] = sArachnophobiaDescription,
+    [ABILITY_BOIL] = sBoilDescription,
+    [ABILITY_COPYCAT] = sCopycatDescription,
+    [ABILITY_DIVERSION] = sDiversionDescription,
+    [ABILITY_DRAGON_BLOOD] = sDragonBloodDescription,
+    [ABILITY_EARTHEN_ARMOR] = sEarthenArmorDescription,
+    [ABILITY_ECHO] = sEchoDescription,
+    [ABILITY_ECLIPSE] = sEclipseDescription,
+    [ABILITY_ELEMENT_GUARD] = sElementGuardDescription,
+    [ABILITY_EMPTY_HEAD] = sEmptyHeadDescription,
+    [ABILITY_IRON_WILL] = sIronWillDescription,
+    [ABILITY_LAST_EFFORT] = sLastEffortDescription,
+    [ABILITY_LIGHT_ABSORB] = sLightAbsorbDescription,
+    [ABILITY_NIGHT_VISION] = sNightVisionDescription,
+    [ABILITY_OVERDRIVE] = sOverdriveDescription,
+    [ABILITY_SERENE_FOCUS] = sSereneFocusDescription,
+    [ABILITY_CONFOUND] = sConfoundDescription,
+    [ABILITY_CUNNING] = sCunningDescription,
+    [ABILITY_COLD_SNAP] = sColdSnapDescription,
+    [ABILITY_FINAL_WISH] = sFinalWishDescription,
 };
