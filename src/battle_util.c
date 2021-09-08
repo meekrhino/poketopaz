@@ -2759,6 +2759,15 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     effect++;
                 }
                 break;
+            case ABILITY_ECLIPSE:
+                if (!(gBattleWeather & WEATHER_DARKNESS_PERMANENT))
+                {
+                    gBattleWeather = (WEATHER_DARKNESS_PERMANENT | WEATHER_DARKNESS_TEMPORARY);
+                    BattleScriptPushCursorAndCallback(BattleScript_EclipseActivates);
+                    gBattleScripting.battler = battler;
+                    effect++;
+                }
+                break;
             case ABILITY_INTIMIDATE:
                 if (!(gSpecialStatuses[battler].intimidatedMon))
                 {
