@@ -1006,23 +1006,32 @@ static void Cmd_attackcanceler(void)
     if (gBattleOutcome != 0)
     {
         gCurrentActionFuncId = B_ACTION_FINISHED;
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
         return;
     }
     if (gBattleMons[gBattlerAttacker].hp == 0 && !(gHitMarker & HITMARKER_NO_ATTACKSTRING))
     {
         gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
         gBattlescriptCurrInstr = BattleScript_MoveEnd;
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
         return;
     }
     if (AtkCanceller_UnableToUseMove())
+    {
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
         return;
+    }
     if (AbilityBattleEffects(ABILITYEFFECT_MOVES_BLOCK, gBattlerTarget, 0, 0, 0))
+    {
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
         return;
+    }
     if (!gBattleMons[gBattlerAttacker].pp[gCurrMovePos] && gCurrentMove != MOVE_STRUGGLE && !(gHitMarker & (HITMARKER_x800000 | HITMARKER_NO_ATTACKSTRING))
      && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS))
     {
         gBattlescriptCurrInstr = BattleScript_NoPPForMove;
         gMoveResultFlags |= MOVE_RESULT_MISSED;
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
         return;
     }
 
@@ -1040,6 +1049,7 @@ static void Cmd_attackcanceler(void)
             return;
         default:
             gMoveResultFlags |= MOVE_RESULT_MISSED;
+            gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
             return;
         }
     }
@@ -1095,6 +1105,7 @@ static void Cmd_attackcanceler(void)
         gLastHitByType[gBattlerTarget] = 0;
         gBattleCommunication[MISS_TYPE] = B_MSG_PROTECTED;
         gBattlescriptCurrInstr++;
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
     }
     else
     {
@@ -1107,6 +1118,7 @@ static void JumpIfMoveFailed(u8 adder, u16 move)
     const u8 *BS_ptr = gBattlescriptCurrInstr + adder;
     if (gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
     {
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
         gLastLandedMoves[gBattlerTarget] = 0;
         gLastHitByType[gBattlerTarget] = 0;
         BS_ptr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
@@ -1399,6 +1411,9 @@ static void Cmd_damagecalc(void)
                                             gBattleStruct->dynamicMoveType, gBattlerAttacker, gBattlerTarget);
     gBattleMoveDamage = gBattleMoveDamage * gCritMultiplier * gBattleScripting.dmgMultiplier;
 
+    if (gDisableStructs[gBattlerAttacker].overdriveCounter > 0)
+        gBattleMoveDamage = (gBattleMoveDamage * (10 + gDisableStructs->overdriveCounter)) / 10;
+
     if (gStatuses3[gBattlerAttacker] & STATUS3_CHARGED_UP && gBattleMoves[gCurrentMove].type == TYPE_ELECTRIC)
         gBattleMoveDamage *= 2;
     if (gStatuses3[gBattlerAttacker] & STATUS3_HEATED_UP && gBattleMoves[gCurrentMove].type == TYPE_FIRE)
@@ -1488,6 +1503,7 @@ static void Cmd_typecalc(void)
         gLastHitByType[gBattlerTarget] = 0;
         gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
     }
     else if (gBattleMons[gBattlerTarget].ability == ABILITY_ELEMENT_GUARD && IS_BATTLER_OF_TYPE(gBattlerTarget, moveType))
     {
@@ -1497,6 +1513,7 @@ static void Cmd_typecalc(void)
         gLastHitByType[gBattlerTarget] = 0;
         gBattleCommunication[MISS_TYPE] = B_MSG_SHIELD_MISS;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
     }
     else
     {
@@ -1533,6 +1550,7 @@ static void Cmd_typecalc(void)
         gLastHitByType[gBattlerTarget] = 0;
         gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_DMG;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
     }
     if (gMoveResultFlags & MOVE_RESULT_DOESNT_AFFECT_FOE)
         gProtectStructs[gBattlerAttacker].targetNotAffected = 1;
@@ -1675,7 +1693,7 @@ u8 TypeCalc(u16 move, u8 attacker, u8 defender)
     }
 
     if ((gBattleMons[defender].ability == ABILITY_LEVITATE && moveType == TYPE_GROUND)
-     || (gBattleMons[gBattlerTarget].ability == ABILITY_ELEMENT_GUARD && IS_BATTLER_OF_TYPE(gBattlerTarget, moveType)))
+     || (gBattleMons[defender].ability == ABILITY_ELEMENT_GUARD && IS_BATTLER_OF_TYPE(defender, moveType)))
     {
         flags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
     }
@@ -4798,9 +4816,13 @@ static void Cmd_typecalc2(void)
         gLastLandedMoves[gBattlerTarget] = 0;
         gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_DMG;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
     }
     if (gMoveResultFlags & MOVE_RESULT_DOESNT_AFFECT_FOE)
+    {
+        gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
         gProtectStructs[gBattlerAttacker].targetNotAffected = 1;
+    }
 
     gBattlescriptCurrInstr++;
 }

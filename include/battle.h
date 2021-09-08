@@ -76,6 +76,7 @@ struct DisableStruct
     u32 transformedMonPersonality;
     u16 disabledMove;
     u16 encoredMove;
+    u16 overdriveMove;
     u8 protectUses;
     u8 stockpileCounter;
     u8 substituteHP;
@@ -88,6 +89,7 @@ struct DisableStruct
     u8 perishSongTimer:4;
     u8 perishSongTimerStartValue:4;
     u8 furyCutterCounter;
+    u8 overdriveCounter;
     u8 rolloutTimer:4;
     u8 rolloutTimerStartValue:4;
     u8 chargeTimer:4;

@@ -146,6 +146,14 @@ void HandleAction_UseMove(void)
             gBattleResults.lastUsedMovePlayer = gCurrentMove;
         else
             gBattleResults.lastUsedMoveOpponent = gCurrentMove;
+            
+        if (gDisableStructs[gBattlerAttacker].overdriveMove != gCurrentMove)
+        {
+            gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
+            gDisableStructs[gBattlerAttacker].overdriveMove = gCurrentMove;
+        }
+        else
+            gDisableStructs[gBattlerAttacker].overdriveCounter++;
     }
 
     // choose target
@@ -886,7 +894,8 @@ void CancelMultiTurnMoves(u8 battler)
      || gBattleMons[battler].status2 & STATUS2_BIDE
      || gStatuses3[battler] & (STATUS3_SEMI_INVULNERABLE)
      || gDisableStructs[battler].rolloutTimer != 0
-     || gDisableStructs[battler].furyCutterCounter != 0) 
+     || gDisableStructs[battler].furyCutterCounter != 0
+     || gDisableStructs[battler].overdriveCounter != 0) 
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = TRUE;
     }
@@ -902,6 +911,8 @@ void CancelMultiTurnMoves(u8 battler)
     gStatuses3[battler] &= ~(STATUS3_SEMI_INVULNERABLE);
 
     gDisableStructs[battler].rolloutTimer = 0;
+    gDisableStructs[battler].overdriveMove = MOVE_NONE;
+    gDisableStructs[battler].overdriveCounter = 0;
     gDisableStructs[battler].furyCutterCounter = 0;
 }
 
@@ -4215,6 +4226,8 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
 
 void ClearFuryCutterDestinyBondGrudge(u8 battlerId)
 {
+    gDisableStructs[battlerId].overdriveMove = MOVE_NONE;
+    gDisableStructs[battlerId].overdriveCounter = 0;
     gDisableStructs[battlerId].furyCutterCounter = 0;
     gBattleMons[battlerId].status2 &= ~(STATUS2_DESTINY_BOND);
     gStatuses3[battlerId] &= ~(STATUS3_GRUDGE);
