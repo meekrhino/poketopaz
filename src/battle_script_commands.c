@@ -7451,8 +7451,22 @@ static u8 ChangeStatBuffs(s8 statValue, u8 statId, u8 flags, const u8 *BS_ptr)
 static void Cmd_statbuffchange(void)
 {
     const u8* jumpPtr = T1_READ_PTR(gBattlescriptCurrInstr + 2);
-    if (ChangeStatBuffs(gBattleScripting.statChanger & 0xF0, GET_STAT_BUFF_ID(gBattleScripting.statChanger), gBattlescriptCurrInstr[1], jumpPtr) == STAT_BUFF_WORKED)
+    const u8 statId = GET_STAT_BUFF_ID(gBattleScripting.statChanger);
+    const u8 statValue = gBattleScripting.statChanger & 0xF0;
+
+    if (ChangeStatBuffs(statValue, statId, gBattlescriptCurrInstr[1], jumpPtr) == STAT_BUFF_WORKED)
+    {
+        u8 copycatRecord = 0;
+        u8 negative = statValue >> 7;
+        u8 statChange = (statValue >> 4) & 7;
+        if (statChange > 3)
+            statChange = 3;
+        copycatRecord = (gActiveBattler << 6) | (negative << 5) | (statChange << 3) | (statId);
+
+        gBattleStruct->copycatStatChanges[gBattleStruct->copycatStatChangeCount] = copycatRecord;
+        gBattleStruct->copycatStatChangeCount++;
         gBattlescriptCurrInstr += 6;
+    }
 }
 
 static void Cmd_normalisebuffs(void) // haze
@@ -9154,6 +9168,9 @@ static void Cmd_maxattackhalvehp(void) // belly drum
         gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 2;
         if (gBattleMoveDamage == 0)
             gBattleMoveDamage = 1;
+
+        gBattleStruct->copycatStatChanges[gBattleStruct->copycatStatChangeCount] = (gBattlerAttacker << 6) | (3 << 3) | (STAT_ATK);
+        gBattleStruct->copycatStatChangeCount++;
 
         gBattlescriptCurrInstr += 5;
     }

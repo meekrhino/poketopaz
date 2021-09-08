@@ -260,16 +260,12 @@ bool8 CheckBagHasSpace(u16 itemId, u16 count)
 static void SetTmHmOwned(u16 itemId)
 {
     u8* flagByte = &gSaveBlock1Ptr->bagPocket_TMHMOwnedFlags[(itemId - ITEM_TM01) / 8];
-    mgba_printf(MGBA_LOG_DEBUG, "adding item to TM/HM pocket %d", itemId);
-    mgba_printf(MGBA_LOG_DEBUG, "flagbyte calculated to %d", *flagByte);
     *flagByte = (*flagByte) | (1 << ((itemId - ITEM_TM01) % 8));
 }
 
 bool8 AddBagItem(u16 itemId, u16 count)
 {
     u8 i;
-
-    mgba_printf(MGBA_LOG_DEBUG, "adding item %d", itemId);
 
     if (ItemId_GetPocket(itemId) == POCKET_NONE)
         return FALSE;

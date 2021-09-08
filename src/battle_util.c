@@ -35,6 +35,8 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/weather.h"
+#include "printf.h"
+#include "mgba.h"
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
@@ -2640,6 +2642,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
         u16 move;
         u8 side;
         u8 target1;
+        u8 changes;
 
         if (special)
             gLastUsedAbility = special;
@@ -2869,11 +2872,48 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                         gBattleScripting.animArg2 = 0;
                         BattleScriptPushCursorAndCallback(BattleScript_SpeedBoostActivates);
                         gBattleScripting.battler = battler;
+
+                        gBattleStruct->copycatStatChanges[gBattleStruct->copycatStatChangeCount] = (battler << 6) | (1 << 3) | (STAT_SPEED);
+                        gBattleStruct->copycatStatChangeCount++;
+
                         effect++;
                     }
                     break;
                 case ABILITY_TRUANT:
                     gDisableStructs[gBattlerAttacker].truantCounter ^= 1;
+                    break;
+                case ABILITY_COPYCAT:
+                    changes = 0;
+                    for (i = 0; i < gBattleStruct->copycatStatChangeCount; i++)
+                    {
+                        u8 fromBattler = (gBattleStruct->copycatStatChanges[i] >> 6) & 3;
+                        if (gBattleStruct->copycatStatChanges[i] == 0)
+                            continue;
+                        side = (GetBattlerPosition(battler) ^ BIT_SIDE) & BIT_SIDE; // side of the opposing pokemon
+                        if (GetBattlerSide(fromBattler) == side)
+                        {
+                            u8 statId = gBattleStruct->copycatStatChanges[i] & 7;
+                            u8 statValue = (gBattleStruct->copycatStatChanges[i] >> 3) & 3;
+                            u8 negative = (gBattleStruct->copycatStatChanges[i] >> 5) & 1;
+                            if (negative)
+                                gBattleMons[battler].statStages[statId] -= statValue;
+                            else
+                                gBattleMons[battler].statStages[statId] += statValue;
+
+                            if (gBattleMons[battler].statStages[statId] > MAX_STAT_STAGE)
+                                gBattleMons[battler].statStages[statId] = MAX_STAT_STAGE;
+                            if (gBattleMons[battler].statStages[statId] < MIN_STAT_STAGE)
+                                gBattleMons[battler].statStages[statId] = MIN_STAT_STAGE;
+
+                            changes++;
+                        }
+                    }
+                    if (changes)
+                    {
+                        BattleScriptPushCursorAndCallback(BattleScript_CopycatActivates);
+                        gBattleScripting.battler = battler;
+                        effect++;
+                    }
                     break;
                 }
             }

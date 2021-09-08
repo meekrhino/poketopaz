@@ -3937,6 +3937,8 @@ void BattleTurnPassed(void)
     gBattleMainFunc = HandleTurnActionSelectionState;
     gRandomTurnNumber = Random();
 
+    gBattleStruct->copycatStatChangeCount = 0;
+
     if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
         BattleScriptExecute(BattleScript_PalacePrintFlavorText);
     else if (gBattleTypeFlags & BATTLE_TYPE_ARENA && gBattleStruct->arenaTurnCounter == 0)
@@ -4825,6 +4827,8 @@ void SpecialStatusesClear(void)
 
 static void CheckFocusPunch_ClearVarsBeforeTurnStarts(void)
 {
+    u32 i;
+
     if (!(gHitMarker & HITMARKER_RUN))
     {
         while (gBattleStruct->focusPunchBattlerId < gBattlersCount)
@@ -4852,6 +4856,9 @@ static void CheckFocusPunch_ClearVarsBeforeTurnStarts(void)
     gBattleCommunication[4] = 0;
     gBattleScripting.multihitMoveEffect = 0;
     gBattleResources->battleScriptsStack->size = 0;
+    for (i = 0; i < MAX_BATTLERS_COUNT * 4; i++)
+        gBattleStruct->copycatStatChanges[i] = 0;
+    gBattleStruct->copycatStatChangeCount = 0;
 }
 
 static void RunTurnActionsFunctions(void)

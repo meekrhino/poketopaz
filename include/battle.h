@@ -465,6 +465,8 @@ struct BattleStruct
     u8 arenaLostPlayerMons; // Bits for party member, lost as in referee's decision, not by fainting.
     u8 arenaLostOpponentMons;
     u8 alreadyStatusedMoveAttempt; // As bits for battlers; For example when using Thunder Wave on an already paralyzed pokemon.
+    u8 copycatStatChangeCount;
+    u8 copycatStatChanges[MAX_BATTLERS_COUNT * 6];
 };
 
 #define GET_MOVE_TYPE(move, typeArg)                        \

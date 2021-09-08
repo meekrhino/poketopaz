@@ -4581,6 +4581,11 @@ BattleScript_SpeedBoostActivates::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
+BattleScript_CopycatActivates::
+	printstring STRINGID_PKMNCOPYCATSTATCHANGES
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
 BattleScript_TraceActivates::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_PKMNTRACED
