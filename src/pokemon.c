@@ -3217,9 +3217,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
             damage = 1;
     }
 
-    if (type == TYPE_MYSTERY)
-        damage = 0; // is ??? type. does 0 damage.
-
     if (IS_MOVE_SPECIAL(gBattleMoves[move]))
     {
         if (gCritMultiplier == 2)
@@ -3260,6 +3257,9 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
             damage /= 2;
     }
 
+    if (type == TYPE_MYSTERY)
+        damage = 0; // is ??? type. does 0 damage.
+
     if ((sideStatus & SIDE_STATUS_WATERWALL) 
       && gCritMultiplier == 1
       && (type == TYPE_FIRE || type == TYPE_WATER || type == TYPE_ICE))
@@ -3273,7 +3273,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     // are effects of weather negated with cloud nine or air lock
     if (WEATHER_HAS_EFFECT2)
     {
-        if (gBattleWeather & WEATHER_RAIN_TEMPORARY)
+        if (gBattleWeather & WEATHER_RAIN_TEMPORARY && attacker->ability != ABILITY_BOIL)
         {
             switch (type)
             {
@@ -3287,7 +3287,8 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         }
 
         // any weather except sun weakens solar beam
-        if ((gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_SANDSTORM_ANY | WEATHER_HAIL_ANY | WEATHER_DARKNESS_ANY)) && gCurrentMove == MOVE_SOLAR_BEAM)
+        if ((gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_HAIL_ANY | WEATHER_DARKNESS_ANY)
+          || (gBattleWeather & WEATHER_RAIN_ANY && attacker->ability != ABILITY_BOIL)) && gCurrentMove == MOVE_SOLAR_BEAM)
             damage /= 2;
 
         // sunny
