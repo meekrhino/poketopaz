@@ -1489,6 +1489,15 @@ static void Cmd_typecalc(void)
         gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
     }
+    else if (gBattleMons[gBattlerTarget].ability == ABILITY_ELEMENT_GUARD && IS_BATTLER_OF_TYPE(gBattlerTarget, moveType))
+    {
+        gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[gBattlerTarget] = 0;
+        gLastHitByType[gBattlerTarget] = 0;
+        gBattleCommunication[MISS_TYPE] = B_MSG_SHIELD_MISS;
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+    }
     else
     {
         while (TYPE_EFFECT_ATK_TYPE(i) != TYPE_ENDTABLE)
@@ -1547,6 +1556,13 @@ static void CheckWonderGuardAndLevitate(void)
         gLastUsedAbility = ABILITY_LEVITATE;
         gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
         RecordAbilityBattle(gBattlerTarget, ABILITY_LEVITATE);
+        return;
+    }
+    else if (gBattleMons[gBattlerTarget].ability == ABILITY_ELEMENT_GUARD && IS_BATTLER_OF_TYPE(gBattlerTarget, moveType))
+    {
+        gLastUsedAbility = ABILITY_ELEMENT_GUARD;
+        gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
+        RecordAbilityBattle(gBattlerTarget, ABILITY_ELEMENT_GUARD);
         return;
     }
 
@@ -1658,7 +1674,8 @@ u8 TypeCalc(u16 move, u8 attacker, u8 defender)
         gBattleMoveDamage = gBattleMoveDamage / 10;
     }
 
-    if (gBattleMons[defender].ability == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+    if ((gBattleMons[defender].ability == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+     || (gBattleMons[gBattlerTarget].ability == ABILITY_ELEMENT_GUARD && IS_BATTLER_OF_TYPE(gBattlerTarget, moveType)))
     {
         flags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
     }
@@ -1710,7 +1727,8 @@ u8 AI_TypeCalc(u16 move, u16 targetSpecies, u8 targetAbility)
 
     moveType = gBattleMoves[move].type;
 
-    if (targetAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+    if ((targetAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+     || (targetAbility == ABILITY_ELEMENT_GUARD && (moveType == type1 || moveType == type2)))
     {
         flags = MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE;
     }
@@ -4696,6 +4714,14 @@ static void Cmd_typecalc2(void)
         gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
         gLastLandedMoves[gBattlerTarget] = 0;
         gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+    }
+    else if (gBattleMons[gBattlerTarget].ability == ABILITY_ELEMENT_GUARD && IS_BATTLER_OF_TYPE(gBattlerTarget, moveType))
+    {
+        gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[gBattlerTarget] = 0;
+        gBattleCommunication[MISS_TYPE] = B_MSG_SHIELD_MISS;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
     }
     else
