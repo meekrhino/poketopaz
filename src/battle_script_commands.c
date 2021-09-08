@@ -2625,7 +2625,20 @@ void SetMoveEffect(bool8 primary, u8 certain)
             {
             case MOVE_EFFECT_CONFUSION:
                 if (gBattleMons[gEffectBattler].ability == ABILITY_OWN_TEMPO
-                    || gBattleMons[gEffectBattler].status2 & STATUS2_CONFUSION)
+                 || gBattleMons[gEffectBattler].ability == ABILITY_EMPTY_HEAD)
+                {
+                    if (primary == TRUE || certain == MOVE_EFFECT_CERTAIN)
+                    {
+                        gLastUsedAbility = gBattleMons[gEffectBattler].ability;
+                        RecordAbilityBattle(gEffectBattler, gBattleMons[gEffectBattler].ability);
+                        gBattlescriptCurrInstr = BattleScript_OwnTempoPrevents;
+                    }
+                    else
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                }
+                else if(gBattleMons[gEffectBattler].status2 & STATUS2_CONFUSION)
                 {
                     gBattlescriptCurrInstr++;
                 }
@@ -2644,6 +2657,19 @@ void SetMoveEffect(bool8 primary, u8 certain)
                     {
                         gLastUsedAbility = ABILITY_INNER_FOCUS;
                         RecordAbilityBattle(gEffectBattler, ABILITY_INNER_FOCUS);
+                        gBattlescriptCurrInstr = BattleScript_FlinchPrevention;
+                    }
+                    else
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                }
+                else if (gBattleMons[gEffectBattler].ability == ABILITY_EMPTY_HEAD)
+                {
+                    if (primary == TRUE || certain == MOVE_EFFECT_CERTAIN)
+                    {
+                        gLastUsedAbility = ABILITY_EMPTY_HEAD;
+                        RecordAbilityBattle(gEffectBattler, ABILITY_EMPTY_HEAD);
                         gBattlescriptCurrInstr = BattleScript_FlinchPrevention;
                     }
                     else
@@ -8017,6 +8043,12 @@ static void Cmd_tryinfatuating(void)
         gBattlescriptCurrInstr = BattleScript_ObliviousPreventsAttraction;
         gLastUsedAbility = ABILITY_OBLIVIOUS;
         RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
+    }
+    else if (gBattleMons[gBattlerTarget].ability == ABILITY_EMPTY_HEAD)
+    {
+        gBattlescriptCurrInstr = BattleScript_ObliviousPreventsAttraction;
+        gLastUsedAbility = ABILITY_EMPTY_HEAD;
+        RecordAbilityBattle(gBattlerTarget, ABILITY_EMPTY_HEAD);
     }
     else
     {

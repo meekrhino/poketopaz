@@ -392,6 +392,7 @@ AI_CBM_Confuse:
 	if_status2 AI_TARGET, STATUS2_CONFUSION, Score_Minus5
 	get_ability AI_TARGET
 	if_equal ABILITY_OWN_TEMPO, Score_Minus10
+	if_equal ABILITY_EMPTY_HEAD, Score_Minus10
 	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
 	end
 
@@ -466,6 +467,7 @@ AI_CBM_Attract:
 	if_status2 AI_TARGET, STATUS2_INFATUATION, Score_Minus10
 	get_ability AI_TARGET
 	if_equal ABILITY_OBLIVIOUS, Score_Minus10
+	if_equal ABILITY_EMPTY_HEAD, Score_Minus10
 	get_gender AI_USER
 	if_equal MON_MALE, AI_CBM_Attract_CheckIfTargetIsFemale
 	if_equal MON_FEMALE, AI_CBM_Attract_CheckIfTargetIsMale

@@ -3138,6 +3138,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                  && gBattleMons[gBattlerTarget].hp != 0
                  && (Random() % 3) == 0
                  && gBattleMons[gBattlerAttacker].ability != ABILITY_OBLIVIOUS
+                 && gBattleMons[gBattlerAttacker].ability != ABILITY_EMPTY_HEAD
                  && GetGenderFromSpeciesAndPersonality(speciesAtk, pidAtk) != GetGenderFromSpeciesAndPersonality(speciesDef, pidDef)
                  && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_INFATUATION)
                  && GetGenderFromSpeciesAndPersonality(speciesAtk, pidAtk) != MON_GENDERLESS
@@ -3201,6 +3202,18 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     }
                     break;
                 case ABILITY_OBLIVIOUS:
+                    if (gBattleMons[battler].status2 & STATUS2_INFATUATION)
+                    {
+                        StringCopy(gBattleTextBuff1, gStatusConditionString_LoveJpn);
+                        effect = 3;
+                    }
+                    break;
+                case ABILITY_EMPTY_HEAD:
+                    if (gBattleMons[battler].status2 & STATUS2_CONFUSION)
+                    {
+                        StringCopy(gBattleTextBuff1, gStatusConditionString_ConfusionJpn);
+                        effect = 2;
+                    }
                     if (gBattleMons[battler].status2 & STATUS2_INFATUATION)
                     {
                         StringCopy(gBattleTextBuff1, gStatusConditionString_LoveJpn);
