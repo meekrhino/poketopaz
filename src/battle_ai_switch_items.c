@@ -152,6 +152,8 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
         absorbingTypeAbility = ABILITY_WATER_ABSORB;
     else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_ELECTRIC)
         absorbingTypeAbility = ABILITY_VOLT_ABSORB;
+    else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_LIGHT)
+        absorbingTypeAbility = ABILITY_LIGHT_ABSORB;
     else
         return FALSE;
 

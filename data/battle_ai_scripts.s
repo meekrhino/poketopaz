@@ -55,11 +55,17 @@ AI_CheckBadMove:
 AI_CBM_CheckIfNegatesType:
 	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
 	get_ability AI_TARGET
+    if_equal ABILITY_LIGHT_ABSORB, CheckIfLightAbsorbCancelsLight
 	if_equal ABILITY_VOLT_ABSORB, CheckIfVoltAbsorbCancelsElectric
 	if_equal ABILITY_WATER_ABSORB, CheckIfWaterAbsorbCancelsWater
 	if_equal ABILITY_FLASH_FIRE, CheckIfFlashFireCancelsFire
 	if_equal ABILITY_WONDER_GUARD, CheckIfWonderGuardCancelsMove
 	if_equal ABILITY_LEVITATE, CheckIfLevitateCancelsGroundMove
+	goto AI_CheckBadMove_CheckSoundproof_
+
+CheckIfLightAbsorbCancelsLight:
+	get_curr_move_type
+	if_equal_ TYPE_LIGHT, Score_Minus12
 	goto AI_CheckBadMove_CheckSoundproof_
 
 CheckIfVoltAbsorbCancelsElectric:
