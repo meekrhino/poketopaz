@@ -96,6 +96,7 @@ extern const u8 BattleScript_MoveUsedIsTaunted[];
 extern const u8 BattleScript_SelectingNotAllowedMoveTauntInPalace[];
 extern const u8 BattleScript_SelectingNotAllowedMoveSerenade[];
 extern const u8 BattleScript_MoveUsedIsSpellbound[];
+extern const u8 BattleScript_ArachnophobiaCantMove[];
 extern const u8 BattleScript_SelectingNotAllowedMoveSerenadeInPalace[];
 extern const u8 BattleScript_WishComesTrue[];
 extern const u8 BattleScript_IngrainTurnHeal[];

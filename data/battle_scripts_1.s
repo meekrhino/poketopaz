@@ -4166,6 +4166,11 @@ BattleScript_MoveUsedIsSpellbound::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_ArachnophobiaCantMove::
+	printstring STRINGID_PKMNCANTACTDUETOFEAR
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_SelectingNotAllowedMoveSerenadeInPalace::
 	printstring STRINGID_PKMNCANTUSEMOVESERENADE
 	goto BattleScript_SelectingUnusableMoveInPalace

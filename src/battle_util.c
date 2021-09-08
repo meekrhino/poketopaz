@@ -909,6 +909,7 @@ bool8 WasUnableToUseMove(u8 battler)
         || gProtectStructs[battler].targetNotAffected
         || gProtectStructs[battler].usedImprisonedMove
         || gProtectStructs[battler].loveImmobility
+        || gProtectStructs[battler].fearImmobility
         || gProtectStructs[battler].usedDisabledMove
         || gProtectStructs[battler].usedTauntedMove
         || gProtectStructs[battler].usedSpellboundMove
@@ -2132,6 +2133,7 @@ enum
     CANCELLER_IN_LOVE,
     CANCELLER_BIDE,
     CANCELLER_THAW,
+    CANCELLER_PHOBIA,
     CANCELLER_END,
 };
 
@@ -2284,6 +2286,19 @@ u8 AtkCanceller_UnableToUseMove(void)
                 gProtectStructs[gBattlerAttacker].usedSpellboundMove = 1;
                 CancelMultiTurnMoves(gBattlerAttacker);
                 gBattlescriptCurrInstr = BattleScript_MoveUsedIsSpellbound;
+                gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
+                effect = 1;
+            }
+            gBattleStruct->atkCancellerTracker++;
+            break;
+        case CANCELLER_PHOBIA: // arachnophobia
+            if (gBattleMons[gBattlerTarget].ability == ABILITY_ARACHNOPHOBIA 
+             && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT
+             && !(Random() % 10))
+            {
+                gProtectStructs[gBattlerAttacker].usedSpellboundMove = 1;
+                CancelMultiTurnMoves(gBattlerAttacker);
+                gBattlescriptCurrInstr = BattleScript_ArachnophobiaCantMove;
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 effect = 1;
             }

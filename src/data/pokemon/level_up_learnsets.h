@@ -1,3 +1,7 @@
+#ifdef _MSC_VER
+#include "constants/moves.h"
+#endif
+
 #define LEVEL_UP_MOVE(lvl, move) ((lvl << 9) | move)
 
 static const u16 sBulbasaurLevelUpLearnset[] = {
@@ -3569,7 +3573,7 @@ static const u16 sSpecies276LevelUpLearnset[] = {
 };
 
 static const u16 sTreeckoLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_FIRESTORM),
+    LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_CASCADE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
     LEVEL_UP_MOVE( 1, MOVE_SMELLING_SALT),
@@ -3762,7 +3766,7 @@ static const u16 sMightyenaLevelUpLearnset[] = {
 };
 
 static const u16 sZigzagoonLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_SUNNY_DAY), 
+    LEVEL_UP_MOVE( 1, MOVE_POUND), 
     LEVEL_UP_MOVE( 9, MOVE_HEADBUTT),
     LEVEL_UP_MOVE(13, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE(17, MOVE_ODOR_SLEUTH),
