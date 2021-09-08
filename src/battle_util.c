@@ -2821,6 +2821,17 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                 BattleScriptExecute(BattleScript_AbilityRaiseStat);
                 effect++;
                 break;
+            case ABILITY_EARTHEN_ARMOR:
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_DEF);
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff2, gLastUsedAbility)
+
+                gEffectBattler = battler;
+                SET_STATCHANGER(STAT_DEF, 2, FALSE);
+                gBattleScripting.animArg1 = 14 + STAT_DEF;
+                gBattleScripting.animArg2 = 0;
+                BattleScriptExecute(BattleScript_AbilityRaiseStat);
+                effect++;
+                break;
             }
             break;
         case ABILITYEFFECT_ENDTURN: // 1
