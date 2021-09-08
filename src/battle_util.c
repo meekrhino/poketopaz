@@ -146,7 +146,7 @@ void HandleAction_UseMove(void)
             gBattleResults.lastUsedMovePlayer = gCurrentMove;
         else
             gBattleResults.lastUsedMoveOpponent = gCurrentMove;
-            
+
         if (gDisableStructs[gBattlerAttacker].overdriveMove != gCurrentMove)
         {
             gDisableStructs[gBattlerAttacker].overdriveCounter = 0;

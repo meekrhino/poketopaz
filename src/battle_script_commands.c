@@ -1640,11 +1640,14 @@ static void CheckWonderGuardAndLevitate(void)
     }
 }
 
-static void ModulateDmgByType2(u8 multiplier, u16 move, u8* flags) // same as ModulateDmgByType except different arguments
+static void ModulateDmgByType2(u8 multiplier, u16 move, u8* flags, bool8 testOnly) // same as ModulateDmgByType except different arguments
 {
-    gBattleMoveDamage = gBattleMoveDamage * multiplier / 10;
-    if (gBattleMoveDamage == 0 && multiplier != 0)
-        gBattleMoveDamage = 1;
+    if (!testOnly)
+    {
+        gBattleMoveDamage = gBattleMoveDamage * multiplier / 10;
+        if (gBattleMoveDamage == 0 && multiplier != 0)
+            gBattleMoveDamage = 1;
+    }
 
     switch (multiplier)
     {
@@ -1713,11 +1716,11 @@ u8 TypeCalc(u16 move, u8 attacker, u8 defender)
             {
                 // check type1
                 if (TYPE_EFFECT_DEF_TYPE(i) == gBattleMons[defender].type1)
-                    ModulateDmgByType2(TYPE_EFFECT_MULTIPLIER(i), move, &flags);
+                    ModulateDmgByType2(TYPE_EFFECT_MULTIPLIER(i), move, &flags, FALSE);
                 // check type2
                 if (TYPE_EFFECT_DEF_TYPE(i) == gBattleMons[defender].type2 &&
                     gBattleMons[defender].type1 != gBattleMons[defender].type2)
-                    ModulateDmgByType2(TYPE_EFFECT_MULTIPLIER(i), move, &flags);
+                    ModulateDmgByType2(TYPE_EFFECT_MULTIPLIER(i), move, &flags, FALSE);
             }
             i += 3;
         }
@@ -1733,7 +1736,7 @@ u8 TypeCalc(u16 move, u8 attacker, u8 defender)
     return flags;
 }
 
-u8 AI_TypeCalc(u16 move, u16 targetSpecies, u8 targetAbility)
+u8 AI_TypeCalc(u16 move, u16 targetSpecies, u8 targetAbility, bool8 testOnly)
 {
     s32 i = 0;
     u8 flags = 0;
@@ -1763,10 +1766,10 @@ u8 AI_TypeCalc(u16 move, u16 targetSpecies, u8 targetAbility)
             {
                 // check type1
                 if (TYPE_EFFECT_DEF_TYPE(i) == type1)
-                    ModulateDmgByType2(TYPE_EFFECT_MULTIPLIER(i), move, &flags);
+                    ModulateDmgByType2(TYPE_EFFECT_MULTIPLIER(i), move, &flags, testOnly);
                 // check type2
                 if (TYPE_EFFECT_DEF_TYPE(i) == type2 && type1 != type2)
-                    ModulateDmgByType2(TYPE_EFFECT_MULTIPLIER(i), move, &flags);
+                    ModulateDmgByType2(TYPE_EFFECT_MULTIPLIER(i), move, &flags, testOnly);
             }
             i += 3;
         }
@@ -8697,7 +8700,11 @@ static void TrySetDestinyBondToHappen(void)
 {
     u8 sideAttacker = GetBattlerSide(gBattlerAttacker);
     u8 sideTarget = GetBattlerSide(gBattlerTarget);
-    if (gBattleMons[gBattlerTarget].status2 & STATUS2_DESTINY_BOND
+
+    if ((gBattleMons[gBattlerTarget].status2 & STATUS2_DESTINY_BOND
+      || (gBattleMons[gBattlerTarget].ability == ABILITY_FINAL_WISH
+       && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT
+       && AI_TypeCalc(gCurrentMove, gBattleMons[gBattlerTarget].species, gBattleMons[gBattlerTarget].ability, TRUE) & MOVE_RESULT_NOT_VERY_EFFECTIVE))
         && sideAttacker != sideTarget
         && !(gHitMarker & HITMARKER_GRUDGE))
     {
