@@ -217,6 +217,7 @@ static const u8 sText_PkmnAbsorbedCinders[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}
 static const u8 sText_PkmnIdentified[] = _("{B_ATK_NAME_WITH_PREFIX} identified\n{B_DEF_NAME_WITH_PREFIX}!");
 static const u8 sText_PkmnSacrificedItself[] = _("{B_ATK_NAME_WITH_PREFIX} sacrificed\nitself for its party!");
 static const u8 sText_PkmnRestoredBySacrifice[] = _("{B_ATK_NAME_WITH_PREFIX} was restored\nby the sacrifice!");
+static const u8 sText_PkmnEchoedItsAttack[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nrepeated its attack!");
 static const u8 sText_PkmnPerishCountFell[] = _("{B_ATK_NAME_WITH_PREFIX}'s PERISH count\nfell to {B_BUFF1}!");
 static const u8 sText_PkmnBracedItself[] = _("{B_ATK_NAME_WITH_PREFIX} braced\nitself!");
 static const u8 sText_PkmnEnduredHit[] = _("{B_DEF_NAME_WITH_PREFIX} ENDURED\nthe hit!");
@@ -963,6 +964,7 @@ const u8 * const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_PLAYERPAIDPRIZEMONEY - 12] = sText_PlayerPaidPrizeMoney,
     [STRINGID_PKMNSACRIFICEDITSELF - 12] = sText_PkmnSacrificedItself,
     [STRINGID_PKMNRESTOREDBYSACRIFICE - 12] = sText_PkmnRestoredBySacrifice,
+    [STRINGID_PKMNECHOEDITSATTACK - 12] = sText_PkmnEchoedItsAttack,
 };
 
 const u16 gMissStringIds[] =

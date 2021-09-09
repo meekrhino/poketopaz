@@ -291,10 +291,32 @@ BattleScript_HitFromAfterAtkAnimation::
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
 	seteffectwithchance
-	tryfaintmon BS_TARGET, FALSE, NULL
+	tryfaintmon BS_TARGET, FALSE, BattleScript_MoveEnd
+    call BattleScript_TryEcho
 BattleScript_MoveEnd::
 	moveendall
 	end
+
+BattleScript_TryEcho::
+    tryecho BattleScript_TryEchoHit
+    return
+BattleScript_TryEchoHit::
+    printstring STRINGID_PKMNECHOEDITSATTACK
+    manipulatedamage DMG_DIVIDED_BY_2
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	seteffectwithchance
+	tryfaintmon BS_TARGET, FALSE, NULL
+    return
 
 BattleScript_MakeMoveMissed::
 	orbyte gMoveResultFlags, MOVE_RESULT_MISSED
@@ -1549,6 +1571,8 @@ BattleScript_EffectTripleKick::
 	ppreduce
 	sethword sTRIPLE_KICK_POWER, 0
 	initmultihitstring
+    setmultihit 4
+    jumpifability BS_ATTACKER, ABILITY_ECHO, BattleScript_TripleKickLoop
 	setmultihit 3
 BattleScript_TripleKickLoop::
 	jumpifhasnohp BS_ATTACKER, BattleScript_TripleKickEnd
@@ -1604,6 +1628,8 @@ BattleScript_EffectSpiralKick::
 	attackstring
 	ppreduce
 	initmultihitstring
+    setmultihit 6
+    jumpifability BS_ATTACKER, ABILITY_ECHO, BattleScript_TripleKickLoop
 	setmultihit 5
 BattleScript_SpiralKickLoop::
 	jumpifhasnohp BS_ATTACKER, BattleScript_SpiralKickEnd
@@ -2860,18 +2886,7 @@ BattleScript_BrickBreakAnim::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BrickBreakDoHit::
 	typecalc2
-	effectivenesssound
-	hitanimation BS_TARGET
-	waitstate
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	critmessage
-	waitmessage B_WAIT_TIME_LONG
-	resultmessage
-	waitmessage B_WAIT_TIME_LONG
-	seteffectwithchance
-	tryfaintmon BS_TARGET, FALSE, NULL
-	goto BattleScript_MoveEnd
+	goto BattleScript_HitFromAfterAtkAnimation
 
 BattleScript_EffectYawn::
 	attackcanceler

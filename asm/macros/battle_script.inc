@@ -1395,6 +1395,10 @@
     .macro trygetconfoundtarget ptr:req
     various BS_SCRIPTING, VARIOUS_TRY_GET_CONFOUND_TARGET, \ptr
     .endm
+
+    .macro tryecho ptr:req
+    various BS_SCRIPTING, VARIOUS_TRY_ECHO, \ptr
+    .endm
 	
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req

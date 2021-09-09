@@ -6913,6 +6913,14 @@ static void Cmd_various(void)
             return;
         }
         break;
+    case VARIOUS_TRY_ECHO:
+        if (gBattleMons[gBattlerAttacker].ability == ABILITY_ECHO && !(Random() % 5))
+        {
+            gLastUsedAbility = ABILITY_ECHO;
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+            return;
+        }
+        break;
     }
 
     gBattlescriptCurrInstr += 7;
@@ -7176,6 +7184,11 @@ static void Cmd_manipulatedamage(void)
             gBattleMoveDamage = 1;
         if ((gBattleMons[gBattlerTarget].maxHP / 3) < gBattleMoveDamage)
             gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 3;
+        break;
+    case DMG_DIVIDED_BY_2:
+        gBattleMoveDamage /= 2;
+        if (gBattleMoveDamage == 0)
+            gBattleMoveDamage = 1;
         break;
     }
 
@@ -7618,6 +7631,9 @@ static void Cmd_setmultihitcounter(void)
         else
             gMultiHitCounter += 2;
     }
+
+    if (gBattleMons[gBattlerAttacker].ability == ABILITY_ECHO)
+        gMultiHitCounter += 1;
 
     gBattlescriptCurrInstr += 2;
 }

@@ -99,12 +99,14 @@
 #define VARIOUS_SET_SACRIFICE                   34
 #define VARIOUS_ALPHA_MODIFY_DAMAGE             35
 #define VARIOUS_TRY_GET_CONFOUND_TARGET         36
+#define VARIOUS_TRY_ECHO                        37
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0
 #define DMG_RECOIL_FROM_MISS       1
 #define DMG_DOUBLED                2
 #define DMG_DIVIDED_BY_3           3
+#define DMG_DIVIDED_BY_2           4
 
 // Cmd_jumpifcantswitch
 #define SWITCH_IGNORE_ESCAPE_PREVENTION   (1 << 7)
