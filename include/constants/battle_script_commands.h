@@ -117,6 +117,7 @@
 #define STAT_CHANGE_BY_TWO               (1 << 1)
 #define STAT_CHANGE_MULTIPLE_STATS       (1 << 2)
 #define STAT_CHANGE_CANT_PREVENT         (1 << 3)
+#define STAT_CHANGE_ALWAYS_SHOW          (1 << 4)
 
 // stat flags for Cmd_playstatchangeanimation
 #define BIT_HP                      (1 << 0)

@@ -4361,7 +4361,7 @@ static void Cmd_playstatchangeanimation(void)
                         && !(gBattleMons[gActiveBattler].ability == ABILITY_KEEN_EYE && currStat == STAT_ACC)
                         && !(gBattleMons[gActiveBattler].ability == ABILITY_HYPER_CUTTER && currStat == STAT_ATK))
                 {
-                    if (gBattleMons[gActiveBattler].statStages[currStat] > MIN_STAT_STAGE)
+                    if (gBattleMons[gActiveBattler].statStages[currStat] > MIN_STAT_STAGE || gBattlescriptCurrInstr[3] & STAT_CHANGE_ALWAYS_SHOW)
                     {
                         statAnimId = startingStatAnimId + currStat;
                         changeableStatsCount++;
@@ -4389,7 +4389,8 @@ static void Cmd_playstatchangeanimation(void)
 
         while (statsToCheck != 0)
         {
-            if (statsToCheck & 1 && gBattleMons[gActiveBattler].statStages[currStat] < MAX_STAT_STAGE)
+            if (statsToCheck & 1 
+             && (gBattleMons[gActiveBattler].statStages[currStat] < MAX_STAT_STAGE || gBattlescriptCurrInstr[3] & STAT_CHANGE_ALWAYS_SHOW))
             {
                 statAnimId = startingStatAnimId + currStat;
                 changeableStatsCount++;

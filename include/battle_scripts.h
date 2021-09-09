@@ -86,6 +86,7 @@ extern const u8 BattleScript_SpikesFree[];
 extern const u8 BattleScript_CindersFree[];
 extern const u8 BattleScript_MonTookFutureAttack[];
 extern const u8 BattleScript_NoMovesLeft[];
+extern const u8 BattleScript_DesperationActivates[];
 extern const u8 BattleScript_SelectingMoveWithNoPP[];
 extern const u8 BattleScript_NoPPForMove[];
 extern const u8 BattleScript_SelectingTormentedMove[];

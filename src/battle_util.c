@@ -147,10 +147,9 @@ void HandleAction_UseMove(void)
         else
             gBattleResults.lastUsedMoveOpponent = gCurrentMove;
 
-        if (gDisableStructs[gBattlerAttacker].overdriveMove != gCurrentMove)
+        if (gLastMoves[gBattlerAttacker] != gCurrentMove)
         {
             gDisableStructs[gBattlerAttacker].overdriveCounter = 0;
-            gDisableStructs[gBattlerAttacker].overdriveMove = gCurrentMove;
         }
         else
             gDisableStructs[gBattlerAttacker].overdriveCounter++;
@@ -911,7 +910,6 @@ void CancelMultiTurnMoves(u8 battler)
     gStatuses3[battler] &= ~(STATUS3_SEMI_INVULNERABLE);
 
     gDisableStructs[battler].rolloutTimer = 0;
-    gDisableStructs[battler].overdriveMove = MOVE_NONE;
     gDisableStructs[battler].overdriveCounter = 0;
     gDisableStructs[battler].furyCutterCounter = 0;
 }
@@ -1171,7 +1169,17 @@ bool8 AreAllMovesUnusable(void)
     if (unusable == 0xF) // All moves are unusable.
     {
         gProtectStructs[gActiveBattler].noValidMoves = 1;
-        gSelectionBattleScripts[gActiveBattler] = BattleScript_NoMovesLeft;
+        if (gBattleMons[gActiveBattler].ability == ABILITY_DESPERATION
+         && (gBattleMons[gActiveBattler].statStages[STAT_ATK] < MAX_STAT_STAGE
+          || gBattleMons[gActiveBattler].statStages[STAT_SPEED] < MAX_STAT_STAGE))
+        {
+            gBattleScripting.battler = gActiveBattler;
+            gBattleMons[gActiveBattler].statStages[STAT_ATK] = MAX_STAT_STAGE;
+            gBattleMons[gActiveBattler].statStages[STAT_SPEED] = MAX_STAT_STAGE;
+            gSelectionBattleScripts[gActiveBattler] = BattleScript_DesperationActivates;
+        }
+        else
+            gSelectionBattleScripts[gActiveBattler] = BattleScript_NoMovesLeft;
     }
     else
     {
@@ -4226,7 +4234,6 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
 
 void ClearFuryCutterDestinyBondGrudge(u8 battlerId)
 {
-    gDisableStructs[battlerId].overdriveMove = MOVE_NONE;
     gDisableStructs[battlerId].overdriveCounter = 0;
     gDisableStructs[battlerId].furyCutterCounter = 0;
     gBattleMons[battlerId].status2 &= ~(STATUS2_DESTINY_BOND);

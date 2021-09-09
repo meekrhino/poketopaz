@@ -4124,6 +4124,14 @@ BattleScript_NoMovesLeft::
 	printselectionstring STRINGID_PKMNHASNOMOVESLEFT
 	endselectionscript
 
+BattleScript_DesperationActivates::
+	printselectionstring STRINGID_PKMNHASNOMOVESLEFT
+    waitmessage B_WAIT_TIME_LONG
+	playstatchangeanimation BS_SCRIPTING, BIT_SPEED | BIT_ATK, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_MULTIPLE_STATS | STAT_CHANGE_ALWAYS_SHOW
+    printstring STRINGID_PKMNSDESPERATIONMAXEDSTATS
+    waitmessage B_WAIT_TIME_LONG
+	endselectionscript
+
 BattleScript_SelectingMoveWithNoPP::
 	printselectionstring STRINGID_NOPPLEFT
 	endselectionscript

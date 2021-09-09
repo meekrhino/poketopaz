@@ -76,7 +76,6 @@ struct DisableStruct
     u32 transformedMonPersonality;
     u16 disabledMove;
     u16 encoredMove;
-    u16 overdriveMove;
     u8 protectUses;
     u8 stockpileCounter;
     u8 substituteHP;
