@@ -6684,6 +6684,7 @@ static void Cmd_various(void)
         break;
     case VARIOUS_RESET_INTIMIDATE_TRACE_BITS:
         gSpecialStatuses[gActiveBattler].intimidatedMon = 0;
+        gSpecialStatuses[gActiveBattler].confoundedMon = 0;
         gSpecialStatuses[gActiveBattler].traced = 0;
         break;
     case VARIOUS_UPDATE_CHOICE_MOVE_ON_LVL_UP:
@@ -6892,9 +6893,29 @@ static void Cmd_various(void)
         if (movesetCount == 4)
             gBattleScripting.dmgMultiplier = 2;
         break;
+    case VARIOUS_TRY_GET_CONFOUND_TARGET:
+        gBattleScripting.battler = gBattleStruct->confoundBattler;
+        side = GetBattlerSide(gBattleScripting.battler);
+
+        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gBattleMons[gBattleScripting.battler].ability)
+
+        for (;gBattlerTarget < gBattlersCount; gBattlerTarget++)
+        {
+            if (GetBattlerSide(gBattlerTarget) == side)
+                continue;
+            if (!(gAbsentBattlerFlags & gBitTable[gBattlerTarget]))
+                break;
+        }
+
+        if (gBattlerTarget >= gBattlersCount)
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+            return;
+        }
+        break;
     }
 
-    gBattlescriptCurrInstr += 3;
+    gBattlescriptCurrInstr += 7;
 }
 
 static void Cmd_setprotectlike(void) // protect and endure

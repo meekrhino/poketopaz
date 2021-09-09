@@ -4676,6 +4676,37 @@ BattleScript_IntimidatePrevented:
 	printstring STRINGID_PREVENTEDFROMWORKING
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_IntimidateActivatesLoopIncrement
+
+BattleScript_ConfoundActivatesEnd3::
+	call BattleScript_PauseConfoundActivates
+	end3
+
+BattleScript_PauseConfoundActivates:
+	pause B_WAIT_TIME_SHORT
+BattleScript_ConfoundActivates::
+	setbyte gBattlerTarget, 0
+	setstatchanger STAT_SPDEF, 1, TRUE
+BattleScript_ConfoundActivatesLoop:
+	trygetconfoundtarget BattleScript_ConfoundActivatesReturn
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_ConfoundActivatesLoopIncrement
+	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_ConfoundPrevented
+	jumpifability BS_TARGET, ABILITY_WHITE_SMOKE, BattleScript_ConfoundPrevented
+	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_ConfoundActivatesLoopIncrement
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_ConfoundActivatesLoopIncrement
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_PKMNCUTSSPDEFWITH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ConfoundActivatesLoopIncrement:
+	addbyte gBattlerTarget, 1
+	goto BattleScript_ConfoundActivatesLoop
+BattleScript_ConfoundActivatesReturn:
+	return
+BattleScript_ConfoundPrevented:
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_PREVENTEDFROMWORKING
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_ConfoundActivatesLoopIncrement
 	
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT

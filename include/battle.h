@@ -146,6 +146,7 @@ struct SpecialStatus
     u32 diversionRedirected:1;
     u32 restoredBattlerSprite: 1;
     u32 intimidatedMon:1;
+    u32 confoundedMon:1;
     u32 traced:1;
     u32 ppNotAffectedByPressure:1;
     u32 flag40:1;
@@ -441,6 +442,7 @@ struct BattleStruct
     u16 choicedMove[MAX_BATTLERS_COUNT];
     u16 changedItems[MAX_BATTLERS_COUNT];
     u8 intimidateBattler;
+    u8 confoundBattler;
     u8 switchInItemsCounter;
     u8 arenaTurnCounter;
     u8 turnSideTracker;

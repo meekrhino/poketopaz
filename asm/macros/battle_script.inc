@@ -651,10 +651,11 @@
 	.byte 0x75
 	.endm
 
-	.macro various battler:req, param1:req
+	.macro various battler:req, param1:req, ptr:req
 	.byte 0x76
 	.byte \battler
 	.byte \param1
+	.4byte \ptr
 	.endm
 
 	.macro setprotectlike
@@ -1248,147 +1249,151 @@
 	
 @ various command changed to more readable macros
 	.macro cancelmultiturnmoves battler:req
-	various \battler, VARIOUS_CANCEL_MULTI_TURN_MOVES
+	various \battler, VARIOUS_CANCEL_MULTI_TURN_MOVES, 0
 	.endm
 	
 	.macro setmagiccoattarget battler:req
-	various \battler, VARIOUS_SET_MAGIC_COAT_TARGET
+	various \battler, VARIOUS_SET_MAGIC_COAT_TARGET, 0
 	.endm
 	
 	.macro getifcantrunfrombattle battler:req
-	various \battler, VARIOUS_IS_RUNNING_IMPOSSIBLE
+	various \battler, VARIOUS_IS_RUNNING_IMPOSSIBLE, 0
 	.endm
 	
 	.macro getmovetarget battler:req
-	various \battler, VARIOUS_GET_MOVE_TARGET
+	various \battler, VARIOUS_GET_MOVE_TARGET, 0
 	.endm
 	
 	.macro getbattlerfainted battler:req
-	various \battler, VARIOUS_GET_BATTLER_FAINTED
+	various \battler, VARIOUS_GET_BATTLER_FAINTED, 0
 	.endm
 	
 	.macro resetintimidatetracebits battler:req
-	various \battler, VARIOUS_RESET_INTIMIDATE_TRACE_BITS
+	various \battler, VARIOUS_RESET_INTIMIDATE_TRACE_BITS, 0
 	.endm
 	
 	.macro updatechoicemoveonlvlup battler:req
-	various \battler, VARIOUS_UPDATE_CHOICE_MOVE_ON_LVL_UP
+	various \battler, VARIOUS_UPDATE_CHOICE_MOVE_ON_LVL_UP, 0
 	.endm
 	
 	.macro various7 battler:req
-	various \battler, 7
+	various \battler, 7, 0
 	.endm
 	
 	.macro palaceflavortext battler:req
-	various \battler, VARIOUS_PALACE_FLAVOR_TEXT
+	various \battler, VARIOUS_PALACE_FLAVOR_TEXT, 0
 	.endm
 	
 	.macro arenajudgmentwindow
-	various BS_ATTACKER, VARIOUS_ARENA_JUDGMENT_WINDOW
+	various BS_ATTACKER, VARIOUS_ARENA_JUDGMENT_WINDOW, 0
 	.endm
 	
 	.macro arenaopponentmonlost
-	various BS_ATTACKER, VARIOUS_ARENA_OPPONENT_MON_LOST
+	various BS_ATTACKER, VARIOUS_ARENA_OPPONENT_MON_LOST, 0
 	.endm
 	
 	.macro arenaplayermonlost
-	various BS_ATTACKER, VARIOUS_ARENA_PLAYER_MON_LOST
+	various BS_ATTACKER, VARIOUS_ARENA_PLAYER_MON_LOST, 0
 	.endm
 	
 	.macro arenabothmonlost
-	various BS_ATTACKER, VARIOUS_ARENA_BOTH_MONS_LOST
+	various BS_ATTACKER, VARIOUS_ARENA_BOTH_MONS_LOST, 0
 	.endm
 	
 	.macro forfeityesnobox battler:req
-	various \battler, VARIOUS_EMIT_YESNOBOX
+	various \battler, VARIOUS_EMIT_YESNOBOX, 0
 	.endm
 	
 	.macro various14 battler:req
-	various \battler, 14
+	various \battler, 14, 0
 	.endm
 	
 	.macro various15 battler:req
-	various \battler, 15
+	various \battler, 15, 0
 	.endm
 	
 	.macro arenajudgmentstring id:req
-	various \id, VARIOUS_ARENA_JUDGMENT_STRING
+	various \id, VARIOUS_ARENA_JUDGMENT_STRING, 0
 	.endm
 	
 	.macro arenawaitmessage id:req
-	various \id, VARIOUS_ARENA_WAIT_STRING
+	various \id, VARIOUS_ARENA_WAIT_STRING, 0
 	.endm
 	
 	.macro waitcry battler:req
-	various \battler, VARIOUS_WAIT_CRY
+	various \battler, VARIOUS_WAIT_CRY, 0
 	.endm
 	
 	.macro returnopponentmon1toball battler:req
-	various \battler, VARIOUS_RETURN_OPPONENT_MON1
+	various \battler, VARIOUS_RETURN_OPPONENT_MON1, 0
 	.endm
 	
 	.macro returnopponentmon2toball battler:req
-	various \battler, VARIOUS_RETURN_OPPONENT_MON2
+	various \battler, VARIOUS_RETURN_OPPONENT_MON2, 0
 	.endm
 	
 	.macro volumedown
-	various BS_ATTACKER, VARIOUS_VOLUME_DOWN
+	various BS_ATTACKER, VARIOUS_VOLUME_DOWN, 0
 	.endm
 	
 	.macro volumeup
-	various BS_ATTACKER, VARIOUS_VOLUME_UP
+	various BS_ATTACKER, VARIOUS_VOLUME_UP, 0
 	.endm
 	
 	.macro setalreadystatusedmoveattempt battler:req
-	various \battler, 23
+	various \battler, 23, 0
 	.endm
 	
 	.macro various24 battler:req
-	various \battler, 24
+	various \battler, 24, 0
 	.endm
 	
 	.macro setoutcomeonteleport battler:req
-	various \battler, VARIOUS_SET_TELEPORT_OUTCOME
+	various \battler, VARIOUS_SET_TELEPORT_OUTCOME, 0
 	.endm
 	
 	.macro playtrainerdefeatbgm battler:req
-	various \battler, VARIOUS_PLAY_TRAINER_DEFEATED_MUSIC
+	various \battler, VARIOUS_PLAY_TRAINER_DEFEATED_MUSIC, 0
 	.endm
 
     .macro endweather
-    various BS_ATTACKER, VARIOUS_CLEAR_WEATHER
+    various BS_ATTACKER, VARIOUS_CLEAR_WEATHER, 0
     .endm
 
     .macro statronome
-    various BS_ATTACKER, VARIOUS_STATRONOME
+    various BS_ATTACKER, VARIOUS_STATRONOME, 0
     .endm
 
     .macro setmagicdust
-    various BS_TARGET, VARIOUS_SET_MAGIC_DUST
+    various BS_TARGET, VARIOUS_SET_MAGIC_DUST, 0
     .endm
 
     .macro setdarkness
-    various BS_TARGET, VARIOUS_SET_DARKNESS
+    various BS_TARGET, VARIOUS_SET_DARKNESS, 0
     .endm
 
     .macro setinitiative
-    various BS_TARGET, VARIOUS_SET_INITIATIVE
+    various BS_TARGET, VARIOUS_SET_INITIATIVE, 0
     .endm
 
     .macro spectralraydamagecalculation
-    various BS_TARGET, VARIOUS_SPECTRAL_RAY
+    various BS_TARGET, VARIOUS_SPECTRAL_RAY, 0
     .endm
 
     .macro setspikewall
-    various BS_ATTACKER, VARIOUS_SET_SPIKE_WALL
+    various BS_ATTACKER, VARIOUS_SET_SPIKE_WALL, 0
     .endm
 
     .macro setsacrifice
-    various BS_ATTACKER, VARIOUS_SET_SACRIFICE
+    various BS_ATTACKER, VARIOUS_SET_SACRIFICE, 0
     .endm
 
     .macro alphashockmodify
-    various BS_ATTACKER, VARIOUS_ALPHA_MODIFY_DAMAGE
+    various BS_ATTACKER, VARIOUS_ALPHA_MODIFY_DAMAGE, 0
+    .endm
+
+    .macro trygetconfoundtarget ptr:req
+    various BS_SCRIPTING, VARIOUS_TRY_GET_CONFOUND_TARGET, \ptr
     .endm
 	
 @ helpful macros

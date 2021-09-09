@@ -98,6 +98,7 @@
 #define VARIOUS_SET_SPIKE_WALL                  33
 #define VARIOUS_SET_SACRIFICE                   34
 #define VARIOUS_ALPHA_MODIFY_DAMAGE             35
+#define VARIOUS_TRY_GET_CONFOUND_TARGET         36
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0
