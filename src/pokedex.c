@@ -159,7 +159,7 @@ struct PokedexListItem
 
 struct PokedexView
 {
-    struct PokedexListItem pokedexList[NATIONAL_DEX_COUNT + 1];
+    struct PokedexListItem pokedexList[NUM_SPECIES + 1];
     u16 pokemonListCount;
     u16 selectedPokemon;
     u16 selectedPokemonBackup;
@@ -1326,8 +1326,7 @@ static const u8 sSearchMovementMap_ShiftHoennDex[SEARCH_COUNT][4] =
 
 static const struct SearchOptionText sDexModeOptions[] =
 {
-    [DEX_MODE_HOENN]    = {gText_DexHoennDescription, gText_DexHoennTitle},
-    [DEX_MODE_NATIONAL] = {gText_DexNatDescription,   gText_DexNatTitle},
+    [DEX_MODE_CALDERA_KIRANT]    = {gText_DexHoennDescription, gText_DexHoennTitle},
     {},
 };
 
@@ -1397,7 +1396,7 @@ static const struct SearchOptionText sDexSearchTypeOptions[NUMBER_OF_MON_TYPES +
     {},
 };
 
-static const u8 sPokedexModes[] = {DEX_MODE_HOENN, DEX_MODE_NATIONAL};
+static const u8 sPokedexModes[] = {DEX_MODE_CALDERA_KIRANT};
 static const u8 sOrderOptions[] =
 {
     ORDER_NUMERICAL,
@@ -1506,7 +1505,7 @@ void ResetPokedex(void)
     sLastSelectedPokemon = 0;
     sPokeBallRotation = POKEBALL_ROTATION_TOP;
     gUnusedPokedexU8 = 0;
-    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_HOENN;
+    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_CALDERA_KIRANT;
     gSaveBlock2Ptr->pokedex.order = 0;
     gSaveBlock2Ptr->pokedex.nationalMagic = 0;
     gSaveBlock2Ptr->pokedex.unknown2 = 0;
@@ -1540,20 +1539,20 @@ static void ResetPokedexView(struct PokedexView *pokedexView)
 {
     u16 i;
 
-    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+    for (i = 0; i < NUM_SPECIES; i++)
     {
         pokedexView->pokedexList[i].dexNum = 0xFFFF;
         pokedexView->pokedexList[i].seen = FALSE;
         pokedexView->pokedexList[i].owned = FALSE;
     }
-    pokedexView->pokedexList[NATIONAL_DEX_COUNT].dexNum = 0;
-    pokedexView->pokedexList[NATIONAL_DEX_COUNT].seen = FALSE;
-    pokedexView->pokedexList[NATIONAL_DEX_COUNT].owned = FALSE;
+    pokedexView->pokedexList[NUM_SPECIES].dexNum = 0;
+    pokedexView->pokedexList[NUM_SPECIES].seen = FALSE;
+    pokedexView->pokedexList[NUM_SPECIES].owned = FALSE;
     pokedexView->pokemonListCount = 0;
     pokedexView->selectedPokemon = 0;
     pokedexView->selectedPokemonBackup = 0;
-    pokedexView->dexMode = DEX_MODE_HOENN;
-    pokedexView->dexModeBackup = DEX_MODE_HOENN;
+    pokedexView->dexMode = DEX_MODE_CALDERA_KIRANT;
+    pokedexView->dexModeBackup = DEX_MODE_CALDERA_KIRANT;
     pokedexView->dexOrder = ORDER_NUMERICAL;
     pokedexView->dexOrderBackup = ORDER_NUMERICAL;
     pokedexView->seenCount = 0;
@@ -1615,22 +1614,13 @@ void CB2_OpenPokedex(void)
         ResetPokedexView(sPokedexView);
         CreateTask(Task_OpenPokedexMainPage, 0);
         sPokedexView->dexMode = gSaveBlock2Ptr->pokedex.mode;
-        if (!IsNationalPokedexEnabled())
-            sPokedexView->dexMode = DEX_MODE_HOENN;
+        sPokedexView->dexMode = DEX_MODE_CALDERA_KIRANT;
         sPokedexView->dexOrder = gSaveBlock2Ptr->pokedex.order;
         sPokedexView->selectedPokemon = sLastSelectedPokemon;
         sPokedexView->pokeBallRotation = sPokeBallRotation;
         sPokedexView->selectedScreen = AREA_SCREEN;
-        if (!IsNationalPokedexEnabled())
-        {
-            sPokedexView->seenCount = GetHoennPokedexCount(FLAG_GET_SEEN);
-            sPokedexView->ownCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
-        }
-        else
-        {
-            sPokedexView->seenCount = GetNationalPokedexCount(FLAG_GET_SEEN);
-            sPokedexView->ownCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-        }
+        sPokedexView->seenCount = GetPokedexCount(FLAG_GET_SEEN);
+        sPokedexView->ownCount = GetPokedexCount(FLAG_GET_CAUGHT);
         sPokedexView->initialVOffset = 8;
         gMain.state++;
         break;
@@ -1829,8 +1819,6 @@ static void Task_WaitForExitSearch(u8 taskId)
             sPokedexView->pokeBallRotation = sPokedexView->pokeBallRotationBackup;
             sPokedexView->selectedPokemon = sPokedexView->selectedPokemonBackup;
             sPokedexView->dexMode = sPokedexView->dexModeBackup;
-            if (!IsNationalPokedexEnabled())
-                sPokedexView->dexMode = DEX_MODE_HOENN;
             sPokedexView->dexOrder = sPokedexView->dexOrderBackup;
             gTasks[taskId].func = Task_OpenPokedexMainPage;
         }
@@ -1842,8 +1830,6 @@ static void Task_ClosePokedex(u8 taskId)
     if (!gPaletteFade.active)
     {
         gSaveBlock2Ptr->pokedex.mode = sPokedexView->dexMode;
-        if (!IsNationalPokedexEnabled())
-            gSaveBlock2Ptr->pokedex.mode = DEX_MODE_HOENN;
         gSaveBlock2Ptr->pokedex.order = sPokedexView->dexOrder;
         ClearMonSprites();
         FreeWindowAndBgBuffers();
@@ -2018,8 +2004,6 @@ static void Task_ReturnToPokedexFromSearchResults(u8 taskId)
         sPokedexView->pokeBallRotation = sPokedexView->pokeBallRotationBackup;
         sPokedexView->selectedPokemon = sPokedexView->selectedPokemonBackup;
         sPokedexView->dexMode = sPokedexView->dexModeBackup;
-        if (!IsNationalPokedexEnabled())
-            sPokedexView->dexMode = DEX_MODE_HOENN;
         sPokedexView->dexOrder = sPokedexView->dexOrderBackup;
         gTasks[taskId].func = Task_OpenPokedexMainPage;
         ClearMonSprites();
@@ -2034,8 +2018,6 @@ static void Task_ClosePokedexFromSearchResultsStartMenu(u8 taskId)
         sPokedexView->pokeBallRotation = sPokedexView->pokeBallRotationBackup;
         sPokedexView->selectedPokemon = sPokedexView->selectedPokemonBackup;
         sPokedexView->dexMode = sPokedexView->dexModeBackup;
-        if (!IsNationalPokedexEnabled())
-            sPokedexView->dexMode = DEX_MODE_HOENN;
         sPokedexView->dexOrder = sPokedexView->dexOrderBackup;
         gTasks[taskId].func = Task_ClosePokedex;
     }
@@ -2181,21 +2163,9 @@ static void CreatePokedexList(u8 dexMode, u8 order)
     switch (dexMode)
     {
     default:
-    case DEX_MODE_HOENN:
-        temp_dexCount = HOENN_DEX_COUNT;
+    case DEX_MODE_CALDERA_KIRANT:
+        temp_dexCount = CALDERA_KIRANT_DEX_COUNT;
         temp_isHoennDex = TRUE;
-        break;
-    case DEX_MODE_NATIONAL:
-        if (IsNationalPokedexEnabled())
-        {
-            temp_dexCount = NATIONAL_DEX_COUNT;
-            temp_isHoennDex = FALSE;
-        }
-        else
-        {
-            temp_dexCount = HOENN_DEX_COUNT;
-            temp_isHoennDex = TRUE;
-        }
         break;
     }
 
@@ -2206,7 +2176,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         {
             for (i = 0; i < temp_dexCount; i++)
             {
-                temp_dexNum = HoennToNationalOrder(i + 1);
+                temp_dexNum = i + 1;
                 sPokedexView->pokedexList[i].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[i].seen = GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN);
                 sPokedexView->pokedexList[i].owned = GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT);
@@ -2239,7 +2209,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         {
             temp_dexNum = gPokedexOrder_Alphabetical[i];
 
-            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN))
+            if (temp_dexNum <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN))
             {
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -2249,11 +2219,11 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         }
         break;
     case ORDER_HEAVIEST:
-        for (i = NATIONAL_DEX_COUNT - 1; i >= 0; i--)
+        for (i = NUM_SPECIES - 1; i >= 0; i--)
         {
             temp_dexNum = gPokedexOrder_Weight[i];
 
-            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+            if (temp_dexNum <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
             {
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -2263,11 +2233,11 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         }
         break;
     case ORDER_LIGHTEST:
-        for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+        for (i = 0; i < NUM_SPECIES; i++)
         {
             temp_dexNum = gPokedexOrder_Weight[i];
 
-            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+            if (temp_dexNum <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
             {
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -2277,11 +2247,11 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         }
         break;
     case ORDER_TALLEST:
-        for (i = NATIONAL_DEX_COUNT - 1; i >= 0; i--)
+        for (i = NUM_SPECIES - 1; i >= 0; i--)
         {
             temp_dexNum = gPokedexOrder_Height[i];
 
-            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+            if (temp_dexNum <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
             {
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -2291,11 +2261,11 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         }
         break;
     case ORDER_SMALLEST:
-        for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+        for (i = 0; i < NUM_SPECIES; i++)
         {
             temp_dexNum = gPokedexOrder_Height[i];
 
-            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+            if (temp_dexNum <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
             {
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -2306,7 +2276,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         break;
     }
 
-    for (i = sPokedexView->pokemonListCount; i < NATIONAL_DEX_COUNT; i++)
+    for (i = sPokedexView->pokemonListCount; i < NUM_SPECIES; i++)
     {
         sPokedexView->pokedexList[i].dexNum = 0xFFFF;
         sPokedexView->pokedexList[i].seen = FALSE;
@@ -2338,7 +2308,7 @@ static void CreateMonListEntry(u8 position, u16 b, u16 ignored)
         entryNum = b - 5;
         for (i = 0; i <= 10; i++)
         {
-            if (entryNum < 0 || entryNum >= NATIONAL_DEX_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
+            if (entryNum < 0 || entryNum >= NUM_SPECIES || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
             {
                 ClearMonListEntry(17, i * 2, ignored);
             }
@@ -2363,7 +2333,7 @@ static void CreateMonListEntry(u8 position, u16 b, u16 ignored)
         break;
     case 1: // Up
         entryNum = b - 5;
-        if (entryNum < 0 || entryNum >= NATIONAL_DEX_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
+        if (entryNum < 0 || entryNum >= NUM_SPECIES || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
         {
             ClearMonListEntry(17, sPokedexView->listVOffset * 2, ignored);
         }
@@ -2389,7 +2359,7 @@ static void CreateMonListEntry(u8 position, u16 b, u16 ignored)
         vOffset = sPokedexView->listVOffset + 10;
         if (vOffset >= LIST_SCROLL_STEP)
             vOffset -= LIST_SCROLL_STEP;
-        if (entryNum < 0 || entryNum >= NATIONAL_DEX_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
+        if (entryNum < 0 || entryNum >= NUM_SPECIES || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
             ClearMonListEntry(17, vOffset * 2, ignored);
         else
         {
@@ -2419,8 +2389,6 @@ static void CreateMonDexNum(u16 entryNum, u8 left, u8 top, u16 unused)
 
     memcpy(text, sText_No000, ARRAY_COUNT(text));
     dexNum = sPokedexView->pokedexList[entryNum].dexNum;
-    if (sPokedexView->dexMode == DEX_MODE_HOENN)
-        dexNum = NationalToHoennOrder(dexNum);
     text[2] = CHAR_0 + dexNum / 100;
     text[3] = CHAR_0 + (dexNum % 100) / 10;
     text[4] = CHAR_0 + (dexNum % 100) % 10;
@@ -2439,7 +2407,6 @@ static u8 CreateMonName(u16 num, u8 left, u8 top)
 {
     const u8* str;
 
-    num = NationalPokedexNumToSpecies(num);
     if (num)
         str = gSpeciesNames[num];
     else
@@ -2730,7 +2697,7 @@ static u8 ClearMonSprites(void)
 
 static u16 GetPokemonSpriteToDisplay(u16 species)
 {
-    if (species >= NATIONAL_DEX_COUNT || sPokedexView->pokedexList[species].dexNum == 0xFFFF)
+    if (species >= NUM_SPECIES || sPokedexView->pokedexList[species].dexNum == 0xFFFF)
         return 0xFFFF;
     else if (sPokedexView->pokedexList[species].seen)
         return sPokedexView->pokedexList[species].dexNum;
@@ -2752,7 +2719,7 @@ static u32 CreatePokedexMonSprite(u16 num, s16 x, s16 y)
             gSprites[spriteId].oam.priority = 3;
             gSprites[spriteId].data[0] = 0;
             gSprites[spriteId].data[1] = i;
-            gSprites[spriteId].data[2] = NationalPokedexNumToSpecies(num);
+            gSprites[spriteId].data[2] = num;
             sPokedexView->monSpriteIds[i] = spriteId;
             return spriteId;
         }
@@ -2883,7 +2850,7 @@ static void CreateInterfaceSprites(u8 page)
             StartSpriteAnim(&gSprites[spriteId], 1);
 
             // Hoenn seen value - 100s
-            seenOwnedCount = GetHoennPokedexCount(FLAG_GET_SEEN);
+            seenOwnedCount = GetPokedexCount(FLAG_GET_SEEN);
             drawNextDigit = FALSE;
             spriteId = CreateSprite(&sNationalDexSeenOwnNumberSpriteTemplate, 40, 45, 1);
             digitNum = seenOwnedCount / 100;
@@ -2929,7 +2896,7 @@ static void CreateInterfaceSprites(u8 page)
             digitNum = (sPokedexView->seenCount % 100) % 10;
             StartSpriteAnim(&gSprites[spriteId], digitNum);
 
-            seenOwnedCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
+            seenOwnedCount = GetPokedexCount(FLAG_GET_CAUGHT);
 
             // Hoenn owned value - 100s
             drawNextDigit = FALSE;
@@ -3253,7 +3220,7 @@ static void Task_LoadInfoScreen(u8 taskId)
         gMain.state++;
         break;
     case 4:
-        PrintMonInfo(sPokedexListItem->dexNum, sPokedexView->dexMode == DEX_MODE_HOENN ? FALSE : TRUE, sPokedexListItem->owned, 0);
+        PrintMonInfo(sPokedexListItem->dexNum, TRUE, sPokedexListItem->owned, 0);
         if (!sPokedexListItem->owned)
             LoadPalette(gPlttBufferUnfaded + 1, 0x31, 0x1E);
         CopyWindowToVram(WIN_INFO, 3);
@@ -3301,7 +3268,7 @@ static void Task_LoadInfoScreen(u8 taskId)
             if (gTasks[taskId].data[3] == 0)
             {
                 StopCryAndClearCrySongs();
-                PlayCry2(NationalPokedexNumToSpecies(sPokedexListItem->dexNum), 0, 0x7D, 0xA);
+                PlayCry2(sPokedexListItem->dexNum, 0, 0x7D, 0xA);
             }
             else
             {
@@ -3481,7 +3448,7 @@ static void Task_LoadAreaScreen(u8 taskId)
         gMain.state++;
         break;
     case 2:
-        ShowPokedexAreaScreen(NationalPokedexNumToSpecies(sPokedexListItem->dexNum), &sPokedexView->screenSwitchState);
+        ShowPokedexAreaScreen(sPokedexListItem->dexNum, &sPokedexView->screenSwitchState);
         SetVBlankCallback(gPokedexVBlankCB);
         sPokedexView->screenSwitchState = 0;
         gMain.state = 0;
@@ -3630,7 +3597,7 @@ static void Task_HandleCryScreenInput(u8 taskId)
     if (JOY_NEW(A_BUTTON))
     {
         LoadPlayArrowPalette(TRUE);
-        CryScreenPlayButton(NationalPokedexNumToSpecies(sPokedexListItem->dexNum));
+        CryScreenPlayButton(sPokedexListItem->dexNum);
         return;
     }
     else if (!gPaletteFade.active)
@@ -3997,7 +3964,7 @@ static void Task_DisplayCaughtMonDexPage(u8 taskId)
     case 6:
         if (!gPaletteFade.active)
         {
-            PlayCry1(NationalPokedexNumToSpecies(dexNum), 0);
+            PlayCry1(dexNum, 0);
             gTasks[taskId].tPalTimer = 0;
             gTasks[taskId].func = Task_HandleCaughtMonPageInput;
         }
@@ -4044,7 +4011,7 @@ static void Task_ExitCaughtMonPage(u8 taskId)
         if (buffer)
             Free(buffer);
 
-        species = NationalPokedexNumToSpecies(gTasks[taskId].tDexNum);
+        species = gTasks[taskId].tDexNum;
         otId = ((u16)gTasks[taskId].tOtIdHi << 16) | (u16)gTasks[taskId].tOtIdLo;
         personality = ((u16)gTasks[taskId].tPersonalityHi << 16) | (u16)gTasks[taskId].tPersonalityLo;
         paletteNum = gSprites[gTasks[taskId].tMonSpriteId].oam.paletteNum;
@@ -4081,22 +4048,17 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
 {
     u8 str[16];
     u8 str2[32];
-    u16 natNum;
     const u8 *name;
     const u8 *category;
     const u8 *description;
 
     if (newEntry)
         PrintInfoScreenText(gText_PokedexRegistration, GetStringCenterAlignXOffset(1, gText_PokedexRegistration, 0xF0), 0);
-    if (value == 0)
-        value = NationalToHoennOrder(num);
-    else
-        value = num;
+    value = num;
     ConvertIntToDecimalStringN(StringCopy(str, gText_NumberClear01), value, STR_CONV_MODE_LEADING_ZEROS, 3);
     PrintInfoScreenText(str, 0x60, 0x19);
-    natNum = NationalPokedexNumToSpecies(num);
-    if (natNum)
-        name = gSpeciesNames[natNum];
+    if (num)
+        name = gSpeciesNames[num];
     else
         name = sText_TenDashes2;
     PrintInfoScreenText(name, 0x84, 0x19);
@@ -4296,56 +4258,12 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
     return retVal;
 }
 
-u16 GetNationalPokedexCount(u8 caseID)
+u16 GetPokedexCount(u8 caseID)
 {
     u16 count = 0;
     u16 i;
 
-    for (i = 0; i < NATIONAL_DEX_COUNT; i++)
-    {
-        switch (caseID)
-        {
-        case FLAG_GET_SEEN:
-            if (GetSetPokedexFlag(i + 1, FLAG_GET_SEEN))
-                count++;
-            break;
-        case FLAG_GET_CAUGHT:
-            if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
-                count++;
-            break;
-        }
-    }
-    return count;
-}
-
-u16 GetHoennPokedexCount(u8 caseID)
-{
-    u16 count = 0;
-    u16 i;
-
-    for (i = 0; i < HOENN_DEX_COUNT; i++)
-    {
-        switch (caseID)
-        {
-        case FLAG_GET_SEEN:
-            if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_SEEN))
-                count++;
-            break;
-        case FLAG_GET_CAUGHT:
-            if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
-                count++;
-            break;
-        }
-    }
-    return count;
-}
-
-u16 GetKantoPokedexCount(u8 caseID)
-{
-    u16 count = 0;
-    u16 i;
-
-    for (i = 0; i < KANTO_DEX_COUNT; i++)
+    for (i = 0; i < NUM_SPECIES; i++)
     {
         switch (caseID)
         {
@@ -4364,50 +4282,19 @@ u16 GetKantoPokedexCount(u8 caseID)
 
 bool16 HasAllHoennMons(void)
 {
-    u16 i;
-
-    // -2 excludes Jirachi and Deoxys
-    for (i = 0; i < HOENN_DEX_COUNT - 2; i++)
-    {
-        if (!GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
-            return FALSE;
-    }
-    return TRUE;
+    return HasAllMons();
 }
 
 bool8 HasAllKantoMons(void)
 {
-    u16 i;
-
-    // -1 excludes Mew
-    for (i = 0; i < KANTO_DEX_COUNT - 1; i++)
-    {
-        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
-            return FALSE;
-    }
-    return TRUE;
+    return HasAllMons();
 }
 
 bool16 HasAllMons(void)
 {
     u16 i;
 
-    // -1 excludes Mew
-    for (i = 0; i < KANTO_DEX_COUNT - 1; i++)
-    {
-        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
-            return FALSE;
-    }
-
-    // -3 excludes Lugia, Ho-Oh, and Celebi
-    for (i = KANTO_DEX_COUNT; i < JOHTO_DEX_COUNT - 3; i++)
-    {
-        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
-            return FALSE;
-    }
-
-    // -2 excludes Jirachi and Deoxys
-    for (i = JOHTO_DEX_COUNT; i < NATIONAL_DEX_COUNT - 2; i++)
+    for (i = 0; i < NUM_SPECIES; i++)
     {
         if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
             return FALSE;
@@ -4482,7 +4369,6 @@ static u8 PrintCryScreenSpeciesName(u8 windowId, u16 num, u8 left, u8 top)
 
     for (i = 0; i < ARRAY_COUNT(str); i++)
         str[i] = EOS;
-    num = NationalPokedexNumToSpecies(num);
     switch (num)
     {
     default:
@@ -4558,7 +4444,7 @@ static void UnusedPrintDecimalNum(u8 windowId, u16 b, u8 left, u8 top)
 static void PrintFootprint(u8 windowId, u16 dexNum)
 {
     u8 image[32 * 4];
-    const u8 * r12 = gMonFootprintTable[NationalPokedexNumToSpecies(dexNum)];
+    const u8 * r12 = gMonFootprintTable[dexNum];
     u16 r5 = 0;
     u16 i;
     u16 j;
@@ -4619,22 +4505,11 @@ static u16 GetNextPosition(u8 direction, u16 position, u16 min, u16 max)
 // All others use personality 0
 static u32 GetPokedexMonPersonality(u16 species)
 {
-    if (species == SPECIES_UNOWN || species == SPECIES_SPINDA)
-    {
-        if (species == SPECIES_UNOWN)
-            return gSaveBlock2Ptr->pokedex.unownPersonality;
-        else
-            return gSaveBlock2Ptr->pokedex.spindaPersonality;
-    }
-    else
-    {
-        return 0;
-    }
+    return 0;
 }
 
 u16 CreateMonSpriteFromNationalDexNumber(u16 nationalNum, s16 x, s16 y, u16 paletteSlot)
 {
-    nationalNum = NationalPokedexNumToSpecies(nationalNum);
     return CreateMonPicSprite_HandleDeoxys(nationalNum, SHINY_ODDS, GetPokedexMonPersonality(nationalNum), TRUE, x, y, paletteSlot, 0xFFFF);
 }
 
@@ -4652,7 +4527,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
 
     CreatePokedexList(dexMode, order);
 
-    for (i = 0, resultsCount = 0; i < NATIONAL_DEX_COUNT; i++)
+    for (i = 0, resultsCount = 0; i < NUM_SPECIES; i++)
     {
         if (sPokedexView->pokedexList[i].seen)
         {
@@ -4669,7 +4544,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
         {
             u8 firstLetter;
 
-            species = NationalPokedexNumToSpecies(sPokedexView->pokedexList[i].dexNum);
+            species = sPokedexView->pokedexList[i].dexNum;
             firstLetter = gSpeciesNames[species][0];
             if (LETTER_IN_RANGE_UPPER(firstLetter, abcGroup) || LETTER_IN_RANGE_LOWER(firstLetter, abcGroup))
             {
@@ -4685,7 +4560,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
     {
         for (i = 0, resultsCount = 0; i < sPokedexView->pokemonListCount; i++)
         {
-            species = NationalPokedexNumToSpecies(sPokedexView->pokedexList[i].dexNum);
+            species = sPokedexView->pokedexList[i].dexNum;
 
             if (bodyColor == gBaseStats[species].bodyColor)
             {
@@ -4711,7 +4586,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
             {
                 if (sPokedexView->pokedexList[i].owned)
                 {
-                    species = NationalPokedexNumToSpecies(sPokedexView->pokedexList[i].dexNum);
+                    species = sPokedexView->pokedexList[i].dexNum;
 
                     types[0] = gBaseStats[species].type1;
                     types[1] = gBaseStats[species].type2;
@@ -4729,7 +4604,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
             {
                 if (sPokedexView->pokedexList[i].owned)
                 {
-                    species = NationalPokedexNumToSpecies(sPokedexView->pokedexList[i].dexNum);
+                    species = sPokedexView->pokedexList[i].dexNum;
 
                     types[0] = gBaseStats[species].type1;
                     types[1] = gBaseStats[species].type2;
@@ -4746,7 +4621,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
 
     if (sPokedexView->pokemonListCount != 0)
     {
-        for (i = sPokedexView->pokemonListCount; i < NATIONAL_DEX_COUNT; i++)
+        for (i = sPokedexView->pokemonListCount; i < NUM_SPECIES; i++)
         {
             sPokedexView->pokedexList[i].dexNum = 0xFFFF;
             sPokedexView->pokedexList[i].seen = FALSE;
@@ -4988,8 +4863,6 @@ static void Task_HandleSearchMenuInput(u8 taskId)
                 sLastSelectedPokemon = 0;
                 sPokedexView->selectedPokemonBackup = 0;
                 gSaveBlock2Ptr->pokedex.mode = GetSearchModeSelection(taskId, SEARCH_MODE);
-                if (!IsNationalPokedexEnabled())
-                    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_HOENN;
                 sPokedexView->dexModeBackup = gSaveBlock2Ptr->pokedex.mode;
                 gSaveBlock2Ptr->pokedex.order = GetSearchModeSelection(taskId, SEARCH_ORDER);
                 sPokedexView->dexOrderBackup = gSaveBlock2Ptr->pokedex.order;
@@ -5237,7 +5110,7 @@ void SetSearchRectHighlight(u8 flags, u8 x, u8 y, u8 width)
         temp &= 0x0fff;
         temp |= (flags << 12);
         *(u16 *)(ptr + (y + 0) * 64 + (x + i) * 2) = temp;
-        
+
         temp = *(u16 *)(ptr + (y + 1) * 64 + (x + i) * 2);
         temp &= 0x0fff;
         temp |= (flags << 12);
@@ -5491,11 +5364,8 @@ static void SetDefaultSearchModeAndOrder(u8 taskId)
     switch (sPokedexView->dexModeBackup)
     {
     default:
-    case DEX_MODE_HOENN:
-        selected = DEX_MODE_HOENN;
-        break;
-    case DEX_MODE_NATIONAL:
-        selected = DEX_MODE_NATIONAL;
+    case DEX_MODE_CALDERA_KIRANT:
+        selected = DEX_MODE_CALDERA_KIRANT;
         break;
     }
     gTasks[taskId].tCursorPos_Mode = selected;

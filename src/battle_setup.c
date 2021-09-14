@@ -126,32 +126,32 @@ static const u8 sBattleTransitionTable_Trainer[][2] =
 // Battle Frontier (excluding Pyramid and Dome, which have their own tables below)
 static const u8 sBattleTransitionTable_BattleFrontier[] =
 {
-    B_TRANSITION_FRONTIER_LOGO_WIGGLE, 
-    B_TRANSITION_FRONTIER_LOGO_WAVE, 
-    B_TRANSITION_FRONTIER_SQUARES, 
+    B_TRANSITION_FRONTIER_LOGO_WIGGLE,
+    B_TRANSITION_FRONTIER_LOGO_WAVE,
+    B_TRANSITION_FRONTIER_SQUARES,
     B_TRANSITION_FRONTIER_SQUARES_SCROLL,
-    B_TRANSITION_FRONTIER_CIRCLES_MEET, 
-    B_TRANSITION_FRONTIER_CIRCLES_CROSS, 
-    B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL, 
+    B_TRANSITION_FRONTIER_CIRCLES_MEET,
+    B_TRANSITION_FRONTIER_CIRCLES_CROSS,
+    B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL,
     B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL,
-    B_TRANSITION_FRONTIER_CIRCLES_MEET_IN_SEQ, 
-    B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ, 
-    B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ, 
+    B_TRANSITION_FRONTIER_CIRCLES_MEET_IN_SEQ,
+    B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ,
+    B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ,
     B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ
 };
 
 static const u8 sBattleTransitionTable_BattlePyramid[] =
 {
-    B_TRANSITION_FRONTIER_SQUARES, 
-    B_TRANSITION_FRONTIER_SQUARES_SCROLL, 
+    B_TRANSITION_FRONTIER_SQUARES,
+    B_TRANSITION_FRONTIER_SQUARES_SCROLL,
     B_TRANSITION_FRONTIER_SQUARES_SPIRAL
 };
 
 static const u8 sBattleTransitionTable_BattleDome[] =
 {
-    B_TRANSITION_FRONTIER_LOGO_WIGGLE, 
-    B_TRANSITION_FRONTIER_SQUARES, 
-    B_TRANSITION_FRONTIER_SQUARES_SCROLL, 
+    B_TRANSITION_FRONTIER_LOGO_WIGGLE,
+    B_TRANSITION_FRONTIER_SQUARES,
+    B_TRANSITION_FRONTIER_SQUARES_SCROLL,
     B_TRANSITION_FRONTIER_SQUARES_SPIRAL
 };
 
@@ -475,7 +475,7 @@ static void sub_80B0828(void)
 // Initiates battle where Wally catches Ralts
 void StartWallyTutorialBattle(void)
 {
-    CreateMaleMon(&gEnemyParty[0], SPECIES_RALTS, 5);
+    CreateMaleMon(&gEnemyParty[0], SPECIES_LOTAD, 5);
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     gBattleTypeFlags = BATTLE_TYPE_WALLY_TUTORIAL;
@@ -515,26 +515,21 @@ void BattleSetup_StartLegendaryBattle(void)
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
     {
     default:
-    case SPECIES_GROUDON:
+    case SPECIES_TYPHIDNA:
         gBattleTypeFlags |= BATTLE_TYPE_GROUDON;
         CreateBattleStartTask(B_TRANSITION_GROUDON, MUS_VS_KYOGRE_GROUDON);
         break;
-    case SPECIES_KYOGRE:
-        gBattleTypeFlags |= BATTLE_TYPE_KYOGRE;
-        CreateBattleStartTask(B_TRANSITION_KYOGRE, MUS_VS_KYOGRE_GROUDON);
-        break;
-    case SPECIES_RAYQUAZA:
+    case SPECIES_UNICROWN:
         gBattleTypeFlags |= BATTLE_TYPE_RAYQUAZA;
         CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_VS_RAYQUAZA);
         break;
-    case SPECIES_DEOXYS:
+    case SPECIES_KURANPU:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
         break;
-    case SPECIES_LUGIA:
-    case SPECIES_HO_OH:
+    case SPECIES_KRAKLAW:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_MEW:
+    case SPECIES_JIRACHI:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
     }
@@ -574,13 +569,13 @@ void StartRegiBattle(void)
     species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
     switch (species)
     {
-    case SPECIES_REGIROCK:
+    case SPECIES_MATAKITE:
         transitionId = B_TRANSITION_REGIROCK;
         break;
-    case SPECIES_REGICE:
+    case SPECIES_TAGATI:
         transitionId = B_TRANSITION_REGICE;
         break;
-    case SPECIES_REGISTEEL:
+    case SPECIES_NEICHIA:
         transitionId = B_TRANSITION_REGISTEEL;
         break;
     default:
@@ -923,8 +918,6 @@ static void CB2_GiveStarter(void)
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE, 0, 0, 0);
-    ScriptGiveMon(SPECIES_WURMPLE, 2, ITEM_NONE, 0, 0, 0);
-    ScriptGiveMon(SPECIES_WURMPLE, 2, ITEM_NONE, 0, 0, 0);
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);

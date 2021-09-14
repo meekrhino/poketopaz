@@ -1875,8 +1875,6 @@ static bool16 IsMonAllowedInPokemonJump(struct Pokemon *mon)
 
 static bool16 IsMonAllowedInDodrioBerryPicking(struct Pokemon *mon)
 {
-    if (GetMonData(mon, MON_DATA_IS_EGG) != TRUE && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_DODRIO)
-        return TRUE;
     return FALSE;
 }
 
@@ -2242,8 +2240,6 @@ static void DisplayPartyPokemonGender(u8 gender, u16 species, u8 *nickname, stru
     u8 palNum = GetWindowAttribute(menuBox->windowId, WINDOW_PALETTE_NUM) * 16;
 
     if (species == SPECIES_NONE)
-        return;
-    if ((species == SPECIES_NIDORAN_M || species == SPECIES_NIDORAN_F) && StringCompare(nickname, gSpeciesNames[species]) == 0)
         return;
     switch (gender)
     {
@@ -4282,8 +4278,6 @@ static void GetMedicineItemEffectMessage(u16 item)
 
 static bool8 NotUsingHPEVItemOnShedinja(struct Pokemon *mon, u16 item)
 {
-    if (GetItemEffectType(item) == ITEM_EFFECT_HP_EV && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_SHEDINJA)
-        return FALSE;
     return TRUE;
 }
 
@@ -4451,9 +4445,7 @@ static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType)
     switch (effectType)
     {
     case ITEM_EFFECT_HP_EV:
-        if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_SHEDINJA)
-            return GetMonData(mon, MON_DATA_HP_EV);
-        break;
+        return GetMonData(mon, MON_DATA_HP_EV);
     case ITEM_EFFECT_ATK_EV:
         return GetMonData(mon, MON_DATA_ATK_EV);
     case ITEM_EFFECT_DEF_EV:
@@ -5781,7 +5773,7 @@ static bool8 TrySwitchInPokemon(u8 taskId)
 
         hp = GetMonData(mon, MON_DATA_HP);
         toHeal = GetMonData(mon, MON_DATA_MAX_HP) - hp;
-        if (hp == 0) 
+        if (hp == 0)
         {
             toHeal = GetMonData(mon, MON_DATA_MAX_HP) / 2;
             if (toHeal == 0)

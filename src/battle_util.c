@@ -894,7 +894,7 @@ void CancelMultiTurnMoves(u8 battler)
      || gStatuses3[battler] & (STATUS3_SEMI_INVULNERABLE)
      || gDisableStructs[battler].rolloutTimer != 0
      || gDisableStructs[battler].furyCutterCounter != 0
-     || gDisableStructs[battler].overdriveCounter != 0) 
+     || gDisableStructs[battler].overdriveCounter != 0)
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = TRUE;
     }
@@ -1559,7 +1559,7 @@ u8 DoFieldEndTurnEffects(void)
                 }
                 else
                     gBattlescriptCurrInstr = BattleScript_StillWeatherContinues;
-                
+
                 BattleScriptExecute(gBattlescriptCurrInstr);
                 effect++;
             }
@@ -1964,7 +1964,7 @@ bool8 HandleWishPerishSongOnTurnEnd(void)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
                 else if (gWishFutureKnock.futureSightMove[gActiveBattler] == MOVE_TERRA_STRIKE)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRA_STRIKE;
-                else 
+                else
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_AFTERBURN;
 
 
@@ -2116,10 +2116,10 @@ bool8 HandleFaintedMonActions(void)
                 gBattleStruct->faintedActionsState = 4;
             break;
         case 6:
-            if (AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE1, 0, 0, 0, 0) 
-             || AbilityBattleEffects(ABILITYEFFECT_CONFOUND1, 0, 0, 0, 0) 
-             || AbilityBattleEffects(ABILITYEFFECT_TRACE, 0, 0, 0, 0) 
-             || ItemBattleEffects(1, 0, TRUE) 
+            if (AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE1, 0, 0, 0, 0)
+             || AbilityBattleEffects(ABILITYEFFECT_CONFOUND1, 0, 0, 0, 0)
+             || AbilityBattleEffects(ABILITYEFFECT_TRACE, 0, 0, 0, 0)
+             || ItemBattleEffects(1, 0, TRUE)
              || AbilityBattleEffects(ABILITYEFFECT_FORECAST, 0, 0, 0, 0))
                 return TRUE;
             gBattleStruct->faintedActionsState++;
@@ -2317,7 +2317,7 @@ u8 AtkCanceller_UnableToUseMove(void)
             gBattleStruct->atkCancellerTracker++;
             break;
         case CANCELLER_PHOBIA: // arachnophobia
-            if (gBattleMons[gBattlerTarget].ability == ABILITY_ARACHNOPHOBIA 
+            if (gBattleMons[gBattlerTarget].ability == ABILITY_ARACHNOPHOBIA
              && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT
              && !(Random() % 10))
             {
@@ -2592,37 +2592,7 @@ enum
 
 u8 CastformDataTypeChange(u8 battler)
 {
-    u8 formChange = 0;
-    if (gBattleMons[battler].species != SPECIES_CASTFORM || gBattleMons[battler].ability != ABILITY_FORECAST || gBattleMons[battler].hp == 0)
-        return CASTFORM_NO_CHANGE;
-    if (!WEATHER_HAS_EFFECT && !IS_BATTLER_OF_TYPE(battler, TYPE_NORMAL))
-    {
-        SET_BATTLER_TYPE(battler, TYPE_NORMAL);
-        return CASTFORM_TO_NORMAL;
-    }
-    if (!WEATHER_HAS_EFFECT)
-        return CASTFORM_NO_CHANGE;
-    if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_SUN_ANY | WEATHER_HAIL_ANY)) && !IS_BATTLER_OF_TYPE(battler, TYPE_NORMAL))
-    {
-        SET_BATTLER_TYPE(battler, TYPE_NORMAL);
-        formChange = CASTFORM_TO_NORMAL;
-    }
-    if (gBattleWeather & WEATHER_SUN_ANY && !IS_BATTLER_OF_TYPE(battler, TYPE_FIRE))
-    {
-        SET_BATTLER_TYPE(battler, TYPE_FIRE);
-        formChange = CASTFORM_TO_FIRE;
-    }
-    if (gBattleWeather & WEATHER_RAIN_ANY && !IS_BATTLER_OF_TYPE(battler, TYPE_WATER))
-    {
-        SET_BATTLER_TYPE(battler, TYPE_WATER);
-        formChange = CASTFORM_TO_WATER;
-    }
-    if (gBattleWeather & WEATHER_HAIL_ANY && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE))
-    {
-        SET_BATTLER_TYPE(battler, TYPE_ICE);
-        formChange = CASTFORM_TO_ICE;
-    }
-    return formChange;
+    return 0;
 }
 
 // The largest function in the game, but even it could not save itself from decompiling.
@@ -3838,7 +3808,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 break;
             // copy/paste again, smh
             case HOLD_EFFECT_ATTACK_UP:
-                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam 
+                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam
                     && !moveTurn && gBattleMons[battlerId].statStages[STAT_ATK] < MAX_STAT_STAGE)
                 {
                     PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_ATK);
@@ -3853,7 +3823,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 }
                 break;
             case HOLD_EFFECT_DEFENSE_UP:
-                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn 
+                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn
                     && gBattleMons[battlerId].statStages[STAT_DEF] < MAX_STAT_STAGE)
                 {
                     PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_DEF);
@@ -3867,7 +3837,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 }
                 break;
             case HOLD_EFFECT_SPEED_UP:
-                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn 
+                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn
                     && gBattleMons[battlerId].statStages[STAT_SPEED] < MAX_STAT_STAGE)
                 {
                     PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPEED);
@@ -3881,7 +3851,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 }
                 break;
             case HOLD_EFFECT_SP_ATTACK_UP:
-                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn 
+                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn
                     && gBattleMons[battlerId].statStages[STAT_SPATK] < MAX_STAT_STAGE)
                 {
                     PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPATK);
@@ -3895,7 +3865,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 }
                 break;
             case HOLD_EFFECT_SP_DEFENSE_UP:
-                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn 
+                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn
                     && gBattleMons[battlerId].statStages[STAT_SPDEF] < MAX_STAT_STAGE)
                 {
                     PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPDEF);
@@ -3909,7 +3879,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 }
                 break;
             case HOLD_EFFECT_CRITICAL_UP:
-                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn 
+                if (gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / battlerHoldEffectParam && !moveTurn
                     && !(gBattleMons[battlerId].status2 & STATUS2_FOCUS_ENERGY))
                 {
                     gBattleMons[battlerId].status2 |= STATUS2_FOCUS_ENERGY;
@@ -4374,12 +4344,7 @@ u8 GetMoveTarget(u16 move, u8 setTarget)
 
 static bool32 IsMonEventLegal(u8 battlerId)
 {
-    if (GetBattlerSide(battlerId) == B_SIDE_OPPONENT)
-        return TRUE;
-    if (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS
-        && GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_MEW)
-            return TRUE;
-    return GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_EVENT_LEGAL, NULL);
+    return TRUE;
 }
 
 u8 IsMonDisobedient(void)

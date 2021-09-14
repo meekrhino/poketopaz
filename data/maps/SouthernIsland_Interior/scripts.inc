@@ -26,12 +26,12 @@ SouthernIsland_Interior_OnTransition:
 
 SouthernIsland_Interior_EventScript_SetUpLatios::
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LATIOS
-	setvar VAR_TEMP_4, SPECIES_LATIOS
+	setvar VAR_TEMP_4, SPECIES_PINECO
 	return
 
 SouthernIsland_Interior_EventScript_SetUpLatias::
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LATIAS
-	setvar VAR_TEMP_4, SPECIES_LATIAS
+	setvar VAR_TEMP_4, SPECIES_PINECO
 	return
 
 SouthernIsland_Interior_EventScript_SetUpPlayerGfx::
@@ -115,14 +115,14 @@ SouthernIsland_Interior_EventScript_Sign::
 	end
 
 SouthernIsland_Interior_EventScript_SetLatiosBattleVars::
-	setvar VAR_0x8004, SPECIES_LATIOS
+	setvar VAR_0x8004, SPECIES_PINECO
 	setvar VAR_0x8005, 50 @ level
 	setvar VAR_0x8006, ITEM_SOUL_DEW
 	special CreateEventLegalEnemyMon
 	return
 
 SouthernIsland_Interior_EventScript_SetLatiasBattleVars::
-	setvar VAR_0x8004, SPECIES_LATIAS
+	setvar VAR_0x8004, SPECIES_PINECO
 	setvar VAR_0x8005, 50 @ level
 	setvar VAR_0x8006, ITEM_SOUL_DEW
 	special CreateEventLegalEnemyMon

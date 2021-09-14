@@ -32,11 +32,11 @@ TerraCave_End_EventScript_Groudon::
 	applymovement LOCALID_GROUDON, TerraCave_End_Movement_GroudonApproach
 	waitmovement 0
 	waitse
-	playmoncry SPECIES_GROUDON, 2
+	playmoncry SPECIES_PINECO, 2
 	delay 40
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_GROUDON
-	setwildbattle SPECIES_GROUDON, 70, ITEM_NONE
+	setwildbattle SPECIES_PINECO, 70, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -61,7 +61,7 @@ TerraCave_End_EventScript_DefeatedGroudon::
 	end
 
 TerraCave_End_EventScript_RanFromGroudon::
-	setvar VAR_0x8004, SPECIES_GROUDON
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end
 

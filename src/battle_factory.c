@@ -43,12 +43,12 @@ static u8 GetMoveBattleStyle(u16 move);
 
 // Number of moves needed on the team to be considered using a certain battle style
 static const u8 sRequiredMoveCounts[FACTORY_NUM_STYLES - 1] = {
-    [FACTORY_STYLE_PREPARATION - 1]   = 3, 
-    [FACTORY_STYLE_SLOW_STEADY - 1]   = 3, 
-    [FACTORY_STYLE_ENDURANCE - 1]     = 3, 
-    [FACTORY_STYLE_HIGH_RISK - 1]     = 2, 
-    [FACTORY_STYLE_WEAKENING - 1]     = 2, 
-    [FACTORY_STYLE_UNPREDICTABLE - 1] = 2, 
+    [FACTORY_STYLE_PREPARATION - 1]   = 3,
+    [FACTORY_STYLE_SLOW_STEADY - 1]   = 3,
+    [FACTORY_STYLE_ENDURANCE - 1]     = 3,
+    [FACTORY_STYLE_HIGH_RISK - 1]     = 2,
+    [FACTORY_STYLE_WEAKENING - 1]     = 2,
+    [FACTORY_STYLE_UNPREDICTABLE - 1] = 2,
     [FACTORY_STYLE_WEATHER - 1]       = 2
 };
 
@@ -169,24 +169,24 @@ static const u8 sFixedIVTable[][2] =
 static const u16 sInitialRentalMonRanges[][2] =
 {
     // Level 50
-    {FRONTIER_MON_GRIMER,     FRONTIER_MON_FURRET_1},   // 110 - 199
-    {FRONTIER_MON_DELCATTY_1, FRONTIER_MON_CLOYSTER_1}, // 162 - 266
-    {FRONTIER_MON_DELCATTY_2, FRONTIER_MON_CLOYSTER_2}, // 267 - 371
-    {FRONTIER_MON_DUGTRIO_1,  FRONTIER_MON_SLAKING_1},  // 372 - 467
-    {FRONTIER_MON_DUGTRIO_2,  FRONTIER_MON_SLAKING_2},  // 468 - 563
-    {FRONTIER_MON_DUGTRIO_3,  FRONTIER_MON_SLAKING_3},  // 564 - 659
-    {FRONTIER_MON_DUGTRIO_4,  FRONTIER_MON_SLAKING_4},  // 660 - 755
-    {FRONTIER_MON_DUGTRIO_1,  FRONTIER_MONS_HIGH_TIER}, // 372 - 849
+    {FRONTIER_MON_PINECO,     FRONTIER_MON_PINECO},   // 110 - 199
+    {FRONTIER_MON_PINECO, FRONTIER_MON_PINECO}, // 162 - 266
+    {FRONTIER_MON_PINECO, FRONTIER_MON_PINECO}, // 267 - 371
+    {FRONTIER_MON_PINECO,  FRONTIER_MON_PINECO},  // 372 - 467
+    {FRONTIER_MON_PINECO,  FRONTIER_MON_PINECO},  // 468 - 563
+    {FRONTIER_MON_PINECO,  FRONTIER_MON_PINECO},  // 564 - 659
+    {FRONTIER_MON_PINECO,  FRONTIER_MON_PINECO},  // 660 - 755
+    {FRONTIER_MON_PINECO,  FRONTIER_MONS_HIGH_TIER}, // 372 - 849
 
     // Open level
-    {FRONTIER_MON_DUGTRIO_1, FRONTIER_MON_SLAKING_1}, // 372 - 467
-    {FRONTIER_MON_DUGTRIO_2, FRONTIER_MON_SLAKING_2}, // 468 - 563
-    {FRONTIER_MON_DUGTRIO_3, FRONTIER_MON_SLAKING_3}, // 564 - 659
-    {FRONTIER_MON_DUGTRIO_4, FRONTIER_MON_SLAKING_4}, // 660 - 755
-    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS - 1},  // 372 - 881
-    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS - 1},  // 372 - 881
-    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS - 1},  // 372 - 881
-    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS - 1},  // 372 - 881
+    {FRONTIER_MON_PINECO, FRONTIER_MON_PINECO}, // 372 - 467
+    {FRONTIER_MON_PINECO, FRONTIER_MON_PINECO}, // 468 - 563
+    {FRONTIER_MON_PINECO, FRONTIER_MON_PINECO}, // 564 - 659
+    {FRONTIER_MON_PINECO, FRONTIER_MON_PINECO}, // 660 - 755
+    {FRONTIER_MON_PINECO, NUM_FRONTIER_MONS - 1},  // 372 - 881
+    {FRONTIER_MON_PINECO, NUM_FRONTIER_MONS - 1},  // 372 - 881
+    {FRONTIER_MON_PINECO, NUM_FRONTIER_MONS - 1},  // 372 - 881
+    {FRONTIER_MON_PINECO, NUM_FRONTIER_MONS - 1},  // 372 - 881
 };
 
 // code
@@ -331,8 +331,6 @@ static void GenerateOpponentMons(void)
     while (i != FRONTIER_PARTY_SIZE)
     {
         u16 monId = GetFactoryMonId(lvlMode, challengeNum, FALSE);
-        if (gFacilityTrainerMons[monId].species == SPECIES_UNOWN)
-            continue;
 
         for (j = 0; j < 6; j++)
         {
@@ -551,9 +549,6 @@ static void GenerateInitialRentalMons(void)
         else
             monId = GetFactoryMonId(factoryLvlMode, challengeNum, FALSE);
 
-        if (gFacilityTrainerMons[monId].species == SPECIES_UNOWN)
-            continue;
-
         // Cannot have two pokemon of the same species.
         for (j = firstMonId; j < firstMonId + i; j++)
         {
@@ -755,8 +750,6 @@ void FillFactoryBrainParty(void)
     {
         u16 monId = GetFactoryMonId(lvlMode, challengeNum, FALSE);
 
-        if (gFacilityTrainerMons[monId].species == SPECIES_UNOWN)
-            continue;
         if (monLevel == 50 && monId > FRONTIER_MONS_HIGH_TIER)
             continue;
 

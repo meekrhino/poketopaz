@@ -41,7 +41,7 @@ FallarborTown_Mart_EventScript_Skitty::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_SKITTY, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox FallarborTown_Mart_Text_Skitty, MSGBOX_DEFAULT
 	waitmoncry
 	release

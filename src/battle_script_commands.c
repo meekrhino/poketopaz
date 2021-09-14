@@ -927,9 +927,9 @@ static const u8 sTerrainToType[] =
 // - ITEM_ULTRA_BALL skips Master Ball and ITEM_NONE
 static const u8 sBallCatchBonuses[] =
 {
-    [ITEM_ULTRA_BALL - ITEM_ULTRA_BALL]  = 20, 
-    [ITEM_GREAT_BALL - ITEM_ULTRA_BALL]  = 15, 
-    [ITEM_POKE_BALL - ITEM_ULTRA_BALL]   = 10, 
+    [ITEM_ULTRA_BALL - ITEM_ULTRA_BALL]  = 20,
+    [ITEM_GREAT_BALL - ITEM_ULTRA_BALL]  = 15,
+    [ITEM_POKE_BALL - ITEM_ULTRA_BALL]   = 10,
     [ITEM_SAFARI_BALL - ITEM_ULTRA_BALL] = 15
 };
 
@@ -1385,9 +1385,7 @@ static void Cmd_critcalc(void)
                 + (gBattleMoves[gCurrentMove].effect == EFFECT_SKY_ATTACK)
                 + (gBattleMoves[gCurrentMove].effect == EFFECT_BLAZE_KICK)
                 + (gBattleMoves[gCurrentMove].effect == EFFECT_POISON_TAIL)
-                + (holdEffect == HOLD_EFFECT_SCOPE_LENS)
-                + 2 * (holdEffect == HOLD_EFFECT_LUCKY_PUNCH && gBattleMons[gBattlerAttacker].species == SPECIES_CHANSEY)
-                + 2 * (holdEffect == HOLD_EFFECT_STICK && gBattleMons[gBattlerAttacker].species == SPECIES_FARFETCHD);
+                + (holdEffect == HOLD_EFFECT_SCOPE_LENS);
 
     if (critChance >= ARRAY_COUNT(sCriticalHitChance))
         critChance = ARRAY_COUNT(sCriticalHitChance) - 1;
@@ -3108,7 +3106,7 @@ static void Cmd_seteffectwithchance(void)
     percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;
 
     if (gCurrentMove == MOVE_VENOM_STRIKE)
-    { 
+    {
         hpFraction = GetScaledHPFraction(gBattleMons[gBattlerAttacker].hp, gBattleMons[gBattlerAttacker].maxHP, 48);
 
         for (i = 0; i < (s32) sizeof(sVenomStrikeHpScaleToPercentTable); i += 2)
@@ -3772,7 +3770,7 @@ static void Cmd_unknown_24(void)
     if (HP_count == 0
      && !((gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_SACRIFICE_PEND) && monCount > 1))
         gBattleOutcome |= B_OUTCOME_LOST;
-    
+
     HP_count = 0;
 
     for (i = 0; i < PARTY_SIZE; i++)
@@ -3785,7 +3783,7 @@ static void Cmd_unknown_24(void)
         }
     }
 
-    if (HP_count == 0 
+    if (HP_count == 0
      && !((gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_SACRIFICE_PEND) && monCount > 1))
         gBattleOutcome |= B_OUTCOME_WON;
 
@@ -3799,7 +3797,7 @@ static void Cmd_unknown_24(void)
             if ((gHitMarker & HITMARKER_FAINTED2(i)) && (!gSpecialStatuses[i].flag40))
                 foundPlayer++;
         }
-        
+
         foundOpponent = 0;
 
         for (i = 1; i < gBattlersCount; i += 2)
@@ -4389,7 +4387,7 @@ static void Cmd_playstatchangeanimation(void)
 
         while (statsToCheck != 0)
         {
-            if (statsToCheck & 1 
+            if (statsToCheck & 1
              && (gBattleMons[gActiveBattler].statStages[currStat] < MAX_STAT_STAGE || gBattlescriptCurrInstr[3] & STAT_CHANGE_ALWAYS_SHOW))
             {
                 statAnimId = startingStatAnimId + currStat;
@@ -4897,9 +4895,9 @@ static void Cmd_switchindataupdate(void)
 
     SwitchInClearSetData();
 
-    if (gBattleTypeFlags & BATTLE_TYPE_PALACE 
+    if (gBattleTypeFlags & BATTLE_TYPE_PALACE
         && gBattleMons[gActiveBattler].maxHP / 2 >= gBattleMons[gActiveBattler].hp
-        && gBattleMons[gActiveBattler].hp != 0 
+        && gBattleMons[gActiveBattler].hp != 0
         && !(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP))
     {
         gBattleStruct->palaceFlags |= gBitTable[gActiveBattler];
@@ -4925,7 +4923,7 @@ static void Cmd_switchinanim(void)
                                  | BATTLE_TYPE_RECORDED_LINK
                                  | BATTLE_TYPE_TRAINER_HILL
                                  | BATTLE_TYPE_FRONTIER)))
-            HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gActiveBattler].species), FLAG_SET_SEEN, gBattleMons[gActiveBattler].personality);
+            HandleSetPokedexFlag(gBattleMons[gActiveBattler].species, FLAG_SET_SEEN, gBattleMons[gActiveBattler].personality);
 
     gAbsentBattlerFlags &= ~(gBitTable[gActiveBattler]);
 
@@ -5340,7 +5338,7 @@ static void Cmd_openpartyscreen(void)
     {
         battlerId = GetBattlerForBattleScript(gBattlescriptCurrInstr[1] & ~(PARTY_SCREEN_OPTIONAL));
         gActiveBattler = battlerId;
-        
+
         if(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SACRIFICE_PEND)
             hitmarkerFaintBits = PARTY_ACTION_RESTORE_MON;
         else if (gBattlescriptCurrInstr[1] & PARTY_SCREEN_OPTIONAL)
@@ -6889,7 +6887,7 @@ static void Cmd_various(void)
              || gBattleMons[gActiveBattler].moves[i] == MOVE_DELTA_WAVE)
                 movesetCount++;
         }
-        
+
         if (movesetCount == 4)
             gBattleScripting.dmgMultiplier = 2;
         break;
@@ -7323,14 +7321,14 @@ static void Cmd_stockpiletobasedamage(void)
                 gBattleMoveDamage = gBattleMoveDamage * 15 / 10;
         }
         ChangeStatBuffs(
-            SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE, 
-            STAT_DEF, 
-            MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN, 
+            SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE,
+            STAT_DEF,
+            MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN,
             0);
         ChangeStatBuffs(
-            SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE, 
-            STAT_SPDEF, 
-            MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN, 
+            SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE,
+            STAT_SPDEF,
+            MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN,
             0);
         gDisableStructs[gBattlerAttacker].stockpileCounter = 0;
         gBattlescriptCurrInstr += 5;
@@ -7362,14 +7360,14 @@ static void Cmd_stockpiletohpheal(void)
         gBattleMoveDamage *= -1;
 
         ChangeStatBuffs(
-            SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE, 
-            STAT_DEF, 
-            MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN, 
+            SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE,
+            STAT_DEF,
+            MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN,
             0);
         ChangeStatBuffs(
-            SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE, 
-            STAT_SPDEF, 
-            MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN, 
+            SET_STAT_BUFF_VALUE(gDisableStructs[gBattlerAttacker].stockpileCounter) | STAT_BUFF_NEGATIVE,
+            STAT_SPDEF,
+            MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN,
             0);
         gBattleScripting.animTurn = gDisableStructs[gBattlerAttacker].stockpileCounter;
         gDisableStructs[gBattlerAttacker].stockpileCounter = 0;
@@ -8955,7 +8953,7 @@ static void Cmd_trysetspikes(void)
             gBattlescriptCurrInstr += 5;
         }
     }
-    else 
+    else
     {
         if (gSideTimers[targetSide].spikesAmount == 3)
         {
@@ -9101,7 +9099,7 @@ static void Cmd_friendshiptodamagecalculation(void)
 
         fLevelDefender = sFriendshipToLevelTable[i + 1];
 
-        if (gBattleMoves[gCurrentMove].effect == EFFECT_ORION_SWORD) 
+        if (gBattleMoves[gCurrentMove].effect == EFFECT_ORION_SWORD)
         {
             if (fLevelAttacker < fLevelDefender)
                 difference = 0;
@@ -9861,7 +9859,7 @@ static void Cmd_trysetroots(void) // ingrain
             gBattlescriptCurrInstr += 5;
         }
     }
-    else 
+    else
     {
         if (gStatuses3[gBattlerAttacker] & STATUS3_ROOTED)
         {
@@ -10007,7 +10005,7 @@ static void Cmd_weightdamagecalculation(void)
     s32 i;
     for (i = 0; sWeightToDamageTable[i] != 0xFFFF; i += 2)
     {
-        if (sWeightToDamageTable[i] > GetPokedexHeightWeight(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), 1))
+        if (sWeightToDamageTable[i] > GetPokedexHeightWeight(gBattleMons[gBattlerTarget].species, 1))
             break;
     }
 
@@ -10498,7 +10496,7 @@ static void Cmd_handleballthrow(void)
                 }
                 break;
             case ITEM_REPEAT_BALL:
-                if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), FLAG_GET_CAUGHT))
+                if (GetSetPokedexFlag(gBattleMons[gBattlerTarget].species, FLAG_GET_CAUGHT))
                     ballMultiplier = 30;
                 else
                     ballMultiplier = 10;
@@ -10620,13 +10618,13 @@ static void Cmd_trysetcaughtmondexflags(void)
     u16 species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
     u32 personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY, NULL);
 
-    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+    if (GetSetPokedexFlag(species, FLAG_GET_CAUGHT))
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     }
     else
     {
-        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
+        HandleSetPokedexFlag(species, FLAG_SET_CAUGHT, personality);
         gBattlescriptCurrInstr += 5;
     }
 }
@@ -10645,7 +10643,7 @@ static void Cmd_displaydexinfo(void)
         if (!gPaletteFade.active)
         {
             FreeAllWindowBuffers();
-            gBattleCommunication[TASK_ID] = DisplayCaughtMonDexPage(SpeciesToNationalPokedexNum(species),
+            gBattleCommunication[TASK_ID] = DisplayCaughtMonDexPage(species,
                                                                         gBattleMons[gBattlerTarget].otId,
                                                                         gBattleMons[gBattlerTarget].personality);
             gBattleCommunication[0]++;

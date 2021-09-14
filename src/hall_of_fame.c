@@ -298,21 +298,21 @@ static const union AnimCmd sAnim_WhiteConfettiC[] =
 
 static const union AnimCmd * const sAnims_Confetti[] =
 {
-    sAnim_PinkConfettiA, 
-    sAnim_RedConfettiA, 
-    sAnim_BlueConfettiA, 
+    sAnim_PinkConfettiA,
+    sAnim_RedConfettiA,
+    sAnim_BlueConfettiA,
     sAnim_RedConfettiB,
-    sAnim_BlueConfettiB, 
-    sAnim_YellowConfettiA, 
-    sAnim_WhiteConfettiA, 
+    sAnim_BlueConfettiB,
+    sAnim_YellowConfettiA,
+    sAnim_WhiteConfettiA,
     sAnim_GreenConfettiA,
-    sAnim_PinkConfettiB, 
-    sAnim_BlueConfettiC, 
-    sAnim_YellowConfettiB, 
+    sAnim_PinkConfettiB,
+    sAnim_BlueConfettiC,
+    sAnim_YellowConfettiB,
     sAnim_WhiteConfettiB,
-    sAnim_GreenConfettiB, 
-    sAnim_PinkConfettiC, 
-    sAnim_RedConfettiC, 
+    sAnim_GreenConfettiB,
+    sAnim_PinkConfettiC,
+    sAnim_RedConfettiC,
     sAnim_YellowConfettiC,
     sAnim_WhiteConfettiC
 };
@@ -334,17 +334,17 @@ static const u32 sHallOfFame_Gfx[] = INCBIN_U32("graphics/misc/japanese_hof.4bpp
 
 static const struct HallofFameMon sDummyFameMon =
 {
-    .tid = 0x3EA03EA, 
-    .personality = 0, 
-    .species = SPECIES_NONE, 
-    .lvl = 0, 
+    .tid = 0x3EA03EA,
+    .personality = 0,
+    .species = SPECIES_NONE,
+    .lvl = 0,
     .nick = {0}
 };
 
 // Unused, order of party slots on Hall of Fame screen
 static const u8 sHallOfFame_SlotOrder[] = {
-    2, 1, 3, 
-    6, 4, 5, 
+    2, 1, 3,
+    6, 4, 5,
     0, 0
 };
 
@@ -662,7 +662,7 @@ static void Task_Hof_DoConfetti(u8 taskId)
     if (gTasks[taskId].tFrameCount != 0)
     {
         gTasks[taskId].tFrameCount--;
-        
+
         // Create new confetti every 4th frame for the first 290 frames
         // For the last 110 frames wait for the existing confetti to fall offscreen
         if ((gTasks[taskId].tFrameCount & 3) == 0 && gTasks[taskId].tFrameCount > 110)
@@ -1172,19 +1172,16 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u
         text[0] = CHAR_SLASH;
         stringPtr = StringCopy(text + 1, gSpeciesNames[currMon->species]);
 
-        if (currMon->species != SPECIES_NIDORAN_M && currMon->species != SPECIES_NIDORAN_F)
+        switch (GetGenderFromSpeciesAndPersonality(currMon->species, currMon->personality))
         {
-            switch (GetGenderFromSpeciesAndPersonality(currMon->species, currMon->personality))
-            {
-            case MON_MALE:
-                stringPtr[0] = CHAR_MALE;
-                stringPtr++;
-                break;
-            case MON_FEMALE:
-                stringPtr[0] = CHAR_FEMALE;
-                stringPtr++;
-                break;
-            }
+        case MON_MALE:
+            stringPtr[0] = CHAR_MALE;
+            stringPtr++;
+            break;
+        case MON_FEMALE:
+            stringPtr[0] = CHAR_FEMALE;
+            stringPtr++;
+            break;
         }
 
         stringPtr[0] = EOS;
@@ -1507,12 +1504,12 @@ static void Task_DoDomeConfetti(u8 taskId)
         if (tTimer != 0 && tTimer % 3 == 0)
         {
             // Create new confetti every 3 frames
-            id = ConfettiUtil_AddNew(&sOamData_Confetti, 
-                              TAG_CONFETTI, 
-                              TAG_CONFETTI, 
-                              Random() % DISPLAY_WIDTH, 
-                              -(Random() % 8), 
-                              Random() % ARRAY_COUNT(sAnims_Confetti), 
+            id = ConfettiUtil_AddNew(&sOamData_Confetti,
+                              TAG_CONFETTI,
+                              TAG_CONFETTI,
+                              Random() % DISPLAY_WIDTH,
+                              -(Random() % 8),
+                              Random() % ARRAY_COUNT(sAnims_Confetti),
                               id);
             if (id != 0xFF)
             {

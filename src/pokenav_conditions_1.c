@@ -217,7 +217,7 @@ u8 SwitchConditionSummaryIndex(u8 moveUp)
     }
 
     isNotLastMon = (monListPtr->currIndex != ((IsConditionMenuSearchMode() != 0) ? monListPtr->listCount : monListPtr->listCount - 1));
-    
+
     if (!wasNotLastMon)
         return PARTY_CONDITION_FUNC_NO_TRANSITION;
     else if (!isNotLastMon)
@@ -358,9 +358,6 @@ u8 *CopyMonConditionNameGender(u8 *str, u16 id, bool8 arg3)
         gender = GetBoxMonGender(boxMon);
         level = GetLevelFromBoxMonExp(boxMon);
     }
-
-    if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && !StringCompare(str, gSpeciesNames[species]))
-        gender = MON_GENDERLESS;
 
     str_ = str; // For some reason, a variable is needed to match.
     while (*str_ != EOS)

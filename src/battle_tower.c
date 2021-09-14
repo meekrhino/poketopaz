@@ -773,7 +773,7 @@ struct
 } const sStevenMons[MULTI_PARTY_SIZE] =
 {
     {
-        .species = SPECIES_METANG,
+        .species = SPECIES_PINECO,
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 42,
         .nature = NATURE_BRAVE,
@@ -781,7 +781,7 @@ struct
         .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_METAL_CLAW}
     },
     {
-        .species = SPECIES_SKARMORY,
+        .species = SPECIES_PINECO,
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 43,
         .nature = NATURE_IMPISH,
@@ -789,7 +789,7 @@ struct
         .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_PROTECT, MOVE_STEEL_WING}
     },
     {
-        .species = SPECIES_AGGRON,
+        .species = SPECIES_PINECO,
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 44,
         .nature = NATURE_ADAMANT,
@@ -1339,7 +1339,7 @@ void PutNewBattleTowerRecord(struct EmeraldBattleTowerRecord *newRecordEm)
                 if (gSaveBlock2Ptr->frontier.towerRecords[i].name[j] != newRecord->name[j])
                     break;
                 if (newRecord->name[j] == EOS)
-                #endif  
+                #endif
                 {
                     k = PLAYER_NAME_LENGTH;
                     break;
@@ -2655,7 +2655,7 @@ static void TowerTryCloseLink(void)
 static void SetMultiPartnerGfx(void)
 {
     // 0xF below means use VAR_OBJ_GFX_ID_E
-    SetBattleFacilityTrainerGfxId(gSaveBlock2Ptr->frontier.trainerIds[17], 0xF); 
+    SetBattleFacilityTrainerGfxId(gSaveBlock2Ptr->frontier.trainerIds[17], 0xF);
 }
 
 static void SetTowerInterviewData(void)
@@ -2968,7 +2968,7 @@ static void FillPartnerParty(u16 trainerId)
                       sStevenMons[i].species,
                       sStevenMons[i].level,
                       sStevenMons[i].fixedIV,
-                      TRUE, 
+                      TRUE,
                       #ifdef BUGFIX
                       j,
                       #else

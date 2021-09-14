@@ -1113,7 +1113,6 @@
 #define EC_MASK_INDEX 0x1FF
 
 #define EC_POKEMON(mon) ((EC_GROUP_POKEMON << 9) | SPECIES_##mon)
-#define EC_POKEMON_NATIONAL(mon) ((EC_GROUP_POKEMON_NATIONAL << 9) | SPECIES_##mon)
 #define EC_MOVE(move) ((EC_GROUP_MOVE_1 << 9) | MOVE_##move)
 #define EC_MOVE2(move) ((EC_GROUP_MOVE_2 << 9) | MOVE_##move)
 

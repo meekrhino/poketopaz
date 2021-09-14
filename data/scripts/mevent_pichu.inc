@@ -29,7 +29,7 @@ SurfPichu_FullParty:
 	end
 
 SurfPichu_GiveEgg:
-	giveegg SPECIES_PICHU
+	giveegg SPECIES_PINECO
 	setmoneventlegal VAR_EVENT_PICHU_SLOT
 	setmonmetlocation VAR_EVENT_PICHU_SLOT, METLOC_FATEFUL_ENCOUNTER
 	compare VAR_EVENT_PICHU_SLOT, 1

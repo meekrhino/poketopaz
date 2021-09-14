@@ -28,7 +28,7 @@ void ClearMailStruct(struct MailStruct *mail)
     for (i = 0; i < TRAINER_ID_LENGTH; i++)
         mail->trainerId[i] = 0;
 
-    mail->species = SPECIES_BULBASAUR;
+    mail->species = SPECIES_VENAP;
     mail->itemId = ITEM_NONE;
 }
 
@@ -81,30 +81,12 @@ u8 GiveMailToMon(struct Pokemon *mon, u16 itemId)
 
 u16 SpeciesToMailSpecies(u16 species, u32 personality)
 {
-    if (species == SPECIES_UNOWN)
-    {
-        u32 species = GetUnownLetterByPersonality(personality) + 30000;
-        return species;
-    }
-
     return species;
 }
 
 u16 MailSpeciesToSpecies(u16 mailSpecies, u16 *buffer)
 {
-    u16 result;
-
-    if (mailSpecies >= 30000 && mailSpecies < (30000 + NUM_UNOWN_FORMS))
-    {
-        result = SPECIES_UNOWN;
-        *buffer = mailSpecies - 30000;
-    }
-    else
-    {
-        result = mailSpecies;
-    }
-
-    return result;
+    return mailSpecies;
 }
 
 u8 GiveMailToMon2(struct Pokemon *mon, struct MailStruct *mail)

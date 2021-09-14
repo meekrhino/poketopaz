@@ -92,10 +92,10 @@ IslandCave_EventScript_Regice::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_REGICE, 2
+	playmoncry SPECIES_PINECO, 2
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_REGICE, 40, ITEM_NONE
+	setwildbattle SPECIES_PINECO, 40, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate
@@ -117,6 +117,6 @@ IslandCave_EventScript_DefeatedRegice::
 	end
 
 IslandCave_EventScript_RanFromRegice::
-	setvar VAR_0x8004, SPECIES_REGICE
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end

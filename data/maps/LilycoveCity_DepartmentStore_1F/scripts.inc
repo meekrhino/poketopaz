@@ -141,7 +141,7 @@ LilycoveCity_DepartmentStore_1F_EventScript_Azumarill::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_AZUMARILL, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox LilycoveCity_DepartmentStore_1F_Text_Azumarill, MSGBOX_DEFAULT
 	waitmoncry
 	release

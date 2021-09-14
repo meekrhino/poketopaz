@@ -1225,15 +1225,15 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
-    [ITEM_063] =
+    [ITEM_ARCTIC_STONE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("ARCTIC STONE"),
+        .itemId = ITEM_ARCTIC_STONE,
+        .price = 2100,
+        .description = sLeafStoneDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_064] =
@@ -2774,44 +2774,48 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_0E2] =
+    [ITEM_BLESSED_ANKH] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("BLESSED ANKH"),
+        .itemId = ITEM_BLESSED_ANKH,
         .price = 0,
+        .holdEffect = HOLD_EFFECT_STICK,
         .description = sDummyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_0E3] =
+    [ITEM_UMBRA_CREST] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("UMBRA CREST"),
+        .itemId = ITEM_UMBRA_CREST,
         .price = 0,
+        .holdEffect = HOLD_EFFECT_STICK,
         .description = sDummyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_0E4] =
+    [ITEM_RIVALRY_ORB] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("RIVALRY ORB"),
+        .itemId = ITEM_RIVALRY_ORB,
         .price = 0,
+        .holdEffect = HOLD_EFFECT_STICK,
         .description = sDummyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_0E5] =
+    [ITEM_SOLAR_CELL] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("SOLAR CELL"),
+        .itemId = ITEM_SOLAR_CELL,
         .price = 0,
+        .holdEffect = HOLD_EFFECT_STICK,
         .description = sDummyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,

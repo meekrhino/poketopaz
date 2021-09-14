@@ -82,7 +82,7 @@ static const u8 sText_ShedinjaJapaneseName[] = _("ヌケニン");
 // The below table is used by Task_UpdateBgPalette to control the speed at which the bg color updates.
 // The first two values are indexes into sBgAnim_PalIndexes (indirectly, via sBgAnimPal), and are
 // the start and end of the range of colors in sBgAnim_PalIndexes it will move through incrementally
-// before starting over. It will repeat this cycle x number of times, where x = the 3rd value, 
+// before starting over. It will repeat this cycle x number of times, where x = the 3rd value,
 // delaying each increment by y, where y = the 4th value.
 // Once it has cycled x number of times, it will move to the next array in this table.
 static const u8 sBgAnim_PaletteControl[][4] =
@@ -545,43 +545,6 @@ static void CB2_TradeEvolutionSceneUpdate(void)
     RunTasks();
 }
 
-static void CreateShedinja(u16 preEvoSpecies, struct Pokemon* mon)
-{
-    u32 data = 0;
-    if (gEvolutionTable[preEvoSpecies][0].method == EVO_LEVEL_NINJASK && gPlayerPartyCount < PARTY_SIZE)
-    {
-        s32 i;
-        struct Pokemon* shedinja = &gPlayerParty[gPlayerPartyCount];
-
-        CopyMon(&gPlayerParty[gPlayerPartyCount], mon, sizeof(struct Pokemon));
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_SPECIES, &gEvolutionTable[preEvoSpecies][1].targetSpecies);
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_NICKNAME, gSpeciesNames[gEvolutionTable[preEvoSpecies][1].targetSpecies]);
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_HELD_ITEM, &data);
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_MARKINGS, &data);
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_ENCRYPT_SEPARATOR, &data);
-
-        for (i = MON_DATA_COOL_RIBBON; i < MON_DATA_COOL_RIBBON + CONTEST_CATEGORIES_COUNT; i++)
-            SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
-        for (i = MON_DATA_CHAMPION_RIBBON; i <= MON_DATA_UNUSED_RIBBONS; i++)
-            SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
-
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_STATUS, &data);
-        data = MAIL_NONE;
-        SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_MAIL, &data);
-
-        CalculateMonStats(&gPlayerParty[gPlayerPartyCount]);
-        CalculatePlayerPartyCount();
-
-        GetSetPokedexFlag(SpeciesToNationalPokedexNum(gEvolutionTable[preEvoSpecies][1].targetSpecies), FLAG_SET_SEEN);
-        GetSetPokedexFlag(SpeciesToNationalPokedexNum(gEvolutionTable[preEvoSpecies][1].targetSpecies), FLAG_SET_CAUGHT);
-
-        if (GetMonData(shedinja, MON_DATA_SPECIES) == SPECIES_SHEDINJA
-            && GetMonData(shedinja, MON_DATA_LANGUAGE) == LANGUAGE_JAPANESE
-            && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NINJASK)
-                SetMonData(shedinja, MON_DATA_NICKNAME, sText_ShedinjaJapaneseName);
-    }
-}
-
 // States for the main switch in Task_EvolutionScene
 enum {
     EVOSTATE_FADE_IN,
@@ -764,8 +727,8 @@ static void Task_EvolutionScene(u8 taskId)
             SetMonData(mon, MON_DATA_SPECIES, (void*)(&gTasks[taskId].tPostEvoSpecies));
             CalculateMonStats(mon);
             EvolutionRenameMon(mon, gTasks[taskId].tPreEvoSpecies, gTasks[taskId].tPostEvoSpecies);
-            GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
-            GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_CAUGHT);
+            GetSetPokedexFlag(gTasks[taskId].tPostEvoSpecies, FLAG_SET_SEEN);
+            GetSetPokedexFlag(gTasks[taskId].tPostEvoSpecies, FLAG_SET_CAUGHT);
             IncrementGameStat(GAME_STAT_EVOLVED_POKEMON);
         }
         break;
@@ -811,8 +774,6 @@ static void Task_EvolutionScene(u8 taskId)
                 StopMapMusic();
                 Overworld_PlaySpecialMapMusic();
             }
-            if (!gTasks[taskId].tEvoWasStopped)
-                CreateShedinja(gTasks[taskId].tPreEvoSpecies, mon);
 
             DestroyTask(taskId);
             FreeMonSpritesGfx();
@@ -1185,8 +1146,8 @@ static void Task_TradeEvolutionScene(u8 taskId)
             SetMonData(mon, MON_DATA_SPECIES, (&gTasks[taskId].tPostEvoSpecies));
             CalculateMonStats(mon);
             EvolutionRenameMon(mon, gTasks[taskId].tPreEvoSpecies, gTasks[taskId].tPostEvoSpecies);
-            GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
-            GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_CAUGHT);
+            GetSetPokedexFlag(gTasks[taskId].tPostEvoSpecies, FLAG_SET_SEEN);
+            GetSetPokedexFlag(gTasks[taskId].tPostEvoSpecies, FLAG_SET_CAUGHT);
             IncrementGameStat(GAME_STAT_EVOLVED_POKEMON);
         }
         break;

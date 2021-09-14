@@ -6,8 +6,7 @@ extern void (*gPokedexVBlankCB)(void);
 
 enum
 {
-    DEX_MODE_HOENN,
-    DEX_MODE_NATIONAL
+    DEX_MODE_CALDERA_KIRANT,
 };
 
 enum
@@ -33,8 +32,7 @@ struct PokedexEntry
 
 void ResetPokedex(void);
 u16 GetPokedexHeightWeight(u16 dexNum, u8 data);
-u16 GetNationalPokedexCount(u8);
-u16 GetHoennPokedexCount(u8);
+u16 GetPokedexCount(u8);
 u8 DisplayCaughtMonDexPage(u16 dexNum, u32 otId, u32 personality);
 s8 GetSetPokedexFlag(u16 nationalNum, u8 caseId);
 u16 CreateMonSpriteFromNationalDexNumber(u16, s16, s16, u16);

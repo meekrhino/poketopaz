@@ -34,7 +34,7 @@ MossdeepCity_House4_EventScript_Skitty::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_SKITTY, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox MossdeepCity_House4_Text_Skitty, MSGBOX_DEFAULT
 	waitmoncry
 	release

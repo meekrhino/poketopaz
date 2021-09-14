@@ -33,7 +33,7 @@ BattleFrontier_PokemonCenter_1F_EventScript_Skitty::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_SKITTY, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox BattleFrontier_PokemonCenter_1F_Text_Skitty, MSGBOX_DEFAULT
 	waitmoncry
 	release

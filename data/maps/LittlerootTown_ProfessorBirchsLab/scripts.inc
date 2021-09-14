@@ -312,7 +312,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Cyndaquil::
 	goto_if_ge LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
-	showmonpic SPECIES_CYNDAQUIL, 10, 3
+	showmonpic SPECIES_PINECO, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
@@ -325,7 +325,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Totodile::
 	goto_if_ge LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
-	showmonpic SPECIES_TOTODILE, 10, 3
+	showmonpic SPECIES_PINECO, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
@@ -338,7 +338,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Chikorita::
 	goto_if_ge LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
-	showmonpic SPECIES_CHIKORITA, 10, 3
+	showmonpic SPECIES_PINECO, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
@@ -357,9 +357,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveCyndaquil::
-	bufferspeciesname 0, SPECIES_CYNDAQUIL
-	setvar VAR_TEMP_1, SPECIES_CYNDAQUIL
-	givemon SPECIES_CYNDAQUIL, 5, ITEM_NONE
+	bufferspeciesname 0, SPECIES_PINECO
+	setvar VAR_TEMP_1, SPECIES_PINECO
+	givemon SPECIES_PINECO, 5, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToParty
 	compare VAR_RESULT, 1
@@ -402,9 +402,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedCyndaquil::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveTotodile::
-	bufferspeciesname 0, SPECIES_TOTODILE
-	setvar VAR_TEMP_1, SPECIES_TOTODILE
-	givemon SPECIES_TOTODILE, 5, ITEM_NONE
+	bufferspeciesname 0, SPECIES_PINECO
+	setvar VAR_TEMP_1, SPECIES_PINECO
+	givemon SPECIES_PINECO, 5, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToParty
 	compare VAR_RESULT, 1
@@ -447,9 +447,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedTotodile::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveChikorita::
-	bufferspeciesname 0, SPECIES_CHIKORITA
-	setvar VAR_TEMP_1, SPECIES_CHIKORITA
-	givemon SPECIES_CHIKORITA, 5, ITEM_NONE
+	bufferspeciesname 0, SPECIES_PINECO
+	setvar VAR_TEMP_1, SPECIES_PINECO
+	givemon SPECIES_PINECO, 5, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToParty
 	compare VAR_RESULT, 1

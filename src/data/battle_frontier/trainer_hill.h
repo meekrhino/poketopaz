@@ -29,7 +29,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                 .speechAfter = { EC_WORD_FABULOUS, EC_WORD_CAN_T, EC_WORD_TRAINER, EC_WORD_MRS, EC_WORD_ELLIPSIS_ELLIPSIS_ELLIPSIS, EC_WORD_EXCITING },
                 .mons = {
                     [0] = {
-                        .species = SPECIES_ZIGZAGOON,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SITRUS_BERRY,
                         .moves = { MOVE_HEADBUTT, MOVE_PIN_MISSILE, MOVE_GROWL, MOVE_TAIL_WHIP },
                         .level = 0,
@@ -53,7 +53,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                         .friendship = 255
                     },
                     [1] = {
-                        .species = SPECIES_SHROOMISH,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_PECHA_BERRY,
                         .moves = { MOVE_MEGA_DRAIN, MOVE_LEECH_SEED, MOVE_POISON_POWDER, MOVE_GROWTH },
                         .level = 0,
@@ -77,7 +77,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                         .friendship = 255
                     },
                     [2] = {
-                        .species = SPECIES_SANDSHREW,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_QUICK_CLAW,
                         .moves = { MOVE_SCRATCH, MOVE_POISON_STING, MOVE_SAND_ATTACK, MOVE_SWIFT },
                         .level = 0,
@@ -118,7 +118,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                     [1] = NULL_BATTLE_TOWER_POKEMON,
                     [2] = NULL_BATTLE_TOWER_POKEMON,
                     [3] = {
-                        .species = SPECIES_WINGULL,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_CHERI_BERRY,
                         .moves = { MOVE_WATER_GUN, MOVE_WING_ATTACK, MOVE_GROWL, MOVE_SUPERSONIC },
                         .level = 0,
@@ -142,7 +142,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                         .friendship = 255
                     },
                     [4] = {
-                        .species = SPECIES_NUMEL,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = { MOVE_EMBER, MOVE_DIG, MOVE_TACKLE, MOVE_FOCUS_ENERGY },
                         .level = 0,
@@ -166,7 +166,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                         .friendship = 255
                     },
                     [5] = {
-                        .species = SPECIES_SURSKIT,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_PERSIM_BERRY,
                         .moves = { MOVE_BUBBLE_BEAM, MOVE_MUD_SHOT, MOVE_QUICK_ATTACK, MOVE_AGILITY },
                         .level = 0,
@@ -194,22 +194,22 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
         },
         .display = {
             .metatileData = {
-                0x31, 0x35, 0x35, 0x3b, 0x26, 0x26, 0x1b, 0x1c, 0x1d, 0x25, 0x39, 0x3a, 0x3b, 0x3b, 0x3b, 0x08, 
-                0x31, 0x2b, 0x2b, 0x3b, 0x34, 0x34, 0x2b, 0x2b, 0x34, 0x33, 0x3f, 0x3f, 0x3f, 0x3f, 0x3b, 0x08, 
-                0x31, 0x2b, 0x2b, 0x3b, 0x3b, 0x3b, 0x34, 0x34, 0x3b, 0x33, 0x3f, 0x3f, 0x3f, 0x3b, 0x3b, 0x08, 
-                0x31, 0x2b, 0x2b, 0x35, 0x35, 0x35, 0x35, 0x35, 0x3b, 0x33, 0x3f, 0x3f, 0x3f, 0x3b, 0x3f, 0x08, 
-                0x31, 0x2b, 0x34, 0x34, 0x34, 0x2b, 0x34, 0x34, 0x3b, 0x2c, 0x3f, 0x3f, 0x3f, 0x3b, 0x3b, 0x08, 
-                0x31, 0x2b, 0x3b, 0x35, 0x3b, 0x2b, 0x3b, 0x35, 0x3b, 0x35, 0x3b, 0x3f, 0x3f, 0x3f, 0x3b, 0x08, 
-                0x31, 0x2b, 0x3b, 0x2b, 0x3b, 0x2b, 0x3b, 0x2b, 0x3b, 0x2b, 0x3b, 0x3f, 0x3f, 0x3f, 0x3b, 0x08, 
-                0x31, 0x34, 0x3b, 0x2b, 0x3b, 0x34, 0x3b, 0x2b, 0x35, 0x2b, 0x3b, 0x3b, 0x3f, 0x3b, 0x3b, 0x08, 
-                0x31, 0x3b, 0x3b, 0x34, 0x3b, 0x3b, 0x3b, 0x34, 0x34, 0x34, 0x3f, 0x3b, 0x3b, 0x3b, 0x3f, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
+                0x31, 0x35, 0x35, 0x3b, 0x26, 0x26, 0x1b, 0x1c, 0x1d, 0x25, 0x39, 0x3a, 0x3b, 0x3b, 0x3b, 0x08,
+                0x31, 0x2b, 0x2b, 0x3b, 0x34, 0x34, 0x2b, 0x2b, 0x34, 0x33, 0x3f, 0x3f, 0x3f, 0x3f, 0x3b, 0x08,
+                0x31, 0x2b, 0x2b, 0x3b, 0x3b, 0x3b, 0x34, 0x34, 0x3b, 0x33, 0x3f, 0x3f, 0x3f, 0x3b, 0x3b, 0x08,
+                0x31, 0x2b, 0x2b, 0x35, 0x35, 0x35, 0x35, 0x35, 0x3b, 0x33, 0x3f, 0x3f, 0x3f, 0x3b, 0x3f, 0x08,
+                0x31, 0x2b, 0x34, 0x34, 0x34, 0x2b, 0x34, 0x34, 0x3b, 0x2c, 0x3f, 0x3f, 0x3f, 0x3b, 0x3b, 0x08,
+                0x31, 0x2b, 0x3b, 0x35, 0x3b, 0x2b, 0x3b, 0x35, 0x3b, 0x35, 0x3b, 0x3f, 0x3f, 0x3f, 0x3b, 0x08,
+                0x31, 0x2b, 0x3b, 0x2b, 0x3b, 0x2b, 0x3b, 0x2b, 0x3b, 0x2b, 0x3b, 0x3f, 0x3f, 0x3f, 0x3b, 0x08,
+                0x31, 0x34, 0x3b, 0x2b, 0x3b, 0x34, 0x3b, 0x2b, 0x35, 0x2b, 0x3b, 0x3b, 0x3f, 0x3b, 0x3b, 0x08,
+                0x31, 0x3b, 0x3b, 0x34, 0x3b, 0x3b, 0x3b, 0x34, 0x34, 0x34, 0x3f, 0x3b, 0x3b, 0x3b, 0x3f, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
             },
             .collisionData = { 0x0381, 0x6fc1, 0x6341, 0x6041, 0x7f41, 0x4401, 0x5541, 0x5541, 0x11c1, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff },
             .coords = { COORDS_XY(8,2), COORDS_XY(8,7) },
@@ -231,7 +231,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                 .speechAfter = { EC_WORD_HUH_QUES, EC_WORD_TOMORROW, EC_WORD_SMELL, EC_WORD_ABSOLUTELY, EC_WORD_THOSE, EC_WORD_EXCL_EXCL },
                 .mons = {
                     [0] = {
-                        .species = SPECIES_ELECTRIKE,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_CHERI_BERRY,
                         .moves = { MOVE_SPARK, MOVE_THUNDER_WAVE, MOVE_QUICK_ATTACK, MOVE_ROAR },
                         .level = 0,
@@ -255,7 +255,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                         .friendship = 255
                     },
                     [1] = {
-                        .species = SPECIES_CORPHISH,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_QUICK_CLAW,
                         .moves = { MOVE_KNOCK_OFF, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_PROTECT },
                         .level = 0,
@@ -279,7 +279,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                         .friendship = 255
                     },
                     [2] = {
-                        .species = SPECIES_BALTOY,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_PERSIM_BERRY,
                         .moves = { MOVE_PSYBEAM, MOVE_ROCK_TOMB, MOVE_MUD_SLAP, MOVE_HARDEN },
                         .level = 0,
@@ -320,7 +320,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                     [1] = NULL_BATTLE_TOWER_POKEMON,
                     [2] = NULL_BATTLE_TOWER_POKEMON,
                     [3] = {
-                        .species = SPECIES_SPHEAL,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = { MOVE_ICE_BALL, MOVE_BODY_SLAM, MOVE_WATER_GUN, MOVE_ENCORE },
                         .level = 0,
@@ -344,7 +344,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                         .friendship = 255
                     },
                     [4] = {
-                        .species = SPECIES_SPOINK,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_PERSIM_BERRY,
                         .moves = { MOVE_PSYWAVE, MOVE_FUTURE_SIGHT, MOVE_CONFUSE_RAY, MOVE_MAGIC_COAT },
                         .level = 0,
@@ -368,7 +368,7 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
                         .friendship = 255
                     },
                     [5] = {
-                        .species = SPECIES_POOCHYENA,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_PECHA_BERRY,
                         .moves = { MOVE_BITE, MOVE_POISON_FANG, MOVE_SWAGGER, MOVE_SCARY_FACE },
                         .level = 0,
@@ -396,22 +396,22 @@ static const struct TrHillFloor sDataTagJPDefault_Floors[] = {
         },
         .display = {
             .metatileData = {
-                0x31, 0x3b, 0x35, 0x3b, 0x39, 0x26, 0x1b, 0x1c, 0x1d, 0x25, 0x39, 0x3a, 0x3b, 0x35, 0x3b, 0x08, 
-                0x31, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x3b, 0x3b, 0x3b, 0x2b, 0x3b, 0x08, 
-                0x31, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x3e, 0x3e, 0x3b, 0x2b, 0x3b, 0x08, 
-                0x31, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x3b, 0x3b, 0x3b, 0x2b, 0x3b, 0x08, 
-                0x3f, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x3b, 0x3e, 0x3e, 0x2b, 0x3b, 0x08, 
-                0x31, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2c, 0x2b, 0x2b, 0x3b, 0x3b, 0x3b, 0x2b, 0x3b, 0x08, 
-                0x31, 0x3f, 0x2b, 0x3b, 0x3b, 0x2c, 0x2c, 0x3b, 0x2c, 0x2c, 0x3e, 0x3e, 0x3b, 0x2b, 0x3b, 0x08, 
-                0x31, 0x3b, 0x2b, 0x35, 0x35, 0x35, 0x35, 0x3b, 0x35, 0x35, 0x35, 0x35, 0x35, 0x2b, 0x3b, 0x08, 
-                0x3f, 0x3b, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x3b, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x3b, 0x08, 
-                0x31, 0x3b, 0x3f, 0x3f, 0x3b, 0x35, 0x35, 0x3b, 0x35, 0x35, 0x35, 0x35, 0x35, 0x35, 0x35, 0x08, 
-                0x31, 0x3f, 0x3f, 0x3f, 0x3b, 0x2b, 0x2b, 0x35, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x08, 
-                0x31, 0x3f, 0x3f, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x08, 
-                0x31, 0x3b, 0x3b, 0x3b, 0x3f, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
-                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 
+                0x31, 0x3b, 0x35, 0x3b, 0x39, 0x26, 0x1b, 0x1c, 0x1d, 0x25, 0x39, 0x3a, 0x3b, 0x35, 0x3b, 0x08,
+                0x31, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x3b, 0x3b, 0x3b, 0x2b, 0x3b, 0x08,
+                0x31, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x3e, 0x3e, 0x3b, 0x2b, 0x3b, 0x08,
+                0x31, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x3b, 0x3b, 0x3b, 0x2b, 0x3b, 0x08,
+                0x3f, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x3b, 0x3e, 0x3e, 0x2b, 0x3b, 0x08,
+                0x31, 0x3b, 0x2b, 0x3b, 0x3b, 0x2b, 0x2b, 0x2c, 0x2b, 0x2b, 0x3b, 0x3b, 0x3b, 0x2b, 0x3b, 0x08,
+                0x31, 0x3f, 0x2b, 0x3b, 0x3b, 0x2c, 0x2c, 0x3b, 0x2c, 0x2c, 0x3e, 0x3e, 0x3b, 0x2b, 0x3b, 0x08,
+                0x31, 0x3b, 0x2b, 0x35, 0x35, 0x35, 0x35, 0x3b, 0x35, 0x35, 0x35, 0x35, 0x35, 0x2b, 0x3b, 0x08,
+                0x3f, 0x3b, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x3b, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x3b, 0x08,
+                0x31, 0x3b, 0x3f, 0x3f, 0x3b, 0x35, 0x35, 0x3b, 0x35, 0x35, 0x35, 0x35, 0x35, 0x35, 0x35, 0x08,
+                0x31, 0x3f, 0x3f, 0x3f, 0x3b, 0x2b, 0x2b, 0x35, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x08,
+                0x31, 0x3f, 0x3f, 0x3b, 0x3b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x2b, 0x08,
+                0x31, 0x3b, 0x3b, 0x3b, 0x3f, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x2c, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+                0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
             },
             .collisionData = { 0x0381, 0x27c5, 0x27c5, 0x27c5, 0x27c5, 0x27c5, 0x26c5, 0x2005, 0x3efd, 0x1, 0x6ff, 0x7ff, 0x7ff, 0xffff, 0xffff, 0xffff },
             .coords = { COORDS_XY(7,6), COORDS_XY(7,10) },
@@ -450,7 +450,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_MISDREAVUS,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_BRIGHT_POWDER,
                         .moves = {MOVE_SHADOW_BALL, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_CONFUSE_RAY},
                         .level = 0,
@@ -472,7 +472,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_SOLROCK,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_PSYCHIC, MOVE_FLAMETHROWER, MOVE_ROCK_SLIDE, MOVE_CALM_MIND},
                         .level = 0,
@@ -495,7 +495,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_CLAYDOL,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SHELL_BELL,
                         .moves = {MOVE_EARTHQUAKE, MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_ICE_BEAM},
                         .level = 0,
@@ -517,7 +517,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_WEEZING,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_SLUDGE_BOMB, MOVE_SHADOW_BALL, MOVE_FRUSTRATION, MOVE_DESTINY_BOND},
                         .level = 0,
@@ -539,7 +539,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_LUNATONE,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_PSYCHIC, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_CALM_MIND},
                         .level = 0,
@@ -562,7 +562,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_FLYGON,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_CHOICE_BAND,
                         .moves = {MOVE_EARTHQUAKE, MOVE_DRAGON_CLAW, MOVE_CRUNCH, MOVE_FLAMETHROWER},
                         .level = 0,
@@ -597,7 +597,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_SEALEO,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_NEVER_MELT_ICE,
                         .moves = {MOVE_BLIZZARD, MOVE_ICE_BALL, MOVE_ENCORE, MOVE_HAIL},
                         .level = 0,
@@ -618,7 +618,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_AMPHAROS,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_MAGNET,
                         .moves = {MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_COTTON_SPORE, MOVE_LIGHT_SCREEN},
                         .level = 0,
@@ -639,7 +639,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_MACHOKE,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_BLACK_BELT,
                         .moves = {MOVE_DYNAMIC_PUNCH, MOVE_MUD_SLAP, MOVE_COUNTER, MOVE_SCARY_FACE},
                         .level = 0,
@@ -660,7 +660,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_FLAREON,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_CHARCOAL,
                         .moves = {MOVE_FIRE_BLAST, MOVE_BITE, MOVE_QUICK_ATTACK, MOVE_SAND_ATTACK},
                         .level = 0,
@@ -681,7 +681,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_MAGNETON,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_MAGNET,
                         .moves = {MOVE_ZAP_CANNON, MOVE_THUNDER_WAVE, MOVE_SCREECH, MOVE_METAL_SOUND},
                         .level = 0,
@@ -702,7 +702,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_PINSIR,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_QUICK_CLAW,
                         .moves = {MOVE_GUILLOTINE, MOVE_BRICK_BREAK, MOVE_SWAGGER, MOVE_FAINT_ATTACK},
                         .level = 0,
@@ -727,21 +727,21 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
         },
             .display = {
             .metatileData = {
-                0x31, 0x3B, 0x35, 0x35, 0x26, 0x26, 0x1B, 0x1C, 0x1D, 0x25, 0x26, 0x3A, 0x3B, 0x35, 0x3B, 0x08, 
-                0x31, 0x3B, 0x2C, 0x2C, 0x2C, 0x2B, 0x24, 0x24, 0x24, 0x24, 0x2C, 0x3B, 0x3B, 0x2C, 0x3B, 0x08, 
-                0x2D, 0x3B, 0x3B, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x3B, 0x3B, 0x35, 0x3B, 0x35, 0x35, 0x3B, 0x08, 
-                0x33, 0x3B, 0x32, 0x21, 0x30, 0x2B, 0x3B, 0x32, 0x21, 0x30, 0x2B, 0x3B, 0x2C, 0x2B, 0x3B, 0x08, 
-                0x33, 0x35, 0x3B, 0x3B, 0x3B, 0x2C, 0x35, 0x3B, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x2B, 0x3B, 0x08, 
-                0x34, 0x2C, 0x3B, 0x32, 0x21, 0x30, 0x2B, 0x32, 0x30, 0x3B, 0x2B, 0x32, 0x30, 0x2C, 0x3B, 0x08, 
-                0x31, 0x35, 0x3B, 0x3B, 0x35, 0x3B, 0x2C, 0x3B, 0x3B, 0x35, 0x2C, 0x3B, 0x3B, 0x35, 0x35, 0x08, 
-                0x31, 0x2C, 0x32, 0x30, 0x2B, 0x32, 0x30, 0x35, 0x3B, 0x2B, 0x32, 0x21, 0x30, 0x2C, 0x2C, 0x08, 
-                0x31, 0x35, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x2B, 0x3B, 0x2C, 0x3B, 0x35, 0x3B, 0x3B, 0x3B, 0x08, 
-                0x31, 0x2C, 0x32, 0x30, 0x2B, 0x32, 0x30, 0x2B, 0x3B, 0x32, 0x30, 0x2B, 0x32, 0x30, 0x3B, 0x08, 
-                0x31, 0x35, 0x35, 0x35, 0x2B, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x35, 0x2B, 0x3B, 0x35, 0x35, 0x08, 
-                0x31, 0x2B, 0x2C, 0x2C, 0x2C, 0x32, 0x30, 0x2B, 0x32, 0x30, 0x2C, 0x2C, 0x3B, 0x2C, 0x2C, 0x08, 
-                0x31, 0x2B, 0x3B, 0x3B, 0x35, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x35, 0x3B, 0x3B, 0x3B, 0x3B, 0x08, 
-                0x31, 0x2C, 0x32, 0x30, 0x2B, 0x3B, 0x3B, 0x2C, 0x32, 0x30, 0x2C, 0x32, 0x30, 0x3B, 0x35, 0x08, 
-                0x31, 0x3B, 0x3B, 0x3B, 0x2C, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x2C, 0x08, 
+                0x31, 0x3B, 0x35, 0x35, 0x26, 0x26, 0x1B, 0x1C, 0x1D, 0x25, 0x26, 0x3A, 0x3B, 0x35, 0x3B, 0x08,
+                0x31, 0x3B, 0x2C, 0x2C, 0x2C, 0x2B, 0x24, 0x24, 0x24, 0x24, 0x2C, 0x3B, 0x3B, 0x2C, 0x3B, 0x08,
+                0x2D, 0x3B, 0x3B, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x3B, 0x3B, 0x35, 0x3B, 0x35, 0x35, 0x3B, 0x08,
+                0x33, 0x3B, 0x32, 0x21, 0x30, 0x2B, 0x3B, 0x32, 0x21, 0x30, 0x2B, 0x3B, 0x2C, 0x2B, 0x3B, 0x08,
+                0x33, 0x35, 0x3B, 0x3B, 0x3B, 0x2C, 0x35, 0x3B, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x2B, 0x3B, 0x08,
+                0x34, 0x2C, 0x3B, 0x32, 0x21, 0x30, 0x2B, 0x32, 0x30, 0x3B, 0x2B, 0x32, 0x30, 0x2C, 0x3B, 0x08,
+                0x31, 0x35, 0x3B, 0x3B, 0x35, 0x3B, 0x2C, 0x3B, 0x3B, 0x35, 0x2C, 0x3B, 0x3B, 0x35, 0x35, 0x08,
+                0x31, 0x2C, 0x32, 0x30, 0x2B, 0x32, 0x30, 0x35, 0x3B, 0x2B, 0x32, 0x21, 0x30, 0x2C, 0x2C, 0x08,
+                0x31, 0x35, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x2B, 0x3B, 0x2C, 0x3B, 0x35, 0x3B, 0x3B, 0x3B, 0x08,
+                0x31, 0x2C, 0x32, 0x30, 0x2B, 0x32, 0x30, 0x2B, 0x3B, 0x32, 0x30, 0x2B, 0x32, 0x30, 0x3B, 0x08,
+                0x31, 0x35, 0x35, 0x35, 0x2B, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x35, 0x2B, 0x3B, 0x35, 0x35, 0x08,
+                0x31, 0x2B, 0x2C, 0x2C, 0x2C, 0x32, 0x30, 0x2B, 0x32, 0x30, 0x2C, 0x2C, 0x3B, 0x2C, 0x2C, 0x08,
+                0x31, 0x2B, 0x3B, 0x3B, 0x35, 0x3B, 0x3B, 0x2B, 0x3B, 0x3B, 0x35, 0x3B, 0x3B, 0x3B, 0x3B, 0x08,
+                0x31, 0x2C, 0x32, 0x30, 0x2B, 0x3B, 0x3B, 0x2C, 0x32, 0x30, 0x2C, 0x32, 0x30, 0x3B, 0x35, 0x08,
+                0x31, 0x3B, 0x3B, 0x3B, 0x2C, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x2C, 0x08,
                 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
             },
             .collisionData = {0x0381, 0x3FE5, 0x0401, 0xBDED, 0x8425, 0xDFBD, 0x0221, 0x7E7F, 0x0941, 0x7F7D, 0x0911, 0x7FF7, 0x4101, 0x79F9, 0x0803, 0xFFFF},
@@ -769,7 +769,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_MEDITITE,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_PROTECT, MOVE_NONE, MOVE_NONE},
                         .level = 0,
@@ -791,7 +791,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_HERACROSS,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_PROTECT, MOVE_NONE, MOVE_NONE},
                         .level = 0,
@@ -813,7 +813,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_HITMONTOP,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SHELL_BELL,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_PROTECT, MOVE_NONE, MOVE_NONE},
                         .level = 0,
@@ -835,7 +835,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_MACHOP,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_REVENGE, MOVE_NONE, MOVE_NONE},
                         .level = 0,
@@ -857,7 +857,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_PINSIR,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_REVENGE, MOVE_NONE, MOVE_NONE},
                         .level = 0,
@@ -879,7 +879,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_HITMONCHAN,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_REVENGE, MOVE_NONE, MOVE_NONE},
                         .level = 0,
@@ -914,7 +914,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_VULPIX,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_LUM_BERRY,
                         .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_TAIL_WHIP, MOVE_OVERHEAT},
                         .level = 0,
@@ -936,7 +936,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_MINUN,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_THUNDER_WAVE, MOVE_CHARM, MOVE_ENCORE, MOVE_SPARK},
                         .level = 0,
@@ -958,7 +958,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_ROSELIA,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_LUM_BERRY,
                         .moves = {MOVE_TOXIC, MOVE_LEECH_SEED, MOVE_SWEET_SCENT, MOVE_GIGA_DRAIN},
                         .level = 0,
@@ -980,7 +980,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_MR_MIME,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SITRUS_BERRY,
                         .moves = {MOVE_SAFEGUARD, MOVE_REFLECT, MOVE_LIGHT_SCREEN, MOVE_PSYCHIC},
                         .level = 0,
@@ -1002,7 +1002,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_PLUSLE,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SITRUS_BERRY,
                         .moves = {MOVE_RAIN_DANCE, MOVE_LIGHT_SCREEN, MOVE_HELPING_HAND, MOVE_THUNDER},
                         .level = 0,
@@ -1024,7 +1024,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_TOGEPI,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SITRUS_BERRY,
                         .moves = {MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_FOLLOW_ME, MOVE_METRONOME},
                         .level = 0,
@@ -1049,21 +1049,21 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
         },
             .display = {
             .metatileData = {
-                0xD1, 0xD5, 0xD5, 0xD5, 0xD9, 0xD9, 0x1B, 0x1C, 0x1D, 0xC5, 0xC6, 0xCE, 0xD5, 0xDB, 0xD5, 0x08, 
-                0xD1, 0xCB, 0xC4, 0xC4, 0xDB, 0xDB, 0xC4, 0xC4, 0xC4, 0xCC, 0xCC, 0xCC, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xDB, 0x17, 0x17, 0x17, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xD5, 0x17, 0x17, 0x17, 0xD5, 0xD5, 0xD5, 0xD5, 0xDF, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xCB, 0x17, 0x17, 0x1F, 0xCB, 0xCB, 0xC4, 0xC4, 0xDB, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xC4, 0xCB, 0xCB, 0xDF, 0xD5, 0xD5, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xCB, 0xCB, 0xDB, 0xC4, 0xC4, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xCB, 0xCB, 0xD5, 0xD5, 0xDF, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xCB, 0xCB, 0xC4, 0xC4, 0xDB, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xCB, 0xCB, 0xDF, 0xD5, 0xD5, 0xCB, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xC4, 0xC4, 0xDB, 0xC4, 0xC4, 0xC4, 0xDB, 0xCB, 0x08, 
-                0xD1, 0xCB, 0xDB, 0xCB, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0xDB, 0xD5, 0xD5, 0xD5, 0xCB, 0x08, 
-                0xD1, 0xC4, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0x9B, 0xDB, 0xCB, 0xCB, 0xCB, 0xCB, 0x08, 
-                0xD1, 0xDB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0x9B, 0xDB, 0xCB, 0xCB, 0xCB, 0xCB, 0x08, 
-                0xD1, 0xDB, 0xDB, 0xC4, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0x9B, 0xDB, 0xC4, 0xC4, 0xC4, 0xC4, 0x08, 
+                0xD1, 0xD5, 0xD5, 0xD5, 0xD9, 0xD9, 0x1B, 0x1C, 0x1D, 0xC5, 0xC6, 0xCE, 0xD5, 0xDB, 0xD5, 0x08,
+                0xD1, 0xCB, 0xC4, 0xC4, 0xDB, 0xDB, 0xC4, 0xC4, 0xC4, 0xCC, 0xCC, 0xCC, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xDB, 0x17, 0x17, 0x17, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xD5, 0x17, 0x17, 0x17, 0xD5, 0xD5, 0xD5, 0xD5, 0xDF, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xCB, 0x17, 0x17, 0x1F, 0xCB, 0xCB, 0xC4, 0xC4, 0xDB, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xC4, 0xCB, 0xCB, 0xDF, 0xD5, 0xD5, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xCB, 0xCB, 0xDB, 0xC4, 0xC4, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xCB, 0xCB, 0xD5, 0xD5, 0xDF, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xCB, 0xCB, 0xC4, 0xC4, 0xDB, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xCB, 0xCB, 0xDF, 0xD5, 0xD5, 0xCB, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xC4, 0xC4, 0xDB, 0xC4, 0xC4, 0xC4, 0xDB, 0xCB, 0x08,
+                0xD1, 0xCB, 0xDB, 0xCB, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0xDB, 0xD5, 0xD5, 0xD5, 0xCB, 0x08,
+                0xD1, 0xC4, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0x9B, 0xDB, 0xCB, 0xCB, 0xCB, 0xCB, 0x08,
+                0xD1, 0xDB, 0xDB, 0xCB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0x9B, 0xDB, 0xCB, 0xCB, 0xCB, 0xCB, 0x08,
+                0xD1, 0xDB, 0xDB, 0xC4, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0x9B, 0xDB, 0xC4, 0xC4, 0xC4, 0xC4, 0x08,
                 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
             },
             .collisionData = {0x0381, 0x73FB, 0x400B, 0x400B, 0x51EB, 0x538B, 0x51BB, 0x518B, 0x51EB, 0x518B, 0x51BB, 0x5003, 0x501F, 0x101F, 0x101F, 0xFFFF},
@@ -1091,7 +1091,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_VAPOREON,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_HAZE, MOVE_HELPING_HAND, MOVE_TICKLE, MOVE_WATER_PULSE},
                         .level = 0,
@@ -1113,7 +1113,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_DODRIO,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_KINGS_ROCK,
                         .moves = {MOVE_HAZE, MOVE_TRI_ATTACK, MOVE_TAUNT, MOVE_TORMENT},
                         .level = 0,
@@ -1135,7 +1135,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_OMASTAR,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_QUICK_CLAW,
                         .moves = {MOVE_HAZE, MOVE_HYDRO_PUMP, MOVE_TICKLE, MOVE_ATTRACT},
                         .level = 0,
@@ -1157,7 +1157,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_LICKITUNG,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_CHESTO_BERRY,
                         .moves = {MOVE_BELLY_DRUM, MOVE_REST, MOVE_MUD_SLAP, MOVE_SWAGGER},
                         .level = 0,
@@ -1179,7 +1179,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_SLOWBRO,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_LEFTOVERS,
                         .moves = {MOVE_BELLY_DRUM, MOVE_MUD_SLAP, MOVE_SWAGGER, MOVE_AMNESIA},
                         .level = 0,
@@ -1201,7 +1201,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_LINOONE,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_LUM_BERRY,
                         .moves = {MOVE_BELLY_DRUM, MOVE_REST, MOVE_MUD_SLAP, MOVE_SWAGGER},
                         .level = 0,
@@ -1236,7 +1236,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_SKITTY,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_PSYCH_UP, MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_IRON_TAIL},
                         .level = 0,
@@ -1257,7 +1257,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_MEDICHAM,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_QUICK_CLAW,
                         .moves = {MOVE_PSYCH_UP, MOVE_HI_JUMP_KICK, MOVE_MEGA_KICK, MOVE_ROCK_SLIDE},
                         .level = 0,
@@ -1279,7 +1279,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_STANTLER,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SHELL_BELL,
                         .moves = {MOVE_PSYCH_UP, MOVE_RETURN, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL},
                         .level = 0,
@@ -1301,7 +1301,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_NIDOQUEEN,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_SUPERPOWER, MOVE_BITE, MOVE_CHARM, MOVE_FLATTER},
                         .level = 0,
@@ -1323,7 +1323,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_NINETALES,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_OVERHEAT, MOVE_QUICK_ATTACK, MOVE_SPITE, MOVE_TAIL_WHIP},
                         .level = 0,
@@ -1345,7 +1345,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_CHARIZARD,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_OVERHEAT, MOVE_BEAT_UP, MOVE_SCARY_FACE, MOVE_GROWL},
                         .level = 0,
@@ -1370,21 +1370,21 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
         },
             .display = {
             .metatileData = {
-                0x31, 0x35, 0x35, 0x35, 0x26, 0x26, 0x13, 0x14, 0x15, 0x38, 0x26, 0x2E, 0x35, 0x35, 0x3B, 0x08, 
-                0x69, 0x63, 0x64, 0x64, 0x64, 0x64, 0x71, 0x71, 0x71, 0x72, 0x64, 0x64, 0x64, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x43, 0x41, 0x40, 0x41, 0x42, 0x41, 0x41, 0x4A, 0x42, 0x41, 0x41, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x41, 0x43, 0x4B, 0x43, 0x43, 0x41, 0x42, 0x42, 0x40, 0x41, 0x40, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x41, 0x40, 0x42, 0x42, 0x41, 0x41, 0x42, 0x4A, 0x42, 0x41, 0x42, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x41, 0x42, 0x41, 0x43, 0x4B, 0x41, 0x41, 0x41, 0x40, 0x43, 0x41, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08, 
-                0x69, 0x63, 0x41, 0x40, 0x43, 0x41, 0x42, 0x42, 0x41, 0x4A, 0x42, 0x41, 0x42, 0x63, 0x73, 0x08, 
-                0x69, 0x64, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x64, 0x73, 0x08, 
-                0x69, 0x43, 0x43, 0x41, 0x42, 0x42, 0x41, 0x43, 0x41, 0x41, 0x40, 0x42, 0x41, 0x42, 0x73, 0x08, 
+                0x31, 0x35, 0x35, 0x35, 0x26, 0x26, 0x13, 0x14, 0x15, 0x38, 0x26, 0x2E, 0x35, 0x35, 0x3B, 0x08,
+                0x69, 0x63, 0x64, 0x64, 0x64, 0x64, 0x71, 0x71, 0x71, 0x72, 0x64, 0x64, 0x64, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x43, 0x41, 0x40, 0x41, 0x42, 0x41, 0x41, 0x4A, 0x42, 0x41, 0x41, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x41, 0x43, 0x4B, 0x43, 0x43, 0x41, 0x42, 0x42, 0x40, 0x41, 0x40, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x41, 0x40, 0x42, 0x42, 0x41, 0x41, 0x42, 0x4A, 0x42, 0x41, 0x42, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x41, 0x42, 0x41, 0x43, 0x4B, 0x41, 0x41, 0x41, 0x40, 0x43, 0x41, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x73, 0x73, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x63, 0x73, 0x08,
+                0x69, 0x63, 0x41, 0x40, 0x43, 0x41, 0x42, 0x42, 0x41, 0x4A, 0x42, 0x41, 0x42, 0x63, 0x73, 0x08,
+                0x69, 0x64, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x64, 0x73, 0x73, 0x73, 0x64, 0x73, 0x08,
+                0x69, 0x43, 0x43, 0x41, 0x42, 0x42, 0x41, 0x43, 0x41, 0x41, 0x40, 0x42, 0x41, 0x42, 0x73, 0x08,
                 0x69, 0x42, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x42, 0x73, 0x08,
             },
             .collisionData = {0x0381, 0x7C3D, 0x4005, 0x4005, 0x4005, 0x4045, 0x4005, 0x4805, 0x4005, 0x4045, 0x4005, 0x4205, 0x4005, 0x4045, 0x1, 0x1},
@@ -1412,7 +1412,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_ALAKAZAM,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_PETAYA_BERRY,
                         .moves = {MOVE_SKILL_SWAP, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_REFLECT},
                         .level = 0,
@@ -1433,7 +1433,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_BLISSEY,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_LEFTOVERS,
                         .moves = {MOVE_SKILL_SWAP, MOVE_EGG_BOMB, MOVE_THUNDERBOLT, MOVE_SING},
                         .level = 0,
@@ -1455,7 +1455,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_GRUMPIG,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_TWISTED_SPOON,
                         .moves = {MOVE_SKILL_SWAP, MOVE_PSYCHIC, MOVE_CONFUSE_RAY, MOVE_REST},
                         .level = 0,
@@ -1477,7 +1477,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_GARDEVOIR,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_SKILL_SWAP, MOVE_DREAM_EATER, MOVE_HYPNOSIS, MOVE_PROTECT},
                         .level = 0,
@@ -1498,7 +1498,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_VENOMOTH,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_BRIGHT_POWDER,
                         .moves = {MOVE_SKILL_SWAP, MOVE_SIGNAL_BEAM, MOVE_SLEEP_POWDER, MOVE_TOXIC},
                         .level = 0,
@@ -1519,7 +1519,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_ESPEON,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_LUM_BERRY,
                         .moves = {MOVE_SKILL_SWAP, MOVE_PSYBEAM, MOVE_SWIFT, MOVE_ATTRACT},
                         .level = 0,
@@ -1553,7 +1553,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_WEEZING,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_POISON_BARB,
                         .moves = {MOVE_TOXIC, MOVE_SLUDGE_BOMB, MOVE_SMOKESCREEN, MOVE_HAZE},
                         .level = 0,
@@ -1574,7 +1574,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_GLOOM,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_MIRACLE_SEED,
                         .moves = {MOVE_PETAL_DANCE, MOVE_SYNTHESIS, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM},
                         .level = 0,
@@ -1595,7 +1595,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_MUK,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_BRIGHT_POWDER,
                         .moves = {MOVE_SCREECH, MOVE_DISABLE, MOVE_SLUDGE_BOMB, MOVE_ACID_ARMOR},
                         .level = 0,
@@ -1616,7 +1616,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_TROPIUS,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_WHITE_HERB,
                         .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_SWEET_SCENT, MOVE_AERIAL_ACE},
                         .level = 0,
@@ -1638,7 +1638,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_BELLOSSOM,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_MENTAL_HERB,
                         .moves = {MOVE_SWEET_SCENT, MOVE_PETAL_DANCE, MOVE_STUN_SPORE, MOVE_SLUDGE_BOMB},
                         .level = 0,
@@ -1659,7 +1659,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_MEGANIUM,
+                        .species = SPECIES_PINECO,
                         .heldItem = ITEM_MIRACLE_SEED,
                         .moves = {MOVE_RAZOR_LEAF, MOVE_BODY_SLAM, MOVE_LEECH_SEED, MOVE_SYNTHESIS},
                         .level = 0,
@@ -1684,21 +1684,21 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
         },
             .display = {
             .metatileData = {
-                0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x26, 0x1B, 0x1C, 0x1D, 0x25, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                0x1F, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x24, 0x24, 0x24, 0x2B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x08, 
-                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x35, 0x35, 0x3B, 0x35, 0x35, 0x08, 
-                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x2C, 0x2C, 0x3B, 0x2C, 0x2C, 0x08, 
-                0x33, 0x17, 0x1F, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08, 
-                0x34, 0x17, 0x2C, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2C, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08, 
-                0x17, 0x17, 0x17, 0x17, 0x17, 0x2C, 0x3B, 0x3B, 0x3B, 0x3B, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08, 
-                0x1F, 0x17, 0x17, 0x17, 0x17, 0x1F, 0x17, 0x3B, 0x3B, 0x3B, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08, 
-                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x35, 0x1F, 0x17, 0x17, 0x1F, 0x17, 0x08, 
-                0x34, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x2C, 0x3B, 0x3B, 0x2B, 0x17, 0x08, 
-                0x17, 0x17, 0x17, 0x1F, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x17, 0x17, 0x17, 0x2C, 0x17, 0x08, 
-                0x1F, 0x17, 0x17, 0x2C, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x17, 0x3B, 0x1F, 0x3B, 0x17, 0x08, 
-                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x17, 0x3B, 0x2B, 0x3B, 0x17, 0x08, 
-                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x35, 0x35, 0x35, 0x2B, 0x17, 0x3B, 0x2C, 0x3B, 0x17, 0x08, 
-                0x34, 0x17, 0x17, 0x17, 0x17, 0x2C, 0x2C, 0x2C, 0x2C, 0x2C, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08, 
+                0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x26, 0x1B, 0x1C, 0x1D, 0x25, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                0x1F, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x24, 0x24, 0x24, 0x2B, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x08,
+                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x35, 0x35, 0x3B, 0x35, 0x35, 0x08,
+                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x2C, 0x2C, 0x3B, 0x2C, 0x2C, 0x08,
+                0x33, 0x17, 0x1F, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08,
+                0x34, 0x17, 0x2C, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2C, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08,
+                0x17, 0x17, 0x17, 0x17, 0x17, 0x2C, 0x3B, 0x3B, 0x3B, 0x3B, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08,
+                0x1F, 0x17, 0x17, 0x17, 0x17, 0x1F, 0x17, 0x3B, 0x3B, 0x3B, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08,
+                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x35, 0x1F, 0x17, 0x17, 0x1F, 0x17, 0x08,
+                0x34, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x2C, 0x3B, 0x3B, 0x2B, 0x17, 0x08,
+                0x17, 0x17, 0x17, 0x1F, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x17, 0x17, 0x17, 0x2C, 0x17, 0x08,
+                0x1F, 0x17, 0x17, 0x2C, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x17, 0x3B, 0x1F, 0x3B, 0x17, 0x08,
+                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x3B, 0x3B, 0x3B, 0x2B, 0x17, 0x3B, 0x2B, 0x3B, 0x17, 0x08,
+                0x33, 0x17, 0x17, 0x17, 0x17, 0x2B, 0x35, 0x35, 0x35, 0x2B, 0x17, 0x3B, 0x2C, 0x3B, 0x17, 0x08,
+                0x34, 0x17, 0x17, 0x17, 0x17, 0x2C, 0x2C, 0x2C, 0x2C, 0x2C, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08,
                 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
             },
             .collisionData = {0x0381, 0x7C1, 0x8441, 0x8477, 0x8441, 0xA441, 0x0401, 0x1, 0x8401, 0x8465, 0x0445, 0x1441, 0x8449, 0x8449, 0x87C1, 0xFFFF},
@@ -1737,7 +1737,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_DELIBIRD,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_PRESENT, MOVE_SPLASH, MOVE_HAIL, MOVE_PROTECT},
                                             .level = 0,
@@ -1758,7 +1758,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_CLEFAIRY,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_PRESENT, MOVE_COSMIC_POWER, MOVE_LIGHT_SCREEN, MOVE_MOONLIGHT},
                                             .level = 0,
@@ -1779,7 +1779,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_PIKACHU,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_PRESENT, MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_AGILITY},
                                             .level = 0,
@@ -1800,7 +1800,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_MARILL,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_PRESENT, MOVE_DEFENSE_CURL, MOVE_TAIL_WHIP, MOVE_ENDURE},
                                             .level = 0,
@@ -1821,7 +1821,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_JIGGLYPUFF,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_PRESENT, MOVE_SING, MOVE_DISABLE, MOVE_REST},
                                             .level = 0,
@@ -1842,7 +1842,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_TOGETIC,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_PRESENT, MOVE_CHARM, MOVE_SWEET_KISS, MOVE_WISH},
                                             .level = 0,
@@ -1876,7 +1876,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_WIGGLYTUFF,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SILK_SCARF,
                                             .moves = {MOVE_ROLLOUT, MOVE_DEFENSE_CURL, MOVE_SING, MOVE_DREAM_EATER},
                                             .level = 0,
@@ -1897,7 +1897,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_SABLEYE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SILK_SCARF,
                                             .moves = {MOVE_ASTONISH, MOVE_FAINT_ATTACK, MOVE_DETECT, MOVE_CONFUSE_RAY},
                                             .level = 0,
@@ -1918,7 +1918,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_GRUMPIG,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SILK_SCARF,
                                             .moves = {MOVE_PSYBEAM, MOVE_MAGIC_COAT, MOVE_BOUNCE, MOVE_FUTURE_SIGHT},
                                             .level = 0,
@@ -1939,7 +1939,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_CORSOLA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SILK_SCARF,
                                             .moves = {MOVE_BUBBLE_BEAM, MOVE_ROCK_BLAST, MOVE_REFLECT, MOVE_LIGHT_SCREEN},
                                             .level = 0,
@@ -1960,7 +1960,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_CLAMPERL,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SILK_SCARF,
                                             .moves = {MOVE_WHIRLPOOL, MOVE_IRON_DEFENSE, MOVE_ENDURE, MOVE_CONFUSE_RAY},
                                             .level = 0,
@@ -1981,7 +1981,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_STARMIE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SILK_SCARF,
                                             .moves = {MOVE_DIVE, MOVE_ICY_WIND, MOVE_SWIFT, MOVE_SKILL_SWAP},
                                             .level = 0,
@@ -2005,21 +2005,21 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x40, 0x41, 0x41, 0x41, 0x41, 0x41, 0x42, 0x43, 0x43, 0x43, 0x43, 0x43, 0x40, 0x41, 0x41, 0x08, 
-                    0x40, 0xFB, 0x43, 0x41, 0x41, 0x41, 0x42, 0x40, 0x43, 0x41, 0x42, 0x42, 0x42, 0xFB, 0x41, 0x08, 
-                    0x40, 0x41, 0xFB, 0x41, 0x41, 0x41, 0x42, 0x40, 0x43, 0x41, 0x43, 0x43, 0xFB, 0x40, 0x41, 0x08, 
-                    0x40, 0x41, 0x41, 0xFB, 0x43, 0x41, 0x42, 0x40, 0x43, 0x43, 0x43, 0xFB, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x41, 0x41, 0x41, 0x42, 0x42, 0x42, 0x40, 0x43, 0x43, 0x43, 0x41, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x41, 0x41, 0x41, 0xFE, 0xFE, 0xFE, 0xFB, 0xFE, 0xFE, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x41, 0x41, 0x41, 0xFE, 0xFE, 0xFE, 0xFB, 0xFE, 0xFE, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x41, 0x42, 0x41, 0xFE, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x41, 0x41, 0x41, 0xFE, 0xFE, 0xFE, 0xFB, 0xFE, 0xFE, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x41, 0x41, 0x41, 0xFE, 0xFE, 0xFE, 0xFB, 0xFE, 0xFE, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x42, 0x41, 0x43, 0x43, 0x43, 0x41, 0x40, 0x42, 0x42, 0x42, 0x42, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x40, 0x41, 0xFB, 0x41, 0x41, 0x41, 0x41, 0x41, 0x41, 0x41, 0xFB, 0x41, 0x40, 0x41, 0x08, 
-                    0x40, 0x40, 0xFB, 0x43, 0x43, 0x41, 0x41, 0x41, 0x42, 0x42, 0x42, 0x42, 0xFB, 0x40, 0x41, 0x08, 
-                    0x40, 0xFB, 0x43, 0x43, 0x41, 0x41, 0x43, 0x43, 0x43, 0x43, 0x43, 0x43, 0x43, 0xFB, 0x41, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x40, 0x41, 0x41, 0x41, 0x41, 0x41, 0x42, 0x43, 0x43, 0x43, 0x43, 0x43, 0x40, 0x41, 0x41, 0x08,
+                    0x40, 0xFB, 0x43, 0x41, 0x41, 0x41, 0x42, 0x40, 0x43, 0x41, 0x42, 0x42, 0x42, 0xFB, 0x41, 0x08,
+                    0x40, 0x41, 0xFB, 0x41, 0x41, 0x41, 0x42, 0x40, 0x43, 0x41, 0x43, 0x43, 0xFB, 0x40, 0x41, 0x08,
+                    0x40, 0x41, 0x41, 0xFB, 0x43, 0x41, 0x42, 0x40, 0x43, 0x43, 0x43, 0xFB, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x41, 0x41, 0x41, 0x42, 0x42, 0x42, 0x40, 0x43, 0x43, 0x43, 0x41, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x41, 0x41, 0x41, 0xFE, 0xFE, 0xFE, 0xFB, 0xFE, 0xFE, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x41, 0x41, 0x41, 0xFE, 0xFE, 0xFE, 0xFB, 0xFE, 0xFE, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x41, 0x42, 0x41, 0xFE, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x41, 0x41, 0x41, 0xFE, 0xFE, 0xFE, 0xFB, 0xFE, 0xFE, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x41, 0x41, 0x41, 0xFE, 0xFE, 0xFE, 0xFB, 0xFE, 0xFE, 0xFE, 0x41, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x42, 0x41, 0x43, 0x43, 0x43, 0x41, 0x40, 0x42, 0x42, 0x42, 0x42, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x40, 0x41, 0xFB, 0x41, 0x41, 0x41, 0x41, 0x41, 0x41, 0x41, 0xFB, 0x41, 0x40, 0x41, 0x08,
+                    0x40, 0x40, 0xFB, 0x43, 0x43, 0x41, 0x41, 0x41, 0x42, 0x42, 0x42, 0x42, 0xFB, 0x40, 0x41, 0x08,
+                    0x40, 0xFB, 0x43, 0x43, 0x41, 0x41, 0x43, 0x43, 0x43, 0x43, 0x43, 0x43, 0x43, 0xFB, 0x41, 0x08,
                     0x40, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x42, 0x08,
                 },
                 .collisionData = {0x0381, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1},
@@ -2047,7 +2047,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_JIGGLYPUFF,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_SING, MOVE_HYPER_VOICE, MOVE_ATTRACT, MOVE_NONE},
                                             .level = 0,
@@ -2072,7 +2072,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_JYNX,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_PERISH_SONG, MOVE_FAKE_TEARS, MOVE_ATTRACT, MOVE_NONE},
                                             .level = 0,
@@ -2097,7 +2097,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_EXPLOUD,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_HOWL, MOVE_HYPER_VOICE, MOVE_ATTRACT, MOVE_NONE},
                                             .level = 0,
@@ -2122,7 +2122,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_ABSOL,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_SWORDS_DANCE, MOVE_SLASH, MOVE_ATTRACT, MOVE_NONE},
                                             .level = 0,
@@ -2147,7 +2147,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_PIDGEOTTO,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_FEATHER_DANCE, MOVE_AERIAL_ACE, MOVE_ATTRACT, MOVE_NONE},
                                             .level = 0,
@@ -2172,7 +2172,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_ALTARIA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE, MOVE_ATTRACT, MOVE_NONE},
                                             .level = 0,
@@ -2210,7 +2210,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_CHIMECHO,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_UPROAR, MOVE_ATTRACT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2232,7 +2232,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_WHISMUR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_UPROAR, MOVE_ATTRACT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2254,7 +2254,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_YANMA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_UPROAR, MOVE_ATTRACT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2276,7 +2276,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_ILLUMISE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_ENCORE, MOVE_ATTRACT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2298,7 +2298,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_SPHEAL,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_ENCORE, MOVE_ATTRACT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2320,7 +2320,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_VIGOROTH,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_ENCORE, MOVE_ATTRACT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2345,21 +2345,21 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x91, 0x9B, 0x9C, 0x96, 0x40, 0x40, 0x96, 0x9B, 0x96, 0x40, 0x40, 0x96, 0x9B, 0x9C, 0x9B, 0x08, 
-                    0x9C, 0x9B, 0x96, 0x40, 0xDB, 0xDB, 0x40, 0x96, 0x40, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x9B, 0x08, 
-                    0x91, 0x96, 0x40, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0x42, 0x96, 0x9C, 0x08, 
-                    0x91, 0x42, 0xDB, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0xDB, 0x42, 0x9B, 0x08, 
-                    0x96, 0x42, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0x42, 0x96, 0x08, 
-                    0x96, 0x42, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0x42, 0x96, 0x08, 
-                    0x96, 0x42, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0x42, 0x96, 0x08, 
-                    0x96, 0x42, 0xDB, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0xDB, 0x42, 0x96, 0x08, 
-                    0x91, 0x96, 0x42, 0xDB, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x08, 
-                    0x91, 0x9B, 0x96, 0x42, 0xDB, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x9C, 0x08, 
-                    0x9C, 0x9B, 0x9B, 0x96, 0x42, 0xDB, 0xDB, 0xD6, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x9B, 0x9B, 0x08, 
-                    0x96, 0x9B, 0x9B, 0x9B, 0x96, 0x41, 0xDB, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x9B, 0x9C, 0x96, 0x08, 
-                    0xD6, 0x96, 0x9C, 0x9B, 0x9B, 0x96, 0x41, 0xDB, 0x42, 0x96, 0x9B, 0x9B, 0x9B, 0x96, 0xD6, 0x08, 
-                    0x9C, 0xD6, 0x96, 0x9B, 0x9C, 0x9B, 0x96, 0x40, 0x96, 0x9B, 0x9C, 0x9B, 0x96, 0xD6, 0x9C, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x91, 0x9B, 0x9C, 0x96, 0x40, 0x40, 0x96, 0x9B, 0x96, 0x40, 0x40, 0x96, 0x9B, 0x9C, 0x9B, 0x08,
+                    0x9C, 0x9B, 0x96, 0x40, 0xDB, 0xDB, 0x40, 0x96, 0x40, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x9B, 0x08,
+                    0x91, 0x96, 0x40, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0x42, 0x96, 0x9C, 0x08,
+                    0x91, 0x42, 0xDB, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0xDB, 0x42, 0x9B, 0x08,
+                    0x96, 0x42, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0x42, 0x96, 0x08,
+                    0x96, 0x42, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0x42, 0x96, 0x08,
+                    0x96, 0x42, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0x42, 0x96, 0x08,
+                    0x96, 0x42, 0xDB, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0xDB, 0x42, 0x96, 0x08,
+                    0x91, 0x96, 0x42, 0xDB, 0xDB, 0xD6, 0xD6, 0xD6, 0xD6, 0xD6, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x08,
+                    0x91, 0x9B, 0x96, 0x42, 0xDB, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x9C, 0x08,
+                    0x9C, 0x9B, 0x9B, 0x96, 0x42, 0xDB, 0xDB, 0xD6, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x9B, 0x9B, 0x08,
+                    0x96, 0x9B, 0x9B, 0x9B, 0x96, 0x41, 0xDB, 0xDB, 0xDB, 0x42, 0x96, 0x9B, 0x9B, 0x9C, 0x96, 0x08,
+                    0xD6, 0x96, 0x9C, 0x9B, 0x9B, 0x96, 0x41, 0xDB, 0x42, 0x96, 0x9B, 0x9B, 0x9B, 0x96, 0xD6, 0x08,
+                    0x9C, 0xD6, 0x96, 0x9B, 0x9C, 0x9B, 0x96, 0x40, 0x96, 0x9B, 0x9C, 0x9B, 0x96, 0xD6, 0x9C, 0x08,
                     0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
                 },
                 .collisionData = {0x0381, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0xFFFF},
@@ -2387,7 +2387,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_WOOPER,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FIGY_BERRY,
                                             .moves = {MOVE_RAIN_DANCE, MOVE_YAWN, MOVE_SURF, MOVE_HAZE},
                                             .level = 0,
@@ -2409,7 +2409,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_POLIWAG,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_WIKI_BERRY,
                                             .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_MIST, MOVE_HYPNOSIS},
                                             .level = 0,
@@ -2431,7 +2431,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_PSYDUCK,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_AGUAV_BERRY,
                                             .moves = {MOVE_HYPNOSIS, MOVE_SURF, MOVE_DISABLE, MOVE_SEISMIC_TOSS},
                                             .level = 0,
@@ -2453,7 +2453,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_RHYDON,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SOFT_SAND,
                                             .moves = {MOVE_EARTHQUAKE, MOVE_MAGNITUDE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2475,7 +2475,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_RHYHORN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SOFT_SAND,
                                             .moves = {MOVE_EARTHQUAKE, MOVE_MAGNITUDE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2497,7 +2497,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_CUBONE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SOFT_SAND,
                                             .moves = {MOVE_EARTHQUAKE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2532,7 +2532,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_MAGNEMITE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MAGNET,
                                             .moves = {MOVE_THUNDER, MOVE_ZAP_CANNON, MOVE_SPARK, MOVE_THUNDER_SHOCK},
                                             .level = 0,
@@ -2554,7 +2554,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_ELECTABUZZ,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MAGNET,
                                             .moves = {MOVE_THUNDER, MOVE_THUNDERBOLT, MOVE_THUNDER_PUNCH, MOVE_SHOCK_WAVE},
                                             .level = 0,
@@ -2576,7 +2576,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_FLAAFFY,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MAGNET,
                                             .moves = {MOVE_THUNDER, MOVE_THUNDERBOLT, MOVE_SHOCK_WAVE, MOVE_THUNDER_SHOCK},
                                             .level = 0,
@@ -2597,7 +2597,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_BALTOY,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SILK_SCARF,
                                             .moves = {MOVE_EXPLOSION, MOVE_SELF_DESTRUCT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2641,7 +2641,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_VOLTORB,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SILK_SCARF,
                                             .moves = {MOVE_EXPLOSION, MOVE_SELF_DESTRUCT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2666,21 +2666,21 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x1B, 0x1C, 0x1D, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x91, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x84, 0x84, 0x84, 0x9A, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x08, 
-                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08, 
-                    0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x08, 
-                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08, 
-                    0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08, 
-                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08, 
-                    0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08, 
-                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08, 
-                    0x17, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x08, 
-                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08, 
-                    0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x08, 
-                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08, 
-                    0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08, 
-                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x1B, 0x1C, 0x1D, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x91, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x84, 0x84, 0x84, 0x9A, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x08,
+                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08,
+                    0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x08,
+                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08,
+                    0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08,
+                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08,
+                    0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08,
+                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08,
+                    0x17, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x08,
+                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08,
+                    0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x08,
+                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08,
+                    0x17, 0x17, 0x17, 0x17, 0xBB, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x17, 0x08,
+                    0x17, 0xB2, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xA1, 0xB0, 0x17, 0xB2, 0xA1, 0x08,
                     0x17, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0x17, 0xBB, 0xBB, 0x08,
                 },
                 .collisionData = {0x0381, 0x0381, 0x7FF7, 0x1, 0x7FF7, 0x1, 0x7FF7, 0x1, 0x7FF7, 0x1, 0x7FF7, 0x1, 0x7FF7, 0x1, 0x7FF7, 0x1},
@@ -2708,7 +2708,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_UNOWN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MIRACLE_SEED,
                                             .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2729,7 +2729,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_UNOWN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MYSTIC_WATER,
                                             .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2750,7 +2750,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_UNOWN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BLACK_BELT,
                                             .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2771,7 +2771,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_SPINDA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_TEETER_DANCE, MOVE_DIZZY_PUNCH, MOVE_CALM_MIND, MOVE_BATON_PASS},
                                             .level = 0,
@@ -2793,7 +2793,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_PLUSLE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_HELPING_HAND, MOVE_THUNDERBOLT, MOVE_AGILITY, MOVE_BATON_PASS},
                                             .level = 0,
@@ -2814,7 +2814,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_VOLBEAT,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_HELPING_HAND, MOVE_SIGNAL_BEAM, MOVE_SOLAR_BEAM, MOVE_MOONLIGHT},
                                             .level = 0,
@@ -2848,7 +2848,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SPINDA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_TEETER_DANCE, MOVE_DIZZY_PUNCH, MOVE_CALM_MIND, MOVE_BATON_PASS},
                                             .level = 0,
@@ -2870,7 +2870,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_MINUN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_HELPING_HAND, MOVE_THUNDERBOLT, MOVE_AGILITY, MOVE_BATON_PASS},
                                             .level = 0,
@@ -2891,7 +2891,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_ILLUMISE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_HELPING_HAND, MOVE_WISH, MOVE_THUNDERBOLT, MOVE_MOONLIGHT},
                                             .level = 0,
@@ -2912,7 +2912,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_UNOWN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_CHARCOAL,
                                             .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2933,7 +2933,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_UNOWN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SOFT_SAND,
                                             .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2954,7 +2954,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_UNOWN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_TWISTED_SPOON,
                                             .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2978,21 +2978,21 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x69, 0x40, 0x6D, 0x41, 0x73, 0x41, 0x5E, 0x41, 0x71, 0x42, 0x45, 0x45, 0x45, 0x45, 0x45, 0x08, 
-                    0x43, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x73, 0x41, 0x73, 0x45, 0x45, 0x45, 0x45, 0x45, 0x08, 
-                    0x65, 0x40, 0x73, 0x42, 0x6D, 0x42, 0x73, 0x42, 0x6D, 0x42, 0x45, 0x45, 0x45, 0x45, 0x45, 0x08, 
-                    0x6C, 0x73, 0x41, 0x73, 0x64, 0x73, 0x40, 0x73, 0x64, 0x73, 0x40, 0x73, 0x42, 0x73, 0x41, 0x08, 
-                    0x69, 0x40, 0x6D, 0x41, 0x73, 0x40, 0x6D, 0x43, 0x73, 0x43, 0x6D, 0x42, 0x73, 0x42, 0x6D, 0x08, 
-                    0x40, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x73, 0x41, 0x73, 0x64, 0x73, 0x41, 0x73, 0x64, 0x08, 
-                    0x65, 0x42, 0x73, 0x42, 0x6D, 0x41, 0x73, 0x40, 0x6D, 0x42, 0x73, 0x41, 0x6D, 0x42, 0x73, 0x08, 
-                    0x6C, 0x73, 0x41, 0x73, 0x64, 0x73, 0x42, 0x73, 0x64, 0x73, 0x42, 0x73, 0x64, 0x73, 0x42, 0x08, 
-                    0x69, 0x40, 0x6D, 0x41, 0x73, 0x41, 0x6D, 0x42, 0x73, 0x43, 0x6D, 0x41, 0x73, 0x43, 0x6D, 0x08, 
-                    0x40, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x73, 0x42, 0x73, 0x64, 0x08, 
-                    0x65, 0x42, 0x73, 0x42, 0x6D, 0x43, 0x73, 0x42, 0x6D, 0x42, 0x73, 0x41, 0x6D, 0x40, 0x73, 0x08, 
-                    0x6C, 0x73, 0x40, 0x73, 0x64, 0x73, 0x41, 0x73, 0x64, 0x73, 0x42, 0x73, 0x64, 0x73, 0x42, 0x08, 
-                    0x69, 0x40, 0x6D, 0x42, 0x73, 0x42, 0x6D, 0x43, 0x73, 0x40, 0x6D, 0x41, 0x73, 0x40, 0x6D, 0x08, 
-                    0x40, 0x73, 0x64, 0x73, 0x40, 0x73, 0x64, 0x73, 0x40, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x69, 0x40, 0x6D, 0x41, 0x73, 0x41, 0x5E, 0x41, 0x71, 0x42, 0x45, 0x45, 0x45, 0x45, 0x45, 0x08,
+                    0x43, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x73, 0x41, 0x73, 0x45, 0x45, 0x45, 0x45, 0x45, 0x08,
+                    0x65, 0x40, 0x73, 0x42, 0x6D, 0x42, 0x73, 0x42, 0x6D, 0x42, 0x45, 0x45, 0x45, 0x45, 0x45, 0x08,
+                    0x6C, 0x73, 0x41, 0x73, 0x64, 0x73, 0x40, 0x73, 0x64, 0x73, 0x40, 0x73, 0x42, 0x73, 0x41, 0x08,
+                    0x69, 0x40, 0x6D, 0x41, 0x73, 0x40, 0x6D, 0x43, 0x73, 0x43, 0x6D, 0x42, 0x73, 0x42, 0x6D, 0x08,
+                    0x40, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x73, 0x41, 0x73, 0x64, 0x73, 0x41, 0x73, 0x64, 0x08,
+                    0x65, 0x42, 0x73, 0x42, 0x6D, 0x41, 0x73, 0x40, 0x6D, 0x42, 0x73, 0x41, 0x6D, 0x42, 0x73, 0x08,
+                    0x6C, 0x73, 0x41, 0x73, 0x64, 0x73, 0x42, 0x73, 0x64, 0x73, 0x42, 0x73, 0x64, 0x73, 0x42, 0x08,
+                    0x69, 0x40, 0x6D, 0x41, 0x73, 0x41, 0x6D, 0x42, 0x73, 0x43, 0x6D, 0x41, 0x73, 0x43, 0x6D, 0x08,
+                    0x40, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x73, 0x42, 0x73, 0x64, 0x08,
+                    0x65, 0x42, 0x73, 0x42, 0x6D, 0x43, 0x73, 0x42, 0x6D, 0x42, 0x73, 0x41, 0x6D, 0x40, 0x73, 0x08,
+                    0x6C, 0x73, 0x40, 0x73, 0x64, 0x73, 0x41, 0x73, 0x64, 0x73, 0x42, 0x73, 0x64, 0x73, 0x42, 0x08,
+                    0x69, 0x40, 0x6D, 0x42, 0x73, 0x42, 0x6D, 0x43, 0x73, 0x40, 0x6D, 0x41, 0x73, 0x40, 0x6D, 0x08,
+                    0x40, 0x73, 0x64, 0x73, 0x40, 0x73, 0x64, 0x73, 0x40, 0x73, 0x64, 0x73, 0x43, 0x73, 0x64, 0x08,
                     0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
                 },
                 .collisionData = {0x0381, 0x1, 0x2201, 0x1, 0x8881, 0x1, 0x2223, 0x1, 0x8889, 0x1, 0x2223, 0x1, 0x8889, 0x1, 0x2223, 0xFFFF},
@@ -3031,7 +3031,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SUNFLORA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PERSIM_BERRY,
                                             .moves = {MOVE_PETAL_DANCE, MOVE_GRASS_WHISTLE, MOVE_LIGHT_SCREEN, MOVE_SUNNY_DAY},
                                             .level = 0,
@@ -3053,7 +3053,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_TANGELA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_GIGA_DRAIN, MOVE_SLEEP_POWDER, MOVE_AMNESIA, MOVE_SUNNY_DAY},
                                             .level = 0,
@@ -3074,7 +3074,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_VENUSAUR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_SOLAR_BEAM, MOVE_EARTHQUAKE, MOVE_SYNTHESIS, MOVE_SUNNY_DAY},
                                             .level = 0,
@@ -3098,7 +3098,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_LANTURN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PERSIM_BERRY,
                                             .moves = {MOVE_SPARK, MOVE_WATER_PULSE, MOVE_CONFUSE_RAY, MOVE_RAIN_DANCE},
                                             .level = 0,
@@ -3119,7 +3119,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_MANECTRIC,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_THUNDERBOLT, MOVE_HEADBUTT, MOVE_BITE, MOVE_RAIN_DANCE},
                                             .level = 0,
@@ -3140,7 +3140,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_RAIKOU,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_THUNDER, MOVE_CRUNCH, MOVE_ROAR, MOVE_RAIN_DANCE},
                                             .level = 0,
@@ -3174,7 +3174,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_RELICANTH,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_ANCIENT_POWER, MOVE_WATER_PULSE, MOVE_MUD_SPORT, MOVE_RAIN_DANCE},
                                             .level = 0,
@@ -3196,7 +3196,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_GOLDUCK,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LAX_INCENSE,
                                             .moves = {MOVE_SURF, MOVE_PSYBEAM, MOVE_BRICK_BREAK, MOVE_RAIN_DANCE},
                                             .level = 0,
@@ -3217,7 +3217,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_BLASTOISE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SHELL_BELL,
                                             .moves = {MOVE_HYDRO_PUMP, MOVE_BITE, MOVE_MIRROR_COAT, MOVE_RAIN_DANCE},
                                             .level = 0,
@@ -3238,7 +3238,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_MAGCARGO,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_HEAT_WAVE, MOVE_ROCK_SLIDE, MOVE_PROTECT, MOVE_SUNNY_DAY},
                                             .level = 0,
@@ -3259,7 +3259,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_RAPIDASH,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_KINGS_ROCK,
                                             .moves = {MOVE_FIRE_BLAST, MOVE_BOUNCE, MOVE_QUICK_ATTACK, MOVE_SUNNY_DAY},
                                             .level = 0,
@@ -3280,7 +3280,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_MOLTRES,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_SKY_ATTACK, MOVE_AERIAL_ACE, MOVE_ROAR, MOVE_SUNNY_DAY},
                                             .level = 0,
@@ -3304,21 +3304,21 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0xF1, 0xF5, 0xFB, 0xF5, 0xE6, 0xE6, 0x1B, 0x14, 0x15, 0xF8, 0xF9, 0xFA, 0xFB, 0xFB, 0xFB, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xEC, 0xEC, 0xEC, 0xF9, 0xE6, 0xEE, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0x9B, 0x9B, 0xFB, 0xEB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEB, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0x9B, 0xDB, 0xDB, 0x9B, 0xEC, 0xFB, 0xF5, 0xF5, 0xF5, 0xFB, 0xEB, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xF5, 0x95, 0x95, 0xF5, 0xF5, 0xF5, 0xEB, 0xEC, 0xEB, 0xFB, 0xEB, 0x08, 
-                    0xED, 0xEB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0x08, 
-                    0xF4, 0xEB, 0xFB, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xFB, 0xEB, 0xFB, 0xEC, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xEB, 0xF5, 0xFB, 0x08, 
-                    0xF1, 0xEC, 0xFB, 0xEB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEB, 0xFB, 0x08, 
-                    0xF1, 0xF5, 0xF5, 0xEB, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xFB, 0xEB, 0xFB, 0x08, 
-                    0xF1, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEB, 0xFB, 0xEB, 0xFB, 0x08, 
-                    0xF1, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xEB, 0xFB, 0xEB, 0xFB, 0x08, 
-                    0xF1, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xFB, 0xEC, 0xFB, 0x08, 
-                    0xF1, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08, 
+                    0xF1, 0xF5, 0xFB, 0xF5, 0xE6, 0xE6, 0x1B, 0x14, 0x15, 0xF8, 0xF9, 0xFA, 0xFB, 0xFB, 0xFB, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xEC, 0xEC, 0xEC, 0xF9, 0xE6, 0xEE, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0x9B, 0x9B, 0xFB, 0xEB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEB, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0x9B, 0xDB, 0xDB, 0x9B, 0xEC, 0xFB, 0xF5, 0xF5, 0xF5, 0xFB, 0xEB, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xF5, 0x95, 0x95, 0xF5, 0xF5, 0xF5, 0xEB, 0xEC, 0xEB, 0xFB, 0xEB, 0x08,
+                    0xED, 0xEB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0x08,
+                    0xF4, 0xEB, 0xFB, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xFB, 0xEB, 0xFB, 0xEC, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xEB, 0xF5, 0xFB, 0x08,
+                    0xF1, 0xEC, 0xFB, 0xEB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEB, 0xFB, 0x08,
+                    0xF1, 0xF5, 0xF5, 0xEB, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xFB, 0xEB, 0xFB, 0x08,
+                    0xF1, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEB, 0xFB, 0xEB, 0xFB, 0x08,
+                    0xF1, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xEB, 0xFB, 0xEB, 0xFB, 0x08,
+                    0xF1, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xFB, 0xEC, 0xFB, 0x08,
+                    0xF1, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08,
                     0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
                 },
                 .collisionData = {0x0381, 0x5E01, 0x50FF, 0x5083, 0x503B, 0x5FEB, 0xC02B, 0x5FEB, 0x5009, 0x57FD, 0x1005, 0x7FF5, 0x15, 0x7FF5, 0x1, 0xFFFF},
@@ -3346,7 +3346,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SMEARGLE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SCOPE_LENS,
                                             .moves = {MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_AERIAL_ACE, MOVE_IMPRISON},
                                             .level = 0,
@@ -3368,7 +3368,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_SMEARGLE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_CHESTO_BERRY,
                                             .moves = {MOVE_REST, MOVE_THUNDER_WAVE, MOVE_FLAMETHROWER, MOVE_IMPRISON},
                                             .level = 0,
@@ -3390,7 +3390,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_SMEARGLE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_TEETER_DANCE, MOVE_LOCK_ON, MOVE_SHEER_COLD, MOVE_EXPLOSION},
                                             .level = 0,
@@ -3412,7 +3412,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_SMEARGLE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SCOPE_LENS,
                                             .moves = {MOVE_PSYCHIC, MOVE_SURF, MOVE_THUNDERBOLT, MOVE_IMPRISON},
                                             .level = 0,
@@ -3434,7 +3434,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_SMEARGLE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_TOXIC, MOVE_PROTECT, MOVE_WILL_O_WISP, MOVE_IMPRISON},
                                             .level = 0,
@@ -3456,7 +3456,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_SMEARGLE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_TEETER_DANCE, MOVE_LOCK_ON, MOVE_SHEER_COLD, MOVE_DESTINY_BOND},
                                             .level = 0,
@@ -3491,7 +3491,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_STARYU,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_CAMOUFLAGE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -3513,7 +3513,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_MEOWTH,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_PAY_DAY, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -3535,7 +3535,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_BLAZIKEN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_BLAZE_KICK, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -3557,7 +3557,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_CUBONE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_THICK_CLUB,
                                             .moves = {MOVE_BONEMERANG, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -3579,7 +3579,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_BEEDRILL,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SHELL_BELL,
                                             .moves = {MOVE_TWINEEDLE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -3600,7 +3600,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_RATICATE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_SUPER_FANG, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -3625,21 +3625,21 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x26, 0x1B, 0x1C, 0x1D, 0x25, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x2D, 0x3B, 0x3B, 0x3B, 0x35, 0x2C, 0x23, 0x24, 0x23, 0x2C, 0x35, 0x3B, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x94, 0x87, 0x9B, 0x87, 0x8C, 0x87, 0x8B, 0x87, 0x8C, 0x87, 0x8C, 0x87, 0x95, 0x87, 0x9B, 0x08, 
-                    0x91, 0x8F, 0x9B, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x9B, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x95, 0x08, 
-                    0x8D, 0x97, 0x95, 0x97, 0x9B, 0x97, 0x95, 0x97, 0x95, 0x97, 0x9B, 0x97, 0x9B, 0x97, 0x8C, 0x08, 
-                    0x94, 0x87, 0x8C, 0x87, 0x9B, 0x87, 0x8C, 0x87, 0x8B, 0x87, 0x9B, 0x9B, 0x9B, 0x87, 0x9B, 0x08, 
-                    0x91, 0x8F, 0x9B, 0x8F, 0x95, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x95, 0x9B, 0x95, 0x8F, 0x9B, 0x08, 
-                    0x91, 0x97, 0x95, 0x97, 0x8C, 0x97, 0x95, 0x97, 0x95, 0x97, 0x8C, 0x9B, 0x8C, 0x97, 0x95, 0x08, 
-                    0x91, 0x87, 0x8C, 0x87, 0x9B, 0x87, 0x8C, 0x87, 0x8B, 0x87, 0x9B, 0x87, 0x95, 0x87, 0x8C, 0x08, 
-                    0x8D, 0x8F, 0x9B, 0x8F, 0x95, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x9B, 0x08, 
-                    0x94, 0x97, 0x95, 0x97, 0x8C, 0x97, 0x9B, 0x97, 0x95, 0x97, 0x95, 0x97, 0x9B, 0x97, 0x9B, 0x08, 
-                    0x91, 0x87, 0x8C, 0x87, 0x95, 0x87, 0x95, 0x87, 0x8B, 0x87, 0x8C, 0x87, 0x9B, 0x87, 0x9B, 0x08, 
-                    0x91, 0x8F, 0x95, 0x8F, 0x8B, 0x8F, 0x8C, 0x8F, 0x8C, 0x8F, 0x9B, 0x8F, 0x95, 0x8F, 0x9B, 0x08, 
-                    0x91, 0x97, 0x8C, 0x97, 0x8C, 0x97, 0x9B, 0x97, 0x9B, 0x97, 0x9B, 0x97, 0x8B, 0x97, 0x9B, 0x08, 
-                    0x91, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x8C, 0x9B, 0x9B, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x26, 0x1B, 0x1C, 0x1D, 0x25, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x2D, 0x3B, 0x3B, 0x3B, 0x35, 0x2C, 0x23, 0x24, 0x23, 0x2C, 0x35, 0x3B, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x94, 0x87, 0x9B, 0x87, 0x8C, 0x87, 0x8B, 0x87, 0x8C, 0x87, 0x8C, 0x87, 0x95, 0x87, 0x9B, 0x08,
+                    0x91, 0x8F, 0x9B, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x9B, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x95, 0x08,
+                    0x8D, 0x97, 0x95, 0x97, 0x9B, 0x97, 0x95, 0x97, 0x95, 0x97, 0x9B, 0x97, 0x9B, 0x97, 0x8C, 0x08,
+                    0x94, 0x87, 0x8C, 0x87, 0x9B, 0x87, 0x8C, 0x87, 0x8B, 0x87, 0x9B, 0x9B, 0x9B, 0x87, 0x9B, 0x08,
+                    0x91, 0x8F, 0x9B, 0x8F, 0x95, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x95, 0x9B, 0x95, 0x8F, 0x9B, 0x08,
+                    0x91, 0x97, 0x95, 0x97, 0x8C, 0x97, 0x95, 0x97, 0x95, 0x97, 0x8C, 0x9B, 0x8C, 0x97, 0x95, 0x08,
+                    0x91, 0x87, 0x8C, 0x87, 0x9B, 0x87, 0x8C, 0x87, 0x8B, 0x87, 0x9B, 0x87, 0x95, 0x87, 0x8C, 0x08,
+                    0x8D, 0x8F, 0x9B, 0x8F, 0x95, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x9B, 0x8F, 0x8C, 0x8F, 0x9B, 0x08,
+                    0x94, 0x97, 0x95, 0x97, 0x8C, 0x97, 0x9B, 0x97, 0x95, 0x97, 0x95, 0x97, 0x9B, 0x97, 0x9B, 0x08,
+                    0x91, 0x87, 0x8C, 0x87, 0x95, 0x87, 0x95, 0x87, 0x8B, 0x87, 0x8C, 0x87, 0x9B, 0x87, 0x9B, 0x08,
+                    0x91, 0x8F, 0x95, 0x8F, 0x8B, 0x8F, 0x8C, 0x8F, 0x8C, 0x8F, 0x9B, 0x8F, 0x95, 0x8F, 0x9B, 0x08,
+                    0x91, 0x97, 0x8C, 0x97, 0x8C, 0x97, 0x9B, 0x97, 0x9B, 0x97, 0x9B, 0x97, 0x8B, 0x97, 0x9B, 0x08,
+                    0x91, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x8C, 0x9B, 0x9B, 0x08,
                     0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
                 },
                 .collisionData = {0x0381, 0x7C1, 0x8AA1, 0x0209, 0x5557, 0xA281, 0x81, 0x5D6D, 0x2283, 0x89, 0xDD55, 0x20A1, 0xA81, 0x7D5D, 0x9, 0xFFFF},
@@ -3667,7 +3667,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_CHARMELEON,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_CHARCOAL,
                                             .moves = {MOVE_FIRE_SPIN, MOVE_DRAGON_RAGE, MOVE_FLAMETHROWER, MOVE_SLASH},
                                             .level = 0,
@@ -3689,7 +3689,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_WARTORTLE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MYSTIC_WATER,
                                             .moves = {MOVE_HYDRO_PUMP, MOVE_SKULL_BASH, MOVE_RAIN_DANCE, MOVE_PROTECT},
                                             .level = 0,
@@ -3710,7 +3710,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_IVYSAUR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MIRACLE_SEED,
                                             .moves = {MOVE_SOLAR_BEAM, MOVE_SYNTHESIS, MOVE_GROWTH, MOVE_SWEET_SCENT},
                                             .level = 0,
@@ -3732,7 +3732,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_BAYLEEF,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MIRACLE_SEED,
                                             .moves = {MOVE_SOLAR_BEAM, MOVE_SAFEGUARD, MOVE_LIGHT_SCREEN, MOVE_BODY_SLAM},
                                             .level = 0,
@@ -3754,7 +3754,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_CROCONAW,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_MYSTIC_WATER,
                                             .moves = {MOVE_SCARY_FACE, MOVE_SLASH, MOVE_HYDRO_PUMP, MOVE_SCREECH},
                                             .level = 0,
@@ -3776,7 +3776,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_QUILAVA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_CHARCOAL,
                                             .moves = {MOVE_QUICK_ATTACK, MOVE_FLAMETHROWER, MOVE_FLAME_WHEEL, MOVE_SWIFT},
                                             .level = 0,
@@ -3811,7 +3811,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SMOOCHUM,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PETAYA_BERRY,
                                             .moves = {MOVE_ICE_BEAM, MOVE_PSYCHIC, MOVE_SWEET_KISS, MOVE_FAKE_TEARS},
                                             .level = 0,
@@ -3833,7 +3833,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_AZURILL,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_SURF, MOVE_SING, MOVE_RAIN_DANCE, MOVE_BLIZZARD},
                                             .level = 0,
@@ -3855,7 +3855,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_ELEKID,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_KINGS_ROCK,
                                             .moves = {MOVE_FIRE_PUNCH, MOVE_THUNDER, MOVE_ICE_PUNCH, MOVE_THUNDER_WAVE},
                                             .level = 0,
@@ -3877,7 +3877,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_CLEFFA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_MEGA_KICK, MOVE_SWEET_KISS, MOVE_SING, MOVE_METRONOME},
                                             .level = 0,
@@ -3899,7 +3899,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_WYNAUT,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_ENCORE, MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_DESTINY_BOND},
                                             .level = 0,
@@ -3921,7 +3921,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_MAGBY,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SCOPE_LENS,
                                             .moves = {MOVE_FIRE_BLAST, MOVE_CONFUSE_RAY, MOVE_THUNDER_PUNCH, MOVE_BARRIER},
                                             .level = 0,
@@ -3946,21 +3946,21 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x69, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x7C, 0x46, 0x08, 
-                    0x69, 0x46, 0x7A, 0x73, 0x73, 0x73, 0x79, 0x73, 0x73, 0x73, 0x7D, 0x73, 0x73, 0x73, 0x46, 0x08, 
-                    0x69, 0x46, 0x73, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08, 
-                    0x69, 0x46, 0x73, 0x73, 0x7B, 0x73, 0x7C, 0x73, 0x7B, 0x73, 0x7A, 0x73, 0x73, 0x73, 0x46, 0x08, 
-                    0x69, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x7A, 0x46, 0x08, 
-                    0x69, 0x46, 0x73, 0x73, 0x73, 0x73, 0x73, 0x7D, 0x7C, 0x73, 0x7C, 0x73, 0x7B, 0x73, 0x46, 0x08, 
-                    0x69, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x7C, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08, 
-                    0x91, 0x46, 0x9B, 0x9B, 0x9B, 0x46, 0x3B, 0x3B, 0x3B, 0x46, 0x9B, 0x9B, 0x9B, 0x9B, 0x46, 0x08, 
-                    0x91, 0x46, 0x9B, 0x9B, 0x9B, 0x46, 0x3B, 0x3B, 0x3B, 0x46, 0x9B, 0x9B, 0x9B, 0x9B, 0x46, 0x08, 
-                    0x91, 0x46, 0x9B, 0x9B, 0x9B, 0x46, 0x3B, 0x3B, 0x3B, 0x46, 0x9B, 0x9B, 0x9B, 0x9B, 0x46, 0x08, 
-                    0xF1, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x78, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08, 
-                    0xF1, 0x46, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x7A, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x7C, 0x08, 
-                    0xF1, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0xFB, 0x08, 
-                    0x7C, 0xFB, 0x7B, 0xFB, 0x7A, 0xFB, 0x79, 0xFB, 0xB3, 0xFB, 0x7D, 0xFB, 0x7E, 0xFB, 0x7D, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x69, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x7C, 0x46, 0x08,
+                    0x69, 0x46, 0x7A, 0x73, 0x73, 0x73, 0x79, 0x73, 0x73, 0x73, 0x7D, 0x73, 0x73, 0x73, 0x46, 0x08,
+                    0x69, 0x46, 0x73, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08,
+                    0x69, 0x46, 0x73, 0x73, 0x7B, 0x73, 0x7C, 0x73, 0x7B, 0x73, 0x7A, 0x73, 0x73, 0x73, 0x46, 0x08,
+                    0x69, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x7A, 0x46, 0x08,
+                    0x69, 0x46, 0x73, 0x73, 0x73, 0x73, 0x73, 0x7D, 0x7C, 0x73, 0x7C, 0x73, 0x7B, 0x73, 0x46, 0x08,
+                    0x69, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x7C, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08,
+                    0x91, 0x46, 0x9B, 0x9B, 0x9B, 0x46, 0x3B, 0x3B, 0x3B, 0x46, 0x9B, 0x9B, 0x9B, 0x9B, 0x46, 0x08,
+                    0x91, 0x46, 0x9B, 0x9B, 0x9B, 0x46, 0x3B, 0x3B, 0x3B, 0x46, 0x9B, 0x9B, 0x9B, 0x9B, 0x46, 0x08,
+                    0x91, 0x46, 0x9B, 0x9B, 0x9B, 0x46, 0x3B, 0x3B, 0x3B, 0x46, 0x9B, 0x9B, 0x9B, 0x9B, 0x46, 0x08,
+                    0xF1, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x78, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08,
+                    0xF1, 0x46, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x7A, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x7C, 0x08,
+                    0xF1, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0xFB, 0x08,
+                    0x7C, 0xFB, 0x7B, 0xFB, 0x7A, 0xFB, 0x79, 0xFB, 0xB3, 0xFB, 0x7D, 0xFB, 0x7E, 0xFB, 0x7D, 0x08,
                     0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
                 },
                 .collisionData = {0x0381, 0x7FFB, 0x4003, 0x5FFF, 0x4003, 0x7FFB, 0x4003, 0x7EFF, 0x4443, 0x4443, 0x4443, 0x7EFF, 0x4001, 0x7FFD, 0x1, 0xFFFF},
@@ -3988,7 +3988,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SUDOWOODO,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_ROCK_SLIDE, MOVE_BLOCK, MOVE_TOXIC, MOVE_EXPLOSION},
                                             .level = 0,
@@ -4010,7 +4010,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_SLOWKING,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SCOPE_LENS,
                                             .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_BLIZZARD, MOVE_DISABLE},
                                             .level = 0,
@@ -4031,7 +4031,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_ENTEI,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PETAYA_BERRY,
                                             .moves = {MOVE_FLAMETHROWER, MOVE_CALM_MIND, MOVE_FIRE_SPIN, MOVE_ROAR},
                                             .level = 0,
@@ -4052,7 +4052,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_HITMONCHAN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_MEGA_PUNCH, MOVE_DETECT, MOVE_COUNTER, MOVE_SKY_UPPERCUT},
                                             .level = 0,
@@ -4073,7 +4073,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_MANTINE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_SURF, MOVE_CONFUSE_RAY, MOVE_ATTRACT, MOVE_AERIAL_ACE},
                                             .level = 0,
@@ -4094,7 +4094,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_ZAPDOS,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_THUNDERBOLT, MOVE_DRILL_PECK, MOVE_THUNDER_WAVE, MOVE_AGILITY},
                                             .level = 0,
@@ -4128,7 +4128,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_HITMONLEE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_MEGA_KICK, MOVE_MIND_READER, MOVE_FOCUS_ENERGY, MOVE_HI_JUMP_KICK},
                                             .level = 0,
@@ -4149,7 +4149,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_PORYGON2,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SCOPE_LENS,
                                             .moves = {MOVE_LOCK_ON, MOVE_BLIZZARD, MOVE_CONVERSION_2, MOVE_PSYCHIC},
                                             .level = 0,
@@ -4170,7 +4170,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_SUICUNE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PETAYA_BERRY,
                                             .moves = {MOVE_SURF, MOVE_CALM_MIND, MOVE_MIRROR_COAT, MOVE_MIST},
                                             .level = 0,
@@ -4191,7 +4191,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_HOUNDOOM,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_ROAR, MOVE_WILL_O_WISP},
                                             .level = 0,
@@ -4212,7 +4212,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_STANTLER,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_CONFUSE_RAY, MOVE_SWAGGER, MOVE_PSYCH_UP, MOVE_TAKE_DOWN},
                                             .level = 0,
@@ -4233,7 +4233,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_ARTICUNO,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_NEVER_MELT_ICE,
                                             .moves = {MOVE_BLIZZARD, MOVE_SHEER_COLD, MOVE_MIST, MOVE_AERIAL_ACE},
                                             .level = 0,
@@ -4257,21 +4257,21 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0xF1, 0xFB, 0xFB, 0xFB, 0xF9, 0xF9, 0x1B, 0x1C, 0x1D, 0xE5, 0xE6, 0xEE, 0xF5, 0xFB, 0xFB, 0x08, 
-                    0xED, 0xF5, 0xF5, 0xF5, 0xFB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEB, 0xEC, 0xEC, 0xEC, 0xFB, 0xFB, 0x08, 
-                    0xF4, 0xEC, 0xEC, 0xEC, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xEB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08, 
-                    0xF1, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xFB, 0xEB, 0xFB, 0xF5, 0xF5, 0xF5, 0xF5, 0x08, 
-                    0xF1, 0xEB, 0xEC, 0xEC, 0xEC, 0xEB, 0xEC, 0xEC, 0xFB, 0xEC, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xFB, 0xFB, 0xEB, 0xFB, 0xF5, 0xFB, 0xF5, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xF5, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xF5, 0xF5, 0xF5, 0xFB, 0xFB, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xEC, 0xEC, 0xEC, 0xFB, 0xFB, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xF5, 0xF5, 0xF5, 0xF5, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08, 
-                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xF5, 0xF5, 0xF5, 0xF5, 0xFB, 0x08, 
-                    0xF1, 0xEC, 0xFB, 0xEB, 0xFB, 0xEC, 0xFB, 0xEB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xFB, 0x08, 
-                    0xF1, 0xFB, 0xFB, 0xEB, 0xFB, 0xFB, 0xFB, 0xEB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08, 
-                    0xF1, 0xFB, 0xFB, 0xEC, 0xFB, 0xFB, 0xFB, 0xEC, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08, 
+                    0xF1, 0xFB, 0xFB, 0xFB, 0xF9, 0xF9, 0x1B, 0x1C, 0x1D, 0xE5, 0xE6, 0xEE, 0xF5, 0xFB, 0xFB, 0x08,
+                    0xED, 0xF5, 0xF5, 0xF5, 0xFB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEB, 0xEC, 0xEC, 0xEC, 0xFB, 0xFB, 0x08,
+                    0xF4, 0xEC, 0xEC, 0xEC, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xEB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08,
+                    0xF1, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xF5, 0xFB, 0xEB, 0xFB, 0xF5, 0xF5, 0xF5, 0xF5, 0x08,
+                    0xF1, 0xEB, 0xEC, 0xEC, 0xEC, 0xEB, 0xEC, 0xEC, 0xFB, 0xEC, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xFB, 0xFB, 0xEB, 0xFB, 0xF5, 0xFB, 0xF5, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xF5, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xF5, 0xF5, 0xF5, 0xFB, 0xFB, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xEC, 0xEC, 0xEC, 0xFB, 0xFB, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xF5, 0xF5, 0xF5, 0xF5, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08,
+                    0xF1, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xFB, 0xEB, 0xF5, 0xF5, 0xF5, 0xF5, 0xFB, 0x08,
+                    0xF1, 0xEC, 0xFB, 0xEB, 0xFB, 0xEC, 0xFB, 0xEB, 0xFB, 0xEC, 0xEC, 0xEC, 0xEC, 0xEC, 0xFB, 0x08,
+                    0xF1, 0xFB, 0xFB, 0xEB, 0xFB, 0xFB, 0xFB, 0xEB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08,
+                    0xF1, 0xFB, 0xFB, 0xEC, 0xFB, 0xFB, 0xFB, 0xEC, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0xFB, 0x08,
                     0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
                 },
                 .collisionData = {0x0381, 0x3F9, 0xF041, 0x41, 0x7F5F, 0x4401, 0x4541, 0x5579, 0x5541, 0x555F, 0x5541, 0x5541, 0x557D, 0x1101, 0x1101, 0xFFFF},
@@ -4310,7 +4310,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SNORLAX,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_MEGA_KICK, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK, MOVE_EARTHQUAKE},
                                             .level = 0,
@@ -4332,7 +4332,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_MILTANK,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_ATTRACT, MOVE_MILK_DRINK},
                                             .level = 0,
@@ -4354,7 +4354,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_URSARING,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_DOUBLE_EDGE, MOVE_CRUNCH, MOVE_BRICK_BREAK, MOVE_AERIAL_ACE},
                                             .level = 0,
@@ -4376,7 +4376,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_SLAKING,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_CHESTO_BERRY,
                                             .moves = {MOVE_HYPER_BEAM, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK, MOVE_REST},
                                             .level = 0,
@@ -4398,7 +4398,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_KANGASKHAN,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_MEGA_KICK, MOVE_SHADOW_BALL, MOVE_ATTRACT, MOVE_FAKE_OUT},
                                             .level = 0,
@@ -4420,7 +4420,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_ZANGOOSE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SCOPE_LENS,
                                             .moves = {MOVE_CRUSH_CLAW, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK, MOVE_ROAR},
                                             .level = 0,
@@ -4455,7 +4455,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SLOWKING,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_PSYCHIC, MOVE_SURF, MOVE_ICE_BEAM, MOVE_SKILL_SWAP},
                                             .level = 0,
@@ -4477,7 +4477,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_ESPEON,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_PSYCHIC, MOVE_BITE, MOVE_CALM_MIND, MOVE_REFLECT},
                                             .level = 0,
@@ -4499,7 +4499,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_STARMIE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SHELL_BELL,
                                             .moves = {MOVE_PSYCHIC, MOVE_SURF, MOVE_THUNDERBOLT, MOVE_ICE_BEAM},
                                             .level = 0,
@@ -4521,7 +4521,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH},
                                             .level = 0,
@@ -4543,7 +4543,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_GARDEVOIR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SALAC_BERRY,
                                             .moves = {MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_MAGICAL_LEAF, MOVE_DESTINY_BOND},
                                             .level = 0,
@@ -4565,7 +4565,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_ALAKAZAM,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_PSYCHIC, MOVE_RECOVER, MOVE_THUNDER_WAVE, MOVE_ATTRACT},
                                             .level = 0,
@@ -4590,21 +4590,21 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x1B, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x31, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x2C, 0x39, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x31, 0x3B, 0x08, 0x08, 0x08, 0x08, 0x08, 0x3B, 0x08, 0x08, 0x08, 0x08, 0x08, 0x3B, 0x3B, 0x08, 
-                    0x69, 0x73, 0x08, 0x4D, 0x4D, 0x4D, 0x4D, 0xD1, 0x4D, 0x4D, 0x4D, 0x4D, 0x08, 0x69, 0x73, 0x08, 
-                    0x40, 0x3B, 0x08, 0x55, 0x55, 0x55, 0x55, 0xD1, 0x55, 0x55, 0x55, 0x55, 0x08, 0x31, 0x41, 0x08, 
-                    0x69, 0x41, 0x08, 0xC5, 0xD9, 0xD9, 0xD9, 0x9A, 0xD9, 0xD9, 0xD9, 0xC6, 0x08, 0x41, 0x73, 0x08, 
-                    0x69, 0x3B, 0x08, 0xD4, 0xDB, 0x9B, 0x73, 0x73, 0x73, 0x9B, 0xDB, 0xCC, 0x08, 0x31, 0x73, 0x08, 
-                    0x69, 0x3B, 0x08, 0xCD, 0x9B, 0x73, 0x73, 0x44, 0x73, 0x73, 0x9B, 0xD5, 0x08, 0x31, 0x73, 0x08, 
-                    0x69, 0x3B, 0x08, 0xD4, 0xDB, 0x9B, 0x73, 0x73, 0x73, 0x9B, 0xDB, 0xCC, 0x08, 0x31, 0x73, 0x08, 
-                    0x69, 0x41, 0x08, 0xD1, 0xDB, 0xDB, 0xDB, 0x9B, 0xDB, 0xDB, 0xDB, 0xDB, 0x08, 0x41, 0x73, 0x08, 
-                    0x40, 0x3B, 0x08, 0x08, 0xC7, 0xC7, 0xDB, 0xDB, 0xDB, 0xC7, 0xC7, 0x08, 0x08, 0x31, 0x41, 0x08, 
-                    0x69, 0x3B, 0x4D, 0x4D, 0x67, 0x67, 0xDB, 0xDB, 0xDB, 0x67, 0x67, 0x4D, 0x4D, 0x31, 0x73, 0x08, 
-                    0x69, 0x3B, 0x55, 0x55, 0xD7, 0xD7, 0xD1, 0xDB, 0xDB, 0xD7, 0xD7, 0x55, 0x55, 0x31, 0x73, 0x08, 
-                    0x69, 0x3B, 0x39, 0x39, 0x39, 0x39, 0x3A, 0x3B, 0x3B, 0x39, 0x39, 0x39, 0x39, 0x3A, 0x73, 0x08, 
-                    0x69, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x1B, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x31, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x2C, 0x39, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x31, 0x3B, 0x08, 0x08, 0x08, 0x08, 0x08, 0x3B, 0x08, 0x08, 0x08, 0x08, 0x08, 0x3B, 0x3B, 0x08,
+                    0x69, 0x73, 0x08, 0x4D, 0x4D, 0x4D, 0x4D, 0xD1, 0x4D, 0x4D, 0x4D, 0x4D, 0x08, 0x69, 0x73, 0x08,
+                    0x40, 0x3B, 0x08, 0x55, 0x55, 0x55, 0x55, 0xD1, 0x55, 0x55, 0x55, 0x55, 0x08, 0x31, 0x41, 0x08,
+                    0x69, 0x41, 0x08, 0xC5, 0xD9, 0xD9, 0xD9, 0x9A, 0xD9, 0xD9, 0xD9, 0xC6, 0x08, 0x41, 0x73, 0x08,
+                    0x69, 0x3B, 0x08, 0xD4, 0xDB, 0x9B, 0x73, 0x73, 0x73, 0x9B, 0xDB, 0xCC, 0x08, 0x31, 0x73, 0x08,
+                    0x69, 0x3B, 0x08, 0xCD, 0x9B, 0x73, 0x73, 0x44, 0x73, 0x73, 0x9B, 0xD5, 0x08, 0x31, 0x73, 0x08,
+                    0x69, 0x3B, 0x08, 0xD4, 0xDB, 0x9B, 0x73, 0x73, 0x73, 0x9B, 0xDB, 0xCC, 0x08, 0x31, 0x73, 0x08,
+                    0x69, 0x41, 0x08, 0xD1, 0xDB, 0xDB, 0xDB, 0x9B, 0xDB, 0xDB, 0xDB, 0xDB, 0x08, 0x41, 0x73, 0x08,
+                    0x40, 0x3B, 0x08, 0x08, 0xC7, 0xC7, 0xDB, 0xDB, 0xDB, 0xC7, 0xC7, 0x08, 0x08, 0x31, 0x41, 0x08,
+                    0x69, 0x3B, 0x4D, 0x4D, 0x67, 0x67, 0xDB, 0xDB, 0xDB, 0x67, 0x67, 0x4D, 0x4D, 0x31, 0x73, 0x08,
+                    0x69, 0x3B, 0x55, 0x55, 0xD7, 0xD7, 0xD1, 0xDB, 0xDB, 0xD7, 0xD7, 0x55, 0x55, 0x31, 0x73, 0x08,
+                    0x69, 0x3B, 0x39, 0x39, 0x39, 0x39, 0x3A, 0x3B, 0x3B, 0x39, 0x39, 0x39, 0x39, 0x3A, 0x73, 0x08,
+                    0x69, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x73, 0x08,
                     0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
                 },
                 .collisionData = {0x0381, 0x0201, 0x3EF9, 0x3EF9, 0x3EF9, 0x2009, 0x3019, 0x2009, 0x3019, 0x2009, 0x3019, 0x3019, 0x3C79, 0x1, 0x1, 0xFFFF},
@@ -4632,7 +4632,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SWELLOW,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_AERIAL_ACE, MOVE_AGILITY, MOVE_FACADE, MOVE_ATTRACT},
                                             .level = 0,
@@ -4654,7 +4654,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_MACHAMP,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_LOW_KICK, MOVE_ROCK_SLIDE, MOVE_FACADE, MOVE_ATTRACT},
                                             .level = 0,
@@ -4676,7 +4676,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_URSARING,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_PROTECT, MOVE_ROCK_SLIDE, MOVE_FACADE, MOVE_ATTRACT},
                                             .level = 0,
@@ -4698,7 +4698,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_KINGLER,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PERSIM_BERRY,
                                             .moves = {MOVE_RETURN, MOVE_PROTECT, MOVE_CRABHAMMER, MOVE_ATTRACT},
                                             .level = 0,
@@ -4720,7 +4720,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_TYRANITAR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PERSIM_BERRY,
                                             .moves = {MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_ATTRACT},
                                             .level = 0,
@@ -4742,7 +4742,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_DRAGONITE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PERSIM_BERRY,
                                             .moves = {MOVE_BODY_SLAM, MOVE_THUNDER_WAVE, MOVE_EARTHQUAKE, MOVE_ATTRACT},
                                             .level = 0,
@@ -4777,7 +4777,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_JOLTEON,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_THUNDERBOLT, MOVE_THUNDER_WAVE, MOVE_ATTRACT, MOVE_SWAGGER},
                                             .level = 0,
@@ -4799,7 +4799,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_ALAKAZAM,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_KINGS_ROCK,
                                             .moves = {MOVE_PSYCHIC, MOVE_ICE_PUNCH, MOVE_ATTRACT, MOVE_SWAGGER},
                                             .level = 0,
@@ -4821,7 +4821,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_STARMIE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SCOPE_LENS,
                                             .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_CONFUSE_RAY, MOVE_SWAGGER},
                                             .level = 0,
@@ -4843,7 +4843,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DUSCLOPS,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_PURSUIT, MOVE_PROTECT, MOVE_ATTRACT, MOVE_WILL_O_WISP},
                                             .level = 0,
@@ -4865,7 +4865,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_NINETALES,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_WHITE_HERB,
                                             .moves = {MOVE_OVERHEAT, MOVE_CONFUSE_RAY, MOVE_WILL_O_WISP, MOVE_ATTRACT},
                                             .level = 0,
@@ -4887,7 +4887,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_BANETTE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_SHADOW_BALL, MOVE_FAINT_ATTACK, MOVE_ATTRACT, MOVE_WILL_O_WISP},
                                             .level = 0,
@@ -4912,21 +4912,21 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x91, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x78, 0x08, 
-                    0x91, 0x46, 0x9B, 0x7C, 0x9B, 0x9B, 0x9B, 0x7D, 0x9B, 0x7C, 0x9B, 0x7B, 0x9B, 0x7A, 0x9B, 0x08, 
-                    0x91, 0x46, 0x7D, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08, 
-                    0x91, 0x46, 0x9B, 0x7E, 0x9B, 0x9B, 0x9B, 0x7D, 0x9B, 0x7E, 0x9B, 0xB3, 0x9B, 0x9B, 0x9B, 0x08, 
-                    0x91, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x9B, 0x08, 
-                    0x91, 0x46, 0x9B, 0x7D, 0x9B, 0x7C, 0x9B, 0x7B, 0x9B, 0x7A, 0x9B, 0x7C, 0x9B, 0x9B, 0x9B, 0x08, 
-                    0x91, 0x46, 0x9B, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08, 
-                    0x91, 0x46, 0x9B, 0x7C, 0x9B, 0x7D, 0x9B, 0x7E, 0x9B, 0x9B, 0x9B, 0x7D, 0x9B, 0x7E, 0x9B, 0x08, 
-                    0x91, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0xB3, 0x08, 
-                    0x91, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0x9B, 0x08, 
-                    0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xDB, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0x08, 
-                    0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0x08, 
-                    0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xDB, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0x08, 
-                    0x91, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0x9B, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x38, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x91, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x78, 0x08,
+                    0x91, 0x46, 0x9B, 0x7C, 0x9B, 0x9B, 0x9B, 0x7D, 0x9B, 0x7C, 0x9B, 0x7B, 0x9B, 0x7A, 0x9B, 0x08,
+                    0x91, 0x46, 0x7D, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08,
+                    0x91, 0x46, 0x9B, 0x7E, 0x9B, 0x9B, 0x9B, 0x7D, 0x9B, 0x7E, 0x9B, 0xB3, 0x9B, 0x9B, 0x9B, 0x08,
+                    0x91, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x9B, 0x08,
+                    0x91, 0x46, 0x9B, 0x7D, 0x9B, 0x7C, 0x9B, 0x7B, 0x9B, 0x7A, 0x9B, 0x7C, 0x9B, 0x9B, 0x9B, 0x08,
+                    0x91, 0x46, 0x9B, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x08,
+                    0x91, 0x46, 0x9B, 0x7C, 0x9B, 0x7D, 0x9B, 0x7E, 0x9B, 0x9B, 0x9B, 0x7D, 0x9B, 0x7E, 0x9B, 0x08,
+                    0x91, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0x46, 0xB3, 0x08,
+                    0x91, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0x9B, 0x08,
+                    0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xDB, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0x08,
+                    0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0x08,
+                    0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xDB, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0x08,
+                    0x91, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0xDB, 0xD6, 0x96, 0x9B, 0x9B, 0x96, 0xD6, 0x9B, 0x08,
                     0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
                 },
                 .collisionData = {0x0381, 0x7FFD, 0x4001, 0x5FFF, 0x4001, 0x7FFD, 0x4001, 0x5FFF, 0x4001, 0x7FFD, 0x1, 0x1, 0x1, 0x1, 0x1, 0xFFFF},
@@ -4954,7 +4954,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_WOBBUFFET,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_MIRROR_COAT, MOVE_COUNTER, MOVE_SAFEGUARD, MOVE_ENCORE},
                                             .level = 0,
@@ -4976,7 +4976,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_EXPLOUD,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_CHESTO_BERRY,
                                             .moves = {MOVE_HYPER_VOICE, MOVE_COUNTER, MOVE_REST, MOVE_ROCK_SLIDE},
                                             .level = 0,
@@ -4998,7 +4998,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_CROBAT,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_KINGS_ROCK,
                                             .moves = {MOVE_MEAN_LOOK, MOVE_CONFUSE_RAY, MOVE_AERIAL_ACE, MOVE_TOXIC},
                                             .level = 0,
@@ -5020,7 +5020,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DUGTRIO,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_DOUBLE_TEAM, MOVE_PROTECT, MOVE_RETURN, MOVE_SLUDGE_BOMB},
                                             .level = 0,
@@ -5042,7 +5042,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_ELECTRODE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_PETAYA_BERRY,
                                             .moves = {MOVE_TORMENT, MOVE_MIRROR_COAT, MOVE_THUNDERBOLT, MOVE_LIGHT_SCREEN},
                                             .level = 0,
@@ -5064,7 +5064,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_CONFUSE_RAY, MOVE_MEAN_LOOK, MOVE_GIGA_DRAIN, MOVE_WILL_O_WISP},
                                             .level = 0,
@@ -5099,7 +5099,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_LAPRAS,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_PERISH_SONG, MOVE_SING},
                                             .level = 0,
@@ -5121,7 +5121,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_ABSOL,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_PERISH_SONG, MOVE_DOUBLE_EDGE, MOVE_PROTECT, MOVE_TORMENT},
                                             .level = 0,
@@ -5143,7 +5143,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_ALTARIA,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_KINGS_ROCK,
                                             .moves = {MOVE_PERISH_SONG, MOVE_PROTECT, MOVE_DRAGON_CLAW, MOVE_FIRE_BLAST},
                                             .level = 0,
@@ -5165,7 +5165,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DEWGONG,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_CHESTO_BERRY,
                                             .moves = {MOVE_ICE_BEAM, MOVE_SIGNAL_BEAM, MOVE_REST, MOVE_PERISH_SONG},
                                             .level = 0,
@@ -5187,7 +5187,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_POLITOED,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_HYDRO_PUMP, MOVE_BLIZZARD, MOVE_MIND_READER, MOVE_PERISH_SONG},
                                             .level = 0,
@@ -5209,7 +5209,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_MAROWAK,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_PERISH_SONG, MOVE_EARTHQUAKE, MOVE_COUNTER, MOVE_PROTECT},
                                             .level = 0,
@@ -5234,21 +5234,21 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0xD1, 0xDB, 0xDB, 0xDB, 0xD9, 0xD9, 0x1B, 0x14, 0x15, 0x98, 0x99, 0x9A, 0x9B, 0x9B, 0x9B, 0x08, 
-                    0xD1, 0xDB, 0xDB, 0xDB, 0xD5, 0xD5, 0xC3, 0xF9, 0x86, 0x8E, 0x95, 0x9B, 0x9B, 0x9B, 0x9B, 0x08, 
-                    0xD1, 0xDB, 0xDB, 0xD5, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x95, 0x9B, 0x9B, 0x9B, 0x08, 
-                    0xD1, 0xDB, 0xD5, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x95, 0x9B, 0x9B, 0x08, 
-                    0xD1, 0xDB, 0xCB, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x9B, 0x08, 
-                    0xD1, 0xD5, 0xCB, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0x8C, 0x8B, 0x8B, 0x8B, 0x8B, 0x95, 0x9B, 0x08, 
-                    0xD1, 0xCB, 0xCB, 0xCB, 0xCB, 0xCC, 0xCC, 0xFB, 0xFB, 0x8C, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x08, 
-                    0xD1, 0xCC, 0xCC, 0xCC, 0xCC, 0xFB, 0xF5, 0xFB, 0xF5, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x08, 
-                    0xD1, 0xD5, 0xD5, 0xD5, 0xD5, 0xFB, 0xEC, 0xFB, 0xEC, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x08, 
-                    0xD1, 0xCB, 0xCB, 0xCB, 0xCB, 0xF5, 0xF5, 0xFB, 0xFB, 0xF5, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x08, 
-                    0xD1, 0xCC, 0xCB, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x8C, 0x9B, 0x08, 
-                    0xD1, 0xDB, 0xCB, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0xF5, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x9B, 0x08, 
-                    0xD1, 0xDB, 0xCC, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x8C, 0x9B, 0x9B, 0x08, 
-                    0xD1, 0xDB, 0xDB, 0xCC, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8C, 0x9B, 0x9B, 0x9B, 0x08, 
-                    0xD1, 0xDB, 0xDB, 0xDB, 0xCC, 0xCC, 0xCB, 0xFB, 0x8C, 0x8C, 0x8C, 0x9B, 0x9B, 0x9B, 0x9B, 0x08, 
+                    0xD1, 0xDB, 0xDB, 0xDB, 0xD9, 0xD9, 0x1B, 0x14, 0x15, 0x98, 0x99, 0x9A, 0x9B, 0x9B, 0x9B, 0x08,
+                    0xD1, 0xDB, 0xDB, 0xDB, 0xD5, 0xD5, 0xC3, 0xF9, 0x86, 0x8E, 0x95, 0x9B, 0x9B, 0x9B, 0x9B, 0x08,
+                    0xD1, 0xDB, 0xDB, 0xD5, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x95, 0x9B, 0x9B, 0x9B, 0x08,
+                    0xD1, 0xDB, 0xD5, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x95, 0x9B, 0x9B, 0x08,
+                    0xD1, 0xDB, 0xCB, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x9B, 0x08,
+                    0xD1, 0xD5, 0xCB, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0x8C, 0x8B, 0x8B, 0x8B, 0x8B, 0x95, 0x9B, 0x08,
+                    0xD1, 0xCB, 0xCB, 0xCB, 0xCB, 0xCC, 0xCC, 0xFB, 0xFB, 0x8C, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x08,
+                    0xD1, 0xCC, 0xCC, 0xCC, 0xCC, 0xFB, 0xF5, 0xFB, 0xF5, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x08,
+                    0xD1, 0xD5, 0xD5, 0xD5, 0xD5, 0xFB, 0xEC, 0xFB, 0xEC, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x08,
+                    0xD1, 0xCB, 0xCB, 0xCB, 0xCB, 0xF5, 0xF5, 0xFB, 0xFB, 0xF5, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x08,
+                    0xD1, 0xCC, 0xCB, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x8C, 0x9B, 0x08,
+                    0xD1, 0xDB, 0xCB, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0xF5, 0x8B, 0x8B, 0x8B, 0x8B, 0x9B, 0x9B, 0x08,
+                    0xD1, 0xDB, 0xCC, 0xCB, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8B, 0x8C, 0x9B, 0x9B, 0x08,
+                    0xD1, 0xDB, 0xDB, 0xCC, 0xCB, 0xCB, 0xCB, 0xFB, 0x8B, 0x8B, 0x8B, 0x8C, 0x9B, 0x9B, 0x9B, 0x08,
+                    0xD1, 0xDB, 0xDB, 0xDB, 0xCC, 0xCC, 0xCB, 0xFB, 0x8C, 0x8C, 0x8C, 0x9B, 0x9B, 0x9B, 0x9B, 0x08,
                     0xD1, 0xDB, 0xDB, 0xDB, 0xDB, 0xDB, 0xCC, 0xFB, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x9B, 0x08,
                 },
                 .collisionData = {0x0381, 0x0201, 0xEE1, 0x1EF1, 0x3EF9, 0x3EF9, 0x7E7D, 0x783D, 0x2BD, 0x783D, 0x7E7D, 0x3E79, 0x3EF9, 0x1EF1, 0xEE1, 0x201},
@@ -5276,7 +5276,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_FORRETRESS,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_EXPLOSION, MOVE_EARTHQUAKE, MOVE_ATTRACT, MOVE_SPIKES},
                                             .level = 0,
@@ -5298,7 +5298,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_ELECTRODE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SALAC_BERRY,
                                             .moves = {MOVE_EXPLOSION, MOVE_THUNDERBOLT, MOVE_SWIFT, MOVE_LIGHT_SCREEN},
                                             .level = 0,
@@ -5319,7 +5319,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_EXEGGUTOR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SHELL_BELL,
                                             .moves = {MOVE_EXPLOSION, MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_SOLAR_BEAM},
                                             .level = 0,
@@ -5340,7 +5340,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DUSCLOPS,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_IMPRISON, MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_EARTHQUAKE},
                                             .level = 0,
@@ -5362,7 +5362,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_NINETALES,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_WHITE_HERB,
                                             .moves = {MOVE_IMPRISON, MOVE_PROTECT, MOVE_OVERHEAT, MOVE_CONFUSE_RAY},
                                             .level = 0,
@@ -5383,7 +5383,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_BANETTE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_IMPRISON, MOVE_PROTECT, MOVE_THUNDERBOLT, MOVE_THUNDER},
                                             .level = 0,
@@ -5417,7 +5417,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SALAMENCE,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SHELL_BELL,
                                             .moves = {MOVE_ROCK_SLIDE, MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_AERIAL_ACE},
                                             .level = 0,
@@ -5438,7 +5438,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_PSYCHIC, MOVE_GIGA_DRAIN, MOVE_WILL_O_WISP, MOVE_DESTINY_BOND},
                                             .level = 0,
@@ -5459,7 +5459,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_GYARADOS,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_DRAGON_DANCE, MOVE_HYPER_BEAM, MOVE_BITE, MOVE_EARTHQUAKE},
                                             .level = 0,
@@ -5480,7 +5480,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_SALAC_BERRY,
                                             .moves = {MOVE_EXPLOSION, MOVE_MEAN_LOOK, MOVE_SHADOW_BALL, MOVE_CONFUSE_RAY},
                                             .level = 0,
@@ -5501,7 +5501,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_DUSCLOPS,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_MEAN_LOOK, MOVE_CONFUSE_RAY, MOVE_WILL_O_WISP, MOVE_SHADOW_BALL},
                                             .level = 0,
@@ -5523,7 +5523,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_MISDREAVUS,
+                                            .species = SPECIES_PINECO,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_MEAN_LOOK, MOVE_CONFUSE_RAY, MOVE_PERISH_SONG, MOVE_SHADOW_BALL},
                                             .level = 0,
@@ -5548,21 +5548,21 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                 },
             .display = {
                 .metatileData = {
-                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x39, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08, 
-                    0x96, 0xFB, 0xF6, 0xFD, 0xF6, 0xF6, 0xFB, 0x46, 0xFB, 0xF6, 0xF6, 0xFD, 0xF6, 0xFB, 0x9B, 0x08, 
-                    0xFB, 0x9B, 0xFB, 0xF6, 0xFB, 0xFB, 0xFB, 0x46, 0xFB, 0xFB, 0xFB, 0xF6, 0xFB, 0x9B, 0xFB, 0x08, 
-                    0xF6, 0xFB, 0x9B, 0xFB, 0xFB, 0x46, 0x46, 0x9B, 0x46, 0x46, 0xFB, 0xFB, 0x9B, 0xFB, 0xF6, 0x08, 
-                    0xFD, 0xF6, 0xFB, 0x9B, 0x46, 0x36, 0x36, 0x9B, 0x36, 0x36, 0x46, 0x9B, 0xFB, 0xF6, 0xFD, 0x08, 
-                    0xF6, 0xFB, 0xFB, 0x46, 0x9B, 0x46, 0x46, 0xDB, 0x46, 0x46, 0x9B, 0x46, 0xFB, 0xFB, 0xF6, 0x08, 
-                    0xF6, 0xFB, 0x46, 0x36, 0x46, 0x9B, 0xDB, 0xD6, 0xDB, 0x9B, 0x46, 0x36, 0x46, 0xFB, 0xF6, 0x08, 
-                    0xFB, 0xFB, 0x46, 0x36, 0x9B, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0x9B, 0x36, 0x46, 0xFB, 0xFB, 0x08, 
-                    0x96, 0x9B, 0x9B, 0x9B, 0x9B, 0xD6, 0xD6, 0x96, 0xD6, 0xD6, 0xDB, 0x9B, 0x9B, 0x9B, 0x96, 0x08, 
-                    0xFB, 0xFB, 0x46, 0x36, 0x9B, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0x9B, 0x36, 0x46, 0xFB, 0xFB, 0x08, 
-                    0xF6, 0xFB, 0x46, 0x36, 0x46, 0x9B, 0xDB, 0xD6, 0xDB, 0x9B, 0x46, 0x36, 0x46, 0xFB, 0xF6, 0x08, 
-                    0xF6, 0xFB, 0xFB, 0x46, 0x9B, 0x46, 0x46, 0xDB, 0x46, 0x46, 0x9B, 0x46, 0xFB, 0xFB, 0xF6, 0x08, 
-                    0xFD, 0xF6, 0xFB, 0x9B, 0x46, 0x36, 0x36, 0x9B, 0x36, 0x36, 0x46, 0x9B, 0xFB, 0xF6, 0xFD, 0x08, 
-                    0xF6, 0xFB, 0x9B, 0xFB, 0xFB, 0x46, 0x46, 0x9B, 0x46, 0x46, 0xFB, 0xFB, 0x9B, 0xFB, 0xF6, 0x08, 
-                    0xFB, 0x9B, 0xFB, 0xF6, 0xFB, 0xFB, 0xFB, 0x46, 0xFB, 0xFB, 0xFB, 0xF6, 0xFB, 0x9B, 0xFB, 0x08, 
+                    0x31, 0x3B, 0x3B, 0x3B, 0x39, 0x39, 0x13, 0x14, 0x15, 0x39, 0x39, 0x3A, 0x3B, 0x3B, 0x3B, 0x08,
+                    0x96, 0xFB, 0xF6, 0xFD, 0xF6, 0xF6, 0xFB, 0x46, 0xFB, 0xF6, 0xF6, 0xFD, 0xF6, 0xFB, 0x9B, 0x08,
+                    0xFB, 0x9B, 0xFB, 0xF6, 0xFB, 0xFB, 0xFB, 0x46, 0xFB, 0xFB, 0xFB, 0xF6, 0xFB, 0x9B, 0xFB, 0x08,
+                    0xF6, 0xFB, 0x9B, 0xFB, 0xFB, 0x46, 0x46, 0x9B, 0x46, 0x46, 0xFB, 0xFB, 0x9B, 0xFB, 0xF6, 0x08,
+                    0xFD, 0xF6, 0xFB, 0x9B, 0x46, 0x36, 0x36, 0x9B, 0x36, 0x36, 0x46, 0x9B, 0xFB, 0xF6, 0xFD, 0x08,
+                    0xF6, 0xFB, 0xFB, 0x46, 0x9B, 0x46, 0x46, 0xDB, 0x46, 0x46, 0x9B, 0x46, 0xFB, 0xFB, 0xF6, 0x08,
+                    0xF6, 0xFB, 0x46, 0x36, 0x46, 0x9B, 0xDB, 0xD6, 0xDB, 0x9B, 0x46, 0x36, 0x46, 0xFB, 0xF6, 0x08,
+                    0xFB, 0xFB, 0x46, 0x36, 0x9B, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0x9B, 0x36, 0x46, 0xFB, 0xFB, 0x08,
+                    0x96, 0x9B, 0x9B, 0x9B, 0x9B, 0xD6, 0xD6, 0x96, 0xD6, 0xD6, 0xDB, 0x9B, 0x9B, 0x9B, 0x96, 0x08,
+                    0xFB, 0xFB, 0x46, 0x36, 0x9B, 0xDB, 0xD6, 0xD6, 0xD6, 0xDB, 0x9B, 0x36, 0x46, 0xFB, 0xFB, 0x08,
+                    0xF6, 0xFB, 0x46, 0x36, 0x46, 0x9B, 0xDB, 0xD6, 0xDB, 0x9B, 0x46, 0x36, 0x46, 0xFB, 0xF6, 0x08,
+                    0xF6, 0xFB, 0xFB, 0x46, 0x9B, 0x46, 0x46, 0xDB, 0x46, 0x46, 0x9B, 0x46, 0xFB, 0xFB, 0xF6, 0x08,
+                    0xFD, 0xF6, 0xFB, 0x9B, 0x46, 0x36, 0x36, 0x9B, 0x36, 0x36, 0x46, 0x9B, 0xFB, 0xF6, 0xFD, 0x08,
+                    0xF6, 0xFB, 0x9B, 0xFB, 0xFB, 0x46, 0x46, 0x9B, 0x46, 0x46, 0xFB, 0xFB, 0x9B, 0xFB, 0xF6, 0x08,
+                    0xFB, 0x9B, 0xFB, 0xF6, 0xFB, 0xFB, 0xFB, 0x46, 0xFB, 0xFB, 0xFB, 0xF6, 0xFB, 0x9B, 0xFB, 0x08,
                     0x96, 0xFB, 0xF6, 0xFD, 0xF6, 0xF6, 0xFB, 0x46, 0xFB, 0xF6, 0xF6, 0xFD, 0xF6, 0xFB, 0x9B, 0x08,
                 },
                 .collisionData = {0x0381, 0x0101, 0x0101, 0x6C1, 0x0821, 0x16D1, 0x2829, 0x2009, 0x1, 0x2009, 0x2829, 0x16D1, 0x0821, 0x6C1, 0x0101, 0x101},

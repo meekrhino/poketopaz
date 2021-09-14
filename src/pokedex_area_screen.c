@@ -92,7 +92,7 @@ static void DestroyAreaMarkerSprites(void);
 static const u32 sAreaGlow_Pal[] = INCBIN_U32("graphics/pokedex/area_glow.gbapal");
 static const u32 sAreaGlow_Gfx[] = INCBIN_U32("graphics/pokedex/area_glow.4bpp.lz");
 
-static const u16 sSpeciesHiddenFromAreaScreen[] = { SPECIES_WYNAUT };
+static const u16 sSpeciesHiddenFromAreaScreen[] = { SPECIES_PINECO };
 
 static const u16 sMovingRegionMapSections[3] =
 {
@@ -103,7 +103,7 @@ static const u16 sMovingRegionMapSections[3] =
 
 static const u16 sFeebasData[][3] =
 {
-    {SPECIES_FEEBAS, MAP_GROUP(ROUTE119), MAP_NUM(ROUTE119)},
+    {SPECIES_PINECO, MAP_GROUP(ROUTE119), MAP_NUM(ROUTE119)},
     {NUM_SPECIES}
 };
 
@@ -527,7 +527,7 @@ static void BuildAreaGlowTilemap(void)
                     sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH] |= GLOW_TILE_BOTTOM;
                 if (y != AREA_SCREEN_HEIGHT - 1 && sPokedexAreaScreen->areaGlowTilemap[j + AREA_SCREEN_WIDTH] != GLOW_TILE_FULL)
                     sPokedexAreaScreen->areaGlowTilemap[j + AREA_SCREEN_WIDTH] |= GLOW_TILE_TOP;
-                
+
                 // Diagonals
                 if (x != 0 && y != 0 && sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH - 1] != GLOW_TILE_FULL)
                     sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH - 1] |= GLOW_TILE_BOTTOM_RIGHT;

@@ -198,12 +198,12 @@ static const struct WindowTemplate sWindowTemplates_LinkBattleSave[] =
 };
 
 static const struct WindowTemplate sSaveInfoWindowTemplate = {
-    .bg = 0, 
-    .tilemapLeft = 1, 
-    .tilemapTop = 1, 
-    .width = 14, 
-    .height = 10, 
-    .paletteNum = 15, 
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = 14,
+    .height = 10,
+    .paletteNum = 15,
     .baseBlock = 8
 };
 
@@ -583,7 +583,7 @@ static bool8 HandleStartMenuInput(void)
         PlaySE(SE_SELECT);
         if (sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void == StartMenuPokedexCallback)
         {
-            if (GetNationalPokedexCount(FLAG_GET_SEEN) == 0)
+            if (GetPokedexCount(FLAG_GET_SEEN) == 0)
                 return FALSE;
         }
 

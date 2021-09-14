@@ -51,10 +51,10 @@ NavelRock_Bottom_EventScript_Lugia::
 	delay 30
 	delay 50
 	waitse
-	playmoncry SPECIES_LUGIA, 2
+	playmoncry SPECIES_PINECO, 2
 	waitmoncry
 	delay 20
-	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8004, SPECIES_PINECO
 	setvar VAR_0x8005, 70  @ level
 	setvar VAR_0x8006, ITEM_NONE
 	special CreateEventLegalEnemyMon
@@ -75,11 +75,11 @@ NavelRock_Bottom_EventScript_Lugia::
 
 NavelRock_Bottom_EventScript_DefeatedLugia::
 	setflag FLAG_DEFEATED_LUGIA
-	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 NavelRock_Bottom_EventScript_RanFromLugia::
-	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end

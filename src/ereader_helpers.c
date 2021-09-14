@@ -87,7 +87,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
             [1] = NULL_BATTLE_TOWER_POKEMON,
             [2] = NULL_BATTLE_TOWER_POKEMON,
             [3] = {
-                .species = SPECIES_SWALOT,
+                .species = SPECIES_MUK,
                 .heldItem = ITEM_SHELL_BELL,
                 .moves = { MOVE_SLUDGE_BOMB, MOVE_SHADOW_BALL, MOVE_PAIN_SPLIT, MOVE_YAWN },
                 .level = 0,
@@ -111,7 +111,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = 255
             },
             [4] = {
-                .species = SPECIES_DUSTOX,
+                .species = SPECIES_PYREIGN,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .moves = { MOVE_SILVER_WIND, MOVE_SLUDGE_BOMB, MOVE_SHADOW_BALL, MOVE_GIGA_DRAIN },
                 .level = 0,
@@ -197,7 +197,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = 255
             },
             [4] = {
-                .species = SPECIES_SWELLOW,
+                .species = SPECIES_CRAGOYLE,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .moves = { MOVE_FACADE, MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_DOUBLE_TEAM },
                 .level = 0,
@@ -221,7 +221,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = 255
             },
             [5] = {
-                .species = SPECIES_WHISCASH,
+                .species = SPECIES_REEFRAIN,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .moves = { MOVE_SURF, MOVE_EARTHQUAKE, MOVE_AMNESIA, MOVE_REST },
                 .level = 0,
@@ -259,7 +259,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
             [1] = NULL_BATTLE_TOWER_POKEMON,
             [2] = NULL_BATTLE_TOWER_POKEMON,
             [3] = {
-                .species = SPECIES_DELCATTY,
+                .species = SPECIES_PERSIAN,
                 .heldItem = ITEM_LUM_BERRY,
                 .moves = { MOVE_SING, MOVE_BODY_SLAM, MOVE_SHADOW_BALL, MOVE_IRON_TAIL },
                 .level = 0,
@@ -283,7 +283,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = 255
             },
             [4] = {
-                .species = SPECIES_ROSELIA,
+                .species = SPECIES_DIONARE,
                 .heldItem = ITEM_LEFTOVERS,
                 .moves = { MOVE_GIGA_DRAIN, MOVE_GRASS_WHISTLE, MOVE_TOXIC, MOVE_LEECH_SEED },
                 .level = 0,
@@ -307,7 +307,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = 255
             },
             [5] = {
-                .species = SPECIES_BEAUTIFLY,
+                .species = SPECIES_EAGLAIR,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .moves = { MOVE_SILVER_WIND, MOVE_AERIAL_ACE, MOVE_ATTRACT, MOVE_PSYCHIC },
                 .level = 0,
@@ -345,7 +345,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
             [1] = NULL_BATTLE_TOWER_POKEMON,
             [2] = NULL_BATTLE_TOWER_POKEMON,
             [3] = {
-                .species = SPECIES_MAWILE,
+                .species = SPECIES_FERRIAN,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .moves = { MOVE_CRUNCH, MOVE_FLAMETHROWER, MOVE_THUNDER_PUNCH, MOVE_COMET_PUNCH },
                 .level = 0,
@@ -369,7 +369,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = 255
             },
             [4] = {
-                .species = SPECIES_SHARPEDO,
+                .species = SPECIES_QUIISORD,
                 .heldItem = ITEM_SCOPE_LENS,
                 .moves = { MOVE_SURF, MOVE_CRUNCH, MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE },
                 .level = 0,
@@ -393,7 +393,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = 255
             },
             [5] = {
-                .species = SPECIES_BANETTE,
+                .species = SPECIES_PHANTERN,
                 .heldItem = ITEM_LUM_BERRY,
                 .moves = { MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_THUNDERBOLT, MOVE_WILL_O_WISP },
                 .level = 0,
@@ -745,7 +745,7 @@ int EReaderHandleTransfer(u8 mode, size_t size, const void * data, void * recvBu
     }
 
     return (sSendRecvMgr.xferState << EREADER_XFER_SHIFT)
-         | (sSendRecvMgr.cancellationReason << EREADER_CANCEL_SHIFT) 
+         | (sSendRecvMgr.cancellationReason << EREADER_CANCEL_SHIFT)
          | (sSendRecvMgr.checksumResult << EREADER_CHECKSUM_SHIFT);
 }
 

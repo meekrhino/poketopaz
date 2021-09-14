@@ -9,7 +9,7 @@ LilycoveCity_House1_EventScript_Kecleon::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_KECLEON, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox LilycoveCity_House1_Text_Kecleon, MSGBOX_DEFAULT
 	waitmoncry
 	release

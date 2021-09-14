@@ -32,15 +32,16 @@
 #define EGG_GROUP_FLYING        4
 #define EGG_GROUP_FIELD         5
 #define EGG_GROUP_FAIRY         6
-#define EGG_GROUP_GRASS         7
-#define EGG_GROUP_HUMAN_LIKE    8
+#define EGG_GROUP_PLANT         7
+#define EGG_GROUP_HUMANOID      8
 #define EGG_GROUP_WATER_3       9
 #define EGG_GROUP_MINERAL       10
-#define EGG_GROUP_AMORPHOUS     11
+#define EGG_GROUP_INDETERMINATE 11
 #define EGG_GROUP_WATER_2       12
 #define EGG_GROUP_DITTO         13
 #define EGG_GROUP_DRAGON        14
-#define EGG_GROUP_UNDISCOVERED  15
+#define EGG_GROUP_GROUND        15
+#define EGG_GROUP_UNDISCOVERED  16
 
 #define EGG_GROUPS_PER_MON      2
 
@@ -226,7 +227,7 @@
 // 1 bit each in the Pokémon struct. Gen 4 hard-codes
 // each of these to the given name. In Gen 3 they're
 // used to get an index into giftRibbons in the save block,
-// which can have a value 0-64 (0 is 'no ribbon') that 
+// which can have a value 0-64 (0 is 'no ribbon') that
 // corresponds to one of the special ribbons listed
 // in gGiftRibbonDescriptionPointers. Most of these were
 // never distributed
@@ -315,19 +316,20 @@
 #define EVO_FRIENDSHIP_DAY   2  // Pokémon levels up during the day with friendship ≥ 220
 #define EVO_FRIENDSHIP_NIGHT 3  // Pokémon levels up at night with friendship ≥ 220
 #define EVO_LEVEL            4  // Pokémon reaches the specified level
-#define EVO_TRADE            5  // Pokémon is traded
-#define EVO_TRADE_ITEM       6  // Pokémon is traded while it's holding the specified item
-#define EVO_ITEM             7  // specified item is used on Pokémon
-#define EVO_LEVEL_ATK_GT_DEF 8  // Pokémon reaches the specified level with attack > defense
-#define EVO_LEVEL_ATK_EQ_DEF 9  // Pokémon reaches the specified level with attack = defense
-#define EVO_LEVEL_ATK_LT_DEF 10 // Pokémon reaches the specified level with attack < defense
-#define EVO_LEVEL_SILCOON    11 // Pokémon reaches the specified level with a Silcoon personality value
-#define EVO_LEVEL_CASCOON    12 // Pokémon reaches the specified level with a Cascoon personality value
-#define EVO_LEVEL_NINJASK    13 // Pokémon reaches the specified level (special value for Ninjask)
-#define EVO_LEVEL_SHEDINJA   14 // Pokémon reaches the specified level (special value for Shedinja)
-#define EVO_BEAUTY           15 // Pokémon levels up with beauty ≥ specified value
+#define EVO_LEVEL_ITEM       5  // Pokémon levels up while it's holding the specified item
+#define EVO_ITEM             6  // specified item is used on Pokémon
+#define EVO_LEVEL_ATK_GT     7  // Pokémon reaches the specified level with attack > defense/speed
+#define EVO_LEVEL_DEF_GT     8  // Pokémon reaches the specified level with defense > attack/speed
+#define EVO_LEVEL_SPD_GT     9  // Pokémon reaches the specified level with speed > attack/defense
+#define EVO_DEFEAT_TUNDROLF  10 // Pokémon levels up after defeating a Tundrolf
+#define EVO_DEFEAT_CANILEAF  11 // Pokémon levels up after defeating a Canileaf
+#define EVO_FRIENDSHIP_M     12 // Pokémon levels up with friendship ≥ 220 and male
+#define EVO_FRIENDSHIP_F     13 // Pokémon levels up with friendship ≥ 220 and female
+#define EVO_LOCATION_SAND    14 // Pokémon levels up while in sandy terrain
+#define EVO_LOCATION_SNOW    15 // Pokémon levels up while in snowy terrain
+#define EVO_LOCATION_FACTORY 16 // Pokémon levels up while in industrial terrain
 
-#define EVOS_PER_MON 5
+#define EVOS_PER_MON 6
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL     0

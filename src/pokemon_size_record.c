@@ -84,7 +84,7 @@ static u32 GetMonSize(u16 species, u16 b)
     u32 height;
     u32 var;
 
-    height = GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), 0);
+    height = GetPokedexHeightWeight(species, 0);
     var = TranslateBigMonSizeTableIndex(b);
     unk0 = sBigMonSizeTable[var].unk0;
     unk2 = sBigMonSizeTable[var].unk2;
@@ -164,14 +164,14 @@ void GetSeedotSizeRecordInfo(void)
 {
     u16 *sizeRecord = GetVarPointer(VAR_SEEDOT_SIZE_RECORD);
 
-    GetMonSizeRecordInfo(SPECIES_SEEDOT, sizeRecord);
+    GetMonSizeRecordInfo(SPECIES_PINECO, sizeRecord);
 }
 
 void CompareSeedotSize(void)
 {
     u16 *sizeRecord = GetVarPointer(VAR_SEEDOT_SIZE_RECORD);
 
-    gSpecialVar_Result = CompareMonSize(SPECIES_SEEDOT, sizeRecord);
+    gSpecialVar_Result = CompareMonSize(SPECIES_PINECO, sizeRecord);
 }
 
 void InitLotadSizeRecord(void)

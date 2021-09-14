@@ -1,4 +1,4 @@
-@ NOTE: Route 109's sail to Dewford script references local IDs from Dewford's map. 
+@ NOTE: Route 109's sail to Dewford script references local IDs from Dewford's map.
 @  These are labeled in DewfordTown/scripts.inc
 
 Route109_MapScripts::
@@ -362,7 +362,7 @@ Route109_EventScript_Zigzagoon::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_ZIGZAGOON, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox Route109_Text_ZigzagoonCry, MSGBOX_DEFAULT
 	waitmoncry
 	release

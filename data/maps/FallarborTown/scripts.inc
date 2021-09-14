@@ -33,7 +33,7 @@ FallarborTown_EventScript_Azurill::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_AZURILL, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox FallarborTown_Text_Azurill, MSGBOX_DEFAULT
 	waitmoncry
 	release

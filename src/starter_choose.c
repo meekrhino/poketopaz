@@ -117,9 +117,9 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
-    SPECIES_TREECKO,
-    SPECIES_TORCHIC,
-    SPECIES_MUDKIP,
+    SPECIES_VENAP,
+    SPECIES_CELSINGE,
+    SPECIES_ECHOISE,
 };
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -581,7 +581,7 @@ static void CreateStarterPokemonLabel(u8 selection)
     u8 labelLeft, labelRight, labelTop, labelBottom;
 
     u16 species = GetStarterPokemon(selection);
-    CopyMonCategoryText(SpeciesToNationalPokedexNum(species), categoryText);
+    CopyMonCategoryText(species, categoryText);
     speciesName = gSpeciesNames[species];
 
     winTemplate = sWindowTemplate_StarterLabel;

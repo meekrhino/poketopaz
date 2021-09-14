@@ -126,7 +126,7 @@ enum {
 #define PLAY_AGAIN_YES 2
 
 #define TAG_MON1 0
-#define TAG_MON2 1 // MON2-5 used implicitly by adding multiplayer id to tag 
+#define TAG_MON2 1 // MON2-5 used implicitly by adding multiplayer id to tag
 #define TAG_MON3 2
 #define TAG_MON4 3
 #define TAG_MON5 4
@@ -426,106 +426,24 @@ EWRAM_DATA static struct PokemonJumpGfx *sPokemonJumpGfx = NULL;
 */
 static const struct PokemonJumpMons sPokeJumpMons[] =
 {
-    { .species = SPECIES_BULBASAUR,  .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_CHARMANDER, .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SQUIRTLE,   .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_CATERPIE,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_METAPOD,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_WEEDLE,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_KAKUNA,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_RATTATA,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_RATICATE,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PIKACHU,    .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_SANDSHREW,  .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_NIDORAN_F,  .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_NIDORAN_M,  .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_CLEFAIRY,   .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_VULPIX,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_JIGGLYPUFF, .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ODDISH,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_PARAS,      .jumpType = JUMP_TYPE_FAST, },
     { .species = SPECIES_MEOWTH,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_PSYDUCK,    .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_MANKEY,     .jumpType = JUMP_TYPE_FAST, },
     { .species = SPECIES_GROWLITHE,  .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_POLIWAG,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_BELLSPROUT, .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SHELLDER,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_KRABBY,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_EXEGGCUTE,  .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_CUBONE,     .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_DITTO,      .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_EEVEE,      .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_OMANYTE,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_KABUTO,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_CHIKORITA,  .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_CYNDAQUIL,  .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_TOTODILE,   .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPINARAK,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PICHU,      .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_CLEFFA,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_IGGLYBUFF,  .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_TOGEPI,     .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_MAREEP,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_BELLOSSOM,  .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_MARILL,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SUNKERN,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_WOOPER,     .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_PINECO,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SNUBBULL,   .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SHUCKLE,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_TEDDIURSA,  .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SLUGMA,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SWINUB,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_HOUNDOUR,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PHANPY,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_PORYGON2,   .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_TYROGUE,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SMOOCHUM,   .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ELEKID,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_MAGBY,      .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_LARVITAR,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_TREECKO,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_TORCHIC,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_MUDKIP,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_MARSHTOMP,  .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_POOCHYENA,  .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_ZIGZAGOON,  .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_LINOONE,    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_WURMPLE,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SILCOON,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_CASCOON,    .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_LOTAD,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SEEDOT,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_RALTS,      .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_KIRLIA,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SURSKIT,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SHROOMISH,  .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_NINCADA,    .jumpType = JUMP_TYPE_FAST, },
     { .species = SPECIES_WHISMUR,    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_AZURILL,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SKITTY,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SABLEYE,    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_MAWILE,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_ARON,       .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_MEDITITE,   .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ELECTRIKE,  .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PLUSLE,     .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_MINUN,      .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_VOLBEAT,    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_ILLUMISE,   .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_ROSELIA,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_GULPIN,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_NUMEL,      .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_TORKOAL,    .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_SPOINK,     .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_TRAPINCH,   .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_CACNEA,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ANORITH,    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_WYNAUT,     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SNORUNT,    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_CLAMPERL,   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_BAGON,      .jumpType = JUMP_TYPE_FAST, },
 };
 
 void StartPokemonJump(u16 partyId, MainCallback exitCallback)
@@ -1723,7 +1641,7 @@ static void UpdateVineState(void)
 
         sPokemonJump->prevVineState = sPokemonJump->vineState;
         sPokemonJump->vineState = sPokemonJump->vineStateTimer >> 8;
-        
+
         // If beginning upswing
         if (sPokemonJump->vineState > VINE_UPSWING_LOWER && sPokemonJump->prevVineState < VINE_UPSWING_LOW)
         {
@@ -1960,23 +1878,23 @@ static void HandleMonState(void)
 
 static const s8 sJumpOffsets[][48] =
 {
-    [JUMP_TYPE_NORMAL] = { -3,  -6,  -8, -10, -13, -15, -17, -19, 
-                          -21, -23, -25, -27, -28, -29, 
-                          JUMP_PEAK, JUMP_PEAK, JUMP_PEAK, 
-                          -28, -27, -26, -25, -23, -22, -20, -18, 
+    [JUMP_TYPE_NORMAL] = { -3,  -6,  -8, -10, -13, -15, -17, -19,
+                          -21, -23, -25, -27, -28, -29,
+                          JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
+                          -28, -27, -26, -25, -23, -22, -20, -18,
                           -17, -15, -13, -11,  -8,  -6,  -4,  -1},
 
-    [JUMP_TYPE_FAST]  = { -3,  -6,  -9, -11, -14, -16, -18, -20, 
-                         -22, -24, -26, -28, -29, 
-                         JUMP_PEAK, JUMP_PEAK, 
-                         -28, -26, -24, -22, -20, -18, -16, -14, 
+    [JUMP_TYPE_FAST]  = { -3,  -6,  -9, -11, -14, -16, -18, -20,
+                         -22, -24, -26, -28, -29,
+                         JUMP_PEAK, JUMP_PEAK,
+                         -28, -26, -24, -22, -20, -18, -16, -14,
                          -11, -9,  -6,  -4,  -1},
 
-    [JUMP_TYPE_SLOW]  = { -3,  -6,  -9, -11, -13, -15, -17, -19, 
-                         -21, -23, -25, -27, -28, -29, 
-                         JUMP_PEAK, JUMP_PEAK, JUMP_PEAK, JUMP_PEAK, 
-                         -29, -29, -28, -28, -27, -27, -26, -25, 
-                         -24, -22, -20, -18, -16, -14, -12, -11,  
+    [JUMP_TYPE_SLOW]  = { -3,  -6,  -9, -11, -13, -15, -17, -19,
+                         -21, -23, -25, -27, -28, -29,
+                         JUMP_PEAK, JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
+                         -29, -29, -28, -28, -27, -27, -26, -25,
+                         -24, -22, -20, -18, -16, -14, -12, -11,
                           -9,  -6,  -4,  -1},
 };
 
@@ -2248,13 +2166,13 @@ static void TryUpdateExcellentsRecord(u16 excellentsInRow)
 }
 
 static const u16 sPrizeItems[] = {
-    ITEM_LEPPA_BERRY, 
-    ITEM_LUM_BERRY, 
-    ITEM_SITRUS_BERRY, 
-    ITEM_FIGY_BERRY, 
-    ITEM_WIKI_BERRY, 
-    ITEM_MAGO_BERRY, 
-    ITEM_AGUAV_BERRY, 
+    ITEM_LEPPA_BERRY,
+    ITEM_LUM_BERRY,
+    ITEM_SITRUS_BERRY,
+    ITEM_FIGY_BERRY,
+    ITEM_WIKI_BERRY,
+    ITEM_MAGO_BERRY,
+    ITEM_AGUAV_BERRY,
     ITEM_IAPAPA_BERRY
 };
 
@@ -3649,15 +3567,15 @@ enum {
 };
 
 static const u8 sVenusaurStates[] = {
-    [VINE_HIGHEST]          = VENUSAUR_UP, 
-    [VINE_DOWNSWING_HIGHER] = VENUSAUR_UP, 
-    [VINE_DOWNSWING_HIGH]   = VENUSAUR_NEUTRAL, 
-    [VINE_DOWNSWING_LOW]    = VENUSAUR_NEUTRAL, 
-    [VINE_DOWNSWING_LOWER]  = VENUSAUR_DOWN, 
-    [VINE_LOWEST]           = VENUSAUR_DOWN, 
-    [VINE_UPSWING_LOWER]    = VENUSAUR_DOWN, 
-    [VINE_UPSWING_LOW]      = VENUSAUR_NEUTRAL, 
-    [VINE_UPSWING_HIGH]     = VENUSAUR_NEUTRAL, 
+    [VINE_HIGHEST]          = VENUSAUR_UP,
+    [VINE_DOWNSWING_HIGHER] = VENUSAUR_UP,
+    [VINE_DOWNSWING_HIGH]   = VENUSAUR_NEUTRAL,
+    [VINE_DOWNSWING_LOW]    = VENUSAUR_NEUTRAL,
+    [VINE_DOWNSWING_LOWER]  = VENUSAUR_DOWN,
+    [VINE_LOWEST]           = VENUSAUR_DOWN,
+    [VINE_UPSWING_LOWER]    = VENUSAUR_DOWN,
+    [VINE_UPSWING_LOW]      = VENUSAUR_NEUTRAL,
+    [VINE_UPSWING_HIGH]     = VENUSAUR_NEUTRAL,
     [VINE_UPSWING_HIGHER]   = VENUSAUR_UP,
 };
 
@@ -3665,25 +3583,25 @@ static const struct CompressedSpriteSheet sSpriteSheet_Digits = {gMinigameDigits
 static const struct SpritePalette sSpritePalette_Digits = {gMinigameDigits_Pal, TAG_DIGITS};
 
 static const u16 sPlayerNameWindowCoords_2Players[] = {
-     6, 8, 
+     6, 8,
     16, 8
 };
 static const u16 sPlayerNameWindowCoords_3Players[] = {
-     6, 8, 
-    11, 6, 
+     6, 8,
+    11, 6,
     16, 8
 };
 static const u16 sPlayerNameWindowCoords_4Players[] = {
-     2, 6, 
-     6, 8, 
-    16, 8, 
+     2, 6,
+     6, 8,
+    16, 8,
     20, 6
 };
 static const u16 sPlayerNameWindowCoords_5Players[] = {
-     2, 6, 
-     6, 8, 
-    11, 6, 
-    16, 8, 
+     2, 6,
+     6, 8,
+    11, 6,
+    16, 8,
     20, 6
 };
 

@@ -126,7 +126,7 @@ FarawayIsland_Interior_EventScript_Mew::
 	special SetMewAboveGrass
 	message FarawayIsland_Interior_Text_Mew
 	waitse
-	playmoncry SPECIES_MEW, 2
+	playmoncry SPECIES_PINECO, 2
 	compare VAR_FACING, DIR_NORTH
 	call_if_eq FarawayIsland_Interior_EventScript_FoundMewNorth
 	compare VAR_FACING, DIR_SOUTH
@@ -138,7 +138,7 @@ FarawayIsland_Interior_EventScript_Mew::
 	special DestroyMewEmergingGrassSprite
 	delay 40
 	waitmoncry
-	setvar VAR_0x8004, SPECIES_MEW
+	setvar VAR_0x8004, SPECIES_PINECO
 	setvar VAR_0x8005, 30 @ level
 	setvar VAR_0x8006, ITEM_NONE
 	special CreateEventLegalEnemyMon
@@ -161,12 +161,12 @@ FarawayIsland_Interior_EventScript_Mew::
 
 FarawayIsland_Interior_EventScript_MewDefeated::
 	setflag FLAG_DEFEATED_MEW
-	setvar VAR_0x8004, SPECIES_MEW
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 FarawayIsland_Interior_EventScript_PlayerOrMewRan::
-	setvar VAR_0x8004, SPECIES_MEW
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end
 

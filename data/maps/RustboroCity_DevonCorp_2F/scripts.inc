@@ -147,20 +147,20 @@ RustboroCity_DevonCorp_2F_EventScript_FossilMonReady::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_LileepReady::
-	bufferspeciesname 1, SPECIES_LILEEP
+	bufferspeciesname 1, SPECIES_PINECO
 	msgbox RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT
 	goto RustboroCity_DevonCorp_2F_EventScript_ReceiveLileep
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_AnorithReady::
-	bufferspeciesname 1, SPECIES_ANORITH
+	bufferspeciesname 1, SPECIES_PINECO
 	msgbox RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT
 	goto RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorith
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveLileep::
-	setvar VAR_TEMP_1, SPECIES_LILEEP
-	givemon SPECIES_LILEEP, 20, ITEM_NONE
+	setvar VAR_TEMP_1, SPECIES_PINECO
+	givemon SPECIES_PINECO, 20, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty
 	compare VAR_RESULT, 1
@@ -193,12 +193,12 @@ RustboroCity_DevonCorp_2F_EventScript_TransferLileepToPC::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_ReceivedLileepFanfare::
-	bufferspeciesname 1, SPECIES_LILEEP
+	bufferspeciesname 1, SPECIES_PINECO
 	playfanfare MUS_OBTAIN_ITEM
 	message RustboroCity_DevonCorp_2F_Text_ReceivedMonFromResearcher
 	waitmessage
 	waitfanfare
-	bufferspeciesname 0, SPECIES_LILEEP
+	bufferspeciesname 0, SPECIES_PINECO
 	return
 
 RustboroCity_DevonCorp_2F_EventScript_FinishReceivingLileep::
@@ -208,8 +208,8 @@ RustboroCity_DevonCorp_2F_EventScript_FinishReceivingLileep::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorith::
-	setvar VAR_TEMP_1, SPECIES_ANORITH
-	givemon SPECIES_ANORITH, 20, ITEM_NONE
+	setvar VAR_TEMP_1, SPECIES_PINECO
+	givemon SPECIES_PINECO, 20, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorithParty
 	compare VAR_RESULT, 1
@@ -242,12 +242,12 @@ RustboroCity_DevonCorp_2F_EventScript_TransferAnorithToPC::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_ReceivedAnorithFanfare::
-	bufferspeciesname 1, SPECIES_ANORITH
+	bufferspeciesname 1, SPECIES_PINECO
 	playfanfare MUS_OBTAIN_ITEM
 	message RustboroCity_DevonCorp_2F_Text_ReceivedMonFromResearcher
 	waitmessage
 	waitfanfare
-	bufferspeciesname 0, SPECIES_ANORITH
+	bufferspeciesname 0, SPECIES_PINECO
 	return
 
 RustboroCity_DevonCorp_2F_EventScript_FinishReceivingAnorith::

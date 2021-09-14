@@ -139,7 +139,7 @@ u16 ChooseMoveAndTargetInBattlePalace(void)
     // Each nature has a different percent chance to select a move from one of 3 move groups
     // If percent is less than 1st check, use move from "Attack" group
     // If percent is less than 2nd check, use move from "Defense" group
-    // Otherwise use move from "Support" group 
+    // Otherwise use move from "Support" group
     for (; i < maxGroupNum; i++)
     {
         if (gBattlePalaceNatureToMoveGroupLikelihood[GetNatureFromPersonality(gBattleMons[gActiveBattler].personality)][i] > percent)
@@ -196,7 +196,7 @@ u16 ChooseMoveAndTargetInBattlePalace(void)
             if ((validMoveFlags & 0xF0) > 0x1FF)
                 numValidMoveGroups++;
 
-            
+
             // If more than 1 possible move group, or no possible move groups
             // then choose move randomly
             if (numValidMoveGroups > 1 || numValidMoveGroups == 0)
@@ -591,13 +591,6 @@ void BattleLoadOpponentMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
     LoadPalette(gDecompressionBuffer, paletteOffset, 0x20);
     LoadPalette(gDecompressionBuffer, 0x80 + battlerId * 16, 0x20);
 
-    if (species == SPECIES_CASTFORM)
-    {
-        paletteOffset = 0x100 + battlerId * 16;
-        LZDecompressWram(lzPaletteData, gBattleStruct->castformPalette[0]);
-        LoadPalette(gBattleStruct->castformPalette[gBattleMonForms[battlerId]], paletteOffset, 0x20);
-    }
-
     // transform's pink color
     if (gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies != SPECIES_NONE)
     {
@@ -653,13 +646,6 @@ void BattleLoadPlayerMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
     LZDecompressWram(lzPaletteData, gDecompressionBuffer);
     LoadPalette(gDecompressionBuffer, paletteOffset, 0x20);
     LoadPalette(gDecompressionBuffer, 0x80 + battlerId * 16, 0x20);
-
-    if (species == SPECIES_CASTFORM)
-    {
-        paletteOffset = 0x100 + battlerId * 16;
-        LZDecompressWram(lzPaletteData, gBattleStruct->castformPalette[0]);
-        LoadPalette(gBattleStruct->castformPalette[gBattleMonForms[battlerId]], paletteOffset, 0x20);
-    }
 
     // transform's pink color
     if (gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies != SPECIES_NONE)
@@ -973,13 +959,6 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, bool8 notTransform
         lzPaletteData = GetMonSpritePalFromSpeciesAndPersonality(targetSpecies, otId, personalityValue);
         LZDecompressWram(lzPaletteData, gDecompressionBuffer);
         LoadPalette(gDecompressionBuffer, paletteOffset, 32);
-
-        if (targetSpecies == SPECIES_CASTFORM)
-        {
-            gSprites[gBattlerSpriteIds[battlerAtk]].anims = gMonFrontAnimsPtrTable[targetSpecies];
-            LZDecompressWram(lzPaletteData, gBattleStruct->castformPalette[0]);
-            LoadPalette(gBattleStruct->castformPalette[0] + gBattleMonForms[battlerDef] * 16, paletteOffset, 32);
-        }
 
         BlendPalette(paletteOffset, 16, 6, RGB_WHITE);
         CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, 32);

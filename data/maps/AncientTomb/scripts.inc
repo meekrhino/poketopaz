@@ -63,10 +63,10 @@ AncientTomb_EventScript_Registeel::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_REGISTEEL, 2
+	playmoncry SPECIES_PINECO, 2
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_REGISTEEL, 40, ITEM_NONE
+	setwildbattle SPECIES_PINECO, 40, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate
@@ -88,7 +88,7 @@ AncientTomb_EventScript_DefeatedRegisteel::
 	end
 
 AncientTomb_EventScript_RanFromRegisteel::
-	setvar VAR_0x8004, SPECIES_REGISTEEL
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end
 

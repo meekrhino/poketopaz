@@ -281,31 +281,31 @@ static const u8 sTrainerPicOffset[2][GENDER_COUNT][2] =
 {
     // Kanto
     {
-        [MALE]   = {13, 4}, 
+        [MALE]   = {13, 4},
         [FEMALE] = {13, 4}
     },
     // Hoenn
     {
-        [MALE]   = {1, 0}, 
+        [MALE]   = {1, 0},
         [FEMALE] = {1, 0}
     },
 };
 
-static const u8 sTrainerPicFacilityClass[][GENDER_COUNT] = 
+static const u8 sTrainerPicFacilityClass[][GENDER_COUNT] =
 {
-    [CARD_TYPE_FRLG] = 
+    [CARD_TYPE_FRLG] =
     {
-        [MALE]   = FACILITY_CLASS_RED, 
+        [MALE]   = FACILITY_CLASS_RED,
         [FEMALE] = FACILITY_CLASS_LEAF
-    }, 
-    [CARD_TYPE_RS] = 
+    },
+    [CARD_TYPE_RS] =
     {
-        [MALE]   = FACILITY_CLASS_RS_BRENDAN, 
+        [MALE]   = FACILITY_CLASS_RS_BRENDAN,
         [FEMALE] = FACILITY_CLASS_RS_MAY
-    }, 
-    [CARD_TYPE_EMERALD] = 
+    },
+    [CARD_TYPE_EMERALD] =
     {
-        [MALE]   = FACILITY_CLASS_BRENDAN, 
+        [MALE]   = FACILITY_CLASS_BRENDAN,
         [FEMALE] = FACILITY_CLASS_MAY
     }
 };
@@ -659,7 +659,7 @@ u32 CountPlayerTrainerStars(void)
 
     if (GetGameStat(GAME_STAT_ENTERED_HOF))
         stars++;
-    if (HasAllHoennMons())
+    if (HasAllMons())
         stars++;
     if (CountPlayerMuseumPaintings() >= CONTEST_CATEGORIES_COUNT)
         stars++;
@@ -709,7 +709,7 @@ static void SetPlayerCardData(struct TrainerCard *trainerCard, u8 cardType)
     }
 
     trainerCard->hasPokedex = FlagGet(FLAG_SYS_POKEDEX_GET);
-    trainerCard->caughtAllHoenn = HasAllHoennMons();
+    trainerCard->caughtAllHoenn = HasAllMons();
     trainerCard->caughtMonsCount = GetCaughtMonsCount();
 
     trainerCard->trainerId = (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
@@ -1055,10 +1055,7 @@ static void PrintMoneyOnCard(void)
 
 static u16 GetCaughtMonsCount(void)
 {
-    if (IsNationalPokedexEnabled())
-        return GetNationalPokedexCount(FLAG_GET_CAUGHT);
-    else
-        return GetHoennPokedexCount(FLAG_GET_CAUGHT);
+    return GetPokedexCount(FLAG_GET_CAUGHT);
 }
 
 static void PrintPokedexOnCard(void)
@@ -1201,10 +1198,10 @@ static void PrintHofDebutTimeOnCard(void)
         PrintStatOnBackOfCard(0, gText_HallOfFameDebut, sData->textHofTime, sTrainerCardStatColors);
 }
 
-static const u8 *const sLinkBattleTexts[] = 
+static const u8 *const sLinkBattleTexts[] =
 {
-    [CARD_TYPE_FRLG]    = gText_LinkBattles, 
-    [CARD_TYPE_RS]      = gText_LinkCableBattles, 
+    [CARD_TYPE_FRLG]    = gText_LinkBattles,
+    [CARD_TYPE_RS]      = gText_LinkCableBattles,
     [CARD_TYPE_EMERALD] = gText_LinkBattles
 };
 
@@ -1376,7 +1373,7 @@ static void LoadMonIconGfx(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (sData->trainerCard.monSpecies[i])
-            LoadBgTiles(3, GetMonIconTiles(sData->trainerCard.monSpecies[i], 0), 512, 16 * i + 32);
+            LoadBgTiles(3, GetMonIconTiles(sData->trainerCard.monSpecies[i]), 512, 16 * i + 32);
     }
 }
 

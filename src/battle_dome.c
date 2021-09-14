@@ -2528,7 +2528,7 @@ static void InitDomeTrainers(void)
 
 static void CalcDomeMonStats(u16 species, int level, int ivs, u8 evBits, u8 nature, int *stats)
 {
-    int i, count;
+    int i, count, n;
     u8 bits;
     u16 resultingEvs;
     int evs[NUM_STATS];
@@ -2548,15 +2548,8 @@ static void CalcDomeMonStats(u16 species, int level, int ivs, u8 evBits, u8 natu
             evs[i] = resultingEvs;
     }
 
-    if (species == SPECIES_SHEDINJA)
-    {
-        stats[STAT_HP] = 1;
-    }
-    else
-    {
-        int n = 2 * gBaseStats[species].baseHP;
-        stats[STAT_HP] = (((n + ivs + evs[STAT_HP] / 4) * level) / 100) + level + 10;
-    }
+    n = 2 * gBaseStats[species].baseHP;
+    stats[STAT_HP] = (((n + ivs + evs[STAT_HP] / 4) * level) / 100) + level + 10;
 
     CALC_STAT(baseAttack, STAT_ATK);
     CALC_STAT(baseDefense, STAT_DEF);
@@ -5873,7 +5866,7 @@ static void InitRandomTourneyTreeResults(void)
     gSaveBlock2Ptr->frontier.lvlMode = FRONTIER_LVL_50;
     zero1 = 0;
     zero2 = 0;
-    
+
     gSaveBlock2Ptr->frontier.domeLvlMode = zero1 + 1;
     gSaveBlock2Ptr->frontier.domeBattleMode = zero2 + 1;
 

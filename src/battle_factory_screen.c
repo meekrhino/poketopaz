@@ -1404,7 +1404,7 @@ static void Select_HandleMonSelectionChange(void)
     if (sFactorySelectScreen->mons[cursorPos].selectedId) // Deselect a mon.
     {
         paletteNum = IndexOfSpritePaletteTag(PALTAG_BALL_GRAY);
-        if (sFactorySelectScreen->selectingMonsState == FRONTIER_PARTY_SIZE 
+        if (sFactorySelectScreen->selectingMonsState == FRONTIER_PARTY_SIZE
          && sFactorySelectScreen->mons[cursorPos].selectedId == 1)
         {
             for (i = 0; i < SELECTABLE_MONS_COUNT; i++)
@@ -1993,7 +1993,7 @@ static void Select_PrintMonCategory(void)
         PutWindowTilemap(SELECT_WIN_MON_CATEGORY);
         FillWindowPixelBuffer(SELECT_WIN_MON_CATEGORY, PIXEL_FILL(0));
         species = GetMonData(&sFactorySelectScreen->mons[monId].monData, MON_DATA_SPECIES, NULL);
-        CopyMonCategoryText(SpeciesToNationalPokedexNum(species), text);
+        CopyMonCategoryText(species, text);
         x = GetStringRightAlignXOffset(1, text, 0x76);
         AddTextPrinterParameterized(SELECT_WIN_MON_CATEGORY, 1, text, x, 1, 0, NULL);
         CopyWindowToVram(SELECT_WIN_MON_CATEGORY, 2);
@@ -3057,7 +3057,7 @@ static void Swap_Task_ScreenInfoTransitionOut(u8 taskId)
         }
         break;
     case 5:
-        if (gTasks[taskId].tSlideFinishedPkmn == TRUE 
+        if (gTasks[taskId].tSlideFinishedPkmn == TRUE
          && gTasks[taskId].tSlideFinishedCancel == TRUE)
         {
             gTasks[taskId].tState = gTasks[taskId].tFollowUpTaskState;
@@ -3123,7 +3123,7 @@ static void Swap_Task_ScreenInfoTransitionIn(u8 taskId)
         }
         break;
     case 2:
-        if (gTasks[taskId].tSlideFinishedPkmn == TRUE 
+        if (gTasks[taskId].tSlideFinishedPkmn == TRUE
          && gTasks[taskId].tSlideFinishedCancel == TRUE)
         {
             gPlttBufferFaded[226] = sPokeballGray_Pal[37];
@@ -3205,7 +3205,7 @@ static void Swap_Task_SwitchPartyScreen(u8 taskId)
         gTasks[taskId].tState++;
         break;
     case 3:
-        if (!FuncIsActiveTask(Swap_Task_SlideCycleBalls) 
+        if (!FuncIsActiveTask(Swap_Task_SlideCycleBalls)
          && gTasks[sFactorySwapScreen->fadeSpeciesNameTaskId].tFadeOutFinished == TRUE)
         {
             Swap_EraseSpeciesWindow();
@@ -3679,7 +3679,7 @@ static void Swap_HideActionButtonHighlights(void)
     {
         // Hide button highlight on "Pkmn for Swap"
         gSprites[sFactorySwapScreen->pkmnForSwapButtonSpriteIds[1][i]].invisible = TRUE;
-        
+
         // Hide button highlight on Cancel
         if (i < ARRAY_COUNT(sFactorySwapScreen->cancelButtonSpriteIds[0]))
             gSprites[sFactorySwapScreen->cancelButtonSpriteIds[1][i]].invisible = TRUE;
@@ -3936,7 +3936,7 @@ static void Swap_PrintMonCategory(void)
             species = GetMonData(&gPlayerParty[monId], MON_DATA_SPECIES, NULL);
         else
             species = GetMonData(&gEnemyParty[monId], MON_DATA_SPECIES, NULL);
-        CopyMonCategoryText(SpeciesToNationalPokedexNum(species), text);
+        CopyMonCategoryText(species, text);
         x = GetStringRightAlignXOffset(1, text, 0x76);
         AddTextPrinterParameterized(SWAP_WIN_MON_CATEGORY, 1, text, x, 1, 0, NULL);
         CopyWindowToVram(SWAP_WIN_MON_CATEGORY, 2);

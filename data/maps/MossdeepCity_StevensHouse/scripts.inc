@@ -87,8 +87,8 @@ MossdeepCity_StevensHouse_EventScript_LeaveBeldum::
 	end
 
 MossdeepCity_StevensHouse_EventScript_GiveBeldum::
-	setvar VAR_TEMP_1, SPECIES_BELDUM
-	givemon SPECIES_BELDUM, 5, ITEM_NONE
+	setvar VAR_TEMP_1, SPECIES_PINECO
+	givemon SPECIES_PINECO, 5, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq MossdeepCity_StevensHouse_EventScript_SendBeldumParty
 	compare VAR_RESULT, 1
@@ -121,13 +121,13 @@ MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC::
 	end
 
 MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare::
-	bufferspeciesname 1, SPECIES_BELDUM
+	bufferspeciesname 1, SPECIES_PINECO
 	removeobject LOCALID_BELDUM_BALL
 	playfanfare MUS_OBTAIN_ITEM
 	message MossdeepCity_StevensHouse_Text_ObtainedBeldum
 	waitmessage
 	waitfanfare
-	bufferspeciesname 0, SPECIES_BELDUM
+	bufferspeciesname 0, SPECIES_PINECO
 	return
 
 MossdeepCity_StevensHouse_EventScript_ReceivedBeldum::

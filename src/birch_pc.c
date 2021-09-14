@@ -6,18 +6,10 @@
 
 bool16 ScriptGetPokedexInfo(void)
 {
-    if (gSpecialVar_0x8004 == 0) // is national dex not present?
-    {
-        gSpecialVar_0x8005 = GetHoennPokedexCount(FLAG_GET_SEEN);
-        gSpecialVar_0x8006 = GetHoennPokedexCount(FLAG_GET_CAUGHT);
-    }
-    else
-    {
-        gSpecialVar_0x8005 = GetNationalPokedexCount(FLAG_GET_SEEN);
-        gSpecialVar_0x8006 = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-    }
+    gSpecialVar_0x8005 = GetPokedexCount(FLAG_GET_SEEN);
+    gSpecialVar_0x8006 = GetPokedexCount(FLAG_GET_CAUGHT);
 
-    return IsNationalPokedexEnabled();
+    return TRUE;
 }
 
 // This shows your Hoenn Pokedex rating and not your National Dex.
@@ -63,21 +55,7 @@ const u8 *GetPokedexRatingText(u16 count)
         return gBirchDexRatingText_LessThan190;
     if (count < 200)
         return gBirchDexRatingText_LessThan200;
-    if (count == 200)
-    {
-        if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_JIRACHI), FLAG_GET_CAUGHT)
-         || GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_DEOXYS), FLAG_GET_CAUGHT)) // Jirachi or Deoxys is not counted towards the dex completion. If either of these flags are enabled, it means the actual count is less than 200.
-            return gBirchDexRatingText_LessThan200;
-        return gBirchDexRatingText_DexCompleted;
-    }
-    if (count == HOENN_DEX_COUNT - 1)
-    {
-        if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_JIRACHI), FLAG_GET_CAUGHT)
-         && GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_DEOXYS), FLAG_GET_CAUGHT)) // If both of these flags are enabled, it means the actual count is less than 200.
-            return gBirchDexRatingText_LessThan200;
-        return gBirchDexRatingText_DexCompleted;
-    }
-    if (count == HOENN_DEX_COUNT)
+    if (count == CALDERA_KIRANT_DEX_COUNT)
         return gBirchDexRatingText_DexCompleted;
     return gBirchDexRatingText_LessThan10;
 }

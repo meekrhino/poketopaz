@@ -100,7 +100,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_ALAKAZAM,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = 24,
                 .nature = NATURE_MODEST,
@@ -108,7 +108,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_DISABLE},
             },
             {
-                .species = SPECIES_ENTEI,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = 24,
                 .nature = NATURE_LONELY,
@@ -116,7 +116,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_FIRE_BLAST, MOVE_CALM_MIND, MOVE_RETURN, MOVE_ROAR},
             },
             {
-                .species = SPECIES_SNORLAX,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_QUICK_CLAW,
                 .fixedIV = 24,
                 .nature = NATURE_ADAMANT,
@@ -127,7 +127,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
-                .species = SPECIES_RAIKOU,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
@@ -135,7 +135,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_THUNDERBOLT, MOVE_CALM_MIND, MOVE_REFLECT, MOVE_REST},
             },
             {
-                .species = SPECIES_LATIOS,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
@@ -143,7 +143,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_RECOVER, MOVE_DRAGON_CLAW},
             },
             {
-                .species = SPECIES_SNORLAX,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
@@ -157,7 +157,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_SWAMPERT,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_FOCUS_BAND,
                 .fixedIV = 20,
                 .nature = NATURE_BRAVE,
@@ -165,7 +165,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_SURF, MOVE_EARTHQUAKE, MOVE_ICE_BEAM, MOVE_COUNTER},
             },
             {
-                .species = SPECIES_SALAMENCE,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = 20,
                 .nature = NATURE_ADAMANT,
@@ -173,7 +173,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_EARTHQUAKE, MOVE_BRICK_BREAK, MOVE_DRAGON_CLAW, MOVE_AERIAL_ACE},
             },
             {
-                .species = SPECIES_CHARIZARD,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_WHITE_HERB,
                 .fixedIV = 20,
                 .nature = NATURE_QUIET,
@@ -184,7 +184,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
-                .species = SPECIES_SWAMPERT,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
@@ -192,7 +192,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_SURF, MOVE_EARTHQUAKE, MOVE_ICE_BEAM, MOVE_MIRROR_COAT},
             },
             {
-                .species = SPECIES_METAGROSS,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_QUICK_CLAW,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
@@ -200,7 +200,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_PSYCHIC, MOVE_METEOR_MASH, MOVE_EARTHQUAKE, MOVE_PROTECT},
             },
             {
-                .species = SPECIES_LATIAS,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
@@ -214,7 +214,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_CROBAT,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = 16,
                 .nature = NATURE_ADAMANT,
@@ -222,7 +222,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_CONFUSE_RAY, MOVE_DOUBLE_TEAM, MOVE_TOXIC, MOVE_FLY},
             },
             {
-                .species = SPECIES_SLAKING,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_SCOPE_LENS,
                 .fixedIV = 16,
                 .nature = NATURE_HARDY,
@@ -249,7 +249,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_OVERHEAT, MOVE_EXTREME_SPEED, MOVE_ROAR, MOVE_PROTECT},
             },
             {
-                .species = SPECIES_SLAKING,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_SCOPE_LENS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_HARDY,
@@ -257,7 +257,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_HYPER_BEAM, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_YAWN},
             },
             {
-                .species = SPECIES_SUICUNE,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_KINGS_ROCK,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_HASTY,
@@ -271,7 +271,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_HERACROSS,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_SALAC_BERRY,
                 .fixedIV = 20,
                 .nature = NATURE_JOLLY,
@@ -287,7 +287,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_BODY_SLAM, MOVE_CONFUSE_RAY, MOVE_PSYCHIC, MOVE_FAINT_ATTACK},
             },
             {
-                .species = SPECIES_SHEDINJA,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = 20,
                 .nature = NATURE_ADAMANT,
@@ -306,7 +306,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_DOUBLE_EDGE, MOVE_CONFUSE_RAY, MOVE_REST, MOVE_PSYCHIC},
             },
             {
-                .species = SPECIES_GENGAR,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
@@ -314,7 +314,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
             },
             {
-                .species = SPECIES_BRELOOM,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_JOLLY,
@@ -329,7 +329,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // What is interesting, this team is actually the one Steven uses in the multi tag battle alongside the player.
         {
             {
-                .species = SPECIES_METANG,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_SITRUS_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
@@ -345,7 +345,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_PROTECT, MOVE_STEEL_WING},
             },
             {
-                .species = SPECIES_AGGRON,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_SITRUS_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
@@ -355,7 +355,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         },
         {
             {
-                .species = SPECIES_METANG,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_SITRUS_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
@@ -371,7 +371,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_PROTECT, MOVE_STEEL_WING},
             },
             {
-                .species = SPECIES_AGGRON,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_SITRUS_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
@@ -393,7 +393,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_POISON_FANG, MOVE_GIGA_DRAIN},
             },
             {
-                .species = SPECIES_SHUCKLE,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = 16,
                 .nature = NATURE_BOLD,
@@ -401,7 +401,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_TOXIC, MOVE_SANDSTORM, MOVE_PROTECT, MOVE_REST},
             },
             {
-                .species = SPECIES_MILOTIC,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = 16,
                 .nature = NATURE_MODEST,
@@ -420,7 +420,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_SLUDGE_BOMB, MOVE_GIGA_DRAIN},
             },
             {
-                .species = SPECIES_STEELIX,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
@@ -428,7 +428,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_EXPLOSION, MOVE_SCREECH},
             },
             {
-                .species = SPECIES_GYARADOS,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
@@ -442,7 +442,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_REGIROCK,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_QUICK_CLAW,
                 .fixedIV = 16,
                 .nature = NATURE_ADAMANT,
@@ -450,7 +450,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_EXPLOSION, MOVE_SUPERPOWER, MOVE_EARTHQUAKE, MOVE_ANCIENT_POWER},
             },
             {
-                .species = SPECIES_REGISTEEL,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = 16,
                 .nature = NATURE_ADAMANT,
@@ -458,7 +458,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_EARTHQUAKE, MOVE_METAL_CLAW, MOVE_TOXIC, MOVE_IRON_DEFENSE},
             },
             {
-                .species = SPECIES_REGICE,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = 16,
                 .nature = NATURE_MODEST,
@@ -469,7 +469,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
-                .species = SPECIES_ARTICUNO,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_SCOPE_LENS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MILD,
@@ -477,7 +477,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_BLIZZARD, MOVE_WATER_PULSE, MOVE_AERIAL_ACE, MOVE_REFLECT},
             },
             {
-                .species = SPECIES_ZAPDOS,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MILD,
@@ -485,7 +485,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_THUNDER, MOVE_DETECT, MOVE_DRILL_PECK, MOVE_LIGHT_SCREEN},
             },
             {
-                .species = SPECIES_MOLTRES,
+                .species = SPECIES_PINECO,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MILD,
@@ -677,8 +677,8 @@ static const u8 sFrontierBrainObjEventGfx[NUM_FRONTIER_FACILITIES][2] =
 
 const u16 gFrontierBannedSpecies[] =
 {
-    SPECIES_MEW, SPECIES_MEWTWO, SPECIES_HO_OH, SPECIES_LUGIA, SPECIES_CELEBI,
-    SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_JIRACHI, SPECIES_DEOXYS, 0xFFFF
+    SPECIES_KIPPOROK, SPECIES_UNICROWN, SPECIES_TYPHIDNA,
+    SPECIES_KURANPU, SPECIES_JIRACHI, 0xFFFF
 };
 
 static const u8 *const sRecordsWindowChallengeTexts[][2] =
@@ -1933,7 +1933,7 @@ static void CheckBattleTypeFlag(void)
 
 static u8 AppendCaughtBannedMonSpeciesName(u16 species, u8 count, s32 numBannedMonsCaught)
 {
-    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+    if (GetSetPokedexFlag(species, FLAG_GET_CAUGHT))
     {
         count++;
         switch (count)
@@ -2071,7 +2071,7 @@ static void CheckPartyIneligibility(void)
         s32 species = gFrontierBannedSpecies[0];
         for (i = 0; species != 0xFFFF; i++, species = gFrontierBannedSpecies[i])
         {
-            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+            if (GetSetPokedexFlag(species, FLAG_GET_CAUGHT))
                 caughtBannedMons++;
         }
         gStringVar1[0] = EOS;
@@ -2397,7 +2397,7 @@ void ClearRankingHallRecords(void)
         {
             for (k = 0; k < 3; k++)
             {
-                CopyTrainerId(gSaveBlock2Ptr->hallRecords1P[i][j][k].id, ZERO); 
+                CopyTrainerId(gSaveBlock2Ptr->hallRecords1P[i][j][k].id, ZERO);
                 gSaveBlock2Ptr->hallRecords1P[i][j][k].name[0] = EOS;
                 gSaveBlock2Ptr->hallRecords1P[i][j][k].winStreak = 0;
             }

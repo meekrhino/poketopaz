@@ -330,43 +330,43 @@ static const struct SpriteTemplate sHealthbarSpriteTemplates[MAX_BATTLERS_COUNT]
 static const struct Subsprite sUnknown_0832C220[] =
 {
     {
-        .x = DISPLAY_WIDTH,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(64x32),  
-        .size = SPRITE_SIZE(64x32),  
-        .tileOffset = 0,      
+        .x = DISPLAY_WIDTH,
+        .y = 0,
+        .shape = SPRITE_SHAPE(64x32),
+        .size = SPRITE_SIZE(64x32),
+        .tileOffset = 0,
         .priority = 1
     },
     {
-        .x = 48,    
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x32),  
-        .size = SPRITE_SIZE(32x32),  
-        .tileOffset = 32,     
+        .x = 48,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x32),
+        .size = SPRITE_SIZE(32x32),
+        .tileOffset = 32,
         .priority = 1
     },
     {
-        .x = DISPLAY_WIDTH,   
-        .y = 32, 
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 48,     
+        .x = DISPLAY_WIDTH,
+        .y = 32,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 48,
         .priority = 1
     },
     {
-        .x = 16,    
-        .y = 32, 
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 52,     
+        .x = 16,
+        .y = 32,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 52,
         .priority = 1
     },
     {
-        .x = 48,    
-        .y = 32, 
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 56,     
+        .x = 48,
+        .y = 32,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 56,
         .priority = 1
     }
 };
@@ -374,43 +374,43 @@ static const struct Subsprite sUnknown_0832C220[] =
 static const struct Subsprite sUnknown_0832C234[] =
 {
     {
-        .x = DISPLAY_WIDTH,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(64x32),  
-        .size = SPRITE_SIZE(64x32),  
-        .tileOffset = 64,     
+        .x = DISPLAY_WIDTH,
+        .y = 0,
+        .shape = SPRITE_SHAPE(64x32),
+        .size = SPRITE_SIZE(64x32),
+        .tileOffset = 64,
         .priority = 1
     },
     {
-        .x = 48,    
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x32),  
-        .size = SPRITE_SIZE(32x32),  
-        .tileOffset = 96,     
+        .x = 48,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x32),
+        .size = SPRITE_SIZE(32x32),
+        .tileOffset = 96,
         .priority = 1
     },
     {
-        .x = DISPLAY_WIDTH,   
-        .y = 32, 
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 112,    
+        .x = DISPLAY_WIDTH,
+        .y = 32,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 112,
         .priority = 1
     },
     {
-        .x = 16,    
-        .y = 32, 
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 116,    
+        .x = 16,
+        .y = 32,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 116,
         .priority = 1
     },
     {
-        .x = 48,    
-        .y = 32, 
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 120,    
+        .x = 48,
+        .y = 32,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 120,
         .priority = 1
     }
 };
@@ -418,19 +418,19 @@ static const struct Subsprite sUnknown_0832C234[] =
 static const struct Subsprite sUnknown_0832C248[] =
 {
     {
-        .x = DISPLAY_WIDTH,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(64x32),  
+        .x = DISPLAY_WIDTH,
+        .y = 0,
+        .shape = SPRITE_SHAPE(64x32),
         .size = SPRITE_SIZE(64x32),
-        .tileOffset = 0,      
+        .tileOffset = 0,
         .priority = 1
     },
     {
-        .x = 48,    
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x32),  
-        .size = SPRITE_SIZE(32x32),  
-        .tileOffset = 32,     
+        .x = 48,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x32),
+        .size = SPRITE_SIZE(32x32),
+        .tileOffset = 32,
         .priority = 1
     }
 };
@@ -438,19 +438,19 @@ static const struct Subsprite sUnknown_0832C248[] =
 static const struct Subsprite sUnknown_0832C250[] =
 {
     {
-        .x = DISPLAY_WIDTH,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(64x32),  
+        .x = DISPLAY_WIDTH,
+        .y = 0,
+        .shape = SPRITE_SHAPE(64x32),
         .size = SPRITE_SIZE(64x32),
-        .tileOffset = 0,      
+        .tileOffset = 0,
         .priority = 1
     },
     {
-        .x = 48,    
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x32),  
-        .size = SPRITE_SIZE(32x32),  
-        .tileOffset = 32,     
+        .x = 48,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x32),
+        .size = SPRITE_SIZE(32x32),
+        .tileOffset = 32,
         .priority = 1
     }
 };
@@ -458,19 +458,19 @@ static const struct Subsprite sUnknown_0832C250[] =
 static const struct Subsprite sUnknown_0832C258[] =
 {
     {
-        .x = DISPLAY_WIDTH,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 0,      
+        .x = DISPLAY_WIDTH,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 0,
         .priority = 1
     },
     {
-        .x = 16,    
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 4,      
+        .x = 16,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 4,
         .priority = 1
     }
 };
@@ -478,27 +478,27 @@ static const struct Subsprite sUnknown_0832C258[] =
 static const struct Subsprite sUnknown_0832C260[] =
 {
     {
-        .x = DISPLAY_WIDTH,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 0,      
+        .x = DISPLAY_WIDTH,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 0,
         .priority = 1
     },
     {
-        .x = 16,    
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 4,      
+        .x = 16,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 4,
         .priority = 1
     },
     {
-        .x = DISPLAY_WIDTH - 16,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(8x8),  
-        .size = SPRITE_SIZE(8x8),  
-        .tileOffset = 8,      
+        .x = DISPLAY_WIDTH - 16,
+        .y = 0,
+        .shape = SPRITE_SHAPE(8x8),
+        .size = SPRITE_SIZE(8x8),
+        .tileOffset = 8,
         .priority = 1
     }
 };
@@ -521,35 +521,35 @@ static const struct SubspriteTable sUnknown_0832C28C[] =
 static const struct Subsprite sStatusSummaryBar_Subsprites_0[] =
 {
     {
-        .x = 160,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 0,      
+        .x = 160,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 0,
         .priority = 1
     },
     {
-        .x = 192,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 4,     
+        .x = 192,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 4,
         .priority = 1
     },
     {
-        .x = 224,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 8,      
+        .x = 224,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 8,
         .priority = 1
     },
     {
-        .x = 0,     
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 12,     
+        .x = 0,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 12,
         .priority = 1
     }
 };
@@ -557,51 +557,51 @@ static const struct Subsprite sStatusSummaryBar_Subsprites_0[] =
 static const struct Subsprite sUnknown_0832C2AC[] =
 {
     {
-        .x = 160,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 0,      
+        .x = 160,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 0,
         .priority = 1
     },
     {
-        .x = 192,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 4,      
+        .x = 192,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 4,
         .priority = 1
     },
     {
-        .x = 224,   
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 8,      
+        .x = 224,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 8,
         .priority = 1
     },
     {
-        .x = 0,     
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 8,      
+        .x = 0,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 8,
         .priority = 1
     },
     {
-        .x = 32,    
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 8,      
+        .x = 32,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 8,
         .priority = 1
     },
     {
-        .x = 64,    
-        .y = 0,  
-        .shape = SPRITE_SHAPE(32x8),  
-        .size = SPRITE_SIZE(32x8),  
-        .tileOffset = 12,     
+        .x = 64,
+        .y = 0,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 12,
         .priority = 1
     }
 };
@@ -1101,7 +1101,7 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
     u8 text[16];
     u32 xPos;
     u8 *objVram;
-    
+
     text[0] = CHAR_EXTRA_SYMBOL;
     text[1] = CHAR_LV_2;
 
@@ -1903,9 +1903,6 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     gender = GetMonGender(mon);
     species = GetMonData(mon, MON_DATA_SPECIES);
 
-    if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && StringCompare(nickname, gSpeciesNames[species]) == 0)
-        gender = 100;
-
     // AddTextPrinterAndCreateWindowOnHealthbox's arguments are the same in all 3 cases.
     // It's possible they may have been different in early development phases.
     switch (gender)
@@ -1956,7 +1953,7 @@ static void TryAddPokeballIconToHealthbox(u8 healthboxSpriteId, bool8 noStatus)
     battlerId = gSprites[healthboxSpriteId].hMain_Battler;
     if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
         return;
-    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES)), FLAG_GET_CAUGHT))
+    if (!GetSetPokedexFlag(GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES), FLAG_GET_CAUGHT))
         return;
 
     healthBarSpriteId = gSprites[healthboxSpriteId].hMain_HealthBarSpriteId;

@@ -70,10 +70,10 @@ EventScript_BattleKecleon::
 	applymovement VAR_LAST_TALKED, Movement_KecleonAppears
 	waitmovement 0
 	waitse
-	playmoncry SPECIES_KECLEON, 2
+	playmoncry SPECIES_PINECO, 2
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_KECLEON, 30, ITEM_NONE
+	setwildbattle SPECIES_PINECO, 30, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

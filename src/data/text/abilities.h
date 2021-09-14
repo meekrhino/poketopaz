@@ -1,4 +1,4 @@
-#ifdef _MSC_VER
+#ifdef __VSCODE
 #include "battle_main.h"
 #include "constants/abilities.h"
 #endif

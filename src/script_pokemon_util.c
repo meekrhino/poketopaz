@@ -60,7 +60,6 @@ void HealPlayerParty(void)
 
 u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 unused3)
 {
-    u16 nationalDexNum;
     int sentToPc;
     u8 heldItem[2];
     struct Pokemon mon;
@@ -70,14 +69,13 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
     heldItem[1] = item >> 8;
     SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
     sentToPc = GiveMonToPlayer(&mon);
-    nationalDexNum = SpeciesToNationalPokedexNum(species);
 
     switch(sentToPc)
     {
     case 0:
     case 1:
-        GetSetPokedexFlag(nationalDexNum, FLAG_SET_SEEN);
-        GetSetPokedexFlag(nationalDexNum, FLAG_SET_CAUGHT);
+        GetSetPokedexFlag(species, FLAG_SET_SEEN);
+        GetSetPokedexFlag(species, FLAG_SET_CAUGHT);
         break;
     }
     return sentToPc;

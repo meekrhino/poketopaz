@@ -14,7 +14,7 @@ RustboroCity_House3_EventScript_Pekachu::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_PIKACHU, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox RustboroCity_House3_Text_Pekachu, MSGBOX_DEFAULT
 	waitmoncry
 	release

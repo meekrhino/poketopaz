@@ -1,4 +1,4 @@
-#define GFXTAG_MENU_TEXT       200 // Used as a base tag in CB2_CreateTradeMenu and CB2_ReturnToTradeMenu 
+#define GFXTAG_MENU_TEXT       200 // Used as a base tag in CB2_CreateTradeMenu and CB2_ReturnToTradeMenu
 #define GFXTAG_CURSOR          300
 #define GFXTAG_LINK_MON_GLOW   5550
 #define GFXTAG_LINK_MON_SHADOW 5552
@@ -395,7 +395,7 @@ static const struct MenuAction sSelectTradeMonActions[] =
     {sText_Trade2,   Task_DrawSelectionTrade}
 };
 
-static const u8 *const sTradeMessages[] = 
+static const u8 *const sTradeMessages[] =
 {
     [TRADE_MSG_STANDBY]                    = sText_CommunicationStandby,
     [TRADE_MSG_CANCELED]                   = sText_TheTradeHasBeenCanceled,
@@ -408,8 +408,8 @@ static const u8 *const sTradeMessages[] =
     [TRADE_MSG_FRIENDS_MON_CANT_BE_TRADED] = gText_OtherTrainersPkmnCantBeTraded
 };
 
-static const u8 sTradeTextColors[] = 
-{ 
+static const u8 sTradeTextColors[] =
+{
     TEXT_COLOR_TRANSPARENT, //bg color
     TEXT_COLOR_WHITE,       //fg color
     TEXT_COLOR_DARK_GRAY    //shadow color
@@ -1003,69 +1003,69 @@ static const union AffineAnimCmd *const sAffineAnims_CrossingMonPics[] =
 
 static const struct InGameTrade sIngameTrades[] =
 {
-    [INGAME_TRADE_SEEDOT] = 
+    [INGAME_TRADE_SEEDOT] =
     {
-        .nickname = _("DOTS"), 
-        .species = SPECIES_SEEDOT,
+        .nickname = _("DOTS"),
+        .species = SPECIES_PINECO,
         .ivs = {5, 4, 5, 4, 4, 4},
-        .abilityNum = 1, 
+        .abilityNum = 1,
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
-        .heldItem = ITEM_CHESTO_BERRY, 
+        .heldItem = ITEM_CHESTO_BERRY,
         .mailNum = -1,
-        .otName = _("KOBE"), 
-        .otGender = MALE, 
+        .otName = _("KOBE"),
+        .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_RALTS
-    }, 
-    [INGAME_TRADE_PLUSLE] = 
+        .requestedSpecies = SPECIES_PINECO
+    },
+    [INGAME_TRADE_PLUSLE] =
     {
-        .nickname = _("PLUSES"), 
-        .species = SPECIES_PLUSLE,
+        .nickname = _("PLUSES"),
+        .species = SPECIES_PINECO,
         .ivs = {4, 4, 4, 5, 5, 4},
-        .abilityNum = 0, 
+        .abilityNum = 0,
         .otId = 73996,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x6F,
-        .heldItem = ITEM_WOOD_MAIL, 
+        .heldItem = ITEM_WOOD_MAIL,
         .mailNum = 0,
-        .otName = _("ROMAN"), 
-        .otGender = MALE, 
+        .otName = _("ROMAN"),
+        .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_VOLBEAT
-    }, 
-    [INGAME_TRADE_HORSEA] = 
+        .requestedSpecies = SPECIES_PINECO
+    },
+    [INGAME_TRADE_HORSEA] =
     {
         .nickname = _("SEASOR"),
-        .species = SPECIES_HORSEA,
+        .species = SPECIES_PINECO,
         .ivs = {5, 4, 4, 4, 5, 4},
-        .abilityNum = 0, 
+        .abilityNum = 0,
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL, 
+        .heldItem = ITEM_WAVE_MAIL,
         .mailNum = 1,
-        .otName = _("SKYLAR"), 
-        .otGender = MALE, 
+        .otName = _("SKYLAR"),
+        .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_BAGON
-    }, 
-    [INGAME_TRADE_MEOWTH] = 
+        .requestedSpecies = SPECIES_PINECO
+    },
+    [INGAME_TRADE_MEOWTH] =
     {
         .nickname = _("MEOWOW"),
-        .species = SPECIES_MEOWTH,
+        .species = SPECIES_PINECO,
         .ivs = {4, 5, 4, 5, 4, 4},
-        .abilityNum = 0, 
+        .abilityNum = 0,
         .otId = 91481,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x8B,
-        .heldItem = ITEM_RETRO_MAIL, 
+        .heldItem = ITEM_RETRO_MAIL,
         .mailNum = 2,
-        .otName = _("ISIS"), 
-        .otGender = FEMALE, 
+        .otName = _("ISIS"),
+        .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_SKITTY
+        .requestedSpecies = SPECIES_PINECO
     }
 };
 
@@ -1075,9 +1075,9 @@ static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =
         EC_WORD_BE,
         EC_WORD_NICE,
         EC_WORD_TO,
-        EC_POKEMON(PLUSLE),
+        EC_POKEMON(PINECO),
         EC_WORD_EXCL,
-        EC_POKEMON(VOLBEAT),
+        EC_POKEMON(PINECO),
         EC_WORD_WILL,
         EC_WORD_BE,
         EC_WORD_FANTASTIC
@@ -1085,17 +1085,17 @@ static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =
         EC_WORD_I,
         EC_WORD_WILL,
         EC_WORD_MAKE,
-        EC_POKEMON(BAGON),
+        EC_POKEMON(PINECO),
         EC_WORD_TOUGH,
         EC_WORD_PLEASE,
         EC_WORD_TRAIN,
-        EC_POKEMON(HORSEA),
+        EC_POKEMON(PINECO),
         EC_WORD_WELL
     }, {
         EC_WORD_THANK_YOU,
         EC_WORD_FOR,
-        EC_POKEMON(SKITTY),
-        EC_POKEMON_NATIONAL(MEOWTH),
+        EC_POKEMON(PINECO),
+        EC_POKEMON(PINECO),
         EC_WORD_CRIES,
         EC_WORD_IN,
         EC_WORD_A,

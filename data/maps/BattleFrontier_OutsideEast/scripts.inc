@@ -72,7 +72,7 @@ BattleFrontier_OutsideEast_EventScript_Zigzagoon::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_ZIGZAGOON, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox BattleFrontier_OutsideEast_Text_ZigzagoonLooksVacant, MSGBOX_DEFAULT
 	waitmoncry
 	release
@@ -126,11 +126,11 @@ BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::
 	msgbox gText_Sudowoodo_Attacked, MSGBOX_DEFAULT
 	closemessage
 	waitse
-	playmoncry SPECIES_SUDOWOODO, 2
+	playmoncry SPECIES_PINECO, 2
 	delay 40
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_SUDOWOODO
-	setwildbattle SPECIES_SUDOWOODO, 40, ITEM_NONE
+	setwildbattle SPECIES_PINECO, 40, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

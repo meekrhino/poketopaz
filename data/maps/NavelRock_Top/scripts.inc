@@ -47,7 +47,7 @@ NavelRock_Top_EventScript_HoOh::
 	setweather WEATHER_NONE
 	doweather
 	waitse
-	playmoncry SPECIES_HO_OH, 2
+	playmoncry SPECIES_PINECO, 2
 	delay 30
 	waitmoncry
 	delay 60
@@ -58,7 +58,7 @@ NavelRock_Top_EventScript_HoOh::
 	applymovement LOCALID_HO_OH, NavelRock_Top_Movement_HoOhApproach
 	waitmovement 0
 	special RemoveCameraObject
-	setvar VAR_0x8004, SPECIES_HO_OH
+	setvar VAR_0x8004, SPECIES_PINECO
 	setvar VAR_0x8005, 70 @ level
 	setvar VAR_0x8006, ITEM_NONE
 	special CreateEventLegalEnemyMon
@@ -80,12 +80,12 @@ NavelRock_Top_EventScript_HoOh::
 
 NavelRock_Top_EventScript_DefeatedHoOh::
 	setflag FLAG_DEFEATED_HO_OH
-	setvar VAR_0x8004, SPECIES_HO_OH
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 NavelRock_Top_EventScript_RanFromHoOh::
-	setvar VAR_0x8004, SPECIES_HO_OH
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto Common_EventScript_LegendaryFlewAway
 	end
 

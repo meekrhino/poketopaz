@@ -74,7 +74,6 @@ static void CB2_PreInitIngamePlayerPartnerBattle(void);
 static void CB2_HandleStartMultiPartnerBattle(void);
 static void CB2_HandleStartMultiBattle(void);
 static void CB2_HandleStartBattle(void);
-static void TryCorrectShedinjaLanguage(struct Pokemon *mon);
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer);
 static void BattleMainCB1(void);
 static void sub_8038538(struct Sprite *sprite);
@@ -1029,7 +1028,6 @@ static void CB2_HandleStartBattle(void)
             gTasks[taskId].data[4] = gBlockRecvBuffer[enemyMultiplayerId][1];
             RecordedBattle_SetFrontierPassFlagFromHword(gBlockRecvBuffer[playerMultiplayerId][1]);
             RecordedBattle_SetFrontierPassFlagFromHword(gBlockRecvBuffer[enemyMultiplayerId][1]);
-            SetDeoxysStats();
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         break;
@@ -1075,12 +1073,6 @@ static void CB2_HandleStartBattle(void)
         {
             ResetBlockReceivedFlags();
             memcpy(gEnemyParty + 4, gBlockRecvBuffer[enemyMultiplayerId], sizeof(struct Pokemon) * 2);
-            TryCorrectShedinjaLanguage(&gEnemyParty[0]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[1]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[2]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[3]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[4]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[5]);
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         break;
@@ -1330,18 +1322,6 @@ static void CB2_HandleStartMultiPartnerBattle(void)
             ResetBlockReceivedFlags();
             if (GetMultiplayerId() != 0)
                 memcpy(gEnemyParty + 4, gBlockRecvBuffer[0], sizeof(struct Pokemon) * 2);
-            TryCorrectShedinjaLanguage(&gPlayerParty[0]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[1]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[2]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[3]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[4]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[5]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[0]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[1]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[2]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[3]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[4]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[5]);
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         break;
@@ -1610,7 +1590,6 @@ static void CB2_HandleStartMultiBattle(void)
             ResetBlockReceivedFlags();
             FindLinkBattleMaster(4, playerMultiplayerId);
             SetAllPlayersBerryData();
-            SetDeoxysStats();
             var = CreateTask(InitLinkBattleVsScreen, 0);
             gTasks[var].data[1] = 0x10E;
             gTasks[var].data[2] = 0x5A;
@@ -1766,19 +1745,6 @@ static void CB2_HandleStartMultiBattle(void)
                     }
                 }
             }
-            TryCorrectShedinjaLanguage(&gPlayerParty[0]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[1]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[2]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[3]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[4]);
-            TryCorrectShedinjaLanguage(&gPlayerParty[5]);
-
-            TryCorrectShedinjaLanguage(&gEnemyParty[0]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[1]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[2]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[3]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[4]);
-            TryCorrectShedinjaLanguage(&gEnemyParty[5]);
 
             gBattleCommunication[MULTIUSE_STATE]++;
         }
@@ -2597,20 +2563,6 @@ static void sub_803939C(void)
     }
 }
 
-static void TryCorrectShedinjaLanguage(struct Pokemon *mon)
-{
-    u8 nickname[POKEMON_NAME_LENGTH + 1];
-    u8 language = LANGUAGE_JAPANESE;
-
-    if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_SHEDINJA
-     && GetMonData(mon, MON_DATA_LANGUAGE) != language)
-    {
-        GetMonData(mon, MON_DATA_NICKNAME, nickname);
-        if (StringCompareWithoutExtCtrlCodes(nickname, sText_ShedinjaJpnName) == 0)
-            SetMonData(mon, MON_DATA_LANGUAGE, &language);
-    }
-}
-
 u32 GetBattleWindowTemplatePixelWidth(u32 setId, u32 tableId)
 {
     return gBattleWindowTemplates[setId][tableId].width * 8;
@@ -2704,24 +2656,7 @@ void SpriteCB_FaintOpponentMon(struct Sprite *sprite)
 
     GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_PERSONALITY);  // Unused return value.
 
-    if (species == SPECIES_UNOWN)
-    {
-        u32 personalityValue = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_PERSONALITY);
-        u16 unownForm = GET_UNOWN_LETTER(personalityValue);
-        u16 unownSpecies;
-
-        if (unownForm == 0)
-            unownSpecies = SPECIES_UNOWN;  // Use the A Unown form.
-        else
-            unownSpecies = NUM_SPECIES + unownForm;  // Use one of the other Unown letters.
-
-        yOffset = gMonFrontPicCoords[unownSpecies].y_offset;
-    }
-    else if (species == SPECIES_CASTFORM)
-    {
-        yOffset = gCastformFrontSpriteCoords[gBattleMonForms[battler]].y_offset;
-    }
-    else if (species > NUM_SPECIES)
+    if (species > NUM_SPECIES)
     {
         yOffset = gMonFrontPicCoords[SPECIES_NONE].y_offset;
     }
@@ -3393,7 +3328,7 @@ static void BattleIntroDrawTrainersOrMonsSprites(void)
                                       | BATTLE_TYPE_RECORDED_LINK
                                       | BATTLE_TYPE_TRAINER_HILL)))
             {
-                HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gActiveBattler].species), FLAG_SET_SEEN, gBattleMons[gActiveBattler].personality);
+                HandleSetPokedexFlag(gBattleMons[gActiveBattler].species, FLAG_SET_SEEN, gBattleMons[gActiveBattler].personality);
             }
         }
         else
@@ -3406,7 +3341,7 @@ static void BattleIntroDrawTrainersOrMonsSprites(void)
                                       | BATTLE_TYPE_RECORDED_LINK
                                       | BATTLE_TYPE_TRAINER_HILL)))
                 {
-                    HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gActiveBattler].species), FLAG_SET_SEEN, gBattleMons[gActiveBattler].personality);
+                    HandleSetPokedexFlag(gBattleMons[gActiveBattler].species, FLAG_SET_SEEN, gBattleMons[gActiveBattler].personality);
                 }
                 BtlController_EmitLoadMonSprite(0);
                 MarkBattlerForControllerExec(gActiveBattler);
@@ -3632,7 +3567,7 @@ static void BattleIntroRecordMonsToDex(void)
                                       | BATTLE_TYPE_RECORDED_LINK
                                       | BATTLE_TYPE_TRAINER_HILL)))
             {
-                HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gActiveBattler].species), FLAG_SET_SEEN, gBattleMons[gActiveBattler].personality);
+                HandleSetPokedexFlag(gBattleMons[gActiveBattler].species, FLAG_SET_SEEN, gBattleMons[gActiveBattler].personality);
             }
         }
         gBattleMainFunc = BattleIntroPrintPlayerSendsOut;
@@ -4391,10 +4326,10 @@ static void HandleTurnActionSelectionState(void)
             }
             break;
         case STATE_WAIT_ACTION_CONFIRMED_STANDBY:
-            if (!(gBattleControllerExecFlags & ((gBitTable[gActiveBattler]) 
+            if (!(gBattleControllerExecFlags & ((gBitTable[gActiveBattler])
                                                 | (0xF << 28)
-                                                | (gBitTable[gActiveBattler] << 4) 
-                                                | (gBitTable[gActiveBattler] << 8) 
+                                                | (gBitTable[gActiveBattler] << 4)
+                                                | (gBitTable[gActiveBattler] << 8)
                                                 | (gBitTable[gActiveBattler] << 12))))
             {
                 if (AllAtActionConfirmed())

@@ -42,9 +42,6 @@ EWRAM_DATA static u32 sFeebasRngValue = 0;
 
 #include "data/wild_encounters.h"
 
-//Special Feebas-related data.
-const struct WildPokemon gWildFeebasRoute119Data = {20, 25, SPECIES_FEEBAS};
-
 const u16 gRoute119WaterTileData[] =
 {
     0, 0x2D, 0,
@@ -84,46 +81,6 @@ static u16 GetRoute119WaterTileNum(s16 x, s16 y, u8 section)
 
 static bool8 CheckFeebas(void)
 {
-    u8 i;
-    u16 feebasSpots[NUM_FEEBAS_SPOTS];
-    s16 x;
-    s16 y;
-    u8 route119Section = 0;
-    u16 waterTileNum;
-
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE119)
-     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE119))
-    {
-        GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-        x -= 7;
-        y -= 7;
-
-        if (y >= gRoute119WaterTileData[3 * 0 + 0] && y <= gRoute119WaterTileData[3 * 0 + 1])
-            route119Section = 0;
-        if (y >= gRoute119WaterTileData[3 * 1 + 0] && y <= gRoute119WaterTileData[3 * 1 + 1])
-            route119Section = 1;
-        if (y >= gRoute119WaterTileData[3 * 2 + 0] && y <= gRoute119WaterTileData[3 * 2 + 1])
-            route119Section = 2;
-
-        if (Random() % 100 > 49) // 50% chance of encountering Feebas
-            return FALSE;
-
-        FeebasSeedRng(gSaveBlock1Ptr->dewfordTrends[0].rand);
-        for (i = 0; i != NUM_FEEBAS_SPOTS;)
-        {
-            feebasSpots[i] = FeebasRandom() % 447;
-            if (feebasSpots[i] == 0)
-                feebasSpots[i] = 447;
-            if (feebasSpots[i] < 1 || feebasSpots[i] >= 4)
-                i++;
-        }
-        waterTileNum = GetRoute119WaterTileNum(x, y, route119Section);
-        for (i = 0; i < NUM_FEEBAS_SPOTS; i++)
-        {
-            if (waterTileNum == feebasSpots[i])
-                return TRUE;
-        }
-    }
     return FALSE;
 }
 
@@ -742,17 +699,7 @@ void FishingWildEncounter(u8 rod)
 {
     u16 species;
 
-    if (CheckFeebas() == TRUE)
-    {
-        u8 level = ChooseWildMonLevel(&gWildFeebasRoute119Data);
-
-        species = gWildFeebasRoute119Data.species;
-        CreateWildMon(species, level);
-    }
-    else
-    {
-        species = GenerateFishingWildMon(gWildMonHeaders[GetCurrentMapWildMonHeaderId()].fishingMonsInfo, rod);
-    }
+    species = GenerateFishingWildMon(gWildMonHeaders[GetCurrentMapWildMonHeaderId()].fishingMonsInfo, rod);
     IncrementGameStat(GAME_STAT_FISHING_CAPTURES);
     SetPokemonAnglerSpecies(species);
     BattleSetup_StartWildBattle();

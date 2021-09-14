@@ -689,8 +689,8 @@ static const u16 sMysteryGiftPhrase[NUM_QUESTIONNAIRE_WORDS] = {
 static const u16 sBerryMasterWifePhrases[][2] = {
     [PHRASE_GREAT_BATTLE - 1]        = {EC_WORD_GREAT, EC_WORD_BATTLE},
     [PHRASE_CHALLENGE_CONTEST - 1]   = {EC_WORD_CHALLENGE, EC_WORD_CONTEST},
-    [PHRASE_OVERWHELMING_LATIAS - 1] = {EC_WORD_OVERWHELMING, EC_POKEMON(LATIAS)},
-    [PHRASE_COOL_LATIOS - 1]         = {EC_WORD_COOL, EC_POKEMON(LATIOS)},
+    [PHRASE_OVERWHELMING_LATIAS - 1] = {EC_WORD_OVERWHELMING, EC_POKEMON(KURANPU)},
+    [PHRASE_COOL_LATIOS - 1]         = {EC_WORD_COOL, EC_POKEMON(UNICROWN)},
     [PHRASE_SUPER_HUSTLE - 1]        = {EC_WORD_SUPER, EC_WORD_HUSTLE},
 };
 
@@ -857,7 +857,7 @@ static const struct WindowTemplate sEasyChatYesNoWindowTemplate = {
 
 static const u8 sText_Clear17[] = _("{CLEAR 17}");
 
-static const u8 *const sEasyChatKeyboardAlphabet[NUM_ALPHABET_ROWS] = 
+static const u8 *const sEasyChatKeyboardAlphabet[NUM_ALPHABET_ROWS] =
 {
     gText_EasyChatKeyboard_ABCDEFothers,
     gText_EasyChatKeyboard_GHIJKL,
@@ -1255,7 +1255,7 @@ static const u16 sDefaultBattleLostWords[EASY_CHAT_BATTLE_WORDS_COUNT] = {
 };
 
 static const u16 sRestrictedWordSpecies[] = {
-    SPECIES_DEOXYS,
+    0xFFFF,
 };
 
 
@@ -2908,7 +2908,7 @@ static void GetQuizTitle(u8 *dst)
     u8 name[32];
     struct SaveBlock1 *saveBlock1 = gSaveBlock1Ptr;
     DynamicPlaceholderTextUtil_Reset();
-    
+
     // Buffer author's name
     if (StringLength(saveBlock1->lilycoveLady.quiz.playerName) != 0)
     {
@@ -4118,7 +4118,7 @@ static void BufferFrameTilemap(u16 *tilemap)
         // These frames fill the screen, no need to draw top/bottom edges
         right = sPhraseFrameDimensions[frameId].left + sPhraseFrameDimensions[frameId].width;
         bottom = sPhraseFrameDimensions[frameId].top + sPhraseFrameDimensions[frameId].height;
-        
+
         // Draw middle section
         for (y = sPhraseFrameDimensions[frameId].top; y < bottom; y++)
         {
@@ -4516,7 +4516,7 @@ static void BufferLowerWindowFrame(int left, int top, int width, int height)
     bottom = top + height - 1;
     x = left;
     y = top;
-    
+
     // Draw top edge
     tilemap[y * 32 + x] = FRAME_OFFSET_GREEN + FRAME_TILE_TOP_L_CORNER;
     x++;
@@ -4688,7 +4688,7 @@ static void UpdateRectangleCursorPos(void)
     s8 column;
     s8 row;
 
-    if (sScreenControl->rectangleCursorSpriteRight 
+    if (sScreenControl->rectangleCursorSpriteRight
      && sScreenControl->rectangleCursorSpriteLeft)
     {
         GetKeyboardCursorColAndRow(&column, &row);
@@ -5109,7 +5109,7 @@ static bool8 IsEasyChatGroupUnlocked(u8 groupId)
 u16 EasyChat_GetNumWordsInGroup(u8 groupId)
 {
     if (groupId == EC_GROUP_POKEMON)
-        return GetNationalPokedexCount(FLAG_GET_SEEN);
+        return GetPokedexCount(FLAG_GET_SEEN);
 
     if (IsEasyChatGroupUnlocked(groupId))
         return gEasyChatGroups[groupId].numEnabledWords;
@@ -5164,10 +5164,6 @@ bool8 IsBardWordInvalid(u16 easyChatWord)
 
     switch (groupId)
     {
-    case EC_GROUP_POKEMON:
-    case EC_GROUP_POKEMON_NATIONAL:
-        numWordsInGroup = gNumBardWords_Species;
-        break;
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
         numWordsInGroup = gNumBardWords_Moves;
@@ -5511,7 +5507,7 @@ static u16 GetRandomUnlockedEasyChatPokemon(void)
     numWords = gEasyChatGroups[EC_GROUP_POKEMON].numWords;
     for (i = 0; i < numWords; i++)
     {
-        u16 dexNum = SpeciesToNationalPokedexNum(*species);
+        u16 dexNum = *species;
         if (GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
         {
             if (index)
@@ -5532,16 +5528,16 @@ void InitEasyChatPhrases(void)
 
     for (i = 0; i < ARRAY_COUNT(sDefaultProfileWords); i++)
         gSaveBlock1Ptr->easyChatProfile[i] = sDefaultProfileWords[i];
-    
+
     for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
         gSaveBlock1Ptr->easyChatBattleStart[i] = sDefaultBattleStartWords[i];
-    
+
     for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
         gSaveBlock1Ptr->easyChatBattleWon[i] = sDefaultBattleWonWords[i];
-    
+
     for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
         gSaveBlock1Ptr->easyChatBattleLost[i] = sDefaultBattleLostWords[i];
-    
+
     for (i = 0; i < MAIL_COUNT; i++)
     {
         for (j = 0; j < MAIL_WORDS_COUNT; j++)
@@ -5583,13 +5579,13 @@ static void SetUnlockedEasyChatGroups(void)
     int i;
 
     sWordData->numUnlockedGroups = 0;
-    if (GetNationalPokedexCount(FLAG_GET_SEEN))
+    if (GetPokedexCount(FLAG_GET_SEEN))
         sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_POKEMON;
-    
+
     // These groups are unlocked automatically
     for (i = EC_GROUP_TRAINER; i <= EC_GROUP_ADJECTIVES; i++)
         sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = i;
-    
+
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_EVENTS;
@@ -5627,7 +5623,7 @@ static u8 *BufferEasyChatWordGroupName(u8 *dest, u8 groupId, u16 totalChars)
         *str = CHAR_SPACE;
         str++;
     }
-    
+
     *str = EOS;
     return str;
 }
@@ -5646,7 +5642,7 @@ static u8 *CopyEasyChatWordPadded(u8 *dest, u16 easyChatWord, u16 totalChars)
         *str = CHAR_SPACE;
         str++;
     }
-    
+
     *str = EOS;
     return str;
 }
@@ -5777,10 +5773,10 @@ static bool8 IsEasyChatIndexAndGroupUnlocked(u16 wordIndex, u8 groupId)
     switch (groupId)
     {
     case EC_GROUP_POKEMON:
-        return GetSetPokedexFlag(SpeciesToNationalPokedexNum(wordIndex), FLAG_GET_SEEN);
+        return GetSetPokedexFlag(wordIndex, FLAG_GET_SEEN);
     case EC_GROUP_POKEMON_NATIONAL:
         if (IsRestrictedWordSpecies(wordIndex))
-            GetSetPokedexFlag(SpeciesToNationalPokedexNum(wordIndex), FLAG_GET_SEEN);
+            GetSetPokedexFlag(wordIndex, FLAG_GET_SEEN);
         return TRUE;
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:

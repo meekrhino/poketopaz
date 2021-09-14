@@ -48,10 +48,10 @@ SkyPillar_Top_EventScript_RayquazaFaceDown::
 SkyPillar_Top_EventScript_Rayquaza::
 	lockall
 	waitse
-	playmoncry SPECIES_RAYQUAZA, 2
+	playmoncry SPECIES_PINECO, 2
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_RAYQUAZA, 70, ITEM_NONE
+	setwildbattle SPECIES_PINECO, 70, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -73,7 +73,7 @@ SkyPillar_Top_EventScript_DefeatedRayquaza::
 	end
 
 SkyPillar_Top_EventScript_RanFromRayquaza::
-	setvar VAR_0x8004, SPECIES_RAYQUAZA
+	setvar VAR_0x8004, SPECIES_PINECO
 	goto SkyPillar_Top_EventScript_RanFromRayquaza2
 	end
 
@@ -105,7 +105,7 @@ SkyPillar_Top_EventScript_AwakenRayquaza::
 	applymovement LOCALID_RAYQUAZA_SLEEPING, SkyPillar_Top_Movement_RayquazaStir
 	waitmovement 0
 	waitse
-	playmoncry SPECIES_RAYQUAZA, 2
+	playmoncry SPECIES_PINECO, 2
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
 	setvar VAR_0x8006, 8  @ num shakes
@@ -113,7 +113,7 @@ SkyPillar_Top_EventScript_AwakenRayquaza::
 	special ShakeCamera
 	waitstate
 	waitse
-	playmoncry SPECIES_RAYQUAZA, 2
+	playmoncry SPECIES_PINECO, 2
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 2  @ horizontal pan
 	setvar VAR_0x8006, 8  @ num shakes

@@ -307,7 +307,7 @@ RusturfTunnel_EventScript_Peeko::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_WINGULL, 0
+	playmoncry SPECIES_PINECO, 0
 	msgbox RusturfTunnel_Text_Peeko, MSGBOX_DEFAULT
 	waitmoncry
 	release
@@ -339,7 +339,7 @@ RusturfTunnel_EventScript_Grunt::
 	message RusturfTunnel_Text_ThankYouLetsGoHomePeeko
 	waitmessage
 	waitse
-	playmoncry SPECIES_WINGULL, 0
+	playmoncry SPECIES_PINECO, 0
 	waitbuttonpress
 	waitmoncry
 	closemessage
