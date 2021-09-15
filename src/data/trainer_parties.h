@@ -6961,13 +6961,8 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayRoute103Treecko[] = {
     {
     .iv = 0,
     .lvl = 5,
-    .species = SPECIES_PINECO,
+    .species = SPECIES_CELSINGE,
     },
-    {
-    .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_PINECO,
-    }
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_MayRoute110Treecko[] = {
