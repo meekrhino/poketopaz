@@ -45,8 +45,7 @@ const struct BardSound (*const gBardSoundsTable[EC_NUM_GROUPS])[6] = {
     [EC_GROUP_EVENTS]           = gBardSounds_Events,
     [EC_GROUP_MOVE_1]           = NULL, // Handled by gBardSounds_Moves
     [EC_GROUP_MOVE_2]           = NULL, // Handled by gBardSounds_Moves
-    [EC_GROUP_TRENDY_SAYING]    = gBardSounds_TrendySaying,
-    [EC_GROUP_POKEMON_NATIONAL] = NULL // Handled by gBardSounds_Pokemon
+    [EC_GROUP_TRENDY_SAYING]    = gBardSounds_TrendySaying
 };
 
 #endif //GUARD_BARD_SOUNDS_TABLE_H

@@ -202,7 +202,7 @@ const u16 gPokedexOrder_Alphabetical[] =
     CALDERA_KIRANT_DEX_ZANTILIDAE,
 };
 
-const u16 gPokedexOrder_Weight[] = // TODO-POKEDEX
+const u16 gPokedexOrder_Weight[] =
 {
     CALDERA_KIRANT_DEX_CACNEA,
     CALDERA_KIRANT_DEX_CIRROFT,
