@@ -1675,7 +1675,7 @@ const struct PokedexEntry gPokedexEntries[] =
     [CALDERA_KIRANT_DEX_BRONTOGON] =
     {
         .categoryName = _("TREMOR"),
-        .height = 350,
+        .height = 35,
         .weight = 845,
         .description = gBrontogonPokedexText,
         .pokemonScale = 256,

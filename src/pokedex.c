@@ -4200,16 +4200,16 @@ u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
     }
 }
 
-s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
+s8 GetSetPokedexFlag(u16 species, u8 caseID)
 {
     u8 index;
     u8 bit;
     u8 mask;
     s8 retVal;
 
-    nationalDexNo--;
-    index = nationalDexNo / 8;
-    bit = nationalDexNo % 8;
+    species--;
+    index = species / 8;
+    bit = species % 8;
     mask = 1 << bit;
     retVal = 0;
     switch (caseID)
@@ -4508,9 +4508,9 @@ static u32 GetPokedexMonPersonality(u16 species)
     return 0;
 }
 
-u16 CreateMonSpriteFromNationalDexNumber(u16 nationalNum, s16 x, s16 y, u16 paletteSlot)
+u16 CreateMonSpriteFromNationalDexNumber(u16 species, s16 x, s16 y, u16 paletteSlot)
 {
-    return CreateMonPicSprite_HandleDeoxys(nationalNum, SHINY_ODDS, GetPokedexMonPersonality(nationalNum), TRUE, x, y, paletteSlot, 0xFFFF);
+    return CreateMonPicSprite_HandleDeoxys(species, SHINY_ODDS, GetPokedexMonPersonality(species), TRUE, x, y, paletteSlot, 0xFFFF);
 }
 
 static u16 CreateSizeScreenTrainerPic(u16 species, s16 x, s16 y, s8 paletteSlot)

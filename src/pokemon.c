@@ -5026,12 +5026,12 @@ u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
         return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);
 }
 
-void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
+void HandleSetPokedexFlag(u16 species, u8 caseId, u32 personality)
 {
     u8 getFlagCaseId = (caseId == FLAG_SET_SEEN) ? FLAG_GET_SEEN : FLAG_GET_CAUGHT;
-    if (!GetSetPokedexFlag(nationalNum, getFlagCaseId)) // don't set if it's already set
+    if (!GetSetPokedexFlag(species, getFlagCaseId)) // don't set if it's already set
     {
-        GetSetPokedexFlag(nationalNum, caseId);
+        GetSetPokedexFlag(species, caseId);
     }
 }
 
