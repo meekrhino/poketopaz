@@ -316,7 +316,7 @@
 #define EVO_FRIENDSHIP_DAY   2  // Pokémon levels up during the day with friendship ≥ 220
 #define EVO_FRIENDSHIP_NIGHT 3  // Pokémon levels up at night with friendship ≥ 220
 #define EVO_LEVEL            4  // Pokémon reaches the specified level
-#define EVO_LEVEL_ITEM       5  // Pokémon levels up while it's holding the specified item
+#define EVO_HELD_ITEM        5  // Pokémon levels up while it's holding the specified item
 #define EVO_ITEM             6  // specified item is used on Pokémon
 #define EVO_LEVEL_ATK_GT     7  // Pokémon reaches the specified level with attack > defense/speed
 #define EVO_LEVEL_DEF_GT     8  // Pokémon reaches the specified level with defense > attack/speed
@@ -336,6 +336,7 @@
 #define EVO_MODE_TRADE      1
 #define EVO_MODE_ITEM_USE   2
 #define EVO_MODE_ITEM_CHECK 3 // If an Everstone is being held, still want to show that the stone *could* be used on that Pokémon to evolve
+#define EVO_MODE_DEFEAT     4 // Special case for EVO_DEVEAT
 
 #define NUM_MALE_LINK_FACILITY_CLASSES   8
 #define NUM_FEMALE_LINK_FACILITY_CLASSES 8

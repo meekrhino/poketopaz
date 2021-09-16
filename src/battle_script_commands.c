@@ -3497,7 +3497,10 @@ static void Cmd_getexp(void)
                 if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0)
                     continue;
                 if (gBitTable[i] & sentIn)
+                {
                     viaSentIn++;
+                    gDefeatedInBattle[i] |=  gBitTable[gBattlerPartyIndexes[gBattlerFainted]];
+                }
 
                 item = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
 

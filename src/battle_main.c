@@ -60,6 +60,8 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "cable_club.h"
+#include "printf.h"
+#include "mgba.h"
 
 extern struct MusicPlayerInfo gMPlayInfo_SE1;
 extern struct MusicPlayerInfo gMPlayInfo_SE2;
@@ -241,6 +243,7 @@ void (*gPreBattleCallback1)(void);
 void (*gBattleMainFunc)(void);
 struct BattleResults gBattleResults;
 u8 gLeveledUpInBattle;
+u8 gDefeatedInBattle[PARTY_SIZE];
 void (*gBattlerControllerFuncs[MAX_BATTLERS_COUNT])(void);
 u8 gHealthboxSpriteIds[MAX_BATTLERS_COUNT];
 u8 gMultiUsePlayerCursor;
@@ -2990,6 +2993,10 @@ static void BattleStartClearSetData(void)
     gBattleScripting.animTurn = 0;
     gBattleScripting.animTargetsHit = 0;
     gLeveledUpInBattle = 0;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+        gDefeatedInBattle[i] = 0;
+
     gAbsentBattlerFlags = 0;
     gBattleStruct->runTries = 0;
     gBattleStruct->safariGoNearCounter = 0;
@@ -5021,7 +5028,7 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
     if (!gPaletteFade.active)
     {
         ResetSpriteData();
-        if (gLeveledUpInBattle == 0 || gBattleOutcome != B_OUTCOME_WON)
+        if (gBattleOutcome != B_OUTCOME_WON)
         {
             gBattleMainFunc = ReturnFromBattleToOverworld;
             return;
@@ -5064,6 +5071,34 @@ static void TryEvolvePokemon(void)
                     gBattleMainFunc = WaitForEvoSceneToFinish;
                     EvolutionScene(&gPlayerParty[i], species, TRUE, i);
                     return;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        while (gDefeatedInBattle[i] != 0)
+        {
+            s32 defeated;
+            for (defeated = 0; defeated < PARTY_SIZE; defeated++)
+            {
+                if (gDefeatedInBattle[i] & gBitTable[defeated])
+                {
+                    u16 species;
+                    u8 defeatedBits = gDefeatedInBattle[i];
+
+                    defeatedBits &= ~(gBitTable[defeated]);
+                    gDefeatedInBattle[i] = defeatedBits;
+
+                    species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_DEFEAT, GetMonData(&gEnemyParty[defeated], MON_DATA_SPECIES, 0));
+                    if (species != SPECIES_NONE)
+                    {
+                        FreeAllWindowBuffers();
+                        gBattleMainFunc = WaitForEvoSceneToFinish;
+                        EvolutionScene(&gPlayerParty[i], species, TRUE, i);
+                        return;
+                    }
                 }
             }
         }

@@ -43,8 +43,11 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/moves.h"
+#include "constants/region_map_sections.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
+#include "printf.h"
+#include "mgba.h"
 
 struct SpeciesItem
 {
@@ -3894,6 +3897,10 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
                 if (gEvolutionTable[species][i].param <= level)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
+            case EVO_HELD_ITEM:
+                if (gEvolutionTable[species][i].param == GetMonData(mon, MON_DATA_HELD_ITEM, 0))
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
             case EVO_LEVEL_ATK_GT:
                 if (gEvolutionTable[species][i].param <= level)
                     if (GetMonData(mon, MON_DATA_ATK, 0) >= GetMonData(mon, MON_DATA_DEF, 0)
@@ -3902,36 +3909,49 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
                 break;
             case EVO_LEVEL_DEF_GT:
                 if (gEvolutionTable[species][i].param <= level)
-                    if (GetMonData(mon, MON_DATA_DEF, 0) >= GetMonData(mon, MON_DATA_ATK, 0)
+                    if (GetMonData(mon, MON_DATA_DEF, 0) > GetMonData(mon, MON_DATA_ATK, 0)
                      && GetMonData(mon, MON_DATA_DEF, 0) >= GetMonData(mon, MON_DATA_SPEED, 0))
                         targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL_SPD_GT:
                 if (gEvolutionTable[species][i].param <= level)
-                    if (GetMonData(mon, MON_DATA_SPEED, 0) >= GetMonData(mon, MON_DATA_ATK, 0)
-                     && GetMonData(mon, MON_DATA_SPEED, 0) >= GetMonData(mon, MON_DATA_DEF, 0))
+                    if (GetMonData(mon, MON_DATA_SPEED, 0) > GetMonData(mon, MON_DATA_ATK, 0)
+                     && GetMonData(mon, MON_DATA_SPEED, 0) > GetMonData(mon, MON_DATA_DEF, 0))
                         targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-                break;
             case EVO_LOCATION_SAND:
-                if (gEvolutionTable[species][i].param <= level)
+                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_OLDALE_TOWN) // TODO - specific mapsec
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LOCATION_SNOW:
-                if (gEvolutionTable[species][i].param <= level)
+                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_ROUTE_101) // TODO - specific mapsec
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LOCATION_FACTORY:
-                if (gEvolutionTable[species][i].param <= level)
+                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_ROUTE_103) // TODO - specific mapsec
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                break;
-            case EVO_DEFEAT_TUNDROLF:
-            case EVO_DEFEAT_CANILEAF:
-                targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             }
         }
         break;
+#define defeatedSpecies evolutionItem
+    case EVO_MODE_DEFEAT:
+        for (i = 0; i < EVOS_PER_MON; i++)
+        {
+            switch (gEvolutionTable[species][i].method)
+            {
+            case EVO_DEFEAT_TUNDROLF:
+                if (SPECIES_TUNDROLF == defeatedSpecies)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_DEFEAT_CANILEAF:
+                if (SPECIES_CANILEAF == defeatedSpecies)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            }
+        }
+        break;
+#undef defeatedSpecies
     case EVO_MODE_ITEM_USE:
     case EVO_MODE_ITEM_CHECK:
         for (i = 0; i < EVOS_PER_MON; i++)

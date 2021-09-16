@@ -1118,8 +1118,7 @@ const u8 gLanturnPokedexText[] = _(
     "LANTURN's antenna brightens as it gathers\n"
     "electrons from sea water at the bottom of\n"
     "the ocean. It lights the way of divers,\n"
-    "showing them interesting landmarks\n"
-    "it has previously seen.");
+    "guiding them to interesting landmarks.");
 
 const u8 gRelicanthPokedexText[] = _(
     "Recent research suggests that RELICANTH\n"
