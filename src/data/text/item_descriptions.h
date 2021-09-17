@@ -62,6 +62,36 @@ static const u8 sPremierBallDesc[] = _(
     "in commemoration\n"
     "of some event.");
 
+static const u8 sDuneBallDesc[] = _(
+    "A BALL that works\n"
+    "better on POKéMON\n"
+    "found in the sand.");
+
+static const u8 sOrionBallDesc[] = _(
+    "A rare BALL that\n"
+    "makes POKéMON\n"
+    "extremely happy.");
+
+static const u8 sRocketBallDesc[] = _(
+    "A rare BALL that\n"
+    "works well, but\n"
+    "makes POKéMON sad.");
+
+static const u8 sSolarBallDesc[] = _(
+    "A BALL that works\n"
+    "well on LIGHT- and\n"
+    "FIRE-type POKéMON.");
+
+static const u8 sStormBallDesc[] = _(
+    "A BALL that works\n"
+    "better when used\n"
+    "during the rain.");
+
+static const u8 sVineBallDesc[] = _(
+    "A BALL that works\n"
+    "better when used\n"
+    "in tall grass.");
+
 // Medicine
 static const u8 sPotionDesc[] = _(
     "Restores the HP of\n"
@@ -220,6 +250,11 @@ static const u8 sSacredAshDesc[] = _(
     "restores all\n"
     "fainted POKéMON.");
 
+static const u8 sBerryBlendDesc[] = _(
+    "A delicious drink\n"
+    "that restores 150 HP\n"
+    "and status effects.");
+
 // Collectibles
 static const u8 sShoalSaltDesc[] = _(
     "Salt obtained from\n"
@@ -330,6 +365,11 @@ static const u8 sXAccuracyDesc[] = _(
 static const u8 sXSpecialDesc[] = _(
     "Raises the stat\n"
     "SP. ATK during one\n"
+    "battle.");
+
+static const u8 sXSpecialDefenseDesc[] = _(
+    "Raises the stat\n"
+    "SP. DEF during one\n"
     "battle.");
 
 static const u8 sPokeDollDesc[] = _(
@@ -717,6 +757,11 @@ static const u8 sEnigmaBerryDesc[] = _(
     "Plant in loamy soil\n"
     "to grow a mystery.");
 
+static const u8 sCalopaBerryDesc[] = _(
+    "A hold item that\n"
+    "copies a foe's\n"
+    "stat change.");
+
 // Hold items
 static const u8 sBrightPowderDesc[] = _(
     "A hold item that\n"
@@ -951,6 +996,111 @@ static const u8 sStickDesc[] = _(
     "A hold item that\n"
     "raises FARFETCH'D's\n"
     "critical-hit ratio.");
+
+static const u8 sBlessedAnkhDesc[] = _(
+    "A hold item that\n"
+    "raises the power of\n"
+    "LIGHT-type moves.");
+
+static const u8 sUmbraCrestDesc[] = _(
+    "An ominous pendant\n"
+    "that is loved by\n"
+    "certain POKéMON.");
+
+static const u8 sRivalryOrbDesc[] = _(
+    "A one-of-a-kind\n"
+    "symbol representing\n"
+    "an iconic rivalry.");
+
+static const u8 sSolarCellDesc[] = _(
+    "A hold item that\n"
+    "charges 2-turn\n"
+    "sun-powered moves.");
+
+static const u8 sVitalHerbDesc[] = _(
+    "A hold item that\n"
+    "prevents recoil\n"
+    "damage one time.");
+
+static const u8 sToxicSlimeDesc[] = _(
+    "A hold item that\n"
+    "badly poisons a\n"
+    "special attacker.");
+
+static const u8 sThornPlantDesc[] = _(
+    "Inflicts damage on\n"
+    "a foe when the\n"
+    "holder is touched.");
+
+static const u8 sSpongyHerbDesc[] = _(
+    "An item that\n"
+    "restores HP when\n"
+    "holder is hurt.");
+
+static const u8 sShrapnelDesc[] = _(
+    "A hold item that\n"
+    "creates SPIKES when\n"
+    "the holder is hit.");
+
+static const u8 sSacredVeilDesc[] = _(
+    "A hold item that\n"
+    "extends the duration\n"
+    "of created walls.");
+
+static const u8 sResistScarfDesc[] = _(
+    "A hold item that\n"
+    "reduces super-\n"
+    "effective damage.");
+
+static const u8 sPlainStoneDesc[] = _(
+    "A hold item that\n"
+    "absorbs a FIRE-type\n"
+    "attack to change.");
+
+static const u8 sMagicHerbDesc[] = _(
+    "A hold item that\n"
+    "triples extra\n"
+    "effects in battle.");
+
+static const u8 sMagmaStoneDesc[] = _(
+    "A hold item that\n"
+    "absorbs a WATER-type\n"
+    "attack to change.");
+
+static const u8 sLaserLensDesc[] = _(
+    "A hold item that\n"
+    "allows the user to\n"
+    "strike ghosts.");
+
+static const u8 sJaggedHerbDesc[] = _(
+    "A hold item that\n"
+    "raises critical-hit\n"
+    "ratio in one battle.");
+
+static const u8 sIronIncenseDesc[] = _(
+    "A hold item that\n"
+    "slightly boosts\n"
+    "STEEL-type moves.");
+
+static const u8 sCharIncenseDesc[] = _(
+    "A hold item that\n"
+    "slightly boosts\n"
+    "FIRE-type moves.");
+
+static const u8 sDiamondDustDesc[] = _(
+    "A hold item that\n"
+    "protects against\n"
+    "arena traps.");
+
+static const u8 sMilkIncenseDesc[] = _(
+    "A hold item that\n"
+    "boosts healing\n"
+    "from moves.");
+
+static const u8 sBurningCoalDesc[] = _(
+    "A hold item that\n"
+    "burns an attacker.\n"
+    "One time use.");
 
 static const u8 sRedScarfDesc[] = _(
     "A hold item that\n"

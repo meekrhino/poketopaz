@@ -12,7 +12,8 @@
 #define ITEM1_X_DEFEND          0xF0
 
 // field 2 masks
-#define ITEM2_X_SPATK           0x0F
+#define ITEM2_X_SPATK           0x03
+#define ITEM2_X_SPDEF           0x0C
 #define ITEM2_X_ACCURACY        0xF0
 
 // field 3 masks
@@ -23,7 +24,7 @@
 #define ITEM3_POISON            0x10
 #define ITEM3_SLEEP             0x20
 #define ITEM3_LEVEL_UP          0x40
-#define ITEM3_GUARD_SPEC        0x80 // Works the same way as the move Mist.   
+#define ITEM3_GUARD_SPEC        0x80 // Works the same way as the move Mist.
 
 #define ITEM3_STATUS_ALL        (ITEM3_CONFUSION | ITEM3_PARALYSIS | ITEM3_FREEZE | ITEM3_BURN | ITEM3_POISON | ITEM3_SLEEP)
 

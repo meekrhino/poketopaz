@@ -111,6 +111,8 @@ static const u8 sBerryDescriptionPart1_Starf[] = _("So strong, it was abandoned 
 static const u8 sBerryDescriptionPart2_Starf[] = _("world's edge. Considered a mirage.");
 static const u8 sBerryDescriptionPart1_Enigma[] = _("A completely enigmatic BERRY.");
 static const u8 sBerryDescriptionPart2_Enigma[] = _("Appears to have the power of stars.");
+static const u8 sBerryDescriptionPart1_Calopa[] = _("Dry on the outside, peeling it");
+static const u8 sBerryDescriptionPart2_Calopa[] = _("reveals a sweet-and-sour flesh.");
 
 const struct Berry gBerries[] =
 {
@@ -887,6 +889,24 @@ const struct Berry gBerries[] =
         .sour = 40,
         .smoothness = 40,
     },
+
+    [ITEM_CALOPA_BERRY - FIRST_BERRY_INDEX] =
+    {
+        .name = _("CALOPA"),
+        .firmness = BERRY_FIRMNESS_SOFT,
+        .size = 88,
+        .maxYield = 3,
+        .minYield = 1,
+        .description1 = sBerryDescriptionPart1_Calopa,
+        .description2 = sBerryDescriptionPart2_Calopa,
+        .stageDuration = 8,
+        .spicy = 0,
+        .dry = 20,
+        .sweet = 20,
+        .bitter = 0,
+        .sour = 10,
+        .smoothness = 30,
+    },
 };
 
 const struct BerryCrushBerryData gBerryCrush_BerryData[] = {
@@ -932,7 +952,8 @@ const struct BerryCrushBerryData gBerryCrush_BerryData[] = {
     [ITEM_APICOT_BERRY - FIRST_BERRY_INDEX] = {.difficulty = 180, .powder = 500},
     [ITEM_LANSAT_BERRY - FIRST_BERRY_INDEX] = {.difficulty = 200, .powder = 750},
     [ITEM_STARF_BERRY - FIRST_BERRY_INDEX]  = {.difficulty = 200, .powder = 750},
-    [ITEM_ENIGMA_BERRY - FIRST_BERRY_INDEX] = {.difficulty = 150, .powder = 200}
+    [ITEM_ENIGMA_BERRY - FIRST_BERRY_INDEX] = {.difficulty = 150, .powder = 200},
+    [ITEM_CALOPA_BERRY - FIRST_BERRY_INDEX] = {.difficulty = 130, .powder = 150},
 };
 
 const struct BerryTree gBlankBerryTree = {};

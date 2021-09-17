@@ -466,6 +466,7 @@ const struct SpriteFrameImage *const gBerryTreePicTablePointers[] = {
     [ITEM_LANSAT_BERRY - FIRST_BERRY_INDEX] = sPicTable_LansatBerryTree,
     [ITEM_STARF_BERRY - FIRST_BERRY_INDEX]  = sPicTable_CornnBerryTree,
     [ITEM_ENIGMA_BERRY - FIRST_BERRY_INDEX] = sPicTable_DurinBerryTree,
+    [ITEM_CALOPA_BERRY - FIRST_BERRY_INDEX] = sPicTable_SpelonBerryTree,
 };
 
 const u8 *const gBerryTreePaletteSlotTablePointers[] = {
@@ -512,6 +513,7 @@ const u8 *const gBerryTreePaletteSlotTablePointers[] = {
     [ITEM_LANSAT_BERRY - FIRST_BERRY_INDEX] = gBerryTreePaletteSlotTable_Lansat,
     [ITEM_STARF_BERRY - FIRST_BERRY_INDEX] = gBerryTreePaletteSlotTable_Cornn,
     [ITEM_ENIGMA_BERRY - FIRST_BERRY_INDEX] = gBerryTreePaletteSlotTable_Durin,
+    [ITEM_CALOPA_BERRY - FIRST_BERRY_INDEX] = gBerryTreePaletteSlotTable_Spelon,
 };
 
 const u8 *const gBerryTreeObjectEventGraphicsIdTablePointers[] = {
@@ -558,8 +560,7 @@ const u8 *const gBerryTreeObjectEventGraphicsIdTablePointers[] = {
     [ITEM_LANSAT_BERRY - FIRST_BERRY_INDEX] = gBerryTreeObjectEventGraphicsIdTable,
     [ITEM_STARF_BERRY - FIRST_BERRY_INDEX] = gBerryTreeObjectEventGraphicsIdTable,
     [ITEM_ENIGMA_BERRY - FIRST_BERRY_INDEX] = gBerryTreeObjectEventGraphicsIdTable,
-    // 3 unused berries.
-    [ITEM_UNUSED_BERRY_1 - FIRST_BERRY_INDEX] = gBerryTreeObjectEventGraphicsIdTable,
+    [ITEM_CALOPA_BERRY - FIRST_BERRY_INDEX] = gBerryTreeObjectEventGraphicsIdTable,
     [ITEM_UNUSED_BERRY_2 - FIRST_BERRY_INDEX] = gBerryTreeObjectEventGraphicsIdTable,
     [ITEM_UNUSED_BERRY_3 - FIRST_BERRY_INDEX] = gBerryTreeObjectEventGraphicsIdTable,
 };

@@ -751,6 +751,18 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_LUXURY;
     case ITEM_PREMIER_BALL:
         return BALL_PREMIER;
+    case ITEM_DUNE_BALL:
+        return BALL_DUNE;
+    case ITEM_ORION_BALL:
+        return BALL_ORION;
+    case ITEM_ROCKET_BALL:
+        return BALL_ROCKET;
+    case ITEM_SOLAR_BALL:
+        return BALL_SOLAR;
+    case ITEM_STORM_BALL:
+        return BALL_STORM;
+    case ITEM_VINE_BALL:
+        return BALL_VINE;
     case ITEM_POKE_BALL:
     default:
         return BALL_POKE;
@@ -1139,8 +1151,8 @@ static void SpriteCB_Ball_Wobble_Step(struct Sprite *sprite)
 
     switch (STATE(sprite->sState))
     {
-    case BALL_ROLL_1: 
-        // Rolling effect: every frame in the rotation, the sprite shifts 176/256 of a pixel. 
+    case BALL_ROLL_1:
+        // Rolling effect: every frame in the rotation, the sprite shifts 176/256 of a pixel.
         if (gBattleSpritesDataPtr->animationData->ballSubpx > 255)
         {
             sprite->x2 += sprite->sDirection;
@@ -2268,7 +2280,7 @@ static void Task_ShinyStars(u8 taskId)
     }
 
     // Wait until the ball particles have despawned
-    if (gBattleSpritesDataPtr->animationData->numBallParticles) 
+    if (gBattleSpritesDataPtr->animationData->numBallParticles)
         return;
 
     timer = gTasks[taskId].tStarTimer++;
@@ -2440,7 +2452,7 @@ static void SpriteCB_PokeBlock_Arc(struct Sprite *sprite)
 }
 
 // Destroy after end of player animation
-static void SpriteCB_ThrowPokeBlock_Free(struct Sprite *sprite) 
+static void SpriteCB_ThrowPokeBlock_Free(struct Sprite *sprite)
 {
     if (gSprites[gBattlerSpriteIds[gBattleAnimAttacker]].animEnded)
     {

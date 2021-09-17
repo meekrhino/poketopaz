@@ -160,6 +160,12 @@ const u8 gItemEffect_SacredAsh[7] = {
     [6] = ITEM6_HEAL_HP_FULL,
 };
 
+const u8 gItemEffect_BerryBlend[7] = {
+    [3] = ITEM3_STATUS_ALL,
+    [4] = ITEM4_HEAL_HP,
+    [6] = 150,
+};
+
 #define VITAMIN_FRIENDSHIP_CHANGE(i)             \
     [(i) + 0] = 5, /* Friendship change, low */  \
     [(i) + 1] = 3, /* Friendship change, mid */  \
@@ -268,6 +274,12 @@ const u8 gItemEffect_XAccuracy[8] = {
 
 const u8 gItemEffect_XSpecial[8] = {
     [2] = 1, // ITEM2_X_SPATK
+    [5] = ITEM5_FRIENDSHIP_LOW | ITEM5_FRIENDSHIP_MID,
+    STAT_BOOST_FRIENDSHIP_CHANGE,
+};
+
+const u8 gItemEffect_XSpecialDefense[8] = {
+    [2] = 1 << 2, // ITEM2_X_SPDEF
     [5] = ITEM5_FRIENDSHIP_LOW | ITEM5_FRIENDSHIP_MID,
     STAT_BOOST_FRIENDSHIP_CHANGE,
 };
@@ -419,6 +431,7 @@ const u8 *const gItemEffectTable[] =
     [ITEM_RED_FLUTE - ITEM_POTION]     = gItemEffect_RedFlute,
     [ITEM_BERRY_JUICE - ITEM_POTION]   = gItemEffect_BerryJuice,
     [ITEM_SACRED_ASH - ITEM_POTION]    = gItemEffect_SacredAsh,
+    [ITEM_BERRY_BLEND - ITEM_POTION]   = gItemEffect_BerryBlend,
     [ITEM_HP_UP - ITEM_POTION]         = gItemEffect_HPUp,
     [ITEM_PROTEIN - ITEM_POTION]       = gItemEffect_Protein,
     [ITEM_IRON - ITEM_POTION]          = gItemEffect_Iron,
@@ -435,6 +448,7 @@ const u8 *const gItemEffectTable[] =
     [ITEM_X_SPEED - ITEM_POTION]       = gItemEffect_XSpeed,
     [ITEM_X_ACCURACY - ITEM_POTION]    = gItemEffect_XAccuracy,
     [ITEM_X_SPECIAL - ITEM_POTION]     = gItemEffect_XSpecial,
+    [ITEM_X_SP_DEF - ITEM_POTION]      = gItemEffect_XSpecialDefense,
     [ITEM_SUN_STONE - ITEM_POTION]     = gItemEffect_SunStone,
     [ITEM_MOON_STONE - ITEM_POTION]    = gItemEffect_MoonStone,
     [ITEM_FIRE_STONE - ITEM_POTION]    = gItemEffect_FireStone,

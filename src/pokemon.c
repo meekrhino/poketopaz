@@ -3235,6 +3235,16 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     gBattleMons[gActiveBattler].statStages[STAT_SPATK] = MAX_STAT_STAGE;
                 retVal = FALSE;
             }
+
+            // X Sp Attack
+            if ((itemEffect[i] & ITEM2_X_SPDEF)
+             && gBattleMons[gActiveBattler].statStages[STAT_SPDEF] < MAX_STAT_STAGE)
+            {
+                gBattleMons[gActiveBattler].statStages[STAT_SPDEF] += (itemEffect[i] & ITEM2_X_SPDEF) >> 2;
+                if (gBattleMons[gActiveBattler].statStages[STAT_SPDEF] > MAX_STAT_STAGE)
+                    gBattleMons[gActiveBattler].statStages[STAT_SPDEF] = MAX_STAT_STAGE;
+                retVal = FALSE;
+            }
             break;
 
         // Handle ITEM3 effects (Guard Spec, Rare Candy, cure status)
@@ -3803,7 +3813,7 @@ u8 *UseStatIncreaseItem(u16 itemId)
 
     for (i = 0; i < 3; i++)
     {
-        if (itemEffect[i] & (ITEM0_X_ATTACK | ITEM1_X_SPEED | ITEM2_X_SPATK))
+        if (itemEffect[i] & (ITEM0_X_ATTACK | ITEM1_X_SPEED | ITEM2_X_SPATK | ITEM2_X_SPDEF))
             BufferStatRoseMessage(i * 2);
 
         if (itemEffect[i] & (ITEM0_DIRE_HIT | ITEM1_X_DEFEND | ITEM2_X_ACCURACY))

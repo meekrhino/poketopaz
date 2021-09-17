@@ -10511,6 +10511,12 @@ static void Cmd_handleballthrow(void)
                 break;
             case ITEM_LUXURY_BALL:
             case ITEM_PREMIER_BALL:
+            case ITEM_DUNE_BALL:
+            case ITEM_ORION_BALL:
+            case ITEM_ROCKET_BALL:
+            case ITEM_SOLAR_BALL:
+            case ITEM_STORM_BALL:
+            case ITEM_VINE_BALL:
                 ballMultiplier = 10;
                 break;
             }
