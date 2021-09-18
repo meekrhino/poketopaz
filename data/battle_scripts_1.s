@@ -14,7 +14,7 @@
 	.include "constants/constants.inc"
 
 	.section script_data, "aw", %progbits
-	
+
 .align 2
 gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                    @ EFFECT_HIT
@@ -254,7 +254,7 @@ gBattleScriptsForMoveEffects::
     .4byte BattleScript_EffectSpiralKick             @ EFFECT_SPIRAL_KICK
     .4byte BattleScript_EffectSacrifice              @ EFFECT_SACRIFICE
     .4byte BattleScript_EffectAlphaShock             @ EFFECT_ALPHA_SHOCK
-    .4byte BattleScript_EffectBetaFlame              @ EFFECT_BETA_FLAME    
+    .4byte BattleScript_EffectBetaFlame              @ EFFECT_BETA_FLAME
     .4byte BattleScript_EffectGammaSpore             @ EFFECT_GAMMA_SPORE
     .4byte BattleScript_EffectDeltaWave              @ EFFECT_DELTA_WAVE
     .4byte BattleScript_EffectCascade                @ EFFECT_CASCADE
@@ -914,16 +914,16 @@ BattleScript_TwoTurnMovesSecondTurn::
     jumpifmove MOVE_SOLAR_FLARE, BattleScript_TwoTurnMovesSecondTurnBurn
 	jumpifnotmove MOVE_SKY_ATTACK, BattleScript_HitFromAccCheck
 	setmoveeffect MOVE_EFFECT_FLINCH
-	goto BattleScript_HitFromAccCheck 
+	goto BattleScript_HitFromAccCheck
 
 BattleScript_SpectralRaySecondTurn::
     spectralraydamagecalculation
     setmoveeffect MOVE_EFFECT_BURN
-	goto BattleScript_HitFromAccCheck 
+	goto BattleScript_HitFromAccCheck
 
 BattleScript_TwoTurnMovesSecondTurnBurn::
     setmoveeffect MOVE_EFFECT_BURN
-	goto BattleScript_HitFromAccCheck 
+	goto BattleScript_HitFromAccCheck
 
 BattleScriptFirstChargingTurn::
 	attackcanceler
@@ -1898,7 +1898,7 @@ BattleScript_SwaggerTryConfuse::
 	seteffectprimary
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectWindwhistle:: 
+BattleScript_EffectWindwhistle::
     setmoveeffect MOVE_EFFECT_DEF_MINUS_1
 	seteffectwithchance
 	goto BattleScript_MoveEnd
@@ -1988,7 +1988,7 @@ BattleScript_EffectTidalWave::
 	jumpifnostatus3 BS_TARGET, STATUS3_UNDERWATER, BattleScript_HitFromAccCheck
 	orword gHitMarker, HITMARKER_IGNORE_UNDERWATER
 	setbyte sDMG_MULTIPLIER, 2
-    goto BattleScript_HitFromAccCheck 
+    goto BattleScript_HitFromAccCheck
 
 BattleScript_EffectBatonPass::
 	attackcanceler
@@ -3304,7 +3304,7 @@ BattleScript_GiveExp::
 	setbyte sGIVEEXP_STATE, 0
 	getexp BS_TARGET
 	end2
-	
+
 BattleScript_HandleFaintedMon::
 	atk24 BattleScript_HandleFaintedMonMultiple
 	jumpifbyte CMP_NOT_EQUAL, gBattleOutcome, 0, BattleScript_FaintedMonEnd
@@ -3990,7 +3990,7 @@ BattleScript_BurnByCinders::
     jumpifbyteequal cEFFECT_CHOOSER, 0, BattleScript_BurnByCindersEnd
     seteffectprimary
 BattleScript_BurnByCindersEnd::
-	return 
+	return
 
 BattleScript_CindersAbsorbed::
     printstring STRINGID_PKMNABSORBEDCINDERS
@@ -4722,7 +4722,7 @@ BattleScript_ConfoundPrevented:
 	printstring STRINGID_PREVENTEDFROMWORKING
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_ConfoundActivatesLoopIncrement
-	
+
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_PKMNSXINTENSIFIEDSUN
@@ -5058,6 +5058,15 @@ BattleScript_WhiteHerbRet::
 	printstring STRINGID_PKMNSITEMRESTOREDSTATUS
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_SCRIPTING
+	return
+
+BattleScript_ToxicSlimeRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_PKMNSITEMLEAPTONTOX
+	waitmessage B_WAIT_TIME_LONG
+	removeitem BS_SCRIPTING
+    setmoveeffect MOVE_EFFECT_TOXIC | MOVE_EFFECT_AFFECTS_USER
+	seteffectprimary
 	return
 
 BattleScript_ItemHealHP_RemoveItem::

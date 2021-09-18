@@ -71,5 +71,6 @@
 #define HOLD_EFFECT_STICK          67
 #define HOLD_EFFECT_HEAL_UP        68
 #define HOLD_EFFECT_SPIKES_IMMUNE  69
+#define HOLD_EFFECT_TOXIC_SLIME    70
 
 #endif // GUARD_HOLD_EFFECTS_H

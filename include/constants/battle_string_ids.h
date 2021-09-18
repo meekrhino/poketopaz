@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 #define GUARD_CONSTANTS_BATTLE_STRING_IDS_H
 
-#define BATTLESTRINGS_COUNT     408
+#define BATTLESTRINGS_COUNT     409
 
 #define BATTLESTRINGS_ID_ADDER  12 // all battlestrings have its ID + 12, because first 5 are reserved
 
@@ -421,6 +421,7 @@
 #define STRINGID_PKMNSDESPERATIONMAXEDSTATS 417
 #define STRINGID_PKMNCUTSSPDEFWITH          418
 #define STRINGID_PKMNECHOEDITSATTACK        419
+#define STRINGID_PKMNSITEMLEAPTONTOX        420
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

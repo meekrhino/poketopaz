@@ -4235,6 +4235,21 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 }
                 break;
             }
+            switch (defHoldEffect)
+            {
+            case HOLD_EFFECT_TOXIC_SLIME:
+                if (gBattleMoves[gCurrentMove].physicality == MOVE_PHYSICALITY_SPECIAL
+                && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
+                {
+                    gLastUsedItem = defItem;
+                    gBattleScripting.battler = gBattlerTarget;
+                    gPotentialItemEffectBattler = gBattlerAttacker;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_ToxicSlimeRet;
+                    effect++;
+                }
+                break;
+            }
         }
         break;
     }
