@@ -2453,9 +2453,9 @@ extern const u32 gItemIcon_Room2Key[];
 extern const u32 gItemIcon_Room4Key[];
 extern const u32 gItemIcon_Room6Key[];
 extern const u32 gItemIcon_StorageKey[];
-extern const u32 gItemIcon_RootFossil[];
+extern const u32 gItemIcon_TuskFossil[];
 extern const u32 gItemIconPalette_HoennFossil[];
-extern const u32 gItemIcon_ClawFossil[];
+extern const u32 gItemIcon_FangFossil[];
 extern const u32 gItemIcon_DevonScope[];
 extern const u32 gItemIconPalette_DevonScope[];
 // TMs/HMs

@@ -1256,14 +1256,14 @@ static const u8 sStorageKeyDesc[] = _(
     "storage inside the\n"
     "ABANDONED SHIP.");
 
-static const u8 sRootFossilDesc[] = _(
+static const u8 sTuskFossilDesc[] = _(
     "A fossil of an\n"
-    "ancient, seafloor-\n"
+    "ancient, glacier-\n"
     "dwelling POKéMON.");
 
-static const u8 sClawFossilDesc[] = _(
+static const u8 sFangFossilDesc[] = _(
     "A fossil of an\n"
-    "ancient, seafloor-\n"
+    "ancient, glacier-\n"
     "dwelling POKéMON.");
 
 static const u8 sDevonScopeDesc[] = _(

@@ -3519,24 +3519,24 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_ROOT_FOSSIL] =
+    [ITEM_TUSK_FOSSIL] =
     {
-        .name = _("ROOT FOSSIL"),
-        .itemId = ITEM_ROOT_FOSSIL,
+        .name = _("TUSK FOSSIL"),
+        .itemId = ITEM_TUSK_FOSSIL,
         .price = 0,
-        .description = sRootFossilDesc,
+        .description = sTuskFossilDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_CLAW_FOSSIL] =
+    [ITEM_FANG_FOSSIL] =
     {
-        .name = _("CLAW FOSSIL"),
-        .itemId = ITEM_CLAW_FOSSIL,
+        .name = _("FANG FOSSIL"),
+        .itemId = ITEM_FANG_FOSSIL,
         .price = 0,
-        .description = sClawFossilDesc,
+        .description = sFangFossilDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

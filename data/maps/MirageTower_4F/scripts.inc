@@ -4,13 +4,13 @@
 MirageTower_4F_MapScripts::
 	.byte 0
 
-MirageTower_4F_EventScript_RootFossil::
+MirageTower_4F_EventScript_TuskFossil::
 	lock
 	faceplayer
-	msgbox MirageTower_4F_Text_TakeRootFossil, MSGBOX_YESNO
+	msgbox MirageTower_4F_Text_TakeTuskFossil, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq MirageTower_4F_EventScript_LeaveRootFossil
-	giveitem ITEM_ROOT_FOSSIL
+	goto_if_eq MirageTower_4F_EventScript_LeaveTuskFossil
+	giveitem ITEM_TUSK_FOSSIL
 	closemessage
 	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
 	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
@@ -20,18 +20,18 @@ MirageTower_4F_EventScript_RootFossil::
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
-MirageTower_4F_EventScript_LeaveRootFossil::
-	msgbox MirageTower_4F_Text_LeftRootFossilAlone, MSGBOX_DEFAULT
+MirageTower_4F_EventScript_LeaveTuskFossil::
+	msgbox MirageTower_4F_Text_LeftTuskFossilAlone, MSGBOX_DEFAULT
 	release
 	end
 
-MirageTower_4F_EventScript_ClawFossil::
+MirageTower_4F_EventScript_FangFossil::
 	lock
 	faceplayer
-	msgbox MirageTower_4F_Text_TakeClawFossil, MSGBOX_YESNO
+	msgbox MirageTower_4F_Text_TakeFangFossil, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq MirageTower_4F_EventScript_LeaveClawFossil
-	giveitem ITEM_CLAW_FOSSIL
+	goto_if_eq MirageTower_4F_EventScript_LeaveFangFossil
+	giveitem ITEM_FANG_FOSSIL
 	closemessage
 	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
 	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
@@ -41,8 +41,8 @@ MirageTower_4F_EventScript_ClawFossil::
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
-MirageTower_4F_EventScript_LeaveClawFossil::
-	msgbox MirageTower_4F_Text_LeaveClawFossilAlone, MSGBOX_DEFAULT
+MirageTower_4F_EventScript_LeaveFangFossil::
+	msgbox MirageTower_4F_Text_LeaveFangFossilAlone, MSGBOX_DEFAULT
 	release
 	end
 
@@ -62,21 +62,21 @@ MirageTower_4F_EventScript_CollapseMirageTower::
 	release
 	end
 
-MirageTower_4F_Text_TakeRootFossil:
-	.string "You found the ROOT FOSSIL.\p"
+MirageTower_4F_Text_TakeTuskFossil:
+	.string "You found the TUSK FOSSIL.\p"
 	.string "If this FOSSIL is taken, the ground\n"
 	.string "around it will likely crumble away…\p"
-	.string "Take the ROOT FOSSIL anyway?$"
+	.string "Take the TUSK FOSSIL anyway?$"
 
-MirageTower_4F_Text_LeftRootFossilAlone:
-	.string "{PLAYER} left the ROOT FOSSIL alone.$"
+MirageTower_4F_Text_LeftTuskFossilAlone:
+	.string "{PLAYER} left the TUSK FOSSIL alone.$"
 
-MirageTower_4F_Text_TakeClawFossil:
-	.string "You found the CLAW FOSSIL.\p"
+MirageTower_4F_Text_TakeFangFossil:
+	.string "You found the FANG FOSSIL.\p"
 	.string "If this FOSSIL is taken, the ground\n"
 	.string "around it will likely crumble away…\p"
-	.string "Take the CLAW FOSSIL anyway?$"
+	.string "Take the FANG FOSSIL anyway?$"
 
-MirageTower_4F_Text_LeaveClawFossilAlone:
-	.string "{PLAYER} left the CLAW FOSSIL alone.$"
+MirageTower_4F_Text_LeaveFangFossilAlone:
+	.string "{PLAYER} left the FANG FOSSIL alone.$"
 
