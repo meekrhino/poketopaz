@@ -3645,7 +3645,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                         gBattleMoveDamage = gBattleMons[battlerId].maxHP - gBattleMons[battlerId].hp;
                     gBattleMoveDamage *= -1;
                     BattleScriptExecute(BattleScript_ItemHealHP_RemoveItem);
-                    effect = 4;
+                    effect = ITEM_HP_CHANGE;
                 }
                 break;
             case HOLD_EFFECT_RESTORE_PP:
@@ -4280,6 +4280,25 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                         gBattleMoveDamage = 1;
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_ContactRecoilRet;
+                    effect++;
+                }
+                break;
+            case HOLD_EFFECT_RESTORE_HP_DEALT:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                    && TARGET_TURN_DAMAGED
+                    && gBattleMons[gBattlerTarget].hp)
+                {
+                    gLastUsedItem = defItem;
+                    gBattleScripting.battler = gBattlerTarget;
+                    gPotentialItemEffectBattler = gBattlerTarget;
+
+                    gBattleMoveDamage = (gBattleMoveDamage * battlerHoldEffectParam) / 10;
+                    if (gBattleMons[battlerId].hp + gBattleMoveDamage > gBattleMons[battlerId].maxHP)
+                        gBattleMoveDamage = gBattleMons[battlerId].maxHP - gBattleMons[battlerId].hp;
+                    gBattleMoveDamage *= -1;
+
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_ItemHealHP_VariableRet;
                     effect++;
                 }
                 break;

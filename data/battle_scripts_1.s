@@ -5096,6 +5096,16 @@ BattleScript_PreventRecoilRet::
 	removeitem BS_SCRIPTING
 	return
 
+BattleScript_ItemHealHP_VariableRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_PKMNSITEMRESTOREDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	removeitem BS_SCRIPTING
+	end2
+
 BattleScript_ItemHealHP_RemoveItem::
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, NULL
 	printstring STRINGID_PKMNSITEMRESTOREDHEALTH
