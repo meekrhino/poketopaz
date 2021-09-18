@@ -5070,6 +5070,16 @@ BattleScript_ShrapnelRet::
 BattleScript_ShrapnelRetEnd::
 	return
 
+BattleScript_ContactRecoilRet::
+	jumpifability BS_ATTACKER, ABILITY_ROCK_HEAD, BattleScript_RecoilEnd
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_x100000
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	printstring STRINGID_PKMNHITWITHRECOIL
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER, FALSE, NULL
+    goto BattleScript_RecoilEnd
+
 BattleScript_ToxicSlimeRet::
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
 	printstring STRINGID_PKMNSITEMLEAPTONTOX

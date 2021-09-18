@@ -4266,6 +4266,23 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     effect++;
                 }
                 break;
+            case HOLD_EFFECT_CONTACT_DAMAGE:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                    && TARGET_TURN_DAMAGED
+                    && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT
+                    && gBattleMons[gBattlerAttacker].hp)
+                {
+                    gLastUsedItem = defItem;
+                    gBattleScripting.battler = gBattlerTarget;
+                    gPotentialItemEffectBattler = gBattlerAttacker;
+                    gBattleMoveDamage = gBattleMoveDamage / 8;
+                    if (gBattleMoveDamage == 0)
+                        gBattleMoveDamage = 1;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_ContactRecoilRet;
+                    effect++;
+                }
+                break;
             }
         }
         break;
