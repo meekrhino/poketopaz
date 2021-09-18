@@ -10573,7 +10573,7 @@ static void Cmd_handleballthrow(void)
                     ballMultiplier = 10;
                 break;
             case ITEM_DUNE_BALL:
-                if (GetCurrentMapType() == MAP_TYPE_SAND)
+                if (gBattleTerrain == BATTLE_TERRAIN_SAND)
                     ballMultiplier = 30;
                 else
                     ballMultiplier = 10;
@@ -10583,7 +10583,10 @@ static void Cmd_handleballthrow(void)
                 ballMultiplier = 20;
                 break;
             case ITEM_VINE_BALL:
-                ballMultiplier = 10;
+                if (gBattleTerrain == BATTLE_TERRAIN_LONG_GRASS)
+                    ballMultiplier = 30;
+                else
+                    ballMultiplier = 10;
                 break;
             case ITEM_LUXURY_BALL:
             case ITEM_PREMIER_BALL:
