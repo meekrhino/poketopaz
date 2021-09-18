@@ -74,7 +74,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                             {EVO_ITEM, ITEM_FIRE_STONE, SPECIES_FLAREON},
                             {EVO_FRIENDSHIP_DAY, 0, SPECIES_ESPEON},
                             {EVO_FRIENDSHIP_NIGHT, 0, SPECIES_UMBREON},
-                            {EVO_HELD_ITEM, ITEM_SOLAR_CELL, SPECIES_ILLUMEON}},
+                            {EVO_HELD_ITEM, ITEM_BLESSED_ANKH, SPECIES_ILLUMEON}},
     [SPECIES_CHIARAME]   = {{EVO_LEVEL, 36, SPECIES_SERBERINE}},
     [SPECIES_ENGIL]      = {{EVO_LEVEL, 30, SPECIES_BENENGIL}},
     [SPECIES_DUVAL]      = {{EVO_LEVEL, 30, SPECIES_MALDUVAL}},

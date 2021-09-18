@@ -2027,6 +2027,17 @@ static void Cmd_datahpupdate(void)
             gHitMarker &= ~(HITMARKER_IGNORE_SUBSTITUTE);
             if (gBattleMoveDamage < 0) // hp goes up
             {
+                u16 item = gBattleMons[gActiveBattler].item;
+                u8 holdEffect;
+
+                if (item == ITEM_ENIGMA_BERRY)
+                    holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+                else
+                    holdEffect = ItemId_GetHoldEffect(item);
+
+                if (holdEffect == HOLD_EFFECT_HEAL_UP)
+                    gBattleMoveDamage = (gBattleMoveDamage * 12) / 10;
+
                 gBattleMons[gActiveBattler].hp -= gBattleMoveDamage;
                 if (gBattleMons[gActiveBattler].hp > gBattleMons[gActiveBattler].maxHP)
                     gBattleMons[gActiveBattler].hp = gBattleMons[gActiveBattler].maxHP;

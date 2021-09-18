@@ -69,5 +69,6 @@
 #define HOLD_EFFECT_METAL_POWDER   65
 #define HOLD_EFFECT_THICK_CLUB     66
 #define HOLD_EFFECT_STICK          67
+#define HOLD_EFFECT_HEAL_UP        68
 
 #endif // GUARD_HOLD_EFFECTS_H

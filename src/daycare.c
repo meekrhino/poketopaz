@@ -738,22 +738,22 @@ static void AlterEggSpeciesWithIncenseItem(u16 *species, struct DayCare *daycare
     {
         motherItem = GetBoxMonData(&daycare->mons[0].mon, MON_DATA_HELD_ITEM);
         fatherItem = GetBoxMonData(&daycare->mons[1].mon, MON_DATA_HELD_ITEM);
-        if (*species == SPECIES_MOOCALF && motherItem != ITEM_LAX_INCENSE && fatherItem != ITEM_LAX_INCENSE)
+        if (*species == SPECIES_MOOCALF && motherItem != ITEM_MILK_INCENSE && fatherItem != ITEM_MILK_INCENSE)
         {
             *species = SPECIES_MILTANK;
         }
 
-        if (*species == SPECIES_BARKUB && motherItem != ITEM_SEA_INCENSE && fatherItem != ITEM_SEA_INCENSE)
+        if (*species == SPECIES_BARKUB && motherItem != ITEM_CHAR_INCENSE && fatherItem != ITEM_CHAR_INCENSE)
         {
             *species = SPECIES_GROWLITHE;
         }
 
-        if (*species == SPECIES_VIXUN && motherItem != ITEM_SEA_INCENSE && fatherItem != ITEM_SEA_INCENSE)
+        if (*species == SPECIES_VIXUN && motherItem != ITEM_CHAR_INCENSE && fatherItem != ITEM_CHAR_INCENSE)
         {
             *species = SPECIES_VULPIX;
         }
 
-        if (*species == SPECIES_SKALLOY && motherItem != ITEM_SEA_INCENSE && fatherItem != ITEM_SEA_INCENSE)
+        if (*species == SPECIES_SKALLOY && motherItem != ITEM_IRON_INCENSE && fatherItem != ITEM_IRON_INCENSE)
         {
             *species = SPECIES_SKARMORY;
         }
