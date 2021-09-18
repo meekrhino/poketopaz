@@ -1728,6 +1728,10 @@ u8 TypeCalc(u16 move, u8 attacker, u8 defender)
         }
     }
 
+    if (ItemId_GetHoldEffect(gBattleMons[defender].item) == HOLD_EFFECT_RESIST_SCARF
+     && (flags & MOVE_RESULT_SUPER_EFFECTIVE))
+        gBattleMoveDamage = (gBattleMoveDamage * 85) / 100;
+
     if (gBattleMons[defender].ability == ABILITY_WONDER_GUARD && !(flags & MOVE_RESULT_MISSED)
         && AttacksThisTurn(attacker, move) == 2
         && (!(flags & MOVE_RESULT_SUPER_EFFECTIVE) || ((flags & (MOVE_RESULT_SUPER_EFFECTIVE | MOVE_RESULT_NOT_VERY_EFFECTIVE)) == (MOVE_RESULT_SUPER_EFFECTIVE | MOVE_RESULT_NOT_VERY_EFFECTIVE)))
