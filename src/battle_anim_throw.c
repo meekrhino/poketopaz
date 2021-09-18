@@ -256,12 +256,12 @@ static const u8 sBallParticleAnimNums[POKEBALL_COUNT] =
     [BALL_TIMER]   = 5,
     [BALL_LUXURY]  = 4,
     [BALL_PREMIER] = 4,
-    [BALL_DUNE]    = 0,
-    [BALL_ORION]   = 0,
-    [BALL_ROCKET]  = 0,
-    [BALL_SOLAR]   = 0,
-    [BALL_STORM]   = 0,
-    [BALL_VINE]    = 0,
+    [BALL_DUNE]    = 4,
+    [BALL_ORION]   = 4,
+    [BALL_ROCKET]  = 4,
+    [BALL_SOLAR]   = 4,
+    [BALL_STORM]   = 4,
+    [BALL_VINE]    = 4,
 };
 
 static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =

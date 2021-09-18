@@ -247,8 +247,6 @@ const struct Item gItems[] =
         .secondaryId = ITEM_VINE_BALL - FIRST_BALL,
     },
 
-
-
 // Medicine
 
     [ITEM_POTION] =
