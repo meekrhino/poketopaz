@@ -34,4 +34,22 @@ const u32 gInterfacePal_LuxuryBall[] = INCBIN_U32("graphics/interface/ball/luxur
 const u32 gInterfaceGfx_PremierBall[] = INCBIN_U32("graphics/interface/ball/premier.4bpp.lz");
 const u32 gInterfacePal_PremierBall[] = INCBIN_U32("graphics/interface/ball/premier.gbapal.lz");
 
+const u32 gInterfaceGfx_DuneBall[] = INCBIN_U32("graphics/interface/ball/dune.4bpp.lz");
+const u32 gInterfacePal_DuneBall[] = INCBIN_U32("graphics/interface/ball/dune.gbapal.lz");
+
+const u32 gInterfaceGfx_OrionBall[] = INCBIN_U32("graphics/interface/ball/orion.4bpp.lz");
+const u32 gInterfacePal_OrionBall[] = INCBIN_U32("graphics/interface/ball/orion.gbapal.lz");
+
+const u32 gInterfaceGfx_RocketBall[] = INCBIN_U32("graphics/interface/ball/rocket.4bpp.lz");
+const u32 gInterfacePal_RocketBall[] = INCBIN_U32("graphics/interface/ball/rocket.gbapal.lz");
+
+const u32 gInterfaceGfx_SolarBall[] = INCBIN_U32("graphics/interface/ball/solar.4bpp.lz");
+const u32 gInterfacePal_SolarBall[] = INCBIN_U32("graphics/interface/ball/solar.gbapal.lz");
+
+const u32 gInterfaceGfx_StormBall[] = INCBIN_U32("graphics/interface/ball/storm.4bpp.lz");
+const u32 gInterfacePal_StormBall[] = INCBIN_U32("graphics/interface/ball/storm.gbapal.lz");
+
+const u32 gInterfaceGfx_VineBall[] = INCBIN_U32("graphics/interface/ball/vine.4bpp.lz");
+const u32 gInterfacePal_VineBall[] = INCBIN_U32("graphics/interface/ball/vine.gbapal.lz");
+
 const u32 gOpenPokeballGfx[] = INCBIN_U32("graphics/interface/ball_open.4bpp.lz");

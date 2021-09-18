@@ -139,6 +139,12 @@ static const struct CaptureStar sCaptureStars[] =
 #define TAG_PARTICLES_TIMERBALL   55029
 #define TAG_PARTICLES_LUXURYBALL  55030
 #define TAG_PARTICLES_PREMIERBALL 55031
+#define TAG_PARTICLES_DUNEBALL    55032
+#define TAG_PARTICLES_ORIONBALL   55033
+#define TAG_PARTICLES_ROCKETBALL  55034
+#define TAG_PARTICLES_SOLARBALL   55035
+#define TAG_PARTICLES_STORMBALL   55036
+#define TAG_PARTICLES_VINEBALL    55037
 
 static const struct CompressedSpriteSheet sBallParticleSpriteSheets[POKEBALL_COUNT] =
 {
@@ -154,6 +160,12 @@ static const struct CompressedSpriteSheet sBallParticleSpriteSheets[POKEBALL_COU
     [BALL_TIMER]   = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_TIMERBALL},
     [BALL_LUXURY]  = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_LUXURYBALL},
     [BALL_PREMIER] = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_PREMIERBALL},
+    [BALL_DUNE]    = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_DUNEBALL},
+    [BALL_ORION]   = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_ORIONBALL},
+    [BALL_ROCKET]  = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_ROCKETBALL},
+    [BALL_SOLAR]   = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_SOLARBALL},
+    [BALL_STORM]   = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_STORMBALL},
+    [BALL_VINE]    = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_VINEBALL},
 };
 
 static const struct CompressedSpritePalette sBallParticlePalettes[POKEBALL_COUNT] =
@@ -170,6 +182,12 @@ static const struct CompressedSpritePalette sBallParticlePalettes[POKEBALL_COUNT
     [BALL_TIMER]   = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_TIMERBALL},
     [BALL_LUXURY]  = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_LUXURYBALL},
     [BALL_PREMIER] = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_PREMIERBALL},
+    [BALL_DUNE]    = {gBattleAnimSpriteGfx_CircleImpact, TAG_PARTICLES_DUNEBALL},
+    [BALL_ORION]   = {gBattleAnimSpriteGfx_CircleImpact, TAG_PARTICLES_ORIONBALL},
+    [BALL_ROCKET]  = {gBattleAnimSpriteGfx_CircleImpact, TAG_PARTICLES_ROCKETBALL},
+    [BALL_SOLAR]   = {gBattleAnimSpriteGfx_CircleImpact, TAG_PARTICLES_SOLARBALL},
+    [BALL_STORM]   = {gBattleAnimSpriteGfx_CircleImpact, TAG_PARTICLES_STORMBALL},
+    [BALL_VINE]    = {gBattleAnimSpriteGfx_CircleImpact, TAG_PARTICLES_VINEBALL},
 };
 
 static const union AnimCmd sAnim_RegularBall[] =
@@ -238,6 +256,12 @@ static const u8 sBallParticleAnimNums[POKEBALL_COUNT] =
     [BALL_TIMER]   = 5,
     [BALL_LUXURY]  = 4,
     [BALL_PREMIER] = 4,
+    [BALL_DUNE]    = 0,
+    [BALL_ORION]   = 0,
+    [BALL_ROCKET]  = 0,
+    [BALL_SOLAR]   = 0,
+    [BALL_STORM]   = 0,
+    [BALL_VINE]    = 0,
 };
 
 static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
@@ -254,6 +278,12 @@ static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
     [BALL_TIMER]   = TimerBallOpenParticleAnimation,
     [BALL_LUXURY]  = GreatBallOpenParticleAnimation,
     [BALL_PREMIER] = PremierBallOpenParticleAnimation,
+    [BALL_DUNE]    = GreatBallOpenParticleAnimation,
+    [BALL_ORION]   = GreatBallOpenParticleAnimation,
+    [BALL_ROCKET]  = GreatBallOpenParticleAnimation,
+    [BALL_SOLAR]   = GreatBallOpenParticleAnimation,
+    [BALL_STORM]   = GreatBallOpenParticleAnimation,
+    [BALL_VINE]    = GreatBallOpenParticleAnimation,
 };
 
 static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] =
@@ -366,6 +396,60 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
+    [BALL_DUNE] = {
+        .tileTag = TAG_PARTICLES_DUNEBALL,
+        .paletteTag = TAG_PARTICLES_DUNEBALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
+    [BALL_ORION] = {
+        .tileTag = TAG_PARTICLES_ORIONBALL,
+        .paletteTag = TAG_PARTICLES_ORIONBALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
+    [BALL_ROCKET] = {
+        .tileTag = TAG_PARTICLES_ROCKETBALL,
+        .paletteTag = TAG_PARTICLES_ROCKETBALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
+    [BALL_SOLAR] = {
+        .tileTag = TAG_PARTICLES_SOLARBALL,
+        .paletteTag = TAG_PARTICLES_SOLARBALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
+    [BALL_STORM] = {
+        .tileTag = TAG_PARTICLES_STORMBALL,
+        .paletteTag = TAG_PARTICLES_STORMBALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
+    [BALL_VINE] = {
+        .tileTag = TAG_PARTICLES_VINEBALL,
+        .paletteTag = TAG_PARTICLES_VINEBALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
 };
 
 const u16 gBallOpenFadeColors[] =
@@ -382,6 +466,12 @@ const u16 gBallOpenFadeColors[] =
     [BALL_TIMER] = RGB(29, 30, 30),
     [BALL_LUXURY] = RGB(31, 17, 10),
     [BALL_PREMIER] = RGB(31, 9, 10),
+    [BALL_DUNE] = RGB(31, 17, 10),
+    [BALL_ORION] = RGB(31, 17, 10),
+    [BALL_ROCKET] = RGB(31, 17, 10),
+    [BALL_SOLAR] = RGB(31, 17, 10),
+    [BALL_STORM] = RGB(31, 17, 10),
+    [BALL_VINE] = RGB(31, 17, 10),
 
     // Garbage data
     RGB(0, 0, 0),

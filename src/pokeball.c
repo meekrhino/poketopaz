@@ -59,6 +59,12 @@ static u16 GetBattlerPokeballItemId(u8 battlerId);
 #define GFX_TAG_TIMERBALL   55009
 #define GFX_TAG_LUXURYBALL  55010
 #define GFX_TAG_PREMIERBALL 55011
+#define GFX_TAG_DUNEBALL    55012
+#define GFX_TAG_ORIONBALL   55013
+#define GFX_TAG_ROCKETBALL  55014
+#define GFX_TAG_SOLARBALL   55015
+#define GFX_TAG_STORMBALL   55016
+#define GFX_TAG_VINEBALL    55017
 
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
@@ -74,6 +80,12 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_TIMER]   = {gInterfaceGfx_TimerBall,   384, GFX_TAG_TIMERBALL},
     [BALL_LUXURY]  = {gInterfaceGfx_LuxuryBall,  384, GFX_TAG_LUXURYBALL},
     [BALL_PREMIER] = {gInterfaceGfx_PremierBall, 384, GFX_TAG_PREMIERBALL},
+    [BALL_DUNE]    = {gInterfaceGfx_DuneBall,    384, GFX_TAG_DUNEBALL},
+    [BALL_ORION]   = {gInterfaceGfx_OrionBall,   384, GFX_TAG_ORIONBALL},
+    [BALL_ROCKET]  = {gInterfaceGfx_RocketBall,  384, GFX_TAG_ROCKETBALL},
+    [BALL_SOLAR]   = {gInterfaceGfx_SolarBall,   384, GFX_TAG_SOLARBALL},
+    [BALL_STORM]   = {gInterfaceGfx_StormBall,   384, GFX_TAG_STORMBALL},
+    [BALL_VINE]    = {gInterfaceGfx_VineBall,    384, GFX_TAG_VINEBALL},
 };
 
 const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
@@ -90,6 +102,12 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_TIMER]   = {gInterfacePal_TimerBall,   GFX_TAG_TIMERBALL},
     [BALL_LUXURY]  = {gInterfacePal_LuxuryBall,  GFX_TAG_LUXURYBALL},
     [BALL_PREMIER] = {gInterfacePal_PremierBall, GFX_TAG_PREMIERBALL},
+    [BALL_DUNE]    = {gInterfacePal_DuneBall,    GFX_TAG_DUNEBALL},
+    [BALL_ORION]   = {gInterfacePal_OrionBall,   GFX_TAG_ORIONBALL},
+    [BALL_ROCKET]  = {gInterfacePal_RocketBall,  GFX_TAG_ROCKETBALL},
+    [BALL_SOLAR]   = {gInterfacePal_SolarBall,   GFX_TAG_SOLARBALL},
+    [BALL_STORM]   = {gInterfacePal_StormBall,   GFX_TAG_STORMBALL},
+    [BALL_VINE]    = {gInterfacePal_VineBall,    GFX_TAG_VINEBALL},
 };
 
 static const struct OamData sBallOamData =
@@ -1271,6 +1289,12 @@ void LoadBallGfx(u8 ballId)
     case BALL_DIVE:
     case BALL_LUXURY:
     case BALL_PREMIER:
+    case BALL_DUNE:
+    case BALL_ORION:
+    case BALL_ROCKET:
+    case BALL_SOLAR:
+    case BALL_STORM:
+    case BALL_VINE:
         break;
     default:
         var = GetSpriteTileStartByTag(gBallSpriteSheets[ballId].tag);

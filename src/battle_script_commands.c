@@ -10498,11 +10498,9 @@ static void Cmd_handleballthrow(void)
                     ballMultiplier = 10;
                 break;
             case ITEM_NEST_BALL:
-                if (gBattleMons[gBattlerTarget].level < 40)
+                if (gBattleMons[gBattlerTarget].level < 30)
                 {
                     ballMultiplier = 40 - gBattleMons[gBattlerTarget].level;
-                    if (ballMultiplier <= 9)
-                        ballMultiplier = 10;
                 }
                 else
                 {
@@ -10520,14 +10518,33 @@ static void Cmd_handleballthrow(void)
                 if (ballMultiplier > 40)
                     ballMultiplier = 40;
                 break;
-            case ITEM_LUXURY_BALL:
-            case ITEM_PREMIER_BALL:
+            case ITEM_SOLAR_BALL:
+                if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_LIGHT) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_FIRE))
+                    ballMultiplier = 30;
+                else
+                    ballMultiplier = 10;
+                break;
+            case ITEM_STORM_BALL:
+                if (gBattleWeather & WEATHER_RAIN_PERMANENT)
+                    ballMultiplier = 30;
+                else
+                    ballMultiplier = 10;
+                break;
             case ITEM_DUNE_BALL:
+                if (GetCurrentMapType() == MAP_TYPE_SAND)
+                    ballMultiplier = 30;
+                else
+                    ballMultiplier = 10;
+                break;
             case ITEM_ORION_BALL:
             case ITEM_ROCKET_BALL:
-            case ITEM_SOLAR_BALL:
-            case ITEM_STORM_BALL:
+                ballMultiplier = 20;
+                break;
             case ITEM_VINE_BALL:
+                ballMultiplier = 10;
+                break;
+            case ITEM_LUXURY_BALL:
+            case ITEM_PREMIER_BALL:
                 ballMultiplier = 10;
                 break;
             }

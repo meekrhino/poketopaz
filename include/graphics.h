@@ -30,6 +30,18 @@ extern const u32 gInterfaceGfx_LuxuryBall[];
 extern const u32 gInterfacePal_LuxuryBall[];
 extern const u32 gInterfaceGfx_PremierBall[];
 extern const u32 gInterfacePal_PremierBall[];
+extern const u32 gInterfaceGfx_DuneBall[];
+extern const u32 gInterfacePal_DuneBall[];
+extern const u32 gInterfaceGfx_OrionBall[];
+extern const u32 gInterfacePal_OrionBall[];
+extern const u32 gInterfaceGfx_RocketBall[];
+extern const u32 gInterfacePal_RocketBall[];
+extern const u32 gInterfaceGfx_SolarBall[];
+extern const u32 gInterfacePal_SolarBall[];
+extern const u32 gInterfaceGfx_StormBall[];
+extern const u32 gInterfacePal_StormBall[];
+extern const u32 gInterfaceGfx_VineBall[];
+extern const u32 gInterfacePal_VineBall[];
 extern const u32 gOpenPokeballGfx[];
 
 // pokemon gfx

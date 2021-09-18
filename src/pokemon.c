@@ -3073,9 +3073,9 @@ bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, 
             if (GetMonData(mon, MON_DATA_MET_LOCATION, NULL) == GetCurrentRegionMapSectionId())         \
                 friendship++;                                                                           \
         }                                                                                               \
-        if (friendship < 0)                                                                             \
+        if (friendship < 0 || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_ROCKET_BALL))           \
             friendship = 0;                                                                             \
-        if (friendship > MAX_FRIENDSHIP)                                                                \
+        if (friendship > MAX_FRIENDSHIP || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_ORION_BALL))\
             friendship = MAX_FRIENDSHIP;                                                                \
         SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);                                              \
         retVal = FALSE;                                                                                 \
@@ -4133,9 +4133,9 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
                 if (GetMonData(mon, MON_DATA_MET_LOCATION, 0) == GetCurrentRegionMapSectionId())
                     friendship++;
             }
-            if (friendship < 0)
+            if (friendship < 0 || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_ROCKET_BALL))
                 friendship = 0;
-            if (friendship > MAX_FRIENDSHIP)
+            if (friendship > MAX_FRIENDSHIP || (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_ORION_BALL))
                 friendship = MAX_FRIENDSHIP;
             SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
         }

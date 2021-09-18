@@ -26,6 +26,12 @@ gBattlescriptsForBallThrow::
 	.4byte BattleScript_BallThrow        @ ITEM_TIMER_BALL
 	.4byte BattleScript_BallThrow        @ ITEM_LUXURY_BALL
 	.4byte BattleScript_BallThrow        @ ITEM_PREMIER_BALL
+	.4byte BattleScript_BallThrow        @ ITEM_DUNE_BALL
+	.4byte BattleScript_BallThrow        @ ITEM_ORION_BALL
+	.4byte BattleScript_BallThrow        @ ITEM_ROCKET_BALL
+	.4byte BattleScript_BallThrow        @ ITEM_SOLAR_BALL
+	.4byte BattleScript_BallThrow        @ ITEM_STORM_BALL
+	.4byte BattleScript_BallThrow        @ ITEM_VINE_BALL
 
 	.align 2
 gBattlescriptsForUsingItem::
