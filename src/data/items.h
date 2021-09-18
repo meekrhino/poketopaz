@@ -2799,7 +2799,7 @@ const struct Item gItems[] =
     {
         .name = _("BLESSED ANKH"),
         .itemId = ITEM_BLESSED_ANKH,
-        .price = 0,
+        .price = 100,
         .holdEffect = HOLD_EFFECT_STICK,
         .description = sBlessedAnkhDesc,
         .pocket = POCKET_ITEMS,
@@ -2811,7 +2811,7 @@ const struct Item gItems[] =
     {
         .name = _("UMBRA CREST"),
         .itemId = ITEM_UMBRA_CREST,
-        .price = 0,
+        .price = 100,
         .holdEffect = HOLD_EFFECT_STICK,
         .description = sUmbraCrestDesc,
         .pocket = POCKET_ITEMS,
@@ -2828,6 +2828,7 @@ const struct Item gItems[] =
         .description = sRivalryOrbDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
@@ -2836,7 +2837,7 @@ const struct Item gItems[] =
         .name = _("SOLAR CELL"),
         .itemId = ITEM_SOLAR_CELL,
         .price = 0,
-        .holdEffect = HOLD_EFFECT_STICK,
+        .holdEffect = HOLD_EFFECT_SOLAR_CELL,
         .description = sSolarCellDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -2847,7 +2848,7 @@ const struct Item gItems[] =
     {
         .name = _("VITAL HERB"),
         .itemId = ITEM_VITAL_HERB,
-        .price = 0,
+        .price = 100,
         .holdEffect = HOLD_EFFECT_STICK,
         .description = sVitalHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -2883,7 +2884,7 @@ const struct Item gItems[] =
     {
         .name = _("SPONGY HERB"),
         .itemId = ITEM_SPONGY_HERB,
-        .price = 0,
+        .price = 100,
         .holdEffect = HOLD_EFFECT_STICK,
         .description = sSpongyHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -2943,7 +2944,7 @@ const struct Item gItems[] =
     {
         .name = _("MAGIC HERB"),
         .itemId = ITEM_MAGIC_HERB,
-        .price = 0,
+        .price = 100,
         .holdEffect = HOLD_EFFECT_STICK,
         .description = sMagicHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -2979,7 +2980,7 @@ const struct Item gItems[] =
     {
         .name = _("JAGGED HERB"),
         .itemId = ITEM_JAGGED_HERB,
-        .price = 0,
+        .price = 100,
         .holdEffect = HOLD_EFFECT_STICK,
         .description = sJaggedHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -2991,7 +2992,7 @@ const struct Item gItems[] =
     {
         .name = _("IRON INCENSE"),
         .itemId = ITEM_IRON_INCENSE,
-        .price = 0,
+        .price = 9600,
         .holdEffect = HOLD_EFFECT_STEEL_POWER,
         .description = sIronIncenseDesc,
         .pocket = POCKET_ITEMS,
@@ -3003,7 +3004,7 @@ const struct Item gItems[] =
     {
         .name = _("CHAR INCENSE"),
         .itemId = ITEM_CHAR_INCENSE,
-        .price = 0,
+        .price = 9600,
         .holdEffect = HOLD_EFFECT_FIRE_POWER,
         .description = sCharIncenseDesc,
         .pocket = POCKET_ITEMS,
@@ -3027,7 +3028,7 @@ const struct Item gItems[] =
     {
         .name = _("MILK INCENSE"),
         .itemId = ITEM_MILK_INCENSE,
-        .price = 0,
+        .price = 9600,
         .holdEffect = HOLD_EFFECT_STICK,
         .description = sMilkIncenseDesc,
         .pocket = POCKET_ITEMS,

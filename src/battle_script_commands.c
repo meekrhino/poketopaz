@@ -1344,6 +1344,10 @@ static void Cmd_ppreduce(void)
         }
     }
 
+    if (ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_SOLAR_CELL
+     && (gCurrentMove == MOVE_SOLAR_BEAM || gCurrentMove == MOVE_SOLAR_FLARE))
+        ppToDeduct++;
+
     if (!(gHitMarker & (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING)) && gBattleMons[gBattlerAttacker].pp[gCurrMovePos])
     {
         gProtectStructs[gBattlerAttacker].notFirstStrike = 1;
@@ -6932,6 +6936,15 @@ static void Cmd_various(void)
         if (gBattleMons[gBattlerAttacker].ability == ABILITY_ECHO && !(Random() % 5))
         {
             gLastUsedAbility = ABILITY_ECHO;
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+            return;
+        }
+        break;
+    case VARIOUS_SOLAR_CELL:
+        if ((!(gBattleWeather & WEATHER_ANY) || (gBattleWeather & WEATHER_SUN_ANY))
+          && (ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_SOLAR_CELL))
+        {
+            gLastUsedItem = gBattleMons[gBattlerAttacker].item;
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
             return;
         }

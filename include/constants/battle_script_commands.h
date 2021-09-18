@@ -100,6 +100,7 @@
 #define VARIOUS_ALPHA_MODIFY_DAMAGE             35
 #define VARIOUS_TRY_GET_CONFOUND_TARGET         36
 #define VARIOUS_TRY_ECHO                        37
+#define VARIOUS_SOLAR_CELL                      38
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0
