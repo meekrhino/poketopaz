@@ -222,6 +222,7 @@ extern const u8 BattleScript_BerryCureChosenStatusEnd2[];
 extern const u8 BattleScript_BerryCureChosenStatusRet[];
 extern const u8 BattleScript_WhiteHerbEnd2[];
 extern const u8 BattleScript_WhiteHerbRet[];
+extern const u8 BattleScript_ShrapnelRet[];
 extern const u8 BattleScript_ToxicSlimeRet[];
 extern const u8 BattleScript_ItemHealHP_RemoveItem[];
 extern const u8 BattleScript_BerryPPHealEnd2[];

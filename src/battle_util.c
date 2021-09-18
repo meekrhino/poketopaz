@@ -4238,14 +4238,31 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
             switch (defHoldEffect)
             {
             case HOLD_EFFECT_TOXIC_SLIME:
-                if (gBattleMoves[gCurrentMove].physicality == MOVE_PHYSICALITY_SPECIAL
-                && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
+                if (gSpecialStatuses[gBattlerTarget].specialDmg != 0
+                && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                &&  gBattleMons[gBattlerTarget].hp)
                 {
                     gLastUsedItem = defItem;
                     gBattleScripting.battler = gBattlerTarget;
                     gPotentialItemEffectBattler = gBattlerAttacker;
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_ToxicSlimeRet;
+                    effect++;
+                }
+                break;
+            case HOLD_EFFECT_SHRAPNEL:
+                mgba_printf(MGBA_LOG_DEBUG, "shrapnel trigger check");
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                    && TARGET_TURN_DAMAGED
+                    && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT
+                    && gBattleMons[gBattlerTarget].hp)
+                {
+                    mgba_printf(MGBA_LOG_DEBUG, "calling script");
+                    gLastUsedItem = defItem;
+                    gBattleScripting.battler = gBattlerTarget;
+                    gPotentialItemEffectBattler = gBattlerAttacker;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_ShrapnelRet;
                     effect++;
                 }
                 break;

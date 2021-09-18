@@ -5061,6 +5061,15 @@ BattleScript_WhiteHerbRet::
 	removeitem BS_SCRIPTING
 	return
 
+BattleScript_ShrapnelRet::
+	trysetspikes BattleScript_ShrapnelRetEnd
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_PKMNSITEMSCATTEREDSPIKES
+    waitmessage B_WAIT_TIME_LONG
+	removeitem BS_SCRIPTING
+BattleScript_ShrapnelRetEnd::
+	return
+
 BattleScript_ToxicSlimeRet::
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
 	printstring STRINGID_PKMNSITEMLEAPTONTOX
