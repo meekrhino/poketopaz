@@ -70,5 +70,6 @@
 #define HOLD_EFFECT_THICK_CLUB     66
 #define HOLD_EFFECT_STICK          67
 #define HOLD_EFFECT_HEAL_UP        68
+#define HOLD_EFFECT_SPIKES_IMMUNE  69
 
 #endif // GUARD_HOLD_EFFECTS_H

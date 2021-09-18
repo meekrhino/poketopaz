@@ -5478,6 +5478,7 @@ static void Cmd_switchhandleorder(void)
 static void Cmd_switchineffects(void)
 {
     s32 i;
+    u8 holdEffect;
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
     UpdateSentPokesToOpponentValue(gActiveBattler);
@@ -5514,7 +5515,8 @@ static void Cmd_switchineffects(void)
     if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SPIKES_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_SPIKES)
         && !IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_FLYING)
-        && gBattleMons[gActiveBattler].ability != ABILITY_LEVITATE)
+        && gBattleMons[gActiveBattler].ability != ABILITY_LEVITATE
+        && ItemId_GetHoldEffect( gBattleMons[gActiveBattler].item ) != HOLD_EFFECT_SPIKES_IMMUNE)
     {
         u8 spikesDmg;
 
@@ -5541,7 +5543,8 @@ static void Cmd_switchineffects(void)
     else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_CINDERS_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_CINDERS)
         && !IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_FLYING)
-        && gBattleMons[gActiveBattler].ability != ABILITY_LEVITATE)
+        && gBattleMons[gActiveBattler].ability != ABILITY_LEVITATE
+        && ItemId_GetHoldEffect( gBattleMons[gActiveBattler].item ) != HOLD_EFFECT_SPIKES_IMMUNE)
     {
         gBattleMons[gActiveBattler].status2 &= ~(STATUS2_DESTINY_BOND);
         gHitMarker &= ~(HITMARKER_DESTINYBOND);
