@@ -6705,6 +6705,7 @@ static void Cmd_various(void)
     u8 side;
     s32 i;
     u8 movesetCount = 0;
+    bool8 veilActive;
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
 
@@ -6923,7 +6924,11 @@ static void Cmd_various(void)
         else
         {
             gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_SPIKE_WALL;
-            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].spikeWallTimer = 5;
+            veilActive = ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_SACRED_VEIL;
+            if (veilActive)
+                gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].spikeWallTimer = 8;
+            else
+                gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].spikeWallTimer = 5;
             gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].spikeWallBattlerId = gBattlerAttacker;
             gBattleCommunication[MULTISTRING_CHOOSER] = 0xFF;
         }
@@ -7194,6 +7199,7 @@ static void Cmd_setrain(void)
 
 static void Cmd_setreflect(void)
 {
+    bool8 veilActive = ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_SACRED_VEIL;
     if (gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] & SIDE_STATUS_REFLECT)
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -7202,7 +7208,10 @@ static void Cmd_setreflect(void)
     else
     {
         gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_REFLECT;
-        gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].reflectTimer = 5;
+        if (veilActive)
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].reflectTimer = 8;
+        else
+            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].reflectTimer = 5;
         gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].reflectBattlerId = gBattlerAttacker;
 
         if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_ATK_SIDE) == 2)
@@ -7979,6 +7988,7 @@ static void Cmd_givepaydaymoney(void)
 
 static void Cmd_setlightscreen(void)
 {
+    bool8 veilActive = ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_SACRED_VEIL;
     if (gCurrentMove == MOVE_WATER_WALL)
     {
         if (gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] & SIDE_STATUS_WATERWALL)
@@ -7989,7 +7999,11 @@ static void Cmd_setlightscreen(void)
         else
         {
             gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_WATERWALL;
-            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].waterwallTimer = 5;
+            if (veilActive)
+                gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].waterwallTimer = 8;
+            else
+                gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].waterwallTimer = 5;
+
             gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].waterwallBattlerId = gBattlerAttacker;
 
             if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_ATK_SIDE) == 2)
@@ -8008,7 +8022,10 @@ static void Cmd_setlightscreen(void)
         else
         {
             gSideStatuses[GET_BATTLER_SIDE(gBattlerAttacker)] |= SIDE_STATUS_LIGHTSCREEN;
-            gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenTimer = 5;
+            if (veilActive)
+                gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenTimer = 8;
+            else
+                gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenTimer = 5;
             gSideTimers[GET_BATTLER_SIDE(gBattlerAttacker)].lightscreenBattlerId = gBattlerAttacker;
 
             if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_ATK_SIDE) == 2)

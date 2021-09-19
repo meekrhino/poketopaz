@@ -5090,6 +5090,15 @@ BattleScript_ToxicSlimeRet::
 	seteffectprimary
 	return
 
+BattleScript_BurningCoalRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_PKMNSITEMSEAREDX
+	waitmessage B_WAIT_TIME_LONG
+	removeitem BS_SCRIPTING
+    setmoveeffect MOVE_EFFECT_BURN | MOVE_EFFECT_AFFECTS_USER
+	seteffectprimary
+	return
+
 BattleScript_PreventRecoilRet::
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
 	printstring STRINGID_PKMNSITEMPREVENTEDRECOIL

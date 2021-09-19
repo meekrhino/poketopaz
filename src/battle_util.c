@@ -4254,6 +4254,20 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
                     effect++;
                 }
                 break;
+            case HOLD_EFFECT_BURNING_COAL:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                    && TARGET_TURN_DAMAGED
+                    && gBattleMoves[gCurrentMove].flags & FLAG_KINGS_ROCK_AFFECTED
+                    && gBattleMons[gBattlerTarget].hp)
+                {
+                    gLastUsedItem = defItem;
+                    gBattleScripting.battler = gBattlerTarget;
+                    gPotentialItemEffectBattler = gBattlerAttacker;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_BurningCoalRet;
+                    effect++;
+                }
+                break;
             case HOLD_EFFECT_SHRAPNEL:
                 mgba_printf(MGBA_LOG_DEBUG, "shrapnel trigger check");
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
