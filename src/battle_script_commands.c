@@ -2781,6 +2781,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 else
                 {
                     gBattleCommunication[MOVE_EFFECT_BYTE] = Random() % 3 + 3;
+                    gBattleScripting.magicHerbCaused = FALSE;
                     SetMoveEffect(FALSE, 0);
                 }
                 break;
@@ -3151,8 +3152,11 @@ void SetMoveEffect(bool8 primary, u8 certain)
 static void Cmd_seteffectwithchance(void)
 {
     u32 percentChance;
+    u32 bonusPercentChance = 0;
     s32 i;
     s32 hpFraction;
+    u16 random;
+    u8 moveEffect;
 
     percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;
 
@@ -3172,20 +3176,48 @@ static void Cmd_seteffectwithchance(void)
     if (gBattleMons[gBattlerAttacker].ability == ABILITY_SERENE_GRACE)
         percentChance *= 2;
 
+    moveEffect = gBattleCommunication[MOVE_EFFECT_BYTE] & 0x1F;
+    if (ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_MAGIC_HERB
+     && gBattleCommunication[MOVE_EFFECT_BYTE]
+     && moveEffect <= PRIMARY_STATUS_MOVE_EFFECT)
+        bonusPercentChance = percentChance * 2;
+
+    random = Random() % 100;
+
+    mgba_printf(MGBA_LOG_DEBUG, "random is %d", random);
+    mgba_printf(MGBA_LOG_DEBUG, "percent is %d", percentChance);
+    mgba_printf(MGBA_LOG_DEBUG, "total percent is %d", percentChance+bonusPercentChance);
     if (gBattleCommunication[MOVE_EFFECT_BYTE] & MOVE_EFFECT_CERTAIN
         && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
     {
         gBattleCommunication[MOVE_EFFECT_BYTE] &= ~(MOVE_EFFECT_CERTAIN);
+        gBattleScripting.magicHerbCaused = FALSE;
         SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
     }
-    else if (Random() % 100 < percentChance
-             && gBattleCommunication[MOVE_EFFECT_BYTE]
-             && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
+    else if ((random < percentChance + bonusPercentChance)
+          && gBattleCommunication[MOVE_EFFECT_BYTE]
+          && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+          && gBattleMons[gBattlerTarget].hp)
     {
+        gBattleScripting.magicHerbCaused = FALSE;
         if (percentChance >= 100)
             SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
         else
-            SetMoveEffect(FALSE, 0);
+        {
+            if (random >= percentChance)
+            {
+                gLastUsedItem = gBattleMons[gBattlerAttacker].item;
+                gBattleScripting.magicHerbCaused = TRUE;
+                if (percentChance + bonusPercentChance >= 100)
+                    SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
+                else
+                    SetMoveEffect(FALSE, 0);
+            }
+            else
+            {
+                SetMoveEffect(FALSE, 0);
+            }
+        }
     }
     else
     {
@@ -3198,11 +3230,13 @@ static void Cmd_seteffectwithchance(void)
 
 static void Cmd_seteffectprimary(void)
 {
+    gBattleScripting.magicHerbCaused = FALSE;
     SetMoveEffect(TRUE, 0);
 }
 
 static void Cmd_seteffectsecondary(void)
 {
+    gBattleScripting.magicHerbCaused = FALSE;
     SetMoveEffect(FALSE, 0);
 }
 

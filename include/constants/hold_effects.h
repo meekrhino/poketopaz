@@ -84,5 +84,6 @@
 #define HOLD_EFFECT_BURNING_COAL        80
 #define HOLD_EFFECT_FORESIGHT           81
 #define HOLD_EFFECT_JAGGED_HERB         82
+#define HOLD_EFFECT_MAGIC_HERB          83
 
 #endif // GUARD_HOLD_EFFECTS_H

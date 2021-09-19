@@ -1824,6 +1824,7 @@ u8 DoBattlerEndTurnEffects(void)
                         if (!(gBattleMons[gActiveBattler].status2 & STATUS2_CONFUSION))
                         {
                             gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_CONFUSION | MOVE_EFFECT_AFFECTS_USER;
+                            gBattleScripting.magicHerbCaused = FALSE;
                             SetMoveEffect(TRUE, 0);
                             if (gBattleMons[gActiveBattler].status2 & STATUS2_CONFUSION)
                                 BattleScriptExecute(BattleScript_ThrashConfuses);
@@ -4222,6 +4223,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
                 {
                     gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_FLINCH;
                     BattleScriptPushCursor();
+                    gBattleScripting.magicHerbCaused = FALSE;
                     SetMoveEffect(FALSE, 0);
                     BattleScriptPop();
                 }

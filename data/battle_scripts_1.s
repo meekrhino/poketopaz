@@ -4491,6 +4491,9 @@ BattleScript_BurnSoothed::
 	return
 
 BattleScript_MoveEffectSleep::
+	jumpifbyte CMP_NOT_EQUAL, sMAGIC_HERB_CAUSED, TRUE, BattleScript_MoveEffectSleep2
+    call BattleScript_MagicHerbRet
+BattleScript_MoveEffectSleep2::
 	statusanimation BS_EFFECT_BATTLER
 	printfromtable gFellAsleepStringIds
 	waitmessage B_WAIT_TIME_LONG
@@ -4509,12 +4512,18 @@ BattleScript_YawnMakesAsleep::
 	end2
 
 BattleScript_MoveEffectPoison::
+	jumpifbyte CMP_NOT_EQUAL, sMAGIC_HERB_CAUSED, TRUE, BattleScript_MoveEffectPoison2
+    call BattleScript_MagicHerbRet
+BattleScript_MoveEffectPoison2::
 	statusanimation BS_EFFECT_BATTLER
 	printfromtable gGotPoisonedStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_UpdateEffectStatusIconRet
 
 BattleScript_MoveEffectBurn::
+	jumpifbyte CMP_NOT_EQUAL, sMAGIC_HERB_CAUSED, TRUE, BattleScript_MoveEffectBurn2
+    call BattleScript_MagicHerbRet
+BattleScript_MoveEffectBurn2::
     jumpifmove MOVE_MEGAFRICTION, BattleScript_MoveEffectBurnSelf
 	statusanimation BS_EFFECT_BATTLER
 	printfromtable gGotBurnedStringIds
@@ -4528,12 +4537,18 @@ BattleScript_MoveEffectBurnSelf::
 	goto BattleScript_UpdateEffectStatusIconRet
 
 BattleScript_MoveEffectFreeze::
+	jumpifbyte CMP_NOT_EQUAL, sMAGIC_HERB_CAUSED, TRUE, BattleScript_MoveEffectFreeze2
+    call BattleScript_MagicHerbRet
+BattleScript_MoveEffectFreeze2::
 	statusanimation BS_EFFECT_BATTLER
 	printfromtable gGotFrozenStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_UpdateEffectStatusIconRet
 
 BattleScript_MoveEffectParalysis::
+	jumpifbyte CMP_NOT_EQUAL, sMAGIC_HERB_CAUSED, TRUE, BattleScript_MoveEffectParalysis2
+    call BattleScript_MagicHerbRet
+BattleScript_MoveEffectParalysis2::
 	statusanimation BS_EFFECT_BATTLER
 	printfromtable gGotParalyzedStringIds
 	waitmessage B_WAIT_TIME_LONG
@@ -5112,6 +5127,13 @@ BattleScript_JaggedHerbEnd2::
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_SCRIPTING
 	end2
+
+BattleScript_MagicHerbRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_PKMNSITEMCAUSEDEFFECT
+	waitmessage B_WAIT_TIME_LONG
+	removeitem BS_SCRIPTING
+	return
 
 BattleScript_ItemHealHP_VariableRet::
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL

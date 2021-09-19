@@ -30,6 +30,7 @@
 #define sWINDOWS_TYPE gBattleScripting + 0x24
 #define sMULTIPLAYER_ID gBattleScripting + 0x25
 #define sSPECIAL_TRAINER_BATTLE_TYPE gBattleScripting + 0x26
+#define sMAGIC_HERB_CAUSED gBattleScripting + 0x27
 
 #define cEFFECT_CHOOSER gBattleCommunication + 3
 #define cMULTISTRING_CHOOSER gBattleCommunication + 5
