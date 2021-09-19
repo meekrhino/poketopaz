@@ -3184,9 +3184,6 @@ static void Cmd_seteffectwithchance(void)
 
     random = Random() % 100;
 
-    mgba_printf(MGBA_LOG_DEBUG, "random is %d", random);
-    mgba_printf(MGBA_LOG_DEBUG, "percent is %d", percentChance);
-    mgba_printf(MGBA_LOG_DEBUG, "total percent is %d", percentChance+bonusPercentChance);
     if (gBattleCommunication[MOVE_EFFECT_BYTE] & MOVE_EFFECT_CERTAIN
         && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
     {
