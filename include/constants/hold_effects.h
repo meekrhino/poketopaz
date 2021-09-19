@@ -85,5 +85,6 @@
 #define HOLD_EFFECT_FORESIGHT           81
 #define HOLD_EFFECT_JAGGED_HERB         82
 #define HOLD_EFFECT_MAGIC_HERB          83
+#define HOLD_EFFECT_COPY_STAT_UP        84
 
 #endif // GUARD_HOLD_EFFECTS_H

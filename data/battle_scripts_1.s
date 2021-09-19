@@ -5135,6 +5135,13 @@ BattleScript_MagicHerbRet::
 	removeitem BS_SCRIPTING
 	return
 
+BattleScript_BerryCopyStatsRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_PKMNSITEMCOPIEDSTATS
+	waitmessage B_WAIT_TIME_LONG
+	removeitem BS_SCRIPTING
+	return
+
 BattleScript_ItemHealHP_VariableRet::
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
 	printstring STRINGID_PKMNSITEMRESTOREDHEALTH

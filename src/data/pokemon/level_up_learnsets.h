@@ -512,8 +512,8 @@ static const u16 sArachmareLevelUpLearnset[] = {
 
 static const u16 sPinecoLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
-    //LEVEL_UP_MOVE( 1, MOVE_PROTECT),
-    //LEVEL_UP_MOVE( 1, MOVE_SELF_DESTRUCT),
+    LEVEL_UP_MOVE( 1, MOVE_PROTECT),
+    LEVEL_UP_MOVE( 7, MOVE_SELF_DESTRUCT),
     LEVEL_UP_MOVE(11, MOVE_TAKE_DOWN),
     LEVEL_UP_MOVE(15, MOVE_RAPID_SPIN),
     LEVEL_UP_MOVE(21, MOVE_BIDE),

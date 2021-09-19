@@ -3561,12 +3561,13 @@ enum
 
 u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
 {
-    int i = 0;
+    int i = 0, j = 0;
     u8 effect = ITEM_NO_EFFECT;
     u8 changedPP = 0;
     u8 battlerHoldEffect, atkHoldEffect, defHoldEffect;
     u8 battlerHoldEffectParam, atkHoldEffectParam, defHoldEffectParam;
     u16 atkItem, defItem, move;
+    u8 side;
 
     gLastUsedItem = gBattleMons[battlerId].item;
     if (gLastUsedItem == ITEM_ENIGMA_BERRY)
@@ -4197,6 +4198,37 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
                     return effect;
                 }
                 break;
+            case HOLD_EFFECT_COPY_STAT_UP:
+                side = (GetBattlerPosition(battlerId) ^ BIT_SIDE) & BIT_SIDE; // side of the opposing pokemon
+                for (j = 0; j < gBattleStruct->copycatStatChangeCount; j++)
+                {
+                    u8 fromBattler = (gBattleStruct->copycatStatChanges[j] >> 6) & 3;
+                    if (gBattleStruct->copycatStatChanges[j] == 0)
+                        continue;
+                    if (GetBattlerSide(fromBattler) == side)
+                    {
+                        u8 statId = gBattleStruct->copycatStatChanges[j] & 7;
+                        u8 statValue = (gBattleStruct->copycatStatChanges[j] >> 3) & 3;
+                        u8 negative = (gBattleStruct->copycatStatChanges[j] >> 5) & 1;
+                        if (!negative)
+                            gBattleMons[battlerId].statStages[statId] += statValue;
+
+                        if (gBattleMons[battlerId].statStages[statId] > MAX_STAT_STAGE)
+                            gBattleMons[battlerId].statStages[statId] = MAX_STAT_STAGE;
+                        if (gBattleMons[battlerId].statStages[statId] < MIN_STAT_STAGE)
+                            gBattleMons[battlerId].statStages[statId] = MIN_STAT_STAGE;
+
+                        effect++;
+                    }
+                }
+                if (effect)
+                {
+                    gBattleScripting.battler = battlerId;
+                    gPotentialItemEffectBattler = battlerId;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_BerryCopyStatsRet;
+                    return effect;
+                }
             }
             if (effect)
             {

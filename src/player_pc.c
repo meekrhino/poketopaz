@@ -225,24 +225,7 @@ static const struct MenuAction sItemStorage_MenuActions[] =
 static const struct ItemSlot sNewGamePCItems[] =
 {
     { ITEM_POTION, 1 },
-    { ITEM_SOLAR_CELL, 1 },
-    { ITEM_VITAL_HERB, 1 },
-    { ITEM_TOXIC_SLIME, 1 },
-    { ITEM_THORN_PLANT, 1 },
-    { ITEM_SPONGY_HERB, 1 },
-    { ITEM_SHRAPNEL, 1 },
-    { ITEM_SACRED_VEIL, 1 },
-    { ITEM_RESIST_SCARF, 1 },
-    { ITEM_PLAIN_ROCK, 1 },
-    { ITEM_MAGIC_HERB, 1 },
-    { ITEM_MAGMA_ROCK, 1 },
-    { ITEM_LASER_LENS, 1 },
-    { ITEM_JAGGED_HERB, 1 },
-    { ITEM_IRON_INCENSE, 1 },
-    { ITEM_CHAR_INCENSE, 1 },
-    { ITEM_DIAMOND_DUST, 1 },
-    { ITEM_MILK_INCENSE, 1 },
-    { ITEM_BURNING_COAL, 1 },
+    { ITEM_CALOPA_BERRY, 1 },
     { ITEM_NONE, 0 }
 };
 
