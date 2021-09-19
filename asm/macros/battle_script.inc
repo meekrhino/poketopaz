@@ -1404,6 +1404,14 @@
     various BS_SCRIPTING, VARIOUS_SOLAR_CELL, \ptr
     .endm
 
+    .macro changeitemtomagma battler:req
+    various \battler, VARIOUS_CHANGE_ITEM_MAGMA, 0
+    .endm
+
+    .macro changeitemtoplain battler:req
+    various \battler, VARIOUS_CHANGE_ITEM_PLAIN, 0
+    .endm
+
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req
 	setbyte sSTATCHANGER \stat | \stages << 4 | \down << 7

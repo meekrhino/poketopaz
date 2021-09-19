@@ -8,6 +8,7 @@ static const u16 sVenapLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SOLAR_BEAM),
     LEVEL_UP_MOVE( 1, MOVE_SOLAR_FLARE),
     LEVEL_UP_MOVE( 6, MOVE_SUBMISSION),
+    LEVEL_UP_MOVE( 7, MOVE_LEER),
     LEVEL_UP_MOVE( 7, MOVE_VINE_WHIP),
     LEVEL_UP_MOVE(10, MOVE_ASTONISH),
     LEVEL_UP_MOVE(10, MOVE_MUD_SLAP),
@@ -510,7 +511,9 @@ static const u16 sArachmareLevelUpLearnset[] = {
 };
 
 static const u16 sPinecoLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_BUBBLE),
+    LEVEL_UP_MOVE( 1, MOVE_EMBER),
+    //LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     //LEVEL_UP_MOVE( 1, MOVE_PROTECT),
     //LEVEL_UP_MOVE( 1, MOVE_SELF_DESTRUCT),
     LEVEL_UP_MOVE(11, MOVE_TAKE_DOWN),

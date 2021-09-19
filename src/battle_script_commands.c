@@ -1128,6 +1128,8 @@ static void JumpIfMoveFailed(u8 adder, u16 move)
         TrySetDestinyBondToHappen();
         if (AbilityBattleEffects(ABILITYEFFECT_ABSORBING, gBattlerTarget, 0, 0, move))
             return;
+        if (ItemBattleEffects(ITEMEFFECT_ABSORBING, gBattlerTarget, TRUE, move))
+            return;
     }
     gBattlescriptCurrInstr = BS_ptr;
 }
@@ -4587,13 +4589,13 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ITEM_EFFECTS_ALL: // item effects for all battlers
-            if (ItemBattleEffects(ITEMEFFECT_MOVE_END, 0, FALSE))
+            if (ItemBattleEffects(ITEMEFFECT_MOVE_END, 0, FALSE, 0))
                 effect = TRUE;
             else
                 gBattleScripting.moveendState++;
             break;
         case MOVEEND_KINGSROCK_SHELLBELL: // king's rock and shell bell
-            if (ItemBattleEffects(ITEMEFFECT_KINGSROCK_SHELLBELL, 0, FALSE))
+            if (ItemBattleEffects(ITEMEFFECT_KINGSROCK_SHELLBELL, 0, FALSE, 0))
                 effect = TRUE;
             gBattleScripting.moveendState++;
             break;
@@ -5630,7 +5632,7 @@ static void Cmd_switchineffects(void)
         gDisableStructs[gActiveBattler].truantSwitchInHack = 0;
 
         if (!AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gActiveBattler, 0, 0, 0)
-            && !ItemBattleEffects(ITEMEFFECT_ON_SWITCH_IN, gActiveBattler, FALSE))
+            && !ItemBattleEffects(ITEMEFFECT_ON_SWITCH_IN, gActiveBattler, FALSE, 0))
         {
             gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_SPIKES_DAMAGED);
             gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_CINDERS_DAMAGED);
@@ -6978,6 +6980,20 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
             return;
         }
+        break;
+    case VARIOUS_CHANGE_ITEM_MAGMA:
+        gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
+        gBattleMons[gActiveBattler].item = ITEM_MAGMA_STONE;
+
+        BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
+        MarkBattlerForControllerExec(gActiveBattler);
+        break;
+    case VARIOUS_CHANGE_ITEM_PLAIN:
+        gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
+        gBattleMons[gActiveBattler].item = ITEM_PLAIN_STONE;
+
+        BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
+        MarkBattlerForControllerExec(gActiveBattler);
         break;
     }
 

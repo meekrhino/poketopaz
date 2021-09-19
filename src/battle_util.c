@@ -1637,12 +1637,12 @@ u8 DoBattlerEndTurnEffects(void)
                 gBattleStruct->turnEffectsTracker++;
                 break;
             case ENDTURN_ITEMS1:  // item effects
-                if (ItemBattleEffects(1, gActiveBattler, FALSE))
+                if (ItemBattleEffects(1, gActiveBattler, FALSE, 0))
                     effect++;
                 gBattleStruct->turnEffectsTracker++;
                 break;
             case ENDTURN_ITEMS2:  // item effects again
-                if (ItemBattleEffects(1, gActiveBattler, TRUE))
+                if (ItemBattleEffects(1, gActiveBattler, TRUE, 0))
                     effect++;
                 gBattleStruct->turnEffectsTracker++;
                 break;
@@ -2119,7 +2119,7 @@ bool8 HandleFaintedMonActions(void)
             if (AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE1, 0, 0, 0, 0)
              || AbilityBattleEffects(ABILITYEFFECT_CONFOUND1, 0, 0, 0, 0)
              || AbilityBattleEffects(ABILITYEFFECT_TRACE, 0, 0, 0, 0)
-             || ItemBattleEffects(1, 0, TRUE)
+             || ItemBattleEffects(1, 0, TRUE, 0)
              || AbilityBattleEffects(ABILITYEFFECT_FORECAST, 0, 0, 0, 0))
                 return TRUE;
             gBattleStruct->faintedActionsState++;
@@ -3558,14 +3558,14 @@ enum
     ITEM_STATS_CHANGE, // 5
 };
 
-u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
+u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
 {
     int i = 0;
     u8 effect = ITEM_NO_EFFECT;
     u8 changedPP = 0;
     u8 battlerHoldEffect, atkHoldEffect, defHoldEffect;
     u8 battlerHoldEffectParam, atkHoldEffectParam, defHoldEffectParam;
-    u16 atkItem, defItem;
+    u16 atkItem, defItem, move;
 
     gLastUsedItem = gBattleMons[battlerId].item;
     if (gLastUsedItem == ITEM_ENIGMA_BERRY)
@@ -3591,7 +3591,6 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
         atkHoldEffectParam = ItemId_GetHoldEffectParam(atkItem);
     }
 
-    // def variables are unused
     defItem = gBattleMons[gBattlerTarget].item;
     if (defItem == ITEM_ENIGMA_BERRY)
     {
@@ -3603,6 +3602,11 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
         defHoldEffect = ItemId_GetHoldEffect(defItem);
         defHoldEffectParam = ItemId_GetHoldEffectParam(defItem);
     }
+
+    if (moveArg)
+        move = moveArg;
+    else
+        move = gCurrentMove;
 
     switch (caseID)
     {
@@ -4305,6 +4309,36 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
             }
         }
         break;
+    case ITEMEFFECT_ABSORBING:
+        if (move) {
+            switch (battlerHoldEffect)
+            {
+            case HOLD_EFFECT_PLAIN_STONE:
+                if (gBattleMoves[move].type == TYPE_FIRE && gBattleMoves[move].power != 0)
+                {
+                    gLastUsedItem = gBattleMons[battlerId].item;
+                    if (gProtectStructs[gBattlerAttacker].notFirstStrike)
+                        gBattlescriptCurrInstr = BattleScript_MoveItemAbsorb;
+                    else
+                        gBattlescriptCurrInstr = BattleScript_MoveItemAbsorb_PPLoss;
+
+                    effect++;
+                }
+                break;
+            case HOLD_EFFECT_MAGMA_STONE:
+                if (gBattleMoves[move].type == TYPE_WATER && gBattleMoves[move].power != 0)
+                {
+                    gLastUsedItem = gBattleMons[battlerId].item;
+                    if (gProtectStructs[gBattlerAttacker].notFirstStrike)
+                        gBattlescriptCurrInstr = BattleScript_MoveItemAbsorb;
+                    else
+                        gBattlescriptCurrInstr = BattleScript_MoveItemAbsorb_PPLoss;
+
+                    effect++;
+                }
+                break;
+            }
+        }
     }
 
     return effect;

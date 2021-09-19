@@ -5,6 +5,7 @@
 #include "constants/battle_anim.h"
 #include "constants/battle_string_ids.h"
 #include "constants/abilities.h"
+#include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/game_stat.h"
@@ -5135,6 +5136,26 @@ BattleScript_ItemHealHP_Ret::
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	return
+
+BattleScript_MoveItemAbsorb_PPLoss::
+	ppreduce
+BattleScript_MoveItemAbsorb::
+	attackstring
+	pause B_WAIT_TIME_SHORT
+	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_PKMNSITEMABSORBEDATTACK
+	waitmessage B_WAIT_TIME_LONG
+	orbyte gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE
+	jumpifhalfword CMP_EQUAL, gLastUsedItem, ITEM_PLAIN_STONE, BattleScript_MoveItemAbsorbPlain
+    changeitemtoplain BS_TARGET
+	printstring STRINGID_PKMNSITEMCHANGEDTOPLAIN
+    goto BattleScript_MoveItemAbsorbEnd
+BattleScript_MoveItemAbsorbPlain::
+    changeitemtomagma BS_TARGET
+	printstring STRINGID_PKMNSITEMCHANGEDTOMAGMA
+BattleScript_MoveItemAbsorbEnd::
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
 
 BattleScript_SelectingNotAllowedMoveChoiceItem::
 	printselectionstring STRINGID_ITEMALLOWSONLYYMOVE

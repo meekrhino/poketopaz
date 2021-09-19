@@ -101,6 +101,8 @@
 #define VARIOUS_TRY_GET_CONFOUND_TARGET         36
 #define VARIOUS_TRY_ECHO                        37
 #define VARIOUS_SOLAR_CELL                      38
+#define VARIOUS_CHANGE_ITEM_MAGMA               39
+#define VARIOUS_CHANGE_ITEM_PLAIN               40
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0
