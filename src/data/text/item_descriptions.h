@@ -1052,7 +1052,7 @@ static const u8 sResistScarfDesc[] = _(
     "reduces super-\n"
     "effective damage.");
 
-static const u8 sPlainStoneDesc[] = _(
+static const u8 sPlainRockDesc[] = _(
     "A hold item that\n"
     "absorbs a FIRE-type\n"
     "attack to change.");
@@ -1062,7 +1062,7 @@ static const u8 sMagicHerbDesc[] = _(
     "triples extra\n"
     "effects in battle.");
 
-static const u8 sMagmaStoneDesc[] = _(
+static const u8 sMagmaRockDesc[] = _(
     "A hold item that\n"
     "absorbs a WATER-type\n"
     "attack to change.");

@@ -6983,14 +6983,14 @@ static void Cmd_various(void)
         break;
     case VARIOUS_CHANGE_ITEM_MAGMA:
         gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
-        gBattleMons[gActiveBattler].item = ITEM_MAGMA_STONE;
+        gBattleMons[gActiveBattler].item = ITEM_MAGMA_ROCK;
 
         BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
         MarkBattlerForControllerExec(gActiveBattler);
         break;
     case VARIOUS_CHANGE_ITEM_PLAIN:
         gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
-        gBattleMons[gActiveBattler].item = ITEM_PLAIN_STONE;
+        gBattleMons[gActiveBattler].item = ITEM_PLAIN_ROCK;
 
         BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
         MarkBattlerForControllerExec(gActiveBattler);

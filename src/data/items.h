@@ -2929,13 +2929,13 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_PLAIN_STONE] =
+    [ITEM_PLAIN_ROCK] =
     {
-        .name = _("PLAIN STONE"),
-        .itemId = ITEM_PLAIN_STONE,
+        .name = _("PLAIN ROCK"),
+        .itemId = ITEM_PLAIN_ROCK,
         .price = 0,
-        .holdEffect = HOLD_EFFECT_PLAIN_STONE,
-        .description = sPlainStoneDesc,
+        .holdEffect = HOLD_EFFECT_PLAIN_ROCK,
+        .description = sPlainRockDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -2953,13 +2953,13 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_MAGMA_STONE] =
+    [ITEM_MAGMA_ROCK] =
     {
-        .name = _("MAGMA STONE"),
-        .itemId = ITEM_MAGMA_STONE,
+        .name = _("MAGMA ROCK"),
+        .itemId = ITEM_MAGMA_ROCK,
         .price = 0,
-        .holdEffect = HOLD_EFFECT_MAGMA_STONE,
-        .description = sMagmaStoneDesc,
+        .holdEffect = HOLD_EFFECT_MAGMA_ROCK,
+        .description = sMagmaRockDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

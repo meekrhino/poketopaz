@@ -4313,7 +4313,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
         if (move) {
             switch (battlerHoldEffect)
             {
-            case HOLD_EFFECT_PLAIN_STONE:
+            case HOLD_EFFECT_PLAIN_ROCK:
                 if (gBattleMoves[move].type == TYPE_FIRE && gBattleMoves[move].power != 0)
                 {
                     gLastUsedItem = gBattleMons[battlerId].item;
@@ -4325,7 +4325,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
                     effect++;
                 }
                 break;
-            case HOLD_EFFECT_MAGMA_STONE:
+            case HOLD_EFFECT_MAGMA_ROCK:
                 if (gBattleMoves[move].type == TYPE_WATER && gBattleMoves[move].power != 0)
                 {
                     gLastUsedItem = gBattleMons[battlerId].item;

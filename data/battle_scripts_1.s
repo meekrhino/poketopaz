@@ -5146,7 +5146,7 @@ BattleScript_MoveItemAbsorb::
 	printstring STRINGID_PKMNSITEMABSORBEDATTACK
 	waitmessage B_WAIT_TIME_LONG
 	orbyte gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE
-	jumpifhalfword CMP_EQUAL, gLastUsedItem, ITEM_PLAIN_STONE, BattleScript_MoveItemAbsorbPlain
+	jumpifhalfword CMP_EQUAL, gLastUsedItem, ITEM_PLAIN_ROCK, BattleScript_MoveItemAbsorbPlain
     changeitemtoplain BS_TARGET
 	printstring STRINGID_PKMNSITEMCHANGEDTOPLAIN
     goto BattleScript_MoveItemAbsorbEnd
