@@ -163,6 +163,7 @@
 #define STATUS3_HEATED_UP               (1 << 22)
 #define STATUS3_INITIATIVE              (1 << 23)
 #define STATUS3_CONFOUND_POKES          (1 << 24)
+#define STATUS3_ENHANCED_CRIT           (1 << 25)
 
 // Not really sure what a "hitmarker" is.
 #define HITMARKER_x10                   (1 << 4)

@@ -3634,6 +3634,14 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
                 BattleScriptExecute(BattleScript_WhiteHerbEnd2);
             }
             break;
+        case HOLD_EFFECT_JAGGED_HERB:
+            gStatuses3[battlerId] &= STATUS3_ENHANCED_CRIT;
+            gBattleScripting.battler = battlerId;
+            gPotentialItemEffectBattler = battlerId;
+            gActiveBattler = gBattlerAttacker = battlerId;
+            BattleScriptExecute(BattleScript_JaggedHerbEnd2);
+            effect = ITEM_EFFECT_OTHER;
+            break;
         }
         break;
     case 1:

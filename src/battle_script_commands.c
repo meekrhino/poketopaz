@@ -1391,6 +1391,7 @@ static void Cmd_critcalc(void)
                 + (gBattleMoves[gCurrentMove].effect == EFFECT_SKY_ATTACK)
                 + (gBattleMoves[gCurrentMove].effect == EFFECT_BLAZE_KICK)
                 + (gBattleMoves[gCurrentMove].effect == EFFECT_POISON_TAIL)
+                + (gStatuses3[gBattlerAttacker] & STATUS3_ENHANCED_CRIT)
                 + (holdEffect == HOLD_EFFECT_SCOPE_LENS);
 
     if (critChance >= ARRAY_COUNT(sCriticalHitChance))

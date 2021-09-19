@@ -229,6 +229,7 @@ extern const u8 BattleScript_ToxicSlimeRet[];
 extern const u8 BattleScript_BurningCoalRet[];
 extern const u8 BattleScript_PreventRecoilRet[];
 extern const u8 BattleScript_ContactRecoilRet[];
+extern const u8 BattleScript_JaggedHerbEnd2[];
 extern const u8 BattleScript_ItemHealHP_VariableRet[];
 extern const u8 BattleScript_ItemHealHP_RemoveItem[];
 extern const u8 BattleScript_BerryPPHealEnd2[];

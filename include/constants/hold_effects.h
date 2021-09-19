@@ -83,5 +83,6 @@
 #define HOLD_EFFECT_SACRED_VEIL         79
 #define HOLD_EFFECT_BURNING_COAL        80
 #define HOLD_EFFECT_FORESIGHT           81
+#define HOLD_EFFECT_JAGGED_HERB         82
 
 #endif // GUARD_HOLD_EFFECTS_H

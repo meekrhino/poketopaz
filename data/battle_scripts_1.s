@@ -5106,6 +5106,13 @@ BattleScript_PreventRecoilRet::
 	removeitem BS_SCRIPTING
 	return
 
+BattleScript_JaggedHerbEnd2::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_PKMNSITEMRAISEDCRITRATE
+	waitmessage B_WAIT_TIME_LONG
+	removeitem BS_SCRIPTING
+	end2
+
 BattleScript_ItemHealHP_VariableRet::
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
 	printstring STRINGID_PKMNSITEMRESTOREDHEALTH

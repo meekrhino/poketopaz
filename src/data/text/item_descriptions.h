@@ -1038,13 +1038,13 @@ static const u8 sSpongyHerbDesc[] = _(
     "holder is hurt.");
 
 static const u8 sShrapnelDesc[] = _(
-    "A hold item that\n"
-    "creates SPIKES when\n"
+    "Creates SPIKES\n"
+    "under the foe when\n"
     "the holder is hit.");
 
 static const u8 sSacredVeilDesc[] = _(
     "A hold item that\n"
-    "extends the duration\n"
+    "extends the time\n"
     "of created walls.");
 
 static const u8 sResistScarfDesc[] = _(
@@ -1054,7 +1054,7 @@ static const u8 sResistScarfDesc[] = _(
 
 static const u8 sPlainRockDesc[] = _(
     "A hold item that\n"
-    "absorbs a FIRE-type\n"
+    "absorbs a FIRE\n"
     "attack to change.");
 
 static const u8 sMagicHerbDesc[] = _(
@@ -1064,7 +1064,7 @@ static const u8 sMagicHerbDesc[] = _(
 
 static const u8 sMagmaRockDesc[] = _(
     "A hold item that\n"
-    "absorbs a WATER-type\n"
+    "absorbs a WATER\n"
     "attack to change.");
 
 static const u8 sLaserLensDesc[] = _(
