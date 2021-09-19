@@ -1525,7 +1525,8 @@ static void Cmd_typecalc(void)
         {
             if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT)
             {
-                if (gBattleMons[gBattlerTarget].status2 & STATUS2_FORESIGHT)
+                if (gBattleMons[gBattlerTarget].status2 & STATUS2_FORESIGHT
+                 || ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_FORESIGHT)
                     break;
                 i += 3;
                 continue;
@@ -1592,7 +1593,8 @@ static void CheckWonderGuardAndLevitate(void)
     {
         if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT)
         {
-            if (gBattleMons[gBattlerTarget].status2 & STATUS2_FORESIGHT)
+            if (gBattleMons[gBattlerTarget].status2 & STATUS2_FORESIGHT
+             || ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_FORESIGHT)
                 break;
             i += 3;
             continue;
@@ -1710,7 +1712,8 @@ u8 TypeCalc(u16 move, u8 attacker, u8 defender)
         {
             if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT)
             {
-                if (gBattleMons[defender].status2 & STATUS2_FORESIGHT)
+                if (gBattleMons[defender].status2 & STATUS2_FORESIGHT
+                 || ItemId_GetHoldEffect(gBattleMons[attacker].item) == HOLD_EFFECT_FORESIGHT)
                     break;
                 i += 3;
                 continue;
@@ -4800,7 +4803,8 @@ static void Cmd_typecalc2(void)
         {
             if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT)
             {
-                if (gBattleMons[gBattlerTarget].status2 & STATUS2_FORESIGHT)
+                if (gBattleMons[gBattlerTarget].status2 & STATUS2_FORESIGHT
+                 || ItemId_GetHoldEffect(gBattleMons[gBattlerAttacker].item) == HOLD_EFFECT_FORESIGHT)
                 {
                     break;
                 }

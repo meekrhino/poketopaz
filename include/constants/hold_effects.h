@@ -82,5 +82,6 @@
 #define HOLD_EFFECT_MAGMA_ROCK          78
 #define HOLD_EFFECT_SACRED_VEIL         79
 #define HOLD_EFFECT_BURNING_COAL        80
+#define HOLD_EFFECT_FORESIGHT           81
 
 #endif // GUARD_HOLD_EFFECTS_H
