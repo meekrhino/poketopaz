@@ -593,8 +593,8 @@ const u32 gItemIconPalette_PlainRock[] = INCBIN_U32("graphics/items/icons/plain_
 const u32 gItemIcon_MagicHerb[] = INCBIN_U32("graphics/items/icons/magic_herb.4bpp.lz");
 const u32 gItemIconPalette_MagicHerb[] = INCBIN_U32("graphics/items/icons/magic_herb.gbapal.lz");
 
-const u32 gItemIcon_MagmaRock[] = INCBIN_U32("graphics/items/icons/magma_stone.4bpp.lz");
-const u32 gItemIconPalette_MagmaRock[] = INCBIN_U32("graphics/items/icons/magma_stone.gbapal.lz");
+const u32 gItemIcon_MagmaRock[] = INCBIN_U32("graphics/items/icons/magma_rock.4bpp.lz");
+const u32 gItemIconPalette_MagmaRock[] = INCBIN_U32("graphics/items/icons/magma_rock.gbapal.lz");
 
 const u32 gItemIcon_LaserLens[] = INCBIN_U32("graphics/items/icons/laser_lens.4bpp.lz");
 const u32 gItemIconPalette_LaserLens[] = INCBIN_U32("graphics/items/icons/laser_lens.gbapal.lz");
