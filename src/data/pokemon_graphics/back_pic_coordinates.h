@@ -67,18 +67,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_FINCHERP] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x45,
+        .y_offset = 14,
     },
     [SPECIES_GASHAWK] =
     {
-        .size = 0x85,
-        .y_offset = 12,
+        .size = 0x86,
+        .y_offset = 9,
     },
     [SPECIES_EAGLAIR] =
     {
-        .size = 0x78,
-        .y_offset = 2,
+        .size = 0x87,
+        .y_offset = 6,
     },
     [SPECIES_MOGEL] =
     {

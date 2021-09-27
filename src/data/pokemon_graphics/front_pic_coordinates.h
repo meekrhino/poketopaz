@@ -80,20 +80,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_FINCHERP] =
     {
-        .size = 0x65,
-        .y_offset = 13,
+        .size = 0x56,
+        .y_offset = 12,
     },
 
     [SPECIES_GASHAWK] =
     {
-        .size = 0x67,
-        .y_offset = 11,
+        .size = 0x56,
+        .y_offset = 8,
     },
 
     [SPECIES_EAGLAIR] =
     {
         .size = 0x88,
-        .y_offset = 1,
+        .y_offset = 2,
     },
 
     [SPECIES_MOGEL] =
