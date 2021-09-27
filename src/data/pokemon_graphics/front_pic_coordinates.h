@@ -134,19 +134,19 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_LUPINE] =
     {
-        .size = 0x45,
-        .y_offset = 15,
+        .size = 0x56,
+        .y_offset = 11,
     },
 
     [SPECIES_CANILEAF] =
     {
-        .size = 0x66,
-        .y_offset = 11,
+        .size = 0x85,
+        .y_offset = 10,
     },
 
     [SPECIES_WOLVINE] =
     {
-        .size = 0x78,
+        .size = 0x88,
         .y_offset = 3,
     },
 

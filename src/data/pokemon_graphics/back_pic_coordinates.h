@@ -112,18 +112,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_LUPINE] =
     {
-        .size = 0x55,
-        .y_offset = 12,
+        .size = 0x67,
+        .y_offset = 6,
     },
     [SPECIES_CANILEAF] =
     {
-        .size = 0x86,
-        .y_offset = 10,
+        .size = 0x75,
+        .y_offset = 12,
     },
     [SPECIES_WOLVINE] =
     {
-        .size = 0x77,
-        .y_offset = 6,
+        .size = 0x87,
+        .y_offset = 5,
     },
     [SPECIES_JALSIDA] =
     {
