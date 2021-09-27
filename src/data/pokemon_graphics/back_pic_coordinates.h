@@ -82,13 +82,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_MOGEL] =
     {
-        .size = 0x65,
-        .y_offset = 13,
+        .size = 0x66,
+        .y_offset = 8,
     },
     [SPECIES_FIRREL] =
     {
-        .size = 0x75,
-        .y_offset = 13,
+        .size = 0x67,
+        .y_offset = 4,
     },
     [SPECIES_AMPURE] =
     {
