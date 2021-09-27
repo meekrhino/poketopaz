@@ -44,20 +44,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_ECHOISE] =
     {
-        .size = 0x65,
-        .y_offset = 13,
+        .size = 0x76,
+        .y_offset = 9,
     },
 
     [SPECIES_MERMEIDON] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x86,
+        .y_offset = 9,
     },
 
     [SPECIES_DOLPHURE] =
     {
-        .size = 0x88,
-        .y_offset = 0,
+        .size = 0x77,
+        .y_offset = 5,
     },
 
     [SPECIES_FIRANT] =
