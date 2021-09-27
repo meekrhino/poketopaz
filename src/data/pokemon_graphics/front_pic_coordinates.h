@@ -110,14 +110,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_AMPURE] =
     {
-        .size = 0x67,
-        .y_offset = 9,
+        .size = 0x45,
+        .y_offset = 15,
     },
 
     [SPECIES_OHMURE] =
     {
         .size = 0x67,
-        .y_offset = 4,
+        .y_offset = 7,
     },
 
     [SPECIES_SANDSHREW] =

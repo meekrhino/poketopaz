@@ -92,12 +92,12 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_AMPURE] =
     {
-        .size = 0x77,
-        .y_offset = 7,
+        .size = 0x76,
+        .y_offset = 8,
     },
     [SPECIES_OHMURE] =
     {
-        .size = 0x66,
+        .size = 0x77,
         .y_offset = 8,
     },
     [SPECIES_SANDSHREW] =
