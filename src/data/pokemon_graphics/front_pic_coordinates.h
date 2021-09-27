@@ -8,20 +8,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_VENAP] =
     {
-        .size = 0x45,
+        .size = 0x65,
         .y_offset = 14,
     },
 
     [SPECIES_TRAPLENT] =
     {
-        .size = 0x56,
-        .y_offset = 10,
+        .size = 0x66,
+        .y_offset = 8,
     },
 
     [SPECIES_DIONARE] =
     {
         .size = 0x88,
-        .y_offset = 3,
+        .y_offset = 4,
     },
 
     [SPECIES_CELSINGE] =

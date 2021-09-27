@@ -7,18 +7,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_VENAP] =
     {
-        .size = 0x64,
-        .y_offset = 16,
+        .size = 0x74,
+        .y_offset = 17,
     },
     [SPECIES_TRAPLENT] =
     {
-        .size = 0x66,
-        .y_offset = 9,
+        .size = 0x55,
+        .y_offset = 13,
     },
     [SPECIES_DIONARE] =
     {
-        .size = 0x87,
-        .y_offset = 7,
+        .size = 0x86,
+        .y_offset = 9,
     },
     [SPECIES_CELSINGE] =
     {
