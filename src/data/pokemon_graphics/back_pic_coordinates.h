@@ -52,18 +52,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_FIRANT] =
     {
-        .size = 0x55,
+        .size = 0x85,
         .y_offset = 15,
     },
     [SPECIES_PYROON] =
     {
-        .size = 0x65,
-        .y_offset = 12,
+        .size = 0x75,
+        .y_offset = 13,
     },
     [SPECIES_PYREIGN] =
     {
-        .size = 0x87,
-        .y_offset = 6,
+        .size = 0x85,
+        .y_offset = 14,
     },
     [SPECIES_FINCHERP] =
     {

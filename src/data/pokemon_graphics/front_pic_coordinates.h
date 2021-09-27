@@ -62,20 +62,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_FIRANT] =
     {
-        .size = 0x45,
-        .y_offset = 16,
+        .size = 0x65,
+        .y_offset = 15,
     },
 
     [SPECIES_PYROON] =
     {
-        .size = 0x54,
-        .y_offset = 20,
+        .size = 0x56,
+        .y_offset = 12,
     },
 
     [SPECIES_PYREIGN] =
     {
-        .size = 0x76,
-        .y_offset = 9,
+        .size = 0x88,
+        .y_offset = 1,
     },
 
     [SPECIES_FINCHERP] =
