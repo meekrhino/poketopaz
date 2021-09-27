@@ -26,20 +26,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_CELSINGE] =
     {
-        .size = 0x55,
-        .y_offset = 12,
+        .size = 0x56,
+        .y_offset = 10,
     },
 
     [SPECIES_FAHRAMANE] =
     {
-        .size = 0x66,
-        .y_offset = 9,
+        .size = 0x57,
+        .y_offset = 5,
     },
 
     [SPECIES_KELVOYANT] =
     {
-        .size = 0x88,
-        .y_offset = 1,
+        .size = 0x87,
+        .y_offset = 6,
     },
 
     [SPECIES_ECHOISE] =

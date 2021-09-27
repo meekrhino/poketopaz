@@ -23,17 +23,17 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_CELSINGE] =
     {
         .size = 0x65,
-        .y_offset = 14,
+        .y_offset = 13,
     },
     [SPECIES_FAHRAMANE] =
     {
-        .size = 0x66,
-        .y_offset = 9,
+        .size = 0x75,
+        .y_offset = 12,
     },
     [SPECIES_KELVOYANT] =
     {
-        .size = 0x87,
-        .y_offset = 4,
+        .size = 0x67,
+        .y_offset = 6,
     },
     [SPECIES_ECHOISE] =
     {
