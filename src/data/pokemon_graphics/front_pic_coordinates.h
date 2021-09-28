@@ -494,8 +494,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_ZANTILIDAE] =
     {
-        .size = 0x87,
-        .y_offset = 5,
+        .size = 0x78,
+        .y_offset = 1,
     },
 
     [SPECIES_SEVIPER] =
@@ -506,8 +506,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_PYTHANG] =
     {
-        .size = 0x77,
-        .y_offset = 8,
+        .size = 0x88,
+        .y_offset = 1,
     },
 
     [SPECIES_MEOWTH] =
