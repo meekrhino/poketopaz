@@ -562,13 +562,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_GARGOTH] =
     {
-        .size = 0x78,
-        .y_offset = 0,
+        .size = 0x75,
+        .y_offset = 13,
     },
     [SPECIES_CRAGOYLE] =
     {
-        .size = 0x88,
-        .y_offset = 0,
+        .size = 0x86,
+        .y_offset = 11,
     },
     [SPECIES_TOGEPI] =
     {

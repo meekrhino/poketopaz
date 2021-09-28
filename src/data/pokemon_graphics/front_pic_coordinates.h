@@ -674,14 +674,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_GARGOTH] =
     {
-        .size = 0x78,
-        .y_offset = 2,
+        .size = 0x67,
+        .y_offset = 7,
     },
 
     [SPECIES_CRAGOYLE] =
     {
         .size = 0x88,
-        .y_offset = 0,
+        .y_offset = 2,
     },
 
     [SPECIES_TOGEPI] =
