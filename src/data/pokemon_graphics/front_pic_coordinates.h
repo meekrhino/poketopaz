@@ -542,26 +542,26 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_TRILLOGILL] =
     {
-        .size = 0x55,
-        .y_offset = 14,
+        .size = 0x66,
+        .y_offset = 11,
     },
 
     [SPECIES_TIDASALE] =
     {
-        .size = 0x86,
-        .y_offset = 11,
+        .size = 0x87,
+        .y_offset = 5,
     },
 
     [SPECIES_QUIISORD] =
     {
-        .size = 0x78,
-        .y_offset = 3,
+        .size = 0x88,
+        .y_offset = 0,
     },
 
     [SPECIES_TSUNALL] =
     {
-        .size = 0x78,
-        .y_offset = 3,
+        .size = 0x86,
+        .y_offset = 9,
     },
 
     [SPECIES_YANMA] =
@@ -591,7 +591,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_SLOWPRIEST] =
     {
         .size = 0x58,
-        .y_offset = 1,
+        .y_offset = 0,
     },
 
     [SPECIES_REMORAID] =

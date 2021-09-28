@@ -452,23 +452,23 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_TRILLOGILL] =
     {
-        .size = 0x85,
-        .y_offset = 13,
+        .size = 0x65,
+        .y_offset = 15,
     },
     [SPECIES_TIDASALE] =
     {
-        .size = 0x77,
-        .y_offset = 5,
+        .size = 0x86,
+        .y_offset = 11,
     },
     [SPECIES_QUIISORD] =
     {
-        .size = 0x68,
-        .y_offset = 2,
+        .size = 0x86,
+        .y_offset = 10,
     },
     [SPECIES_TSUNALL] =
     {
-        .size = 0x68,
-        .y_offset = 2,
+        .size = 0x86,
+        .y_offset = 11,
     },
     [SPECIES_YANMA] =
     {
@@ -492,8 +492,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SLOWPRIEST] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x88,
+        .y_offset = 2,
     },
     [SPECIES_REMORAID] =
     {
