@@ -242,14 +242,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_COROONA] =
     {
-        .size = 0x87,
-        .y_offset = 9,
+        .size = 0x88,
+        .y_offset = 2,
     },
 
     [SPECIES_MOOCALF] =
     {
-        .size = 0x77,
-        .y_offset = 4,
+        .size = 0x65,
+        .y_offset = 14,
     },
 
     [SPECIES_TAUROS] =
