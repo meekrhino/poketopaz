@@ -356,7 +356,7 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_KONDRIA] =
     {
-        .size = 0x67,
+        .size = 0x57,
         .y_offset = 5,
     },
 
@@ -380,8 +380,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_STRIBRA] =
     {
-        .size = 0x67,
-        .y_offset = 4,
+        .size = 0x88,
+        .y_offset = 2,
     },
 
     [SPECIES_MURKROW] =

@@ -297,8 +297,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_KONDRIA] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x77,
+        .y_offset = 7,
     },
     [SPECIES_WHISMUR] =
     {
@@ -318,7 +318,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_STRIBRA] =
     {
         .size = 0x87,
-        .y_offset = 4,
+        .y_offset = 7,
     },
     [SPECIES_MURKROW] =
     {
@@ -327,8 +327,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_HARSKROW] =
     {
-        .size = 0x87,
-        .y_offset = 6,
+        .size = 0x88,
+        .y_offset = 1,
     },
     [SPECIES_JACKALANT] =
     {
