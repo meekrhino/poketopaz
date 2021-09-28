@@ -332,18 +332,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_JACKALANT] =
     {
-        .size = 0x56,
-        .y_offset = 11,
+        .size = 0x85,
+        .y_offset = 12,
     },
     [SPECIES_PHANTERN] =
     {
-        .size = 0x87,
-        .y_offset = 7,
+        .size = 0x88,
+        .y_offset = 3,
     },
     [SPECIES_SKALLOY] =
     {
-        .size = 0x87,
-        .y_offset = 4,
+        .size = 0x56,
+        .y_offset = 10,
     },
     [SPECIES_SKARMORY] =
     {

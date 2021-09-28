@@ -398,20 +398,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_JACKALANT] =
     {
-        .size = 0x45,
-        .y_offset = 15,
+        .size = 0x54,
+        .y_offset = 17,
     },
 
     [SPECIES_PHANTERN] =
     {
-        .size = 0x77,
-        .y_offset = 6,
+        .size = 0x88,
+        .y_offset = 3,
     },
 
     [SPECIES_SKALLOY] =
     {
-        .size = 0x88,
-        .y_offset = 0,
+        .size = 0x76,
+        .y_offset = 9,
     },
 
     [SPECIES_SKARMORY] =
