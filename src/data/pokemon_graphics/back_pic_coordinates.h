@@ -362,8 +362,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_CASCADET] =
     {
-        .size = 0x46,
-        .y_offset = 10,
+        .size = 0x84,
+        .y_offset = 17,
     },
     [SPECIES_VENONAT] =
     {
@@ -377,13 +377,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SMALLARD] =
     {
-        .size = 0x85,
+        .size = 0x75,
         .y_offset = 15,
     },
     [SPECIES_MALLARGE] =
     {
-        .size = 0x76,
-        .y_offset = 8,
+        .size = 0x78,
+        .y_offset = 1,
     },
     [SPECIES_GRIMER] =
     {
