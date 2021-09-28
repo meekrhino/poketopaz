@@ -266,14 +266,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_INFLARE] =
     {
-        .size = 0x45,
-        .y_offset = 13,
+        .size = 0x67,
+        .y_offset = 7,
     },
 
     [SPECIES_INGERO] =
     {
-        .size = 0x57,
-        .y_offset = 13,
+        .size = 0x88,
+        .y_offset = 3,
     },
 
     [SPECIES_DROWZEE] =
@@ -308,20 +308,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_GRIFIC] =
     {
-        .size = 0x55,
-        .y_offset = 13,
+        .size = 0x58,
+        .y_offset = 2,
     },
 
     [SPECIES_GRYPHONIC] =
     {
-        .size = 0x58,
-        .y_offset = 3,
+        .size = 0x88,
+        .y_offset = 4,
     },
 
     [SPECIES_BARKUB] =
     {
-        .size = 0x66,
-        .y_offset = 11,
+        .size = 0x54,
+        .y_offset = 17,
     },
 
     [SPECIES_GROWLITHE] =
@@ -339,7 +339,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_VIXUN] =
     {
         .size = 0x65,
-        .y_offset = 12,
+        .y_offset = 15,
     },
 
     [SPECIES_VULPIX] =
