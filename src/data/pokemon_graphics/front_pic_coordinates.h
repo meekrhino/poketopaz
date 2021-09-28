@@ -200,8 +200,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_GRIZLARE] =
     {
-        .size = 0x78,
-        .y_offset = 1,
+        .size = 0x68,
+        .y_offset = 2,
     },
 
     [SPECIES_MANKEY] =

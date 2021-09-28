@@ -163,12 +163,12 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_EMBEAR] =
     {
         .size = 0x66,
-        .y_offset = 8,
+        .y_offset = 10,
     },
     [SPECIES_GRIZLARE] =
     {
-        .size = 0x88,
-        .y_offset = 3,
+        .size = 0x78,
+        .y_offset = 4,
     },
     [SPECIES_MANKEY] =
     {
