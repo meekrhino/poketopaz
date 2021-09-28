@@ -608,8 +608,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_PHANTASOMO] =
     {
-        .size = 0x55,
-        .y_offset = 12,
+        .size = 0x88,
+        .y_offset = 0,
     },
 
     [SPECIES_SMEARGLE] =
@@ -620,8 +620,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_SERAPH] =
     {
-        .size = 0x74,
-        .y_offset = 17,
+        .size = 0x88,
+        .y_offset = 3,
     },
 
     [SPECIES_DUNSPARCE] =
@@ -638,20 +638,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_ABYSSUS] =
     {
-        .size = 0x68,
+        .size = 0x88,
         .y_offset = 0,
     },
 
     [SPECIES_EQUILL] =
     {
-        .size = 0x64,
-        .y_offset = 16,
+        .size = 0x86,
+        .y_offset = 8,
     },
 
     [SPECIES_TELLURE] =
     {
         .size = 0x87,
-        .y_offset = 6,
+        .y_offset = 7,
     },
 
     [SPECIES_CORPHISH] =
