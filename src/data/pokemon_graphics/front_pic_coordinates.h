@@ -152,8 +152,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_JALSIDA] =
     {
-        .size = 0x77,
-        .y_offset = 4,
+        .size = 0x56,
+        .y_offset = 10,
     },
 
     [SPECIES_SPOINK] =
@@ -171,13 +171,13 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_SPIDREAM] =
     {
         .size = 0x54,
-        .y_offset = 19,
+        .y_offset = 17,
     },
 
     [SPECIES_ARACHMARE] =
     {
-        .size = 0x87,
-        .y_offset = 5,
+        .size = 0x77,
+        .y_offset = 4,
     },
 
     [SPECIES_PINECO] =
