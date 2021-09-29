@@ -728,8 +728,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_DRAKODO] =
     {
-        .size = 0x88,
-        .y_offset = 2,
+        .size = 0x86,
+        .y_offset = 10,
     },
 
     [SPECIES_EEVEE] =
@@ -776,14 +776,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_CHIARAME] =
     {
-        .size = 0x56,
-        .y_offset = 11,
+        .size = 0x77,
+        .y_offset = 7,
     },
 
     [SPECIES_SERBERINE] =
     {
-        .size = 0x77,
-        .y_offset = 5,
+        .size = 0x78,
+        .y_offset = 1,
     },
 
     [SPECIES_MISDREAVUS] =

@@ -608,7 +608,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_DRAKODO] =
     {
         .size = 0x86,
-        .y_offset = 10,
+        .y_offset = 11,
     },
     [SPECIES_EEVEE] =
     {
@@ -647,13 +647,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_CHIARAME] =
     {
-        .size = 0x55,
-        .y_offset = 12,
+        .size = 0x84,
+        .y_offset = 18,
     },
     [SPECIES_SERBERINE] =
     {
-        .size = 0x87,
-        .y_offset = 7,
+        .size = 0x86,
+        .y_offset = 10,
     },
     [SPECIES_MISDREAVUS] =
     {
