@@ -698,32 +698,32 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_CIRROFT] =
     {
-        .size = 0x34,
+        .size = 0x54,
         .y_offset = 17,
     },
 
     [SPECIES_CUMULOFT] =
     {
-        .size = 0x34,
-        .y_offset = 17,
+        .size = 0x77,
+        .y_offset = 7,
     },
 
     [SPECIES_DESTADO] =
     {
-        .size = 0x34,
-        .y_offset = 17,
+        .size = 0x88,
+        .y_offset = 1,
     },
 
     [SPECIES_FROSTORM] =
     {
-        .size = 0x34,
-        .y_offset = 17,
+        .size = 0x88,
+        .y_offset = 2,
     },
 
     [SPECIES_NIMBOLT] =
     {
-        .size = 0x34,
-        .y_offset = 17,
+        .size = 0x88,
+        .y_offset = 2,
     },
 
     [SPECIES_DRAKODO] =

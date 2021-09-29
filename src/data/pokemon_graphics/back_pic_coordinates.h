@@ -582,28 +582,28 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_CIRROFT] =
     {
-        .size = 0x45,
-        .y_offset = 13,
+        .size = 0x86,
+        .y_offset = 10,
     },
     [SPECIES_CUMULOFT] =
     {
-        .size = 0x45,
-        .y_offset = 13,
+        .size = 0x87,
+        .y_offset = 7,
     },
     [SPECIES_DESTADO] =
     {
-        .size = 0x45,
-        .y_offset = 13,
+        .size = 0x88,
+        .y_offset = 3,
     },
     [SPECIES_FROSTORM] =
     {
-        .size = 0x45,
-        .y_offset = 13,
+        .size = 0x87,
+        .y_offset = 6,
     },
     [SPECIES_NIMBOLT] =
     {
-        .size = 0x45,
-        .y_offset = 13,
+        .size = 0x88,
+        .y_offset = 2,
     },
     [SPECIES_DRAKODO] =
     {
