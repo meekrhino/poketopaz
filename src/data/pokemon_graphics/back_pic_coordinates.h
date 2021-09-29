@@ -662,23 +662,23 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_ENGIL] =
     {
-        .size = 0x63,
-        .y_offset = 21,
-    },
-    [SPECIES_BENENGIL] =
-    {
-        .size = 0x75,
-        .y_offset = 13,
-    },
-    [SPECIES_DUVAL] =
-    {
         .size = 0x76,
         .y_offset = 9,
     },
+    [SPECIES_BENENGIL] =
+    {
+        .size = 0x88,
+        .y_offset = 3,
+    },
+    [SPECIES_DUVAL] =
+    {
+        .size = 0x77,
+        .y_offset = 6,
+    },
     [SPECIES_MALDUVAL] =
     {
-        .size = 0x87,
-        .y_offset = 4,
+        .size = 0x88,
+        .y_offset = 3,
     },
     [SPECIES_QWILFISH] =
     {

@@ -794,26 +794,26 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_ENGIL] =
     {
-        .size = 0x43,
-        .y_offset = 20,
+        .size = 0x56,
+        .y_offset = 9,
     },
 
     [SPECIES_BENENGIL] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x88,
+        .y_offset = 1,
     },
 
     [SPECIES_DUVAL] =
     {
-        .size = 0x55,
-        .y_offset = 12,
+        .size = 0x56,
+        .y_offset = 10,
     },
 
     [SPECIES_MALDUVAL] =
     {
-        .size = 0x87,
-        .y_offset = 4,
+        .size = 0x88,
+        .y_offset = 0,
     },
 
     [SPECIES_QWILFISH] =
