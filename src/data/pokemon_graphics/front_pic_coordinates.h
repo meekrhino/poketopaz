@@ -896,8 +896,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_BAKURGE] =
     {
-        .size = 0x88,
-        .y_offset = 1,
+        .size = 0x87,
+        .y_offset = 7,
     },
 
     [SPECIES_LAPRAS] =
@@ -908,14 +908,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_SIRENE] =
     {
-        .size = 0x85,
-        .y_offset = 13,
+        .size = 0x68,
+        .y_offset = 1,
     },
 
     [SPECIES_IGLONIA] =
     {
-        .size = 0x77,
-        .y_offset = 4,
+        .size = 0x66,
+        .y_offset = 11,
     },
 
     [SPECIES_STANTLER] =
@@ -926,8 +926,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_CARIBRISK] =
     {
-        .size = 0x88,
-        .y_offset = 0,
+        .size = 0x87,
+        .y_offset = 6,
     },
 
     [SPECIES_HUSKII] =
