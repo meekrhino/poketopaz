@@ -902,13 +902,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_FLINTUSK] =
     {
-        .size = 0x65,
-        .y_offset = 14,
+        .size = 0x87,
+        .y_offset = 7,
     },
     [SPECIES_METUSK] =
     {
-        .size = 0x85,
-        .y_offset = 13,
+        .size = 0x86,
+        .y_offset = 9,
     },
     [SPECIES_ALLUFANG] =
     {

@@ -1082,14 +1082,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_FLINTUSK] =
     {
-        .size = 0x54,
-        .y_offset = 16,
+        .size = 0x88,
+        .y_offset = 0,
     },
 
     [SPECIES_METUSK] =
     {
-        .size = 0x86,
-        .y_offset = 8,
+        .size = 0x88,
+        .y_offset = 1,
     },
 
     [SPECIES_ALLUFANG] =
