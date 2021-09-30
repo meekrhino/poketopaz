@@ -1058,26 +1058,26 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_MISTICADE] =
     {
-        .size = 0x55,
-        .y_offset = 12,
+        .size = 0x87,
+        .y_offset = 5,
     },
 
     [SPECIES_KRAKLAW] =
     {
-        .size = 0x87,
-        .y_offset = 10,
+        .size = 0x88,
+        .y_offset = 0,
     },
 
     [SPECIES_LEORACLE] =
     {
-        .size = 0x78,
-        .y_offset = 4,
+        .size = 0x88,
+        .y_offset = 1,
     },
 
     [SPECIES_KHAPHIX] =
     {
         .size = 0x88,
-        .y_offset = 3,
+        .y_offset = 0,
     },
 
     [SPECIES_FLINTUSK] =
