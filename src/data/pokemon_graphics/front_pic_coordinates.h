@@ -968,14 +968,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_MIRUST] =
     {
-        .size = 0x77,
-        .y_offset = 6,
+        .size = 0x78,
+        .y_offset = 2,
     },
 
     [SPECIES_FERRIAN] =
     {
-        .size = 0x77,
-        .y_offset = 5,
+        .size = 0x88,
+        .y_offset = 1,
     },
 
     [SPECIES_CACNEA] =

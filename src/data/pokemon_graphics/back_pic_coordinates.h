@@ -807,13 +807,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_MIRUST] =
     {
-        .size = 0x85,
-        .y_offset = 14,
+        .size = 0x77,
+        .y_offset = 6,
     },
     [SPECIES_FERRIAN] =
     {
-        .size = 0x76,
-        .y_offset = 8,
+        .size = 0x88,
+        .y_offset = 1,
     },
     [SPECIES_CACNEA] =
     {
