@@ -827,13 +827,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_CACKINGE] =
     {
-        .size = 0x87,
-        .y_offset = 7,
+        .size = 0x78,
+        .y_offset = 1,
     },
     [SPECIES_SCORCHION] =
     {
-        .size = 0x76,
-        .y_offset = 8,
+        .size = 0x87,
+        .y_offset = 6,
     },
     [SPECIES_TRAPINCH] =
     {

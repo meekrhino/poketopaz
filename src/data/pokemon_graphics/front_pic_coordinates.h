@@ -992,14 +992,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_CACKINGE] =
     {
-        .size = 0x88,
-        .y_offset = 0,
+        .size = 0x87,
+        .y_offset = 1,
     },
 
     [SPECIES_SCORCHION] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x88,
+        .y_offset = 2,
     },
 
     [SPECIES_TRAPINCH] =
