@@ -837,19 +837,19 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_BRONTOGON] =
     {
         .size = 0x88,
-        .y_offset = 0,
+        .y_offset = 2,
     },
 
     [SPECIES_BLITZFAUST] =
     {
-        .size = 0x67,
-        .y_offset = 4,
+        .size = 0x68,
+        .y_offset = 1,
     },
 
     [SPECIES_VILEPHIST] =
     {
-        .size = 0x87,
-        .y_offset = 4,
+        .size = 0x78,
+        .y_offset = 1,
     },
 
     [SPECIES_RHYHORN] =
@@ -872,14 +872,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_SINESTRIL] =
     {
-        .size = 0x75,
-        .y_offset = 14,
+        .size = 0x55,
+        .y_offset = 12,
     },
 
     [SPECIES_MALISTRIL] =
     {
-        .size = 0x87,
-        .y_offset = 6,
+        .size = 0x78,
+        .y_offset = 3,
     },
 
     [SPECIES_SCYTHER] =

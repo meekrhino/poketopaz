@@ -697,18 +697,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_BRONTOGON] =
     {
-        .size = 0x87,
-        .y_offset = 7,
+        .size = 0x57,
+        .y_offset = 6,
     },
     [SPECIES_BLITZFAUST] =
     {
-        .size = 0x65,
-        .y_offset = 12,
+        .size = 0x77,
+        .y_offset = 6,
     },
     [SPECIES_VILEPHIST] =
     {
-        .size = 0x65,
-        .y_offset = 12,
+        .size = 0x76,
+        .y_offset = 8,
     },
     [SPECIES_RHYHORN] =
     {
@@ -727,13 +727,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SINESTRIL] =
     {
-        .size = 0x66,
-        .y_offset = 9,
+        .size = 0x65,
+        .y_offset = 15,
     },
     [SPECIES_MALISTRIL] =
     {
-        .size = 0x78,
-        .y_offset = 0,
+        .size = 0x87,
+        .y_offset = 7,
     },
     [SPECIES_SCYTHER] =
     {
