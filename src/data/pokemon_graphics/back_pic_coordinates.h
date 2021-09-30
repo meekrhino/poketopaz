@@ -777,33 +777,33 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_HUSKII] =
     {
-        .size = 0x64,
-        .y_offset = 18,
+        .size = 0x87,
+        .y_offset = 11,
     },
     [SPECIES_TUNDROLF] =
-    {
-        .size = 0x86,
-        .y_offset = 10,
-    },
-    [SPECIES_WOLFROST] =
     {
         .size = 0x87,
         .y_offset = 6,
     },
+    [SPECIES_WOLFROST] =
+    {
+        .size = 0x88,
+        .y_offset = 2,
+    },
     [SPECIES_REEFRAIN] =
     {
-        .size = 0x65,
-        .y_offset = 12,
+        .size = 0x86,
+        .y_offset = 9,
     },
     [SPECIES_POLARA] =
     {
-        .size = 0x76,
-        .y_offset = 10,
+        .size = 0x65,
+        .y_offset = 13,
     },
     [SPECIES_POLARICE] =
     {
-        .size = 0x85,
-        .y_offset = 12,
+        .size = 0x86,
+        .y_offset = 10,
     },
     [SPECIES_MIRUST] =
     {
