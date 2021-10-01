@@ -1161,18 +1161,18 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_MATAKITE] =
     {
         .size = 0x88,
-        .y_offset = 0,
+        .y_offset = 2,
     },
 
     [SPECIES_TAGATI] =
     {
         .size = 0x88,
-        .y_offset = 0,
+        .y_offset = 1,
     },
 
     [SPECIES_NEICHIA] =
     {
-        .size = 0x88,
+        .size = 0x78,
         .y_offset = 0,
     },
 

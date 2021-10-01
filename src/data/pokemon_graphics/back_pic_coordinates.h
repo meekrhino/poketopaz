@@ -967,18 +967,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_MATAKITE] =
     {
-        .size = 0x86,
-        .y_offset = 10,
+        .size = 0x87,
+        .y_offset = 8,
     },
     [SPECIES_TAGATI] =
     {
-        .size = 0x87,
-        .y_offset = 6,
+        .size = 0x76,
+        .y_offset = 9,
     },
     [SPECIES_NEICHIA] =
     {
-        .size = 0x88,
-        .y_offset = 3,
+        .size = 0x77,
+        .y_offset = 8,
     },
     [SPECIES_KURANPU] =
     {
