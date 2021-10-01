@@ -1142,20 +1142,20 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_SNARLIGER] =
     {
-        .size = 0x56,
-        .y_offset = 11,
+        .size = 0x54,
+        .y_offset = 16,
     },
 
     [SPECIES_NOCTIGER] =
     {
-        .size = 0x66,
-        .y_offset = 9,
+        .size = 0x78,
+        .y_offset = 1,
     },
 
     [SPECIES_RAIGER] =
     {
         .size = 0x87,
-        .y_offset = 4,
+        .y_offset = 5,
     },
 
     [SPECIES_MATAKITE] =

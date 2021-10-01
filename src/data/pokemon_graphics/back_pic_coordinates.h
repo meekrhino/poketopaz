@@ -952,18 +952,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SNARLIGER] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x74,
+        .y_offset = 16,
     },
     [SPECIES_NOCTIGER] =
     {
         .size = 0x85,
-        .y_offset = 13,
+        .y_offset = 12,
     },
     [SPECIES_RAIGER] =
     {
-        .size = 0x77,
-        .y_offset = 6,
+        .size = 0x84,
+        .y_offset = 17,
     },
     [SPECIES_MATAKITE] =
     {
