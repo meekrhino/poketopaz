@@ -1094,32 +1094,32 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_ALLUFANG] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x67,
+        .y_offset = 5,
     },
 
     [SPECIES_KUNAIGA] =
     {
         .size = 0x88,
-        .y_offset = 0,
+        .y_offset = 2,
     },
 
     [SPECIES_PURIOR] =
     {
-        .size = 0x67,
-        .y_offset = 5,
+        .size = 0x78,
+        .y_offset = 0,
     },
 
     [SPECIES_GOLDRAKE] =
     {
-        .size = 0x67,
-        .y_offset = 6,
+        .size = 0x88,
+        .y_offset = 4,
     },
 
     [SPECIES_AROWANA] =
     {
         .size = 0x88,
-        .y_offset = 8,
+        .y_offset = 1,
     },
 
     [SPECIES_ATLAXA] =

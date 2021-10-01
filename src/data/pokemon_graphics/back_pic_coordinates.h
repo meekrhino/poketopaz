@@ -912,28 +912,28 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_ALLUFANG] =
     {
-        .size = 0x83,
-        .y_offset = 23,
+        .size = 0x76,
+        .y_offset = 8,
     },
     [SPECIES_KUNAIGA] =
     {
-        .size = 0x77,
-        .y_offset = 5,
+        .size = 0x86,
+        .y_offset = 8,
     },
     [SPECIES_PURIOR] =
     {
-        .size = 0x87,
+        .size = 0x65,
         .y_offset = 5,
     },
     [SPECIES_GOLDRAKE] =
     {
-        .size = 0x76,
-        .y_offset = 9,
+        .size = 0x88,
+        .y_offset = 1,
     },
     [SPECIES_AROWANA] =
     {
-        .size = 0x78,
-        .y_offset = 0,
+        .size = 0x88,
+        .y_offset = 1,
     },
     [SPECIES_ATLAXA] =
     {
