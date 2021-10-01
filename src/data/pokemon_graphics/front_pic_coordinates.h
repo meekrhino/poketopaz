@@ -1178,8 +1178,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_KURANPU] =
     {
-        .size = 0x55,
-        .y_offset = 14,
+        .size = 0x77,
+        .y_offset = 7,
     },
 
     [SPECIES_TYPHIDNA] =
@@ -1190,14 +1190,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_UNICROWN] =
     {
-        .size = 0x88,
+        .size = 0x78,
         .y_offset = 0,
     },
 
     [SPECIES_KIPPOROK] =
     {
-        .size = 0x55,
-        .y_offset = 13,
+        .size = 0x76,
+        .y_offset = 12,
     },
 
     [SPECIES_JIRACHI] =

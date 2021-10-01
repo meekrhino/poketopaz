@@ -982,23 +982,23 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_KURANPU] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x87,
+        .y_offset = 7,
     },
     [SPECIES_TYPHIDNA] =
     {
         .size = 0x87,
-        .y_offset = 7,
+        .y_offset = 5,
     },
     [SPECIES_UNICROWN] =
     {
-        .size = 0x78,
-        .y_offset = 0,
+        .size = 0x77,
+        .y_offset = 6,
     },
     [SPECIES_KIPPOROK] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x86,
+        .y_offset = 9,
     },
     [SPECIES_JIRACHI] =
     {
