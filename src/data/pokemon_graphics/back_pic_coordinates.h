@@ -937,8 +937,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_ATLAXA] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x55,
+        .y_offset = 12,
     },
     [SPECIES_THORAXA] =
     {
@@ -948,7 +948,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_ILLUMBRA] =
     {
         .size = 0x88,
-        .y_offset = 0,
+        .y_offset = 3,
     },
     [SPECIES_SNARLIGER] =
     {

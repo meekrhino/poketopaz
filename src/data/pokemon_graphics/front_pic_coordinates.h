@@ -1125,13 +1125,13 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_ATLAXA] =
     {
         .size = 0x46,
-        .y_offset = 9,
+        .y_offset = 11,
     },
 
     [SPECIES_THORAXA] =
     {
-        .size = 0x56,
-        .y_offset = 9,
+        .size = 0x58,
+        .y_offset = 3,
     },
 
     [SPECIES_ILLUMBRA] =
