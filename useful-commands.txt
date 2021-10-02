@@ -1,0 +1,14 @@
+Applying transparency to all front sprites
+
+for d in *; do ../../tools/gbagfx/gbagfx ${d}/front.png ${d}/front.4bpp; ../../tools/gbagfx/gbagfx ${d}/front.4bpp ${d}/front.png -palette ${d}/normal.pal -object -width 8; done
+for d in *; do ../../tools/gbagfx/gbagfx ${d}/back.png ${d}/back.4bpp; ../../tools/gbagfx/gbagfx ${d}/back.4bpp ${d}/back.png -palette ${d}/normal.pal -object -width 8; done
+
+Generating shiny sprites
+
+for d in *; do ../../tools/gbagfx/gbagfx ${d}/front.png ${d}/front.4bpp; ../../tools/gbagfx/gbagfx ${d}/front.4bpp ${d}/front-shiny.png -palette ${d}/shiny.pal -object -width 8; done
+for d in *; do ../../tools/gbagfx/gbagfx ${d}/back.png ${d}/back.4bpp; ../../tools/gbagfx/gbagfx ${d}/back.4bpp ${d}/back-shiny.png -palette ${d}/shiny.pal -object -width 8; done
+
+Creating a spritesheet
+
+montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent front-sprites.png
+montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent back-sprites.png
