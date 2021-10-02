@@ -12,3 +12,7 @@ Creating a spritesheet
 
 montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent front-sprites.png
 montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent back-sprites.png
+
+Regenerating anim_front.png files from front.png
+
+while read p; do rm "$p/anim_front.png"; done < pokemonlist-new.txt
