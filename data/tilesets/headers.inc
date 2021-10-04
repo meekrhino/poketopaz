@@ -830,3 +830,14 @@ gTileset_UnionRoom::
 	.4byte gMetatiles_UnionRoom
 	.4byte gMetatileAttributes_UnionRoom
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_NeoBay::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_NeoBay
+	.4byte gTilesetPalettes_NeoBay
+	.4byte gMetatiles_NeoBay
+	.4byte gMetatileAttributes_NeoBay
+	.4byte NULL

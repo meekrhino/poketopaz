@@ -20,8 +20,8 @@
     },
     {
       "direction": "right",
-      "offset": -60,
-      "map": "MAP_ROUTE110"
+      "offset": -12,
+      "map": "MAP_NEO_BAY"
     }
   ],
   "object_events": [
@@ -140,19 +140,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_103_CHERI_2",
       "script": "BerryTreeScript",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 20,
-      "y": 10,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route103_EventScript_Boy",
       "flag": "0"
     },
     {
@@ -295,7 +282,9 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -557,3 +557,11 @@ gMetatiles_UnionRoom::
 	.align 1
 gMetatileAttributes_UnionRoom::
 	.incbin "data/tilesets/secondary/union_room/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_NeoBay::
+	.incbin "data/tilesets/secondary/neobay/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_NeoBay::
+	.incbin "data/tilesets/secondary/neobay/metatile_attributes.bin"
