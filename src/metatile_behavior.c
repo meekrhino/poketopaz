@@ -323,15 +323,13 @@ bool8 MetatileBehavior_IsDeepSand(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_POND_WATER
-     || metatileBehavior == MB_PUDDLE
-     || metatileBehavior == MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
-     || metatileBehavior == MB_ICE
-     || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER
-     || metatileBehavior == MB_REFLECTION_UNDER_BRIDGE)
-        return TRUE;
-    else
-        return FALSE;
+    return (metatileBehavior == MB_POND_WATER
+         || metatileBehavior == MB_PUDDLE
+         || metatileBehavior == MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
+         || metatileBehavior == MB_ICE
+         || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER
+         || metatileBehavior == MB_REFLECTION_UNDER_BRIDGE
+         || metatileBehavior == MB_OCEAN_WATER);
 }
 
 bool8 MetatileBehavior_IsIce(u8 metatileBehavior)
@@ -631,11 +629,11 @@ bool8 MetatileBehavior_IsCableBoxResults1(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsOpenSecretBaseDoor(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_SECRET_BASE_SPOT_RED_CAVE_OPEN 
+    if (metatileBehavior == MB_SECRET_BASE_SPOT_RED_CAVE_OPEN
      || metatileBehavior == MB_SECRET_BASE_SPOT_BROWN_CAVE_OPEN
-     || metatileBehavior == MB_SECRET_BASE_SPOT_YELLOW_CAVE_OPEN 
+     || metatileBehavior == MB_SECRET_BASE_SPOT_YELLOW_CAVE_OPEN
      || metatileBehavior == MB_SECRET_BASE_SPOT_TREE_LEFT_OPEN
-     || metatileBehavior == MB_SECRET_BASE_SPOT_SHRUB_OPEN 
+     || metatileBehavior == MB_SECRET_BASE_SPOT_SHRUB_OPEN
      || metatileBehavior == MB_SECRET_BASE_SPOT_BLUE_CAVE_OPEN
      || metatileBehavior == MB_SECRET_BASE_SPOT_TREE_RIGHT_OPEN)
         return TRUE;
