@@ -4425,7 +4425,7 @@
       "id": "LAYOUT_ROUTE201",
       "name": "Route201_Layout",
       "width": 46,
-      "height": 30,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_NeoBay",
       "border_filepath": "data/layouts/Route201/border.bin",

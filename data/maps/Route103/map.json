@@ -20,8 +20,8 @@
     },
     {
       "direction": "right",
-      "offset": -12,
-      "map": "MAP_NEO_BAY"
+      "offset": -4,
+      "map": "MAP_ROUTE201"
     }
   ],
   "object_events": [

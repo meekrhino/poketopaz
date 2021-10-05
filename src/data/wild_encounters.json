@@ -11555,7 +11555,12 @@
             "mons": [
               {
                 "min_level": 2,
-                "max_level": 3,
+                "max_level": 2,
+                "species": "SPECIES_FINCHERP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
                 "species": "SPECIES_FINCHERP"
               },
               {
@@ -11566,52 +11571,201 @@
               {
                 "min_level": 2,
                 "max_level": 3,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE201",
+          "base_label": "gRoute2010",
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
+          "land_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
                 "species": "SPECIES_FINCHERP"
               },
               {
                 "min_level": 2,
                 "max_level": 3,
-                "species": "SPECIES_MOGEL"
+                "species": "SPECIES_FINCHERP"
               },
               {
                 "min_level": 2,
                 "max_level": 3,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 3,
-                "species": "SPECIES_MOGEL"
+                "species": "SPECIES_FINCHERP"
               },
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_MOGEL"
+                "species": "SPECIES_FINCHERP"
               },
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_MOGEL"
+                "species": "SPECIES_FINCHERP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_FINCHERP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_FINCHERP"
               },
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_MOGEL"
+                "species": "SPECIES_FINCHERP"
               },
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_MOGEL"
+                "species": "SPECIES_FINCHERP"
               }
             ]
           },
