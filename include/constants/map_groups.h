@@ -61,6 +61,8 @@
 #define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
 #define MAP_NEO_BAY             (57 | (0 << 8))
 #define MAP_ROUTE201            (58 | (0 << 8))
+#define MAP_ROUTE202            (59 | (0 << 8))
+#define MAP_SOFTWIND_CITY       (60 | (0 << 8))
 
 // Map Group 1
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
