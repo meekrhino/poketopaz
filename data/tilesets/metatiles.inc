@@ -565,3 +565,10 @@ gMetatiles_NeoBay::
 	.align 1
 gMetatileAttributes_NeoBay::
 	.incbin "data/tilesets/secondary/neobay/metatile_attributes.bin"
+	.align 1
+gMetatiles_Softwind::
+	.incbin "data/tilesets/secondary/softwind/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Softwind::
+	.incbin "data/tilesets/secondary/softwind/metatile_attributes.bin"

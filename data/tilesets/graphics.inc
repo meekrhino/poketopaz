@@ -1749,3 +1749,23 @@ gTilesetPalettes_NeoBay::
 	.align 2
 gTilesetTiles_NeoBay::
 	.incbin "data/tilesets/secondary/neobay/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Softwind::
+	.incbin "data/tilesets/secondary/softwind/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/softwind/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Softwind::
+	.incbin "data/tilesets/secondary/softwind/tiles.4bpp.lz"

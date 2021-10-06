@@ -841,3 +841,14 @@ gTileset_NeoBay::
 	.4byte gMetatiles_NeoBay
 	.4byte gMetatileAttributes_NeoBay
 	.4byte NULL
+
+	.align 2
+gTileset_Softwind::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Softwind
+	.4byte gTilesetPalettes_Softwind
+	.4byte gMetatiles_Softwind
+	.4byte gMetatileAttributes_Softwind
+	.4byte NULL
