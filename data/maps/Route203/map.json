@@ -1,12 +1,12 @@
 {
-  "id": "MAP_SOFTWIND_CITY",
-  "name": "SoftwindCity",
-  "layout": "LAYOUT_SOFTWIND_CITY",
+  "id": "MAP_ROUTE203",
+  "name": "Route203",
+  "layout": "LAYOUT_ROUTE203",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_PETALBURG_CITY",
+  "region_map_section": "MAPSEC_ROUTE_103",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_TOWN",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -14,14 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
-      "offset": 6,
-      "map": "MAP_ROUTE202"
-    },
-    {
-      "direction": "right",
-      "offset": 24,
-      "map": "MAP_ROUTE203"
+      "direction": "left",
+      "offset": -22,
+      "map": "MAP_SOFTWIND_CITY"
     }
   ],
   "object_events": [

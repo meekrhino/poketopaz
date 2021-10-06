@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/SoftwindCity/border.bin",
       "blockdata_filepath": "data/layouts/SoftwindCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE203",
+      "name": "Route203_Layout",
+      "width": 58,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Route203/border.bin",
+      "blockdata_filepath": "data/layouts/Route203/map.bin"
     }
   ]
 }
