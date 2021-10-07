@@ -852,3 +852,14 @@ gTileset_Softwind::
 	.4byte gMetatiles_Softwind
 	.4byte gMetatileAttributes_Softwind
 	.4byte NULL
+
+	.align 2
+gTileset_ChartreeForest::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_ChartreeForest
+	.4byte gTilesetPalettes_ChartreeForest
+	.4byte gMetatiles_ChartreeForest
+	.4byte gMetatileAttributes_ChartreeForest
+	.4byte NULL

@@ -1070,3 +1070,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/SoftwindCity/scripts.inc"
 
 	.include "data/maps/Route203/scripts.inc"
+
+	.include "data/maps/ChartreeForest/scripts.inc"

@@ -1769,3 +1769,23 @@ gTilesetPalettes_Softwind::
 	.align 2
 gTilesetTiles_Softwind::
 	.incbin "data/tilesets/secondary/softwind/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_ChartreeForest::
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/chartreeforest/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_ChartreeForest::
+	.incbin "data/tilesets/secondary/chartreeforest/tiles.4bpp.lz"

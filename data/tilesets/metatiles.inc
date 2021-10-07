@@ -572,3 +572,10 @@ gMetatiles_Softwind::
 	.align 1
 gMetatileAttributes_Softwind::
 	.incbin "data/tilesets/secondary/softwind/metatile_attributes.bin"
+	.align 1
+gMetatiles_ChartreeForest::
+	.incbin "data/tilesets/secondary/chartreeforest/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_ChartreeForest::
+	.incbin "data/tilesets/secondary/chartreeforest/metatile_attributes.bin"

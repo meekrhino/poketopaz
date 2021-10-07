@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/Route203/border.bin",
       "blockdata_filepath": "data/layouts/Route203/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHARTREE_FOREST",
+      "name": "ChartreeForest_Layout",
+      "width": 93,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ChartreeForest",
+      "border_filepath": "data/layouts/ChartreeForest/border.bin",
+      "blockdata_filepath": "data/layouts/ChartreeForest/map.bin"
     }
   ]
 }
