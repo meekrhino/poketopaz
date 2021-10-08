@@ -23,7 +23,27 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 20,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_CHARTREE_FOREST",
+      "dest_warp_id": 3
+    },
+    {
+      "x": 21,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_CHARTREE_FOREST",
+      "dest_warp_id": 4
+    },
+    {
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_CHARTREE_FOREST",
+      "dest_warp_id": 5
+    }
   ],
   "coord_events": [
 

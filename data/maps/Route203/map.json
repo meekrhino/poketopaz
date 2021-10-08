@@ -17,13 +17,31 @@
       "direction": "left",
       "offset": -22,
       "map": "MAP_SOFTWIND_CITY"
+    },
+    {
+      "direction": "right",
+      "offset": 6,
+      "map": "MAP_ROUTE204"
     }
   ],
   "object_events": [
 
   ],
   "warp_events": [
-
+    {
+      "x": 48,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_CHARTREE_FOREST",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 49,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_CHARTREE_FOREST",
+      "dest_warp_id": 2
+    }
   ],
   "coord_events": [
 
