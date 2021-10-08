@@ -4470,6 +4470,16 @@
       "secondary_tileset": "gTileset_ChartreeForest",
       "border_filepath": "data/layouts/ChartreeForest/border.bin",
       "blockdata_filepath": "data/layouts/ChartreeForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE204",
+      "name": "Route204_Layout",
+      "width": 38,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ChartreeForest",
+      "border_filepath": "data/layouts/Route204/border.bin",
+      "blockdata_filepath": "data/layouts/Route204/map.bin"
     }
   ]
 }
