@@ -1074,3 +1074,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ChartreeForest/scripts.inc"
 
 	.include "data/maps/Route204/scripts.inc"
+
+	.include "data/maps/SunsetVillage/scripts.inc"
