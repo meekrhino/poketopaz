@@ -1,88 +1,91 @@
 #ifndef GUARD_CONSTANTS_MAP_GROUPS_H
 #define GUARD_CONSTANTS_MAP_GROUPS_H
 
-// Map Group 0
-#define MAP_PETALBURG_CITY      (0 | (0 << 8))
-#define MAP_SLATEPORT_CITY      (1 | (0 << 8))
-#define MAP_MAUVILLE_CITY       (2 | (0 << 8))
-#define MAP_RUSTBORO_CITY       (3 | (0 << 8))
-#define MAP_FORTREE_CITY        (4 | (0 << 8))
-#define MAP_LILYCOVE_CITY       (5 | (0 << 8))
-#define MAP_MOSSDEEP_CITY       (6 | (0 << 8))
-#define MAP_SOOTOPOLIS_CITY     (7 | (0 << 8))
-#define MAP_EVER_GRANDE_CITY    (8 | (0 << 8))
-#define MAP_LITTLEROOT_TOWN     (9 | (0 << 8))
-#define MAP_OLDALE_TOWN         (10 | (0 << 8))
-#define MAP_DEWFORD_TOWN        (11 | (0 << 8))
-#define MAP_LAVARIDGE_TOWN      (12 | (0 << 8))
-#define MAP_FALLARBOR_TOWN      (13 | (0 << 8))
-#define MAP_VERDANTURF_TOWN     (14 | (0 << 8))
-#define MAP_PACIFIDLOG_TOWN     (15 | (0 << 8))
-#define MAP_ROUTE101            (16 | (0 << 8))
-#define MAP_ROUTE102            (17 | (0 << 8))
-#define MAP_ROUTE103            (18 | (0 << 8))
-#define MAP_ROUTE104            (19 | (0 << 8))
-#define MAP_ROUTE105            (20 | (0 << 8))
-#define MAP_ROUTE106            (21 | (0 << 8))
-#define MAP_ROUTE107            (22 | (0 << 8))
-#define MAP_ROUTE108            (23 | (0 << 8))
-#define MAP_ROUTE109            (24 | (0 << 8))
-#define MAP_ROUTE110            (25 | (0 << 8))
-#define MAP_ROUTE111            (26 | (0 << 8))
-#define MAP_ROUTE112            (27 | (0 << 8))
-#define MAP_ROUTE113            (28 | (0 << 8))
-#define MAP_ROUTE114            (29 | (0 << 8))
-#define MAP_ROUTE115            (30 | (0 << 8))
-#define MAP_ROUTE116            (31 | (0 << 8))
-#define MAP_ROUTE117            (32 | (0 << 8))
-#define MAP_ROUTE118            (33 | (0 << 8))
-#define MAP_ROUTE119            (34 | (0 << 8))
-#define MAP_ROUTE120            (35 | (0 << 8))
-#define MAP_ROUTE121            (36 | (0 << 8))
-#define MAP_ROUTE122            (37 | (0 << 8))
-#define MAP_ROUTE123            (38 | (0 << 8))
-#define MAP_ROUTE124            (39 | (0 << 8))
-#define MAP_ROUTE125            (40 | (0 << 8))
-#define MAP_ROUTE126            (41 | (0 << 8))
-#define MAP_ROUTE127            (42 | (0 << 8))
-#define MAP_ROUTE128            (43 | (0 << 8))
-#define MAP_ROUTE129            (44 | (0 << 8))
-#define MAP_ROUTE130            (45 | (0 << 8))
-#define MAP_ROUTE131            (46 | (0 << 8))
-#define MAP_ROUTE132            (47 | (0 << 8))
-#define MAP_ROUTE133            (48 | (0 << 8))
-#define MAP_ROUTE134            (49 | (0 << 8))
-#define MAP_UNDERWATER_ROUTE124 (50 | (0 << 8))
-#define MAP_UNDERWATER_ROUTE126 (51 | (0 << 8))
-#define MAP_UNDERWATER_ROUTE127 (52 | (0 << 8))
-#define MAP_UNDERWATER_ROUTE128 (53 | (0 << 8))
-#define MAP_UNDERWATER_ROUTE129 (54 | (0 << 8))
-#define MAP_UNDERWATER_ROUTE105 (55 | (0 << 8))
-#define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
-#define MAP_NEO_BAY             (57 | (0 << 8))
-#define MAP_ROUTE201            (58 | (0 << 8))
-#define MAP_ROUTE202            (59 | (0 << 8))
-#define MAP_SOFTWIND_CITY       (60 | (0 << 8))
-#define MAP_ROUTE203            (61 | (0 << 8))
-#define MAP_CHARTREE_FOREST     (62 | (0 << 8))
-#define MAP_ROUTE204            (63 | (0 << 8))
-#define MAP_SUNSET_VILLAGE      (64 | (0 << 8))
+//
+// DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json
+//
 
-// Map Group 1
+// gMapGroup_TownsAndRoutes
+#define MAP_NEO_BAY             (0 | (0 << 8))
+#define MAP_SUNSET_VILLAGE      (1 | (0 << 8))
+#define MAP_SOFTWIND_CITY       (2 | (0 << 8))
+#define MAP_ROUTE201            (3 | (0 << 8))
+#define MAP_ROUTE202            (4 | (0 << 8))
+#define MAP_ROUTE203            (5 | (0 << 8))
+#define MAP_ROUTE204            (6 | (0 << 8))
+#define MAP_PETALBURG_CITY      (7 | (0 << 8))
+#define MAP_SLATEPORT_CITY      (8 | (0 << 8))
+#define MAP_MAUVILLE_CITY       (9 | (0 << 8))
+#define MAP_RUSTBORO_CITY       (10 | (0 << 8))
+#define MAP_FORTREE_CITY        (11 | (0 << 8))
+#define MAP_LILYCOVE_CITY       (12 | (0 << 8))
+#define MAP_MOSSDEEP_CITY       (13 | (0 << 8))
+#define MAP_SOOTOPOLIS_CITY     (14 | (0 << 8))
+#define MAP_EVER_GRANDE_CITY    (15 | (0 << 8))
+#define MAP_LITTLEROOT_TOWN     (16 | (0 << 8))
+#define MAP_OLDALE_TOWN         (17 | (0 << 8))
+#define MAP_DEWFORD_TOWN        (18 | (0 << 8))
+#define MAP_LAVARIDGE_TOWN      (19 | (0 << 8))
+#define MAP_FALLARBOR_TOWN      (20 | (0 << 8))
+#define MAP_VERDANTURF_TOWN     (21 | (0 << 8))
+#define MAP_PACIFIDLOG_TOWN     (22 | (0 << 8))
+#define MAP_ROUTE101            (23 | (0 << 8))
+#define MAP_ROUTE102            (24 | (0 << 8))
+#define MAP_ROUTE103            (25 | (0 << 8))
+#define MAP_ROUTE104            (26 | (0 << 8))
+#define MAP_ROUTE105            (27 | (0 << 8))
+#define MAP_ROUTE106            (28 | (0 << 8))
+#define MAP_ROUTE107            (29 | (0 << 8))
+#define MAP_ROUTE108            (30 | (0 << 8))
+#define MAP_ROUTE109            (31 | (0 << 8))
+#define MAP_ROUTE110            (32 | (0 << 8))
+#define MAP_ROUTE111            (33 | (0 << 8))
+#define MAP_ROUTE112            (34 | (0 << 8))
+#define MAP_ROUTE113            (35 | (0 << 8))
+#define MAP_ROUTE114            (36 | (0 << 8))
+#define MAP_ROUTE115            (37 | (0 << 8))
+#define MAP_ROUTE116            (38 | (0 << 8))
+#define MAP_ROUTE117            (39 | (0 << 8))
+#define MAP_ROUTE118            (40 | (0 << 8))
+#define MAP_ROUTE119            (41 | (0 << 8))
+#define MAP_ROUTE120            (42 | (0 << 8))
+#define MAP_ROUTE121            (43 | (0 << 8))
+#define MAP_ROUTE122            (44 | (0 << 8))
+#define MAP_ROUTE123            (45 | (0 << 8))
+#define MAP_ROUTE124            (46 | (0 << 8))
+#define MAP_ROUTE125            (47 | (0 << 8))
+#define MAP_ROUTE126            (48 | (0 << 8))
+#define MAP_ROUTE127            (49 | (0 << 8))
+#define MAP_ROUTE128            (50 | (0 << 8))
+#define MAP_ROUTE129            (51 | (0 << 8))
+#define MAP_ROUTE130            (52 | (0 << 8))
+#define MAP_ROUTE131            (53 | (0 << 8))
+#define MAP_ROUTE132            (54 | (0 << 8))
+#define MAP_ROUTE133            (55 | (0 << 8))
+#define MAP_ROUTE134            (56 | (0 << 8))
+#define MAP_UNDERWATER_ROUTE124 (57 | (0 << 8))
+#define MAP_UNDERWATER_ROUTE126 (58 | (0 << 8))
+#define MAP_UNDERWATER_ROUTE127 (59 | (0 << 8))
+#define MAP_UNDERWATER_ROUTE128 (60 | (0 << 8))
+#define MAP_UNDERWATER_ROUTE129 (61 | (0 << 8))
+#define MAP_UNDERWATER_ROUTE105 (62 | (0 << 8))
+#define MAP_UNDERWATER_ROUTE125 (63 | (0 << 8))
+
+// gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F    (1 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F        (2 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F        (3 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB (4 | (1 << 8))
 
-// Map Group 2
+// gMapGroup_IndoorOldale
 #define MAP_OLDALE_TOWN_HOUSE1            (0 | (2 << 8))
 #define MAP_OLDALE_TOWN_HOUSE2            (1 | (2 << 8))
 #define MAP_OLDALE_TOWN_POKEMON_CENTER_1F (2 | (2 << 8))
 #define MAP_OLDALE_TOWN_POKEMON_CENTER_2F (3 | (2 << 8))
 #define MAP_OLDALE_TOWN_MART              (4 | (2 << 8))
 
-// Map Group 3
+// gMapGroup_IndoorDewford
 #define MAP_DEWFORD_TOWN_HOUSE1            (0 | (3 << 8))
 #define MAP_DEWFORD_TOWN_POKEMON_CENTER_1F (1 | (3 << 8))
 #define MAP_DEWFORD_TOWN_POKEMON_CENTER_2F (2 | (3 << 8))
@@ -90,7 +93,7 @@
 #define MAP_DEWFORD_TOWN_HALL              (4 | (3 << 8))
 #define MAP_DEWFORD_TOWN_HOUSE2            (5 | (3 << 8))
 
-// Map Group 4
+// gMapGroup_IndoorLavaridge
 #define MAP_LAVARIDGE_TOWN_HERB_SHOP         (0 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_GYM_1F            (1 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_GYM_B1F           (2 | (4 << 8))
@@ -99,7 +102,7 @@
 #define MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F (5 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_POKEMON_CENTER_2F (6 | (4 << 8))
 
-// Map Group 5
+// gMapGroup_IndoorFallarbor
 #define MAP_FALLARBOR_TOWN_MART                    (0 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_BATTLE_TENT_LOBBY       (1 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR    (2 | (5 << 8))
@@ -109,7 +112,7 @@
 #define MAP_FALLARBOR_TOWN_COZMOS_HOUSE            (6 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_MOVE_RELEARNERS_HOUSE   (7 | (5 << 8))
 
-// Map Group 6
+// gMapGroup_IndoorVerdanturf
 #define MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY       (0 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR    (1 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM (2 | (6 << 8))
@@ -120,7 +123,7 @@
 #define MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE (7 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_HOUSE                   (8 | (6 << 8))
 
-// Map Group 7
+// gMapGroup_IndoorPacifidlog
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (7 << 8))
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_2F (1 | (7 << 8))
 #define MAP_PACIFIDLOG_TOWN_HOUSE1            (2 | (7 << 8))
@@ -129,7 +132,7 @@
 #define MAP_PACIFIDLOG_TOWN_HOUSE4            (5 | (7 << 8))
 #define MAP_PACIFIDLOG_TOWN_HOUSE5            (6 | (7 << 8))
 
-// Map Group 8
+// gMapGroup_IndoorPetalburg
 #define MAP_PETALBURG_CITY_WALLYS_HOUSE      (0 | (8 << 8))
 #define MAP_PETALBURG_CITY_GYM               (1 | (8 << 8))
 #define MAP_PETALBURG_CITY_HOUSE1            (2 | (8 << 8))
@@ -138,7 +141,7 @@
 #define MAP_PETALBURG_CITY_POKEMON_CENTER_2F (5 | (8 << 8))
 #define MAP_PETALBURG_CITY_MART              (6 | (8 << 8))
 
-// Map Group 9
+// gMapGroup_IndoorSlateport
 #define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F      (0 | (9 << 8))
 #define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_2F      (1 | (9 << 8))
 #define MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY       (2 | (9 << 8))
@@ -154,7 +157,7 @@
 #define MAP_SLATEPORT_CITY_POKEMON_CENTER_2F       (12 | (9 << 8))
 #define MAP_SLATEPORT_CITY_MART                    (13 | (9 << 8))
 
-// Map Group 10
+// gMapGroup_IndoorMauville
 #define MAP_MAUVILLE_CITY_GYM               (0 | (10 << 8))
 #define MAP_MAUVILLE_CITY_BIKE_SHOP         (1 | (10 << 8))
 #define MAP_MAUVILLE_CITY_HOUSE1            (2 | (10 << 8))
@@ -164,7 +167,7 @@
 #define MAP_MAUVILLE_CITY_POKEMON_CENTER_2F (6 | (10 << 8))
 #define MAP_MAUVILLE_CITY_MART              (7 | (10 << 8))
 
-// Map Group 11
+// gMapGroup_IndoorRustboro
 #define MAP_RUSTBORO_CITY_DEVON_CORP_1F     (0 | (11 << 8))
 #define MAP_RUSTBORO_CITY_DEVON_CORP_2F     (1 | (11 << 8))
 #define MAP_RUSTBORO_CITY_DEVON_CORP_3F     (2 | (11 << 8))
@@ -183,7 +186,7 @@
 #define MAP_RUSTBORO_CITY_FLAT2_3F          (15 | (11 << 8))
 #define MAP_RUSTBORO_CITY_HOUSE3            (16 | (11 << 8))
 
-// Map Group 12
+// gMapGroup_IndoorFortree
 #define MAP_FORTREE_CITY_HOUSE1            (0 | (12 << 8))
 #define MAP_FORTREE_CITY_GYM               (1 | (12 << 8))
 #define MAP_FORTREE_CITY_POKEMON_CENTER_1F (2 | (12 << 8))
@@ -195,7 +198,7 @@
 #define MAP_FORTREE_CITY_HOUSE5            (8 | (12 << 8))
 #define MAP_FORTREE_CITY_DECORATION_SHOP   (9 | (12 << 8))
 
-// Map Group 13
+// gMapGroup_IndoorLilycove
 #define MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F        (0 | (13 << 8))
 #define MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_2F        (1 | (13 << 8))
 #define MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F        (2 | (13 << 8))
@@ -220,7 +223,7 @@
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP  (21 | (13 << 8))
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR (22 | (13 << 8))
 
-// Map Group 14
+// gMapGroup_IndoorMossdeep
 #define MAP_MOSSDEEP_CITY_GYM               (0 | (14 << 8))
 #define MAP_MOSSDEEP_CITY_HOUSE1            (1 | (14 << 8))
 #define MAP_MOSSDEEP_CITY_HOUSE2            (2 | (14 << 8))
@@ -235,7 +238,7 @@
 #define MAP_MOSSDEEP_CITY_GAME_CORNER_1F    (11 | (14 << 8))
 #define MAP_MOSSDEEP_CITY_GAME_CORNER_B1F   (12 | (14 << 8))
 
-// Map Group 15
+// gMapGroup_IndoorSootopolis
 #define MAP_SOOTOPOLIS_CITY_GYM_1F                   (0 | (15 << 8))
 #define MAP_SOOTOPOLIS_CITY_GYM_B1F                  (1 | (15 << 8))
 #define MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_1F        (2 | (15 << 8))
@@ -252,7 +255,7 @@
 #define MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F  (13 | (15 << 8))
 #define MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_B1F (14 | (15 << 8))
 
-// Map Group 16
+// gMapGroup_IndoorEverGrande
 #define MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM      (0 | (16 << 8))
 #define MAP_EVER_GRANDE_CITY_PHOEBES_ROOM      (1 | (16 << 8))
 #define MAP_EVER_GRANDE_CITY_GLACIAS_ROOM      (2 | (16 << 8))
@@ -269,143 +272,144 @@
 #define MAP_EVER_GRANDE_CITY_POKEMON_CENTER_2F (13 | (16 << 8))
 #define MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F (14 | (16 << 8))
 
-// Map Group 17
+// gMapGroup_IndoorRoute104
 #define MAP_ROUTE104_MR_BRINEYS_HOUSE         (0 | (17 << 8))
 #define MAP_ROUTE104_PRETTY_PETAL_FLOWER_SHOP (1 | (17 << 8))
 
-// Map Group 18
+// gMapGroup_IndoorRoute111
 #define MAP_ROUTE111_WINSTRATE_FAMILYS_HOUSE (0 | (18 << 8))
 #define MAP_ROUTE111_OLD_LADYS_REST_STOP     (1 | (18 << 8))
 
-// Map Group 19
+// gMapGroup_IndoorRoute112
 #define MAP_ROUTE112_CABLE_CAR_STATION   (0 | (19 << 8))
 #define MAP_MT_CHIMNEY_CABLE_CAR_STATION (1 | (19 << 8))
 
-// Map Group 20
+// gMapGroup_IndoorRoute114
 #define MAP_ROUTE114_FOSSIL_MANIACS_HOUSE  (0 | (20 << 8))
 #define MAP_ROUTE114_FOSSIL_MANIACS_TUNNEL (1 | (20 << 8))
 #define MAP_ROUTE114_LANETTES_HOUSE        (2 | (20 << 8))
 
-// Map Group 21
+// gMapGroup_IndoorRoute116
 #define MAP_ROUTE116_TUNNELERS_REST_HOUSE (0 | (21 << 8))
 
-// Map Group 22
+// gMapGroup_IndoorRoute117
 #define MAP_ROUTE117_POKEMON_DAY_CARE (0 | (22 << 8))
 
-// Map Group 23
+// gMapGroup_IndoorRoute121
 #define MAP_ROUTE121_SAFARI_ZONE_ENTRANCE (0 | (23 << 8))
 
-// Map Group 24
-#define MAP_METEOR_FALLS_1F_1R                       (0 | (24 << 8))
-#define MAP_METEOR_FALLS_1F_2R                       (1 | (24 << 8))
-#define MAP_METEOR_FALLS_B1F_1R                      (2 | (24 << 8))
-#define MAP_METEOR_FALLS_B1F_2R                      (3 | (24 << 8))
-#define MAP_RUSTURF_TUNNEL                           (4 | (24 << 8))
-#define MAP_UNDERWATER_SOOTOPOLIS_CITY               (5 | (24 << 8))
-#define MAP_DESERT_RUINS                             (6 | (24 << 8))
-#define MAP_GRANITE_CAVE_1F                          (7 | (24 << 8))
-#define MAP_GRANITE_CAVE_B1F                         (8 | (24 << 8))
-#define MAP_GRANITE_CAVE_B2F                         (9 | (24 << 8))
-#define MAP_GRANITE_CAVE_STEVENS_ROOM                (10 | (24 << 8))
-#define MAP_PETALBURG_WOODS                          (11 | (24 << 8))
-#define MAP_MT_CHIMNEY                               (12 | (24 << 8))
-#define MAP_JAGGED_PASS                              (13 | (24 << 8))
-#define MAP_FIERY_PATH                               (14 | (24 << 8))
-#define MAP_MT_PYRE_1F                               (15 | (24 << 8))
-#define MAP_MT_PYRE_2F                               (16 | (24 << 8))
-#define MAP_MT_PYRE_3F                               (17 | (24 << 8))
-#define MAP_MT_PYRE_4F                               (18 | (24 << 8))
-#define MAP_MT_PYRE_5F                               (19 | (24 << 8))
-#define MAP_MT_PYRE_6F                               (20 | (24 << 8))
-#define MAP_MT_PYRE_EXTERIOR                         (21 | (24 << 8))
-#define MAP_MT_PYRE_SUMMIT                           (22 | (24 << 8))
-#define MAP_AQUA_HIDEOUT_1F                          (23 | (24 << 8))
-#define MAP_AQUA_HIDEOUT_B1F                         (24 | (24 << 8))
-#define MAP_AQUA_HIDEOUT_B2F                         (25 | (24 << 8))
-#define MAP_UNDERWATER_SEAFLOOR_CAVERN               (26 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ENTRANCE                 (27 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM1                    (28 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM2                    (29 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM3                    (30 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM4                    (31 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM5                    (32 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM6                    (33 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM7                    (34 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM8                    (35 | (24 << 8))
-#define MAP_SEAFLOOR_CAVERN_ROOM9                    (36 | (24 << 8))
-#define MAP_CAVE_OF_ORIGIN_ENTRANCE                  (37 | (24 << 8))
-#define MAP_CAVE_OF_ORIGIN_1F                        (38 | (24 << 8))
-#define MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP1 (39 | (24 << 8))
-#define MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP2 (40 | (24 << 8))
-#define MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3 (41 | (24 << 8))
-#define MAP_CAVE_OF_ORIGIN_B1F                       (42 | (24 << 8))
-#define MAP_VICTORY_ROAD_1F                          (43 | (24 << 8))
-#define MAP_VICTORY_ROAD_B1F                         (44 | (24 << 8))
-#define MAP_VICTORY_ROAD_B2F                         (45 | (24 << 8))
-#define MAP_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM        (46 | (24 << 8))
-#define MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM           (47 | (24 << 8))
-#define MAP_SHOAL_CAVE_LOW_TIDE_STAIRS_ROOM          (48 | (24 << 8))
-#define MAP_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM           (49 | (24 << 8))
-#define MAP_SHOAL_CAVE_HIGH_TIDE_ENTRANCE_ROOM       (50 | (24 << 8))
-#define MAP_SHOAL_CAVE_HIGH_TIDE_INNER_ROOM          (51 | (24 << 8))
-#define MAP_NEW_MAUVILLE_ENTRANCE                    (52 | (24 << 8))
-#define MAP_NEW_MAUVILLE_INSIDE                      (53 | (24 << 8))
-#define MAP_ABANDONED_SHIP_DECK                      (54 | (24 << 8))
-#define MAP_ABANDONED_SHIP_CORRIDORS_1F              (55 | (24 << 8))
-#define MAP_ABANDONED_SHIP_ROOMS_1F                  (56 | (24 << 8))
-#define MAP_ABANDONED_SHIP_CORRIDORS_B1F             (57 | (24 << 8))
-#define MAP_ABANDONED_SHIP_ROOMS_B1F                 (58 | (24 << 8))
-#define MAP_ABANDONED_SHIP_ROOMS2_B1F                (59 | (24 << 8))
-#define MAP_ABANDONED_SHIP_UNDERWATER1               (60 | (24 << 8))
-#define MAP_ABANDONED_SHIP_ROOM_B1F                  (61 | (24 << 8))
-#define MAP_ABANDONED_SHIP_ROOMS2_1F                 (62 | (24 << 8))
-#define MAP_ABANDONED_SHIP_CAPTAINS_OFFICE           (63 | (24 << 8))
-#define MAP_ABANDONED_SHIP_UNDERWATER2               (64 | (24 << 8))
-#define MAP_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS    (65 | (24 << 8))
-#define MAP_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS        (66 | (24 << 8))
-#define MAP_ISLAND_CAVE                              (67 | (24 << 8))
-#define MAP_ANCIENT_TOMB                             (68 | (24 << 8))
-#define MAP_UNDERWATER_ROUTE134                      (69 | (24 << 8))
-#define MAP_UNDERWATER_SEALED_CHAMBER                (70 | (24 << 8))
-#define MAP_SEALED_CHAMBER_OUTER_ROOM                (71 | (24 << 8))
-#define MAP_SEALED_CHAMBER_INNER_ROOM                (72 | (24 << 8))
-#define MAP_SCORCHED_SLAB                            (73 | (24 << 8))
-#define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP1            (74 | (24 << 8))
-#define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP2            (75 | (24 << 8))
-#define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP3            (76 | (24 << 8))
-#define MAP_SKY_PILLAR_ENTRANCE                      (77 | (24 << 8))
-#define MAP_SKY_PILLAR_OUTSIDE                       (78 | (24 << 8))
-#define MAP_SKY_PILLAR_1F                            (79 | (24 << 8))
-#define MAP_SKY_PILLAR_2F                            (80 | (24 << 8))
-#define MAP_SKY_PILLAR_3F                            (81 | (24 << 8))
-#define MAP_SKY_PILLAR_4F                            (82 | (24 << 8))
-#define MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM             (83 | (24 << 8))
-#define MAP_SKY_PILLAR_5F                            (84 | (24 << 8))
-#define MAP_SKY_PILLAR_TOP                           (85 | (24 << 8))
-#define MAP_MAGMA_HIDEOUT_1F                         (86 | (24 << 8))
-#define MAP_MAGMA_HIDEOUT_2F_1R                      (87 | (24 << 8))
-#define MAP_MAGMA_HIDEOUT_2F_2R                      (88 | (24 << 8))
-#define MAP_MAGMA_HIDEOUT_3F_1R                      (89 | (24 << 8))
-#define MAP_MAGMA_HIDEOUT_3F_2R                      (90 | (24 << 8))
-#define MAP_MAGMA_HIDEOUT_4F                         (91 | (24 << 8))
-#define MAP_MAGMA_HIDEOUT_3F_3R                      (92 | (24 << 8))
-#define MAP_MAGMA_HIDEOUT_2F_3R                      (93 | (24 << 8))
-#define MAP_MIRAGE_TOWER_1F                          (94 | (24 << 8))
-#define MAP_MIRAGE_TOWER_2F                          (95 | (24 << 8))
-#define MAP_MIRAGE_TOWER_3F                          (96 | (24 << 8))
-#define MAP_MIRAGE_TOWER_4F                          (97 | (24 << 8))
-#define MAP_DESERT_UNDERPASS                         (98 | (24 << 8))
-#define MAP_ARTISAN_CAVE_B1F                         (99 | (24 << 8))
-#define MAP_ARTISAN_CAVE_1F                          (100 | (24 << 8))
-#define MAP_UNDERWATER_MARINE_CAVE                   (101 | (24 << 8))
-#define MAP_MARINE_CAVE_ENTRANCE                     (102 | (24 << 8))
-#define MAP_MARINE_CAVE_END                          (103 | (24 << 8))
-#define MAP_TERRA_CAVE_ENTRANCE                      (104 | (24 << 8))
-#define MAP_TERRA_CAVE_END                           (105 | (24 << 8))
-#define MAP_ALTERING_CAVE                            (106 | (24 << 8))
-#define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
+// gMapGroup_Dungeons
+#define MAP_CHARTREE_FOREST                          (0 | (24 << 8))
+#define MAP_METEOR_FALLS_1F_1R                       (1 | (24 << 8))
+#define MAP_METEOR_FALLS_1F_2R                       (2 | (24 << 8))
+#define MAP_METEOR_FALLS_B1F_1R                      (3 | (24 << 8))
+#define MAP_METEOR_FALLS_B1F_2R                      (4 | (24 << 8))
+#define MAP_RUSTURF_TUNNEL                           (5 | (24 << 8))
+#define MAP_UNDERWATER_SOOTOPOLIS_CITY               (6 | (24 << 8))
+#define MAP_DESERT_RUINS                             (7 | (24 << 8))
+#define MAP_GRANITE_CAVE_1F                          (8 | (24 << 8))
+#define MAP_GRANITE_CAVE_B1F                         (9 | (24 << 8))
+#define MAP_GRANITE_CAVE_B2F                         (10 | (24 << 8))
+#define MAP_GRANITE_CAVE_STEVENS_ROOM                (11 | (24 << 8))
+#define MAP_PETALBURG_WOODS                          (12 | (24 << 8))
+#define MAP_MT_CHIMNEY                               (13 | (24 << 8))
+#define MAP_JAGGED_PASS                              (14 | (24 << 8))
+#define MAP_FIERY_PATH                               (15 | (24 << 8))
+#define MAP_MT_PYRE_1F                               (16 | (24 << 8))
+#define MAP_MT_PYRE_2F                               (17 | (24 << 8))
+#define MAP_MT_PYRE_3F                               (18 | (24 << 8))
+#define MAP_MT_PYRE_4F                               (19 | (24 << 8))
+#define MAP_MT_PYRE_5F                               (20 | (24 << 8))
+#define MAP_MT_PYRE_6F                               (21 | (24 << 8))
+#define MAP_MT_PYRE_EXTERIOR                         (22 | (24 << 8))
+#define MAP_MT_PYRE_SUMMIT                           (23 | (24 << 8))
+#define MAP_AQUA_HIDEOUT_1F                          (24 | (24 << 8))
+#define MAP_AQUA_HIDEOUT_B1F                         (25 | (24 << 8))
+#define MAP_AQUA_HIDEOUT_B2F                         (26 | (24 << 8))
+#define MAP_UNDERWATER_SEAFLOOR_CAVERN               (27 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ENTRANCE                 (28 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM1                    (29 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM2                    (30 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM3                    (31 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM4                    (32 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM5                    (33 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM6                    (34 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM7                    (35 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM8                    (36 | (24 << 8))
+#define MAP_SEAFLOOR_CAVERN_ROOM9                    (37 | (24 << 8))
+#define MAP_CAVE_OF_ORIGIN_ENTRANCE                  (38 | (24 << 8))
+#define MAP_CAVE_OF_ORIGIN_1F                        (39 | (24 << 8))
+#define MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP1 (40 | (24 << 8))
+#define MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP2 (41 | (24 << 8))
+#define MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3 (42 | (24 << 8))
+#define MAP_CAVE_OF_ORIGIN_B1F                       (43 | (24 << 8))
+#define MAP_VICTORY_ROAD_1F                          (44 | (24 << 8))
+#define MAP_VICTORY_ROAD_B1F                         (45 | (24 << 8))
+#define MAP_VICTORY_ROAD_B2F                         (46 | (24 << 8))
+#define MAP_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM        (47 | (24 << 8))
+#define MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM           (48 | (24 << 8))
+#define MAP_SHOAL_CAVE_LOW_TIDE_STAIRS_ROOM          (49 | (24 << 8))
+#define MAP_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM           (50 | (24 << 8))
+#define MAP_SHOAL_CAVE_HIGH_TIDE_ENTRANCE_ROOM       (51 | (24 << 8))
+#define MAP_SHOAL_CAVE_HIGH_TIDE_INNER_ROOM          (52 | (24 << 8))
+#define MAP_NEW_MAUVILLE_ENTRANCE                    (53 | (24 << 8))
+#define MAP_NEW_MAUVILLE_INSIDE                      (54 | (24 << 8))
+#define MAP_ABANDONED_SHIP_DECK                      (55 | (24 << 8))
+#define MAP_ABANDONED_SHIP_CORRIDORS_1F              (56 | (24 << 8))
+#define MAP_ABANDONED_SHIP_ROOMS_1F                  (57 | (24 << 8))
+#define MAP_ABANDONED_SHIP_CORRIDORS_B1F             (58 | (24 << 8))
+#define MAP_ABANDONED_SHIP_ROOMS_B1F                 (59 | (24 << 8))
+#define MAP_ABANDONED_SHIP_ROOMS2_B1F                (60 | (24 << 8))
+#define MAP_ABANDONED_SHIP_UNDERWATER1               (61 | (24 << 8))
+#define MAP_ABANDONED_SHIP_ROOM_B1F                  (62 | (24 << 8))
+#define MAP_ABANDONED_SHIP_ROOMS2_1F                 (63 | (24 << 8))
+#define MAP_ABANDONED_SHIP_CAPTAINS_OFFICE           (64 | (24 << 8))
+#define MAP_ABANDONED_SHIP_UNDERWATER2               (65 | (24 << 8))
+#define MAP_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS    (66 | (24 << 8))
+#define MAP_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS        (67 | (24 << 8))
+#define MAP_ISLAND_CAVE                              (68 | (24 << 8))
+#define MAP_ANCIENT_TOMB                             (69 | (24 << 8))
+#define MAP_UNDERWATER_ROUTE134                      (70 | (24 << 8))
+#define MAP_UNDERWATER_SEALED_CHAMBER                (71 | (24 << 8))
+#define MAP_SEALED_CHAMBER_OUTER_ROOM                (72 | (24 << 8))
+#define MAP_SEALED_CHAMBER_INNER_ROOM                (73 | (24 << 8))
+#define MAP_SCORCHED_SLAB                            (74 | (24 << 8))
+#define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP1            (75 | (24 << 8))
+#define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP2            (76 | (24 << 8))
+#define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP3            (77 | (24 << 8))
+#define MAP_SKY_PILLAR_ENTRANCE                      (78 | (24 << 8))
+#define MAP_SKY_PILLAR_OUTSIDE                       (79 | (24 << 8))
+#define MAP_SKY_PILLAR_1F                            (80 | (24 << 8))
+#define MAP_SKY_PILLAR_2F                            (81 | (24 << 8))
+#define MAP_SKY_PILLAR_3F                            (82 | (24 << 8))
+#define MAP_SKY_PILLAR_4F                            (83 | (24 << 8))
+#define MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM             (84 | (24 << 8))
+#define MAP_SKY_PILLAR_5F                            (85 | (24 << 8))
+#define MAP_SKY_PILLAR_TOP                           (86 | (24 << 8))
+#define MAP_MAGMA_HIDEOUT_1F                         (87 | (24 << 8))
+#define MAP_MAGMA_HIDEOUT_2F_1R                      (88 | (24 << 8))
+#define MAP_MAGMA_HIDEOUT_2F_2R                      (89 | (24 << 8))
+#define MAP_MAGMA_HIDEOUT_3F_1R                      (90 | (24 << 8))
+#define MAP_MAGMA_HIDEOUT_3F_2R                      (91 | (24 << 8))
+#define MAP_MAGMA_HIDEOUT_4F                         (92 | (24 << 8))
+#define MAP_MAGMA_HIDEOUT_3F_3R                      (93 | (24 << 8))
+#define MAP_MAGMA_HIDEOUT_2F_3R                      (94 | (24 << 8))
+#define MAP_MIRAGE_TOWER_1F                          (95 | (24 << 8))
+#define MAP_MIRAGE_TOWER_2F                          (96 | (24 << 8))
+#define MAP_MIRAGE_TOWER_3F                          (97 | (24 << 8))
+#define MAP_MIRAGE_TOWER_4F                          (98 | (24 << 8))
+#define MAP_DESERT_UNDERPASS                         (99 | (24 << 8))
+#define MAP_ARTISAN_CAVE_B1F                         (100 | (24 << 8))
+#define MAP_ARTISAN_CAVE_1F                          (101 | (24 << 8))
+#define MAP_UNDERWATER_MARINE_CAVE                   (102 | (24 << 8))
+#define MAP_MARINE_CAVE_ENTRANCE                     (103 | (24 << 8))
+#define MAP_MARINE_CAVE_END                          (104 | (24 << 8))
+#define MAP_TERRA_CAVE_ENTRANCE                      (105 | (24 << 8))
+#define MAP_TERRA_CAVE_END                           (106 | (24 << 8))
+#define MAP_ALTERING_CAVE                            (107 | (24 << 8))
+#define MAP_METEOR_FALLS_STEVENS_CAVE                (108 | (24 << 8))
 
-// Map Group 25
+// gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))
 #define MAP_SECRET_BASE_BROWN_CAVE1  (1 | (25 << 8))
 #define MAP_SECRET_BASE_BLUE_CAVE1   (2 | (25 << 8))
@@ -468,7 +472,7 @@
 #define MAP_BATTLE_PYRAMID_SQUARE16  (59 | (25 << 8))
 #define MAP_UNION_ROOM               (60 | (25 << 8))
 
-// Map Group 26
+// gMapGroup_SpecialArea
 #define MAP_SAFARI_ZONE_NORTHWEST                           (0 | (26 << 8))
 #define MAP_SAFARI_ZONE_NORTH                               (1 | (26 << 8))
 #define MAP_SAFARI_ZONE_SOUTHWEST                           (2 | (26 << 8))
@@ -559,14 +563,14 @@
 #define MAP_NAVEL_ROCK_BOTTOM                               (87 | (26 << 8))
 #define MAP_TRAINER_HILL_ELEVATOR                           (88 | (26 << 8))
 
-// Map Group 27
+// gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))
 #define MAP_ROUTE104_PROTOTYPE_PRETTY_PETAL_FLOWER_SHOP (1 | (27 << 8))
 
-// Map Group 28
+// gMapGroup_IndoorRoute109
 #define MAP_ROUTE109_SEASHORE_HOUSE (0 | (28 << 8))
 
-// Map Group 29
+// gMapGroup_IndoorRoute110
 #define MAP_ROUTE110_TRICK_HOUSE_ENTRANCE                (0 | (29 << 8))
 #define MAP_ROUTE110_TRICK_HOUSE_END                     (1 | (29 << 8))
 #define MAP_ROUTE110_TRICK_HOUSE_CORRIDOR                (2 | (29 << 8))
@@ -581,18 +585,18 @@
 #define MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE (11 | (29 << 8))
 #define MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE (12 | (29 << 8))
 
-// Map Group 30
+// gMapGroup_IndoorRoute113
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (30 << 8))
 
-// Map Group 31
+// gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (31 << 8))
 
-// Map Group 32
+// gMapGroup_IndoorRoute119
 #define MAP_ROUTE119_WEATHER_INSTITUTE_1F (0 | (32 << 8))
 #define MAP_ROUTE119_WEATHER_INSTITUTE_2F (1 | (32 << 8))
 #define MAP_ROUTE119_HOUSE                (2 | (32 << 8))
 
-// Map Group 33
+// gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34

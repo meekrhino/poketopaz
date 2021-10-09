@@ -37,6 +37,13 @@
     "gMapGroup_IndoorRoute124"
   ],
   "gMapGroup_TownsAndRoutes": [
+    "NeoBay",
+    "SunsetVillage",
+    "SoftwindCity",
+    "Route201",
+    "Route202",
+    "Route203",
+    "Route204",
     "PetalburgCity",
     "SlateportCity",
     "MauvilleCity",
@@ -93,15 +100,7 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125",
-    "NeoBay",
-    "Route201",
-    "Route202",
-    "SoftwindCity",
-    "Route203",
-    "ChartreeForest",
-    "Route204",
-    "SunsetVillage"
+    "Underwater_Route125"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -331,6 +330,7 @@
     "Route121_SafariZoneEntrance"
   ],
   "gMapGroup_Dungeons": [
+    "ChartreeForest",
     "MeteorFalls_1F_1R",
     "MeteorFalls_1F_2R",
     "MeteorFalls_B1F_1R",
