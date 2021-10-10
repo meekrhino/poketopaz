@@ -4495,7 +4495,7 @@
       "id": "LAYOUT_CRANEWING_CITY",
       "name": "CranewingCity_Layout",
       "width": 36,
-      "height": 36,
+      "height": 38,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cranewing",
       "border_filepath": "data/layouts/CranewingCity/border.bin",
