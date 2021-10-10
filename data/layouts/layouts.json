@@ -4500,6 +4500,16 @@
       "secondary_tileset": "gTileset_Cranewing",
       "border_filepath": "data/layouts/CranewingCity/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE205",
+      "name": "Route205_Layout",
+      "width": 72,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Softwind",
+      "border_filepath": "data/layouts/Route205/border.bin",
+      "blockdata_filepath": "data/layouts/Route205/map.bin"
     }
   ]
 }

@@ -1078,3 +1078,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/SunsetVillage/scripts.inc"
 
 	.include "data/maps/CranewingCity/scripts.inc"
+
+	.include "data/maps/Route205/scripts.inc"

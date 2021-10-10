@@ -40,6 +40,7 @@
     "NeoBay",
     "SunsetVillage",
     "SoftwindCity",
+    "CranewingCity",
     "Route201",
     "Route202",
     "Route203",
@@ -101,7 +102,7 @@
     "Underwater_Route129",
     "Underwater_Route105",
     "Underwater_Route125",
-    "CranewingCity"
+    "Route205"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
