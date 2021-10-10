@@ -17,6 +17,11 @@
       "direction": "right",
       "offset": -24,
       "map": "MAP_SOFTWIND_CITY"
+    },
+    {
+      "direction": "left",
+      "offset": 0,
+      "map": "MAP_ROUTE206"
     }
   ],
   "object_events": [

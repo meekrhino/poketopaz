@@ -68,6 +68,7 @@
 #define MAP_UNDERWATER_ROUTE105 (63 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (64 | (0 << 8))
 #define MAP_ROUTE205            (65 | (0 << 8))
+#define MAP_ROUTE206            (66 | (0 << 8))
 
 // Map Group 1
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

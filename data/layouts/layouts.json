@@ -4504,12 +4504,22 @@
     {
       "id": "LAYOUT_ROUTE205",
       "name": "Route205_Layout",
-      "width": 72,
+      "width": 70,
       "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/Route205/border.bin",
       "blockdata_filepath": "data/layouts/Route205/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE206",
+      "name": "Route206_Layout",
+      "width": 68,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NeoBay",
+      "border_filepath": "data/layouts/Route206/border.bin",
+      "blockdata_filepath": "data/layouts/Route206/map.bin"
     }
   ]
 }

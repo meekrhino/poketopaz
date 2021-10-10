@@ -1080,3 +1080,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/CranewingCity/scripts.inc"
 
 	.include "data/maps/Route205/scripts.inc"
+
+	.include "data/maps/Route206/scripts.inc"
