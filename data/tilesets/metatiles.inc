@@ -579,3 +579,10 @@ gMetatiles_ChartreeForest::
 	.align 1
 gMetatileAttributes_ChartreeForest::
 	.incbin "data/tilesets/secondary/chartreeforest/metatile_attributes.bin"
+	.align 1
+gMetatiles_Cranewing::
+	.incbin "data/tilesets/secondary/cranewing/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Cranewing::
+	.incbin "data/tilesets/secondary/cranewing/metatile_attributes.bin"

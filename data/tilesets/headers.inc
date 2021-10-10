@@ -863,3 +863,14 @@ gTileset_ChartreeForest::
 	.4byte gMetatiles_ChartreeForest
 	.4byte gMetatileAttributes_ChartreeForest
 	.4byte NULL
+
+	.align 2
+gTileset_Cranewing::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Cranewing
+	.4byte gTilesetPalettes_Cranewing
+	.4byte gMetatiles_Cranewing
+	.4byte gMetatileAttributes_Cranewing
+	.4byte NULL

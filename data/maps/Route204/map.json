@@ -17,6 +17,11 @@
       "direction": "left",
       "offset": -6,
       "map": "MAP_ROUTE203"
+    },
+    {
+      "direction": "down",
+      "offset": 18,
+      "map": "MAP_CRANEWING_CITY"
     }
   ],
   "object_events": [
