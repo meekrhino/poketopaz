@@ -40,7 +40,7 @@ LittlerootTown_MapScripts::
 
 
 LittlerootTown_OnTransition:
-	setflag FLAG_VISITED_LITTLEROOT_TOWN
+	setflag FLAG_VISITED_NEOBAY_TOWN
 	call Common_EventScript_SetupRivalGfxId
 	compare VAR_LITTLEROOT_INTRO_STATE, 2
 	call_if_eq LittlerootTown_EventScript_MoveMomToMaysDoor

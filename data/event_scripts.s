@@ -1082,3 +1082,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route205/scripts.inc"
 
 	.include "data/maps/Route206/scripts.inc"
+
+	.include "data/maps/NeoBay_ProfessorWillowsLab/scripts.inc"

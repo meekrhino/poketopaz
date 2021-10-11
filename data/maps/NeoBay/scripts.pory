@@ -1,0 +1,219 @@
+const BRADLEY = 2
+
+// State descriptions for VAR_NEOBAY_STATE
+// 1: Met Professor Willow
+// 2: Saved Ampure
+// 3: Received Pokemon
+// 4: Saw flashback
+// 5: Received running shoes
+// 6: Departed for Sunset Village
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts NeoBay_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: NeoBay_OnTransition
+}
+//=====================================
+// Global Scripts
+//=====================================
+script NeoBay_EventScript_GoToWillowBradleyTriggerTop {
+    lockall
+    applymovement(BRADLEY, mBradleyApproachPlayerTop)
+    waitmovement(0)
+    call(NeoBay_EventScript_BradleyIntroText)
+    applymovement(BRADLEY, mBradleyEscortsPlayerTop)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEscortedByBradleyTop)
+    waitmovement(0)
+    turnobject(BRADLEY, DIR_WEST)
+    call(NeoBay_EventScript_BradleyShowBoatText)
+    releaseall
+    end
+}
+
+script NeoBay_EventScript_GoToWillowBradleyTriggerBottom {
+    lockall
+    applymovement(BRADLEY, mBradleyApproachPlayerBottom)
+    waitmovement(0)
+    call(NeoBay_EventScript_BradleyIntroText)
+    applymovement(BRADLEY, mBradleyEscortsPlayerBottom)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEscortedByBradleyBottom)
+    waitmovement(0)
+    turnobject(BRADLEY, DIR_WEST)
+    call(NeoBay_EventScript_BradleyShowBoatText)
+    releaseall
+    end
+}
+
+script NeoBay_EventScript_TownSign {
+    msgbox(NeoBay_Text_TownSign, MSGBOX_SIGN)
+    end
+}
+
+script NeoBay_EventScript_DockSign {
+    msgbox(NeoBay_Text_DockSign, MSGBOX_SIGN)
+    end
+}
+
+script NeoBay_EventScript_PlayerMailbox {
+    msgbox(NeoBay_Text_PlayerMailbox, MSGBOX_SIGN)
+    end
+}
+
+script NeoBay_EventScript_OtherMailbox {
+    msgbox(NeoBay_Text_OtherMailbox, MSGBOX_SIGN)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) NeoBay_OnTransition {
+    setflag(FLAG_VISITED_NEOBAY_TOWN)
+    call(Common_EventScript_SetupRivalGfxId)
+    if (var(VAR_NEOBAY_STATE) == 0) {
+        call(NeoBay_EventScript_SetBradleyPositionIntroStart)
+    }
+    end
+}
+
+script(local) NeoBay_EventScript_SetBradleyPositionIntroStart {
+    setobjectxy(BRADLEY, 12, 18)
+    return
+}
+
+script(local) NeoBay_EventScript_BradleyIntroText {
+    msgbox(NeoBay_Text_BradleyIntroStart, MSGBOX_DEFAULT)
+    applymovement(BRADLEY, mBradleyFidgetsRight)
+    waitmovement(0)
+    msgbox(NeoBay_Text_BradleyIntroStartLetsGo, MSGBOX_DEFAULT)
+    return
+}
+
+script(local) NeoBay_EventScript_BradleyShowBoatText {
+    msgbox(NeoBay_Text_BradleyShowBoatStart, MSGBOX_DEFAULT)
+    applymovement(BRADLEY, mEnterShip)
+    applymovement(OBJ_EVENT_ID_PLAYER, mEnterShip)
+    waitmovement(0)
+    hideobjectat(BRADLEY, MAP_NEO_BAY)
+    hideobjectat(OBJ_EVENT_ID_PLAYER, 0)
+    return
+}
+
+//=====================================
+// Text
+//=====================================
+text NeoBay_Text_TownSign {
+    format(
+        "NEO BAY\n"
+        "“The most isolated town in Caldera. Where new things begin.”"
+    )
+}
+
+text NeoBay_Text_DockSign {
+    format(
+        "NEO BAY DOCK\n"
+        "“The only access point for regional visitors, rare as they are.”"
+    )
+}
+
+text NeoBay_Text_PlayerMailbox {
+    format(
+        "{PLAYER}'s Mailbox:\n"
+        "Looks like there's no mail today…"
+    )
+}
+
+text NeoBay_Text_OtherMailbox {
+    format(
+        "I shouldn't go snooping through other people's mail!"
+    )
+}
+
+text NeoBay_Text_BradleyIntroStart {
+    format(
+        "BRADLEY: Well, if it isn't {PLAYER}!\p"
+        "So you've finally woken up, sleepyhead? Honestly, you've got a whole lot of nerve, making a friend wait like that!\p"
+        "… … Nah, I'm just kidding! I'm not that bad of a guy, y'know? Anyway!"
+    )
+}
+
+text NeoBay_Text_BradleyIntroStartLetsGo {
+    format(
+        "BRADLEY: I called you here because I've got a once-in-a-lifetime opportunity for ya!\p"
+        "There's someone you absolutely, definitely, positively HAVE to meet! Trust me, it'll be worth your time. I promise!\p"
+        "Come on, come on! This way!"
+    )
+}
+
+text NeoBay_Text_BradleyShowBoatStart {
+    format(
+        "BRADLEY: Look! You've noticed this sleek-looking boat moored here for a while now, right?\p"
+        "Well, this boat belongs to none other than Prof. Willow!\p"
+        "… … …\n"
+        "… … …\n"
+        "What, you haven't heard of her? I guess you're not quite as worldly as your pal Bradley!\p"
+        "… Anyway, she's a world-famous Pokémon Professor, known for her research on ancient Pokémon fossils!\p"
+        "She's cool, calm, composed … and when it comes to Pokémon, she's a genius! I really admire her!\p"
+        "Come on, let's go meet her now!"
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+movement mBradleyApproachPlayerTop {
+    walk_down * 5
+    walk_right
+    walk_down
+    walk_right * 4
+}
+
+movement mBradleyApproachPlayerBottom {
+    walk_down * 6
+    walk_right
+    walk_down
+    walk_right * 4
+}
+
+movement mBradleyFidgetsRight {
+    walk_in_place_fast_right * 4
+}
+
+movement mBradleyEscortsPlayerTop {
+    walk_down
+    walk_right * 8
+    walk_down * 6
+    walk_right * 4
+}
+
+movement mBradleyEscortsPlayerBottom {
+    walk_up
+    walk_right * 8
+    walk_down * 7
+    walk_right * 4
+}
+
+movement mPlayerEscortedByBradleyTop {
+    walk_left
+    walk_down
+    walk_right * 8
+    walk_down * 6
+    walk_right * 3
+}
+
+movement mPlayerEscortedByBradleyBottom {
+    walk_left
+    walk_up
+    walk_right * 8
+    walk_down * 7
+    walk_right * 3
+}
+
+movement mEnterShip {
+    walk_down * 2
+}
+
+//=====================================
+// Raw
+//=====================================
