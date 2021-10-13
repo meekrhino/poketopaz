@@ -79,8 +79,8 @@ NeoBay_EventScript_BradleyIntroText:
 
 NeoBay_EventScript_BradleyShowBoatText:
 	msgbox NeoBay_Text_BradleyShowBoatStart, MSGBOX_DEFAULT
-	applymovement 2, mBradleyEnterShip
-	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEnterShip
+	applymovement 2, mEnterShip
+	applymovement OBJ_EVENT_ID_PLAYER, mEnterShip
 	waitmovement 0
 	hideobjectat 2, MAP_NEO_BAY
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
@@ -213,14 +213,7 @@ mPlayerEscortedByBradleyBottom:
 	walk_right
 	step_end
 
-mBradleyEnterShip:
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-mPlayerEnterShip:
-	walk_down
+mEnterShip:
 	walk_down
 	walk_down
 	step_end
