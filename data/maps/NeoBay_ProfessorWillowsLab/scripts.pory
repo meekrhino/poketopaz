@@ -1,1 +1,395 @@
-mapscripts NeoBay_ProfessorWillowsLab_MapScripts {}
+const WILLOW = 4
+const BRADLEY = 5
+const AMPURE = 6
+const NEOBAY_STATE_NEW_GAME = 0
+const NEOBAY_STATE_MET_WILLOW = 1
+const NEOBAY_STATE_RECEIVED_STARTER = 2
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: WillowsLab_OnTransition
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_NEOBAY_STATE, 0: WillowIntroduction
+    ]
+}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) WillowsLab_YouGoFirst {
+    msgbox(format("Bradley: I just can't decide! You go first, {PLAYER}! Come on, come on!"), MSGBOX_NPC)
+    end
+}
+
+script(global) WillowsLab_TakeYourTime {
+    msgbox(format("Willow: Ohoho, can't decide? Take your time, this is a big decision!"), MSGBOX_NPC)
+    end
+}
+
+script(global) WillowsLab_Books1 {
+    msgbox(format("There's a book titled “People and Pokémon: Nature's Balance” …sounds a little dense…"), MSGBOX_SIGN)
+    end
+}
+
+script(global) WillowsLab_Books2 {
+    msgbox(format("There's a book titled “Ancient Pokémon Mythos” …sounds intruguing!"), MSGBOX_SIGN)
+    end
+}
+
+script(global) WillowsLab_Books3 {
+    msgbox(format("There's a book titled “The Lifecycles of Bug Pokémon” …sounds gross!"), MSGBOX_SIGN)
+    end
+}
+
+script(global) WillowsLab_Books4 {
+    msgbox(format("There's a book titled “The Varied Pokémon of Mt. Frost” …sounds like an interesting place!"), MSGBOX_SIGN)
+    end
+}
+
+script(global) WillowsLab_Books5 {
+    msgbox(format("There are tons of dusty textbooks … it looks like Prof. Willow hasn't used this shelf in a while."), MSGBOX_SIGN)
+    end
+}
+
+script(global) WillowsLab_WillowsComputer {
+    msgbox(format("This is Prof. Willow's personal computer. The screen is covered in graphs and data!"), MSGBOX_SIGN)
+}
+
+script(global) WillowsLab_WillowsNotes {
+    msgbox(format("Looks like a daily log of field notes. Prof. Willow sure is thorough!"), MSGBOX_SIGN)
+}
+
+script(global) WillowsLab_ExpensiveMachine {
+    msgbox(format("Looks like an expensive machine. Hopefully Ampure didn't break anything!"), MSGBOX_SIGN)
+}
+
+script(global) WillowsLab_TrashCan {
+    msgbox(format("It's filled to the brim with crumpled notes."), MSGBOX_SIGN)
+}
+
+script(global) WillowsLab_EventScript_SelectVenap {
+	release
+    if(var(VAR_NEOBAY_STATE) != 1) {
+        goto(WillowsLab_DontBeGreedy)
+    }
+	showmonpic(SPECIES_VENAP, 10, 3)
+	msgbox(WillowsLab_DoYouWantVenap, MSGBOX_YESNO)
+	compare VAR_RESULT, NO
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_GiveCyndaquil
+	end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) WillowsLab_OnTransition {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_NEW_GAME) {
+        setobjectxy(WILLOW, 2, 8)
+        setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_LEFT)
+        clearflag(FLAG_WILLOW_BALL_TAKEN_0)
+        clearflag(FLAG_WILLOW_BALL_TAKEN_1)
+        clearflag(FLAG_WILLOW_BALL_TAKEN_2)
+        hideobjectat(BRADLEY, MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB)
+    }
+}
+
+script(local) WillowIntroduction {
+    lockall
+    setvar(VAR_NEOBAY_STATE, 1)
+    delay(30)
+    setobjectxy(BRADLEY, 8, 2)
+    applymovement(BRADLEY, mBradleyEntersFirstTime)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime)
+    waitmovement(0)
+    msgbox("Bradley: Hey, Prof. Willow!", MSGBOX_AUTOCLOSE)
+    applymovement(WILLOW, mFaceUp)
+    waitmovement(WILLOW)
+    applymovement(AMPURE, mAmpureMakesCrash)
+    waitmovement(AMPURE)
+	setvar(VAR_0x8004, 0)  // vertical pan
+	setvar(VAR_0x8005, 4)  // horizontal pan
+	setvar(VAR_0x8006, 2)  // num shakes
+	setvar(VAR_0x8007, 10)  // shake delay
+    special(ShakeCamera)
+    waitstate
+    applymovement(BRADLEY, mExclamationPoint)
+    applymovement(OBJ_EVENT_ID_PLAYER, mExclamationPoint)
+    msgbox("CRASH!!", MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(WILLOW, mFaceDown)
+    waitmovement(WILLOW)
+    msgbox(format("Willow: Come on, Ampure! That's fragile! Get back in your Pokéball!"), MSGBOX_AUTOCLOSE)
+    applymovement(AMPURE, mAmpureRunsAround)
+    applymovement(BRADLEY, mBradleyRushesUp)
+    delay(15)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerWalksDown)
+	setvar(VAR_0x8004, 0)  // vertical pan
+	setvar(VAR_0x8005, 1)  // horizontal pan
+	setvar(VAR_0x8006, 20)  // num shakes
+	setvar(VAR_0x8007, 5)  // shake delay
+    special(ShakeCamera)
+    waitstate
+    waitmovement(AMPURE)
+    msgbox(format("Bradley: Prof. Willow! What's going on!?"), MSGBOX_AUTOCLOSE)
+    applymovement(AMPURE, mAmpureRushesOut)
+    applymovement(WILLOW, mFaceRight)
+    waitmovement(AMPURE)
+    msgbox(format("Willow: Watch out!"), MSGBOX_AUTOCLOSE)
+    applymovement(AMPURE, mAmpureRushesOut2)
+    waitmovement(AMPURE)
+    msgbox(format("Willow: Oh, not again … that little rascal just will not keep still!"))
+    applymovement(BRADLEY, mFaceLeft)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    waitmovement(BRADLEY)
+    msgbox(format("Bradley: Are you alright, Prof. Willow?"))
+    msgbox(format("Willow: Ohohoho! Thanks for showing concern, Bradley, but I'm fine. This happens all the time."), MSGBOX_AUTOCLOSE)
+    applymovement(WILLOW, mWillowComesUpToFriends)
+    delay(10)
+    applymovement(BRADLEY, mFaceDown)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDOwn)
+    waitmovement(WILLOW)
+    msgbox(format("Oh? And who are you?"))
+    msgbox(format("Bradley: This is {PLAYER}. They've been my friend for as long as I can remember."))
+    msgbox(WillowsLab_WillowIntroduction, MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(BRADLEY, mFaceRight)
+    delay(15)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox(WillowsLab_BradleyIsAnAssistant)
+    applymovement(BRADLEY, mFaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDOwn)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox(format("Willow: Did I now?\n… Ah, I remember now!\lOhoho, you're quite right!"), MSGBOX_AUTOCLOSE)
+    applymovement(WILLOW, mWillowGoesToTable)
+    waitmovement(WILLOW)
+    msgbox(format("Willow: There are three Pokéballs on this table. Each one contains an extremely rare Pokémon. Bradley, go ahead and choose whichever you like!"))
+    msgbox("Bradley: Actually…", MSGBOX_AUTOCLOSE)
+    applymovement(BRADLEY, mBradleyDeliberates)
+    waitmovement(BRADLEY)
+    msgbox("Bradley: I want {PLAYER} to have the\nPokémon.", MSGBOX_AUTOCLOSE)
+    applymovement(OBJ_EVENT_ID_PLAYER, mExclamationPoint)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    applymovement(WILLOW, mExclamationPoint)
+    waitmovement(WILLOW)
+    msgbox(format("Willow: But Bradley! You earned this Pokémon yourself! You deserve it!"))
+    msgbox(format("Bradley: No, I made up my mind a long time ago. I want {PLAYER} to have the Pokémon!"), MSGBOX_AUTOCLOSE)
+    applymovement(WILLOW, mFaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDown)
+    waitmovement(WILLOW)
+    msgbox(WillowsLab_WillowCantJustGivePokemon)
+    msgbox(WillowsLab_BradleyIsReallySure, MSGBOX_AUTOCLOSE)
+    applymovement(WILLOW, mFaceUp)
+    waitmovement(WILLOW)
+    delay(30)
+    msgbox(WillowsLab_WillowConcedes)
+    msgbox(format("Alright, I've decided. Both of you will receive a Pokémon!"))
+    applymovement(BRADLEY, mBradleyFidgetsDown)
+    msgbox(format("Bradley: Wow, Prof. Willow!\nReally!?"))
+    msgbox(format("Willow: Ohoho, how can I refuse such a sincere request? Go ahead and choose any Pokéball on the table."))
+    msgbox(format("Bradley: This is awesome! Thank you so much, Prof. Willow!"), MSGBOX_AUTOCLOSE)
+    applymovement(BRADLEY, mFaceRight)
+    delay(15)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    waitmovement(BRADLEY)
+    msgbox(format("Bradley: I'm so excited! You go first, {PLAYER}. Come on come on, choose on!"))
+    waitmessage
+    releaseall
+    end
+}
+
+script(local) WillowsLab_DontBeGreedy {
+    msgbox(WillowsLab_DontBeGreedyText, MSGBOX_SIGN)
+    releaseall
+    end
+}
+
+//=====================================
+// Text
+//=====================================
+text WillowsLab_WillowIntroduction {
+    format(
+        "Willow: Ohoho, so you're {PLAYER}! Bradley talks about you quite a lot. "
+        "You can call me Prof. Willow. I'm here studying Pokémon habitats in the Neo Bay area. Research is what I do best.\l"
+        "I'm not too good at handling Pokémon themselves, unfortunately …"
+    )
+}
+
+text WillowsLab_BradleyIsAnAssistant {
+    format(
+        "Bradley: I never told you this, but I have been helping PROF. WILLOW with her research. "
+        "Collecting samples, taking measurements, all that science-y stuff.\l"
+        "It's hard work, but in return she promised me a rare Pokémon!"
+    )
+}
+
+text WillowsLab_WillowCantJustGivePokemon {
+    format(
+        "Willow: Even so, I can't just hand a POKéMON to anybody! "
+        "Owning a POKéMON comes with many responsibilities. Bradley, "
+        "you've already shown me that you're capable of becoming a Pokémon Trainer. "
+        "I only met {PLAYER} today!"
+    )
+}
+
+text WillowsLab_BradleyIsReallySure {
+    format(
+        "Bradley: {PLAYER} has wanted to be a Pokémon Trainer their entire life! "
+        "Nobody is more passionate and responsible than them, and they'd definitely "
+        "make a better Pokémon Trainer than I would!\l"
+        "Trust me on this one, professor!"
+    )
+}
+
+text WillowsLab_WillowConcedes {
+    format(
+        "… … … …\n"
+        "… … … …\l"
+        "… Ohohohohoho! I see, I see. So that's how it is!\l"
+        "You're a subborn one, Bradley, but I like that. {PLAYER}, you're lucky to have such a good friend.\l"
+        "I must say, I'm a bit envious myself!"
+    )
+}
+
+text WillowsLab_DontBeGreedyText: {
+    format(
+        "You already chose a Pokémon! Better not be greedy."
+    )
+}
+
+text WillowsLab_DoYouWantVenap: {
+    format(
+        "Prof. Willow: The Grass Pokémon Venap caught your eye?\p"
+        "It might be difficult to raise…but you won't regret it!\p"
+        "Is Venap your final decision?"
+    )
+}
+
+text WillowsLab_DoYouWantCelsinge: {
+    format(
+        "Prof. Willow: The Fire Pokémon Celsinge is your pick?\p"
+        "You can't go wrong there! You'll be set up for success!\p"
+        "Do you want to choose Celsinge?"
+    )
+}
+
+text WillowsLab_DoYouWantEchoise: {
+    format(
+        "Prof. Willow: The Water Pokémon Echoise is your favorite?\p"
+        "Excellent choice! Isn't it just the cutest?\p"
+        "Are you certain you want Echoise?"
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+movement mBradleyEntersFirstTime {
+    set_visible
+    walk_down * 4
+    walk_left * 3
+    face_down
+}
+
+movement mPlayerEntersFirstTime {
+    set_visible
+    walk_down * 4
+    walk_left * 2
+    face_down
+}
+
+movement mExclamationPoint {
+    emote_exclamation_mark
+}
+
+movement mFaceDown {
+    face_down
+}
+
+movement mFaceUp {
+    face_up
+}
+
+movement mFaceRight {
+    face_right
+}
+
+movement mFaceLeft {
+    face_left
+}
+
+movement mAmpureMakesCrash {
+    walk_in_place_fast_left * 4
+    slide_right
+    walk_fastest_left
+}
+
+movement mAmpureRunsAround {
+    walk_fast_right
+    walk_fast_down
+    walk_fastest_right * 9
+    walk_fast_up
+    walk_fast_down
+    walk_fast_up
+    walk_fast_down
+    walk_fast_up
+    walk_fast_down
+    walk_fastest_left * 6
+    walk_fastest_up
+    walk_fastest_left * 3
+}
+
+movement mBradleyRushesUp {
+    walk_fast_left
+    walk_fast_down
+}
+
+movement mPlayerWalksDown {
+    walk_fast_down
+}
+
+movement mAmpureRushesOut {
+    emote_exclamation_mark
+    walk_up * 2
+    walk_left
+    face_up
+}
+
+movement mAmpureRushesOut2 {
+    walk_in_place_fast_up * 8
+    walk_fastest_up * 3
+    walk_fastest_right * 3
+    walk_fastest_up * 4
+    set_invisible
+}
+
+movement mWillowComesUpToFriends {
+    face_left
+    emote_exclamation_mark
+    walk_down
+    walk_right * 4
+    face_up
+}
+
+movement mWillowGoesToTable {
+    walk_down * 3
+    walk_right * 2
+}
+
+movement mBradleyDeliberates {
+    face_right
+    delay_16 * 2
+    face_down
+}
+
+movement mBradleyFidgetsDown {
+    walk_in_place_fast_down * 4
+}
+
+//=====================================
+// Raw
+//=====================================

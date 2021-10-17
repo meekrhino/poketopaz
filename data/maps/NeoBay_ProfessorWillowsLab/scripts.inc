@@ -1,3 +1,502 @@
 NeoBay_ProfessorWillowsLab_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, WillowsLab_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
+NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_NEOBAY_STATE, 0, FirstTimeEnter
+	.2byte 0
+
+
+WillowsLab_YouGoFirst::
+	msgbox WillowsLab_YouGoFirst_Text_0, MSGBOX_NPC
+	end
+
+
+WillowsLab_TakeYourTime::
+	msgbox WillowsLab_TakeYourTime_Text_0, MSGBOX_NPC
+	end
+
+
+WillowsLab_Books1::
+	msgbox WillowsLab_Books1_Text_0, MSGBOX_SIGN
+	end
+
+
+WillowsLab_Books2::
+	msgbox WillowsLab_Books2_Text_0, MSGBOX_SIGN
+	end
+
+
+WillowsLab_Books3::
+	msgbox WillowsLab_Books3_Text_0, MSGBOX_SIGN
+	end
+
+
+WillowsLab_Books4::
+	msgbox WillowsLab_Books4_Text_0, MSGBOX_SIGN
+	end
+
+
+WillowsLab_Books5::
+	msgbox WillowsLab_Books5_Text_0, MSGBOX_SIGN
+	end
+
+
+WillowsLab_WillowsComputer::
+	msgbox WillowsLab_WillowsComputer_Text_0
+	return
+
+
+WillowsLab_WillowsNotes::
+	msgbox WillowsLab_WillowsNotes_Text_0
+	return
+
+
+WillowsLab_ExpensiveMachine::
+	msgbox WillowsLab_ExpensiveMachine_Text_0
+	return
+
+
+WillowsLab_TrashCan::
+	msgbox WillowsLab_TrashCan_Text_0
+	return
+
+
+WillowsLab_OnTransition:
+	compare VAR_NEOBAY_STATE, 0
+	goto_if_eq WillowsLab_OnTransition_1
+	return
+
+WillowsLab_OnTransition_1:
+	setobjectxy 4, 2, 8
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
+	clearflag FLAG_WILLOW_BALL_TAKEN_0
+	clearflag FLAG_WILLOW_BALL_TAKEN_1
+	clearflag FLAG_WILLOW_BALL_TAKEN_2
+	hideobjectat 5, MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB
+	return
+
+
+FirstTimeEnter:
+	lockall
+	setvar VAR_NEOBAY_STATE, 1
+	delay 30
+	setobjectxy 5, 8, 2
+	applymovement 5, mBradleyEntersFirstTime
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime
+	waitmovement 0
+	msgbox FirstTimeEnter_Text_0, MSGBOX_AUTOCLOSE
+	applymovement 4, mFaceUp
+	waitmovement 4
+	applymovement 6, mAmpureMakesCrash
+	waitmovement 6
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 4
+	setvar VAR_0x8006, 2
+	setvar VAR_0x8007, 10
+	special ShakeCamera
+	waitstate
+	applymovement 5, mExclamationPoint
+	applymovement OBJ_EVENT_ID_PLAYER, mExclamationPoint
+	msgbox FirstTimeEnter_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 4, mFaceDown
+	waitmovement 4
+	msgbox FirstTimeEnter_Text_2, MSGBOX_AUTOCLOSE
+	applymovement 6, mAmpureRunsAround
+	applymovement 5, mBradleyRushesUp
+	delay 15
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalksDown
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 20
+	setvar VAR_0x8007, 5
+	special ShakeCamera
+	waitstate
+	waitmovement 6
+	msgbox FirstTimeEnter_Text_3, MSGBOX_AUTOCLOSE
+	applymovement 6, mAmpureRushesOut
+	waitmovement 6
+	msgbox FirstTimeEnter_Text_4, MSGBOX_AUTOCLOSE
+	applymovement 6, mAmpureRushesOut2
+	waitmovement 6
+	msgbox FirstTimeEnter_Text_5
+	applymovement 5, mFaceLeft
+	applymovement 4, mFaceRight
+	waitmovement 4
+	msgbox FirstTimeEnter_Text_6
+	msgbox FirstTimeEnter_Text_7, MSGBOX_AUTOCLOSE
+	applymovement 4, mWillowComesUpToFriends
+	delay 10
+	applymovement 5, mFaceDown
+	waitmovement 4
+	msgbox FirstTimeEnter_Text_8
+	msgbox FirstTimeEnter_Text_9
+	msgbox WillowsLab_WillowIntroduction, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 5, mFaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement 5
+	msgbox WillowsLab_BradleyIsAnAssistant
+	msgbox FirstTimeEnter_Text_10, MSGBOX_AUTOCLOSE
+	applymovement 4, mWillowGoesToTable
+	applymovement 5, mFaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
+	waitmovement 4
+	msgbox FirstTimeEnter_Text_11
+	msgbox FirstTimeEnter_Text_12, MSGBOX_AUTOCLOSE
+	applymovement 5, mBradleyDeliberates
+	waitmovement 5
+	msgbox FirstTimeEnter_Text_13, MSGBOX_AUTOCLOSE
+	applymovement OBJ_EVENT_ID_PLAYER, mExclamationPoint
+	applymovement 4, mExclamationPoint
+	waitmovement 4
+	msgbox FirstTimeEnter_Text_14
+	msgbox FirstTimeEnter_Text_15, MSGBOX_AUTOCLOSE
+	applymovement 4, mFaceRight
+	waitmovement 4
+	msgbox WillowsLab_WillowCantJustGivePokemon
+	msgbox WillowsLab_BradleyIsReallySure, MSGBOX_AUTOCLOSE
+	applymovement 4, mFaceUp
+	waitmovement 4
+	delay 30
+	msgbox WillowsLab_WillowConcedes
+	msgbox FirstTimeEnter_Text_16
+	msgbox FirstTimeEnter_Text_17
+	msgbox FirstTimeEnter_Text_18
+	msgbox FirstTimeEnter_Text_19, MSGBOX_AUTOCLOSE
+	applymovement 5, mFaceRight
+	delay 15
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement 5
+	msgbox FirstTimeEnter_Text_20
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+
+mBradleyEntersFirstTime:
+	set_visible
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+mPlayerEntersFirstTime:
+	set_visible
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+mExclamationPoint:
+	emote_exclamation_mark
+	step_end
+
+mFaceDown:
+	face_down
+	step_end
+
+mFaceUp:
+	face_up
+	step_end
+
+mFaceRight:
+	face_right
+	step_end
+
+mFaceLeft:
+	face_left
+	step_end
+
+mAmpureMakesCrash:
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	slide_right
+	walk_fastest_left
+	step_end
+
+mAmpureRunsAround:
+	walk_fast_right
+	walk_fast_down
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fast_up
+	walk_fast_down
+	walk_fast_up
+	walk_fast_down
+	walk_fast_up
+	walk_fast_down
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_up
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	step_end
+
+mBradleyRushesUp:
+	walk_fast_left
+	walk_fast_down
+	step_end
+
+mPlayerWalksDown:
+	walk_fast_down
+	step_end
+
+mAmpureRushesOut:
+	emote_exclamation_mark
+	walk_up
+	walk_up
+	walk_left
+	face_up
+	step_end
+
+mAmpureRushesOut2:
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_fastest_up
+	walk_fastest_up
+	walk_fastest_up
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_up
+	walk_fastest_up
+	walk_fastest_up
+	walk_fastest_up
+	set_invisible
+	step_end
+
+mWillowComesUpToFriends:
+	face_left
+	emote_exclamation_mark
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+mWillowGoesToTable:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	step_end
+
+mBradleyDeliberates:
+	face_right
+	delay_2
+	face_down
+	step_end
+
+WillowsLab_YouGoFirst_Text_0:
+	.string "Bradley: I just can't decide! You go\n"
+	.string "first, {PLAYER}! Come on, come on!$"
+
+WillowsLab_TakeYourTime_Text_0:
+	.string "Willow: Ohoho, can't decide? Take your\n"
+	.string "time, this is a big decision!$"
+
+WillowsLab_Books1_Text_0:
+	.string "There's a book titled “People and\n"
+	.string "Pokémon: Nature's Balance” …sounds a\l"
+	.string "little dense…$"
+
+WillowsLab_Books2_Text_0:
+	.string "There's a book titled “Ancient Pokémon\n"
+	.string "Mythos” …sounds intruguing!$"
+
+WillowsLab_Books3_Text_0:
+	.string "There's a book titled “The Lifecycles\n"
+	.string "of Bug Pokémon” …sounds gross!$"
+
+WillowsLab_Books4_Text_0:
+	.string "There's a book titled “The Varied\n"
+	.string "Pokémon of Mt. Frost” …sounds like an\l"
+	.string "interesting place!$"
+
+WillowsLab_Books5_Text_0:
+	.string "There are tons of dusty textbooks … it\n"
+	.string "looks like Prof. Willow hasn't used this\l"
+	.string "shelf in a while.$"
+
+WillowsLab_WillowsComputer_Text_0:
+	.string "This is Prof. Willow's personal computer.\n"
+	.string "The screen is covered in graphs and\l"
+	.string "data!$"
+
+WillowsLab_WillowsNotes_Text_0:
+	.string "Looks like a daily log of field notes.\n"
+	.string "Prof. Willow sure is thorough!$"
+
+WillowsLab_ExpensiveMachine_Text_0:
+	.string "Looks like an expensive machine.\n"
+	.string "Hopefully Ampure didn't break\l"
+	.string "anything!$"
+
+WillowsLab_TrashCan_Text_0:
+	.string "It's filled to the brim with crumpled\n"
+	.string "notes.$"
+
+FirstTimeEnter_Text_0:
+	.string "Bradley: Hey, Prof. Willow!$"
+
+FirstTimeEnter_Text_1:
+	.string "CRASH!!$"
+
+FirstTimeEnter_Text_2:
+	.string "Willow: Come on, Ampure! That's fragile!\n"
+	.string "Get back in your Pokéball!$"
+
+FirstTimeEnter_Text_3:
+	.string "Bradley: Prof. Willow! What's going on!?$"
+
+FirstTimeEnter_Text_4:
+	.string "Willow: Watch out!$"
+
+FirstTimeEnter_Text_5:
+	.string "Willow: Oh, not again … that little rascal\n"
+	.string "just will not keep still!$"
+
+FirstTimeEnter_Text_6:
+	.string "Bradley: Are you alright, Prof. Willow?$"
+
+FirstTimeEnter_Text_7:
+	.string "Willow: Ohohoho! Thanks for showing\n"
+	.string "concern, Bradley, but I'm fine. This\l"
+	.string "happens all the time.$"
+
+FirstTimeEnter_Text_8:
+	.string "Oh? And who are you?$"
+
+FirstTimeEnter_Text_9:
+	.string "Bradley: This is {PLAYER}. They've\n"
+	.string "been my friend for as long as I can\l"
+	.string "remember.$"
+
+FirstTimeEnter_Text_10:
+	.string "Willow: Did I now?\n"
+	.string "… Ah, I remember now!\l"
+	.string "Ohoho, you're quite right!$"
+
+FirstTimeEnter_Text_11:
+	.string "Willow: There are three Pokéballs on\n"
+	.string "this table. Each one contains an\l"
+	.string "extremely rare Pokémon. Bradley, go\l"
+	.string "ahead and choose whichever you like!$"
+
+FirstTimeEnter_Text_12:
+	.string "Bradley: Actually…$"
+
+FirstTimeEnter_Text_13:
+	.string "Bradley: I want {PLAYER} to have the\nPokémon.$"
+
+FirstTimeEnter_Text_14:
+	.string "Willow: But Bradley! You earned this\n"
+	.string "Pokémon yourself! You deserve it!$"
+
+FirstTimeEnter_Text_15:
+	.string "Bradley: No, I made up my mind a long\n"
+	.string "time ago. I want {PLAYER} to have the\l"
+	.string "Pokémon!$"
+
+FirstTimeEnter_Text_16:
+	.string "Alright, I've decided. Both of you will\n"
+	.string "receive a Pokémon!$"
+
+FirstTimeEnter_Text_17:
+	.string "Bradley: Wow, Prof. Willow!\n"
+	.string "Really!?$"
+
+FirstTimeEnter_Text_18:
+	.string "Willow: Ohoho, how can I refuse such a\n"
+	.string "sincere request? Go ahead and choose\l"
+	.string "any Pokéball on the table.$"
+
+FirstTimeEnter_Text_19:
+	.string "Bradley: This is awesome! Thank you so\n"
+	.string "much, Prof. Willow!$"
+
+FirstTimeEnter_Text_20:
+	.string "Bradley: I'm so excited! You go first,\n"
+	.string "{PLAYER}. Come on come on, choose on!$"
+
+WillowsLab_WillowIntroduction::
+	.string "Willow: Ohoho, so you're {PLAYER}!\n"
+	.string "Bradley talks about you quite a lot.\l"
+	.string "You can call me Prof. Willow. I'm here\l"
+	.string "studying Pokémon habitats in the Neo\l"
+	.string "Bay area. Research is what I do best.\l"
+	.string "I'm not too good at handling Pokémon\l"
+	.string "themselves, unfortunately …$"
+
+WillowsLab_BradleyIsAnAssistant::
+	.string "Bradley: I never told you this, but I\n"
+	.string "have been helping PROF. WILLOW with\l"
+	.string "her research. Collecting samples,\l"
+	.string "taking measurements, all that\l"
+	.string "science-y stuff.\l"
+	.string "It's hard work, but in return she\l"
+	.string "promised me a rare Pokémon!$"
+
+WillowsLab_WillowCantJustGivePokemon::
+	.string "Willow: Even so, I can't just hand a\n"
+	.string "POKéMON to anybody! Owning a POKéMON\l"
+	.string "comes with many responsibilities.\l"
+	.string "Bradley, you've already shown me that\l"
+	.string "you're capable of becoming a Pokémon\l"
+	.string "Trainer. I only met {PLAYER} today!$"
+
+WillowsLab_BradleyIsReallySure::
+	.string "Bradley: {PLAYER} has wanted to be a\n"
+	.string "Pokémon Trainer their entire life!\l"
+	.string "Nobody is more passionate and\l"
+	.string "responsible than them, and they'd\l"
+	.string "definitely make a better PPokémon\l"
+	.string "Trainer than I would!\l"
+	.string "Trust me on this one, professor!$"
+
+WillowsLab_WillowConcedes::
+	.string "… … … …\n"
+	.string "… … … …\l"
+	.string "… Ohohohohoho! I see, I see. So that's\l"
+	.string "how it is!\l"
+	.string "You're a subborn one, Bradley, but I like\l"
+	.string "that. {PLAYER}, you're lucky to have\l"
+	.string "such a good friend.\l"
+	.string "I must say, I'm a bit envious myself!$"

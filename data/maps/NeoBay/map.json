@@ -48,7 +48,20 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 28,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 29,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB",
+      "dest_warp_id": 0
+    }
   ],
   "coord_events": [
     {

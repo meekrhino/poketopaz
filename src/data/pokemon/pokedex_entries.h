@@ -1,8 +1,3 @@
-#ifdef __VSCODE
-//#include "pokedex_text.h"
-//#include "pokedex.h"
-#endif
-
 const struct PokedexEntry gPokedexEntries[] =
 {
     [CALDERA_KIRANT_DEX_NONE] =

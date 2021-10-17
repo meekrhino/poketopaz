@@ -1,9 +1,13 @@
 const BRADLEY = 2
 
+const NEOBAY_STATE_NEW_GAME = 0
+const NEOBAY_STATE_MET_WILLOW = 1
+const NEOBAY_STATE_RECEIVED_STARTER = 2
+
 // State descriptions for VAR_NEOBAY_STATE
 // 1: Met Professor Willow
-// 2: Saved Ampure
-// 3: Received Pokemon
+// 2: Received Pokemon
+// 3: Saved Ampure
 // 4: Saw flashback
 // 5: Received running shoes
 // 6: Departed for Sunset Village
@@ -71,7 +75,7 @@ script NeoBay_EventScript_OtherMailbox {
 script(local) NeoBay_OnTransition {
     setflag(FLAG_VISITED_NEOBAY_TOWN)
     call(Common_EventScript_SetupRivalGfxId)
-    if (var(VAR_NEOBAY_STATE) == 0) {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_NEW_GAME) {
         call(NeoBay_EventScript_SetBradleyPositionIntroStart)
     }
     end
@@ -87,16 +91,19 @@ script(local) NeoBay_EventScript_BradleyIntroText {
     applymovement(BRADLEY, mBradleyFidgetsRight)
     waitmovement(0)
     msgbox(NeoBay_Text_BradleyIntroStartLetsGo, MSGBOX_DEFAULT)
+    waitmessage
+    closemessage
     return
 }
 
 script(local) NeoBay_EventScript_BradleyShowBoatText {
     msgbox(NeoBay_Text_BradleyShowBoatStart, MSGBOX_DEFAULT)
+    waitmessage
+    closemessage
     applymovement(BRADLEY, mEnterShip)
     applymovement(OBJ_EVENT_ID_PLAYER, mEnterShip)
     waitmovement(0)
-    hideobjectat(BRADLEY, MAP_NEO_BAY)
-    hideobjectat(OBJ_EVENT_ID_PLAYER, 0)
+    warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0, 0, 0)
     return
 }
 
@@ -132,29 +139,29 @@ text NeoBay_Text_OtherMailbox {
 
 text NeoBay_Text_BradleyIntroStart {
     format(
-        "BRADLEY: Well, if it isn't {PLAYER}!\p"
-        "So you've finally woken up, sleepyhead? Honestly, you've got a whole lot of nerve, making a friend wait like that!\p"
+        "Bradley: Well, if it isn't {PLAYER}!\n"
+        "So you've finally woken up, sleepyhead? Honestly, you've got a whole lot of nerve, making a friend wait like that!\l"
         "… … Nah, I'm just kidding! I'm not that bad of a guy, y'know? Anyway!"
     )
 }
 
 text NeoBay_Text_BradleyIntroStartLetsGo {
     format(
-        "BRADLEY: I called you here because I've got a once-in-a-lifetime opportunity for ya!\p"
-        "There's someone you absolutely, definitely, positively HAVE to meet! Trust me, it'll be worth your time. I promise!\p"
+        "Bradley: I called you here because I've got a once-in-a-lifetime opportunity for ya!\l"
+        "There's someone you absolutely, definitely, positively HAVE to meet! Trust me, it'll be worth your time. I promise!\l"
         "Come on, come on! This way!"
     )
 }
 
 text NeoBay_Text_BradleyShowBoatStart {
     format(
-        "BRADLEY: Look! You've noticed this sleek-looking boat moored here for a while now, right?\p"
-        "Well, this boat belongs to none other than Prof. Willow!\p"
-        "… … …\n"
-        "… … …\n"
-        "What, you haven't heard of her? I guess you're not quite as worldly as your pal Bradley!\p"
-        "… Anyway, she's a world-famous Pokémon Professor, known for her research on ancient Pokémon fossils!\p"
-        "She's cool, calm, composed … and when it comes to Pokémon, she's a genius! I really admire her!\p"
+        "Bradley: Look! You've noticed this sleek-looking boat moored here for a while now, right? "
+        "Well, this boat belongs to none other than Prof. Willow!\l"
+        "… … …\l"
+        "… … …\l"
+        "What, you haven't heard of her? I guess you're not quite as worldly as your pal Bradley!\l"
+        "… Anyway, she's a world-famous Pokémon Professor, known for her research on ancient Pokémon fossils!\l"
+        "She's cool, calm, composed … and when it comes to Pokémon, she's a genius! I really admire her!\l"
         "Come on, let's go meet her now!"
     )
 }
@@ -212,6 +219,7 @@ movement mPlayerEscortedByBradleyBottom {
 
 movement mEnterShip {
     walk_down * 2
+    set_invisible
 }
 
 //=====================================
