@@ -4,7 +4,7 @@ NeoBay_ProfessorWillowsLab_MapScripts::
 	.byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_NEOBAY_STATE, 0, FirstTimeEnter
+	map_script_2 VAR_NEOBAY_STATE, 0, WillowIntroduction
 	.2byte 0
 
 
@@ -44,23 +44,102 @@ WillowsLab_Books5::
 
 
 WillowsLab_WillowsComputer::
-	msgbox WillowsLab_WillowsComputer_Text_0
+	msgbox WillowsLab_WillowsComputer_Text_0, MSGBOX_SIGN
 	return
 
 
 WillowsLab_WillowsNotes::
-	msgbox WillowsLab_WillowsNotes_Text_0
+	msgbox WillowsLab_WillowsNotes_Text_0, MSGBOX_SIGN
 	return
 
 
 WillowsLab_ExpensiveMachine::
-	msgbox WillowsLab_ExpensiveMachine_Text_0
+	msgbox WillowsLab_ExpensiveMachine_Text_0, MSGBOX_SIGN
 	return
 
 
 WillowsLab_TrashCan::
-	msgbox WillowsLab_TrashCan_Text_0
+	msgbox WillowsLab_TrashCan_Text_0, MSGBOX_SIGN
 	return
+
+
+WillowsLab_EventScript_SelectVenap::
+	release
+	compare VAR_NEOBAY_STATE, 1
+	goto_if_ne WillowsLab_EventScript_SelectVenap_2
+WillowsLab_EventScript_SelectVenap_1:
+	showmonpic SPECIES_VENAP, 10, 3
+	msgbox WillowsLab_DoYouWantVenap, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, NO
+	goto_if_eq WillowsLab_EventScript_SelectVenap_5
+WillowsLab_EventScript_SelectVenap_4:
+	goto WillowsLab_GiveVenap
+	return
+
+WillowsLab_EventScript_SelectVenap_2:
+	goto WillowsLab_DontBeGreedy
+	goto WillowsLab_EventScript_SelectVenap_1
+
+WillowsLab_EventScript_SelectVenap_5:
+	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_EventScript_SelectVenap_4
+
+
+WillowsLab_EventScript_SelectCelsinge::
+	release
+	compare VAR_NEOBAY_STATE, 1
+	goto_if_ne WillowsLab_EventScript_SelectCelsinge_2
+WillowsLab_EventScript_SelectCelsinge_1:
+	showmonpic SPECIES_CELSINGE, 10, 3
+	msgbox WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, NO
+	goto_if_eq WillowsLab_EventScript_SelectCelsinge_5
+WillowsLab_EventScript_SelectCelsinge_4:
+	goto WillowsLab_GiveCelsinge
+	return
+
+WillowsLab_EventScript_SelectCelsinge_2:
+	goto WillowsLab_DontBeGreedy
+	goto WillowsLab_EventScript_SelectCelsinge_1
+
+WillowsLab_EventScript_SelectCelsinge_5:
+	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_EventScript_SelectCelsinge_4
+
+
+WillowsLab_EventScript_SelectEchoise::
+	release
+	compare VAR_NEOBAY_STATE, 1
+	goto_if_ne WillowsLab_EventScript_SelectEchoise_2
+WillowsLab_EventScript_SelectEchoise_1:
+	showmonpic SPECIES_ECHOISE, 10, 3
+	msgbox WillowsLab_DoYouWantEchoise, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, NO
+	goto_if_eq WillowsLab_EventScript_SelectEchoise_5
+WillowsLab_EventScript_SelectEchoise_4:
+	goto WillowsLab_GiveEchoise
+	return
+
+WillowsLab_EventScript_SelectEchoise_2:
+	goto WillowsLab_DontBeGreedy
+	goto WillowsLab_EventScript_SelectEchoise_1
+
+WillowsLab_EventScript_SelectEchoise_5:
+	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_EventScript_SelectEchoise_4
+
+
+WillowsLab_EventScript_WhereAreYouGoing::
+	lock
+	msgbox WillowsLab_EventScript_WhereAreYouGoing_Text_0, MSGBOX_SIGN
+	waitmessage
+	applymovement OBJ_EVENT_ID_PLAYER, mWalkDown
+	waitmovement OBJ_EVENT_ID_PLAYER
+	release
+	end
 
 
 WillowsLab_OnTransition:
@@ -78,7 +157,7 @@ WillowsLab_OnTransition_1:
 	return
 
 
-FirstTimeEnter:
+WillowIntroduction:
 	lockall
 	setvar VAR_NEOBAY_STATE, 1
 	delay 30
@@ -87,7 +166,7 @@ FirstTimeEnter:
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime
 	waitmovement 0
-	msgbox FirstTimeEnter_Text_0, MSGBOX_AUTOCLOSE
+	msgbox WillowIntroduction_Text_0, MSGBOX_AUTOCLOSE
 	applymovement 4, mFaceUp
 	waitmovement 4
 	applymovement 6, mAmpureMakesCrash
@@ -100,11 +179,11 @@ FirstTimeEnter:
 	waitstate
 	applymovement 5, mExclamationPoint
 	applymovement OBJ_EVENT_ID_PLAYER, mExclamationPoint
-	msgbox FirstTimeEnter_Text_1, MSGBOX_AUTOCLOSE
+	msgbox WillowIntroduction_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement 4, mFaceDown
 	waitmovement 4
-	msgbox FirstTimeEnter_Text_2, MSGBOX_AUTOCLOSE
+	msgbox WillowIntroduction_Text_2, MSGBOX_AUTOCLOSE
 	applymovement 6, mAmpureRunsAround
 	applymovement 5, mBradleyRushesUp
 	delay 15
@@ -116,64 +195,239 @@ FirstTimeEnter:
 	special ShakeCamera
 	waitstate
 	waitmovement 6
-	msgbox FirstTimeEnter_Text_3, MSGBOX_AUTOCLOSE
+	msgbox WillowIntroduction_Text_3, MSGBOX_AUTOCLOSE
 	applymovement 6, mAmpureRushesOut
-	waitmovement 6
-	msgbox FirstTimeEnter_Text_4, MSGBOX_AUTOCLOSE
-	applymovement 6, mAmpureRushesOut2
-	waitmovement 6
-	msgbox FirstTimeEnter_Text_5
-	applymovement 5, mFaceLeft
 	applymovement 4, mFaceRight
-	waitmovement 4
-	msgbox FirstTimeEnter_Text_6
-	msgbox FirstTimeEnter_Text_7, MSGBOX_AUTOCLOSE
+	waitmovement 6
+	msgbox WillowIntroduction_Text_4, MSGBOX_AUTOCLOSE
+	applymovement 6, mAmpureRushesOut2
+	delay 60
+	applymovement 5, mFaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	delay 15
+	applymovement 5, mFaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
+	waitmovement 6
+	msgbox WillowIntroduction_Text_5
+	applymovement 5, mFaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement 5
+	msgbox WillowIntroduction_Text_6
+	msgbox WillowIntroduction_Text_7, MSGBOX_AUTOCLOSE
 	applymovement 4, mWillowComesUpToFriends
 	delay 10
 	applymovement 5, mFaceDown
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
 	waitmovement 4
-	msgbox FirstTimeEnter_Text_8
-	msgbox FirstTimeEnter_Text_9
+	msgbox WillowIntroduction_Text_8
+	msgbox WillowIntroduction_Text_9
 	msgbox WillowsLab_WillowIntroduction, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement 5, mFaceRight
+	delay 15
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
-	waitmovement 5
+	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox WillowsLab_BradleyIsAnAssistant
-	msgbox FirstTimeEnter_Text_10, MSGBOX_AUTOCLOSE
-	applymovement 4, mWillowGoesToTable
 	applymovement 5, mFaceDown
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox WillowIntroduction_Text_10, MSGBOX_AUTOCLOSE
+	applymovement 4, mWillowGoesToTable
 	waitmovement 4
-	msgbox FirstTimeEnter_Text_11
-	msgbox FirstTimeEnter_Text_12, MSGBOX_AUTOCLOSE
+	msgbox WillowIntroduction_Text_11
+	msgbox WillowIntroduction_Text_12, MSGBOX_AUTOCLOSE
 	applymovement 5, mBradleyDeliberates
 	waitmovement 5
-	msgbox FirstTimeEnter_Text_13, MSGBOX_AUTOCLOSE
+	msgbox WillowIntroduction_Text_13, MSGBOX_AUTOCLOSE
 	applymovement OBJ_EVENT_ID_PLAYER, mExclamationPoint
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	applymovement 4, mExclamationPoint
 	waitmovement 4
-	msgbox FirstTimeEnter_Text_14
-	msgbox FirstTimeEnter_Text_15, MSGBOX_AUTOCLOSE
+	msgbox WillowIntroduction_Text_14
+	msgbox WillowIntroduction_Text_15, MSGBOX_AUTOCLOSE
 	applymovement 4, mFaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
 	waitmovement 4
 	msgbox WillowsLab_WillowCantJustGivePokemon
 	msgbox WillowsLab_BradleyIsReallySure, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
 	applymovement 4, mFaceUp
 	waitmovement 4
-	delay 30
 	msgbox WillowsLab_WillowConcedes
-	msgbox FirstTimeEnter_Text_16
-	msgbox FirstTimeEnter_Text_17
-	msgbox FirstTimeEnter_Text_18
-	msgbox FirstTimeEnter_Text_19, MSGBOX_AUTOCLOSE
+	msgbox WillowIntroduction_Text_16
+	applymovement 5, mBradleyFidgetsDown
+	msgbox WillowIntroduction_Text_17
+	msgbox WillowIntroduction_Text_18
+	msgbox WillowIntroduction_Text_19, MSGBOX_AUTOCLOSE
 	applymovement 5, mFaceRight
 	delay 15
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	waitmovement 5
-	msgbox FirstTimeEnter_Text_20
+	msgbox WillowIntroduction_Text_20
 	waitmessage
-	closemessage
+	releaseall
+	end
+
+
+WillowsLab_DontBeGreedy:
+	msgbox WillowsLab_DontBeGreedyText, MSGBOX_SIGN
+	releaseall
+	end
+
+
+WillowsLab_TakeYourTime2:
+	hidemonpic
+	msgbox WillowsLab_TakeYourTime2_Text_0, MSGBOX_NPC
+	releaseall
+	end
+
+
+WillowsLab_GiveVenap:
+	bufferspeciesname 0, SPECIES_VENAP
+	setvar VAR_TEMP_1, SPECIES_VENAP
+	givemon SPECIES_VENAP, 5, ITEM_NONE
+	removeobject 1
+	call WillowsLab_ReceivedStarter
+	setflag FLAG_WILLOW_BALL_TAKEN_0
+	call WillowsLab_BradleyChoosesEchoise
+	call WillowsLab_RegroupAfterPlayerChoosesVenap
+	goto WillowsLab_YourePokemonTrainersNow
+	return
+
+
+WillowsLab_GiveCelsinge:
+	bufferspeciesname 0, SPECIES_CELSINGE
+	setvar VAR_TEMP_1, SPECIES_CELSINGE
+	givemon SPECIES_CELSINGE, 5, ITEM_NONE
+	removeobject 2
+	call WillowsLab_ReceivedStarter
+	setflag FLAG_WILLOW_BALL_TAKEN_1
+	call WillowsLab_BradleyChoosesVenap
+	call WillowsLab_RegroupAfterPlayerChoosesCelsinge
+	goto WillowsLab_YourePokemonTrainersNow
+	return
+
+
+WillowsLab_GiveEchoise:
+	bufferspeciesname 0, SPECIES_ECHOISE
+	setvar VAR_TEMP_1, SPECIES_ECHOISE
+	givemon SPECIES_ECHOISE, 5, ITEM_NONE
+	removeobject 3
+	call WillowsLab_ReceivedStarter
+	setflag FLAG_WILLOW_BALL_TAKEN_2
+	call WillowsLab_BradleyChoosesCelsinge
+	call WillowsLab_RegroupAfterPlayerChoosesEchoise
+	goto WillowsLab_YourePokemonTrainersNow
+	return
+
+
+WillowsLab_ReceivedStarter:
+	playfanfare MUS_OBTAIN_ITEM
+	message WillowsLab_ReceivedStarter_Text_0
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq WillowsLab_ReceivedStarter_2
+WillowsLab_ReceivedStarter_1:
+	setvar VAR_NEOBAY_STATE, 2
+	hidemonpic
+	return
+
+WillowsLab_ReceivedStarter_2:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto WillowsLab_ReceivedStarter_1
+
+
+WillowsLab_BradleyChoosesVenap:
+	applymovement 5, mBradleyWalksToVenap
+	waitmovement 5
+	msgbox WillowsLab_BradleyChoosesVenap_Text_0
+	bufferspeciesname 0, SPECIES_VENAP
+	setvar VAR_TEMP_1, SPECIES_VENAP
+	removeobject 1
+	call WillowsLab_BradleyMadeChoice
+	setflag FLAG_WILLOW_BALL_TAKEN_0
+	return
+
+
+WillowsLab_BradleyChoosesCelsinge:
+	applymovement 5, mBradleyWalksToCelsinge
+	waitmovement 5
+	msgbox WillowsLab_BradleyChoosesVenap_Text_0
+	bufferspeciesname 0, SPECIES_CELSINGE
+	setvar VAR_TEMP_1, SPECIES_CELSINGE
+	removeobject 2
+	call WillowsLab_BradleyMadeChoice
+	setflag FLAG_WILLOW_BALL_TAKEN_1
+	return
+
+
+WillowsLab_BradleyChoosesEchoise:
+	applymovement 5, mBradleyWalksToEchoise
+	waitmovement 5
+	msgbox WillowsLab_BradleyChoosesVenap_Text_0
+	bufferspeciesname 0, SPECIES_ECHOISE
+	setvar VAR_TEMP_1, SPECIES_ECHOISE
+	removeobject 3
+	call WillowsLab_BradleyMadeChoice
+	setflag FLAG_WILLOW_BALL_TAKEN_2
+	return
+
+
+WillowsLab_BradleyMadeChoice:
+	message WillowsLab_BradleyMadeChoice_Text_0
+	waitmessage
+	return
+
+
+WillowsLab_RegroupAfterPlayerChoosesVenap:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterVenap
+	applymovement 5, mBradleyRegroupsAfterEchoise
+	delay 30
+	applymovement 4, mWillowRegroupsAfterStarter
+	waitmovement 4
+	return
+
+
+WillowsLab_RegroupAfterPlayerChoosesCelsinge:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterCelsinge
+	applymovement 5, mBradleyRegroupsAfterVenap
+	delay 30
+	applymovement 4, mWillowRegroupsAfterStarter
+	waitmovement 4
+	return
+
+
+WillowsLab_RegroupAfterPlayerChoosesEchoise:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterEchoise
+	applymovement 5, mBradleyRegroupsAfterCelsinge
+	delay 30
+	applymovement 4, mWillowRegroupsAfterStarter
+	waitmovement 4
+	return
+
+
+WillowsLab_YourePokemonTrainersNow:
+	msgbox WillowsLab_YourePokemonTrainersNow_Text_0
+	msgbox WillowsLab_YourePokemonTrainersNow_Text_1
+	msgbox WillowsLab_YourePokemonTrainersNow_Text_2
+	msgbox WillowsLab_YourePokemonTrainersNow_Text_3
+	msgbox WillowsLab_AmpureMissionDescription
+	msgbox WillowsLab_YourePokemonTrainersNow_Text_4, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 5, mFaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 30
+	msgbox WillowsLab_YourePokemonTrainersNow_Text_5
+	applymovement 5, mBradleyExits
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerExits
+	waitmovement OBJ_EVENT_ID_PLAYER
+	warp MAP_NEO_BAY, 0, 0, 0
 	releaseall
 	end
 
@@ -320,8 +574,154 @@ mWillowGoesToTable:
 
 mBradleyDeliberates:
 	face_right
-	delay_2
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_down
+	step_end
+
+mBradleyFidgetsDown:
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	step_end
+
+mBradleyWalksToVenap:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	face_up
+	step_end
+
+mBradleyWalksToCelsinge:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+mBradleyWalksToEchoise:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+mBradleyRegroupsAfterVenap:
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	face_down
+	step_end
+
+mBradleyRegroupsAfterCelsinge:
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	face_down
+	step_end
+
+mBradleyRegroupsAfterEchoise:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	face_down
+	step_end
+
+mPlayerRegroupsAfterVenap:
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+mPlayerRegroupsAfterCelsinge:
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+mPlayerRegroupsAfterEchoise:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+mWillowRegroupsAfterStarter:
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+mWalkDown:
+	walk_down
+	step_end
+
+mBradleyExits:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+mPlayerExits:
+	walk_left
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 WillowsLab_YouGoFirst_Text_0:
@@ -373,88 +773,137 @@ WillowsLab_TrashCan_Text_0:
 	.string "It's filled to the brim with crumpled\n"
 	.string "notes.$"
 
-FirstTimeEnter_Text_0:
+WillowsLab_EventScript_WhereAreYouGoing_Text_0:
+	.string "Bradley: Hey! Where are you going? Hurry\n"
+	.string "up and choose a Pokémon already!$"
+
+WillowIntroduction_Text_0:
 	.string "Bradley: Hey, Prof. Willow!$"
 
-FirstTimeEnter_Text_1:
+WillowIntroduction_Text_1:
 	.string "CRASH!!$"
 
-FirstTimeEnter_Text_2:
+WillowIntroduction_Text_2:
 	.string "Willow: Come on, Ampure! That's fragile!\n"
 	.string "Get back in your Pokéball!$"
 
-FirstTimeEnter_Text_3:
+WillowIntroduction_Text_3:
 	.string "Bradley: Prof. Willow! What's going on!?$"
 
-FirstTimeEnter_Text_4:
+WillowIntroduction_Text_4:
 	.string "Willow: Watch out!$"
 
-FirstTimeEnter_Text_5:
+WillowIntroduction_Text_5:
 	.string "Willow: Oh, not again … that little rascal\n"
 	.string "just will not keep still!$"
 
-FirstTimeEnter_Text_6:
+WillowIntroduction_Text_6:
 	.string "Bradley: Are you alright, Prof. Willow?$"
 
-FirstTimeEnter_Text_7:
+WillowIntroduction_Text_7:
 	.string "Willow: Ohohoho! Thanks for showing\n"
 	.string "concern, Bradley, but I'm fine. This\l"
 	.string "happens all the time.$"
 
-FirstTimeEnter_Text_8:
+WillowIntroduction_Text_8:
 	.string "Oh? And who are you?$"
 
-FirstTimeEnter_Text_9:
+WillowIntroduction_Text_9:
 	.string "Bradley: This is {PLAYER}. They've\n"
 	.string "been my friend for as long as I can\l"
 	.string "remember.$"
 
-FirstTimeEnter_Text_10:
+WillowIntroduction_Text_10:
 	.string "Willow: Did I now?\n"
 	.string "… Ah, I remember now!\l"
 	.string "Ohoho, you're quite right!$"
 
-FirstTimeEnter_Text_11:
+WillowIntroduction_Text_11:
 	.string "Willow: There are three Pokéballs on\n"
 	.string "this table. Each one contains an\l"
 	.string "extremely rare Pokémon. Bradley, go\l"
 	.string "ahead and choose whichever you like!$"
 
-FirstTimeEnter_Text_12:
+WillowIntroduction_Text_12:
 	.string "Bradley: Actually…$"
 
-FirstTimeEnter_Text_13:
+WillowIntroduction_Text_13:
 	.string "Bradley: I want {PLAYER} to have the\nPokémon.$"
 
-FirstTimeEnter_Text_14:
+WillowIntroduction_Text_14:
 	.string "Willow: But Bradley! You earned this\n"
 	.string "Pokémon yourself! You deserve it!$"
 
-FirstTimeEnter_Text_15:
+WillowIntroduction_Text_15:
 	.string "Bradley: No, I made up my mind a long\n"
 	.string "time ago. I want {PLAYER} to have the\l"
 	.string "Pokémon!$"
 
-FirstTimeEnter_Text_16:
+WillowIntroduction_Text_16:
 	.string "Alright, I've decided. Both of you will\n"
 	.string "receive a Pokémon!$"
 
-FirstTimeEnter_Text_17:
+WillowIntroduction_Text_17:
 	.string "Bradley: Wow, Prof. Willow!\n"
 	.string "Really!?$"
 
-FirstTimeEnter_Text_18:
+WillowIntroduction_Text_18:
 	.string "Willow: Ohoho, how can I refuse such a\n"
 	.string "sincere request? Go ahead and choose\l"
 	.string "any Pokéball on the table.$"
 
-FirstTimeEnter_Text_19:
+WillowIntroduction_Text_19:
 	.string "Bradley: This is awesome! Thank you so\n"
 	.string "much, Prof. Willow!$"
 
-FirstTimeEnter_Text_20:
+WillowIntroduction_Text_20:
 	.string "Bradley: I'm so excited! You go first,\n"
 	.string "{PLAYER}. Come on come on, choose on!$"
+
+WillowsLab_TakeYourTime2_Text_0:
+	.string "Willow: Take your time, this is a big\n"
+	.string "decision!$"
+
+WillowsLab_ReceivedStarter_Text_0:
+	.string "{PLAYER} received the {STR_VAR_1}\nfrom Prof. Willow!$"
+
+WillowsLab_BradleyChoosesVenap_Text_0:
+	.string "Bradley: I've made up my mind. I'll take\n"
+	.string "this one!$"
+
+WillowsLab_BradleyMadeChoice_Text_0:
+	.string "Bradley received the {STR_VAR_1}\nfrom Prof. Willow!$"
+
+WillowsLab_YourePokemonTrainersNow_Text_0:
+	.string "Willow: Ohohoho, the looks on your faces\n"
+	.string "are priceless!\l"
+	.string "From now on, both of you are officially\l"
+	.string "Pokémon Trainers! Congratulations!$"
+
+WillowsLab_YourePokemonTrainersNow_Text_1:
+	.string "Bradley: You hear that, {PLAYER}?\n"
+	.string "We're legit Pokémon Trainers now! We're\l"
+	.string "going straight to the big leagues!$"
+
+WillowsLab_YourePokemonTrainersNow_Text_2:
+	.string "Willow: Ahem!\n"
+	.string "Before scampering off with your new\l"
+	.string "Pokémon, there's something I'd like you\l"
+	.string "to do for me in return.$"
+
+WillowsLab_YourePokemonTrainersNow_Text_3:
+	.string "Bradley: Anything, professor!$"
+
+WillowsLab_YourePokemonTrainersNow_Text_4:
+	.string "Bradley: Not a problem, Prof. Willow!\n"
+	.string "We'll have your Ampure back before you\l"
+	.string "know it!$"
+
+WillowsLab_YourePokemonTrainersNow_Text_5:
+	.string "Bradley: Let's go, {PLAYER}! We owe\n"
+	.string "the professor, so let's go search for\l"
+	.string "her Ampure!\l"
+	.string "Come on, race ya there!$"
 
 WillowsLab_WillowIntroduction::
 	.string "Willow: Ohoho, so you're {PLAYER}!\n"
@@ -487,7 +936,7 @@ WillowsLab_BradleyIsReallySure::
 	.string "Pokémon Trainer their entire life!\l"
 	.string "Nobody is more passionate and\l"
 	.string "responsible than them, and they'd\l"
-	.string "definitely make a better PPokémon\l"
+	.string "definitely make a better Pokémon\l"
 	.string "Trainer than I would!\l"
 	.string "Trust me on this one, professor!$"
 
@@ -500,3 +949,44 @@ WillowsLab_WillowConcedes::
 	.string "that. {PLAYER}, you're lucky to have\l"
 	.string "such a good friend.\l"
 	.string "I must say, I'm a bit envious myself!$"
+
+WillowsLab_DontBeGreedyText::
+	.string "You already chose a Pokémon! Better\n"
+	.string "not be greedy.$"
+
+WillowsLab_DoYouWantVenap::
+	.string "Prof. Willow: The Grass Pokémon Venap\n"
+	.string "caught your eye?\p"
+	.string "It might be difficult to raise…but you\n"
+	.string "won't regret it!\p"
+	.string "Is Venap your final decision?$"
+
+WillowsLab_DoYouWantCelsinge::
+	.string "Prof. Willow: The Fire Pokémon Celsinge\n"
+	.string "is your pick?\p"
+	.string "You can't go wrong there! You'll be set\n"
+	.string "up for success!\p"
+	.string "Do you want to choose Celsinge?$"
+
+WillowsLab_DoYouWantEchoise::
+	.string "Prof. Willow: The Water Pokémon Echoise\n"
+	.string "is your favorite?\p"
+	.string "Excellent choice! Isn't it just the\n"
+	.string "cutest?\p"
+	.string "Are you certain you want Echoise?$"
+
+WillowsLab_AmpureMissionDescription::
+	.string "Willow: Very well.\n"
+	.string "As you saw earlier, my Ampure has\l"
+	.string "escaped…\l"
+	.string "…again. I'd go find him myself, but with\l"
+	.string "my luck, it would take a whole day for\l"
+	.string "me to catch him. That's where you two\l"
+	.string "come in! Please find my Ampure and\l"
+	.string "bring him back to me. He couldn't have\l"
+	.string "wandered off too far, so try searching\l"
+	.string "between here and Sunset Village. As\l"
+	.string "long as you have your Pokémon, you'll\l"
+	.string "be safe in the tall grass.\l"
+	.string "I entrust you two to bring Ampure back\l"
+	.string "safely!$"

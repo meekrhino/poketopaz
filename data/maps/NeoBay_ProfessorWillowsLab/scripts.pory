@@ -1,3 +1,6 @@
+const VENAP_BALL = 1
+const CELSINGE_BALL = 2
+const ECHOISE_BALL = 3
 const WILLOW = 4
 const BRADLEY = 5
 const AMPURE = 6
@@ -69,16 +72,55 @@ script(global) WillowsLab_TrashCan {
 }
 
 script(global) WillowsLab_EventScript_SelectVenap {
-	release
+    release
     if(var(VAR_NEOBAY_STATE) != 1) {
         goto(WillowsLab_DontBeGreedy)
     }
-	showmonpic(SPECIES_VENAP, 10, 3)
-	msgbox(WillowsLab_DoYouWantVenap, MSGBOX_YESNO)
-	compare VAR_RESULT, NO
-	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
-	goto LittlerootTown_ProfessorBirchsLab_EventScript_GiveCyndaquil
-	end
+    showmonpic(SPECIES_VENAP, 10, 3)
+    msgbox(WillowsLab_DoYouWantVenap, MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == NO) {
+        goto(WillowsLab_TakeYourTime2)
+    }
+    goto(WillowsLab_GiveVenap)
+}
+
+script(global) WillowsLab_EventScript_SelectCelsinge {
+    release
+    if(var(VAR_NEOBAY_STATE) != 1) {
+        goto(WillowsLab_DontBeGreedy)
+    }
+    showmonpic(SPECIES_CELSINGE, 10, 3)
+    msgbox(WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == NO) {
+        goto(WillowsLab_TakeYourTime2)
+    }
+    goto(WillowsLab_GiveCelsinge)
+}
+
+script(global) WillowsLab_EventScript_SelectEchoise {
+    release
+    if(var(VAR_NEOBAY_STATE) != 1) {
+        goto(WillowsLab_DontBeGreedy)
+    }
+    showmonpic(SPECIES_ECHOISE, 10, 3)
+    msgbox(WillowsLab_DoYouWantEchoise, MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == NO) {
+        goto(WillowsLab_TakeYourTime2)
+    }
+    goto(WillowsLab_GiveEchoise)
+}
+
+script(global) WillowsLab_EventScript_WhereAreYouGoing {
+    lock
+    msgbox(format("Bradley: Hey! Where are you going? Hurry up and choose a Pokémon already!"), MSGBOX_SIGN)
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER, mWalkDown)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    release
+    end
 }
 
 //=====================================
@@ -109,10 +151,10 @@ script(local) WillowIntroduction {
     waitmovement(WILLOW)
     applymovement(AMPURE, mAmpureMakesCrash)
     waitmovement(AMPURE)
-	setvar(VAR_0x8004, 0)  // vertical pan
-	setvar(VAR_0x8005, 4)  // horizontal pan
-	setvar(VAR_0x8006, 2)  // num shakes
-	setvar(VAR_0x8007, 10)  // shake delay
+    setvar(VAR_0x8004, 0)  // vertical pan
+    setvar(VAR_0x8005, 4)  // horizontal pan
+    setvar(VAR_0x8006, 2)  // num shakes
+    setvar(VAR_0x8007, 10)  // shake delay
     special(ShakeCamera)
     waitstate
     applymovement(BRADLEY, mExclamationPoint)
@@ -126,10 +168,10 @@ script(local) WillowIntroduction {
     applymovement(BRADLEY, mBradleyRushesUp)
     delay(15)
     applymovement(OBJ_EVENT_ID_PLAYER, mPlayerWalksDown)
-	setvar(VAR_0x8004, 0)  // vertical pan
-	setvar(VAR_0x8005, 1)  // horizontal pan
-	setvar(VAR_0x8006, 20)  // num shakes
-	setvar(VAR_0x8007, 5)  // shake delay
+    setvar(VAR_0x8004, 0)   // vertical pan
+    setvar(VAR_0x8005, 1)   // horizontal pan
+    setvar(VAR_0x8006, 20)  // num shakes
+    setvar(VAR_0x8007, 5)   // shake delay
     special(ShakeCamera)
     waitstate
     waitmovement(AMPURE)
@@ -139,6 +181,12 @@ script(local) WillowIntroduction {
     waitmovement(AMPURE)
     msgbox(format("Willow: Watch out!"), MSGBOX_AUTOCLOSE)
     applymovement(AMPURE, mAmpureRushesOut2)
+    delay(60)
+    applymovement(BRADLEY, mFaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    delay(15)
+    applymovement(BRADLEY, mFaceUp)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceUp)
     waitmovement(AMPURE)
     msgbox(format("Willow: Oh, not again … that little rascal just will not keep still!"))
     applymovement(BRADLEY, mFaceLeft)
@@ -150,7 +198,7 @@ script(local) WillowIntroduction {
     delay(10)
     applymovement(BRADLEY, mFaceDown)
     delay(30)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDOwn)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDown)
     waitmovement(WILLOW)
     msgbox(format("Oh? And who are you?"))
     msgbox(format("Bradley: This is {PLAYER}. They've been my friend for as long as I can remember."))
@@ -162,7 +210,7 @@ script(local) WillowIntroduction {
     waitmovement(OBJ_EVENT_ID_PLAYER)
     msgbox(WillowsLab_BradleyIsAnAssistant)
     applymovement(BRADLEY, mFaceDown)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDOwn)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDown)
     waitmovement(OBJ_EVENT_ID_PLAYER)
     msgbox(format("Willow: Did I now?\n… Ah, I remember now!\lOhoho, you're quite right!"), MSGBOX_AUTOCLOSE)
     applymovement(WILLOW, mWillowGoesToTable)
@@ -183,9 +231,10 @@ script(local) WillowIntroduction {
     waitmovement(WILLOW)
     msgbox(WillowsLab_WillowCantJustGivePokemon)
     msgbox(WillowsLab_BradleyIsReallySure, MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
     applymovement(WILLOW, mFaceUp)
     waitmovement(WILLOW)
-    delay(30)
     msgbox(WillowsLab_WillowConcedes)
     msgbox(format("Alright, I've decided. Both of you will receive a Pokémon!"))
     applymovement(BRADLEY, mBradleyFidgetsDown)
@@ -207,6 +256,155 @@ script(local) WillowsLab_DontBeGreedy {
     releaseall
     end
 }
+
+script(local) WillowsLab_TakeYourTime2 {
+	hidemonpic
+    msgbox(format("Willow: Take your time, this is a big decision!"), MSGBOX_NPC)
+    releaseall
+    end
+}
+
+script(local) WillowsLab_GiveVenap {
+    bufferspeciesname(0, SPECIES_VENAP)
+    setvar(VAR_TEMP_1, SPECIES_VENAP)
+    givemon(SPECIES_VENAP, 5, ITEM_NONE)
+    removeobject(VENAP_BALL)
+    call(WillowsLab_ReceivedStarter)
+    setflag(FLAG_WILLOW_BALL_TAKEN_0)
+    call(WillowsLab_BradleyChoosesEchoise)
+    call(WillowsLab_RegroupAfterPlayerChoosesVenap)
+    goto(WillowsLab_YourePokemonTrainersNow)
+}
+
+script(local) WillowsLab_GiveCelsinge {
+    bufferspeciesname(0, SPECIES_CELSINGE)
+    setvar(VAR_TEMP_1, SPECIES_CELSINGE)
+    givemon(SPECIES_CELSINGE, 5, ITEM_NONE)
+    removeobject(CELSINGE_BALL)
+    call(WillowsLab_ReceivedStarter)
+    setflag(FLAG_WILLOW_BALL_TAKEN_1)
+    call(WillowsLab_BradleyChoosesVenap)
+    call(WillowsLab_RegroupAfterPlayerChoosesCelsinge)
+    goto(WillowsLab_YourePokemonTrainersNow)
+}
+
+script(local) WillowsLab_GiveEchoise {
+    bufferspeciesname(0, SPECIES_ECHOISE)
+    setvar(VAR_TEMP_1, SPECIES_ECHOISE)
+    givemon(SPECIES_ECHOISE, 5, ITEM_NONE)
+    removeobject(ECHOISE_BALL)
+    call(WillowsLab_ReceivedStarter)
+    setflag(FLAG_WILLOW_BALL_TAKEN_2)
+    call(WillowsLab_BradleyChoosesCelsinge)
+    call(WillowsLab_RegroupAfterPlayerChoosesEchoise)
+    goto(WillowsLab_YourePokemonTrainersNow)
+}
+
+script(local) WillowsLab_ReceivedStarter {
+    playfanfare(MUS_OBTAIN_ITEM)
+    message("{PLAYER} received the {STR_VAR_1}\nfrom Prof. Willow!")
+    waitmessage
+    waitfanfare
+    msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameReceivedPartyMon)
+    }
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_STARTER)
+    hidemonpic
+    return
+}
+
+script(local) WillowsLab_BradleyChoosesVenap {
+    applymovement(BRADLEY, mBradleyWalksToVenap)
+    waitmovement(BRADLEY)
+    msgbox(format("Bradley: I've made up my mind. I'll take this one!"))
+    bufferspeciesname(0, SPECIES_VENAP)
+    setvar(VAR_TEMP_1, SPECIES_VENAP)
+    removeobject(VENAP_BALL)
+    call(WillowsLab_BradleyMadeChoice)
+    setflag(FLAG_WILLOW_BALL_TAKEN_0)
+    return
+}
+
+script(local) WillowsLab_BradleyChoosesCelsinge {
+    applymovement(BRADLEY, mBradleyWalksToCelsinge)
+    waitmovement(BRADLEY)
+    msgbox(format("Bradley: I've made up my mind. I'll take this one!"))
+    bufferspeciesname(0, SPECIES_CELSINGE)
+    setvar(VAR_TEMP_1, SPECIES_CELSINGE)
+    removeobject(CELSINGE_BALL)
+    call(WillowsLab_BradleyMadeChoice)
+    setflag(FLAG_WILLOW_BALL_TAKEN_1)
+    return
+}
+
+script(local) WillowsLab_BradleyChoosesEchoise {
+    applymovement(BRADLEY, mBradleyWalksToEchoise)
+    waitmovement(BRADLEY)
+    msgbox(format("Bradley: I've made up my mind. I'll take this one!"))
+    bufferspeciesname(0, SPECIES_ECHOISE)
+    setvar(VAR_TEMP_1, SPECIES_ECHOISE)
+    removeobject(ECHOISE_BALL)
+    call(WillowsLab_BradleyMadeChoice)
+    setflag(FLAG_WILLOW_BALL_TAKEN_2)
+    return
+}
+
+script(local) WillowsLab_BradleyMadeChoice {
+    message("Bradley received the {STR_VAR_1}\nfrom Prof. Willow!")
+    waitmessage
+    return
+}
+
+script(local) WillowsLab_RegroupAfterPlayerChoosesVenap {
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterVenap)
+    applymovement(BRADLEY, mBradleyRegroupsAfterEchoise)
+    delay(30)
+    applymovement(WILLOW, mWillowRegroupsAfterStarter)
+    waitmovement(WILLOW)
+    return
+}
+
+script(local) WillowsLab_RegroupAfterPlayerChoosesCelsinge {
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterCelsinge)
+    applymovement(BRADLEY, mBradleyRegroupsAfterVenap)
+    delay(30)
+    applymovement(WILLOW, mWillowRegroupsAfterStarter)
+    waitmovement(WILLOW)
+    return
+}
+
+script(local) WillowsLab_RegroupAfterPlayerChoosesEchoise {
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterEchoise)
+    applymovement(BRADLEY, mBradleyRegroupsAfterCelsinge)
+    delay(30)
+    applymovement(WILLOW, mWillowRegroupsAfterStarter)
+    waitmovement(WILLOW)
+    return
+}
+
+script(local) WillowsLab_YourePokemonTrainersNow {
+    msgbox(format("Willow: Ohohoho, the looks on your faces are priceless!\lFrom now on, both of you are officially Pokémon Trainers! Congratulations!"))
+    msgbox(format("Bradley: You hear that, {PLAYER}? We're legit Pokémon Trainers now! We're going straight to the big leagues!"))
+    msgbox(format("Willow: Ahem!\nBefore scampering off with your new Pokémon, there's something I'd like you to do for me in return."))
+    msgbox(format("Bradley: Anything, professor!"))
+    msgbox(WillowsLab_AmpureMissionDescription)
+    msgbox(format("Bradley: Not a problem, Prof. Willow! We'll have your Ampure back before you know it!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(BRADLEY, mFaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    delay(30)
+    msgbox(format("Bradley: Let's go, {PLAYER}! We owe the professor, so let's go search for her Ampure!\lCome on, race ya there!"))
+    applymovement(BRADLEY, mBradleyExits)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerExits)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    warp(MAP_NEO_BAY, 0, 0, 0)
+    releaseall
+    end
+}
+
 
 //=====================================
 // Text
@@ -255,13 +453,13 @@ text WillowsLab_WillowConcedes {
     )
 }
 
-text WillowsLab_DontBeGreedyText: {
+text WillowsLab_DontBeGreedyText {
     format(
         "You already chose a Pokémon! Better not be greedy."
     )
 }
 
-text WillowsLab_DoYouWantVenap: {
+text WillowsLab_DoYouWantVenap {
     format(
         "Prof. Willow: The Grass Pokémon Venap caught your eye?\p"
         "It might be difficult to raise…but you won't regret it!\p"
@@ -269,7 +467,7 @@ text WillowsLab_DoYouWantVenap: {
     )
 }
 
-text WillowsLab_DoYouWantCelsinge: {
+text WillowsLab_DoYouWantCelsinge {
     format(
         "Prof. Willow: The Fire Pokémon Celsinge is your pick?\p"
         "You can't go wrong there! You'll be set up for success!\p"
@@ -277,11 +475,22 @@ text WillowsLab_DoYouWantCelsinge: {
     )
 }
 
-text WillowsLab_DoYouWantEchoise: {
+text WillowsLab_DoYouWantEchoise {
     format(
         "Prof. Willow: The Water Pokémon Echoise is your favorite?\p"
         "Excellent choice! Isn't it just the cutest?\p"
         "Are you certain you want Echoise?"
+    )
+}
+
+text WillowsLab_AmpureMissionDescription {
+    format(
+        "Willow: Very well.\nAs you saw earlier, my Ampure has escaped…\l…again."
+        "I'd go find him myself, but with my luck, it would take a whole day for me to catch him."
+        "That's where you two come in! Please find my Ampure and bring him back to me."
+        "He couldn't have wandered off too far, so try searching between here and Sunset Village."
+        "As long as you have your Pokémon, you'll be safe in the tall grass.\l"
+        "I entrust you two to bring Ampure back safely!"
     )
 }
 
@@ -382,12 +591,104 @@ movement mWillowGoesToTable {
 
 movement mBradleyDeliberates {
     face_right
-    delay_16 * 2
+    delay_16 * 4
     face_down
 }
 
 movement mBradleyFidgetsDown {
     walk_in_place_fast_down * 4
+}
+
+// Bradley goes to pick a starter
+movement mBradleyWalksToVenap {
+    walk_down * 2
+    walk_right * 2
+    walk_down
+    walk_right
+    face_up
+}
+
+movement mBradleyWalksToCelsinge {
+    walk_down * 2
+    walk_right * 2
+    walk_down
+    walk_right * 2
+    face_up
+}
+
+movement mBradleyWalksToEchoise {
+    walk_down * 2
+    walk_right * 2
+    walk_down * 2
+    walk_right * 3
+    walk_up
+}
+
+// Regrouping up left with willow after picking
+movement mBradleyRegroupsAfterVenap {
+    walk_left
+    walk_up * 2
+    walk_left * 2
+    walk_up
+    face_down
+}
+
+movement mBradleyRegroupsAfterCelsinge {
+    walk_left * 2
+    walk_up * 2
+    walk_left * 2
+    walk_up
+    face_down
+}
+
+movement mBradleyRegroupsAfterEchoise {
+    walk_left * 3
+    walk_up * 2
+    walk_left * 2
+    walk_up
+    face_down
+}
+
+movement mPlayerRegroupsAfterVenap {
+    walk_left
+    walk_up * 3
+    face_down
+}
+
+movement mPlayerRegroupsAfterCelsinge {
+    walk_left * 2
+    walk_up * 3
+    face_down
+}
+
+movement mPlayerRegroupsAfterEchoise {
+    walk_left * 3
+    walk_up * 3
+    face_down
+}
+
+movement mWillowRegroupsAfterStarter {
+    walk_left * 2
+    walk_up * 2
+    walk_left * 2
+    walk_up
+}
+
+movement mWalkDown {
+    walk_down
+}
+
+movement mBradleyExits {
+    walk_up
+    walk_right * 4
+    walk_up * 4
+}
+
+movement mPlayerExits {
+    walk_left
+    walk_up
+    walk_right * 4
+    walk_up * 4
 }
 
 //=====================================

@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "WillowsLab_EventScript_SelectVenap",
       "flag": "FLAG_WILLOW_BALL_TAKEN_0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "WillowsLab_EventScript_SelectCelsinge",
       "flag": "FLAG_WILLOW_BALL_TAKEN_1"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "WillowsLab_EventScript_SelectEchoise",
       "flag": "FLAG_WILLOW_BALL_TAKEN_2"
     },
     {
@@ -103,7 +103,33 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "1",
+      "script": "WillowsLab_EventScript_WhereAreYouGoing"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "1",
+      "script": "WillowsLab_EventScript_WhereAreYouGoing"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "1",
+      "script": "WillowsLab_EventScript_WhereAreYouGoing"
+    }
   ],
   "bg_events": [
     {
