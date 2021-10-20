@@ -1,11 +1,20 @@
 NeoBay_ProfessorWillowsLab_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, WillowsLab_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 0, WillowIntroduction
 	.2byte 0
+
+NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+	map_script_2 VAR_NEOBAY_STATE, 0, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	.2byte 0
+
+NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
+	hideobjectat 5, MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB
+	end
 
 
 WillowsLab_YouGoFirst::
@@ -160,6 +169,7 @@ WillowsLab_OnTransition_1:
 WillowIntroduction:
 	lockall
 	setvar VAR_NEOBAY_STATE, 1
+	setvar VAR_AMPURE_RESCUE_STATE, 1
 	delay 30
 	setobjectxy 5, 8, 2
 	applymovement 5, mBradleyEntersFirstTime
@@ -291,6 +301,7 @@ WillowsLab_GiveVenap:
 	removeobject 1
 	call WillowsLab_ReceivedStarter
 	setflag FLAG_WILLOW_BALL_TAKEN_0
+	setvar VAR_STARTER_MON, 0
 	call WillowsLab_BradleyChoosesEchoise
 	call WillowsLab_RegroupAfterPlayerChoosesVenap
 	goto WillowsLab_YourePokemonTrainersNow
@@ -304,6 +315,7 @@ WillowsLab_GiveCelsinge:
 	removeobject 2
 	call WillowsLab_ReceivedStarter
 	setflag FLAG_WILLOW_BALL_TAKEN_1
+	setvar VAR_STARTER_MON, 1
 	call WillowsLab_BradleyChoosesVenap
 	call WillowsLab_RegroupAfterPlayerChoosesCelsinge
 	goto WillowsLab_YourePokemonTrainersNow
@@ -317,6 +329,7 @@ WillowsLab_GiveEchoise:
 	removeobject 3
 	call WillowsLab_ReceivedStarter
 	setflag FLAG_WILLOW_BALL_TAKEN_2
+	setvar VAR_STARTER_MON, 2
 	call WillowsLab_BradleyChoosesCelsinge
 	call WillowsLab_RegroupAfterPlayerChoosesEchoise
 	goto WillowsLab_YourePokemonTrainersNow
@@ -327,11 +340,14 @@ WillowsLab_ReceivedStarter:
 	playfanfare MUS_OBTAIN_ITEM
 	message WillowsLab_ReceivedStarter_Text_0
 	waitmessage
+	closemessage
 	waitfanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq WillowsLab_ReceivedStarter_2
 WillowsLab_ReceivedStarter_1:
+	waitmessage
+	closemessage
 	setvar VAR_NEOBAY_STATE, 2
 	hidemonpic
 	return
@@ -381,6 +397,7 @@ WillowsLab_BradleyChoosesEchoise:
 WillowsLab_BradleyMadeChoice:
 	message WillowsLab_BradleyMadeChoice_Text_0
 	waitmessage
+	closemessage
 	return
 
 
@@ -424,10 +441,12 @@ WillowsLab_YourePokemonTrainersNow:
 	waitmovement OBJ_EVENT_ID_PLAYER
 	delay 30
 	msgbox WillowsLab_YourePokemonTrainersNow_Text_5
+	waitmessage
+	closemessage
 	applymovement 5, mBradleyExits
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerExits
 	waitmovement OBJ_EVENT_ID_PLAYER
-	warp MAP_NEO_BAY, 0, 0, 0
+	warp MAP_NEO_BAY, 1, 0, 0
 	releaseall
 	end
 
@@ -594,7 +613,6 @@ mBradleyWalksToVenap:
 	walk_right
 	walk_right
 	walk_down
-	walk_down
 	walk_right
 	face_up
 	step_end
@@ -604,7 +622,6 @@ mBradleyWalksToCelsinge:
 	walk_down
 	walk_right
 	walk_right
-	walk_down
 	walk_down
 	walk_right
 	walk_right
@@ -616,7 +633,6 @@ mBradleyWalksToEchoise:
 	walk_down
 	walk_right
 	walk_right
-	walk_down
 	walk_down
 	walk_down
 	walk_right
@@ -663,6 +679,7 @@ mPlayerRegroupsAfterVenap:
 	walk_up
 	walk_up
 	walk_up
+	walk_left
 	face_down
 	step_end
 
@@ -672,6 +689,7 @@ mPlayerRegroupsAfterCelsinge:
 	walk_up
 	walk_up
 	walk_up
+	walk_left
 	face_down
 	step_end
 
@@ -682,6 +700,7 @@ mPlayerRegroupsAfterEchoise:
 	walk_up
 	walk_up
 	walk_up
+	walk_left
 	face_down
 	step_end
 
@@ -709,6 +728,7 @@ mBradleyExits:
 	walk_up
 	walk_up
 	walk_up
+	set_invisible
 	step_end
 
 mPlayerExits:
@@ -722,6 +742,7 @@ mPlayerExits:
 	walk_up
 	walk_up
 	walk_up
+	set_invisible
 	step_end
 
 WillowsLab_YouGoFirst_Text_0:
@@ -988,5 +1009,5 @@ WillowsLab_AmpureMissionDescription::
 	.string "between here and Sunset Village. As\l"
 	.string "long as you have your Pokémon, you'll\l"
 	.string "be safe in the tall grass.\l"
-	.string "I entrust you two to bring Ampure back\l"
-	.string "safely!$"
+	.string "I entrust you two with bringing Ampure\l"
+	.string "back safely!$"

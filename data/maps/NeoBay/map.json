@@ -35,8 +35,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 12,
-      "y": 18,
+      "x": 26,
+      "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -44,7 +44,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_NEO_BAY_BRADLEY"
     }
   ],
   "warp_events": [
@@ -81,6 +81,42 @@
       "var": "VAR_NEOBAY_STATE",
       "var_value": "0",
       "script": "NeoBay_EventScript_GoToWillowBradleyTriggerBottom"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "2",
+      "script": "NeoBay_EventScript_BradleyStopsPlayer"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "2",
+      "script": "NeoBay_EventScript_BradleyStopsPlayer"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "2",
+      "script": "NeoBay_EventScript_BradleyStopsPlayer"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "2",
+      "script": "NeoBay_EventScript_BradleyStopsPlayer"
     }
   ],
   "bg_events": [

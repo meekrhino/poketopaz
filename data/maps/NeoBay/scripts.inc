@@ -1,10 +1,27 @@
 NeoBay_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NeoBay_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+	map_script_2 VAR_NEOBAY_STATE, 2, NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	.2byte 0
+
+NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
+	setobjectxy 2, 28, 33
+	turnobject 2, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	return
+
+NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 1, NeoBay_EventScript_BradleyLeadsToGrass
+	.2byte 0
 
 
 NeoBay_EventScript_GoToWillowBradleyTriggerTop::
 	lockall
+	setobjectxy 2, 12, 18
 	applymovement 2, mBradleyApproachPlayerTop
 	waitmovement 0
 	call NeoBay_EventScript_BradleyIntroText
@@ -19,6 +36,7 @@ NeoBay_EventScript_GoToWillowBradleyTriggerTop::
 
 NeoBay_EventScript_GoToWillowBradleyTriggerBottom::
 	lockall
+	setobjectxy 2, 12, 18
 	applymovement 2, mBradleyApproachPlayerBottom
 	waitmovement 0
 	call NeoBay_EventScript_BradleyIntroText
@@ -51,22 +69,49 @@ NeoBay_EventScript_OtherMailbox::
 	end
 
 
+NeoBay_EventScript_BradleyStopsPlayer::
+	lockall
+	msgbox NeoBay_EventScript_BradleyStopsPlayer_Text_0
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	switch VAR_TEMP_0
+	case 9, NeoBay_EventScript_BradleyStopsPlayer_3
+	case 10, NeoBay_EventScript_BradleyStopsPlayer_4
+	case 16, NeoBay_EventScript_BradleyStopsPlayer_5
+	applymovement OBJ_EVENT_ID_PLAYER, mWalkLeft
+NeoBay_EventScript_BradleyStopsPlayer_1:
+	waitmovement OBJ_EVENT_ID_PLAYER
+	releaseall
+	end
+
+NeoBay_EventScript_BradleyStopsPlayer_3:
+	applymovement OBJ_EVENT_ID_PLAYER, mWalkDown
+	goto NeoBay_EventScript_BradleyStopsPlayer_1
+
+NeoBay_EventScript_BradleyStopsPlayer_4:
+	applymovement OBJ_EVENT_ID_PLAYER, mWalkDown
+	goto NeoBay_EventScript_BradleyStopsPlayer_1
+
+NeoBay_EventScript_BradleyStopsPlayer_5:
+	applymovement OBJ_EVENT_ID_PLAYER, mWalkLeft
+	goto NeoBay_EventScript_BradleyStopsPlayer_1
+
+
 NeoBay_OnTransition:
 	setflag FLAG_VISITED_NEOBAY_TOWN
 	call Common_EventScript_SetupRivalGfxId
-	compare VAR_NEOBAY_STATE, 0
-	goto_if_eq NeoBay_OnTransition_2
-NeoBay_OnTransition_1:
+	switch VAR_NEOBAY_STATE
+	case 0, NeoBay_OnTransition_2
+	case 2, NeoBay_OnTransition_3
+	setflag FLAG_HIDE_NEO_BAY_BRADLEY
 	end
 
 NeoBay_OnTransition_2:
-	call NeoBay_EventScript_SetBradleyPositionIntroStart
-	goto NeoBay_OnTransition_1
+	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
+	end
 
-
-NeoBay_EventScript_SetBradleyPositionIntroStart:
-	setobjectxy 2, 12, 18
-	return
+NeoBay_OnTransition_3:
+	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
+	end
 
 
 NeoBay_EventScript_BradleyIntroText:
@@ -88,6 +133,26 @@ NeoBay_EventScript_BradleyShowBoatText:
 	waitmovement 0
 	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0, 0, 0
 	return
+
+
+NeoBay_EventScript_BradleyLeadsToGrass:
+	lockall
+	setvar VAR_AMPURE_RESCUE_STATE, 2
+	applymovement 2, mBradleyWalksUpAndLooksAtPlayer
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalksUpAndLooksAtBradley
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox NeoBay_EventScript_BradleyLeadsToGrass_Text_0
+	msgbox NeoBay_EventScript_BradleyLeadsToGrass_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 2, mBradleyEscortsPlayerToMeadow
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEscortsBradleyToMeadow
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 2, mBradleyLooksAroundAndFidgets
+	waitmovement 2
+	msgbox NeoBay_EventScript_BradleyLeadsToGrass_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
+	releaseall
+	end
 
 
 mBradleyApproachPlayerTop:
@@ -221,6 +286,135 @@ mEnterShip:
 	walk_down
 	set_invisible
 	step_end
+
+mBradleyWalksUpAndLooksAtPlayer:
+	walk_up
+	face_right
+	step_end
+
+mPlayerWalksUpAndLooksAtBradley:
+	walk_up
+	face_left
+	step_end
+
+mBradleyEscortsPlayerToMeadow:
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+mPlayerEscortsBradleyToMeadow:
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+mBradleyLooksAroundAndFidgets:
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_left
+	walk_up
+	walk_up
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_left
+	delay_16
+	delay_16
+	delay_16
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	walk_right
+	walk_down
+	step_end
+
+mWalkLeft:
+	walk_left
+	step_end
+
+NeoBay_EventScript_BradleyStopsPlayer_Text_0:
+	.string "Bradley: What are you doing? We need to\n"
+	.string "find Ampure before it gets away!$"
+
+NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
+	.string "Bradley: I think I see some tracks here.\n"
+	.string "They're heading towards… the meadow?\l"
+	.string "I wonder why he'd go there…$"
+
+NeoBay_EventScript_BradleyLeadsToGrass_Text_1:
+	.string "{PLAYER}, I think there may be wild\n"
+	.string "Pokémon where we're going, so be ready!$"
+
+NeoBay_EventScript_BradleyLeadsToGrass_Text_2:
+	.string "Bradley: Help me look for Ampure,\n"
+	.string "{PLAYER}! He's probably hiding in this\l"
+	.string "tall grass. If you walk around enough,\l"
+	.string "he should appear!$"
 
 NeoBay_Text_TownSign::
 	.string "NEO BAY\n"

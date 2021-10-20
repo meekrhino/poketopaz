@@ -7,13 +7,21 @@ const AMPURE = 6
 const NEOBAY_STATE_NEW_GAME = 0
 const NEOBAY_STATE_MET_WILLOW = 1
 const NEOBAY_STATE_RECEIVED_STARTER = 2
+
+const AMPURE_RESCUE_STARTED = 1
 //=====================================
 // Map Scripts
 //=====================================
 mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: WillowsLab_OnTransition
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_NEOBAY_STATE, 0: WillowIntroduction
+        VAR_NEOBAY_STATE, NEOBAY_STATE_NEW_GAME: WillowIntroduction
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_NEOBAY_STATE, NEOBAY_STATE_NEW_GAME {
+            hideobjectat(BRADLEY, MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB)
+            end
+        }
     ]
 }
 
@@ -73,7 +81,7 @@ script(global) WillowsLab_TrashCan {
 
 script(global) WillowsLab_EventScript_SelectVenap {
     release
-    if(var(VAR_NEOBAY_STATE) != 1) {
+    if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
     }
     showmonpic(SPECIES_VENAP, 10, 3)
@@ -87,7 +95,7 @@ script(global) WillowsLab_EventScript_SelectVenap {
 
 script(global) WillowsLab_EventScript_SelectCelsinge {
     release
-    if(var(VAR_NEOBAY_STATE) != 1) {
+    if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
     }
     showmonpic(SPECIES_CELSINGE, 10, 3)
@@ -101,7 +109,7 @@ script(global) WillowsLab_EventScript_SelectCelsinge {
 
 script(global) WillowsLab_EventScript_SelectEchoise {
     release
-    if(var(VAR_NEOBAY_STATE) != 1) {
+    if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
     }
     showmonpic(SPECIES_ECHOISE, 10, 3)
@@ -139,7 +147,8 @@ script(local) WillowsLab_OnTransition {
 
 script(local) WillowIntroduction {
     lockall
-    setvar(VAR_NEOBAY_STATE, 1)
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_MET_WILLOW)
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED)
     delay(30)
     setobjectxy(BRADLEY, 8, 2)
     applymovement(BRADLEY, mBradleyEntersFirstTime)
@@ -271,6 +280,7 @@ script(local) WillowsLab_GiveVenap {
     removeobject(VENAP_BALL)
     call(WillowsLab_ReceivedStarter)
     setflag(FLAG_WILLOW_BALL_TAKEN_0)
+    setvar(VAR_STARTER_MON, 0)
     call(WillowsLab_BradleyChoosesEchoise)
     call(WillowsLab_RegroupAfterPlayerChoosesVenap)
     goto(WillowsLab_YourePokemonTrainersNow)
@@ -283,6 +293,7 @@ script(local) WillowsLab_GiveCelsinge {
     removeobject(CELSINGE_BALL)
     call(WillowsLab_ReceivedStarter)
     setflag(FLAG_WILLOW_BALL_TAKEN_1)
+    setvar(VAR_STARTER_MON, 1)
     call(WillowsLab_BradleyChoosesVenap)
     call(WillowsLab_RegroupAfterPlayerChoosesCelsinge)
     goto(WillowsLab_YourePokemonTrainersNow)
@@ -295,6 +306,7 @@ script(local) WillowsLab_GiveEchoise {
     removeobject(ECHOISE_BALL)
     call(WillowsLab_ReceivedStarter)
     setflag(FLAG_WILLOW_BALL_TAKEN_2)
+    setvar(VAR_STARTER_MON, 2)
     call(WillowsLab_BradleyChoosesCelsinge)
     call(WillowsLab_RegroupAfterPlayerChoosesEchoise)
     goto(WillowsLab_YourePokemonTrainersNow)
@@ -304,12 +316,15 @@ script(local) WillowsLab_ReceivedStarter {
     playfanfare(MUS_OBTAIN_ITEM)
     message("{PLAYER} received the {STR_VAR_1}\nfrom Prof. Willow!")
     waitmessage
+    closemessage
     waitfanfare
     msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
     }
+    waitmessage
+    closemessage
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_STARTER)
     hidemonpic
     return
@@ -354,6 +369,7 @@ script(local) WillowsLab_BradleyChoosesEchoise {
 script(local) WillowsLab_BradleyMadeChoice {
     message("Bradley received the {STR_VAR_1}\nfrom Prof. Willow!")
     waitmessage
+    closemessage
     return
 }
 
@@ -397,10 +413,12 @@ script(local) WillowsLab_YourePokemonTrainersNow {
     waitmovement(OBJ_EVENT_ID_PLAYER)
     delay(30)
     msgbox(format("Bradley: Let's go, {PLAYER}! We owe the professor, so let's go search for her Ampure!\lCome on, race ya there!"))
+    waitmessage
+    closemessage
     applymovement(BRADLEY, mBradleyExits)
     applymovement(OBJ_EVENT_ID_PLAYER, mPlayerExits)
     waitmovement(OBJ_EVENT_ID_PLAYER)
-    warp(MAP_NEO_BAY, 0, 0, 0)
+    warp(MAP_NEO_BAY, 1, 0, 0)
     releaseall
     end
 }
@@ -490,7 +508,7 @@ text WillowsLab_AmpureMissionDescription {
         "That's where you two come in! Please find my Ampure and bring him back to me."
         "He couldn't have wandered off too far, so try searching between here and Sunset Village."
         "As long as you have your Pokémon, you'll be safe in the tall grass.\l"
-        "I entrust you two to bring Ampure back safely!"
+        "I entrust you two with bringing Ampure back safely!"
     )
 }
 
@@ -652,18 +670,21 @@ movement mBradleyRegroupsAfterEchoise {
 movement mPlayerRegroupsAfterVenap {
     walk_left
     walk_up * 3
+    walk_left
     face_down
 }
 
 movement mPlayerRegroupsAfterCelsinge {
     walk_left * 2
     walk_up * 3
+    walk_left
     face_down
 }
 
 movement mPlayerRegroupsAfterEchoise {
     walk_left * 3
     walk_up * 3
+    walk_left
     face_down
 }
 
@@ -682,6 +703,7 @@ movement mBradleyExits {
     walk_up
     walk_right * 4
     walk_up * 4
+    set_invisible
 }
 
 movement mPlayerExits {
@@ -689,6 +711,7 @@ movement mPlayerExits {
     walk_up
     walk_right * 4
     walk_up * 4
+    set_invisible
 }
 
 //=====================================

@@ -4,6 +4,9 @@ const NEOBAY_STATE_NEW_GAME = 0
 const NEOBAY_STATE_MET_WILLOW = 1
 const NEOBAY_STATE_RECEIVED_STARTER = 2
 
+const AMPURE_RESCUE_STARTED = 1
+const AMPURE_RESCUE_IN_MEADOW = 2
+
 // State descriptions for VAR_NEOBAY_STATE
 // 1: Met Professor Willow
 // 2: Received Pokemon
@@ -12,17 +15,35 @@ const NEOBAY_STATE_RECEIVED_STARTER = 2
 // 5: Received running shoes
 // 6: Departed for Sunset Village
 
+// State descriptions for VAR_AMPURE_RESCUE_STATE
+// 1: Started mission
+// 2: Moved to meadow
+// 3: Fought first battle
+// 4: Fought second battle
+// 5: Finished capture
+
 //=====================================
 // Map Scripts
 //=====================================
 mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: NeoBay_OnTransition
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_STARTER {
+            setobjectxy(BRADLEY, 28, 33)
+            turnobject(BRADLEY, DIR_NORTH)
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+        }
+    ]
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_BradleyLeadsToGrass
+    ]
 }
 //=====================================
 // Global Scripts
 //=====================================
 script NeoBay_EventScript_GoToWillowBradleyTriggerTop {
     lockall
+    setobjectxy(BRADLEY, 12, 18)
     applymovement(BRADLEY, mBradleyApproachPlayerTop)
     waitmovement(0)
     call(NeoBay_EventScript_BradleyIntroText)
@@ -37,6 +58,7 @@ script NeoBay_EventScript_GoToWillowBradleyTriggerTop {
 
 script NeoBay_EventScript_GoToWillowBradleyTriggerBottom {
     lockall
+    setobjectxy(BRADLEY, 12, 18)
     applymovement(BRADLEY, mBradleyApproachPlayerBottom)
     waitmovement(0)
     call(NeoBay_EventScript_BradleyIntroText)
@@ -69,21 +91,42 @@ script NeoBay_EventScript_OtherMailbox {
     end
 }
 
+script NeoBay_EventScript_BradleyStopsPlayer {
+    lockall
+    msgbox(format("Bradley: What are you doing? We need to find Ampure before it gets away!"))
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    switch(var(VAR_TEMP_0)) {
+        case 9:
+            applymovement(OBJ_EVENT_ID_PLAYER, mWalkDown)
+        case 10:
+            applymovement(OBJ_EVENT_ID_PLAYER, mWalkDown)
+        case 16:
+            applymovement(OBJ_EVENT_ID_PLAYER, mWalkLeft)
+        default:
+            applymovement(OBJ_EVENT_ID_PLAYER, mWalkLeft)
+    }
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    releaseall
+    end
+}
+
 //=====================================
 // Local Scripts
 //=====================================
 script(local) NeoBay_OnTransition {
     setflag(FLAG_VISITED_NEOBAY_TOWN)
     call(Common_EventScript_SetupRivalGfxId)
-    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_NEW_GAME) {
-        call(NeoBay_EventScript_SetBradleyPositionIntroStart)
+    switch (var(VAR_NEOBAY_STATE)) {
+        case NEOBAY_STATE_NEW_GAME:
+            clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
+            end
+        case NEOBAY_STATE_RECEIVED_STARTER:
+            clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
+            end
+        default:
+            setflag(FLAG_HIDE_NEO_BAY_BRADLEY)
+            end
     }
-    end
-}
-
-script(local) NeoBay_EventScript_SetBradleyPositionIntroStart {
-    setobjectxy(BRADLEY, 12, 18)
-    return
 }
 
 script(local) NeoBay_EventScript_BradleyIntroText {
@@ -105,6 +148,26 @@ script(local) NeoBay_EventScript_BradleyShowBoatText {
     waitmovement(0)
     warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0, 0, 0)
     return
+}
+
+script(local) NeoBay_EventScript_BradleyLeadsToGrass {
+    lockall
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_IN_MEADOW)
+    applymovement(BRADLEY, mBradleyWalksUpAndLooksAtPlayer)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerWalksUpAndLooksAtBradley)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox(format("Bradley: I think I see some tracks here. They're heading towards… the meadow? I wonder why he'd go there…"))
+    msgbox(format("{PLAYER}, I think there may be wild Pokémon where we're going, so be ready!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(BRADLEY, mBradleyEscortsPlayerToMeadow)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEscortsBradleyToMeadow)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(BRADLEY, mBradleyLooksAroundAndFidgets)
+    waitmovement(BRADLEY)
+    msgbox(format("Bradley: Help me look for Ampure, {PLAYER}! He's probably hiding in this tall grass. If you walk around enough, he should appear!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    releaseall
+    end
 }
 
 //=====================================
@@ -220,6 +283,58 @@ movement mPlayerEscortedByBradleyBottom {
 movement mEnterShip {
     walk_down * 2
     set_invisible
+}
+
+movement mBradleyWalksUpAndLooksAtPlayer {
+    walk_up
+    face_right
+}
+
+movement mPlayerWalksUpAndLooksAtBradley {
+    walk_up
+    face_left
+}
+
+movement mBradleyEscortsPlayerToMeadow {
+    walk_up * 3
+    walk_left * 4
+    walk_up * 4
+    walk_left * 11
+}
+
+movement mPlayerEscortsBradleyToMeadow {
+    walk_up * 3
+    walk_left * 5
+    walk_up * 4
+    walk_left * 11
+}
+
+movement mBradleyLooksAroundAndFidgets {
+    face_right
+    delay_16 * 4
+    walk_left
+    walk_up * 2
+    face_left
+    delay_16 * 3
+    face_up
+    delay_16 * 3
+    face_right
+    delay_16 * 3
+    face_up
+    delay_16 * 3
+    walk_in_place_fast_down * 4
+    walk_left
+    delay_16 * 3
+    face_up
+    delay_16 * 3
+    face_left
+    delay_16 * 3
+    walk_right
+    walk_down
+}
+
+movement mWalkLeft {
+    walk_left
 }
 
 //=====================================

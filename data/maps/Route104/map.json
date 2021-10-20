@@ -470,7 +470,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_Rival",
-      "flag": "FLAG_HIDE_ROUTE_104_RIVAL"
+      "flag": "FLAG_HIDE_NEO_BAY_BRADLEY"
     }
   ],
   "warp_events": [
