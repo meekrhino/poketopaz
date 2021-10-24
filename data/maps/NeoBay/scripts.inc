@@ -9,6 +9,7 @@ NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	.2byte 0
 
 NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
+	addobject 2
 	setobjectxy 2, 28, 33
 	turnobject 2, DIR_NORTH
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
@@ -72,6 +73,8 @@ NeoBay_EventScript_OtherMailbox::
 NeoBay_EventScript_BradleyStopsPlayer::
 	lockall
 	msgbox NeoBay_EventScript_BradleyStopsPlayer_Text_0
+	waitmessage
+	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	switch VAR_TEMP_0
 	case 9, NeoBay_EventScript_BradleyStopsPlayer_3
@@ -94,6 +97,15 @@ NeoBay_EventScript_BradleyStopsPlayer_4:
 NeoBay_EventScript_BradleyStopsPlayer_5:
 	applymovement OBJ_EVENT_ID_PLAYER, mWalkLeft
 	goto NeoBay_EventScript_BradleyStopsPlayer_1
+
+
+NeoBay_EventScript_BradleySaysKeepLooking::
+	lock
+	msgbox NeoBay_EventScript_BradleySaysKeepLooking_Text_0
+	waitmessage
+	closemessage
+	release
+	return
 
 
 NeoBay_OnTransition:
@@ -137,7 +149,6 @@ NeoBay_EventScript_BradleyShowBoatText:
 
 NeoBay_EventScript_BradleyLeadsToGrass:
 	lockall
-	setvar VAR_AMPURE_RESCUE_STATE, 2
 	applymovement 2, mBradleyWalksUpAndLooksAtPlayer
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalksUpAndLooksAtBradley
 	waitmovement OBJ_EVENT_ID_PLAYER
@@ -151,6 +162,7 @@ NeoBay_EventScript_BradleyLeadsToGrass:
 	waitmovement 2
 	msgbox NeoBay_EventScript_BradleyLeadsToGrass_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
+	setvar VAR_AMPURE_RESCUE_STATE, 2
 	releaseall
 	end
 
@@ -320,6 +332,8 @@ mBradleyEscortsPlayerToMeadow:
 	walk_left
 	walk_left
 	walk_left
+	walk_left
+	walk_up
 	step_end
 
 mPlayerEscortsBradleyToMeadow:
@@ -346,6 +360,8 @@ mPlayerEscortsBradleyToMeadow:
 	walk_left
 	walk_left
 	walk_left
+	walk_left
+	face_up
 	step_end
 
 mBradleyLooksAroundAndFidgets:
@@ -400,6 +416,11 @@ mWalkLeft:
 NeoBay_EventScript_BradleyStopsPlayer_Text_0:
 	.string "Bradley: What are you doing? We need to\n"
 	.string "find Ampure before it gets away!$"
+
+NeoBay_EventScript_BradleySaysKeepLooking_Text_0:
+	.string "Bradley: I haven't seem Ampure\n"
+	.string "anywhere. You should check that tall\l"
+	.string "grass!$"
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
 	.string "Bradley: I think I see some tracks here.\n"

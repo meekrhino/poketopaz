@@ -29,6 +29,7 @@ mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: NeoBay_OnTransition
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_STARTER {
+            addobject(BRADLEY)
             setobjectxy(BRADLEY, 28, 33)
             turnobject(BRADLEY, DIR_NORTH)
             turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
@@ -94,6 +95,8 @@ script NeoBay_EventScript_OtherMailbox {
 script NeoBay_EventScript_BradleyStopsPlayer {
     lockall
     msgbox(format("Bradley: What are you doing? We need to find Ampure before it gets away!"))
+    waitmessage
+    closemessage
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     switch(var(VAR_TEMP_0)) {
         case 9:
@@ -108,6 +111,19 @@ script NeoBay_EventScript_BradleyStopsPlayer {
     waitmovement(OBJ_EVENT_ID_PLAYER)
     releaseall
     end
+}
+
+script NeoBay_EventScript_BradleySaysKeepLooking {
+    lock
+    switch(var(VAR_NEOBAY_STATE)) {
+        case NEOBAY_STATE_RECEIVED_STARTER:
+            msgbox(format("Bradley: I haven't seen Ampure anywhere. You should check that tall grass!"))
+        default:
+            msgbox(format("--Text Here--"))
+    }
+    waitmessage
+    closemessage
+    release
 }
 
 //=====================================
@@ -152,7 +168,6 @@ script(local) NeoBay_EventScript_BradleyShowBoatText {
 
 script(local) NeoBay_EventScript_BradleyLeadsToGrass {
     lockall
-    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_IN_MEADOW)
     applymovement(BRADLEY, mBradleyWalksUpAndLooksAtPlayer)
     applymovement(OBJ_EVENT_ID_PLAYER, mPlayerWalksUpAndLooksAtBradley)
     waitmovement(OBJ_EVENT_ID_PLAYER)
@@ -166,6 +181,7 @@ script(local) NeoBay_EventScript_BradleyLeadsToGrass {
     waitmovement(BRADLEY)
     msgbox(format("Bradley: Help me look for Ampure, {PLAYER}! He's probably hiding in this tall grass. If you walk around enough, he should appear!"), MSGBOX_AUTOCLOSE)
     waitmessage
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_IN_MEADOW)
     releaseall
     end
 }
@@ -299,14 +315,16 @@ movement mBradleyEscortsPlayerToMeadow {
     walk_up * 3
     walk_left * 4
     walk_up * 4
-    walk_left * 11
+    walk_left * 12
+    walk_up
 }
 
 movement mPlayerEscortsBradleyToMeadow {
     walk_up * 3
     walk_left * 5
     walk_up * 4
-    walk_left * 11
+    walk_left * 12
+    face_up
 }
 
 movement mBradleyLooksAroundAndFidgets {

@@ -398,6 +398,7 @@ WillowsLab_BradleyMadeChoice:
 	message WillowsLab_BradleyMadeChoice_Text_0
 	waitmessage
 	closemessage
+	delay 60
 	return
 
 
