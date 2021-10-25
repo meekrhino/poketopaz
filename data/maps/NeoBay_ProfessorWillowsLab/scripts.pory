@@ -9,6 +9,8 @@ const NEOBAY_STATE_MET_WILLOW = 1
 const NEOBAY_STATE_RECEIVED_STARTER = 2
 
 const AMPURE_RESCUE_STARTED = 1
+const AMPURE_RESCUE_CAPTURE_DONE = 5
+const AMPURE_RESCUE_RETURNED = 6
 //=====================================
 // Map Scripts
 //=====================================
@@ -16,6 +18,7 @@ mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: WillowsLab_OnTransition
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_NEOBAY_STATE, NEOBAY_STATE_NEW_GAME: WillowIntroduction
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE: WillowsLab_AmpureRescued
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_NEOBAY_STATE, NEOBAY_STATE_NEW_GAME {
@@ -143,6 +146,12 @@ script(local) WillowsLab_OnTransition {
         clearflag(FLAG_WILLOW_BALL_TAKEN_2)
         removeobject(BRADLEY)
     }
+    elif(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        addobject(BRADLEY)
+        setobjectxyperm(BRADLEY, 8, 7)
+        setobjectxyperm(WILLOW, 11, 6)
+    }
 }
 
 script(local) WillowIntroduction {
@@ -256,6 +265,8 @@ script(local) WillowIntroduction {
     waitmovement(BRADLEY)
     msgbox(format("Bradley: I'm so excited! You go first, {PLAYER}. Come on come on, choose on!"))
     waitmessage
+    closemessage
+    copyobjectxytoperm(BRADLEY)
     releaseall
     end
 }
@@ -424,6 +435,58 @@ script(local) WillowsLab_YourePokemonTrainersNow {
     end
 }
 
+script(local) WillowsLab_AmpureRescued {
+    lockall
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_RETURNED)
+    applymovement(BRADLEY, mBradleyFidgetsRight)
+    waitmovement(BRADLEY)
+    msgbox(format("Bradley: We did it professor!\n{PLAYER} found Ampure and I caught it!"))
+    msgbox(format("Willow: Ohohohoho! I'm glad. It would have taken me ages to find Ampure by myself. Thank you very much, you two."))
+    waitmessage
+    closemessage
+    applymovement(WILLOW, mWillowDeliberates)
+    waitmovement(WILLOW)
+    msgbox(format("Willow: I think I have the perfect way to reward you. Each of you can take one of these."))
+    waitmessage
+    closemessage
+    call(WillowsLab_ReceivedPokedex)
+    msgbox(format("Bradley: This is one of those Pokédex things, right?"))
+    msgbox(WillowsLab_PokedexDescription, MSGBOX_AUTOCLOSE)
+    applymovement(BRADLEY, mBradleyFidgetsUp)
+    waitmovement(BRADLEY)
+    msgbox("Bradley: Did you hear that, {PLAYER}!?\nWe're finally going to be able\lto find Simon.")
+    waitmessage
+    closemessage
+    fadeoutbgm(4)
+    fadescreen(FADE_TO_BLACK)
+    waitstate
+    msgbox("Willow: Who is this Simon?")
+    msgbox("Bradley: … … …\nHe was our friend…\l…and he was my brother.")
+    // warp to flashback scene. The last bit here will play on warping back.
+    fadescreen(FADE_FROM_BLACK)
+    waitstate
+    msgbox("Bradley: …We never saw him again.")
+    waitmessage
+    closemessage
+    delay(60)
+    msgbox("Willow: …I'm so sorry.")
+    msgbox("Bradley: That's why we have to get to the next town, Professor!\lSimon could be anywhere, and he could even be in danger.")
+    msgbox(WillowsLab_SayGoodbyeToMom)
+    releaseall
+    end
+}
+
+
+script(local) WillowsLab_ReceivedPokedex {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received the Pokédex!")
+	waitfanfare
+	setflag(FLAG_SYS_POKEDEX_GET)
+	special(SetUnlockedPokedexFlags)
+	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+	return
+}
+
 
 //=====================================
 // Text
@@ -510,6 +573,28 @@ text WillowsLab_AmpureMissionDescription {
         "He couldn't have wandered off too far, so try searching between here and Sunset Village."
         "As long as you have your Pokémon, you'll be safe in the tall grass.\l"
         "I entrust you two with bringing Ampure back safely!"
+    )
+}
+
+text WillowsLab_PokedexDescription {
+    format(
+        "Willow: Yes, Bradley.\nIn fact, I'm pretty sure that they're "
+        "the only ones to ever come to Caldera or Kirant.\lProf. Oak "
+        "of the Kanto region gave these to me when he found out I "
+        "was coming here.\lBut my research has prevented me from "
+        "filling them properly. I think that you two will be perfect "
+        "for the job.\lYour Pokémon are already quite fond of you "
+        "and you should have no problem catching and trading "
+        "Pokémon beyond this town."
+    )
+}
+
+text WillowsLab_SayGoodbyeToMom {
+    format(
+        "Willow: I've never seen such determination as I see right now "
+        "in both of you.\lI'd be more than happy to take you across the "
+        "water to Sunset Village, but before we leave you much promise "
+        "me you will say goodbye to your families."
     )
 }
 
@@ -614,10 +699,6 @@ movement mBradleyDeliberates {
     face_down
 }
 
-movement mBradleyFidgetsDown {
-    walk_in_place_fast_down * 4
-}
-
 // Bradley goes to pick a starter
 movement mBradleyWalksToVenap {
     walk_down * 2
@@ -713,6 +794,12 @@ movement mPlayerExits {
     walk_right * 4
     walk_up * 4
     set_invisible
+}
+
+movement mWillowDeliberates {
+    face_right
+    delay_16 * 4
+    face_left
 }
 
 //=====================================

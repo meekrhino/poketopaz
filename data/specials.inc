@@ -168,7 +168,7 @@ gSpecials::
 	def_special StartWallClock
 	def_special Special_ViewWallClock
 	def_special ChooseStarter
-	def_special StartWallyTutorialBattle
+	def_special StartBradleyAmpureCatch
 	def_special ChangePokemonNickname
 	def_special ChoosePartyMon
 	def_special GetFirstFreePokeblockSlot
@@ -311,7 +311,7 @@ gSpecials::
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp
-	def_special PutZigzagoonInPlayerParty
+	def_special PutRivalMonInPlayerParty
 	def_special IsStarterInParty
 	def_special CopyCurSecretBaseOwnerName_StrVar1
 	def_special ScriptCheckFreePokemonStorageSpace

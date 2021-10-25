@@ -384,6 +384,7 @@ static void CreateBattleStartTask(u8 transition, u16 song)
 
 void BattleSetup_StartWildBattle(void)
 {
+    FlagSet(FLAG_WILD_ENCOUNTER);
     if (GetSafariZoneFlag())
         DoSafariBattle();
     else
@@ -473,9 +474,9 @@ static void sub_80B0828(void)
 }
 
 // Initiates battle where Wally catches Ralts
-void StartWallyTutorialBattle(void)
+void StartBradleyAmpureCatch(void)
 {
-    CreateMaleMon(&gEnemyParty[0], SPECIES_LOTAD, 5);
+    CreateMaleMon(&gEnemyParty[0], SPECIES_AMPURE, 5);
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     gBattleTypeFlags = BATTLE_TYPE_WALLY_TUTORIAL;

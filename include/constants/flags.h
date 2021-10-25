@@ -44,7 +44,7 @@
 #define FLAG_WILLOW_BALL_TAKEN_0            0x20
 #define FLAG_WILLOW_BALL_TAKEN_1            0x21
 #define FLAG_WILLOW_BALL_TAKEN_2            0x22
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_WILD_ENCOUNTER                 0x23
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
@@ -772,7 +772,7 @@
 
 #define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
 
-#define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
+#define FLAG_HIDE_NEO_BAY_AMPURE                     0x2DA
 #define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
 #define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1                    0x2DC
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP              0x2DD

@@ -1,11 +1,19 @@
 const BRADLEY = 2
+const AMPURE = 3
 
+const WARP_RESCUE = 2
+
+// VAR_NEOBAY_STATE values
 const NEOBAY_STATE_NEW_GAME = 0
 const NEOBAY_STATE_MET_WILLOW = 1
 const NEOBAY_STATE_RECEIVED_STARTER = 2
 
+// VAR_AMPURE_RESCUE_STATE values
 const AMPURE_RESCUE_STARTED = 1
 const AMPURE_RESCUE_IN_MEADOW = 2
+const AMPURE_RESCUE_FIRST_BATTLE_DONE = 3
+const AMPURE_RESCUE_SECOND_BATTLE_DONE = 4
+const AMPURE_RESCUE_CAPTURE_DONE = 5
 
 // State descriptions for VAR_NEOBAY_STATE
 // 1: Met Professor Willow
@@ -21,6 +29,7 @@ const AMPURE_RESCUE_IN_MEADOW = 2
 // 3: Fought first battle
 // 4: Fought second battle
 // 5: Finished capture
+// 6: Returned to Willow
 
 //=====================================
 // Map Scripts
@@ -29,12 +38,15 @@ mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: NeoBay_OnTransition
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_SetupBradleyAtBoat
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE: NeoBay_EventScript_SetupBradleyForAmpure
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_BradleyLeadsToGrass
+        FLAG_WILD_ENCOUNTER, 1: NeoBay_OnCompletedWildEncounter
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE: NeoBay_EventScript_AmpureCapture
     ]
-    MAP_SCRIPT_ON_RETURN_TO_FIELD: NeoBay_ReturnToField
 }
+
 //=====================================
 // Global Scripts
 //=====================================
@@ -113,8 +125,9 @@ script NeoBay_EventScript_BradleyStopsPlayer {
     end
 }
 
-script NeoBay_EventScript_BradleySaysKeepLooking {
+script NeoBay_EventScript_BradleyConversation {
     lock
+    faceplayer
     switch(var(VAR_NEOBAY_STATE)) {
         case NEOBAY_STATE_RECEIVED_STARTER:
             msgbox(format("Bradley: I haven't seen Ampure anywhere. You should check that tall grass!"))
@@ -183,20 +196,103 @@ script(local) NeoBay_EventScript_BradleyLeadsToGrass {
     waitmessage
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_IN_MEADOW)
     copyobjectxytoperm(BRADLEY)
-    clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
+    // clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
     releaseall
     end
 }
 
 script(local) NeoBay_EventScript_SetupBradleyAtBoat {
     addobject(BRADLEY)
+    addobject(AMPURE)
     setobjectxy(BRADLEY, 28, 33)
     turnobject(BRADLEY, DIR_NORTH)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
     return
 }
 
-script(local) NeoBay_ReturnToField {
+script(local) NeoBay_OnCompletedWildEncounter {
+    clearflag(FLAG_WILD_ENCOUNTER)
+    switch(var(VAR_AMPURE_RESCUE_STATE)) {
+        case AMPURE_RESCUE_IN_MEADOW:
+            call(NeoBay_EventScript_AmpureRescueAfterFirst)
+        case AMPURE_RESCUE_FIRST_BATTLE_DONE:
+            call(NeoBay_EventScript_AmpureRescueAfterSecond)
+    }
+    return
+}
+
+script(local) NeoBay_UpdateBradleyPositionAfterEncounter {
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if(var(VAR_TEMP_1) > 27) {
+        setobjectxyperm(BRADLEY, 13, 27)
+        turnobject(BRADLEY, DIR_SOUTH)
+        applymovement(BRADLEY, mBradleyFidgetsDown)
+    }
+    elif(var(VAR_TEMP_1) > 19) {
+        setobjectxyperm(BRADLEY, 13, 22)
+        turnobject(BRADLEY, DIR_WEST)
+        applymovement(BRADLEY, mBradleyFidgetsLeft)
+    }
+    else {
+        setobjectxyperm(BRADLEY, 12, 17)
+        turnobject(BRADLEY, DIR_WEST)
+        applymovement(BRADLEY, mBradleyFidgetsLeft)
+    }
+    waitmovement(BRADLEY)
+    return
+}
+
+script(local) NeoBay_EventScript_AmpureRescueAfterFirst {
+    lockall
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_FIRST_BATTLE_DONE)
+    call(NeoBay_UpdateBradleyPositionAfterEncounter)
+    msgbox(format("Bradley: Did you find him?\l… … oh, well keep looking.\lHere, I'll heal your Pokémon for you."))
+    waitmessage
+    closemessage
+    call(Common_EventScript_OutOfCenterPartyHeal)
+    releaseall
+    return
+}
+
+script(local) NeoBay_EventScript_AmpureRescueAfterSecond {
+    lockall
+    call(NeoBay_UpdateBradleyPositionAfterEncounter)
+    msgbox(format("Bradley: Any luck this time?\l… … oh, well keep looking.\lHere, I'll heal your Pokémon again."))
+	playfanfare(MUS_HEAL)
+	waitfanfare
+    closemessage
+	special(HealPlayerParty)
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE)
+    warp(MAP_NEO_BAY, 0xFF, 12, 23)
+    releaseall
+    return
+}
+
+script(local) NeoBay_EventScript_SetupBradleyForAmpure {
+    setobjectxyperm(BRADLEY, 11, 23)
+    turnobject(BRADLEY, DIR_EAST)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+}
+
+script(local) NeoBay_EventScript_AmpureCapture {
+    lockall
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE)
+	fadescreen(FADE_FROM_BLACK)
+    applymovement(AMPURE, mAmpureRunsUpToPlayer)
+    waitmovement(AMPURE)
+    applymovement(AMPURE, mExclamationPoint)
+    applymovement(BRADLEY, mLookUpStartled)
+    applymovement(OBJ_EVENT_ID_PLAYER, mLookUpStartled)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox(format("Bradley: I think he likes you, {PLAYER}! Just stay still, I'll catch him!"))
+    waitmessage
+	special(SavePlayerParty)
+	special(PutRivalMonInPlayerParty)
+    special(StartBradleyAmpureCatch)
+    waitstate
+    msgbox(format("Bradley: ALRIGHT! And that was my first time, too!\lLet's go back and return Ampure to Prof. Willow!"))
+    warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6)
+    releaseall
     return
 }
 
@@ -278,6 +374,18 @@ movement mBradleyApproachPlayerBottom {
 
 movement mBradleyFidgetsRight {
     walk_in_place_fast_right * 4
+}
+
+movement mBradleyFidgetsLeft {
+    walk_in_place_fast_left * 4
+}
+
+movement mBradleyFidgetsDown {
+    walk_in_place_fast_down * 4
+}
+
+movement mBradleyFidgetsUp {
+    walk_in_place_fast_up * 4
 }
 
 movement mBradleyEscortsPlayerTop {
@@ -367,6 +475,15 @@ movement mBradleyLooksAroundAndFidgets {
 
 movement mWalkLeft {
     walk_left
+}
+
+movement mAmpureRunsUpToPlayer {
+    walk_fast_down * 9
+}
+
+movement mLookUpStartled {
+    emote_exclamation_mark
+    face_up
 }
 
 //=====================================

@@ -1443,8 +1443,6 @@ static u8 TrySpawnObjectEventTemplate(struct ObjectEventTemplate *objectEventTem
     const struct ObjectEventGraphicsInfo *graphicsInfo;
     const struct SubspriteTable *subspriteTables = NULL;
 
-    mgba_printf(MGBA_LOG_DEBUG, "spawning object %d", objectEventTemplate->localId);
-
     graphicsInfo = GetObjectEventGraphicsInfo(objectEventTemplate->graphicsId);
     MakeObjectTemplateFromObjectEventTemplate(objectEventTemplate, &spriteTemplate, &subspriteTables);
     spriteFrameImage.size = graphicsInfo->size;
@@ -1626,8 +1624,6 @@ void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
             struct ObjectEventTemplate *template = &gSaveBlock1Ptr->objectEventTemplates[i];
             s16 npcX = template->x + 7;
             s16 npcY = template->y + 7;
-            mgba_printf(MGBA_LOG_DEBUG, "checking object %d", template->localId);
-            mgba_printf(MGBA_LOG_DEBUG, "object is at (%d, %d).", template->x, template->y);
             if (top <= npcY && bottom >= npcY && left <= npcX && right >= npcX
                 && !FlagGet(template->flagId))
                 TrySpawnObjectEventTemplate(template, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY);

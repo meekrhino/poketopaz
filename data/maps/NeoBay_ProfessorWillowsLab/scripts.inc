@@ -6,6 +6,7 @@ NeoBay_ProfessorWillowsLab_MapScripts::
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 0, WillowIntroduction
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 5, WillowsLab_AmpureRescued
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
@@ -154,6 +155,8 @@ WillowsLab_EventScript_WhereAreYouGoing::
 WillowsLab_OnTransition:
 	compare VAR_NEOBAY_STATE, 0
 	goto_if_eq WillowsLab_OnTransition_1
+	compare VAR_AMPURE_RESCUE_STATE, 5
+	goto_if_eq WillowsLab_OnTransition_2
 	return
 
 WillowsLab_OnTransition_1:
@@ -163,6 +166,13 @@ WillowsLab_OnTransition_1:
 	clearflag FLAG_WILLOW_BALL_TAKEN_1
 	clearflag FLAG_WILLOW_BALL_TAKEN_2
 	removeobject 5
+	return
+
+WillowsLab_OnTransition_2:
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	addobject 5
+	setobjectxyperm 5, 8, 7
+	setobjectxyperm 4, 11, 6
 	return
 
 
@@ -277,6 +287,8 @@ WillowIntroduction:
 	waitmovement 5
 	msgbox WillowIntroduction_Text_20
 	waitmessage
+	closemessage
+	copyobjectxytoperm 5
 	releaseall
 	end
 
@@ -452,6 +464,56 @@ WillowsLab_YourePokemonTrainersNow:
 	end
 
 
+WillowsLab_AmpureRescued:
+	lockall
+	setvar VAR_AMPURE_RESCUE_STATE, 6
+	applymovement 5, mBradleyFidgetsRight
+	waitmovement 5
+	msgbox WillowsLab_AmpureRescued_Text_0
+	msgbox WillowsLab_AmpureRescued_Text_1
+	waitmessage
+	closemessage
+	applymovement 4, mWillowDeliberates
+	waitmovement 4
+	msgbox WillowsLab_AmpureRescued_Text_2
+	waitmessage
+	closemessage
+	call WillowsLab_ReceivedPokedex
+	msgbox WillowsLab_AmpureRescued_Text_3
+	msgbox WillowsLab_PokedexDescription, MSGBOX_AUTOCLOSE
+	applymovement 5, mBradleyFidgetsUp
+	waitmovement 5
+	msgbox WillowsLab_AmpureRescued_Text_4
+	waitmessage
+	closemessage
+	fadeoutbgm 4
+	fadescreen FADE_TO_BLACK
+	waitstate
+	msgbox WillowsLab_AmpureRescued_Text_5
+	msgbox WillowsLab_AmpureRescued_Text_6
+	fadescreen FADE_FROM_BLACK
+	waitstate
+	msgbox WillowsLab_AmpureRescued_Text_7
+	waitmessage
+	closemessage
+	delay 60
+	msgbox WillowsLab_AmpureRescued_Text_8
+	msgbox WillowsLab_AmpureRescued_Text_9
+	msgbox WillowsLab_SayGoodbyeToMom
+	releaseall
+	end
+
+
+WillowsLab_ReceivedPokedex:
+	playfanfare MUS_OBTAIN_ITEM
+	message WillowsLab_ReceivedPokedex_Text_0
+	waitfanfare
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	return
+
+
 mBradleyEntersFirstTime:
 	set_visible
 	walk_down
@@ -601,13 +663,6 @@ mBradleyDeliberates:
 	face_down
 	step_end
 
-mBradleyFidgetsDown:
-	walk_in_place_fast_down
-	walk_in_place_fast_down
-	walk_in_place_fast_down
-	walk_in_place_fast_down
-	step_end
-
 mBradleyWalksToVenap:
 	walk_down
 	walk_down
@@ -744,6 +799,15 @@ mPlayerExits:
 	walk_up
 	walk_up
 	set_invisible
+	step_end
+
+mWillowDeliberates:
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_left
 	step_end
 
 WillowsLab_YouGoFirst_Text_0:
@@ -927,6 +991,46 @@ WillowsLab_YourePokemonTrainersNow_Text_5:
 	.string "her Ampure!\l"
 	.string "Come on, race ya there!$"
 
+WillowsLab_AmpureRescued_Text_0:
+	.string "Bradley: We did it professor!\n"
+	.string "{PLAYER} found Ampure and I caught\l"
+	.string "it!$"
+
+WillowsLab_AmpureRescued_Text_1:
+	.string "Willow: Ohohohoho! I'm glad. It would\n"
+	.string "have taken me ages to find Ampure by\l"
+	.string "myself. Thank you very much, you two.$"
+
+WillowsLab_AmpureRescued_Text_2:
+	.string "Willow: I think I have the perfect way\n"
+	.string "to reward you. Each of you can take one\l"
+	.string "of these.$"
+
+WillowsLab_AmpureRescued_Text_3:
+	.string "Bradley: This is one of those Pokédex\n"
+	.string "things, right?$"
+
+WillowsLab_AmpureRescued_Text_4:
+	.string "Bradley: Did you hear that, {PLAYER}!?\nWe're finally going to be able\lto find Simon.$"
+
+WillowsLab_AmpureRescued_Text_5:
+	.string "Willow: Who is this Simon?$"
+
+WillowsLab_AmpureRescued_Text_6:
+	.string "Bradley: … … …\nHe was our friend…\l…and he was my brother.$"
+
+WillowsLab_AmpureRescued_Text_7:
+	.string "Bradley: …We never saw him again.$"
+
+WillowsLab_AmpureRescued_Text_8:
+	.string "Willow: …I'm so sorry.$"
+
+WillowsLab_AmpureRescued_Text_9:
+	.string "Bradley: That's why we have to get to the next town, Professor!\lSimon could be anywhere, and he could even be in danger.$"
+
+WillowsLab_ReceivedPokedex_Text_0:
+	.string "{PLAYER} received the Pokédex!$"
+
 WillowsLab_WillowIntroduction::
 	.string "Willow: Ohoho, so you're {PLAYER}!\n"
 	.string "Bradley talks about you quite a lot.\l"
@@ -1012,3 +1116,28 @@ WillowsLab_AmpureMissionDescription::
 	.string "be safe in the tall grass.\l"
 	.string "I entrust you two with bringing Ampure\l"
 	.string "back safely!$"
+
+WillowsLab_PokedexDescription::
+	.string "Willow: Yes, Bradley.\n"
+	.string "In fact, I'm pretty sure that they're\l"
+	.string "the only ones to ever come to Caldera\l"
+	.string "or Kirant.\l"
+	.string "Prof. Oak of the Kanto region gave\l"
+	.string "these to me when he found out I was\l"
+	.string "coming here.\l"
+	.string "But my research has prevented me from\l"
+	.string "filling them properly. I think that you\l"
+	.string "two will be perfect for the job.\l"
+	.string "Your Pokémon are already quite fond of\l"
+	.string "you and you should have no problem\l"
+	.string "catching and trading Pokémon beyond\l"
+	.string "this town.$"
+
+WillowsLab_SayGoodbyeToMom::
+	.string "Willow: I've never seen such\n"
+	.string "determination as I see right now in\l"
+	.string "both of you.\l"
+	.string "I'd be more than happy to take you\l"
+	.string "across the water to Sunset Village, but\l"
+	.string "before we leave you much promise me\l"
+	.string "you will say goodbye to your families.$"

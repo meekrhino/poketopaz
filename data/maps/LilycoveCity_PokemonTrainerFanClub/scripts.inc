@@ -120,12 +120,12 @@ LilycoveCity_PokemonTrainerFanClub_EventScript_HideOrShowInterviewer::
 	specialvar VAR_RESULT, ShouldHideFanClubInterviewer
 	compare VAR_RESULT, TRUE
 	goto_if_eq LilycoveCity_PokemonTrainerFanClub_EventScript_HideInterviewer
-	clearflag FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER
+	clearflag FLAG_HIDE_NEO_BAY_AMPURE
 	clearflag FLAG_FAN_CLUB_STRENGTH_SHARED
 	return
 
 LilycoveCity_PokemonTrainerFanClub_EventScript_HideInterviewer::
-	setflag FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER
+	setflag FLAG_HIDE_NEO_BAY_AMPURE
 	return
 
 @ Set up the fan club TV show, if the player has at least 5 fans in the club

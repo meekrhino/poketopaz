@@ -501,6 +501,7 @@ SECTIONS {
         src/event_object_movement.o(.rodata);
         src/text_window.o(.rodata);
         src/scrcmd.o(.rodata);
+        src/script.o(.rodata);
         src/field_control_avatar.o(.rodata);
         src/coord_event_weather.o(.rodata);
         src/field_tasks.o(.rodata);

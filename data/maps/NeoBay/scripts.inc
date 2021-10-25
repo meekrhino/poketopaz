@@ -1,16 +1,18 @@
 NeoBay_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NeoBay_OnTransition
-	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, NeoBay_ReturnToField
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 1, NeoBay_EventScript_SetupBradleyAtBoat
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 4, NeoBay_EventScript_SetupBradleyForAmpure
 	.2byte 0
 
 NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 1, NeoBay_EventScript_BradleyLeadsToGrass
+	map_script_2 FLAG_WILD_ENCOUNTER, 1, NeoBay_OnCompletedWildEncounter
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 4, NeoBay_EventScript_AmpureCapture
 	.2byte 0
 
 
@@ -97,20 +99,21 @@ NeoBay_EventScript_BradleyStopsPlayer_5:
 	goto NeoBay_EventScript_BradleyStopsPlayer_1
 
 
-NeoBay_EventScript_BradleySaysKeepLooking::
+NeoBay_EventScript_BradleyConversation::
 	lock
+	faceplayer
 	switch VAR_NEOBAY_STATE
-	case 2, NeoBay_EventScript_BradleySaysKeepLooking_3
-	msgbox NeoBay_EventScript_BradleySaysKeepLooking_Text_1
-NeoBay_EventScript_BradleySaysKeepLooking_1:
+	case 2, NeoBay_EventScript_BradleyConversation_3
+	msgbox NeoBay_EventScript_BradleyConversation_Text_1
+NeoBay_EventScript_BradleyConversation_1:
 	waitmessage
 	closemessage
 	release
 	return
 
-NeoBay_EventScript_BradleySaysKeepLooking_3:
-	msgbox NeoBay_EventScript_BradleySaysKeepLooking_Text_0
-	goto NeoBay_EventScript_BradleySaysKeepLooking_1
+NeoBay_EventScript_BradleyConversation_3:
+	msgbox NeoBay_EventScript_BradleyConversation_Text_0
+	goto NeoBay_EventScript_BradleyConversation_1
 
 
 NeoBay_OnTransition:
@@ -169,20 +172,114 @@ NeoBay_EventScript_BradleyLeadsToGrass:
 	waitmessage
 	setvar VAR_AMPURE_RESCUE_STATE, 2
 	copyobjectxytoperm 2
-	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
 	releaseall
 	end
 
 
 NeoBay_EventScript_SetupBradleyAtBoat:
 	addobject 2
+	addobject 3
 	setobjectxy 2, 28, 33
 	turnobject 2, DIR_NORTH
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	return
 
 
-NeoBay_ReturnToField:
+NeoBay_OnCompletedWildEncounter:
+	clearflag FLAG_WILD_ENCOUNTER
+	switch VAR_AMPURE_RESCUE_STATE
+	case 2, NeoBay_OnCompletedWildEncounter_3
+	case 3, NeoBay_OnCompletedWildEncounter_4
+NeoBay_OnCompletedWildEncounter_1:
+	return
+
+NeoBay_OnCompletedWildEncounter_3:
+	call NeoBay_EventScript_AmpureRescueAfterFirst
+	goto NeoBay_OnCompletedWildEncounter_1
+
+NeoBay_OnCompletedWildEncounter_4:
+	call NeoBay_EventScript_AmpureRescueAfterSecond
+	goto NeoBay_OnCompletedWildEncounter_1
+
+
+NeoBay_UpdateBradleyPositionAfterEncounter:
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_1, 27
+	goto_if_gt NeoBay_UpdateBradleyPositionAfterEncounter_2
+	compare VAR_TEMP_1, 19
+	goto_if_gt NeoBay_UpdateBradleyPositionAfterEncounter_3
+	setobjectxyperm 2, 12, 17
+	turnobject 2, DIR_WEST
+	applymovement 2, mBradleyFidgetsLeft
+NeoBay_UpdateBradleyPositionAfterEncounter_1:
+	waitmovement 2
+	return
+
+NeoBay_UpdateBradleyPositionAfterEncounter_2:
+	setobjectxyperm 2, 13, 27
+	turnobject 2, DIR_SOUTH
+	applymovement 2, mBradleyFidgetsDown
+	goto NeoBay_UpdateBradleyPositionAfterEncounter_1
+
+NeoBay_UpdateBradleyPositionAfterEncounter_3:
+	setobjectxyperm 2, 13, 22
+	turnobject 2, DIR_WEST
+	applymovement 2, mBradleyFidgetsLeft
+	goto NeoBay_UpdateBradleyPositionAfterEncounter_1
+
+
+NeoBay_EventScript_AmpureRescueAfterFirst:
+	lockall
+	setvar VAR_AMPURE_RESCUE_STATE, 3
+	call NeoBay_UpdateBradleyPositionAfterEncounter
+	msgbox NeoBay_EventScript_AmpureRescueAfterFirst_Text_0
+	waitmessage
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	releaseall
+	return
+
+
+NeoBay_EventScript_AmpureRescueAfterSecond:
+	lockall
+	call NeoBay_UpdateBradleyPositionAfterEncounter
+	msgbox NeoBay_EventScript_AmpureRescueAfterSecond_Text_0
+	playfanfare MUS_HEAL
+	waitfanfare
+	closemessage
+	special HealPlayerParty
+	setvar VAR_AMPURE_RESCUE_STATE, 4
+	warp MAP_NEO_BAY, 0xFF, 12, 23
+	releaseall
+	return
+
+
+NeoBay_EventScript_SetupBradleyForAmpure:
+	setobjectxyperm 2, 11, 23
+	turnobject 2, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+	return
+
+
+NeoBay_EventScript_AmpureCapture:
+	lockall
+	setvar VAR_AMPURE_RESCUE_STATE, 5
+	fadescreen FADE_FROM_BLACK
+	applymovement 3, mAmpureRunsUpToPlayer
+	waitmovement 3
+	applymovement 3, mExclamationPoint
+	applymovement 2, mLookUpStartled
+	applymovement OBJ_EVENT_ID_PLAYER, mLookUpStartled
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox NeoBay_EventScript_AmpureCapture_Text_0
+	waitmessage
+	special SavePlayerParty
+	special PutRivalMonInPlayerParty
+	special StartBradleyAmpureCatch
+	waitstate
+	msgbox NeoBay_EventScript_AmpureCapture_Text_1
+	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6
+	releaseall
 	return
 
 
@@ -220,6 +317,27 @@ mBradleyFidgetsRight:
 	walk_in_place_fast_right
 	walk_in_place_fast_right
 	walk_in_place_fast_right
+	step_end
+
+mBradleyFidgetsLeft:
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	step_end
+
+mBradleyFidgetsDown:
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	step_end
+
+mBradleyFidgetsUp:
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_in_place_fast_up
+	walk_in_place_fast_up
 	step_end
 
 mBradleyEscortsPlayerTop:
@@ -432,16 +550,33 @@ mWalkLeft:
 	walk_left
 	step_end
 
+mAmpureRunsUpToPlayer:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+mLookUpStartled:
+	emote_exclamation_mark
+	face_up
+	step_end
+
 NeoBay_EventScript_BradleyStopsPlayer_Text_0:
 	.string "Bradley: What are you doing? We need to\n"
 	.string "find Ampure before it gets away!$"
 
-NeoBay_EventScript_BradleySaysKeepLooking_Text_0:
+NeoBay_EventScript_BradleyConversation_Text_0:
 	.string "Bradley: I haven't seen Ampure\n"
 	.string "anywhere. You should check that tall\l"
 	.string "grass!$"
 
-NeoBay_EventScript_BradleySaysKeepLooking_Text_1:
+NeoBay_EventScript_BradleyConversation_Text_1:
 	.string "--Text Here--$"
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
@@ -458,6 +593,27 @@ NeoBay_EventScript_BradleyLeadsToGrass_Text_2:
 	.string "{PLAYER}! He's probably hiding in this\l"
 	.string "tall grass. If you walk around enough,\l"
 	.string "he should appear!$"
+
+NeoBay_EventScript_AmpureRescueAfterFirst_Text_0:
+	.string "Bradley: Did you find him?\l"
+	.string "… … oh, well keep looking.\l"
+	.string "Here, I'll heal your Pokémon for you.$"
+
+NeoBay_EventScript_AmpureRescueAfterSecond_Text_0:
+	.string "Bradley: Any luck this time?\l"
+	.string "… … oh, well keep looking.\l"
+	.string "Here, I'll heal your Pokémon again.$"
+
+NeoBay_EventScript_AmpureCapture_Text_0:
+	.string "Bradley: I think he likes you,\n"
+	.string "{PLAYER}! Just stay still, I'll catch\l"
+	.string "him!$"
+
+NeoBay_EventScript_AmpureCapture_Text_1:
+	.string "Bradley: ALRIGHT! And that was my first\n"
+	.string "time, too!\l"
+	.string "Let's go back and return Ampure to\l"
+	.string "Prof. Willow!$"
 
 NeoBay_Text_TownSign::
 	.string "NEO BAY\n"

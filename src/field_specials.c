@@ -1445,10 +1445,20 @@ void SetShoalItemFlag(u16 unused)
     FlagSet(FLAG_SYS_SHOAL_ITEM);
 }
 
-void PutZigzagoonInPlayerParty(void)
+void PutRivalMonInPlayerParty(void)
 {
+    u16 rivalSpecies;
     u16 monData;
-    CreateMon(&gPlayerParty[0], SPECIES_MOGEL, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+
+    static const u16 sRivalMon[3] =
+    {
+        SPECIES_ECHOISE,
+        SPECIES_VENAP,
+        SPECIES_CELSINGE,
+    };
+
+    rivalSpecies = sRivalMon[VarGet(VAR_STARTER_MON)];
+    CreateMon(&gPlayerParty[0], rivalSpecies, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
     monData = TRUE;
     SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
     monData = MOVE_TACKLE;
@@ -4095,7 +4105,7 @@ void UpdateTrainerFanClubGameClear(void)
         FlagClear(FLAG_HIDE_FANCLUB_BOY);
         FlagClear(FLAG_HIDE_FANCLUB_LITTLE_BOY);
         FlagClear(FLAG_HIDE_FANCLUB_LADY);
-        FlagClear(FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER);
+        FlagClear(FLAG_HIDE_NEO_BAY_AMPURE);
         VarSet(VAR_LILYCOVE_FAN_CLUB_STATE, 1);
     }
 }
