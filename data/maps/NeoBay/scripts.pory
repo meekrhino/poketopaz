@@ -28,22 +28,20 @@ const AMPURE_RESCUE_IN_MEADOW = 2
 mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: NeoBay_OnTransition
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_STARTER {
-            addobject(BRADLEY)
-            setobjectxy(BRADLEY, 28, 33)
-            turnobject(BRADLEY, DIR_NORTH)
-            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-        }
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_SetupBradleyAtBoat
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_BradleyLeadsToGrass
     ]
+    MAP_SCRIPT_ON_RETURN_TO_FIELD: NeoBay_ReturnToField
 }
 //=====================================
 // Global Scripts
 //=====================================
 script NeoBay_EventScript_GoToWillowBradleyTriggerTop {
     lockall
+    addobject(BRADLEY)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
     setobjectxy(BRADLEY, 12, 18)
     applymovement(BRADLEY, mBradleyApproachPlayerTop)
     waitmovement(0)
@@ -59,6 +57,8 @@ script NeoBay_EventScript_GoToWillowBradleyTriggerTop {
 
 script NeoBay_EventScript_GoToWillowBradleyTriggerBottom {
     lockall
+    addobject(BRADLEY)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
     setobjectxy(BRADLEY, 12, 18)
     applymovement(BRADLEY, mBradleyApproachPlayerBottom)
     waitmovement(0)
@@ -134,13 +134,13 @@ script(local) NeoBay_OnTransition {
     call(Common_EventScript_SetupRivalGfxId)
     switch (var(VAR_NEOBAY_STATE)) {
         case NEOBAY_STATE_NEW_GAME:
-            clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
+            addobject(BRADLEY)
             end
         case NEOBAY_STATE_RECEIVED_STARTER:
-            clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
+            addobject(BRADLEY)
             end
         default:
-            setflag(FLAG_HIDE_NEO_BAY_BRADLEY)
+            addobject(BRADLEY)
             end
     }
 }
@@ -182,8 +182,22 @@ script(local) NeoBay_EventScript_BradleyLeadsToGrass {
     msgbox(format("Bradley: Help me look for Ampure, {PLAYER}! He's probably hiding in this tall grass. If you walk around enough, he should appear!"), MSGBOX_AUTOCLOSE)
     waitmessage
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_IN_MEADOW)
+    copyobjectxytoperm(BRADLEY)
+    clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
     releaseall
     end
+}
+
+script(local) NeoBay_EventScript_SetupBradleyAtBoat {
+    addobject(BRADLEY)
+    setobjectxy(BRADLEY, 28, 33)
+    turnobject(BRADLEY, DIR_NORTH)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    return
+}
+
+script(local) NeoBay_ReturnToField {
+    return
 }
 
 //=====================================

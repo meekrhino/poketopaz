@@ -13,7 +13,7 @@ NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
-	hideobjectat 5, MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB
+	removeobject 5
 	end
 
 
@@ -162,7 +162,7 @@ WillowsLab_OnTransition_1:
 	clearflag FLAG_WILLOW_BALL_TAKEN_0
 	clearflag FLAG_WILLOW_BALL_TAKEN_1
 	clearflag FLAG_WILLOW_BALL_TAKEN_2
-	hideobjectat 5, MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB
+	removeobject 5
 	return
 
 
@@ -340,8 +340,8 @@ WillowsLab_ReceivedStarter:
 	playfanfare MUS_OBTAIN_ITEM
 	message WillowsLab_ReceivedStarter_Text_0
 	waitmessage
-	closemessage
 	waitfanfare
+	closemessage
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq WillowsLab_ReceivedStarter_2
@@ -397,8 +397,8 @@ WillowsLab_BradleyChoosesEchoise:
 WillowsLab_BradleyMadeChoice:
 	message WillowsLab_BradleyMadeChoice_Text_0
 	waitmessage
-	closemessage
 	delay 60
+	closemessage
 	return
 
 

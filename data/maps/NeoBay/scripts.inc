@@ -1,19 +1,13 @@
 NeoBay_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NeoBay_OnTransition
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, NeoBay_ReturnToField
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-	map_script_2 VAR_NEOBAY_STATE, 2, NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 1, NeoBay_EventScript_SetupBradleyAtBoat
 	.2byte 0
-
-NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
-	addobject 2
-	setobjectxy 2, 28, 33
-	turnobject 2, DIR_NORTH
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-	return
 
 NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 1, NeoBay_EventScript_BradleyLeadsToGrass
@@ -22,6 +16,8 @@ NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 NeoBay_EventScript_GoToWillowBradleyTriggerTop::
 	lockall
+	addobject 2
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	setobjectxy 2, 12, 18
 	applymovement 2, mBradleyApproachPlayerTop
 	waitmovement 0
@@ -37,6 +33,8 @@ NeoBay_EventScript_GoToWillowBradleyTriggerTop::
 
 NeoBay_EventScript_GoToWillowBradleyTriggerBottom::
 	lockall
+	addobject 2
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	setobjectxy 2, 12, 18
 	applymovement 2, mBradleyApproachPlayerBottom
 	waitmovement 0
@@ -101,11 +99,18 @@ NeoBay_EventScript_BradleyStopsPlayer_5:
 
 NeoBay_EventScript_BradleySaysKeepLooking::
 	lock
-	msgbox NeoBay_EventScript_BradleySaysKeepLooking_Text_0
+	switch VAR_NEOBAY_STATE
+	case 2, NeoBay_EventScript_BradleySaysKeepLooking_3
+	msgbox NeoBay_EventScript_BradleySaysKeepLooking_Text_1
+NeoBay_EventScript_BradleySaysKeepLooking_1:
 	waitmessage
 	closemessage
 	release
 	return
+
+NeoBay_EventScript_BradleySaysKeepLooking_3:
+	msgbox NeoBay_EventScript_BradleySaysKeepLooking_Text_0
+	goto NeoBay_EventScript_BradleySaysKeepLooking_1
 
 
 NeoBay_OnTransition:
@@ -114,15 +119,15 @@ NeoBay_OnTransition:
 	switch VAR_NEOBAY_STATE
 	case 0, NeoBay_OnTransition_2
 	case 2, NeoBay_OnTransition_3
-	setflag FLAG_HIDE_NEO_BAY_BRADLEY
+	addobject 2
 	end
 
 NeoBay_OnTransition_2:
-	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
+	addobject 2
 	end
 
 NeoBay_OnTransition_3:
-	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
+	addobject 2
 	end
 
 
@@ -163,8 +168,22 @@ NeoBay_EventScript_BradleyLeadsToGrass:
 	msgbox NeoBay_EventScript_BradleyLeadsToGrass_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
 	setvar VAR_AMPURE_RESCUE_STATE, 2
+	copyobjectxytoperm 2
+	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
 	releaseall
 	end
+
+
+NeoBay_EventScript_SetupBradleyAtBoat:
+	addobject 2
+	setobjectxy 2, 28, 33
+	turnobject 2, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	return
+
+
+NeoBay_ReturnToField:
+	return
 
 
 mBradleyApproachPlayerTop:
@@ -418,9 +437,12 @@ NeoBay_EventScript_BradleyStopsPlayer_Text_0:
 	.string "find Ampure before it gets away!$"
 
 NeoBay_EventScript_BradleySaysKeepLooking_Text_0:
-	.string "Bradley: I haven't seem Ampure\n"
+	.string "Bradley: I haven't seen Ampure\n"
 	.string "anywhere. You should check that tall\l"
 	.string "grass!$"
+
+NeoBay_EventScript_BradleySaysKeepLooking_Text_1:
+	.string "--Text Here--$"
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
 	.string "Bradley: I think I see some tracks here.\n"

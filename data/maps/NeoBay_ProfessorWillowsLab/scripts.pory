@@ -19,7 +19,7 @@ mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_NEOBAY_STATE, NEOBAY_STATE_NEW_GAME {
-            hideobjectat(BRADLEY, MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB)
+            removeobject(BRADLEY)
             end
         }
     ]
@@ -141,7 +141,7 @@ script(local) WillowsLab_OnTransition {
         clearflag(FLAG_WILLOW_BALL_TAKEN_0)
         clearflag(FLAG_WILLOW_BALL_TAKEN_1)
         clearflag(FLAG_WILLOW_BALL_TAKEN_2)
-        hideobjectat(BRADLEY, MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB)
+        removeobject(BRADLEY)
     }
 }
 
@@ -316,8 +316,8 @@ script(local) WillowsLab_ReceivedStarter {
     playfanfare(MUS_OBTAIN_ITEM)
     message("{PLAYER} received the {STR_VAR_1}\nfrom Prof. Willow!")
     waitmessage
-    closemessage
     waitfanfare
+    closemessage
     msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         call(Common_EventScript_GetGiftMonPartySlot)
@@ -369,8 +369,8 @@ script(local) WillowsLab_BradleyChoosesEchoise {
 script(local) WillowsLab_BradleyMadeChoice {
     message("Bradley received the {STR_VAR_1}\nfrom Prof. Willow!")
     waitmessage
-    closemessage
     delay(60)
+    closemessage
     return
 }
 

@@ -4311,13 +4311,11 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn, u16 moveArg)
                 }
                 break;
             case HOLD_EFFECT_SHRAPNEL:
-                mgba_printf(MGBA_LOG_DEBUG, "shrapnel trigger check");
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                     && TARGET_TURN_DAMAGED
                     && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT
                     && gBattleMons[gBattlerTarget].hp)
                 {
-                    mgba_printf(MGBA_LOG_DEBUG, "calling script");
                     gLastUsedItem = defItem;
                     gBattleScripting.battler = gBattlerTarget;
                     gPotentialItemEffectBattler = gBattlerAttacker;
