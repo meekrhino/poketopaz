@@ -6,7 +6,7 @@ NeoBay_MapScripts::
 
 NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 1, NeoBay_EventScript_SetupBradleyAtBoat
-	map_script_2 VAR_AMPURE_RESCUE_STATE, 4, NeoBay_EventScript_SetupBradleyForAmpure
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 5, NeoBay_EventScript_SetupBradleyForAmpure
 	.2byte 0
 
 NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
@@ -247,12 +247,8 @@ NeoBay_EventScript_AmpureRescueAfterSecond:
 	waitfanfare
 	closemessage
 	special HealPlayerParty
-	setvar VAR_AMPURE_RESCUE_STATE, 4
+	setvar VAR_AMPURE_RESCUE_STATE, 5
 	warp MAP_NEO_BAY, 0xFF, 12, 23
-	addobject 2
-	setobjectxyperm 2, 11, 23
-	turnobject 2, DIR_EAST
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	releaseall
 	return
 
@@ -263,12 +259,13 @@ NeoBay_EventScript_SetupBradleyForAmpure:
 	setobjectxyperm 2, 11, 23
 	turnobject 2, DIR_EAST
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+	setvar VAR_AMPURE_RESCUE_STATE, 4
 	return
 
 
 NeoBay_EventScript_AmpureCapture:
 	lockall
-	setvar VAR_AMPURE_RESCUE_STATE, 5
+	setvar VAR_AMPURE_RESCUE_STATE, 6
 	applymovement 3, mAmpureRunsUpToPlayer
 	waitmovement 3
 	applymovement 3, mExclamationPoint

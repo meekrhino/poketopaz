@@ -13,7 +13,8 @@ const AMPURE_RESCUE_STARTED = 1
 const AMPURE_RESCUE_IN_MEADOW = 2
 const AMPURE_RESCUE_FIRST_BATTLE_DONE = 3
 const AMPURE_RESCUE_SECOND_BATTLE_DONE = 4
-const AMPURE_RESCUE_CAPTURE_DONE = 5
+const AMPURE_RESCUE_SECOND_BATTLE_DONE_WARP = 5
+const AMPURE_RESCUE_CAPTURE_DONE = 6
 
 // State descriptions for VAR_NEOBAY_STATE
 // 1: Met Professor Willow
@@ -28,8 +29,9 @@ const AMPURE_RESCUE_CAPTURE_DONE = 5
 // 2: Moved to meadow
 // 3: Fought first battle
 // 4: Fought second battle
-// 5: Finished capture
-// 6: Returned to Willow
+// 5: Interim warp-setup state
+// 6: Finished capture
+// 7: Returned to Willow
 
 //=====================================
 // Map Scripts
@@ -38,7 +40,7 @@ mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: NeoBay_OnTransition
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_SetupBradleyAtBoat
-        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE: NeoBay_EventScript_SetupBradleyForAmpure
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE_WARP: NeoBay_EventScript_SetupBradleyForAmpure
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_BradleyLeadsToGrass
@@ -261,12 +263,8 @@ script(local) NeoBay_EventScript_AmpureRescueAfterSecond {
 	waitfanfare
     closemessage
 	special(HealPlayerParty)
-    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE)
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE_WARP)
     warp(MAP_NEO_BAY, 0xFF, 12, 23)
-    addobject(BRADLEY)
-    setobjectxyperm(BRADLEY, 11, 23)
-    turnobject(BRADLEY, DIR_EAST)
-    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
     releaseall
     return
 }
@@ -277,6 +275,7 @@ script(local) NeoBay_EventScript_SetupBradleyForAmpure {
     setobjectxyperm(BRADLEY, 11, 23)
     turnobject(BRADLEY, DIR_EAST)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE)
 }
 
 script(local) NeoBay_EventScript_AmpureCapture {
@@ -482,7 +481,7 @@ movement mWalkLeft {
 }
 
 movement mAmpureRunsUpToPlayer {
-    walk_fast_down * 9
+    walk_fast_down * 8
 }
 
 movement mLookUpStartled {
