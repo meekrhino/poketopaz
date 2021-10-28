@@ -178,7 +178,6 @@ NeoBay_EventScript_BradleyLeadsToGrass:
 
 NeoBay_EventScript_SetupBradleyAtBoat:
 	addobject 2
-	addobject 3
 	setobjectxy 2, 28, 33
 	turnobject 2, DIR_NORTH
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
@@ -250,11 +249,17 @@ NeoBay_EventScript_AmpureRescueAfterSecond:
 	special HealPlayerParty
 	setvar VAR_AMPURE_RESCUE_STATE, 4
 	warp MAP_NEO_BAY, 0xFF, 12, 23
+	addobject 2
+	setobjectxyperm 2, 11, 23
+	turnobject 2, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	releaseall
 	return
 
 
 NeoBay_EventScript_SetupBradleyForAmpure:
+	addobject 2
+	addobject 3
 	setobjectxyperm 2, 11, 23
 	turnobject 2, DIR_EAST
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
@@ -264,7 +269,6 @@ NeoBay_EventScript_SetupBradleyForAmpure:
 NeoBay_EventScript_AmpureCapture:
 	lockall
 	setvar VAR_AMPURE_RESCUE_STATE, 5
-	fadescreen FADE_FROM_BLACK
 	applymovement 3, mAmpureRunsUpToPlayer
 	waitmovement 3
 	applymovement 3, mExclamationPoint

@@ -203,7 +203,6 @@ script(local) NeoBay_EventScript_BradleyLeadsToGrass {
 
 script(local) NeoBay_EventScript_SetupBradleyAtBoat {
     addobject(BRADLEY)
-    addobject(AMPURE)
     setobjectxy(BRADLEY, 28, 33)
     turnobject(BRADLEY, DIR_NORTH)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
@@ -264,11 +263,17 @@ script(local) NeoBay_EventScript_AmpureRescueAfterSecond {
 	special(HealPlayerParty)
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE)
     warp(MAP_NEO_BAY, 0xFF, 12, 23)
+    addobject(BRADLEY)
+    setobjectxyperm(BRADLEY, 11, 23)
+    turnobject(BRADLEY, DIR_EAST)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
     releaseall
     return
 }
 
 script(local) NeoBay_EventScript_SetupBradleyForAmpure {
+    addobject(BRADLEY)
+    addobject(AMPURE)
     setobjectxyperm(BRADLEY, 11, 23)
     turnobject(BRADLEY, DIR_EAST)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
@@ -277,7 +282,6 @@ script(local) NeoBay_EventScript_SetupBradleyForAmpure {
 script(local) NeoBay_EventScript_AmpureCapture {
     lockall
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE)
-	fadescreen(FADE_FROM_BLACK)
     applymovement(AMPURE, mAmpureRunsUpToPlayer)
     waitmovement(AMPURE)
     applymovement(AMPURE, mExclamationPoint)

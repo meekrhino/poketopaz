@@ -38,7 +38,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_ECHOISE] =
     {
         .size = 0x76,
-        .y_offset = 17,
+        .y_offset = 18,
     },
     [SPECIES_MERMEIDON] =
     {
