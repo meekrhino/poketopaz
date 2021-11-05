@@ -560,7 +560,6 @@ mAmpureRunsUpToPlayer:
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
-	walk_fast_down
 	step_end
 
 mLookUpStartled:
