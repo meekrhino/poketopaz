@@ -81,6 +81,7 @@
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F        (3 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB (4 | (1 << 8))
 #define MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB        (5 | (1 << 8))
+#define MAP_PLAYERS_HOUSE_2F                     (6 | (1 << 8))
 
 // gMapGroup_IndoorOldale
 #define MAP_OLDALE_TOWN_HOUSE1            (0 | (2 << 8))

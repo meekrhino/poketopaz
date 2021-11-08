@@ -6,7 +6,7 @@ NeoBay_ProfessorWillowsLab_MapScripts::
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 0, WillowIntroduction
-	map_script_2 VAR_AMPURE_RESCUE_STATE, 5, WillowsLab_AmpureRescued
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 6, WillowsLab_AmpureRescued
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
@@ -155,7 +155,7 @@ WillowsLab_EventScript_WhereAreYouGoing::
 WillowsLab_OnTransition:
 	compare VAR_NEOBAY_STATE, 0
 	goto_if_eq WillowsLab_OnTransition_1
-	compare VAR_AMPURE_RESCUE_STATE, 5
+	compare VAR_AMPURE_RESCUE_STATE, 6
 	goto_if_eq WillowsLab_OnTransition_2
 	return
 
@@ -169,7 +169,7 @@ WillowsLab_OnTransition_1:
 	return
 
 WillowsLab_OnTransition_2:
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
 	addobject 5
 	setobjectxyperm 5, 8, 7
 	setobjectxyperm 4, 11, 6
@@ -466,7 +466,7 @@ WillowsLab_YourePokemonTrainersNow:
 
 WillowsLab_AmpureRescued:
 	lockall
-	setvar VAR_AMPURE_RESCUE_STATE, 6
+	setvar VAR_AMPURE_RESCUE_STATE, 7
 	applymovement 5, mBradleyFidgetsRight
 	waitmovement 5
 	msgbox WillowsLab_AmpureRescued_Text_0
@@ -486,11 +486,10 @@ WillowsLab_AmpureRescued:
 	msgbox WillowsLab_AmpureRescued_Text_4
 	waitmessage
 	closemessage
-	fadeoutbgm 4
+	fadeoutbgm 2
 	fadescreen FADE_TO_BLACK
-	waitstate
 	msgbox WillowsLab_AmpureRescued_Text_5
-	msgbox WillowsLab_AmpureRescued_Text_6
+	msgbox WillowsLab_AmpureRescued_Text_6, MSGBOX_AUTOCLOSE
 	fadescreen FADE_FROM_BLACK
 	waitstate
 	msgbox WillowsLab_AmpureRescued_Text_7
@@ -510,7 +509,7 @@ WillowsLab_ReceivedPokedex:
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
-	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setflag FLAG_RECEIVED_POKEDEX_FROM_WILLOW
 	return
 
 

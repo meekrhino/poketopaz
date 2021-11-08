@@ -4,13 +4,21 @@ const ECHOISE_BALL = 3
 const WILLOW = 4
 const BRADLEY = 5
 const AMPURE = 6
+
+// VAR_NEOBAY_STATE values
 const NEOBAY_STATE_NEW_GAME = 0
 const NEOBAY_STATE_MET_WILLOW = 1
 const NEOBAY_STATE_RECEIVED_STARTER = 2
 
+// VAR_AMPURE_RESCUE_STATE values
 const AMPURE_RESCUE_STARTED = 1
-const AMPURE_RESCUE_CAPTURE_DONE = 5
-const AMPURE_RESCUE_RETURNED = 6
+const AMPURE_RESCUE_IN_MEADOW = 2
+const AMPURE_RESCUE_FIRST_BATTLE_DONE = 3
+const AMPURE_RESCUE_SECOND_BATTLE_DONE = 4
+const AMPURE_RESCUE_SECOND_BATTLE_DONE_WARP = 5
+const AMPURE_RESCUE_CAPTURE_DONE = 6
+const AMPURE_RESCUE_RETURNED = 7
+
 //=====================================
 // Map Scripts
 //=====================================
@@ -147,7 +155,7 @@ script(local) WillowsLab_OnTransition {
         removeobject(BRADLEY)
     }
     elif(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
-        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        applymovement(OBJ_EVENT_ID_PLAYER, mFaceRight)
         addobject(BRADLEY)
         setobjectxyperm(BRADLEY, 8, 7)
         setobjectxyperm(WILLOW, 11, 6)
@@ -457,11 +465,10 @@ script(local) WillowsLab_AmpureRescued {
     msgbox("Bradley: Did you hear that, {PLAYER}!?\nWe're finally going to be able\lto find Simon.")
     waitmessage
     closemessage
-    fadeoutbgm(4)
+    fadeoutbgm(2)
     fadescreen(FADE_TO_BLACK)
-    waitstate
     msgbox("Willow: Who is this Simon?")
-    msgbox("Bradley: … … …\nHe was our friend…\l…and he was my brother.")
+    msgbox("Bradley: … … …\nHe was our friend…\l…and he was my brother.", MSGBOX_AUTOCLOSE)
     // warp to flashback scene. The last bit here will play on warping back.
     fadescreen(FADE_FROM_BLACK)
     waitstate
@@ -483,7 +490,7 @@ script(local) WillowsLab_ReceivedPokedex {
 	waitfanfare
 	setflag(FLAG_SYS_POKEDEX_GET)
 	special(SetUnlockedPokedexFlags)
-	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+	setflag(FLAG_RECEIVED_POKEDEX_FROM_WILLOW)
 	return
 }
 

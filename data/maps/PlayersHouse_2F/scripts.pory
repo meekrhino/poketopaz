@@ -1,0 +1,61 @@
+const PLAYER = 0xFF
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts PlayersHouse_2F_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        FLAG_SAW_JIRACHI_PROGRAM, 0: PlayersHouse_WatchJirachiProgram
+    ]
+}
+
+
+//=====================================
+// Global Scripts
+//=====================================
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) PlayersHouse_WatchJirachiProgram {
+    lockall
+    setflag(FLAG_SAW_JIRACHI_PROGRAM)
+    delay(60)
+    special(TurnOnTVScreen)
+    delay(30)
+    applymovement(PLAYER, mGoWatchJirachiProgram)
+    msgbox(PlayersHouse_2F_JirachiProgram)
+    waitmessage
+    closemessage
+    delay(30)
+    special(TurnOffTVScreen)
+    releaseall
+    return
+}
+
+//=====================================
+// Text
+//=====================================
+text PlayersHouse_2F_JirachiProgram {
+    format(
+        "The day foretold in the ancient legend is almost here!\p"
+        "The 1000-year celebration marking the awakening of Jirachi!\p"
+        "Music, food, and entertainment galore, featuring a live "
+        "performance by\lDJ Dane!\pDon't miss out on the festivities!…"
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+movement mGoWatchJirachiProgram {
+    emote_exclamation_mark
+    face_up
+    delay_16 * 4
+    walk_right
+    walk_up * 2
+}
+
+//=====================================
+// Raw
+//=====================================

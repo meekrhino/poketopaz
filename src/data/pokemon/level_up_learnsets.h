@@ -212,8 +212,9 @@ static const u16 sPyreignLevelUpLearnset[] = {
 };
 
 static const u16 sFincherpLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_PECK),
-    LEVEL_UP_MOVE( 7, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 5, MOVE_GROWL),
+    LEVEL_UP_MOVE( 9, MOVE_PECK),
     LEVEL_UP_MOVE(13, MOVE_SQUALL),
     LEVEL_UP_MOVE(16, MOVE_DOUBLE_TEAM),
     LEVEL_UP_MOVE(20, MOVE_WING_ATTACK),
@@ -229,8 +230,9 @@ static const u16 sFincherpLevelUpLearnset[] = {
 };
 
 static const u16 sGashawkLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_PECK),
-    LEVEL_UP_MOVE( 7, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 5, MOVE_GROWL),
+    LEVEL_UP_MOVE( 9, MOVE_PECK),
     LEVEL_UP_MOVE(13, MOVE_SQUALL),
     LEVEL_UP_MOVE(16, MOVE_DOUBLE_TEAM),
     LEVEL_UP_MOVE(19,  MOVE_RAGE),
@@ -246,8 +248,9 @@ static const u16 sGashawkLevelUpLearnset[] = {
 };
 
 static const u16 sEaglairLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_PECK),
-    LEVEL_UP_MOVE( 7, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 5, MOVE_GROWL),
+    LEVEL_UP_MOVE( 9, MOVE_PECK),
     LEVEL_UP_MOVE(13, MOVE_SQUALL),
     LEVEL_UP_MOVE(16, MOVE_DOUBLE_TEAM),
     LEVEL_UP_MOVE(19, MOVE_RAGE),
@@ -264,7 +267,7 @@ static const u16 sEaglairLevelUpLearnset[] = {
 
 static const u16 sMogelLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POUND),
-    LEVEL_UP_MOVE( 1, MOVE_CHARM),
+    LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 4, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 8, MOVE_QUICK_ATTACK),
     LEVEL_UP_MOVE(13, MOVE_SWEET_KISS),
@@ -281,6 +284,7 @@ static const u16 sMogelLevelUpLearnset[] = {
 
 static const u16 sFirrelLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POUND),
+    LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 1, MOVE_CHARM),
     LEVEL_UP_MOVE( 4, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 8, MOVE_QUICK_ATTACK),

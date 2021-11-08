@@ -1,5 +1,6 @@
 NeoBay_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NeoBay_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, NeoBay_OnResume
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
@@ -123,15 +124,34 @@ NeoBay_OnTransition:
 	case 0, NeoBay_OnTransition_2
 	case 2, NeoBay_OnTransition_3
 	addobject 2
-	end
+	return
 
 NeoBay_OnTransition_2:
 	addobject 2
-	end
+	return
 
 NeoBay_OnTransition_3:
 	addobject 2
-	end
+	return
+
+
+NeoBay_OnResume:
+	goto_if_set FLAG_WILD_ENCOUNTER, NeoBay_OnResume_1
+	return
+
+NeoBay_OnResume_1:
+	switch VAR_AMPURE_RESCUE_STATE
+	case 2, NeoBay_OnResume_4
+	case 3, NeoBay_OnResume_5
+	return
+
+NeoBay_OnResume_4:
+	call NeoBay_UpdateBradleyPositionAfterEncounter
+	return
+
+NeoBay_OnResume_5:
+	call NeoBay_UpdateBradleyPositionAfterEncounter
+	return
 
 
 NeoBay_EventScript_BradleyIntroText:
@@ -202,35 +222,20 @@ NeoBay_OnCompletedWildEncounter_4:
 
 
 NeoBay_UpdateBradleyPositionAfterEncounter:
+	special PrintTest
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_TEMP_1, 27
-	goto_if_gt NeoBay_UpdateBradleyPositionAfterEncounter_2
-	compare VAR_TEMP_1, 19
-	goto_if_gt NeoBay_UpdateBradleyPositionAfterEncounter_3
-	setobjectxyperm 2, 12, 17
+	addvar VAR_TEMP_0, 1
+	setobjectxy 2, VAR_TEMP_0, VAR_TEMP_1
+	copyobjectxytoperm 2
 	turnobject 2, DIR_WEST
-	applymovement 2, mBradleyFidgetsLeft
-NeoBay_UpdateBradleyPositionAfterEncounter_1:
-	waitmovement 2
 	return
-
-NeoBay_UpdateBradleyPositionAfterEncounter_2:
-	setobjectxyperm 2, 13, 27
-	turnobject 2, DIR_SOUTH
-	applymovement 2, mBradleyFidgetsDown
-	goto NeoBay_UpdateBradleyPositionAfterEncounter_1
-
-NeoBay_UpdateBradleyPositionAfterEncounter_3:
-	setobjectxyperm 2, 13, 22
-	turnobject 2, DIR_WEST
-	applymovement 2, mBradleyFidgetsLeft
-	goto NeoBay_UpdateBradleyPositionAfterEncounter_1
 
 
 NeoBay_EventScript_AmpureRescueAfterFirst:
 	lockall
 	setvar VAR_AMPURE_RESCUE_STATE, 3
-	call NeoBay_UpdateBradleyPositionAfterEncounter
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
+	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox NeoBay_EventScript_AmpureRescueAfterFirst_Text_0
 	waitmessage
 	closemessage
@@ -241,7 +246,8 @@ NeoBay_EventScript_AmpureRescueAfterFirst:
 
 NeoBay_EventScript_AmpureRescueAfterSecond:
 	lockall
-	call NeoBay_UpdateBradleyPositionAfterEncounter
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
+	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox NeoBay_EventScript_AmpureRescueAfterSecond_Text_0
 	playfanfare MUS_HEAL
 	waitfanfare
@@ -256,7 +262,7 @@ NeoBay_EventScript_AmpureRescueAfterSecond:
 NeoBay_EventScript_SetupBradleyForAmpure:
 	addobject 2
 	addobject 3
-	setobjectxyperm 2, 11, 23
+	setobjectxy 2, 11, 23
 	turnobject 2, DIR_EAST
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	setvar VAR_AMPURE_RESCUE_STATE, 4
@@ -274,6 +280,8 @@ NeoBay_EventScript_AmpureCapture:
 	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox NeoBay_EventScript_AmpureCapture_Text_0
 	waitmessage
+	applymovement 2, mWalkUpLookRight
+	waitmovement 2
 	special SavePlayerParty
 	special PutRivalMonInPlayerParty
 	special StartBradleyAmpureCatch
@@ -565,6 +573,11 @@ mAmpureRunsUpToPlayer:
 mLookUpStartled:
 	emote_exclamation_mark
 	face_up
+	step_end
+
+mWalkUpLookRight:
+	walk_up
+	face_right
 	step_end
 
 NeoBay_EventScript_BradleyStopsPlayer_Text_0:

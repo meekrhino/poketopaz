@@ -491,7 +491,7 @@ PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV::
 	call_if_eq PlayersHouse_1F_EventScript_PlayerApproachTVForLatiMale
 	compare VAR_0x8008, FEMALE
 	call_if_eq PlayersHouse_1F_EventScript_PlayerApproachTVForLatiFemale
-	msgbox PlayersHouse_1F_Text_LatiEmergencyNewsFlash, MSGBOX_DEFAULT
+	msgbox PlayersHouse_1F_Text_JirachiNewsContinues, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_TV_LATIAS_LATIOS
 	setflag FLAG_LATIOS_OR_LATIAS_ROAMING

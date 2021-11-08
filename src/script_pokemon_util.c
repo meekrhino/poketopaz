@@ -23,6 +23,8 @@
 #include "tv.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
+#include "printf.h"
+#include "mgba.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
@@ -217,4 +219,9 @@ void ReducePlayerPartyToSelectedMons(void)
         gPlayerParty[i] = party[i];
 
     CalculatePlayerPartyCount();
+}
+
+void PrintTest(void)
+{
+    mgba_printf(MGBA_LOG_DEBUG, "Special PrintTest occurred");
 }

@@ -45,7 +45,7 @@
 #define FLAG_WILLOW_BALL_TAKEN_1            0x21
 #define FLAG_WILLOW_BALL_TAKEN_2            0x22
 #define FLAG_WILD_ENCOUNTER                 0x23
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_SAW_JIRACHI_PROGRAM            0x24
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
@@ -1498,7 +1498,7 @@
 
 #define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
 
-#define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
+#define FLAG_RECEIVED_POKEDEX_FROM_WILLOW            (SYSTEM_FLAGS + 0x84)
 
 #define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
 #define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag

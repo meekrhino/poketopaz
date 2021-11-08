@@ -35,7 +35,7 @@
 
 // TVGROUP_RECORD_MIX
 #define TVGROUP_RECORD_MIX_START                    21
-#define TVSHOW_POKEMON_TODAY_CAUGHT                 21 
+#define TVSHOW_POKEMON_TODAY_CAUGHT                 21
 #define TVSHOW_SMART_SHOPPER                        22
 #define TVSHOW_POKEMON_TODAY_FAILED                 23
 #define TVSHOW_FISHING_ADVICE                       24
@@ -67,9 +67,9 @@
 // shows from TVGROUP_RECORD_MIX.
 #define NUM_NORMAL_TVSHOW_SLOTS 5
 
-#define PLAYERS_HOUSE_TV_NONE  0
-#define PLAYERS_HOUSE_TV_LATI  1
-#define PLAYERS_HOUSE_TV_MOVIE 2
+#define PLAYERS_HOUSE_TV_NONE       0
+#define PLAYERS_HOUSE_TV_JIRACHI    1
+#define PLAYERS_HOUSE_TV_MOVIE      2
 
 // Number of ribbons to put Spot the Cuties on air
 #define NUM_CUTIES_RIBBONS  4

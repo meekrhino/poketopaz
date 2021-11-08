@@ -38,6 +38,7 @@ const AMPURE_RESCUE_CAPTURE_DONE = 6
 //=====================================
 mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: NeoBay_OnTransition
+    MAP_SCRIPT_ON_RESUME: NeoBay_OnResume
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_SetupBradleyAtBoat
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE_WARP: NeoBay_EventScript_SetupBradleyForAmpure
@@ -150,13 +151,21 @@ script(local) NeoBay_OnTransition {
     switch (var(VAR_NEOBAY_STATE)) {
         case NEOBAY_STATE_NEW_GAME:
             addobject(BRADLEY)
-            end
         case NEOBAY_STATE_RECEIVED_STARTER:
             addobject(BRADLEY)
-            end
         default:
             addobject(BRADLEY)
-            end
+    }
+}
+
+script(local) NeoBay_OnResume {
+    if (flag(FLAG_WILD_ENCOUNTER)) {
+        switch(var(VAR_AMPURE_RESCUE_STATE)) {
+            case AMPURE_RESCUE_IN_MEADOW:
+                call(NeoBay_UpdateBradleyPositionAfterEncounter)
+            case AMPURE_RESCUE_FIRST_BATTLE_DONE:
+                call(NeoBay_UpdateBradleyPositionAfterEncounter)
+        }
     }
 }
 
@@ -223,30 +232,20 @@ script(local) NeoBay_OnCompletedWildEncounter {
 }
 
 script(local) NeoBay_UpdateBradleyPositionAfterEncounter {
+    special(PrintTest)
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-    if(var(VAR_TEMP_1) > 27) {
-        setobjectxyperm(BRADLEY, 13, 27)
-        turnobject(BRADLEY, DIR_SOUTH)
-        applymovement(BRADLEY, mBradleyFidgetsDown)
-    }
-    elif(var(VAR_TEMP_1) > 19) {
-        setobjectxyperm(BRADLEY, 13, 22)
-        turnobject(BRADLEY, DIR_WEST)
-        applymovement(BRADLEY, mBradleyFidgetsLeft)
-    }
-    else {
-        setobjectxyperm(BRADLEY, 12, 17)
-        turnobject(BRADLEY, DIR_WEST)
-        applymovement(BRADLEY, mBradleyFidgetsLeft)
-    }
-    waitmovement(BRADLEY)
+    addvar(VAR_TEMP_0, 1)
+    setobjectxy(BRADLEY, VAR_TEMP_0, VAR_TEMP_1)
+    copyobjectxytoperm(BRADLEY)
+    turnobject(BRADLEY, DIR_WEST)
     return
 }
 
 script(local) NeoBay_EventScript_AmpureRescueAfterFirst {
     lockall
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_FIRST_BATTLE_DONE)
-    call(NeoBay_UpdateBradleyPositionAfterEncounter)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceRight)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
     msgbox(format("Bradley: Did you find him?\l… … oh, well keep looking.\lHere, I'll heal your Pokémon for you."))
     waitmessage
     closemessage
@@ -257,7 +256,8 @@ script(local) NeoBay_EventScript_AmpureRescueAfterFirst {
 
 script(local) NeoBay_EventScript_AmpureRescueAfterSecond {
     lockall
-    call(NeoBay_UpdateBradleyPositionAfterEncounter)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceRight)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
     msgbox(format("Bradley: Any luck this time?\l… … oh, well keep looking.\lHere, I'll heal your Pokémon again."))
 	playfanfare(MUS_HEAL)
 	waitfanfare
@@ -272,7 +272,7 @@ script(local) NeoBay_EventScript_AmpureRescueAfterSecond {
 script(local) NeoBay_EventScript_SetupBradleyForAmpure {
     addobject(BRADLEY)
     addobject(AMPURE)
-    setobjectxyperm(BRADLEY, 11, 23)
+    setobjectxy(BRADLEY, 11, 23)
     turnobject(BRADLEY, DIR_EAST)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE)
@@ -289,6 +289,8 @@ script(local) NeoBay_EventScript_AmpureCapture {
     waitmovement(OBJ_EVENT_ID_PLAYER)
     msgbox(format("Bradley: I think he likes you, {PLAYER}! Just stay still, I'll catch him!"))
     waitmessage
+    applymovement(BRADLEY, mWalkUpLookRight)
+    waitmovement(BRADLEY)
 	special(SavePlayerParty)
 	special(PutRivalMonInPlayerParty)
     special(StartBradleyAmpureCatch)
@@ -487,6 +489,11 @@ movement mAmpureRunsUpToPlayer {
 movement mLookUpStartled {
     emote_exclamation_mark
     face_up
+}
+
+movement mWalkUpLookRight {
+    walk_up
+    face_right
 }
 
 //=====================================
