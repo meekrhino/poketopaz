@@ -5,8 +5,10 @@ const WARP_RESCUE = 2
 
 // VAR_NEOBAY_STATE values
 const NEOBAY_STATE_NEW_GAME = 0
-const NEOBAY_STATE_MET_WILLOW = 1
-const NEOBAY_STATE_RECEIVED_STARTER = 2
+const NEOBAY_STATE_SPOKE_TO_MOM = 1
+const NEOBAY_STATE_MET_WILLOW = 2
+const NEOBAY_STATE_RECEIVED_STARTER = 3
+const NEOBAY_STATE_AMPURE_RESCUED = 4
 
 // VAR_AMPURE_RESCUE_STATE values
 const AMPURE_RESCUE_STARTED = 1
@@ -149,12 +151,12 @@ script(local) NeoBay_OnTransition {
     setflag(FLAG_VISITED_NEOBAY_TOWN)
     call(Common_EventScript_SetupRivalGfxId)
     switch (var(VAR_NEOBAY_STATE)) {
-        case NEOBAY_STATE_NEW_GAME:
+        case NEOBAY_STATE_SPOKE_TO_MOM:
             addobject(BRADLEY)
         case NEOBAY_STATE_RECEIVED_STARTER:
             addobject(BRADLEY)
         default:
-            addobject(BRADLEY)
+            removeobject(BRADLEY)
     }
 }
 
@@ -294,6 +296,9 @@ script(local) NeoBay_EventScript_AmpureCapture {
 	special(SavePlayerParty)
 	special(PutRivalMonInPlayerParty)
     special(StartBradleyAmpureCatch)
+    removeobject(AMPURE)
+    setobjectxy(BRADLEY, 12, 22)
+    turnobject(BRADLEY, DIR_SOUTH)
     waitstate
     msgbox(format("Bradley: ALRIGHT! And that was my first time, too!\lLet's go back and return Ampure to Prof. Willow!"))
     warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6)

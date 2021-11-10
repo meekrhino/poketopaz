@@ -4540,6 +4540,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/PlayersHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/PlayersHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEO_BAY_PLAYERS_HOUSE_1F",
+      "name": "NeoBay_PlayersHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/NeoBay_PlayersHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NeoBay_PlayersHouse_1F/map.bin"
     }
   ]
 }

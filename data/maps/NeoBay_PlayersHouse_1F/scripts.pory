@@ -1,0 +1,146 @@
+const MOM = 1
+
+// VAR_NEOBAY_STATE values
+const NEOBAY_STATE_NEW_GAME = 0
+const NEOBAY_STATE_SPOKE_TO_MOM = 1
+const NEOBAY_STATE_MET_WILLOW = 2
+const NEOBAY_STATE_RECEIVED_STARTER = 3
+const NEOBAY_STATE_AMPURE_RESCUED = 4
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts NeoBay_PlayersHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: PlayersHouse_1F_OnTransition
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_NEOBAY_STATE, 0: BradleyWasLookingForYou
+    ]
+}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) PlayersHouse_1F_BradleyReminder {
+    switch(var(VAR_NEOBAY_STATE)) {
+        case NEOBAY_STATE_SPOKE_TO_MOM:
+            msgbox(format("Mom: Bradley was looking for you, dear.\lHe said you'd know where to find him."), MSGBOX_NPC)
+        case NEOBAY_STATE_AMPURE_RESCUED:
+            if (flag(FLAG_RECEIVED_RUNNING_SHOES)) {
+                msgbox(format("Mom: I'll be fine. You shouldn't keep the professor waiting."), MSGBOX_NPC)
+            }
+            else {
+                call(MomGivesRunningShoes)
+            }
+    }
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) PlayersHouse_1F_OnTransition {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_AMPURE_RESCUED) {
+        if( flag(FLAG_RECEIVED_RUNNING_SHOES)) {
+            setobjectxyperm(MOM, 2, 2)
+            setobjectmovementtype(MOM, MOVEMENT_TYPE_FACE_UP)
+        }
+        else {
+            setobjectxyperm(MOM, 3, 4)
+            setobjectmovementtype(MOM, MOVEMENT_TYPE_FACE_RIGHT)
+        }
+    }
+}
+
+script(local) BradleyWasLookingForYou {
+    lockall
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_SPOKE_TO_MOM)
+    applymovement(MOM, mLookUpStartled)
+    waitmovement(MOM)
+    msgbox(PlayersHouse_1F_BradleyWasLookingForYou, MSGBOX_AUTOCLOSE)
+    releaseall
+    end
+}
+
+script(local) MomGivesRunningShoes {
+    lockall
+    faceplayer
+    msgbox(format("Mom: Hi {PLAYER}. Where have you been all day?\p… … …\pWow, it sounds like an adventure.\lBut I'm not sure I like the idea of you leaving…"))
+    waitmessage
+    closemessage
+    applymovement(MOM, mMomDeliberates1)
+    waitmovement(MOM)
+    msgbox(format("Mom: It's dangerous out there, {PLAYER}. I don't think you have any idea…"))
+    waitmessage
+    closemessage
+    applymovement(MOM, mMomDeliberates2)
+    waitmovement(MOM)
+    msgbox(PlayersHouse_1F_GivesRunningShoes)
+    waitmessage
+    closemessage
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} put on the\nRunning Shoes.")
+	waitfanfare
+	setflag(FLAG_RECEIVED_RUNNING_SHOES)
+    msgbox(PlayersHouse_1F_SayGoodbye)
+    waitmessage
+    closemessage
+    releaseall
+    return
+}
+
+//=====================================
+// Text
+//=====================================
+text PlayersHouse_1F_BradleyWasLookingForYou {
+    format(
+        "Mom: Oh {PLAYER}! Your friend Bradley just came by looking for you.\p"
+        "He said it was urgent, but I sent him away because you were still "
+        "napping.\pYou should go find him, he was very excited.\lWell, more "
+        "excited than he usually is!"
+    )
+}
+
+text PlayersHouse_1F_GivesRunningShoes {
+    format(
+        "Mom: I understand that you want to find Simon, but there's no "
+        "telling where he could be now.\p… … …\nI guess I've held you "
+        "back for long enough. You'll be with your Pokémon. That should "
+        "be enough.\pBut take these with you, {PLAYER}, and make sure "
+        "you use them."
+    )
+}
+
+text PlayersHouse_1F_SayGoodbye {
+    format(
+        "Mom: If you're ever in danger, or you need to come home, "
+        "these running shoes will help you move much faster.\p"
+        "I'll miss you, {PLAYER}. Make sure you come home once in "
+        "a while."
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+movement mMomDeliberates1 {
+    walk_slow_left * 2
+    face_up
+    delay_16
+    walk_in_place_slow_up * 2
+    delay_16
+    walk_slow_right
+    face_up
+    walk_in_place_slow_up * 2
+    delay_16 * 2
+    face_left
+}
+
+movement mMomDeliberates2 {
+    delay_16 * 4
+    walk_right * 2
+    face_down
+}
+
+//=====================================
+// Raw
+//=====================================

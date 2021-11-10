@@ -104,7 +104,7 @@ NeoBay_EventScript_BradleyConversation::
 	lock
 	faceplayer
 	switch VAR_NEOBAY_STATE
-	case 2, NeoBay_EventScript_BradleyConversation_3
+	case 3, NeoBay_EventScript_BradleyConversation_3
 	msgbox NeoBay_EventScript_BradleyConversation_Text_1
 NeoBay_EventScript_BradleyConversation_1:
 	waitmessage
@@ -121,9 +121,9 @@ NeoBay_OnTransition:
 	setflag FLAG_VISITED_NEOBAY_TOWN
 	call Common_EventScript_SetupRivalGfxId
 	switch VAR_NEOBAY_STATE
-	case 0, NeoBay_OnTransition_2
-	case 2, NeoBay_OnTransition_3
-	addobject 2
+	case 1, NeoBay_OnTransition_2
+	case 3, NeoBay_OnTransition_3
+	removeobject 2
 	return
 
 NeoBay_OnTransition_2:
@@ -285,6 +285,9 @@ NeoBay_EventScript_AmpureCapture:
 	special SavePlayerParty
 	special PutRivalMonInPlayerParty
 	special StartBradleyAmpureCatch
+	removeobject 3
+	setobjectxy 2, 12, 22
+	turnobject 2, DIR_SOUTH
 	waitstate
 	msgbox NeoBay_EventScript_AmpureCapture_Text_1
 	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6

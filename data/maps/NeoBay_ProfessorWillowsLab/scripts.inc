@@ -5,7 +5,7 @@ NeoBay_ProfessorWillowsLab_MapScripts::
 	.byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_NEOBAY_STATE, 0, WillowIntroduction
+	map_script_2 VAR_NEOBAY_STATE, 1, WillowIntroduction
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 6, WillowsLab_AmpureRescued
 	.2byte 0
 
@@ -19,13 +19,36 @@ NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
 
 
 WillowsLab_YouGoFirst::
-	msgbox WillowsLab_YouGoFirst_Text_0, MSGBOX_NPC
+	compare VAR_NEOBAY_STATE, 3
+	goto_if_eq WillowsLab_YouGoFirst_2
+	msgbox WillowsLab_YouGoFirst_Text_1, MSGBOX_NPC
+	end
+
+WillowsLab_YouGoFirst_2:
+	msgbox WillowsLab_YouGoFirst_Text_0
 	end
 
 
 WillowsLab_TakeYourTime::
-	msgbox WillowsLab_TakeYourTime_Text_0, MSGBOX_NPC
+	compare VAR_NEOBAY_STATE, 3
+	goto_if_eq WillowsLab_TakeYourTime_2
+	msgbox WillowsLab_TakeYourTime_Text_3, MSGBOX_NPC
 	end
+
+WillowsLab_TakeYourTime_2:
+	lockall
+	faceplayer
+	msgbox WillowsLab_TakeYourTime_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq WillowsLab_TakeYourTime_5
+	msgbox WillowsLab_TakeYourTime_Text_2
+WillowsLab_TakeYourTime_4:
+	releaseall
+	end
+
+WillowsLab_TakeYourTime_5:
+	msgbox WillowsLab_TakeYourTime_Text_1, MSGBOX_NPC
+	goto WillowsLab_TakeYourTime_4
 
 
 WillowsLab_Books1::
@@ -74,72 +97,90 @@ WillowsLab_TrashCan::
 
 
 WillowsLab_EventScript_SelectVenap::
-	release
-	compare VAR_NEOBAY_STATE, 1
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_1, 10
 	goto_if_ne WillowsLab_EventScript_SelectVenap_2
-WillowsLab_EventScript_SelectVenap_1:
+	release
+	compare VAR_NEOBAY_STATE, 2
+	goto_if_ne WillowsLab_EventScript_SelectVenap_5
+WillowsLab_EventScript_SelectVenap_4:
 	showmonpic SPECIES_VENAP, 10, 3
 	msgbox WillowsLab_DoYouWantVenap, MSGBOX_YESNO
 	waitmessage
 	compare VAR_RESULT, NO
-	goto_if_eq WillowsLab_EventScript_SelectVenap_5
-WillowsLab_EventScript_SelectVenap_4:
+	goto_if_eq WillowsLab_EventScript_SelectVenap_8
+WillowsLab_EventScript_SelectVenap_7:
 	goto WillowsLab_GiveVenap
 	return
 
 WillowsLab_EventScript_SelectVenap_2:
-	goto WillowsLab_DontBeGreedy
-	goto WillowsLab_EventScript_SelectVenap_1
+	return
 
 WillowsLab_EventScript_SelectVenap_5:
-	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_DontBeGreedy
 	goto WillowsLab_EventScript_SelectVenap_4
+
+WillowsLab_EventScript_SelectVenap_8:
+	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_EventScript_SelectVenap_7
 
 
 WillowsLab_EventScript_SelectCelsinge::
-	release
-	compare VAR_NEOBAY_STATE, 1
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_1, 10
 	goto_if_ne WillowsLab_EventScript_SelectCelsinge_2
-WillowsLab_EventScript_SelectCelsinge_1:
+	release
+	compare VAR_NEOBAY_STATE, 2
+	goto_if_ne WillowsLab_EventScript_SelectCelsinge_5
+WillowsLab_EventScript_SelectCelsinge_4:
 	showmonpic SPECIES_CELSINGE, 10, 3
 	msgbox WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO
 	waitmessage
 	compare VAR_RESULT, NO
-	goto_if_eq WillowsLab_EventScript_SelectCelsinge_5
-WillowsLab_EventScript_SelectCelsinge_4:
+	goto_if_eq WillowsLab_EventScript_SelectCelsinge_8
+WillowsLab_EventScript_SelectCelsinge_7:
 	goto WillowsLab_GiveCelsinge
 	return
 
 WillowsLab_EventScript_SelectCelsinge_2:
-	goto WillowsLab_DontBeGreedy
-	goto WillowsLab_EventScript_SelectCelsinge_1
+	return
 
 WillowsLab_EventScript_SelectCelsinge_5:
-	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_DontBeGreedy
 	goto WillowsLab_EventScript_SelectCelsinge_4
+
+WillowsLab_EventScript_SelectCelsinge_8:
+	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_EventScript_SelectCelsinge_7
 
 
 WillowsLab_EventScript_SelectEchoise::
-	release
-	compare VAR_NEOBAY_STATE, 1
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_1, 10
 	goto_if_ne WillowsLab_EventScript_SelectEchoise_2
-WillowsLab_EventScript_SelectEchoise_1:
+	release
+	compare VAR_NEOBAY_STATE, 2
+	goto_if_ne WillowsLab_EventScript_SelectEchoise_5
+WillowsLab_EventScript_SelectEchoise_4:
 	showmonpic SPECIES_ECHOISE, 10, 3
 	msgbox WillowsLab_DoYouWantEchoise, MSGBOX_YESNO
 	waitmessage
 	compare VAR_RESULT, NO
-	goto_if_eq WillowsLab_EventScript_SelectEchoise_5
-WillowsLab_EventScript_SelectEchoise_4:
+	goto_if_eq WillowsLab_EventScript_SelectEchoise_8
+WillowsLab_EventScript_SelectEchoise_7:
 	goto WillowsLab_GiveEchoise
 	return
 
 WillowsLab_EventScript_SelectEchoise_2:
-	goto WillowsLab_DontBeGreedy
-	goto WillowsLab_EventScript_SelectEchoise_1
+	return
 
 WillowsLab_EventScript_SelectEchoise_5:
-	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_DontBeGreedy
 	goto WillowsLab_EventScript_SelectEchoise_4
+
+WillowsLab_EventScript_SelectEchoise_8:
+	goto WillowsLab_TakeYourTime2
+	goto WillowsLab_EventScript_SelectEchoise_7
 
 
 WillowsLab_EventScript_WhereAreYouGoing::
@@ -153,7 +194,7 @@ WillowsLab_EventScript_WhereAreYouGoing::
 
 
 WillowsLab_OnTransition:
-	compare VAR_NEOBAY_STATE, 0
+	compare VAR_NEOBAY_STATE, 1
 	goto_if_eq WillowsLab_OnTransition_1
 	compare VAR_AMPURE_RESCUE_STATE, 6
 	goto_if_eq WillowsLab_OnTransition_2
@@ -178,7 +219,7 @@ WillowsLab_OnTransition_2:
 
 WillowIntroduction:
 	lockall
-	setvar VAR_NEOBAY_STATE, 1
+	setvar VAR_NEOBAY_STATE, 2
 	setvar VAR_AMPURE_RESCUE_STATE, 1
 	delay 30
 	setobjectxy 5, 8, 2
@@ -360,7 +401,7 @@ WillowsLab_ReceivedStarter:
 WillowsLab_ReceivedStarter_1:
 	waitmessage
 	closemessage
-	setvar VAR_NEOBAY_STATE, 2
+	setvar VAR_NEOBAY_STATE, 3
 	hidemonpic
 	return
 
@@ -442,6 +483,7 @@ WillowsLab_RegroupAfterPlayerChoosesEchoise:
 
 
 WillowsLab_YourePokemonTrainersNow:
+	setflag FLAG_SYS_POKEMON_GET
 	msgbox WillowsLab_YourePokemonTrainersNow_Text_0
 	msgbox WillowsLab_YourePokemonTrainersNow_Text_1
 	msgbox WillowsLab_YourePokemonTrainersNow_Text_2
@@ -480,7 +522,9 @@ WillowsLab_AmpureRescued:
 	closemessage
 	call WillowsLab_ReceivedPokedex
 	msgbox WillowsLab_AmpureRescued_Text_3
-	msgbox WillowsLab_PokedexDescription, MSGBOX_AUTOCLOSE
+	msgbox WillowsLab_PokedexDescription
+	waitmessage
+	closemessage
 	applymovement 5, mBradleyFidgetsUp
 	waitmovement 5
 	msgbox WillowsLab_AmpureRescued_Text_4
@@ -489,16 +533,17 @@ WillowsLab_AmpureRescued:
 	fadeoutbgm 2
 	fadescreen FADE_TO_BLACK
 	msgbox WillowsLab_AmpureRescued_Text_5
-	msgbox WillowsLab_AmpureRescued_Text_6, MSGBOX_AUTOCLOSE
+	msgbox WillowsLab_AmpureRescued_Text_6
+	waitmessage
+	closemessage
 	fadescreen FADE_FROM_BLACK
-	waitstate
 	msgbox WillowsLab_AmpureRescued_Text_7
 	waitmessage
 	closemessage
 	delay 60
 	msgbox WillowsLab_AmpureRescued_Text_8
 	msgbox WillowsLab_AmpureRescued_Text_9
-	msgbox WillowsLab_SayGoodbyeToMom
+	msgbox WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE
 	releaseall
 	end
 
@@ -810,10 +855,28 @@ mWillowDeliberates:
 	step_end
 
 WillowsLab_YouGoFirst_Text_0:
+	.string "Bradley: I guess we'd better go talk to\n"
+	.string "our folks like the Prof. said…$"
+
+WillowsLab_YouGoFirst_Text_1:
 	.string "Bradley: I just can't decide! You go\n"
 	.string "first, {PLAYER}! Come on, come on!$"
 
 WillowsLab_TakeYourTime_Text_0:
+	.string "Willow: So, you stopped by your family to\n"
+	.string "say goodbye, did you?$"
+
+WillowsLab_TakeYourTime_Text_1:
+	.string "Willow: … … …\n"
+	.string "… … …\p"
+	.string "You haven't even left my lab. Get going\n"
+	.string "before I regret giving you a Pokémon!$"
+
+WillowsLab_TakeYourTime_Text_2:
+	.string "Willow: Take your time! I'm not in any\n"
+	.string "hurry.$"
+
+WillowsLab_TakeYourTime_Text_3:
 	.string "Willow: Ohoho, can't decide? Take your\n"
 	.string "time, this is a big decision!$"
 
@@ -1025,7 +1088,10 @@ WillowsLab_AmpureRescued_Text_8:
 	.string "Willow: …I'm so sorry.$"
 
 WillowsLab_AmpureRescued_Text_9:
-	.string "Bradley: That's why we have to get to the next town, Professor!\lSimon could be anywhere, and he could even be in danger.$"
+	.string "Bradley: That's why we have to get to\n"
+	.string "the next town, Professor!\l"
+	.string "Simon could be anywhere, and he could\l"
+	.string "even be in danger.$"
 
 WillowsLab_ReceivedPokedex_Text_0:
 	.string "{PLAYER} received the Pokédex!$"

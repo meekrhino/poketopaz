@@ -17,8 +17,6 @@ PlayersHouse_WatchJirachiProgram:
 	msgbox PlayersHouse_2F_JirachiProgram
 	waitmessage
 	closemessage
-	delay 30
-	special TurnOffTVScreen
 	releaseall
 	return
 

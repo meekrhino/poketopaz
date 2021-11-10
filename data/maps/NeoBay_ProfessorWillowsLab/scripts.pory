@@ -7,8 +7,10 @@ const AMPURE = 6
 
 // VAR_NEOBAY_STATE values
 const NEOBAY_STATE_NEW_GAME = 0
-const NEOBAY_STATE_MET_WILLOW = 1
-const NEOBAY_STATE_RECEIVED_STARTER = 2
+const NEOBAY_STATE_SPOKE_TO_MOM = 1
+const NEOBAY_STATE_MET_WILLOW = 2
+const NEOBAY_STATE_RECEIVED_STARTER = 3
+const NEOBAY_STATE_AMPURE_RESCUED = 4
 
 // VAR_AMPURE_RESCUE_STATE values
 const AMPURE_RESCUE_STARTED = 1
@@ -25,7 +27,7 @@ const AMPURE_RESCUE_RETURNED = 7
 mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: WillowsLab_OnTransition
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_NEOBAY_STATE, NEOBAY_STATE_NEW_GAME: WillowIntroduction
+        VAR_NEOBAY_STATE, NEOBAY_STATE_SPOKE_TO_MOM: WillowIntroduction
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE: WillowsLab_AmpureRescued
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
@@ -40,11 +42,28 @@ mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
 // Global Scripts
 //=====================================
 script(global) WillowsLab_YouGoFirst {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_RECEIVED_STARTER) {
+        msgbox(format("Bradley: I guess we'd better go talk to our folks like the Prof. said…"), MSGBOX_NPC)
+        end
+    }
     msgbox(format("Bradley: I just can't decide! You go first, {PLAYER}! Come on, come on!"), MSGBOX_NPC)
     end
 }
 
 script(global) WillowsLab_TakeYourTime {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_RECEIVED_STARTER) {
+        lockall
+        faceplayer
+	    msgbox(format("Willow: So, you stopped by your family to say goodbye, did you?"), MSGBOX_YESNO)
+	    if(var(VAR_RESULT) == YES) {
+            msgbox(format("Willow: … … …\n… … …\pYou haven't even left my lab. Get going before I regret giving you a Pokémon!"), MSGBOX_NPC)
+        }
+        else {
+            msgbox(format("Willow: Take your time! I'm not in any hurry."))
+        }
+        releaseall
+        end
+    }
     msgbox(format("Willow: Ohoho, can't decide? Take your time, this is a big decision!"), MSGBOX_NPC)
     end
 }
@@ -91,6 +110,10 @@ script(global) WillowsLab_TrashCan {
 }
 
 script(global) WillowsLab_EventScript_SelectVenap {
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if(var(VAR_TEMP_1) != 10) {
+        return
+    }
     release
     if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
@@ -105,6 +128,10 @@ script(global) WillowsLab_EventScript_SelectVenap {
 }
 
 script(global) WillowsLab_EventScript_SelectCelsinge {
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if(var(VAR_TEMP_1) != 10) {
+        return
+    }
     release
     if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
@@ -119,6 +146,10 @@ script(global) WillowsLab_EventScript_SelectCelsinge {
 }
 
 script(global) WillowsLab_EventScript_SelectEchoise {
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if(var(VAR_TEMP_1) != 10) {
+        return
+    }
     release
     if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
@@ -146,7 +177,7 @@ script(global) WillowsLab_EventScript_WhereAreYouGoing {
 // Local Scripts
 //=====================================
 script(local) WillowsLab_OnTransition {
-    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_NEW_GAME) {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SPOKE_TO_MOM) {
         setobjectxy(WILLOW, 2, 8)
         setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_LEFT)
         clearflag(FLAG_WILLOW_BALL_TAKEN_0)
@@ -421,6 +452,7 @@ script(local) WillowsLab_RegroupAfterPlayerChoosesEchoise {
 }
 
 script(local) WillowsLab_YourePokemonTrainersNow {
+    setflag(FLAG_SYS_POKEMON_GET)
     msgbox(format("Willow: Ohohoho, the looks on your faces are priceless!\lFrom now on, both of you are officially Pokémon Trainers! Congratulations!"))
     msgbox(format("Bradley: You hear that, {PLAYER}? We're legit Pokémon Trainers now! We're going straight to the big leagues!"))
     msgbox(format("Willow: Ahem!\nBefore scampering off with your new Pokémon, there's something I'd like you to do for me in return."))
@@ -459,7 +491,9 @@ script(local) WillowsLab_AmpureRescued {
     closemessage
     call(WillowsLab_ReceivedPokedex)
     msgbox(format("Bradley: This is one of those Pokédex things, right?"))
-    msgbox(WillowsLab_PokedexDescription, MSGBOX_AUTOCLOSE)
+    msgbox(WillowsLab_PokedexDescription)
+    waitmessage
+    closemessage
     applymovement(BRADLEY, mBradleyFidgetsUp)
     waitmovement(BRADLEY)
     msgbox("Bradley: Did you hear that, {PLAYER}!?\nWe're finally going to be able\lto find Simon.")
@@ -468,17 +502,18 @@ script(local) WillowsLab_AmpureRescued {
     fadeoutbgm(2)
     fadescreen(FADE_TO_BLACK)
     msgbox("Willow: Who is this Simon?")
-    msgbox("Bradley: … … …\nHe was our friend…\l…and he was my brother.", MSGBOX_AUTOCLOSE)
+    msgbox("Bradley: … … …\nHe was our friend…\l…and he was my brother.")
+    waitmessage
+    closemessage
     // warp to flashback scene. The last bit here will play on warping back.
     fadescreen(FADE_FROM_BLACK)
-    waitstate
     msgbox("Bradley: …We never saw him again.")
     waitmessage
     closemessage
     delay(60)
     msgbox("Willow: …I'm so sorry.")
-    msgbox("Bradley: That's why we have to get to the next town, Professor!\lSimon could be anywhere, and he could even be in danger.")
-    msgbox(WillowsLab_SayGoodbyeToMom)
+    msgbox(format("Bradley: That's why we have to get to the next town, Professor!\lSimon could be anywhere, and he could even be in danger."))
+    msgbox(WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE)
     releaseall
     end
 }
