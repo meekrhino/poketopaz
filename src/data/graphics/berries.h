@@ -49,7 +49,7 @@ const u32 gBerryPic_Apicot[] = INCBIN_U32("graphics/berries/apicot.4bpp.lz");
 const u32 gBerryPic_Lansat[] = INCBIN_U32("graphics/berries/lansat.4bpp.lz");
 const u32 gBerryPic_Starf[] = INCBIN_U32("graphics/berries/starf.4bpp.lz");
 const u32 gBerryPic_Enigma[] = INCBIN_U32("graphics/berries/enigma.4bpp.lz");
-const u32 gBerryPic_Calopa[] = INCBIN_U32("graphics/berries/spelon.4bpp.lz");
+const u32 gBerryPic_Calopa[] = INCBIN_U32("graphics/berries/calopa.4bpp.lz");
 
 const u32 gBerryPalette_Cheri[] = INCBIN_U32("graphics/berries/cheri.gbapal.lz");
 const u32 gBerryPalette_Oran[] = INCBIN_U32("graphics/berries/oran.gbapal.lz");
@@ -94,4 +94,4 @@ const u32 gBerryPalette_Apicot[] = INCBIN_U32("graphics/berries/apicot.gbapal.lz
 const u32 gBerryPalette_Lansat[] = INCBIN_U32("graphics/berries/lansat.gbapal.lz");
 const u32 gBerryPalette_Starf[] = INCBIN_U32("graphics/berries/starf.gbapal.lz");
 const u32 gBerryPalette_Enigma[] = INCBIN_U32("graphics/berries/enigma.gbapal.lz");
-const u32 gBerryPalette_Calopa[] = INCBIN_U32("graphics/berries/spelon.gbapal.lz");
+const u32 gBerryPalette_Calopa[] = INCBIN_U32("graphics/berries/calopa.gbapal.lz");
