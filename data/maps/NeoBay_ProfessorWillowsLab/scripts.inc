@@ -554,6 +554,7 @@ WillowsLab_AmpureRescued:
 	msgbox WillowsLab_AmpureRescued_Text_8
 	msgbox WillowsLab_AmpureRescued_Text_9
 	msgbox WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE
+	fadeinbgm 2
 	releaseall
 	end
 

@@ -520,6 +520,7 @@ script(local) WillowsLab_AmpureRescued {
     msgbox("Willow: …I'm so sorry.")
     msgbox(format("Bradley: That's why we have to get to the next town, Professor!\lSimon could be anywhere, and he could even be in danger."))
     msgbox(WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE)
+    fadeinbgm(2)
     releaseall
     end
 }

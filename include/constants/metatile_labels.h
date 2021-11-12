@@ -402,6 +402,9 @@
 #define METATILE_Petalburg_Door_Littleroot  0x248
 #define METATILE_Petalburg_Door_Oldale      0x287
 
+// gTileset_Lab
+#define METATILE_Lab_Door_WillowsLabExit 0x2A9
+
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D
 #define METATILE_PokemonCenter_Door_CableClub            0x264
