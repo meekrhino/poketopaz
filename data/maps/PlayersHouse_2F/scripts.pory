@@ -24,7 +24,7 @@ script(local) PlayersHouse_WatchJirachiProgram {
     special(TurnOnTVScreen)
     delay(30)
     applymovement(PLAYER, mGoWatchJirachiProgram)
-    waitmovement
+    waitmovement(PLAYER)
     msgbox(PlayersHouse_2F_JirachiProgram)
     waitmessage
     closemessage

@@ -14,6 +14,7 @@ PlayersHouse_WatchJirachiProgram:
 	special TurnOnTVScreen
 	delay 30
 	applymovement 0xFF, mGoWatchJirachiProgram
+	waitmovement 0xFF
 	msgbox PlayersHouse_2F_JirachiProgram
 	waitmessage
 	closemessage

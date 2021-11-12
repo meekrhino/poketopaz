@@ -152,11 +152,11 @@ script(local) NeoBay_OnTransition {
     call(Common_EventScript_SetupRivalGfxId)
     switch (var(VAR_NEOBAY_STATE)) {
         case NEOBAY_STATE_SPOKE_TO_MOM:
-            addobject(BRADLEY)
+            clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
         case NEOBAY_STATE_RECEIVED_STARTER:
-            addobject(BRADLEY)
+            clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
         default:
-            removeobject(BRADLEY)
+            setflag(FLAG_HIDE_NEO_BAY_BRADLEY)
     }
 }
 

@@ -49,8 +49,7 @@ PlayersHouse_1F_OnTransition_3:
 BradleyWasLookingForYou:
 	lockall
 	setvar VAR_NEOBAY_STATE, 1
-	applymovement 1, mExclamationPoint
-	applymovement 1, mFaceUp
+	applymovement 1, mLookUpStartled
 	waitmovement 1
 	msgbox PlayersHouse_1F_BradleyWasLookingForYou, MSGBOX_AUTOCLOSE
 	releaseall

@@ -35,6 +35,7 @@ mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
             removeobject(BRADLEY)
             end
         }
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE: WillowsLab_OnWarp
     ]
 }
 
@@ -178,7 +179,7 @@ script(global) WillowsLab_EventScript_WhereAreYouGoing {
 //=====================================
 script(local) WillowsLab_OnTransition {
     if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SPOKE_TO_MOM) {
-        setobjectxy(WILLOW, 2, 8)
+        setobjectxyperm(WILLOW, 2, 8)
         setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_LEFT)
         clearflag(FLAG_WILLOW_BALL_TAKEN_0)
         clearflag(FLAG_WILLOW_BALL_TAKEN_1)
@@ -186,10 +187,15 @@ script(local) WillowsLab_OnTransition {
         removeobject(BRADLEY)
     }
     elif(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
-        applymovement(OBJ_EVENT_ID_PLAYER, mFaceRight)
         addobject(BRADLEY)
         setobjectxyperm(BRADLEY, 8, 7)
         setobjectxyperm(WILLOW, 11, 6)
+    }
+}
+
+script(local) WillowsLab_OnWarp {
+    if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
     }
 }
 

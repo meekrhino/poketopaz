@@ -11,6 +11,7 @@ NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 0, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 6, WillowsLab_OnWarp
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
@@ -25,7 +26,7 @@ WillowsLab_YouGoFirst::
 	end
 
 WillowsLab_YouGoFirst_2:
-	msgbox WillowsLab_YouGoFirst_Text_0
+	msgbox WillowsLab_YouGoFirst_Text_0, MSGBOX_NPC
 	end
 
 
@@ -201,7 +202,7 @@ WillowsLab_OnTransition:
 	return
 
 WillowsLab_OnTransition_1:
-	setobjectxy 4, 2, 8
+	setobjectxyperm 4, 2, 8
 	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
 	clearflag FLAG_WILLOW_BALL_TAKEN_0
 	clearflag FLAG_WILLOW_BALL_TAKEN_1
@@ -210,10 +211,19 @@ WillowsLab_OnTransition_1:
 	return
 
 WillowsLab_OnTransition_2:
-	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
 	addobject 5
 	setobjectxyperm 5, 8, 7
 	setobjectxyperm 4, 11, 6
+	return
+
+
+WillowsLab_OnWarp:
+	compare VAR_AMPURE_RESCUE_STATE, 6
+	goto_if_eq WillowsLab_OnWarp_1
+	return
+
+WillowsLab_OnWarp_1:
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	return
 
 

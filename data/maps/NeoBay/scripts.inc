@@ -123,15 +123,15 @@ NeoBay_OnTransition:
 	switch VAR_NEOBAY_STATE
 	case 1, NeoBay_OnTransition_2
 	case 3, NeoBay_OnTransition_3
-	removeobject 2
+	setflag FLAG_HIDE_NEO_BAY_BRADLEY
 	return
 
 NeoBay_OnTransition_2:
-	addobject 2
+	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
 	return
 
 NeoBay_OnTransition_3:
-	addobject 2
+	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
 	return
 
 
