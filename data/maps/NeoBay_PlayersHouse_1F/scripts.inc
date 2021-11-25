@@ -12,6 +12,7 @@ PlayersHouse_1F_BradleyReminder::
 	switch VAR_NEOBAY_STATE
 	case 1, PlayersHouse_1F_BradleyReminder_3
 	case 4, PlayersHouse_1F_BradleyReminder_4
+	case 5, PlayersHouse_1F_BradleyReminder_5
 PlayersHouse_1F_BradleyReminder_1:
 	end
 
@@ -20,7 +21,6 @@ PlayersHouse_1F_BradleyReminder_3:
 	goto PlayersHouse_1F_BradleyReminder_1
 
 PlayersHouse_1F_BradleyReminder_4:
-	goto_if_set FLAG_RECEIVED_RUNNING_SHOES, PlayersHouse_1F_BradleyReminder_5
 	call MomGivesRunningShoes
 	goto PlayersHouse_1F_BradleyReminder_1
 
@@ -30,19 +30,19 @@ PlayersHouse_1F_BradleyReminder_5:
 
 
 PlayersHouse_1F_OnTransition:
-	compare VAR_NEOBAY_STATE, 4
-	goto_if_eq PlayersHouse_1F_OnTransition_1
+	switch VAR_NEOBAY_STATE
+	case 4, PlayersHouse_1F_OnTransition_2
+	case 5, PlayersHouse_1F_OnTransition_3
 	return
 
-PlayersHouse_1F_OnTransition_1:
-	goto_if_set FLAG_RECEIVED_RUNNING_SHOES, PlayersHouse_1F_OnTransition_3
-	setobjectxyperm 1, 3, 4
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_RIGHT
+PlayersHouse_1F_OnTransition_2:
+	setobjectxyperm 1, 2, 2
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 	return
 
 PlayersHouse_1F_OnTransition_3:
-	setobjectxyperm 1, 2, 2
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm 1, 3, 4
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 
@@ -59,6 +59,7 @@ BradleyWasLookingForYou:
 MomGivesRunningShoes:
 	lockall
 	faceplayer
+	setvar VAR_NEOBAY_STATE, 5
 	msgbox MomGivesRunningShoes_Text_0
 	waitmessage
 	closemessage
@@ -106,7 +107,6 @@ mMomDeliberates2:
 	delay_16
 	delay_16
 	walk_right
-	walk_right
 	face_down
 	step_end
 
@@ -122,7 +122,7 @@ MomGivesRunningShoes_Text_0:
 	.string "Mom: Hi {PLAYER}. Where have you been\n"
 	.string "all day?\p"
 	.string "… … …\p"
-	.string "Wow, it sounds like an adventure.\l"
+	.string "Wow, it sounds like an adventure.\n"
 	.string "But I'm not sure I like the idea of you\l"
 	.string "leaving…$"
 

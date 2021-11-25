@@ -20,8 +20,8 @@
     },
     {
       "direction": "left",
-      "offset": 4,
-      "map": "MAP_ROUTE103"
+      "offset": -14,
+      "map": "MAP_SUNSET_VILLAGE"
     }
   ],
   "object_events": [

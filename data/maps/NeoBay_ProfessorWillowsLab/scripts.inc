@@ -7,14 +7,21 @@ NeoBay_ProfessorWillowsLab_MapScripts::
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 1, WillowIntroduction
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 6, WillowsLab_AmpureRescued
+	map_script_2 VAR_NEOBAY_STATE, 5, WillowsLab_Departure
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 0, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	map_script_2 VAR_NEOBAY_STATE, 4, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 6, WillowsLab_OnWarp
+	map_script_2 VAR_NEOBAY_STATE, 5, WillowsLab_OnWarp
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
+	removeobject 5
+	end
+
+NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1:
 	removeobject 5
 	end
 
@@ -31,9 +38,10 @@ WillowsLab_YouGoFirst_2:
 
 
 WillowsLab_TakeYourTime::
-	compare VAR_NEOBAY_STATE, 3
+	compare VAR_NEOBAY_STATE, 4
 	goto_if_eq WillowsLab_TakeYourTime_2
 	msgbox WillowsLab_TakeYourTime_Text_3, MSGBOX_NPC
+WillowsLab_TakeYourTime_1:
 	end
 
 WillowsLab_TakeYourTime_2:
@@ -41,15 +49,15 @@ WillowsLab_TakeYourTime_2:
 	faceplayer
 	msgbox WillowsLab_TakeYourTime_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	goto_if_eq WillowsLab_TakeYourTime_5
+	goto_if_eq WillowsLab_TakeYourTime_6
 	msgbox WillowsLab_TakeYourTime_Text_2
-WillowsLab_TakeYourTime_4:
-	releaseall
-	end
-
 WillowsLab_TakeYourTime_5:
+	releaseall
+	goto WillowsLab_TakeYourTime_1
+
+WillowsLab_TakeYourTime_6:
 	msgbox WillowsLab_TakeYourTime_Text_1, MSGBOX_NPC
-	goto WillowsLab_TakeYourTime_4
+	goto WillowsLab_TakeYourTime_5
 
 
 WillowsLab_Books1::
@@ -199,6 +207,8 @@ WillowsLab_OnTransition:
 	goto_if_eq WillowsLab_OnTransition_1
 	compare VAR_AMPURE_RESCUE_STATE, 6
 	goto_if_eq WillowsLab_OnTransition_2
+	compare VAR_NEOBAY_STATE, 5
+	goto_if_eq WillowsLab_OnTransition_3
 	return
 
 WillowsLab_OnTransition_1:
@@ -216,14 +226,26 @@ WillowsLab_OnTransition_2:
 	setobjectxyperm 4, 11, 6
 	return
 
+WillowsLab_OnTransition_3:
+	setobjectxyperm 4, 2, 8
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_RIGHT
+	removeobject 5
+	return
+
 
 WillowsLab_OnWarp:
 	compare VAR_AMPURE_RESCUE_STATE, 6
-	goto_if_eq WillowsLab_OnWarp_1
+	goto_if_eq WillowsLab_OnWarp_2
+WillowsLab_OnWarp_1:
+	compare VAR_NEOBAY_STATE, 5
+	goto_if_eq WillowsLab_OnWarp_4
 	return
 
-WillowsLab_OnWarp_1:
+WillowsLab_OnWarp_2:
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	goto WillowsLab_OnWarp_1
+
+WillowsLab_OnWarp_4:
 	return
 
 
@@ -519,6 +541,7 @@ WillowsLab_YourePokemonTrainersNow:
 WillowsLab_AmpureRescued:
 	lockall
 	setvar VAR_AMPURE_RESCUE_STATE, 7
+	setvar VAR_NEOBAY_STATE, 4
 	applymovement 5, mBradleyFidgetsRight
 	waitmovement 5
 	msgbox WillowsLab_AmpureRescued_Text_0
@@ -569,6 +592,61 @@ WillowsLab_ReceivedPokedex:
 	return
 
 
+WillowsLab_Departure:
+	lockall
+	setvar VAR_NEOBAY_STATE, 6
+	delay 30
+	setobjectxy 5, 8, 2
+	applymovement 5, mBradleyEntersFirstTime
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime
+	waitmovement OBJ_EVENT_ID_PLAYER
+	delay 30
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 2
+	setvar VAR_0x8007, 5
+	special ShakeCamera
+	waitstate
+	applymovement 5, mFaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox WillowsLab_HowWasYourMom
+	waitmessage
+	applymovement 5, mFaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox WillowsLab_NotABadIdea
+	waitmessage
+	msgbox WillowsLab_DescribePokemonLeague
+	waitmessage
+	msgbox WillowsLab_FroyLivesAway
+	waitmessage
+	applymovement 5, mBradleyFidgetsDown
+	msgbox WillowsLab_Departure_Text_0
+	waitmessage
+	msgbox WillowsLab_Departure_Text_1
+	waitmessage
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 2
+	setvar VAR_0x8007, 5
+	special ShakeCamera
+	waitstate
+	playse SE_DING_DONG
+	waitse
+	closemessage
+	applymovement 4, mWillowExitsInSunset
+	delay 60
+	applymovement 5, mBradleyExitsInSunset
+	delay 15
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerExitsInSunset
+	waitmovement OBJ_EVENT_ID_PLAYER
+	warp MAP_SUNSET_VILLAGE, 0xFF, 11, 34
+	releaseall
+	end
+
+
 mBradleyEntersFirstTime:
 	set_visible
 	walk_down
@@ -583,7 +661,6 @@ mBradleyEntersFirstTime:
 
 mPlayerEntersFirstTime:
 	set_visible
-	walk_down
 	walk_down
 	walk_down
 	walk_down
@@ -865,6 +942,45 @@ mWillowDeliberates:
 	face_left
 	step_end
 
+mPlayerExitsInSunset:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+mBradleyExitsInSunset:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+mWillowExitsInSunset:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
 WillowsLab_YouGoFirst_Text_0:
 	.string "Bradley: I guess we'd better go talk to\n"
 	.string "our folks like the Prof. said…$"
@@ -884,8 +1000,11 @@ WillowsLab_TakeYourTime_Text_1:
 	.string "before I regret giving you a Pokémon!$"
 
 WillowsLab_TakeYourTime_Text_2:
-	.string "Willow: Take your time! I'm not in any\n"
-	.string "hurry.$"
+	.string "Willow: Better get going! If you're not\n"
+	.string "back in time, we'll meet you at Sunset\l"
+	.string "Village.\p"
+	.string "I believe Route 201 is open now, if\n"
+	.string "you'd rather take that path.$"
 
 WillowsLab_TakeYourTime_Text_3:
 	.string "Willow: Ohoho, can't decide? Take your\n"
@@ -1107,6 +1226,14 @@ WillowsLab_AmpureRescued_Text_9:
 WillowsLab_ReceivedPokedex_Text_0:
 	.string "{PLAYER} received the Pokédex!$"
 
+WillowsLab_Departure_Text_0:
+	.string "Bradley: I can't wait until we get to\n"
+	.string "land!$"
+
+WillowsLab_Departure_Text_1:
+	.string "Willow: Ohohoho! That's good, Bradley,\n"
+	.string "because we've arrived!$"
+
 WillowsLab_WillowIntroduction::
 	.string "Willow: Ohoho, so you're {PLAYER}!\n"
 	.string "Bradley talks about you quite a lot.\l"
@@ -1217,3 +1344,46 @@ WillowsLab_SayGoodbyeToMom::
 	.string "across the water to Sunset Village, but\l"
 	.string "before we leave you much promise me\l"
 	.string "you will say goodbye to your families.$"
+
+WillowsLab_HowWasYourMom::
+	.string "Bradley: How was your mom?\p"
+	.string "… … …\n"
+	.string "Ya, mine was pretty sad too, but she's\l"
+	.string "sure we'll be fine. Who knows? Maybe\l"
+	.string "we'll return as Pokémon Champions and\l"
+	.string "our parents will never have to worry\l"
+	.string "about us again!$"
+
+WillowsLab_NotABadIdea::
+	.string "Willow: That isn't a bad idea, Bradley.\p"
+	.string "{PLAYER}, have you ever thought of\n"
+	.string "taking the Pokémon League challenge?\l"
+	.string "Not only will your Pokémon grow along\l"
+	.string "the way, it will help you complete your\l"
+	.string "Pokédex and take you all around\l"
+	.string "Caldera and Kirant in search of your\l"
+	.string "friend.\p"
+	.string "You could achive all of your goals at\n"
+	.string "the same time.$"
+
+WillowsLab_DescribePokemonLeague::
+	.string "Bradley: Yeah, {PLAYER}!\n"
+	.string "That will be perfect!\l"
+	.string "Here, I'll explain how the League works\l"
+	.string "in our region.\p"
+	.string "Unlike other places, our League has 12\n"
+	.string "gyms!\l"
+	.string "Six gyms here in Caldera, and six in\l"
+	.string "Kirant.\p"
+	.string "If you defeat all 12 and collect the\n"
+	.string "badges they give you, you'll be allowed\l"
+	.string "into Triumph Spire,\l"
+	.string "where the Elite Four await…\p"
+	.string "But we have a LONG way to go before\n"
+	.string "that happens!$"
+
+WillowsLab_FroyLivesAway::
+	.string "Willow: I'm only taking you as far as\n"
+	.string "Sunset Village. The first gym leader,\l"
+	.string "Froy, lives in Cranewing City. That's\l"
+	.string "another two towns over.$"

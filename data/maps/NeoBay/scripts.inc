@@ -1,5 +1,6 @@
 NeoBay_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NeoBay_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, NeoBay_OnLoad
 	map_script MAP_SCRIPT_ON_RESUME, NeoBay_OnResume
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
@@ -105,7 +106,7 @@ NeoBay_EventScript_BradleyConversation::
 	faceplayer
 	switch VAR_NEOBAY_STATE
 	case 3, NeoBay_EventScript_BradleyConversation_3
-	msgbox NeoBay_EventScript_BradleyConversation_Text_1
+	msgbox Placeholder_Text
 NeoBay_EventScript_BradleyConversation_1:
 	waitmessage
 	closemessage
@@ -132,6 +133,19 @@ NeoBay_OnTransition_2:
 
 NeoBay_OnTransition_3:
 	clearflag FLAG_HIDE_NEO_BAY_BRADLEY
+	return
+
+
+NeoBay_OnLoad:
+	compare VAR_NEOBAY_STATE, 1
+	goto_if_eq NeoBay_OnLoad_1
+	setmetatile 28, 33, METATILE_NeoBay_BridgeWarp_Left, 0
+	setmetatile 29, 33, METATILE_NeoBay_BridgeWarp_Right, 0
+	return
+
+NeoBay_OnLoad_1:
+	setmetatile 28, 33, METATILE_NeoBay_BridgeReflection_Left, 0
+	setmetatile 29, 33, METATILE_NeoBay_BridgeReflection_Right, 0
 	return
 
 
@@ -285,10 +299,12 @@ NeoBay_EventScript_AmpureCapture:
 	special SavePlayerParty
 	special PutRivalMonInPlayerParty
 	special StartBradleyAmpureCatch
+	delay 60
 	removeobject 3
 	setobjectxy 2, 12, 22
 	turnobject 2, DIR_SOUTH
 	waitstate
+	special LoadPlayerParty
 	msgbox NeoBay_EventScript_AmpureCapture_Text_1
 	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6
 	releaseall
@@ -592,9 +608,6 @@ NeoBay_EventScript_BradleyConversation_Text_0:
 	.string "anywhere. You should check that tall\l"
 	.string "grass!$"
 
-NeoBay_EventScript_BradleyConversation_Text_1:
-	.string "--Text Here--$"
-
 NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
 	.string "Bradley: I think I see some tracks here.\n"
 	.string "They're heading towards… the meadow?\l"
@@ -685,3 +698,6 @@ NeoBay_Text_BradleyShowBoatStart::
 	.string "comes to Pokémon, she's a genius! I\l"
 	.string "really admire her!\l"
 	.string "Come on, let's go meet her now!$"
+
+Placeholder_Text::
+	.string "Placeholder$"

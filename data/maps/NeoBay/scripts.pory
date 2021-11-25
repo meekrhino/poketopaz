@@ -9,6 +9,8 @@ const NEOBAY_STATE_SPOKE_TO_MOM = 1
 const NEOBAY_STATE_MET_WILLOW = 2
 const NEOBAY_STATE_RECEIVED_STARTER = 3
 const NEOBAY_STATE_AMPURE_RESCUED = 4
+const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 5
+const NEOBAY_STATE_DEPARTED = 6
 
 // VAR_AMPURE_RESCUE_STATE values
 const AMPURE_RESCUE_STARTED = 1
@@ -20,10 +22,10 @@ const AMPURE_RESCUE_CAPTURE_DONE = 6
 const AMPURE_RESCUE_RETURNED = 7
 
 // State descriptions for VAR_NEOBAY_STATE
-// 1: Met Professor Willow
-// 2: Received Pokemon
-// 3: Saved Ampure
-// 4: Saw flashback
+// 1: Spoke to Mom
+// 2: Met Professor Willow
+// 3: Received Pokemon
+// 4: Saved Ampure
 // 5: Received running shoes
 // 6: Departed for Sunset Village
 
@@ -41,6 +43,7 @@ const AMPURE_RESCUE_RETURNED = 7
 //=====================================
 mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: NeoBay_OnTransition
+    MAP_SCRIPT_ON_LOAD: NeoBay_OnLoad
     MAP_SCRIPT_ON_RESUME: NeoBay_OnResume
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_SetupBradleyAtBoat
@@ -138,7 +141,7 @@ script NeoBay_EventScript_BradleyConversation {
         case NEOBAY_STATE_RECEIVED_STARTER:
             msgbox(format("Bradley: I haven't seen Ampure anywhere. You should check that tall grass!"))
         default:
-            msgbox(format("--Text Here--"))
+            msgbox(Placeholder_Text)
     }
     waitmessage
     closemessage
@@ -158,6 +161,17 @@ script(local) NeoBay_OnTransition {
             clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
         default:
             setflag(FLAG_HIDE_NEO_BAY_BRADLEY)
+    }
+}
+
+script(local) NeoBay_OnLoad {
+    if(var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SPOKE_TO_MOM) {
+        setmetatile(28, 33, METATILE_NeoBay_BridgeReflection_Left, 0)
+        setmetatile(29, 33, METATILE_NeoBay_BridgeReflection_Right, 0)
+    }
+    else {
+        setmetatile(28, 33, METATILE_NeoBay_BridgeWarp_Left, 0)
+        setmetatile(29, 33, METATILE_NeoBay_BridgeWarp_Right, 0)
     }
 }
 
@@ -297,10 +311,12 @@ script(local) NeoBay_EventScript_AmpureCapture {
 	special(SavePlayerParty)
 	special(PutRivalMonInPlayerParty)
     special(StartBradleyAmpureCatch)
+    delay(60)
     removeobject(AMPURE)
     setobjectxy(BRADLEY, 12, 22)
     turnobject(BRADLEY, DIR_SOUTH)
     waitstate
+	special(LoadPlayerParty)
     msgbox(format("Bradley: ALRIGHT! And that was my first time, too!\lLet's go back and return Ampure to Prof. Willow!"))
     warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6)
     releaseall
@@ -364,6 +380,10 @@ text NeoBay_Text_BradleyShowBoatStart {
         "She's cool, calm, composed … and when it comes to Pokémon, she's a genius! I really admire her!\l"
         "Come on, let's go meet her now!"
     )
+}
+
+text (global) Placeholder_Text {
+    "Placeholder"
 }
 
 //=====================================

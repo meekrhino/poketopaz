@@ -86,7 +86,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan::
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
-	setvar VAR_LITTLEROOT_TOWN_STATE, 1
+	setvar VAR_SUNSET_VILLAGE_STATE, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall

@@ -129,7 +129,7 @@
       "y": 25,
       "elevation": 0,
       "var": "VAR_NEOBAY_STATE",
-      "var_value": "2",
+      "var_value": "3",
       "script": "NeoBay_EventScript_BradleyStopsPlayer"
     },
     {
@@ -138,7 +138,7 @@
       "y": 24,
       "elevation": 0,
       "var": "VAR_NEOBAY_STATE",
-      "var_value": "2",
+      "var_value": "3",
       "script": "NeoBay_EventScript_BradleyStopsPlayer"
     },
     {
@@ -147,7 +147,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_NEOBAY_STATE",
-      "var_value": "2",
+      "var_value": "3",
       "script": "NeoBay_EventScript_BradleyStopsPlayer"
     },
     {
@@ -156,7 +156,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_NEOBAY_STATE",
-      "var_value": "2",
+      "var_value": "3",
       "script": "NeoBay_EventScript_BradleyStopsPlayer"
     }
   ],

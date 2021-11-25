@@ -96,7 +96,7 @@
 #define VAR_POKELOT_PRIZE_PLACE              0x404D
 #define VAR_NEOBAY_STATE                     0x404E
 #define VAR_LOTAD_SIZE_RECORD                0x404F
-#define VAR_LITTLEROOT_TOWN_STATE            0x4050
+#define VAR_SUNSET_VILLAGE_STATE            0x4050
 #define VAR_OLDALE_TOWN_STATE                0x4051
 #define VAR_DEWFORD_TOWN_STATE               0x4052 // Unused Var
 #define VAR_LAVARIDGE_TOWN_STATE             0x4053

@@ -261,6 +261,9 @@
 #define METATILE_InsideShip_IntactDoor_Bottom_Locked    0x233
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked  0x22B
 
+// gTileset_Lab
+#define METATILE_Lab_Door_WillowsLabExit  0x2A9
+
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
 #define METATILE_Lavaridge_CaveEntrance_Bottom  0x25E
@@ -368,7 +371,11 @@
 #define METATILE_Mossdeep_Door_SpaceCenter  0x2ED
 
 // gTileset_NeoBay
-#define METATILE_NeoBay_TallGrass_Sand  0x215
+#define METATILE_NeoBay_BridgeReflection_Left   0x34E
+#define METATILE_NeoBay_BridgeReflection_Right  0x34F
+#define METATILE_NeoBay_BridgeWarp_Left         0x35E
+#define METATILE_NeoBay_BridgeWarp_Right        0x35F
+#define METATILE_NeoBay_TallGrass_Sand          0x215
 
 // gTileset_Pacifidlog
 #define METATILE_Pacifidlog_Door                           0x21A
@@ -401,9 +408,6 @@
 #define METATILE_Petalburg_Door_BirchsLab   0x249
 #define METATILE_Petalburg_Door_Littleroot  0x248
 #define METATILE_Petalburg_Door_Oldale      0x287
-
-// gTileset_Lab
-#define METATILE_Lab_Door_WillowsLabExit 0x2A9
 
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D

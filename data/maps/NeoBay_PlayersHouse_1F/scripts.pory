@@ -6,6 +6,8 @@ const NEOBAY_STATE_SPOKE_TO_MOM = 1
 const NEOBAY_STATE_MET_WILLOW = 2
 const NEOBAY_STATE_RECEIVED_STARTER = 3
 const NEOBAY_STATE_AMPURE_RESCUED = 4
+const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 5
+const NEOBAY_STATE_DEPARTED = 6
 
 //=====================================
 // Map Scripts
@@ -25,12 +27,9 @@ script(global) PlayersHouse_1F_BradleyReminder {
         case NEOBAY_STATE_SPOKE_TO_MOM:
             msgbox(format("Mom: Bradley was looking for you, dear.\lHe said you'd know where to find him."), MSGBOX_NPC)
         case NEOBAY_STATE_AMPURE_RESCUED:
-            if (flag(FLAG_RECEIVED_RUNNING_SHOES)) {
-                msgbox(format("Mom: I'll be fine. You shouldn't keep the professor waiting."), MSGBOX_NPC)
-            }
-            else {
-                call(MomGivesRunningShoes)
-            }
+            call(MomGivesRunningShoes)
+        case NEOBAY_STATE_RECEIVED_RUNNING_SHOES:
+            msgbox(format("Mom: I'll be fine. You shouldn't keep the professor waiting."), MSGBOX_NPC)
     }
     end
 }
@@ -39,15 +38,13 @@ script(global) PlayersHouse_1F_BradleyReminder {
 // Local Scripts
 //=====================================
 script(local) PlayersHouse_1F_OnTransition {
-    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_AMPURE_RESCUED) {
-        if( flag(FLAG_RECEIVED_RUNNING_SHOES)) {
+    switch(var(VAR_NEOBAY_STATE)) {
+        case NEOBAY_STATE_AMPURE_RESCUED:
             setobjectxyperm(MOM, 2, 2)
             setobjectmovementtype(MOM, MOVEMENT_TYPE_FACE_UP)
-        }
-        else {
+        case NEOBAY_STATE_RECEIVED_RUNNING_SHOES:
             setobjectxyperm(MOM, 3, 4)
             setobjectmovementtype(MOM, MOVEMENT_TYPE_FACE_RIGHT)
-        }
     }
 }
 
@@ -64,7 +61,8 @@ script(local) BradleyWasLookingForYou {
 script(local) MomGivesRunningShoes {
     lockall
     faceplayer
-    msgbox(format("Mom: Hi {PLAYER}. Where have you been all day?\p… … …\pWow, it sounds like an adventure.\lBut I'm not sure I like the idea of you leaving…"))
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_RUNNING_SHOES)
+    msgbox(format("Mom: Hi {PLAYER}. Where have you been all day?\p… … …\pWow, it sounds like an adventure.\nBut I'm not sure I like the idea of you\lleaving…"))
     waitmessage
     closemessage
     applymovement(MOM, mMomDeliberates1)
@@ -137,7 +135,7 @@ movement mMomDeliberates1 {
 
 movement mMomDeliberates2 {
     delay_16 * 4
-    walk_right * 2
+    walk_right
     face_down
 }
 

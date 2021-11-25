@@ -1,2 +1,488 @@
 SunsetVillage_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SunsetVillage_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, SunsetVillage_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SunsetVillage_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+SunsetVillage_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+	map_script_2 VAR_SUNSET_VILLAGE_STATE, 0, SunsetVillage_OnWarpFromLab
+	.2byte 0
+
+SunsetVillage_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_SUNSET_VILLAGE_STATE, 0, SunsetVillage_ArriveByBoat
+	.2byte 0
+
+
+SunsetVillage_WillowAndBradleyTrigger::
+	lockall
+	call SunsetVillage_IntroAfterArriveFromEast
+	call SunsetVillage_BradleyLooksAroundEastVer
+	setflag FLAG_HIDE_SUNSET_VILLAGE_WILLOW
+	setvar VAR_SUNSET_VILLAGE_STATE, 2
+	releaseall
+	end
+
+
+SunsetVillage_OnTransition:
+	setflag FLAG_VISITED_SUNSET_VILLAGE
+	call Common_EventScript_SetupRivalGfxId
+	return
+
+
+SunsetVillage_OnWarpFromLab:
+	setobjectxy 1, 11, 32
+	turnobject 1, DIR_SOUTH
+	setobjectxy 3, 10, 32
+	turnobject 3, DIR_SOUTH
+	return
+
+
+SunsetVillage_ArriveByBoat:
+	lockall
+	setvar VAR_SUNSET_VILLAGE_STATE, 1
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 11
+	goto_if_eq SunsetVillage_ArriveByBoat_2
+SunsetVillage_ArriveByBoat_1:
+	releaseall
+	end
+
+SunsetVillage_ArriveByBoat_2:
+	call SunsetVillage_IntroAfterExitLab
+	call SunsetVillage_BradleyLooksAroundLabVer
+	setflag FLAG_HIDE_SUNSET_VILLAGE_WILLOW
+	setvar VAR_SUNSET_VILLAGE_STATE, 2
+	goto SunsetVillage_ArriveByBoat_1
+
+
+SunsetVillage_IntroAfterExitLab:
+	delay 30
+	applymovement 1, mWillowWalksOffOfDock
+	applymovement 3, mBradleyWalksOffOfDock
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalksOffOfDock
+	waitmovement OBJ_EVENT_ID_PLAYER
+	return
+
+
+SunsetVillage_IntroAfterArriveFromEast:
+	delay 30
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	switch VAR_TEMP_1
+	case 26, SunsetVillage_IntroAfterArriveFromEast_3
+	case 27, SunsetVillage_IntroAfterArriveFromEast_4
+	case 28, SunsetVillage_IntroAfterArriveFromEast_5
+	case 29, SunsetVillage_IntroAfterArriveFromEast_6
+	case 30, SunsetVillage_IntroAfterArriveFromEast_7
+SunsetVillage_IntroAfterArriveFromEast_1:
+	waitmovement OBJ_EVENT_ID_PLAYER
+	return
+
+SunsetVillage_IntroAfterArriveFromEast_3:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFromEast1
+	goto SunsetVillage_IntroAfterArriveFromEast_1
+
+SunsetVillage_IntroAfterArriveFromEast_4:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFromEast2
+	goto SunsetVillage_IntroAfterArriveFromEast_1
+
+SunsetVillage_IntroAfterArriveFromEast_5:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFromEast3
+	goto SunsetVillage_IntroAfterArriveFromEast_1
+
+SunsetVillage_IntroAfterArriveFromEast_6:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFromEast4
+	goto SunsetVillage_IntroAfterArriveFromEast_1
+
+SunsetVillage_IntroAfterArriveFromEast_7:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFromEast5
+	goto SunsetVillage_IntroAfterArriveFromEast_1
+
+
+SunsetVillage_BradleyLooksAroundLabVer:
+	delay 30
+	applymovement 3, mBradleyWalksOut
+	waitmovement 3
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_0, MSGBOX_AUTOCLOSE
+	applymovement 3, mBradleyLooksAround
+	delay 30
+	applymovement 1, mFaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
+	waitmovement 3
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_1
+	waitmessage
+	msgbox SunsetVillage_HeadToSoftwind
+	waitmessage
+	applymovement 3, mExclamationPoint
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_2, MSGBOX_AUTOCLOSE
+	applymovement 3, mBradleyPanics
+	waitmovement 3
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3
+	waitmessage
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
+	waitmessage
+	closemessage
+	applymovement 3, mBradleyRunsToLab
+	delay 30
+	applymovement 1, mFaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement 3
+	applymovement 1, mFaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE
+	applymovement 1, mWillowWalksToLab
+	waitmovement 1
+	return
+
+
+SunsetVillage_BradleyLooksAroundEastVer:
+	applymovement 1, mStartledWalkRight
+	applymovement 3, mStartledWalkRight
+	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_0
+	waitmessage
+	msgbox SunsetVillage_BradleyRecaps
+	waitmessage
+	closemessage
+	applymovement 3, mBradleyWalksOutEastVer
+	waitmovement 3
+	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_1, MSGBOX_AUTOCLOSE
+	applymovement 3, mBradleyLooksAroundEastVer
+	delay 30
+	applymovement 1, mFaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
+	waitmovement 3
+	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_2
+	waitmessage
+	msgbox SunsetVillage_HeadToSoftwind
+	waitmessage
+	applymovement 3, mExclamationPoint
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_2, MSGBOX_AUTOCLOSE
+	applymovement 3, mBradleyPanicsEastVer
+	waitmovement 3
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3
+	waitmessage
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
+	waitmessage
+	closemessage
+	applymovement 3, mBradleyRunsToLabEastVer
+	delay 30
+	applymovement 1, mFaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement 3
+	applymovement 1, mWalkRight
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE
+	applymovement 1, mWillowWalksToLabEastVer
+	waitmovement 1
+	return
+
+
+mWillowWalksOffOfDock:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+mBradleyWalksOffOfDock:
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	face_down
+	step_end
+
+mPlayerWalksOffOfDock:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	face_up
+	step_end
+
+mPlayerEntersFromEast1:
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+mPlayerEntersFromEast2:
+	walk_left
+	walk_up
+	walk_left
+	walk_left
+	step_end
+
+mPlayerEntersFromEast3:
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	step_end
+
+mPlayerEntersFromEast4:
+	walk_up
+	walk_up
+	walk_left
+	walk_up
+	walk_left
+	walk_left
+	step_end
+
+mPlayerEntersFromEast5:
+	walk_up
+	walk_up
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	step_end
+
+mBradleyWalksOut:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	delay_16
+	delay_16
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	face_left
+	step_end
+
+mBradleyLooksAround:
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	step_end
+
+mBradleyPanics:
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	walk_in_place_fast_left
+	face_right
+	delay_16
+	face_up
+	delay_16
+	face_down
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+mBradleyRunsToLab:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	set_invisible
+	step_end
+
+mWillowWalksToLab:
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	set_invisible
+	step_end
+
+mBradleyWalksOutEastVer:
+	walk_right
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	face_down
+	step_end
+
+mBradleyLooksAroundEastVer:
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	step_end
+
+mBradleyPanicsEastVer:
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	face_right
+	delay_16
+	face_left
+	delay_16
+	face_up
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+mBradleyRunsToLabEastVer:
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	set_invisible
+	step_end
+
+mWillowWalksToLabEastVer:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	set_invisible
+	step_end
+
+mWalkRight:
+	walk_right
+	step_end
+
+mStartledWalkRight:
+	emote_exclamation_mark
+	walk_right
+	step_end
+
+SunsetVillage_BradleyLooksAroundLabVer_Text_0:
+	.string "Bradley: Finally!\nI can't believe we've left Neo Bay!$"
+
+SunsetVillage_BradleyLooksAroundLabVer_Text_1:
+	.string "Bradley: So this is Sunset Village, huh?$"
+
+SunsetVillage_BradleyLooksAroundLabVer_Text_2:
+	.string "Bradley: WAIT!$"
+
+SunsetVillage_BradleyLooksAroundLabVer_Text_3:
+	.string "Bradley: I left my bag at home!\nIt has my Pokédex in it and everything!$"
+
+SunsetVillage_BradleyLooksAroundLabVer_Text_4:
+	.string "Willow: Ohoho, don't worry Bradley. We\n"
+	.string "can go back for them now.$"
+
+SunsetVillage_BradleyLooksAroundEastVer_Text_0:
+	.string "Willow: Ah, {PLAYER}!\n"
+	.string "I'm glad to see you made it walking\l"
+	.string "along Route 201.\p"
+	.string "You missed quite a discussion on the\n"
+	.string "way!$"
+
+SunsetVillage_BradleyLooksAroundEastVer_Text_1:
+	.string "Bradley: Look around!\nI can't believe we've left Neo Bay!$"
+
+SunsetVillage_BradleyLooksAroundEastVer_Text_2:
+	.string "Bradley: This is Sunset Village!$"
+
+SunsetVillage_HeadToSoftwind::
+	.string "Willow: That's correct.\n"
+	.string "If you head north from here, you should\l"
+	.string "reach Softwind City, where one of the\l"
+	.string "gyms of the Pokémon League is.\p"
+	.string "Therma is the leader there, but she also\n"
+	.string "has a huge library.\p"
+	.string "That's where I was planning to start my\n"
+	.string "research on-$"
+
+SunsetVillage_YouGoOnAhead::
+	.string "Willow: {PLAYER}, why don't you go on\n"
+	.string "ahead?\p"
+	.string "Bradley and I will return to Neo Bay,\n"
+	.string "then meet you at the library in\l"
+	.string "Softwind.\p"
+	.string "You can battle Therma and get stronger\n"
+	.string "than Bradley!\p"
+	.string "Then he'll have to catch up to you, and\n"
+	.string "rivalry will make you both stronger.\p"
+	.string "Oh, listen to me! Well, you had better\n"
+	.string "get a move on. See you soon!$"
+
+SunsetVillage_BradleyRecaps::
+	.string "Bradley: Yeah you did!\n"
+	.string "I decided you and I are going to take on\l"
+	.string "the Pokémon League challenge!\p"
+	.string "We'll travel all over and beat all 12\n"
+	.string "gyms, even the ones on Kirant!\p"
+	.string "If we do that, we'll definitely find\n"
+	.string "Simon along the way!\p"
+	.string "Then all three of us can travel to the\n"
+	.string "Triumph Spire and take on the Elite\l"
+	.string "Four!\p"
+	.string "Isn't my plan amazing!? Anyway…$"

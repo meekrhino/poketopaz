@@ -1,0 +1,371 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const WILLOW = 1
+const LAB = 2
+const BRADLEY = 3
+const VAR_X_TEMP = VAR_TEMP_0
+const VAR_Y_TEMP = VAR_TEMP_1
+const X_AFTER_LAB = 11
+
+// VAR_SUNSET_VILLAGE_STATE values
+const SUNSET_VILLAGE_STATE_INIT = 0
+const SUNSET_VILLAGE_STATE_ENTERED_TOWN = 1
+const SUNSET_VILLAGE_STATE_BRADLEY_LEFT = 2
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts SunsetVillage_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: SunsetVillage_OnTransition
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_INIT: SunsetVillage_OnWarpFromLab
+    ]
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_INIT: SunsetVillage_ArriveByBoat
+    ]
+}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) SunsetVillage_WillowAndBradleyTrigger {
+    lockall
+    call(SunsetVillage_IntroAfterArriveFromEast)
+    call(SunsetVillage_BradleyLooksAroundEastVer)
+    setflag(FLAG_HIDE_SUNSET_VILLAGE_WILLOW)
+    setvar(VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_BRADLEY_LEFT)
+    releaseall
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) SunsetVillage_OnTransition {
+    setflag(FLAG_VISITED_SUNSET_VILLAGE)
+    call(Common_EventScript_SetupRivalGfxId)
+}
+
+script(local) SunsetVillage_OnWarpFromLab {
+    setobjectxy(WILLOW, 11, 32)
+    turnobject(WILLOW, DIR_SOUTH)
+    setobjectxy(BRADLEY, 10, 32)
+    turnobject(BRADLEY, DIR_SOUTH)
+}
+
+script(local) SunsetVillage_ArriveByBoat {
+    lockall
+    setvar(VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_ENTERED_TOWN)
+    getplayerxy(VAR_X_TEMP, VAR_Y_TEMP)
+    // If we actually arrived by boat, do the event
+    if(var(VAR_X_TEMP) == X_AFTER_LAB) {
+        call(SunsetVillage_IntroAfterExitLab)
+        call(SunsetVillage_BradleyLooksAroundLabVer)
+        setflag(FLAG_HIDE_SUNSET_VILLAGE_WILLOW)
+        setvar(VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_BRADLEY_LEFT)
+    }
+    releaseall
+    end
+}
+
+script(local) SunsetVillage_IntroAfterExitLab {
+    delay(30)
+    applymovement(WILLOW, mWillowWalksOffOfDock)
+    applymovement(BRADLEY, mBradleyWalksOffOfDock)
+    delay(30)
+    applymovement(PLAYER, mPlayerWalksOffOfDock)
+    waitmovement(PLAYER)
+    return
+}
+
+script(local) SunsetVillage_IntroAfterArriveFromEast {
+    delay(30)
+    getplayerxy(VAR_X_TEMP, VAR_Y_TEMP)
+    switch(var(VAR_Y_TEMP)) {
+        case 26:
+            applymovement(PLAYER, mPlayerEntersFromEast1)
+        case 27:
+            applymovement(PLAYER, mPlayerEntersFromEast2)
+        case 28:
+            applymovement(PLAYER, mPlayerEntersFromEast3)
+        case 29:
+            applymovement(PLAYER, mPlayerEntersFromEast4)
+        case 30:
+            applymovement(PLAYER, mPlayerEntersFromEast5)
+    }
+    waitmovement(PLAYER)
+    return
+}
+
+script(local) SunsetVillage_BradleyLooksAroundLabVer {
+    delay(30)
+    applymovement(BRADLEY, mBradleyWalksOut)
+    waitmovement(BRADLEY)
+    msgbox("Bradley: Finally!\nI can't believe we've left Neo Bay!", MSGBOX_AUTOCLOSE)
+    applymovement(BRADLEY, mBradleyLooksAround)
+    delay(30)
+    applymovement(WILLOW, mFaceRight)
+    applymovement(PLAYER, mFaceRight)
+    waitmovement(BRADLEY)
+    msgbox("Bradley: So this is Sunset Village, huh?")
+    waitmessage
+    msgbox(SunsetVillage_HeadToSoftwind)
+    waitmessage
+    applymovement(BRADLEY, mExclamationPoint)
+    msgbox("Bradley: WAIT!", MSGBOX_AUTOCLOSE)
+    applymovement(BRADLEY, mBradleyPanics)
+    turnobject(WILLOW, DIR_NORTH)
+    waitmovement(BRADLEY)
+    msgbox("Bradley: I left my bag at home!\nIt has my Pokédex in it and everything!")
+    waitmessage
+    msgbox(format("Willow: Ohoho, don't worry Bradley. We can go back for them now."))
+    waitmessage
+    closemessage
+    applymovement(BRADLEY, mBradleyRunsToLab)
+    delay(15)
+    applymovement(WILLOW, mFaceLeft)
+    applymovement(PLAYER, mFaceLeft)
+    waitmovement(BRADLEY)
+    applymovement(WILLOW, mFaceDown)
+    applymovement(PLAYER, mFaceUp)
+    waitmovement(PLAYER)
+    msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
+    applymovement(WILLOW, mWillowWalksToLab)
+    waitmovement(WILLOW)
+    return
+}
+
+script(local) SunsetVillage_BradleyLooksAroundEastVer {
+    applymovement(WILLOW, mStartledWalkRight)
+    applymovement(BRADLEY, mStartledWalkRight)
+    waitmovement(BRADLEY)
+    msgbox(format("Willow: Ah, {PLAYER}!\nI'm glad to see you made it walking along Route 201.\pYou missed quite a discussion on the way!"))
+    waitmessage
+    applymovement(BRADLEY, mBradleyFidgetsRight)
+    waitmovement(BRADLEY)
+    msgbox(SunsetVillage_BradleyRecaps)
+    waitmessage
+    closemessage
+    applymovement(BRADLEY, mBradleyWalksOutEastVer)
+    waitmovement(BRADLEY)
+    msgbox("Bradley: Look around!\nI can't believe we've left Neo Bay!", MSGBOX_AUTOCLOSE)
+    applymovement(BRADLEY, mBradleyLooksAroundEastVer)
+    delay(30)
+    applymovement(WILLOW, mFaceUp)
+    applymovement(PLAYER, mFaceUp)
+    waitmovement(BRADLEY)
+    msgbox("Bradley: This is Sunset Village!")
+    waitmessage
+    msgbox(SunsetVillage_HeadToSoftwind)
+    waitmessage
+    applymovement(BRADLEY, mExclamationPoint)
+    msgbox("Bradley: WAIT!", MSGBOX_AUTOCLOSE)
+    applymovement(BRADLEY, mBradleyPanicsEastVer)
+    waitmovement(BRADLEY)
+    msgbox("Bradley: I left my bag at home!\nIt has my Pokédex in it and everything!")
+    waitmessage
+    msgbox(format("Willow: Ohoho, don't worry Bradley. We can go back for them now."))
+    waitmessage
+    closemessage
+    applymovement(BRADLEY, mBradleyRunsToLabEastVer)
+    delay(30)
+    applymovement(WILLOW, mFaceLeft)
+    applymovement(PLAYER, mFaceLeft)
+    waitmovement(BRADLEY)
+    applymovement(WILLOW, mWalkRight)
+    waitmovement(PLAYER)
+    msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
+    applymovement(WILLOW, mWillowWalksToLabEastVer)
+    waitmovement(WILLOW)
+    return
+}
+
+//=====================================
+// Text
+//=====================================
+text SunsetVillage_HeadToSoftwind {
+    format(
+        "Willow: That's correct.\nIf you head north "
+        "from here, you should reach Softwind City, where one "
+        "of the gyms of the Pokémon League is.\pTherma is the "
+        "leader there, but she also has a huge library.\p"
+        "That's where I was planning to start my research on-"
+    )
+}
+
+text SunsetVillage_YouGoOnAhead {
+    format(
+        "Willow: {PLAYER}, why don't you go on ahead?\p"
+        "Bradley and I will return to Neo Bay, then meet "
+        "you at the library in Softwind.\pYou can battle "
+        "Therma and get stronger than Bradley!\pThen he'll "
+        "have to catch up to you, and rivalry will make "
+        "you both stronger.\pOh, listen to me! Well, you "
+        "had better get a move on. See you soon!"
+    )
+}
+text SunsetVillage_BradleyRecaps {
+    format(
+        "Bradley: Yeah you did!\nI decided you and I are "
+        "going to take on the Pokémon League challenge!\p"
+        "We'll travel all over and beat all 12 gyms, even the ones on Kirant!\p"
+        "If we do that, we'll definitely find Simon along "
+        "the way!\pThen all three of us can travel to the "
+        "Triumph Spire and take on the Elite Four!\pIsn't "
+        "my plan amazing!? Anyway…"
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+movement mWillowWalksOffOfDock {
+    walk_up * 6
+    walk_right * 2
+    face_down
+}
+
+movement mBradleyWalksOffOfDock {
+    walk_right
+    walk_up * 6
+    walk_right
+    face_down
+}
+
+movement mPlayerWalksOffOfDock {
+    walk_up * 6
+    walk_right
+    face_up
+}
+
+movement mPlayerEntersFromEast1 {
+    walk_left * 3
+}
+
+movement mPlayerEntersFromEast2 {
+    walk_left * 1
+    walk_up
+    walk_left * 2
+}
+
+movement mPlayerEntersFromEast3 {
+    walk_left * 1
+    walk_up * 2
+    walk_left * 2
+}
+
+movement mPlayerEntersFromEast4 {
+    walk_up * 2
+    walk_left * 1
+    walk_up
+    walk_left * 2
+}
+
+movement mPlayerEntersFromEast5 {
+    walk_up * 2
+    walk_left * 1
+    walk_up * 2
+    walk_left * 2
+}
+
+movement mBradleyWalksOut {
+    walk_down
+    walk_right * 5
+    delay_16 * 2
+    walk_in_place_fast_left * 2
+    face_left
+}
+
+movement mBradleyLooksAround {
+    face_right
+    delay_16 * 3
+    face_up
+    delay_16 * 3
+    face_right
+    delay_16 * 3
+    face_left
+}
+
+movement mBradleyPanics {
+    walk_in_place_fast_left * 3
+    face_right
+    delay_16 * 1
+    face_up
+    delay_16 * 1
+    face_down
+    delay_16 * 1
+    face_left
+    delay_16 * 3
+    walk_fast_left * 3
+}
+
+movement mBradleyRunsToLab {
+    walk_fast_left * 2
+    walk_fast_down * 8
+    set_invisible
+}
+
+movement mWillowWalksToLab {
+    walk_left * 2
+    walk_down * 8
+    set_invisible
+}
+
+movement mBradleyWalksOutEastVer {
+    walk_right
+    walk_up * 2
+    walk_right
+    walk_up * 2
+    walk_in_place_fast_down * 2
+    face_down
+}
+
+movement mBradleyLooksAroundEastVer {
+    face_right
+    delay_16 * 3
+    face_up
+    delay_16 * 3
+    face_left
+    delay_16 * 3
+    face_down
+}
+
+movement mBradleyPanicsEastVer {
+    walk_in_place_fast_down * 3
+    face_right
+    delay_16 * 1
+    face_left
+    delay_16 * 1
+    face_up
+    delay_16 * 1
+    face_down
+    delay_16 * 3
+    walk_fast_left * 2
+    walk_fast_down * 2
+}
+
+movement mBradleyRunsToLabEastVer {
+    walk_fast_left
+    walk_fast_down * 2
+    walk_fast_left * 5
+    walk_fast_down * 8
+    set_invisible
+}
+
+movement mWillowWalksToLabEastVer {
+    walk_left * 6
+    walk_down * 9
+    set_invisible
+}
+
+movement mWalkRight {
+    walk_right
+}
+
+movement mStartledWalkRight {
+    emote_exclamation_mark
+    walk_right
+}
+
+//=====================================
+// Raw
+//=====================================

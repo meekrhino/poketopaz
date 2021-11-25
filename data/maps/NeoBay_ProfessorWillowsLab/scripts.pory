@@ -11,6 +11,8 @@ const NEOBAY_STATE_SPOKE_TO_MOM = 1
 const NEOBAY_STATE_MET_WILLOW = 2
 const NEOBAY_STATE_RECEIVED_STARTER = 3
 const NEOBAY_STATE_AMPURE_RESCUED = 4
+const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 5
+const NEOBAY_STATE_DEPARTED = 6
 
 // VAR_AMPURE_RESCUE_STATE values
 const AMPURE_RESCUE_STARTED = 1
@@ -29,13 +31,19 @@ mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_NEOBAY_STATE, NEOBAY_STATE_SPOKE_TO_MOM: WillowIntroduction
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE: WillowsLab_AmpureRescued
+        VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_RUNNING_SHOES: WillowsLab_Departure
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_NEOBAY_STATE, NEOBAY_STATE_NEW_GAME {
             removeobject(BRADLEY)
             end
         }
+        VAR_NEOBAY_STATE, NEOBAY_STATE_AMPURE_RESCUED {
+            removeobject(BRADLEY)
+            end
+        }
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE: WillowsLab_OnWarp
+        VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_RUNNING_SHOES: WillowsLab_OnWarp
     ]
 }
 
@@ -52,7 +60,7 @@ script(global) WillowsLab_YouGoFirst {
 }
 
 script(global) WillowsLab_TakeYourTime {
-    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_RECEIVED_STARTER) {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_AMPURE_RESCUED) {
         lockall
         faceplayer
 	    msgbox(format("Willow: So, you stopped by your family to say goodbye, did you?"), MSGBOX_YESNO)
@@ -60,12 +68,13 @@ script(global) WillowsLab_TakeYourTime {
             msgbox(format("Willow: … … …\n… … …\pYou haven't even left my lab. Get going before I regret giving you a Pokémon!"), MSGBOX_NPC)
         }
         else {
-            msgbox(format("Willow: Take your time! I'm not in any hurry."))
+            msgbox(format("Willow: Better get going! If you're not back in time, we'll meet you at Sunset Village.\pI believe Route 201 is open now, if\nyou'd rather take that path."))
         }
         releaseall
-        end
     }
-    msgbox(format("Willow: Ohoho, can't decide? Take your time, this is a big decision!"), MSGBOX_NPC)
+    else {
+        msgbox(format("Willow: Ohoho, can't decide? Take your time, this is a big decision!"), MSGBOX_NPC)
+    }
     end
 }
 
@@ -191,11 +200,19 @@ script(local) WillowsLab_OnTransition {
         setobjectxyperm(BRADLEY, 8, 7)
         setobjectxyperm(WILLOW, 11, 6)
     }
+    elif(var(VAR_NEOBAY_STATE) == NEOBAY_STATE_RECEIVED_RUNNING_SHOES) {
+        setobjectxyperm(WILLOW, 2, 8)
+        setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_RIGHT)
+        removeobject(BRADLEY)
+    }
 }
 
 script(local) WillowsLab_OnWarp {
     if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
         turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    }
+    if(var(VAR_NEOBAY_STATE) == NEOBAY_STATE_RECEIVED_RUNNING_SHOES) {
+
     }
 }
 
@@ -484,6 +501,7 @@ script(local) WillowsLab_YourePokemonTrainersNow {
 script(local) WillowsLab_AmpureRescued {
     lockall
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_RETURNED)
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_AMPURE_RESCUED)
     applymovement(BRADLEY, mBradleyFidgetsRight)
     waitmovement(BRADLEY)
     msgbox(format("Bradley: We did it professor!\n{PLAYER} found Ampure and I caught it!"))
@@ -525,7 +543,6 @@ script(local) WillowsLab_AmpureRescued {
     end
 }
 
-
 script(local) WillowsLab_ReceivedPokedex {
 	playfanfare(MUS_OBTAIN_ITEM)
 	message("{PLAYER} received the Pokédex!")
@@ -534,6 +551,61 @@ script(local) WillowsLab_ReceivedPokedex {
 	special(SetUnlockedPokedexFlags)
 	setflag(FLAG_RECEIVED_POKEDEX_FROM_WILLOW)
 	return
+}
+
+script(local) WillowsLab_Departure {
+    lockall
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_DEPARTED)
+    delay(30)
+    setobjectxy(BRADLEY, 8, 2)
+    applymovement(BRADLEY, mBradleyEntersFirstTime)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    delay(30)
+    setvar(VAR_0x8004, 0)  // vertical pan
+    setvar(VAR_0x8005, 2)  // horizontal pan
+    setvar(VAR_0x8006, 2)  // num shakes
+    setvar(VAR_0x8007, 5)  // shake delay
+    special(ShakeCamera)
+    waitstate
+    applymovement(BRADLEY, mFaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox(WillowsLab_HowWasYourMom)
+    waitmessage
+    applymovement(BRADLEY, mFaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDown)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox(WillowsLab_NotABadIdea)
+    waitmessage
+    msgbox(WillowsLab_DescribePokemonLeague)
+    waitmessage
+    msgbox(WillowsLab_FroyLivesAway)
+    waitmessage
+    applymovement(BRADLEY, mBradleyFidgetsDown)
+    msgbox(format("Bradley: I can't wait until we get to land!"))
+    waitmessage
+    msgbox(format("Willow: Ohohoho! That's good, Bradley, because we've arrived!"))
+    waitmessage
+    setvar(VAR_0x8004, 0)  // vertical pan
+    setvar(VAR_0x8005, 2)  // horizontal pan
+    setvar(VAR_0x8006, 2)  // num shakes
+    setvar(VAR_0x8007, 5)  // shake delay
+    special(ShakeCamera)
+    waitstate
+    playse(SE_DING_DONG)
+    waitse
+    closemessage
+    applymovement(WILLOW, mWillowExitsInSunset)
+    delay(60)
+    applymovement(BRADLEY, mBradleyExitsInSunset)
+    delay(15)
+    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerExitsInSunset)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    warp(MAP_SUNSET_VILLAGE, 0xFF, 11, 34)
+    releaseall
+    end
 }
 
 
@@ -647,6 +719,46 @@ text WillowsLab_SayGoodbyeToMom {
     )
 }
 
+text WillowsLab_HowWasYourMom {
+    format(
+        "Bradley: How was your mom?\p… … …\nYa, mine was pretty sad "
+        "too, but she's sure we'll be fine. Who knows? Maybe we'll "
+        "return as Pokémon Champions and our parents will never "
+        "have to worry about us again!"
+    )
+}
+
+text WillowsLab_NotABadIdea {
+    format(
+        "Willow: That isn't a bad idea, Bradley.\p{PLAYER}, have you "
+        "ever thought of taking the Pokémon League challenge?\lNot only "
+        "will your Pokémon grow along the way, it will help you complete "
+        "your Pokédex and take you all around Caldera and Kirant in "
+        "search of your friend.\pYou could achive all of your goals "
+        "at the same time."
+    )
+}
+
+text WillowsLab_DescribePokemonLeague {
+    format(
+        "Bradley: Yeah, {PLAYER}!\nThat will be perfect!\lHere, I'll explain "
+        "how the League works in our region.\pUnlike other places, "
+        "our League has 12 gyms!\lSix gyms here in Caldera, and six in "
+        "Kirant.\pIf you defeat all 12 and collect the badges they give "
+        "you, you'll be allowed into Triumph Spire,\lwhere the "
+        "Elite Four await…\pBut we have a LONG way to go before that "
+        "happens!"
+    )
+}
+
+text WillowsLab_FroyLivesAway {
+    format(
+        "Willow: I'm only taking you as far as Sunset Village. The first "
+        "gym leader, Froy, lives in Cranewing City.  That's another two "
+        "towns over."
+    )
+}
+
 //=====================================
 // Movement
 //=====================================
@@ -659,7 +771,7 @@ movement mBradleyEntersFirstTime {
 
 movement mPlayerEntersFirstTime {
     set_visible
-    walk_down * 4
+    walk_down * 3
     walk_left * 2
     face_down
 }
@@ -849,6 +961,25 @@ movement mWillowDeliberates {
     face_right
     delay_16 * 4
     face_left
+}
+
+movement mPlayerExitsInSunset {
+    walk_right * 3
+    walk_up * 4
+    set_invisible
+}
+
+movement mBradleyExitsInSunset {
+    walk_up
+    walk_right * 4
+    walk_up * 4
+    set_invisible
+}
+
+movement mWillowExitsInSunset {
+    walk_right * 5
+    walk_up * 6
+    set_invisible
 }
 
 //=====================================
