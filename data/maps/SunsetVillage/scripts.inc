@@ -30,6 +30,7 @@ SunsetVillage_OnTransition:
 
 
 SunsetVillage_OnWarpFromLab:
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	setobjectxy 1, 11, 32
 	turnobject 1, DIR_SOUTH
 	setobjectxy 3, 10, 32
@@ -101,29 +102,33 @@ SunsetVillage_IntroAfterArriveFromEast_7:
 
 SunsetVillage_BradleyLooksAroundLabVer:
 	delay 30
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_0
+	waitmessage
+	closemessage
 	applymovement 3, mBradleyWalksOut
 	waitmovement 3
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_0, MSGBOX_AUTOCLOSE
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_1, MSGBOX_AUTOCLOSE
 	applymovement 3, mBradleyLooksAround
 	delay 30
 	applymovement 1, mFaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
 	waitmovement 3
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_1
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_2
 	waitmessage
 	msgbox SunsetVillage_HeadToSoftwind
 	waitmessage
 	applymovement 3, mExclamationPoint
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_2, MSGBOX_AUTOCLOSE
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3, MSGBOX_AUTOCLOSE
 	applymovement 3, mBradleyPanics
+	turnobject 1, DIR_NORTH
 	waitmovement 3
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3
-	waitmessage
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
+	waitmessage
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_5
 	waitmessage
 	closemessage
 	applymovement 3, mBradleyRunsToLab
-	delay 30
+	delay 15
 	applymovement 1, mFaceLeft
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	waitmovement 3
@@ -139,8 +144,11 @@ SunsetVillage_BradleyLooksAroundLabVer:
 SunsetVillage_BradleyLooksAroundEastVer:
 	applymovement 1, mStartledWalkRight
 	applymovement 3, mStartledWalkRight
+	waitmovement 3
 	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_0
 	waitmessage
+	applymovement 3, mBradleyFidgetsRight
+	waitmovement 3
 	msgbox SunsetVillage_BradleyRecaps
 	waitmessage
 	closemessage
@@ -157,12 +165,12 @@ SunsetVillage_BradleyLooksAroundEastVer:
 	msgbox SunsetVillage_HeadToSoftwind
 	waitmessage
 	applymovement 3, mExclamationPoint
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_2, MSGBOX_AUTOCLOSE
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3, MSGBOX_AUTOCLOSE
 	applymovement 3, mBradleyPanicsEastVer
 	waitmovement 3
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3
-	waitmessage
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
+	waitmessage
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_5
 	waitmessage
 	closemessage
 	applymovement 3, mBradleyRunsToLabEastVer
@@ -305,6 +313,7 @@ mBradleyPanics:
 mBradleyRunsToLab:
 	walk_fast_left
 	walk_fast_left
+	walk_fast_left
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
@@ -392,6 +401,11 @@ mBradleyRunsToLabEastVer:
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	set_invisible
 	step_end
 
@@ -402,6 +416,8 @@ mWillowWalksToLabEastVer:
 	walk_left
 	walk_left
 	walk_left
+	walk_down
+	walk_down
 	walk_down
 	walk_down
 	walk_down
@@ -423,18 +439,21 @@ mStartledWalkRight:
 	step_end
 
 SunsetVillage_BradleyLooksAroundLabVer_Text_0:
-	.string "Bradley: Finally!\nI can't believe we've left Neo Bay!$"
+	.string "Willow: Well, here we are!$"
 
 SunsetVillage_BradleyLooksAroundLabVer_Text_1:
-	.string "Bradley: So this is Sunset Village, huh?$"
+	.string "Bradley: Finally!\nI can't believe we've left Neo Bay!$"
 
 SunsetVillage_BradleyLooksAroundLabVer_Text_2:
-	.string "Bradley: WAIT!$"
+	.string "Bradley: So this is Sunset Village, huh?$"
 
 SunsetVillage_BradleyLooksAroundLabVer_Text_3:
-	.string "Bradley: I left my bag at home!\nIt has my Pokédex in it and everything!$"
+	.string "Bradley: WAIT!$"
 
 SunsetVillage_BradleyLooksAroundLabVer_Text_4:
+	.string "Bradley: I left my bag at home!\nIt has my Pokédex in it and everything!$"
+
+SunsetVillage_BradleyLooksAroundLabVer_Text_5:
 	.string "Willow: Ohoho, don't worry Bradley. We\n"
 	.string "can go back for them now.$"
 

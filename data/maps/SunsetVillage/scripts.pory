@@ -46,6 +46,7 @@ script(local) SunsetVillage_OnTransition {
 }
 
 script(local) SunsetVillage_OnWarpFromLab {
+    turnobject(PLAYER, DIR_NORTH)
     setobjectxy(WILLOW, 11, 32)
     turnobject(WILLOW, DIR_SOUTH)
     setobjectxy(BRADLEY, 10, 32)
@@ -98,6 +99,9 @@ script(local) SunsetVillage_IntroAfterArriveFromEast {
 
 script(local) SunsetVillage_BradleyLooksAroundLabVer {
     delay(30)
+    msgbox("Willow: Well, here we are!")
+    waitmessage
+    closemessage
     applymovement(BRADLEY, mBradleyWalksOut)
     waitmovement(BRADLEY)
     msgbox("Bradley: Finally!\nI can't believe we've left Neo Bay!", MSGBOX_AUTOCLOSE)
@@ -299,7 +303,7 @@ movement mBradleyPanics {
 }
 
 movement mBradleyRunsToLab {
-    walk_fast_left * 2
+    walk_fast_left * 3
     walk_fast_down * 8
     set_invisible
 }
@@ -347,13 +351,13 @@ movement mBradleyRunsToLabEastVer {
     walk_fast_left
     walk_fast_down * 2
     walk_fast_left * 5
-    walk_fast_down * 8
+    walk_fast_down * 10
     set_invisible
 }
 
 movement mWillowWalksToLabEastVer {
     walk_left * 6
-    walk_down * 9
+    walk_down * 10
     set_invisible
 }
 

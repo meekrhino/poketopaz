@@ -637,9 +637,9 @@ WillowsLab_Departure:
 	waitse
 	closemessage
 	applymovement 4, mWillowExitsInSunset
-	delay 60
+	delay 96
 	applymovement 5, mBradleyExitsInSunset
-	delay 15
+	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerExitsInSunset
 	waitmovement OBJ_EVENT_ID_PLAYER
 	warp MAP_SUNSET_VILLAGE, 0xFF, 11, 34
@@ -945,7 +945,6 @@ mWillowDeliberates:
 mPlayerExitsInSunset:
 	walk_right
 	walk_right
-	walk_right
 	walk_up
 	walk_up
 	walk_up
@@ -958,7 +957,6 @@ mBradleyExitsInSunset:
 	walk_right
 	walk_right
 	walk_right
-	walk_right
 	walk_up
 	walk_up
 	walk_up
@@ -967,6 +965,7 @@ mBradleyExitsInSunset:
 	step_end
 
 mWillowExitsInSunset:
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -1377,8 +1376,8 @@ WillowsLab_DescribePokemonLeague::
 	.string "Kirant.\p"
 	.string "If you defeat all 12 and collect the\n"
 	.string "badges they give you, you'll be allowed\l"
-	.string "into Triumph Spire,\l"
-	.string "where the Elite Four await…\p"
+	.string "into Triumph Spire, where the Elite Four\l"
+	.string "await…\p"
 	.string "But we have a LONG way to go before\n"
 	.string "that happens!$"
 

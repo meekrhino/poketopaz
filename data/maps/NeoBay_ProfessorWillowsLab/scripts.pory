@@ -598,9 +598,9 @@ script(local) WillowsLab_Departure {
     waitse
     closemessage
     applymovement(WILLOW, mWillowExitsInSunset)
-    delay(60)
+    delay(96)
     applymovement(BRADLEY, mBradleyExitsInSunset)
-    delay(15)
+    delay(32)
     applymovement(OBJ_EVENT_ID_PLAYER, mPlayerExitsInSunset)
     waitmovement(OBJ_EVENT_ID_PLAYER)
     warp(MAP_SUNSET_VILLAGE, 0xFF, 11, 34)
@@ -745,7 +745,7 @@ text WillowsLab_DescribePokemonLeague {
         "how the League works in our region.\pUnlike other places, "
         "our League has 12 gyms!\lSix gyms here in Caldera, and six in "
         "Kirant.\pIf you defeat all 12 and collect the badges they give "
-        "you, you'll be allowed into Triumph Spire,\lwhere the "
+        "you, you'll be allowed into Triumph Spire, where the "
         "Elite Four await…\pBut we have a LONG way to go before that "
         "happens!"
     )
@@ -964,20 +964,20 @@ movement mWillowDeliberates {
 }
 
 movement mPlayerExitsInSunset {
-    walk_right * 3
+    walk_right * 2
     walk_up * 4
     set_invisible
 }
 
 movement mBradleyExitsInSunset {
     walk_up
-    walk_right * 4
-    walk_up * 4
+    walk_right * 3
+    walk_up * 3
     set_invisible
 }
 
 movement mWillowExitsInSunset {
-    walk_right * 5
+    walk_right * 6
     walk_up * 6
     set_invisible
 }
