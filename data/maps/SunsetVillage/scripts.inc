@@ -19,6 +19,9 @@ SunsetVillage_WillowAndBradleyTrigger::
 	call SunsetVillage_BradleyLooksAroundEastVer
 	setflag FLAG_HIDE_SUNSET_VILLAGE_WILLOW
 	setvar VAR_SUNSET_VILLAGE_STATE, 2
+	removeobject 3
+	removeobject 1
+	removeobject 2
 	releaseall
 	end
 
@@ -31,8 +34,11 @@ SunsetVillage_OnTransition:
 
 SunsetVillage_OnWarpFromLab:
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	special PrintTest
+	addobject 1
 	setobjectxy 1, 11, 32
 	turnobject 1, DIR_SOUTH
+	addobject 3
 	setobjectxy 3, 10, 32
 	turnobject 3, DIR_SOUTH
 	return
@@ -53,11 +59,17 @@ SunsetVillage_ArriveByBoat_2:
 	call SunsetVillage_BradleyLooksAroundLabVer
 	setflag FLAG_HIDE_SUNSET_VILLAGE_WILLOW
 	setvar VAR_SUNSET_VILLAGE_STATE, 2
+	removeobject 3
+	removeobject 1
+	removeobject 2
 	goto SunsetVillage_ArriveByBoat_1
 
 
 SunsetVillage_IntroAfterExitLab:
 	delay 30
+	msgbox SunsetVillage_IntroAfterExitLab_Text_0
+	waitmessage
+	closemessage
 	applymovement 1, mWillowWalksOffOfDock
 	applymovement 3, mBradleyWalksOffOfDock
 	delay 30
@@ -433,10 +445,18 @@ mWalkRight:
 	walk_right
 	step_end
 
+mWalkLeftAndDown:
+	walk_left
+	walk_down
+	step_end
+
 mStartledWalkRight:
 	emote_exclamation_mark
 	walk_right
 	step_end
+
+SunsetVillage_IntroAfterExitLab_Text_0:
+	.string "Willow: Follow me!$"
 
 SunsetVillage_BradleyLooksAroundLabVer_Text_0:
 	.string "Willow: Well, here we are!$"

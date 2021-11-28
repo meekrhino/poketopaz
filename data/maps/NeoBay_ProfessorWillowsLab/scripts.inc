@@ -960,7 +960,6 @@ mBradleyExitsInSunset:
 	walk_up
 	walk_up
 	walk_up
-	walk_up
 	set_invisible
 	step_end
 

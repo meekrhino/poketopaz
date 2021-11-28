@@ -29,7 +29,11 @@ script(global) PlayersHouse_1F_BradleyReminder {
         case NEOBAY_STATE_AMPURE_RESCUED:
             call(MomGivesRunningShoes)
         case NEOBAY_STATE_RECEIVED_RUNNING_SHOES:
-            msgbox(format("Mom: I'll be fine. You shouldn't keep the professor waiting."), MSGBOX_NPC)
+            msgbox(format("Mom: I'll be fine. Here, why not have a quick rest?"), MSGBOX_NPC)
+            call(Common_EventScript_OutOfCenterPartyHeal)
+        case NEOBAY_STATE_DEPARTED:
+            msgbox(format("Mom: How nice to see you!\nI hope your adventure is going well.\pWhy not have a quick rest?"), MSGBOX_NPC)
+            call(Common_EventScript_OutOfCenterPartyHeal)
     }
     end
 }

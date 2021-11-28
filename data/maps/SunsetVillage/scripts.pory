@@ -33,6 +33,9 @@ script(global) SunsetVillage_WillowAndBradleyTrigger {
     call(SunsetVillage_BradleyLooksAroundEastVer)
     setflag(FLAG_HIDE_SUNSET_VILLAGE_WILLOW)
     setvar(VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_BRADLEY_LEFT)
+    removeobject(BRADLEY)
+    removeobject(WILLOW)
+    removeobject(LAB)
     releaseall
     end
 }
@@ -47,8 +50,13 @@ script(local) SunsetVillage_OnTransition {
 
 script(local) SunsetVillage_OnWarpFromLab {
     turnobject(PLAYER, DIR_NORTH)
+    special(PrintTest)
+
+    addobject(WILLOW)
     setobjectxy(WILLOW, 11, 32)
     turnobject(WILLOW, DIR_SOUTH)
+
+    addobject(BRADLEY)
     setobjectxy(BRADLEY, 10, 32)
     turnobject(BRADLEY, DIR_SOUTH)
 }
@@ -63,6 +71,9 @@ script(local) SunsetVillage_ArriveByBoat {
         call(SunsetVillage_BradleyLooksAroundLabVer)
         setflag(FLAG_HIDE_SUNSET_VILLAGE_WILLOW)
         setvar(VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_BRADLEY_LEFT)
+        removeobject(BRADLEY)
+        removeobject(WILLOW)
+        removeobject(LAB)
     }
     releaseall
     end
@@ -70,6 +81,9 @@ script(local) SunsetVillage_ArriveByBoat {
 
 script(local) SunsetVillage_IntroAfterExitLab {
     delay(30)
+    msgbox("Willow: Follow me!")
+    waitmessage
+    closemessage
     applymovement(WILLOW, mWillowWalksOffOfDock)
     applymovement(BRADLEY, mBradleyWalksOffOfDock)
     delay(30)
@@ -129,9 +143,9 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
     applymovement(WILLOW, mFaceLeft)
     applymovement(PLAYER, mFaceLeft)
     waitmovement(BRADLEY)
-    applymovement(WILLOW, mFaceDown)
+    applymovement(WILLOW, mWalkLeftAndDown)
     applymovement(PLAYER, mFaceUp)
-    waitmovement(PLAYER)
+    waitmovement(WILLOW)
     msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
     applymovement(WILLOW, mWillowWalksToLab)
     waitmovement(WILLOW)
@@ -309,8 +323,8 @@ movement mBradleyRunsToLab {
 }
 
 movement mWillowWalksToLab {
-    walk_left * 2
-    walk_down * 8
+    walk_left
+    walk_down * 7
     set_invisible
 }
 
@@ -363,6 +377,11 @@ movement mWillowWalksToLabEastVer {
 
 movement mWalkRight {
     walk_right
+}
+
+movement mWalkLeftAndDown {
+    walk_left
+    walk_down
 }
 
 movement mStartledWalkRight {
