@@ -1,6 +1,6 @@
 {
   "id": "MAP_PLAYERS_HOUSE_2F",
-  "name": "PlayersHouse_2F",
+  "name": "NeoBay_PlayersHouse_2F",
   "layout": "LAYOUT_PLAYERS_HOUSE_2F",
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",

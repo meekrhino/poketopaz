@@ -1101,6 +1101,6 @@ Script_RemoveTint::
 
 	.include "data/maps/NeoBay_ProfessorWillowsLab/scripts.inc"
 
-	.include "data/maps/PlayersHouse_2F/scripts.inc"
+	.include "data/maps/NeoBay_PlayersHouse_2F/scripts.inc"
 
 	.include "data/maps/NeoBay_PlayersHouse_1F/scripts.inc"

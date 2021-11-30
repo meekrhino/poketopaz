@@ -2,7 +2,7 @@
   "layouts_table_label": "gMapLayouts",
   "group_order": [
     "gMapGroup_TownsAndRoutes",
-    "gMapGroup_IndoorLittleroot",
+    "gMapGroup_IndoorNeoBay",
     "gMapGroup_IndoorOldale",
     "gMapGroup_IndoorDewford",
     "gMapGroup_IndoorLavaridge",
@@ -45,6 +45,8 @@
     "Route202",
     "Route203",
     "Route204",
+    "Route205",
+    "Route206",
     "PetalburgCity",
     "SlateportCity",
     "MauvilleCity",
@@ -101,19 +103,17 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125",
-    "Route205",
-    "Route206"
+    "Underwater_Route125"
   ],
-  "gMapGroup_IndoorLittleroot": [
+  "gMapGroup_IndoorNeoBay": [
+    "NeoBay_ProfessorWillowsLab",
+    "NeoBay_PlayersHouse_1F",
+    "NeoBay_PlayersHouse_2F",
     "LittlerootTown_BrendansHouse_1F",
     "LittlerootTown_BrendansHouse_2F",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
-    "LittlerootTown_ProfessorBirchsLab",
-    "NeoBay_ProfessorWillowsLab",
-    "PlayersHouse_2F",
-    "NeoBay_PlayersHouse_1F"
+    "LittlerootTown_ProfessorBirchsLab"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",

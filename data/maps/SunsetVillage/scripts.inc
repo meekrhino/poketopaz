@@ -144,9 +144,9 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	applymovement 1, mFaceLeft
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	waitmovement 3
-	applymovement 1, mFaceDown
+	applymovement 1, mWalkLeftAndDown
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
-	waitmovement OBJ_EVENT_ID_PLAYER
+	waitmovement 1
 	msgbox SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE
 	applymovement 1, mWillowWalksToLab
 	waitmovement 1
@@ -339,8 +339,6 @@ mBradleyRunsToLab:
 
 mWillowWalksToLab:
 	walk_left
-	walk_left
-	walk_down
 	walk_down
 	walk_down
 	walk_down

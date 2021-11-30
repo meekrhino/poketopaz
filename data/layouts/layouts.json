@@ -4533,7 +4533,7 @@
     },
     {
       "id": "LAYOUT_PLAYERS_HOUSE_2F",
-      "name": "PlayersHouse_2F_Layout",
+      "name": "NeoBay_PlayersHouse_2F_Layout",
       "width": 11,
       "height": 8,
       "primary_tileset": "gTileset_Building",

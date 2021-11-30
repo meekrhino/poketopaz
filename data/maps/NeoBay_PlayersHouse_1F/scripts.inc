@@ -13,6 +13,7 @@ PlayersHouse_1F_BradleyReminder::
 	case 1, PlayersHouse_1F_BradleyReminder_3
 	case 4, PlayersHouse_1F_BradleyReminder_4
 	case 5, PlayersHouse_1F_BradleyReminder_5
+	case 6, PlayersHouse_1F_BradleyReminder_6
 PlayersHouse_1F_BradleyReminder_1:
 	end
 
@@ -26,6 +27,12 @@ PlayersHouse_1F_BradleyReminder_4:
 
 PlayersHouse_1F_BradleyReminder_5:
 	msgbox PlayersHouse_1F_BradleyReminder_Text_1, MSGBOX_NPC
+	call Common_EventScript_OutOfCenterPartyHeal
+	goto PlayersHouse_1F_BradleyReminder_1
+
+PlayersHouse_1F_BradleyReminder_6:
+	msgbox PlayersHouse_1F_BradleyReminder_Text_2, MSGBOX_NPC
+	call Common_EventScript_OutOfCenterPartyHeal
 	goto PlayersHouse_1F_BradleyReminder_1
 
 
@@ -115,8 +122,13 @@ PlayersHouse_1F_BradleyReminder_Text_0:
 	.string "He said you'd know where to find him.$"
 
 PlayersHouse_1F_BradleyReminder_Text_1:
-	.string "Mom: I'll be fine. You shouldn't keep the\n"
-	.string "professor waiting.$"
+	.string "Mom: I'll be fine. Here, why not have a\n"
+	.string "quick rest?$"
+
+PlayersHouse_1F_BradleyReminder_Text_2:
+	.string "Mom: How nice to see you!\n"
+	.string "I hope your adventure is going well.\p"
+	.string "Why not have a quick rest?$"
 
 MomGivesRunningShoes_Text_0:
 	.string "Mom: Hi {PLAYER}. Where have you been\n"

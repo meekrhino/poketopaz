@@ -3,7 +3,7 @@ const PLAYER = 0xFF
 //=====================================
 // Map Scripts
 //=====================================
-mapscripts PlayersHouse_2F_MapScripts {
+mapscripts NeoBay_PlayersHouse_2F_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
         FLAG_SAW_JIRACHI_PROGRAM, 0: PlayersHouse_WatchJirachiProgram
     ]
