@@ -1042,6 +1042,7 @@ Script_RemoveTint::
 	.include "data/scripts/mauville_man.inc"
 	.include "data/scripts/field_move_scripts.inc"
 	.include "data/scripts/item_ball_scripts.inc"
+	.include "data/scripts/item_ball_scripts_2.inc"
 	.include "data/scripts/mystery_event_club.inc"
 	.include "data/scripts/day_care.inc"
 	.include "data/scripts/flash.inc"

@@ -1,0 +1,90 @@
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts Route201_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) Route201_RouteSignNeoBay {
+    msgbox("Route 201\n{RIGHT_ARROW} Neo Bay", MSGBOX_SIGN)
+    end
+}
+script(global) Route201_RouteSignSunsetVilalge {
+    msgbox("Route 201\n{LEFT_ARROW} Sunset Village", MSGBOX_SIGN)
+    end
+}
+
+script(global) Route201_OldMan {
+    msgbox(format("After all this time…\nI can hardly believe my eyes!\pThey actually put in a bridge! Now we can visit Sunset Village!"), MSGBOX_NPC)
+    end
+}
+
+script(global) Route201_LittleGirl {
+    msgbox(format("I never saw you before!\nDid you come from Softwind City?\p…Neo Bay?\nNever heard of it!"), MSGBOX_NPC)
+    end
+}
+
+script(global) Route201_Youngster {
+    trainerbattle_single(TRAINER_ALLEN, Route201_Text_AllenIntro, Route201_Text_AllenDefeated)
+    msgbox(Route201_Text_AllenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route201_BugCatcher {
+    trainerbattle_single(TRAINER_GUS, Route201_Text_GusIntro, Route201_Text_GusDefeated)
+    msgbox(Route201_Text_GusPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+text Route201_Text_AllenIntro {
+    format(
+        "Aha, I hope you're ready to battle!\nNo Pokémon Trainer can refuse a challenge!\pTime for my first opponent and my first victory!"
+    )
+}
+
+text Route201_Text_AllenDefeated {
+    format(
+        "I started my career off with a loss?"
+    )
+}
+
+text Route201_Text_AllenPostBattle {
+    format(
+        "You were the first and only person to beat me. I'm training so I'll never lose again!"
+    )
+}
+text Route201_Text_GusIntro {
+    format(
+        "Ha! You call yourself a Pokémon Trainer and you don't even have a bug net?\pI'll squash you like a … … nevermind!\nLet's battle!"
+    )
+}
+
+text Route201_Text_GusDefeated {
+    format(
+        "I'm the one who got squashed…"
+    )
+}
+
+text Route201_Text_GusPostBattle {
+    format(
+        "You should seriously try to catch some Bug Pokémon!\pThey grow fast, and they're stronger than they look!"
+    )
+}
+
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================
