@@ -4,10 +4,10 @@
 #define TRAINER_NONE                          0
 #define TRAINER_ALLEN                         1
 #define TRAINER_GUS                           2
-#define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
-#define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
-#define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
+#define TRAINER_TYLER                         3
+#define TRAINER_NOAH                          4
+#define TRAINER_MAT                           5
+#define TRAINER_JANICE                        6
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
 #define TRAINER_GABRIELLE_1                   9
@@ -606,7 +606,7 @@
 #define TRAINER_MAXIE_MT_CHIMNEY            602
 #define TRAINER_TIANA                       603
 #define TRAINER_HALEY_1                     604
-#define TRAINER_JANICE                      605
+#define TRAINER_JANICE_2                    605
 #define TRAINER_VIVI                        606
 #define TRAINER_HALEY_2                     607
 #define TRAINER_HALEY_3                     608

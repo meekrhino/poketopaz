@@ -62,9 +62,10 @@ text Route201_Text_AllenPostBattle {
         "You were the first and only person to beat me. I'm training so I'll never lose again!"
     )
 }
+
 text Route201_Text_GusIntro {
     format(
-        "Ha! You call yourself a Pokémon Trainer and you don't even have a bug net?\pI'll squash you like a … … nevermind!\nLet's battle!"
+        "Ha! You call yourself a Pokémon Trainer and you don't even have a bug net?\pI'll squash you like a\n… …\pNevermind!\nLet's battle!"
     )
 }
 

@@ -1047,8 +1047,8 @@
 #define FLAG_ITEM_ROUTE_201_POTION                                  0x3E8
 #define FLAG_ITEM_ROUTE_201_SURF_SPOT                               0x3E9
 #define FLAG_ITEM_ROUTE_201_ANTIDOTE                                0x3EA
-#define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
-#define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
+#define FLAG_ITEM_ROUTE_202_FAT_MAN                                 0x3EB
+#define FLAG_ITEM_ROUTE_202_NORTH_CORNER                            0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
 #define FLAG_ITEM_ROUTE_109_RARE_CANDY                              0x3EE
 #define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF

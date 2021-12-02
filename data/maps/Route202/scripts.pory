@@ -7,6 +7,43 @@ mapscripts Route202_MapScripts {}
 //=====================================
 // Global Scripts
 //=====================================
+script(global) Route202_RouteSignSunsetVillage {
+    msgbox("Route 202\n{DOWN_ARROW} Sunset Village", MSGBOX_SIGN)
+    end
+}
+script(global) Route202_RouteSignSoftwindCity {
+    msgbox("Route 202\n{UP_ARROW} Softwind City", MSGBOX_SIGN)
+    end
+}
+
+script(global) Route202_FatMan {
+    msgbox(format("It really pays off to look around, doesn't it?\pYou can find all kinds of things!"), MSGBOX_NPC)
+    end
+}
+
+script(global) Route202_Camper {
+    trainerbattle_single(TRAINER_TYLER, Route202_Text_TylerIntro, Route202_Text_TylerDefeated)
+    msgbox(Route202_Text_TylerPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route202_SchoolKid {
+    trainerbattle_single(TRAINER_NOAH, Route202_Text_NoahIntro, Route202_Text_NoahDefeated)
+    msgbox(Route202_Text_NoahPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route202_Youngster {
+    trainerbattle_single(TRAINER_MAT, Route202_Text_MatIntro, Route202_Text_MatDefeated)
+    msgbox(Route202_Text_MatPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route202_Lass {
+    trainerbattle_single(TRAINER_JANICE, Route202_Text_JaniceIntro, Route202_Text_JaniceDefeated)
+    msgbox(Route202_Text_JanicePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
 
 //=====================================
 // Local Scripts
@@ -15,6 +52,77 @@ mapscripts Route202_MapScripts {}
 //=====================================
 // Text
 //=====================================
+text Route202_Text_TylerIntro {
+    format(
+        "My dad caught these Pokémon down on Route 201 for me.\pHave you seen a Mogel yet?\nI bet you haven't!\lMy dad always finds the coolest, rarest Pokémon!"
+    )
+}
+
+text Route202_Text_TylerDefeated {
+    format(
+        "Huh, I guess rare Pokémon aren't always the strongest."
+    )
+}
+
+text Route202_Text_TylerPostBattle {
+    format(
+        "Where did get your Pokémon? I bet it's almost as rare as Mogel."
+    )
+}
+
+text Route202_Text_NoahIntro {
+    format(
+        "I like to come here to study when I'm not at school.\pPokémon battles are the most practical kind of studying!"
+    )
+}
+
+text Route202_Text_NoahDefeated {
+    format(
+        "Wow! I definitely learned a lot!"
+    )
+}
+
+text Route202_Text_NoahPostBattle {
+    format(
+        "My teacher always gives me so much homework, but Pokémon battles are so much more fun…"
+    )
+}
+
+text Route202_Text_MatIntro {
+    format(
+        "I love exploring!\nI had to go all the way to Route 205 to find this Pokémon!\pI can't wait to show my mom!"
+    )
+}
+
+text Route202_Text_MatDefeated {
+    format(
+        "Uh oh, my mom is going to be mad…"
+    )
+}
+
+text Route202_Text_MatPostBattle {
+    format(
+        "Mom says I can come to Route 202 to play with my Pokémon.\pI hope she doesn't know you can't find Lupine here!"
+    )
+}
+
+text Route202_Text_JaniceIntro {
+    format(
+        "Did you know there are four different Pokémon on Route 202?\pI'm trying to catch them all!\pBut I can't find Ampure anywhere so far. Have you?"
+    )
+}
+
+text Route202_Text_JaniceDefeated {
+    format(
+        "Your Pokémon are really strong!"
+    )
+}
+
+text Route202_Text_JanicePostBattle {
+    format(
+        "I already caught a Mogel, but I gave it to my little brother.\pThey're so common, I can find another one later."
+    )
+}
 
 //=====================================
 // Movement

@@ -2,11 +2,21 @@
 // Global Scripts
 //=====================================
 script(global) Route201_ItemPotion {
-	finditem(ITEM_POTION)
-	end
+    finditem(ITEM_POTION)
+    end
 }
 
 script(global) Route201_ItemSurfSpot {
-	finditem(ITEM_POTION)
-	end
+    finditem(ITEM_POTION)
+    end
+}
+
+script(global) Route202_ItemByFatMan {
+    finditem(ITEM_POTION)
+    end
+}
+
+script(global) Route201_ItemNorthCorner {
+    finditem(ITEM_POTION)
+    end
 }

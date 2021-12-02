@@ -29,32 +29,50 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Gus[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Sawyer1[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Tyler[] = {
     {
     .iv = 0,
-    .lvl = 21,
-    .species = SPECIES_PINECO,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout1[] = {
-    {
-    .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_PINECO,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout2[] = {
-    {
-    .iv = 0,
-    .lvl = 31,
-    .species = SPECIES_PINECO,
+    .lvl = 4,
+    .species = SPECIES_MOGEL,
     },
     {
     .iv = 0,
-    .lvl = 31,
-    .species = SPECIES_PINECO,
+    .lvl = 3,
+    .species = SPECIES_FINCHERP,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Noah[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_SANDSHREW,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Mat[] = {
+    {
+    .iv = 0,
+    .lvl = 4,
+    .species = SPECIES_MOGEL,
+    },
+    {
+    .iv = 0,
+    .lvl = 4,
+    .species = SPECIES_LUPINE,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Janice[] = {
+    {
+    .iv = 0,
+    .lvl = 3,
+    .species = SPECIES_FINCHERP,
+    },
+    {
+    .iv = 0,
+    .lvl = 4,
+    .species = SPECIES_MANKEY,
     }
 };
 
@@ -8018,14 +8036,6 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Haley1[] = {
     {
     .iv = 0,
     .lvl = 6,
-    .species = SPECIES_PINECO,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Janice[] = {
-    {
-    .iv = 0,
-    .lvl = 9,
     .species = SPECIES_PINECO,
     }
 };
