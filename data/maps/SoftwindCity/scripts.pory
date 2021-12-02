@@ -7,6 +7,30 @@ mapscripts SoftwindCity_MapScripts {}
 //=====================================
 // Global Scripts
 //=====================================
+script(global) SoftwindCity_TownSign {
+    msgbox(SoftwindCity_Text_TownSign, MSGBOX_SIGN)
+    end
+}
+
+script(global) SoftwindCity_GymSign {
+    msgbox(SoftwindCity_Text_GymSign, MSGBOX_SIGN)
+    end
+}
+
+script(global) SoftwindCity_MoltresSign {
+    msgbox(SoftwindCity_Text_TributeMoltres, MSGBOX_SIGN)
+    end
+}
+
+script(global) SoftwindCity_ArticunoSign {
+    msgbox(SoftwindCity_Text_TributeArticuno, MSGBOX_SIGN)
+    end
+}
+
+script(global) SoftwindCity_ZapdosSign {
+    msgbox(SoftwindCity_Text_TributeZapdos, MSGBOX_SIGN)
+    end
+}
 
 //=====================================
 // Local Scripts
@@ -15,6 +39,41 @@ mapscripts SoftwindCity_MapScripts {}
 //=====================================
 // Text
 //=====================================
+text SoftwindCity_Text_TownSign {
+    format(
+        "Softwind City\n"
+        "“Where life drifts softly, like a leaf on the wind.”"
+    )
+}
+
+text SoftwindCity_Text_GymSign {
+    format(
+        "Softwind City Pokémon Gym\n"
+        "Leader: Therma\l"
+        "“A woman of history and literature!”"
+    )
+}
+
+text SoftwindCity_Text_TributeMoltres {
+    format(
+        "A reverent message:\p"
+        "“It burns through the sky\nOn wings of dazzling flame\lHerald of the spring”"
+    )
+}
+
+text SoftwindCity_Text_TributeArticuno {
+    format(
+        "A reverent message:\p"
+        "“It sings in the wind\nBringing winter to the land\lThat time may march on”"
+    )
+}
+
+text SoftwindCity_Text_TributeZapdos {
+    format(
+        "A reverent message:\p"
+        "“It shocks the world\nWith a thunderous fury\lForging a new path”"
+    )
+}
 
 //=====================================
 // Movement

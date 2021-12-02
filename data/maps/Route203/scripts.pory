@@ -8,6 +8,11 @@ mapscripts Route203_MapScripts {}
 // Global Scripts
 //=====================================
 
+script(global) Route203_RouteSignSoftwindCity {
+    msgbox("Route 203\n{LEFT_ARROW} Softwind City", MSGBOX_SIGN)
+    end
+}
+
 //=====================================
 // Local Scripts
 //=====================================

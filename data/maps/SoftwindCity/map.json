@@ -33,12 +33,122 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 7,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 17,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 27,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 11,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 29,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 7,
+      "y": 44,
+      "elevation": 0,
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 30,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 23,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 0
+    }
   ],
   "coord_events": [
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SoftwindCity_MoltresSign"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SoftwindCity_ArticunoSign"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SoftwindCity_ZapdosSign"
+    },
+    {
+      "type": "sign",
+      "x": 39,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route203_RouteSignSoftwindCity"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 39,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SoftwindCity_TownSign"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 54,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route202_RouteSignSoftwindCity"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 33,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SoftwindCity_GymSign"
+    }
   ]
 }

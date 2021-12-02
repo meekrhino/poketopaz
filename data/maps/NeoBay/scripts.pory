@@ -329,15 +329,15 @@ script(local) NeoBay_EventScript_AmpureCapture {
 //=====================================
 text NeoBay_Text_TownSign {
     format(
-        "NEO BAY\n"
+        "Neo Bay\n"
         "“The most isolated town in Caldera. Where new things begin.”"
     )
 }
 
 text NeoBay_Text_DockSign {
     format(
-        "NEO BAY DOCK\n"
-        "“The only access point for regional visitors, rare as they are.”"
+        "Neo Bay Dock\n"
+        "“The only access point for regional visitors, rare though they are.”"
     )
 }
 

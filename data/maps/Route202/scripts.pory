@@ -11,6 +11,7 @@ script(global) Route202_RouteSignSunsetVillage {
     msgbox("Route 202\n{DOWN_ARROW} Sunset Village", MSGBOX_SIGN)
     end
 }
+
 script(global) Route202_RouteSignSoftwindCity {
     msgbox("Route 202\n{UP_ARROW} Softwind City", MSGBOX_SIGN)
     end
