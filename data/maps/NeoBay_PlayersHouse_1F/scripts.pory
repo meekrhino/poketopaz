@@ -42,6 +42,7 @@ script(global) PlayersHouse_1F_BradleyReminder {
 // Local Scripts
 //=====================================
 script(local) PlayersHouse_1F_OnTransition {
+	setrespawn(HEAL_LOCATION_NEO_BAY)
     switch(var(VAR_NEOBAY_STATE)) {
         case NEOBAY_STATE_AMPURE_RESCUED:
             setobjectxyperm(MOM, 2, 2)
@@ -50,6 +51,7 @@ script(local) PlayersHouse_1F_OnTransition {
             setobjectxyperm(MOM, 3, 4)
             setobjectmovementtype(MOM, MOVEMENT_TYPE_FACE_RIGHT)
     }
+    end
 }
 
 script(local) BradleyWasLookingForYou {

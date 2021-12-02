@@ -230,6 +230,7 @@ script(local) NeoBay_EventScript_BradleyLeadsToGrass {
 }
 
 script(local) NeoBay_EventScript_SetupBradleyAtBoat {
+	setrespawn(HEAL_LOCATION_NEO_BAY)
     addobject(BRADLEY)
     setobjectxy(BRADLEY, 28, 33)
     turnobject(BRADLEY, DIR_NORTH)
