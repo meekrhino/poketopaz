@@ -3,7 +3,7 @@
   "group_order": [
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorNeoBay",
-    "gMapGroup_IndoorOldale",
+    "gMapGroup_IndoorSunsetVillage",
     "gMapGroup_IndoorDewford",
     "gMapGroup_IndoorLavaridge",
     "gMapGroup_IndoorFallarbor",
@@ -115,12 +115,13 @@
     "LittlerootTown_MaysHouse_2F",
     "LittlerootTown_ProfessorBirchsLab"
   ],
-  "gMapGroup_IndoorOldale": [
+  "gMapGroup_IndoorSunsetVillage": [
     "OldaleTown_House1",
     "OldaleTown_House2",
     "OldaleTown_PokemonCenter_1F",
     "OldaleTown_PokemonCenter_2F",
-    "OldaleTown_Mart"
+    "OldaleTown_Mart",
+    "SunsetVillage_PokemonCenter"
   ],
   "gMapGroup_IndoorDewford": [
     "DewfordTown_House1",

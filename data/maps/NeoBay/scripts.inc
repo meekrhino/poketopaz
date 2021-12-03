@@ -211,6 +211,7 @@ NeoBay_EventScript_BradleyLeadsToGrass:
 
 
 NeoBay_EventScript_SetupBradleyAtBoat:
+	setrespawn HEAL_LOCATION_NEO_BAY
 	addobject 2
 	setobjectxy 2, 28, 33
 	turnobject 2, DIR_NORTH
@@ -645,14 +646,14 @@ NeoBay_EventScript_AmpureCapture_Text_1:
 	.string "Prof. Willow!$"
 
 NeoBay_Text_TownSign::
-	.string "NEO BAY\n"
+	.string "Neo Bay\n"
 	.string "“The most isolated town in Caldera.\l"
 	.string "Where new things begin.”$"
 
 NeoBay_Text_DockSign::
-	.string "NEO BAY DOCK\n"
+	.string "Neo Bay Dock\n"
 	.string "“The only access point for regional\l"
-	.string "visitors, rare as they are.”$"
+	.string "visitors, rare though they are.”$"
 
 NeoBay_Text_PlayerMailbox::
 	.string "{PLAYER}'s Mailbox:\n"

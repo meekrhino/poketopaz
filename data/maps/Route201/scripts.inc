@@ -70,7 +70,9 @@ Route201_Text_AllenPostBattle::
 Route201_Text_GusIntro::
 	.string "Ha! You call yourself a Pokémon Trainer\n"
 	.string "and you don't even have a bug net?\p"
-	.string "I'll squash you like a … … nevermind!\n"
+	.string "I'll squash you like a\n"
+	.string "… …\p"
+	.string "Nevermind!\n"
 	.string "Let's battle!$"
 
 Route201_Text_GusDefeated::

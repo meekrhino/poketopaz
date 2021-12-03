@@ -26,6 +26,7 @@ EventScript_PkmnCenterNurse_HealPkmn::
     waitmessage
     call EventScript_PkmnCenterNurse_TakeAndHealPkmn
     goto_if_unset FLAG_POKERUS_EXPLAINED, EventScript_PkmnCenterNurse_CheckPokerus
+    goto EventScript_PkmnCenterNurse_ReturnPkmn
     end
 
 EventScript_PkmnCenterNurse_IllTakeYourPkmn::
@@ -37,7 +38,7 @@ EventScript_PkmnCenterNurse_IllTakeYourPkmn2::
     return
 
 EventScript_PkmnCenterNurse_TakeAndHealPkmn::
-    applymovement VAR_0x800B, Common_Movement_WalkInPlaceFastestLeft
+    applymovement VAR_0x800B, Common_Movement_WalkInPlaceFastestRight
     waitmovement 0
     dofieldeffect FLDEFF_POKECENTER_HEAL
     waitfieldeffect FLDEFF_POKECENTER_HEAL
@@ -81,6 +82,7 @@ EventScript_PkmnCenterNurse_CheckPokerus::
     compare VAR_RESULT, TRUE
     goto_if_eq EventScript_PkmnCenterNurse_ExplainPokerus
     compare VAR_RESULT, FALSE
+    goto_if_eq EventScript_PkmnCenterNurse_ReturnPkmn
     end
 
 EventScript_PkmnCenterNurse_ExplainPokerus::

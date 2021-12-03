@@ -66,7 +66,41 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 27,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSET_VILLAGE_POKEMON_CENTER",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 26,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSET_VILLAGE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 11,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSET_VILLAGE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 13,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSET_VILLAGE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 11,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSET_VILLAGE",
+      "dest_warp_id": 0
+    }
   ],
   "coord_events": [
     {

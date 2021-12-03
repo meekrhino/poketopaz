@@ -4550,6 +4550,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/NeoBay_PlayersHouse_1F/border.bin",
       "blockdata_filepath": "data/layouts/NeoBay_PlayersHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSET_VILLAGE_POKEMON_CENTER",
+      "name": "SunsetVillage_PokemonCenter_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/SunsetVillage_PokemonCenter/border.bin",
+      "blockdata_filepath": "data/layouts/SunsetVillage_PokemonCenter/map.bin"
     }
   ]
 }

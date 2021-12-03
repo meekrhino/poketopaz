@@ -37,20 +37,22 @@ PlayersHouse_1F_BradleyReminder_6:
 
 
 PlayersHouse_1F_OnTransition:
+	setrespawn HEAL_LOCATION_NEO_BAY
 	switch VAR_NEOBAY_STATE
-	case 4, PlayersHouse_1F_OnTransition_2
-	case 5, PlayersHouse_1F_OnTransition_3
-	return
-
-PlayersHouse_1F_OnTransition_2:
-	setobjectxyperm 1, 2, 2
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
-	return
+	case 4, PlayersHouse_1F_OnTransition_3
+	case 5, PlayersHouse_1F_OnTransition_4
+PlayersHouse_1F_OnTransition_1:
+	end
 
 PlayersHouse_1F_OnTransition_3:
+	setobjectxyperm 1, 2, 2
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	goto PlayersHouse_1F_OnTransition_1
+
+PlayersHouse_1F_OnTransition_4:
 	setobjectxyperm 1, 3, 4
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_RIGHT
-	return
+	goto PlayersHouse_1F_OnTransition_1
 
 
 BradleyWasLookingForYou:

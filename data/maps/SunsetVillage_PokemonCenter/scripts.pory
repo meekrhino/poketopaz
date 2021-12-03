@@ -1,0 +1,146 @@
+const NURSE = 1
+const GIRL = 3
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts SunsetVillage_PokemonCenter_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: SunsetVillage_PokemonCenter_OnTransition
+}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) SunsetVillage_PokemonCenter_Nurse {
+    setvar(VAR_0x800B, NURSE)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release
+    end
+}
+
+script(global) SunsetVillage_PokemonCenter_Gentleman {
+    msgbox(SunsetVillage_Text_Gentleman, MSGBOX_NPC)
+    end
+}
+
+script(global) SunsetVillage_PokemonCenter_Girl {
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if(var(VAR_TEMP_1) <= 3) { //She's at the PC
+        lock
+        msgbox("… … …\n… … …\pDone!")
+        waitmessage
+        closemessage
+        faceplayer
+        applymovement(GIRL, mExclamationPoint)
+        delay(32)
+        msgbox(SunsetVillage_Text_Girl_PC)
+        waitmessage
+        closemessage
+        if(var(VAR_TEMP_1) == 2) {
+            applymovement(GIRL, mGirlWalksFromPC_1)
+        }
+        else {
+            applymovement(GIRL, mGirlWalksFromPC_2)
+        }
+        delay(32)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_SOUTH)
+        waitmovement(GIRL)
+        copyobjectxytoperm(GIRL)
+        setobjectmovementtype(GIRL, MOVEMENT_TYPE_LOOK_AROUND)
+        release
+    }
+    else {
+        msgbox(SunsetVillage_Text_Girl_Table, MSGBOX_NPC)
+    }
+    end
+}
+
+script(global) SunsetVillage_PokemonCenter_Fisherman {
+    checkitem(ITEM_OLD_ROD, 1)
+    if(var(VAR_RESULT) == TRUE) {
+        if(flag(FLAG_COMPLETED_OLD_ROD_QUEST)) {
+            msgbox(format("I hope my Old Rod is treating you well!\pMake sure you try fishing in every body of water!"), MSGBOX_NPC)
+        }
+        else {
+            lock
+            faceplayer
+            msgbox(format("That's it\pThat's my Old Rod!\nThank you for finding it!\pAs a reward, take this!"))
+            giveitem(ITEM_POTION)
+            if(var(VAR_RESULT) == FALSE) {
+                goto(Common_EventScript_ShowBagIsFull)
+            }
+            setflag(FLAG_COMPLETED_OLD_ROD_QUEST)
+            release
+        }
+    }
+    else {
+        msgbox(SunsetVillage_Text_Fisherman, MSGBOX_NPC)
+    }
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) SunsetVillage_PokemonCenter_OnTransition {
+	setrespawn(HEAL_LOCATION_SUNSET_VILLAGE)
+    end
+}
+
+//=====================================
+// Text
+//=====================================
+text SunsetVillage_Text_Gentleman {
+    format(
+        "A long time ago, Pokémon Centers\n"
+        "used to charge for their services, "
+        "but nowadays they're free for "
+        "anyone to use.\pIt's really nice!\n"
+        "Now I can come by any time!"
+    )
+}
+
+text SunsetVillage_Text_Girl_PC {
+    format(
+        "This PC is free for anyone to use!\p"
+        "I just caught a new Pokémon, so I "
+        "was picking it up from the PC.\pI'm "
+        "finished now, so go ahead!"
+    )
+}
+
+text SunsetVillage_Text_Girl_Table {
+    format(
+        "If you've never used a PC before, "
+        "you must be from far away!\pOh, Neo Bay?\n"
+        "So they finished that bridge?\pThat's great news!"
+    )
+}
+
+text SunsetVillage_Text_Fisherman {
+    format(
+        "Howdy there!\nDo you like fishing?\p"
+        "I know I do…\nIf only I hadn't lost my Old Rod!\p"
+        "If you find it in your travels, would you bring it back to me?"
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+movement mGirlWalksFromPC_1 {
+    walk_down * 5
+    walk_right * 2
+}
+
+movement mGirlWalksFromPC_2 {
+    walk_right
+    walk_down * 5
+    walk_right
+}
+
+//=====================================
+// Raw
+//=====================================
