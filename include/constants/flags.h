@@ -48,7 +48,7 @@
 #define FLAG_SAW_JIRACHI_PROGRAM            0x24
 #define FLAG_COMPLETED_OLD_ROD_QUEST        0x25
 #define FLAG_SOLVED_OLD_MAN                 0x26
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_THERMA_RETURNED                0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
