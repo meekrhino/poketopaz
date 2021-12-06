@@ -2,15 +2,31 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #define TRAINER_NONE                          0
+
+//=====================================================
+// Route 201
+//=====================================================
 #define TRAINER_ALLEN                         1
 #define TRAINER_GUS                           2
+
+//=====================================================
+// Route 202
+//=====================================================
 #define TRAINER_TYLER                         3
 #define TRAINER_NOAH                          4
 #define TRAINER_MAT                           5
 #define TRAINER_JANICE                        6
+
+//=====================================================
+// Rival #2
+//=====================================================
 #define TRAINER_BRADLEY_NEOBAY_2_VENAP        7
 #define TRAINER_BRADLEY_NEOBAY_2_CELSINGE     8
 #define TRAINER_BRADLEY_NEOBAY_2_ECHOISE      9
+
+//=====================================================
+// Route 203
+//=====================================================
 #define TRAINER_GRUNT_PETALBURG_WOODS        10
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1         11
 #define TRAINER_ALBERTO                      12

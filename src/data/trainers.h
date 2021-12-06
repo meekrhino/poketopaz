@@ -13,6 +13,10 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = NULL},
     },
 
+    //=====================================================
+    // Route 201
+    //=====================================================
+
     [TRAINER_ALLEN] =
     {
         .partyFlags = 0,
@@ -40,6 +44,10 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_Gus),
         .party = {.NoItemDefaultMoves = sParty_Gus},
     },
+
+    //=====================================================
+    // Route 202
+    //=====================================================
 
     [TRAINER_TYLER] =
     {
@@ -97,6 +105,10 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Janice},
     },
 
+    //=====================================================
+    // Rival #2
+    //=====================================================
+
     [TRAINER_BRADLEY_NEOBAY_2_VENAP] =
     {
         .partyFlags = 0,
@@ -138,6 +150,10 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_BradleyNeoBay2Echoise),
         .party = {.NoItemDefaultMoves = sParty_BradleyNeoBay2Echoise},
     },
+
+    //=====================================================
+    // Route 203
+    //=====================================================
 
     [TRAINER_GRUNT_PETALBURG_WOODS] =
     {
