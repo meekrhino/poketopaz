@@ -4560,6 +4560,16 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/SunsetVillage_PokemonCenter/border.bin",
       "blockdata_filepath": "data/layouts/SunsetVillage_PokemonCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOFTWIND_CITY_POKEMON_CENTER",
+      "name": "SoftwindCity_PokemonCenter_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/SoftwindCity_PokemonCenter/border.bin",
+      "blockdata_filepath": "data/layouts/SoftwindCity_PokemonCenter/map.bin"
     }
   ]
 }

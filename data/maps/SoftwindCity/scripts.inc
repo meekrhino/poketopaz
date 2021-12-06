@@ -27,6 +27,63 @@ SoftwindCity_ZapdosSign::
 	end
 
 
+SoftwindCity_ElderGuard::
+	msgbox SoftwindCity_ElderGuard_Text_0, MSGBOX_NPC
+	end
+
+
+SoftwindCity_WomanInFlowers::
+	msgbox SoftwindCity_WomanInFlowers_Text_0
+	end
+
+
+SoftwindCity_GirlHiding::
+	msgbox SoftwindCity_GirlHiding_Text_0
+	end
+
+
+SoftwindCity_GuyInFrontOfGym::
+	msgbox SoftwindCity_GuyInFrontOfGym_Text_0
+	end
+
+
+SoftwindCity_BaldingMan::
+	msgbox SoftwindCity_BaldingMan_Text_0
+	end
+
+
+SoftwindCity_ElderGuard_Text_0:
+	.string "My sisters and I hold the sacred duty\n"
+	.string "of guarding the towers.\p"
+	.string "Until our protectors return, these\n"
+	.string "doors shall remain closed.$"
+
+SoftwindCity_WomanInFlowers_Text_0:
+	.string "I love the way the flowers sway in the\n"
+	.string "breeze.\p"
+	.string "I sit and watch them to help center\n"
+	.string "myself.$"
+
+SoftwindCity_GirlHiding_Text_0:
+	.string "Wow, you noticed me hiding behind here?\p"
+	.string "It's so easy to hide behind buildings.\p"
+	.string "I've found items behind them a few\n"
+	.string "times!$"
+
+SoftwindCity_GuyInFrontOfGym_Text_0:
+	.string "I'm sorry, Gym Leader Therma is\n"
+	.string "currently away on research.\p"
+	.string "She will take your challenge when she\n"
+	.string "returns.$"
+
+SoftwindCity_BaldingMan_Text_0:
+	.string "I'm old enough to remember Pinedale\n"
+	.string "Forest before the fire.\p"
+	.string "Now…\n"
+	.string "… …\p"
+	.string "Well, let's just say, if you're heading\n"
+	.string "east I hope you have Burn Heals.$"
+
 SoftwindCity_Text_TownSign::
 	.string "Softwind City\n"
 	.string "“Where life drifts softly, like a leaf on\l"

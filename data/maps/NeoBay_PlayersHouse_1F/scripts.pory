@@ -8,6 +8,7 @@ const NEOBAY_STATE_RECEIVED_STARTER = 3
 const NEOBAY_STATE_AMPURE_RESCUED = 4
 const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 5
 const NEOBAY_STATE_DEPARTED = 6
+const NEOBAY_STATE_OPTIONAL_RIVAL_DONE = 7
 
 //=====================================
 // Map Scripts
@@ -32,6 +33,9 @@ script(global) PlayersHouse_1F_BradleyReminder {
             msgbox(format("Mom: I'll be fine. Here, why not have a quick rest?"), MSGBOX_NPC)
             call(Common_EventScript_OutOfCenterPartyHeal)
         case NEOBAY_STATE_DEPARTED:
+            msgbox(format("Mom: Welcome home, dear!\nI think I saw Bradley come back, did you see him?\pBefore you go, why not have a quick rest?"), MSGBOX_NPC)
+            call(Common_EventScript_OutOfCenterPartyHeal)
+        case NEOBAY_STATE_OPTIONAL_RIVAL_DONE:
             msgbox(format("Mom: How nice to see you!\nI hope your adventure is going well.\pWhy not have a quick rest?"), MSGBOX_NPC)
             call(Common_EventScript_OutOfCenterPartyHeal)
     }

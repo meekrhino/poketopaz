@@ -1,0 +1,81 @@
+const NURSE = 1
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts SoftwindCity_PokemonCenter_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: SoftwindCity_PokemonCenter_OnTransition
+}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) SoftwindCity_PokemonCenter_Nurse {
+    setvar(VAR_0x800B, NURSE)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release
+    end
+}
+
+script(global) SoftwindCity_PokemonCenter_Boy {
+    msgbox(SoftwindCity_Text_Boy, MSGBOX_NPC)
+    end
+}
+
+script(global) SoftwindCity_PokemonCenter_Judge {
+    msgbox(SoftwindCity_Text_Judge, MSGBOX_NPC)
+    end
+}
+
+script(global) SoftwindCity_PokemonCenter_MomPerson {
+    msgbox(SoftwindCity_Text_MomPerson, MSGBOX_NPC)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) SoftwindCity_PokemonCenter_OnTransition {
+	setrespawn(HEAL_LOCATION_SOFTWIND_CITY)
+    end
+}
+
+//=====================================
+// Text
+//=====================================
+text SoftwindCity_Text_Boy {
+    format(
+        "I read that there are tons of kinds of Pokémon "
+        "in the old forest and beyond!\p"
+        "I can't wait until I have a Pokémon "
+        "partner of my own to find out!"
+    )
+}
+
+text SoftwindCity_Text_Judge {
+    format(
+        "I just wanted to head west down Route 205, "
+        "but there's so much commotion.\p"
+        "I'll just rest here until it calms down."
+    )
+}
+
+text SoftwindCity_Text_MomPerson {
+    format(
+        "After my son left to become a Pokémon "
+        "Trainer, I took a cruise to Caldera.\p"
+        "I'm from Johto, to the west of here.\p"
+        "It's so beautiful I decided to stay!\p"
+        "Someday I'll have to visit Kirant as well."
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================

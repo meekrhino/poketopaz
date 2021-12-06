@@ -1107,3 +1107,5 @@ Script_RemoveTint::
 	.include "data/maps/NeoBay_PlayersHouse_1F/scripts.inc"
 
 	.include "data/maps/SunsetVillage_PokemonCenter/scripts.inc"
+
+	.include "data/maps/SoftwindCity_PokemonCenter/scripts.inc"

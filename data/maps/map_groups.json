@@ -4,7 +4,7 @@
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorNeoBay",
     "gMapGroup_IndoorSunsetVillage",
-    "gMapGroup_IndoorDewford",
+    "gMapGroup_IndoorSoftwind",
     "gMapGroup_IndoorLavaridge",
     "gMapGroup_IndoorFallarbor",
     "gMapGroup_IndoorVerdanturf",
@@ -123,13 +123,14 @@
     "OldaleTown_Mart",
     "SunsetVillage_PokemonCenter"
   ],
-  "gMapGroup_IndoorDewford": [
+  "gMapGroup_IndoorSoftwind": [
     "DewfordTown_House1",
     "DewfordTown_PokemonCenter_1F",
     "DewfordTown_PokemonCenter_2F",
     "DewfordTown_Gym",
     "DewfordTown_Hall",
-    "DewfordTown_House2"
+    "DewfordTown_House2",
+    "SoftwindCity_PokemonCenter"
   ],
   "gMapGroup_IndoorLavaridge": [
     "LavaridgeTown_HerbShop",

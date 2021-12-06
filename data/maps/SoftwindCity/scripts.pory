@@ -37,23 +37,22 @@ script(global) SoftwindCity_ElderGuard {
 }
 
 script(global) SoftwindCity_WomanInFlowers {
-    msgbox(format("I love the way the flowers sway in the breeze.\pI sit and watch them to help center myself."))
+    msgbox(format("I love the way the flowers sway in the breeze.\pI sit and watch them to help center myself."), MSGBOX_NPC)
     end
 }
 
 script(global) SoftwindCity_GirlHiding {
-    msgbox(format("Wow, you noticed me hiding behind here?\pIt's so easy to hide behind buildings.\pI've found items behind them a few times!"))
+    msgbox(format("Wow, you noticed me hiding behind here?\pIt's so easy to hide behind buildings.\pI've found items behind them a few times!"), MSGBOX_NPC)
     end
 }
 
 script(global) SoftwindCity_GuyInFrontOfGym {
-    msgbox(format("I'm sorry, Gym Leader Therma is currently away on research.\pShe will take your challenge when she returns."))
+    msgbox(format("I'm sorry, Gym Leader Therma is currently away on research.\pShe will take your challenge when she returns."), MSGBOX_NPC)
     end
 }
 
 script(global) SoftwindCity_BaldingMan {
-    msgbox(format("I'm old enough to remember Pinedale Forest before the fire.\pNow…\n… …\pWell, let's just say, if you're heading east I hope you have Burn Heals."))
-    end
+    msgbox(format("I'm old enough to remember Pinedale Forest before the fire.\pNow…\n… …\pWell, let's just say if you're heading east I hope you have Burn Heals."), MSGBOX_NPC)    end
 }
 
 //=====================================
