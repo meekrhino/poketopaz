@@ -26,6 +26,71 @@ SunsetVillage_WillowAndBradleyTrigger::
 	end
 
 
+SunsetVillage_TownSign::
+	msgbox NeoBay_Text_TownSign, MSGBOX_SIGN
+	end
+
+
+SunsetVillage_OldWoman::
+	msgbox SunsetVillage_OldWoman_Text_0, MSGBOX_NPC
+	end
+
+
+SunsetVillage_OldWomanMailbox::
+	lock
+	faceplayer
+	msgbox SunsetVillage_OldWomanMailbox_Text_0
+	waitmessage
+	closemessage
+	applymovement 5, Common_Movement_FaceOriginalDirection
+	end
+
+
+SunsetVillage_OldMan::
+	goto_if_set FLAG_SOLVED_OLD_MAN, SunsetVillage_OldMan_2
+	compare VAR_TEMP_2, 17
+	goto_if_ne SunsetVillage_OldMan_8
+	lock
+	faceplayer
+	applymovement 6, mExclamationPoint
+	waitmovement 0
+	msgbox SunsetVillage_OldMan_Text_3
+	waitmessage
+	closemessage
+	delay 60
+	msgbox SunsetVillage_OldMan_Text_4
+	waitmessage
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerStepsBack
+	delay 32
+	applymovement 6, mOldManStepsAside
+	waitmovement 0
+	setflag FLAG_SOLVED_OLD_MAN
+	copyobjectxytoperm 6
+	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
+	release
+SunsetVillage_OldMan_1:
+	end
+
+SunsetVillage_OldMan_2:
+	goto_if_set FLAG_HIDDEN_ITEM_SUNSET_VILLAGE_PEARL, SunsetVillage_OldMan_5
+	msgbox SunsetVillage_OldMan_Text_1, MSGBOX_NPC
+	goto SunsetVillage_OldMan_1
+
+SunsetVillage_OldMan_5:
+	msgbox SunsetVillage_OldMan_Text_0, MSGBOX_NPC
+	goto SunsetVillage_OldMan_1
+
+SunsetVillage_OldMan_8:
+	lock
+	faceplayer
+	msgbox SunsetVillage_OldMan_Text_2
+	waitmessage
+	closemessage
+	setvar VAR_TEMP_2, 17
+	goto SunsetVillage_OldMan_1
+
+
 SunsetVillage_OnTransition:
 	setflag FLAG_VISITED_SUNSET_VILLAGE
 	call Common_EventScript_SetupRivalGfxId
@@ -453,6 +518,49 @@ mStartledWalkRight:
 	walk_right
 	step_end
 
+mPlayerStepsBack:
+	slide_right
+	step_end
+
+mOldManStepsAside:
+	walk_slow_right
+	walk_slow_up
+	face_down
+	step_end
+
+SunsetVillage_OldWoman_Text_0:
+	.string "Sunset Village is a sleepy place.\n"
+	.string "Not a lot of young folks left here.\p"
+	.string "I guess a small town on the edge of\n"
+	.string "nowhere doesn't drawn many visitors.$"
+
+SunsetVillage_OldWomanMailbox_Text_0:
+	.string "I'm expecting a letter from my\n"
+	.string "granddaughter!\p"
+	.string "It's the highlight of my week.\n"
+	.string "Make sure you visit or write home often!$"
+
+SunsetVillage_OldMan_Text_0:
+	.string "Well done!\pYou should sell that.\nIt's worth quite a bit.$"
+
+SunsetVillage_OldMan_Text_1:
+	.string "Go ahead!\pIt's hidden on the ground.$"
+
+SunsetVillage_OldMan_Text_2:
+	.string "Fuhuhu! I've hidden an item somewhere\n"
+	.string "in town!\p"
+	.string "If you can find it, it's yours!\n"
+	.string "You won't be able to just see it, though.\p"
+	.string "You'll have to search carefully!$"
+
+SunsetVillage_OldMan_Text_3:
+	.string "Ah! Clever!\p"
+	.string "You're right, of course!\n"
+	.string "It's right behind me!$"
+
+SunsetVillage_OldMan_Text_4:
+	.string "Step aside, please.$"
+
 SunsetVillage_IntroAfterExitLab_Text_0:
 	.string "Willow: Follow me!$"
 
@@ -487,6 +595,11 @@ SunsetVillage_BradleyLooksAroundEastVer_Text_1:
 
 SunsetVillage_BradleyLooksAroundEastVer_Text_2:
 	.string "Bradley: This is Sunset Village!$"
+
+NeoBay_Text_TownSign::
+	.string "Sunset Village\n"
+	.string "“Where the sun sets on one adventure,\l"
+	.string "and rises on another.”$"
 
 SunsetVillage_HeadToSoftwind::
 	.string "Willow: That's correct.\n"

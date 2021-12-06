@@ -53,12 +53,12 @@ Route202_FatMan_Text_0:
 	.string "You can find all kinds of things!$"
 
 Route202_Text_TylerIntro::
-	.string "My dad caught these Pokémon down on\n"
-	.string "Route 201 for me.\p"
+	.string "My grandpa caught these Pokémon down\n"
+	.string "on Route 201 for me.\p"
 	.string "Have you seen a Mogel yet?\n"
 	.string "I bet you haven't!\l"
-	.string "My dad always finds the coolest, rarest\l"
-	.string "Pokémon!$"
+	.string "My grandpa always finds the coolest,\l"
+	.string "rarest Pokémon!$"
 
 Route202_Text_TylerDefeated::
 	.string "Huh, I guess rare Pokémon aren't always\n"

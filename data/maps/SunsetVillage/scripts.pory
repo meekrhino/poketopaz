@@ -2,9 +2,13 @@ const PLAYER = OBJ_EVENT_ID_PLAYER
 const WILLOW = 1
 const LAB = 2
 const BRADLEY = 3
+const OLD_WOMAN = 5
+const OLD_MAN = 6
 const VAR_X_TEMP = VAR_TEMP_0
 const VAR_Y_TEMP = VAR_TEMP_1
 const X_AFTER_LAB = 11
+
+const MAGIC_NUMBER = 17
 
 // VAR_SUNSET_VILLAGE_STATE values
 const SUNSET_VILLAGE_STATE_INIT = 0
@@ -37,6 +41,84 @@ script(global) SunsetVillage_WillowAndBradleyTrigger {
     removeobject(WILLOW)
     removeobject(LAB)
     releaseall
+    end
+}
+
+script SunsetVillage_TownSign {
+    msgbox(SunsetVillage_Text_TownSign, MSGBOX_SIGN)
+    end
+}
+
+script SunsetVillage_DockSign {
+    msgbox("“Sunset Pier”", MSGBOX_SIGN)
+    end
+}
+
+script SunsetVillage_OtherMailbox {
+    msgbox(NeoBay_Text_OtherMailbox, MSGBOX_SIGN)
+    end
+}
+
+script SunsetVillage_EmptyMailbox {
+    msgbox("The mailbox is open.\pThere's nothing inside…", MSGBOX_SIGN)
+    end
+}
+
+script(global) SunsetVillage_OldWoman {
+    msgbox(format("Sunset Village is a sleepy place.\nNot a lot of young folks left here.\pI guess a small town on the edge of nowhere doesn't drawn many visitors."), MSGBOX_NPC)
+    end
+}
+
+script SunsetVillage_OldWomanMailbox {
+    lock
+    faceplayer
+    msgbox(format("I'm expecting a letter from my granddaughter!\pIt's the highlight of my week.\nMake sure you visit or write home often!"))
+    waitmessage
+    closemessage
+    applymovement(OLD_WOMAN, Common_Movement_FaceOriginalDirection)
+    end
+}
+
+script SunsetVillage_OldMan {
+    if(flag(FLAG_SOLVED_OLD_MAN)) {
+        if(flag(FLAG_HIDDEN_ITEM_SUNSET_VILLAGE_PEARL)) {
+            msgbox("Well done!\pYou should sell that.\nIt's worth quite a bit.", MSGBOX_NPC)
+        }
+        else {
+            msgbox("Go ahead!\pIt's hidden on the ground.", MSGBOX_NPC)
+        }
+    }
+    else {
+        if(var(VAR_TEMP_2) != MAGIC_NUMBER) {
+            lock
+            faceplayer
+            msgbox(format("Fuhuhu! I've hidden an item somewhere in town!\pIf you can find it, it's yours!\nYou won't be able to just see it, though.\pYou'll have to search carefully!"))
+            waitmessage
+            closemessage
+            setvar(VAR_TEMP_2, MAGIC_NUMBER)
+        }
+        else {
+            lock
+            faceplayer
+            applymovement(OLD_MAN, mExclamationPoint)
+            waitmovement(0)
+            msgbox(format("Ah! Clever!\pYou're right, of course!\nIt's right behind me!"))
+            waitmessage
+            closemessage
+            delay(60)
+            msgbox("Step aside, please.")
+            waitmessage
+            closemessage
+            applymovement(OBJ_EVENT_ID_PLAYER, mPlayerStepsBack)
+            delay(32)
+            applymovement(OLD_MAN, mOldManStepsAside)
+            waitmovement(0)
+            setflag(FLAG_SOLVED_OLD_MAN)
+            copyobjectxytoperm(OLD_MAN)
+            setobjectmovementtype(OLD_MAN, MOVEMENT_TYPE_FACE_DOWN)
+            release
+        }
+    }
     end
 }
 
@@ -200,6 +282,13 @@ script(local) SunsetVillage_BradleyLooksAroundEastVer {
 //=====================================
 // Text
 //=====================================
+text SunsetVillage_Text_TownSign {
+    format(
+        "Sunset Village\n"
+        "“Where the sun sets on one adventure, and rises on another.”"
+    )
+}
+
 text SunsetVillage_HeadToSoftwind {
     format(
         "Willow: That's correct.\nIf you head north "
@@ -387,6 +476,16 @@ movement mWalkLeftAndDown {
 movement mStartledWalkRight {
     emote_exclamation_mark
     walk_right
+}
+
+movement mPlayerStepsBack {
+    slide_right
+}
+
+movement mOldManStepsAside {
+    walk_slow_right
+    walk_slow_up
+    face_down
 }
 
 //=====================================

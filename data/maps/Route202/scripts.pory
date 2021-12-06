@@ -55,7 +55,7 @@ script(global) Route202_Lass {
 //=====================================
 text Route202_Text_TylerIntro {
     format(
-        "My dad caught these Pokémon down on Route 201 for me.\pHave you seen a Mogel yet?\nI bet you haven't!\lMy dad always finds the coolest, rarest Pokémon!"
+        "My grandpa caught these Pokémon down on Route 201 for me.\pHave you seen a Mogel yet?\nI bet you haven't!\lMy grandpa always finds the coolest, rarest Pokémon!"
     )
 }
 
