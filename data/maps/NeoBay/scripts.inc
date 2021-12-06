@@ -118,6 +118,57 @@ NeoBay_EventScript_BradleyConversation_3:
 	goto NeoBay_EventScript_BradleyConversation_1
 
 
+NeoBat_EventScript_BradleyOptional::
+	goto_if_unset FLAG_DEFEATED_RIVAL_NEOBAY_2, NeoBat_EventScript_BradleyOptional_1
+	return
+
+NeoBat_EventScript_BradleyOptional_1:
+	lock
+	addobject 2
+	setobjectxy 2, 26, 23
+	applymovement 2, mBradleyApproachesForOptionalFight
+	delay 32
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
+	waitmovement 0
+	msgbox NeoBat_EventScript_BradleyOptional_Text_0
+	switch VAR_STARTER_MON
+	case 0, NeoBat_EventScript_BradleyOptional_5
+	case 1, NeoBat_EventScript_BradleyOptional_6
+	case 2, NeoBat_EventScript_BradleyOptional_7
+NeoBat_EventScript_BradleyOptional_3:
+	setflag FLAG_DEFEATED_RIVAL_NEOBAY_2
+	setvar VAR_NEOBAY_STATE, 7
+	msgbox NeoBat_EventScript_BradleyOptional_Text_1
+	waitmessage
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, mWalkLeft
+	waitmovement 0
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	applymovement 2, Common_Movement_WalkUp
+	waitmovement 0
+	opendoor 26, 16
+	waitdooranim
+	applymovement 2, mBradleyLeavesAfterOptionalFight
+	waitmovement 0
+	closedoor 26, 16
+	waitdooranim
+	removeobject 2
+	release
+	return
+
+NeoBat_EventScript_BradleyOptional_5:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_VENAP, Neobay_Text_BradleyDefeated_2
+	goto NeoBat_EventScript_BradleyOptional_3
+
+NeoBat_EventScript_BradleyOptional_6:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_CELSINGE, Neobay_Text_BradleyDefeated_2
+	goto NeoBat_EventScript_BradleyOptional_3
+
+NeoBat_EventScript_BradleyOptional_7:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_ECHOISE, Neobay_Text_BradleyDefeated_2
+	goto NeoBat_EventScript_BradleyOptional_3
+
+
 NeoBay_OnTransition:
 	setflag FLAG_VISITED_NEOBAY_TOWN
 	call Common_EventScript_SetupRivalGfxId
@@ -600,6 +651,19 @@ mWalkUpLookRight:
 	face_right
 	step_end
 
+mBradleyApproachesForOptionalFight:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+mBradleyLeavesAfterOptionalFight:
+	walk_up
+	set_invisible
+	step_end
+
 NeoBay_EventScript_BradleyStopsPlayer_Text_0:
 	.string "Bradley: What are you doing? We need to\n"
 	.string "find Ampure before it gets away!$"
@@ -608,6 +672,20 @@ NeoBay_EventScript_BradleyConversation_Text_0:
 	.string "Bradley: I haven't seen Ampure\n"
 	.string "anywhere. You should check that tall\l"
 	.string "grass!$"
+
+NeoBat_EventScript_BradleyOptional_Text_0:
+	.string "Bradley: Hey, what are you up to?\p"
+	.string "I'm on my way to grab the things I\n"
+	.string "forgot.\p"
+	.string "Oh!\n"
+	.string "I know!\p"
+	.string "Let's have a battle since you're here!$"
+
+NeoBat_EventScript_BradleyOptional_Text_1:
+	.string "Bradley: If only I didn't have to go\n"
+	.string "back for my things, I'd be twice as\l"
+	.string "strong!\p"
+	.string "I'm gonna pass you up, just you wait!$"
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
 	.string "Bradley: I think I see some tracks here.\n"
@@ -699,6 +777,9 @@ NeoBay_Text_BradleyShowBoatStart::
 	.string "comes to Pokémon, she's a genius! I\l"
 	.string "really admire her!\l"
 	.string "Come on, let's go meet her now!$"
+
+Neobay_Text_BradleyDefeated_2::
+	.string "Wow, that good already?$"
 
 Placeholder_Text::
 	.string "Placeholder$"

@@ -8,9 +8,9 @@
 #define TRAINER_NOAH                          4
 #define TRAINER_MAT                           5
 #define TRAINER_JANICE                        6
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
-#define TRAINER_GABRIELLE_1                   9
+#define TRAINER_BRADLEY_NEOBAY_2_VENAP        7
+#define TRAINER_BRADLEY_NEOBAY_2_CELSINGE     8
+#define TRAINER_BRADLEY_NEOBAY_2_ECHOISE      9
 #define TRAINER_GRUNT_PETALBURG_WOODS        10
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1         11
 #define TRAINER_ALBERTO                      12

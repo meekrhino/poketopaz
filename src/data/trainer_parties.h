@@ -76,27 +76,42 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Janice[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout3[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_BradleyNeoBay2Venap[] = {
     {
     .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_PINECO,
+    .lvl = 6,
+    .species = SPECIES_AMPURE,
+    },
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_ECHOISE,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout4[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_BradleyNeoBay2Celsinge[] = {
     {
     .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_PINECO,
+    .lvl = 6,
+    .species = SPECIES_AMPURE,
+    },
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_VENAP,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntSeafloorCavern1[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_BradleyNeoBay2Echoise[] = {
     {
     .iv = 0,
-    .lvl = 36,
-    .species = SPECIES_PINECO,
+    .lvl = 6,
+    .species = SPECIES_AMPURE,
+    },
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_CELSINGE,
     }
 };
 

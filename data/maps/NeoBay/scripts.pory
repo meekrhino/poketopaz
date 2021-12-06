@@ -11,6 +11,7 @@ const NEOBAY_STATE_RECEIVED_STARTER = 3
 const NEOBAY_STATE_AMPURE_RESCUED = 4
 const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 5
 const NEOBAY_STATE_DEPARTED = 6
+const NEOBAY_STATE_OPTIONAL_RIVAL_DONE = 7
 
 // VAR_AMPURE_RESCUE_STATE values
 const AMPURE_RESCUE_STARTED = 1
@@ -146,6 +147,45 @@ script NeoBay_EventScript_BradleyConversation {
     waitmessage
     closemessage
     release
+}
+
+script NeoBat_EventScript_BradleyOptional {
+    if(!flag(FLAG_DEFEATED_RIVAL_NEOBAY_2)) {
+        lock
+        addobject(BRADLEY)
+        setobjectxy(BRADLEY, 26, 23)
+        applymovement(BRADLEY, mBradleyApproachesForOptionalFight)
+        delay(32)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_SOUTH)
+        waitmovement(0)
+        msgbox(format("Bradley: Hey, what are you up to?\pI'm on my way to grab the things I forgot.\pOh!\nI know!\pLet's have a battle since you're here!"))
+        switch(var(VAR_STARTER_MON)) {
+            case 0:
+                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_VENAP, Neobay_Text_BradleyDefeated_2)
+            case 1:
+                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_CELSINGE, Neobay_Text_BradleyDefeated_2)
+            case 2:
+                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_ECHOISE, Neobay_Text_BradleyDefeated_2)
+        }
+        setflag(FLAG_DEFEATED_RIVAL_NEOBAY_2)
+        setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_OPTIONAL_RIVAL_DONE)
+        msgbox(format("Bradley: If only I didn't have to go back for my things, I'd be twice as strong!\pI'm gonna pass you up, just you wait!"))
+        waitmessage
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, mWalkLeft)
+        waitmovement(0)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        applymovement(BRADLEY, Common_Movement_WalkUp)
+        waitmovement(0)
+        opendoor(26, 16)
+        waitdooranim
+        applymovement(BRADLEY, mBradleyLeavesAfterOptionalFight)
+        waitmovement(0)
+        closedoor(26, 16)
+        waitdooranim
+        removeobject(BRADLEY)
+        release
+    }
 }
 
 //=====================================
@@ -383,6 +423,12 @@ text NeoBay_Text_BradleyShowBoatStart {
     )
 }
 
+text Neobay_Text_BradleyDefeated_2 {
+    format(
+        "Wow, that good already?"
+    )
+}
+
 text (global) Placeholder_Text {
     "Placeholder"
 }
@@ -521,6 +567,15 @@ movement mLookUpStartled {
 movement mWalkUpLookRight {
     walk_up
     face_right
+}
+
+movement mBradleyApproachesForOptionalFight {
+    walk_up * 5
+}
+
+movement mBradleyLeavesAfterOptionalFight {
+    walk_up
+    set_invisible
 }
 
 //=====================================

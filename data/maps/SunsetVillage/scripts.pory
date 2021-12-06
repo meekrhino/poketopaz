@@ -7,6 +7,7 @@ const OLD_MAN = 6
 const VAR_X_TEMP = VAR_TEMP_0
 const VAR_Y_TEMP = VAR_TEMP_1
 const X_AFTER_LAB = 11
+const NEOBAY_STATE_DEPARTED = 6
 
 const MAGIC_NUMBER = 17
 
@@ -33,6 +34,7 @@ mapscripts SunsetVillage_MapScripts {
 //=====================================
 script(global) SunsetVillage_WillowAndBradleyTrigger {
     lockall
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_DEPARTED)
     call(SunsetVillage_IntroAfterArriveFromEast)
     call(SunsetVillage_BradleyLooksAroundEastVer)
     setflag(FLAG_HIDE_SUNSET_VILLAGE_WILLOW)

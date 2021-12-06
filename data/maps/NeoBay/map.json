@@ -158,6 +158,15 @@
       "var": "VAR_NEOBAY_STATE",
       "var_value": "3",
       "script": "NeoBay_EventScript_BradleyStopsPlayer"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "6",
+      "script": "NeoBat_EventScript_BradleyOptional"
     }
   ],
   "bg_events": [

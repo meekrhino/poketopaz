@@ -15,6 +15,7 @@ SunsetVillage_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 SunsetVillage_WillowAndBradleyTrigger::
 	lockall
+	setvar VAR_NEOBAY_STATE, 6
 	call SunsetVillage_IntroAfterArriveFromEast
 	call SunsetVillage_BradleyLooksAroundEastVer
 	setflag FLAG_HIDE_SUNSET_VILLAGE_WILLOW
@@ -27,7 +28,22 @@ SunsetVillage_WillowAndBradleyTrigger::
 
 
 SunsetVillage_TownSign::
-	msgbox NeoBay_Text_TownSign, MSGBOX_SIGN
+	msgbox SunsetVillage_Text_TownSign, MSGBOX_SIGN
+	end
+
+
+SunsetVillage_DockSign::
+	msgbox SunsetVillage_DockSign_Text_0, MSGBOX_SIGN
+	end
+
+
+SunsetVillage_OtherMailbox::
+	msgbox NeoBay_Text_OtherMailbox, MSGBOX_SIGN
+	end
+
+
+SunsetVillage_EmptyMailbox::
+	msgbox SunsetVillage_EmptyMailbox_Text_0, MSGBOX_SIGN
 	end
 
 
@@ -528,6 +544,12 @@ mOldManStepsAside:
 	face_down
 	step_end
 
+SunsetVillage_DockSign_Text_0:
+	.string "“Sunset Pier”$"
+
+SunsetVillage_EmptyMailbox_Text_0:
+	.string "The mailbox is open.\pThere's nothing inside…$"
+
 SunsetVillage_OldWoman_Text_0:
 	.string "Sunset Village is a sleepy place.\n"
 	.string "Not a lot of young folks left here.\p"
@@ -596,7 +618,7 @@ SunsetVillage_BradleyLooksAroundEastVer_Text_1:
 SunsetVillage_BradleyLooksAroundEastVer_Text_2:
 	.string "Bradley: This is Sunset Village!$"
 
-NeoBay_Text_TownSign::
+SunsetVillage_Text_TownSign::
 	.string "Sunset Village\n"
 	.string "“Where the sun sets on one adventure,\l"
 	.string "and rises on another.”$"

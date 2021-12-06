@@ -121,7 +121,7 @@ LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
 RivalsHouse_1F_EventScript_RivalMom::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
+	goto_if_set FLAG_DEFEATED_RIVAL_NEOBAY_2, RivalsHouse_1F_EventScript_GoHomeEverySoOften
 	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
 	compare VAR_LITTLEROOT_RIVAL_STATE, 3
 	goto_if_eq RivalsHouse_1F_EventScript_RivalTooBusy
