@@ -4454,7 +4454,7 @@
     {
       "id": "LAYOUT_ROUTE203",
       "name": "Route203_Layout",
-      "width": 58,
+      "width": 60,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Softwind",

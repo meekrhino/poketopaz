@@ -14,6 +14,7 @@ PlayersHouse_1F_BradleyReminder::
 	case 4, PlayersHouse_1F_BradleyReminder_4
 	case 5, PlayersHouse_1F_BradleyReminder_5
 	case 6, PlayersHouse_1F_BradleyReminder_6
+	case 7, PlayersHouse_1F_BradleyReminder_7
 PlayersHouse_1F_BradleyReminder_1:
 	end
 
@@ -32,6 +33,11 @@ PlayersHouse_1F_BradleyReminder_5:
 
 PlayersHouse_1F_BradleyReminder_6:
 	msgbox PlayersHouse_1F_BradleyReminder_Text_2, MSGBOX_NPC
+	call Common_EventScript_OutOfCenterPartyHeal
+	goto PlayersHouse_1F_BradleyReminder_1
+
+PlayersHouse_1F_BradleyReminder_7:
+	msgbox PlayersHouse_1F_BradleyReminder_Text_3, MSGBOX_NPC
 	call Common_EventScript_OutOfCenterPartyHeal
 	goto PlayersHouse_1F_BradleyReminder_1
 
@@ -128,6 +134,13 @@ PlayersHouse_1F_BradleyReminder_Text_1:
 	.string "quick rest?$"
 
 PlayersHouse_1F_BradleyReminder_Text_2:
+	.string "Mom: Welcome home, dear!\n"
+	.string "I think I saw Bradley come back, did you\l"
+	.string "see him?\p"
+	.string "Before you go, why not have a quick\n"
+	.string "rest?$"
+
+PlayersHouse_1F_BradleyReminder_Text_3:
 	.string "Mom: How nice to see you!\n"
 	.string "I hope your adventure is going well.\p"
 	.string "Why not have a quick rest?$"

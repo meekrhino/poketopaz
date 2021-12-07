@@ -1,3 +1,16 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const WILLOW = 8
+const ALISA = 9
+
+const VAR_TEMP_X = VAR_TEMP_0
+const VAR_TEMP_Y = VAR_TEMP_1
+
+// VAR_SOFTWIND_CITY_STATE values
+const SOFTWIND_STATE_INIT = 0
+const SOFTWIND_STATE_MET_ALISA = 1
+const SOFTWIND_STATE_DEFEATED_ROCKETS = 2
+const SOFTWIND_STATE_MET_DEFENDERS = 3
+
 //=====================================
 // Map Scripts
 //=====================================
@@ -52,7 +65,68 @@ script(global) SoftwindCity_GuyInFrontOfGym {
 }
 
 script(global) SoftwindCity_BaldingMan {
-    msgbox(format("I'm old enough to remember Pinedale Forest before the fire.\pNow…\n… …\pWell, let's just say if you're heading east I hope you have Burn Heals."), MSGBOX_NPC)    end
+    msgbox(format("I'm old enough to remember Pinedale Forest before the fire.\pNow…\pWell, let's just say if you're heading east I hope you have Burn Heals."), MSGBOX_NPC)
+    end
+}
+
+script(global) SoftwindCity_TriggerAlisaIntro {
+    lock
+    turnobject(PLAYER, DIR_NORTH)
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    switch(var(VAR_TEMP_X)) {
+        case 18:
+            applymovement(ALISA, mAlisaApproaches_1)
+        case 16:
+            applymovement(ALISA, mAlisaApproaches_2)
+        case 15:
+            applymovement(ALISA, mAlisaApproaches_3)
+        case 14:
+            applymovement(ALISA, mAlisaApproaches_4)
+        case 13:
+            applymovement(ALISA, mAlisaApproaches_5)
+        case 12:
+            applymovement(ALISA, mAlisaApproaches_6)
+    }
+    waitmovement(0)
+    msgbox(format("???: Hi!\nWho are you?\l… …\pWell, {PLAYER}, I guess you aren't so unfortunate.\pThere are certainly worse names out there."))
+    waitmessage
+    closemessage
+    applymovement(ALISA, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(60)
+    msgbox(format("???: This is Softwind City, and I've been waiting ages for the Gym Leader to get back…"))
+    waitmessage
+    closemessage
+    delay(30)
+    applymovement(ALISA, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(30)
+    msgbox(SoftwindCity_Text_AlisaAboutTherma_1)
+    waitmessage
+    closemessage
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(SoftwindCity_Text_ReceivedPokenav)
+	waitfanfare
+	setflag(FLAG_SYS_POKENAV_GET)
+	setflag(FLAG_RECEIVED_POKENAV)
+    msgbox(SoftwindCity_Text_AlisaAboutTherma_2)
+    waitmessage
+    closemessage
+    applymovement(ALISA, mAlisaStartsToLeave)
+    waitmovement(0)
+    delay(60)
+    turnobject(ALISA, DIR_WEST)
+    delay(30)
+    msgbox(format("???: What?\nMy name? It's Alisa.\pYou'd better remember that, {PLAYER}, 'cause I'm going to beat you to the Pokémon League.\pSo you'd better watch out, kid!"))
+    waitmessage
+    closemessage
+    applymovement(ALISA, mAlisaFinishesLeaving)
+    waitmovement(0)
+    setflag(FLAG_HIDE_SOFTWIND_CITY_ALISA)
+    setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_MET_ALISA)
+    removeobject(ALISA)
+    release
+    end
 }
 
 //=====================================
@@ -98,9 +172,76 @@ text SoftwindCity_Text_TributeZapdos {
     )
 }
 
+text SoftwindCity_Text_AlisaAboutTherma_1 {
+    format(
+        "???: Therma went to the library in Saharan "
+        "City, which is a few towns over.\p"
+        "Well, it will be when they finish building "
+        "the route in between.\pBut to get there "
+        "now, Therma had to go a really long "
+        "way around…\pHere, I'll show you."
+    )
+}
+
+text SoftwindCity_Text_AlisaAboutTherma_2 {
+    format(
+        "???: You can see what I mean on that.\p"
+        "Anyway, why are you here?\n… …\p"
+        "You want to challenge Therma, too?\n"
+        "Well I guess you'll have to wait around "
+        "like me.\pOr have you not beaten Froy yet?\p"
+        "You could always do that instead.\pFroy has "
+        "his gym in Cranewing, which is to the east "
+        "of here through Chartree Forest.\p"
+        "You can see where that is on the Pokénav I gave you."
+    )
+}
+
+text SoftwindCity_Text_ReceivedPokenav {
+	"{PLAYER} received a Pokénav."
+}
+
 //=====================================
 // Movement
 //=====================================
+movement mAlisaApproaches_1 {
+    walk_right * 3
+    walk_down
+}
+
+movement mAlisaApproaches_2 {
+    walk_right
+    walk_down * 3
+}
+
+movement mAlisaApproaches_3 {
+    walk_down * 3
+}
+
+movement mAlisaApproaches_4 {
+    walk_left
+    walk_down * 3
+}
+
+movement mAlisaApproaches_5 {
+    walk_left * 2
+    walk_down * 3
+}
+
+movement mAlisaApproaches_6 {
+    walk_left * 3
+    walk_down * 2
+}
+
+movement mAlisaStartsToLeave {
+    walk_up * 3
+    walk_right * 3
+}
+
+movement mAlisaFinishesLeaving {
+    walk_right * 5
+    set_invisible
+}
 
 //=====================================
 // Raw
