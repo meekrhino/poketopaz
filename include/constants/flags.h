@@ -766,9 +766,9 @@
 #define FLAG_HIDE_ROUTE_103_RIVAL                                   0x2D3
 #define FLAG_HIDE_SOFTWIND_CITY_ALISA                               0x2D4
 #define FLAG_HIDE_SOFTWIND_CITY_WILLOW                              0x2D5
-#define FLAG_HIDE_PETALBURG_CITY_WALLY                              0x2D6
+#define FLAG_HIDE_ROUTE_205_THERMA_CROWD                            0x2D6
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
-#define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
+#define FLAG_HIDE_ROUTE_205_THERMA_CROWDS_MOM                       0x2D8
 
 #define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
 
@@ -872,7 +872,7 @@
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAXIE                      0x33D
-#define FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD                         0x33E
+#define FLAG_HIDE_ROUTE_205_THERMA_CROWDS_DAD                         0x33E
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAGMA_GRUNTS               0x33F
 #define FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER                0x340
 #define FLAG_HIDE_GRANITE_CAVE_STEVEN                               0x341

@@ -7,6 +7,25 @@ mapscripts Route205_MapScripts {}
 //=====================================
 // Global Scripts
 //=====================================
+script(global) Route205_RichBoy {
+    msgbox(Route205_Text_RichBoy, MSGBOX_NPC)
+    end
+}
+
+script(global) Route205_Girl {
+    msgbox(Route205_Text_Girl, MSGBOX_NPC)
+    end
+}
+
+script(global) Route205_Scientist {
+    msgbox(Route205_Text_Scientist, MSGBOX_NPC)
+    end
+}
+
+script(global) Route205_Woman {
+    msgbox(Route205_Text_Woman, MSGBOX_NPC)
+    end
+}
 
 //=====================================
 // Local Scripts
@@ -15,6 +34,41 @@ mapscripts Route205_MapScripts {}
 //=====================================
 // Text
 //=====================================
+text Route205_Text_RichBoy {
+    format(
+        "My friend and I are arguing about what "
+        "Therma will bring back this time.\p"
+        "I just know it's going to be new histories for "
+        "the library!"
+    )
+}
+
+text Route205_Text_Girl {
+    format(
+        "My friend just cannot stop gossiping about "
+        "what Therma will bring back.\pBut since you "
+        "asked, I am certain it will be new research "
+        "papers!"
+    )
+}
+
+text Route205_Text_Scientist {
+    format(
+        "The best time of every season is waiting "
+        "for Therma's new books!\pI am giddy as a "
+        "Gashawk right now!"
+    )
+}
+
+text Route205_Text_Woman {
+    format(
+        "I've been waiting to challenge Therma "
+        "since before she left!\pThe first time "
+        "I battled her she won handily…\p"
+        "She's incredibly strong!\p"
+        "This time is going to be different, though!"
+    )
+}
 
 //=====================================
 // Movement
