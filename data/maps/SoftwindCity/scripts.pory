@@ -1,6 +1,9 @@
 const PLAYER = OBJ_EVENT_ID_PLAYER
+const CAMERA = OBJ_EVENT_ID_CAMERA
 const WILLOW = 8
 const ALISA = 9
+const ROCKET = 10
+const DEFENDER = 11
 
 const VAR_TEMP_X = VAR_TEMP_0
 const VAR_TEMP_Y = VAR_TEMP_1
@@ -8,8 +11,9 @@ const VAR_TEMP_Y = VAR_TEMP_1
 // VAR_SOFTWIND_CITY_STATE values
 const SOFTWIND_STATE_INIT = 0
 const SOFTWIND_STATE_MET_ALISA = 1
-const SOFTWIND_STATE_DEFEATED_ROCKETS = 2
-const SOFTWIND_STATE_MET_DEFENDERS = 3
+const SOFTWIND_STATE_TEAM_ENCOUNTERED = 2
+const SOFTWIND_STATE_DEFEATED_ROCKETS = 3
+const SOFTWIND_STATE_MET_DEFENDERS = 4
 
 //=====================================
 // Map Scripts
@@ -115,7 +119,7 @@ script(global) SoftwindCity_TriggerAlisaIntro {
     applymovement(ALISA, mAlisaStartsToLeave)
     waitmovement(0)
     delay(60)
-    turnobject(ALISA, DIR_WEST)
+    turnobject(ALISA, DIR_SOUTH)
     delay(30)
     msgbox(format("???: What?\nMy name? It's Alisa.\pYou'd better remember that, {PLAYER}, 'cause I'm going to beat you to the Pokémon League.\pSo you'd better watch out, kid!"))
     waitmessage
@@ -126,6 +130,70 @@ script(global) SoftwindCity_TriggerAlisaIntro {
     setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_MET_ALISA)
     removeobject(ALISA)
     release
+    end
+}
+
+script SoftwindCity_TriggerOrion_1 {
+    lockall
+    special(SpawnCameraObject)
+    applymovement(CAMERA, mShiftCameraToRight)
+    waitmovement(0)
+    addobject(ROCKET)
+    hideobjectat(ROCKET, MAP_SOFTWIND_CITY)
+    addobject(DEFENDER)
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    if(var(VAR_TEMP_Y) == 36) {
+        setobjectxy(ROCKET, 45, 35)
+        setobjectxy(DEFENDER, 45, 35)
+    }
+    else {
+        setobjectxy(ROCKET, 45, 36)
+        setobjectxy(DEFENDER, 45, 36)
+    }
+    applymovement(DEFENDER, mDefenderRunsIntoTown)
+    delay(32)
+    applymovement(ROCKET, mRocketFollows)
+    waitmovement(0)
+    msgbox(format("???: You had better run!\pAnd don't you dare come back around here again!"))
+    waitmessage
+    closemessage
+    applymovement(ROCKET, mRocketReturnsToForest)
+    waitmovement(0)
+    removeobject(ROCKET)
+    applymovement(CAMERA, mShiftCameraToLeft)
+    waitmovement(0)
+    msgbox(SoftwindCity_Text_DefenderHopesNotSeen)
+    waitmessage
+    closemessage
+    turnobject(DEFENDER, DIR_WEST)
+    applymovement(DEFENDER, mExclamationPoint)
+    waitmovement(0)
+    delay(30)
+    switch(var(VAR_TEMP_Y)) {
+        case 34:
+            applymovement(DEFENDER, mDefenderAprroachesPlayer_1)
+        case 35:
+            applymovement(DEFENDER, mDefenderAprroachesPlayer_2)
+        case 36:
+            applymovement(DEFENDER, mDefenderAprroachesPlayer_3)
+        case 37:
+            applymovement(DEFENDER, mDefenderAprroachesPlayer_3)
+    }
+    waitmovement(0)
+    msgbox("Hey you!\pForget you saw me here, okay?\nOtherwise…")
+    waitmessage
+    closemessage
+    if(var(VAR_TEMP_Y) == 37) {
+        applymovement(DEFENDER, mDefenderWalksPastPlayer_2)
+    }
+    else {
+        applymovement(DEFENDER, mDefenderWalksPastPlayer_1)
+    }
+    waitmovement(0)
+    removeobject(DEFENDER)
+    special(RemoveCameraObject)
+    setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_TEAM_ENCOUNTERED)
+    releaseall
     end
 }
 
@@ -201,6 +269,15 @@ text SoftwindCity_Text_ReceivedPokenav {
 	"{PLAYER} received a Pokénav."
 }
 
+text SoftwindCity_Text_DefenderHopesNotSeen {
+    format(
+        "???: …that isn't good.\pOphelia said she "
+        "didn't want any Orion Defenders to be seen "
+        "in Softwind yet.\pI hope that Rocket didn't "
+        "recognize my uniform…"
+    )
+}
+
 //=====================================
 // Movement
 //=====================================
@@ -235,11 +312,64 @@ movement mAlisaApproaches_6 {
 
 movement mAlisaStartsToLeave {
     walk_up * 3
-    walk_right * 3
+    walk_right
 }
 
 movement mAlisaFinishesLeaving {
-    walk_right * 5
+    walk_right * 7
+    set_invisible
+}
+
+movement mShiftCameraToRight {
+    walk_right * 4
+}
+
+movement mShiftCameraToLeft {
+    walk_left * 4
+}
+
+movement mDefenderRunsIntoTown {
+    walk_fast_left * 8
+    face_right
+}
+
+movement mRocketFollows {
+    set_visible
+    walk_fast_left * 4
+}
+
+movement mRocketReturnsToForest {
+    walk_right * 4
+    set_invisible
+}
+
+movement mDefenderAprroachesPlayer_1 {
+    walk_left
+    walk_up * 2
+    walk_left * 2
+}
+
+movement mDefenderAprroachesPlayer_2 {
+    walk_left
+    walk_up
+    walk_left * 2
+}
+
+movement mDefenderAprroachesPlayer_3 {
+    walk_left
+    walk_down * 1
+    walk_left * 2
+}
+
+movement mDefenderWalksPastPlayer_1 {
+    walk_down
+    walk_left * 9
+    set_invisible
+}
+
+movement mDefenderWalksPastPlayer_2 {
+    walk_up
+    walk_left * 9
     set_invisible
 }
 

@@ -123,7 +123,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ANABEL",
-      "x": 33,
+      "x": 28,
       "y": 35,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -146,6 +146,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_SOFTWIND_CITY_ALISA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+      "x": 30,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SOFTWIND_CITY_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+      "x": 30,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SOFTWIND_CITY_GRUNTS"
     }
   ],
   "warp_events": [
@@ -260,6 +286,42 @@
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "0",
       "script": "SoftwindCity_TriggerAlisaIntro"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_SOFTWIND_CITY_STATE",
+      "var_value": "1",
+      "script": "SoftwindCity_TriggerOrion_1"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_SOFTWIND_CITY_STATE",
+      "var_value": "1",
+      "script": "SoftwindCity_TriggerOrion_1"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_SOFTWIND_CITY_STATE",
+      "var_value": "1",
+      "script": "SoftwindCity_TriggerOrion_1"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_SOFTWIND_CITY_STATE",
+      "var_value": "1",
+      "script": "SoftwindCity_TriggerOrion_1"
     }
   ],
   "bg_events": [
