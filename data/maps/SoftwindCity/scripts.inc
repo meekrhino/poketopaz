@@ -53,7 +53,7 @@ SoftwindCity_BaldingMan::
 
 
 SoftwindCity_TriggerAlisaIntro::
-	lock
+	lockall
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	switch VAR_TEMP_0
@@ -102,7 +102,7 @@ SoftwindCity_TriggerAlisaIntro_1:
 	setflag FLAG_HIDE_SOFTWIND_CITY_ALISA
 	setvar VAR_SOFTWIND_CITY_STATE, 1
 	removeobject 9
-	release
+	releaseall
 	end
 
 SoftwindCity_TriggerAlisaIntro_3:

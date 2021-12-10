@@ -13,7 +13,17 @@ Route202_ItemByFatMan::
 	end
 
 
-Route201_ItemNorthCorner::
+Route202_ItemNorthCorner::
+	finditem ITEM_POTION
+	end
+
+
+Route203_ItemOldRod::
+	finditem ITEM_OLD_ROD
+	end
+
+
+Route203_ItemNorthGrass::
 	finditem ITEM_POTION
 	end
 

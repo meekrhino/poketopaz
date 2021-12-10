@@ -16,7 +16,17 @@ script(global) Route202_ItemByFatMan {
     end
 }
 
-script(global) Route201_ItemNorthCorner {
+script(global) Route202_ItemNorthCorner {
+    finditem(ITEM_POTION)
+    end
+}
+
+script(global) Route203_ItemOldRod {
+    finditem(ITEM_OLD_ROD)
+    end
+}
+
+script(global) Route203_ItemNorthGrass {
     finditem(ITEM_POTION)
     end
 }

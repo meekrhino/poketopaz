@@ -74,7 +74,7 @@ script(global) SoftwindCity_BaldingMan {
 }
 
 script(global) SoftwindCity_TriggerAlisaIntro {
-    lock
+    lockall
     turnobject(PLAYER, DIR_NORTH)
     getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
     switch(var(VAR_TEMP_X)) {
@@ -129,7 +129,7 @@ script(global) SoftwindCity_TriggerAlisaIntro {
     setflag(FLAG_HIDE_SOFTWIND_CITY_ALISA)
     setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_MET_ALISA)
     removeobject(ALISA)
-    release
+    releaseall
     end
 }
 

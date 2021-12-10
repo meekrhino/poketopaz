@@ -537,9 +537,9 @@
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
-#define FLAG_HIDDEN_ITEM_SUNSET_VILLAGE_PEARL             (FLAG_HIDDEN_ITEMS_START + 0x00)
-#define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
+#define FLAG_HIDDEN_ITEM_SUNSET_VILLAGE_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x00)
+#define FLAG_HIDDEN_ITEM_ROUTE_203_GARDEN                    (FLAG_HIDDEN_ITEMS_START + 0x01)
+#define FLAG_HIDDEN_ITEM_ROUTE_203_GRASS                     (FLAG_HIDDEN_ITEMS_START + 0x02)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
 #define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
@@ -1049,8 +1049,8 @@
 #define FLAG_ITEM_ROUTE_201_ANTIDOTE                                0x3EA
 #define FLAG_ITEM_ROUTE_202_FAT_MAN                                 0x3EB
 #define FLAG_ITEM_ROUTE_202_NORTH_CORNER                            0x3EC
-#define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
-#define FLAG_ITEM_ROUTE_109_RARE_CANDY                              0x3EE
+#define FLAG_ITEM_ROUTE_203_OLD_ROD                                 0x3ED
+#define FLAG_ITEM_ROUTE_203_NORTH_GRASS                             0x3EE
 #define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
 #define FLAG_ITEM_ROUTE_111_TM_37                                   0x3F0
 #define FLAG_ITEM_ROUTE_111_STARDUST                                0x3F1

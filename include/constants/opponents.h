@@ -27,11 +27,15 @@
 //=====================================================
 // Route 203
 //=====================================================
-#define TRAINER_GRUNT_PETALBURG_WOODS        10
-#define TRAINER_GRUNT_AQUA_HIDEOUT_1         11
+#define TRAINER_REED                         10
+#define TRAINER_RYAN                         11
 #define TRAINER_ALBERTO                      12
-#define TRAINER_ED                           13
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
+#define TRAINER_CHARLIE                      13
+#define TRAINER_CLIFTON                      14
+
+//=====================================================
+// Chartree Forest
+//=====================================================
 #define TRAINER_DECLAN                       15
 #define TRAINER_GRUNT_RUSTURF_TUNNEL         16
 #define TRAINER_GRUNT_WEATHER_INST_1         17
@@ -83,7 +87,7 @@
 #define TRAINER_LOLA_5                       63
 #define TRAINER_RICKY_1                      64
 #define TRAINER_SIMON                        65
-#define TRAINER_CHARLIE                      66
+#define TRAINER_ED                           66
 #define TRAINER_RICKY_2                      67
 #define TRAINER_RICKY_3                      68
 #define TRAINER_RICKY_4                      69
@@ -692,7 +696,7 @@
 #define TRAINER_KOJI_1                      672
 #define TRAINER_WAYNE                       673
 #define TRAINER_AIDAN                       674
-#define TRAINER_REED                        675
+#define TRAINER_GRUNT_PETALBURG_WOODS       675
 #define TRAINER_TISHA                       676
 #define TRAINER_TORI_AND_TIA                677
 #define TRAINER_KIM_AND_IRIS                678
