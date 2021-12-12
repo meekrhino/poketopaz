@@ -1,3 +1,14 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const FROY = 1
+
+// VAR_CHARTREE_FOREST_STATE values
+const CHARTREE_FOREST_INIT = 0
+const CHARTREE_FOREST_MET_FROY = 1
+const CHARTREE_FOREST_ROCKETS_IN_FOREST = 2
+const CHARTREE_FOREST_ROCKETS_DEFEATED = 3
+
+const VAR_TEMP_X = VAR_TEMP_0
+const VAR_TEMP_Y = VAR_TEMP_1
 
 //=====================================
 // Map Scripts
@@ -9,7 +20,41 @@ mapscripts ChartreeForest_MapScripts {}
 //=====================================
 script(global) ChartreeForest_TriggerFroy {
     lockall
-
+    turnobject(PLAYER, DIR_EAST)
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    switch(var(VAR_TEMP_Y)) {
+        case 19:
+            applymovement(FROY, mFroyApproaches_1)
+        case 20:
+            applymovement(FROY, mFroyApproaches_2)
+        case 21:
+            applymovement(FROY, mFroyApproaches_3)
+    }
+    waitmovement(0)
+    msgbox(ChartreeForest_Text_FroyIntroduction)
+    waitmessage
+    closemessage
+    applymovement(FROY, mFroyLooksAround)
+    waitmovement(0)
+    msgbox(ChartreeForest_Text_FroyAboutGym)
+    waitmessage
+    closemessage
+    applymovement(FROY, mFroyStartsToLeave)
+    waitmovement(0)
+    msgbox(ChartreeForest_Text_FroyAboutAsh)
+    waitmessage
+    closemessage
+    switch(var(VAR_TEMP_Y)) {
+        case 19:
+            applymovement(FROY, mFroyLeaves_1)
+        case 20:
+            applymovement(FROY, mFroyLeaves_2)
+        case 21:
+            applymovement(FROY, mFroyLeaves_3)
+    }
+    waitmovement(0)
+    removeobject(FROY)
+    setvar(VAR_CHARTREE_FOREST_STATE, CHARTREE_FOREST_MET_FROY)
     releaseall
     end
 }
@@ -39,6 +84,35 @@ script(global) ChartreeForest_LostWoman {
     end
 }
 
+script(global) ChartreeForest_Gentleman {
+    trainerbattle_single(TRAINER_FRANKLIN, ChartreeForest_Text_FranklinIntro, ChartreeForest_Text_FranklinDefeated)
+    msgbox(ChartreeForest_Text_FranklinPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) ChartreeForest_BugCatcher {
+    trainerbattle_single(TRAINER_MARVIN, ChartreeForest_Text_MarvinIntro, ChartreeForest_Text_MarvinDefeated)
+    msgbox(ChartreeForest_Text_MarvinPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) ChartreeForest_Fisherman {
+    trainerbattle_single(TRAINER_WALLY, ChartreeForest_Text_WallyIntro, ChartreeForest_Text_WallyDefeated)
+    msgbox(ChartreeForest_Text_WallyPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) ChartreeForest_HexManiac {
+    trainerbattle_single(TRAINER_ZELDA, ChartreeForest_Text_ZeldaIntro, ChartreeForest_Text_ZeldaDefeated)
+    msgbox(ChartreeForest_Text_ZeldaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) ChartreeForest_Lass {
+    trainerbattle_single(TRAINER_SARAH, ChartreeForest_Text_SarahIntro, ChartreeForest_Text_SarahDefeated)
+    msgbox(ChartreeForest_Text_SarahPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
 
 //=====================================
 // Local Scripts
@@ -47,10 +121,185 @@ script(global) ChartreeForest_LostWoman {
 //=====================================
 // Text
 //=====================================
+text ChartreeForest_Text_FroyIntroduction {
+    format(
+        "Froy: Hey kid, I'm Froy.\pHave you seen any "
+        "people in black around?\pThey've stirred up all "
+        "of the ash, and I have to wait for it to fully settle "
+        "again before it can be collected.\p"
+        "I'm not sure what they're looking for, but…"
+    )
+}
+
+text ChartreeForest_Text_FroyAboutGym {
+    format(
+        "Froy: It looks liek they've gone, at least for now.\p"
+        "At's supposed to be my job as gym leader to protect "
+        "the forest from harm, but if they've already gone, there "
+        "isn't much I can do…\p"
+        "Oh!\nYou're looking to challenge me?\p"
+        "Well, we can't do it here. Cranewing, my home, is just "
+        "past here.\pIf you can make it through the rest of the "
+        "forest yourself, you might have a chance of beating me!"
+    )
+}
+
+text ChartreeForest_Text_FroyAboutAsh {
+    format(
+        "Froy: The ash here is important for making glass.\p"
+        "When you reach Cranewing, you'll appreciate why we "
+        "value this ash so highly.\pBut to the common person, "
+        "there is nothing in the forest of worth\pI wonder what "
+        "those guys in black were doing here…"
+    )
+}
+
+text ChartreeForest_Text_FranklinIntro {
+    format(
+        "Ahem!\pI walked just a few steps into this forest, and got a lung full of air.\pAnd my clothes are filthy!\nHow irritating!"
+    )
+}
+
+text ChartreeForest_Text_FranklinDefeated {
+    format(
+        "You can handle this forest, I'm sure."
+    )
+}
+
+text ChartreeForest_Text_FranklinPostBattle {
+    format(
+        "I think I'll go home and clean myself up.\pI can't arrive in Cranewing looking like this."
+    )
+}
+
+text ChartreeForest_Text_MarvinIntro {
+    format(
+        "I can't decide if this forest is great for bug trainers, or terrifying!"
+    )
+}
+
+text ChartreeForest_Text_MarvinDefeated {
+    format(
+        "I guess I'm leaning toward terrifying if you're in here!"
+    )
+}
+
+text ChartreeForest_Text_MarvinPostBattle {
+    format(
+        "There are some awesome bugs in this forest, but all these fire types make it hard for my other Pokémon."
+    )
+}
+
+text ChartreeForest_Text_WallyIntro {
+    format(
+        "You must be wondering what a fisherman like me is doing in a dark, dusty place like this!"
+    )
+}
+
+text ChartreeForest_Text_WallyDefeated {
+    format(
+        "I need more training still…"
+    )
+}
+
+text ChartreeForest_Text_WallyPostBattle {
+    format(
+        "It's simple!\nI come here to train my Pokémon against all of these Fire type Pokémon!\pThere may not be any Water Pokémon to catch, but it's great for training then!"
+    )
+}
+
+text ChartreeForest_Text_ZeldaIntro {
+    format(
+        "… … …\n…I've been waiting for you…"
+    )
+}
+
+text ChartreeForest_Text_ZeldaDefeated {
+    format(
+        "… … …"
+    )
+}
+
+text ChartreeForest_Text_ZeldaPostBattle {
+    format(
+        "…I knew you would defeat me…"
+    )
+}
+
+text ChartreeForest_Text_SarahIntro {
+    format(
+        "You'd better turn back now!\pYou'll never get through this forest. You're not even close!"
+    )
+}
+
+text ChartreeForest_Text_SarahDefeated {
+    format(
+        "You beat me, but you should still turn back!"
+    )
+}
+
+text ChartreeForest_Text_SarahPostBattle {
+    format(
+        "…Okay, I might have exaggerated.\pYou're actually very close to the exit."
+    )
+}
+
 
 //=====================================
 // Movement
 //=====================================
+movement mFroyApproaches_1 {
+    walk_up
+    walk_left * 3
+}
+
+movement mFroyApproaches_2 {
+    walk_left * 4
+}
+
+movement mFroyApproaches_3 {
+    walk_down
+    walk_left * 4
+}
+
+movement mFroyLooksAround {
+    face_right
+    delay_16 * 3
+    face_up
+    delay_16 * 3
+    face_down
+    delay_16 * 3
+    face_right
+    delay_16 * 3
+    face_left
+}
+
+movement mFroyStartsToLeave {
+    walk_right * 2
+    face_left
+}
+
+movement mFroyLeaves_1 {
+    walk_down
+    walk_right * 4
+    walk_down * 4
+    walk_right * 2
+    set_invisible
+}
+
+movement mFroyLeaves_2 {
+    walk_right * 5
+    walk_down * 4
+    walk_right * 2
+    set_invisible
+}
+
+movement mFroyLeaves_3 {
+    walk_right * 5
+    walk_down * 3
+    walk_right * 2
+    set_invisible
+}
 
 //=====================================
 // Raw

@@ -117,10 +117,12 @@ SunsetVillage_PokemonCenter_Fisherman_Text_0:
 	.string "of water!$"
 
 SunsetVillage_PokemonCenter_Fisherman_Text_1:
-	.string "That's it\p"
+	.string "That's it!\p"
 	.string "That's my Old Rod!\n"
 	.string "Thank you for finding it!\p"
-	.string "As a reward, take this!$"
+	.string "As a reward, take this!\p"
+	.string "And keep the rod.\n"
+	.string "I bought a nicer one!$"
 
 SunsetVillage_Text_Gentleman::
 	.string "A long time ago, Pokémon Centers\n"

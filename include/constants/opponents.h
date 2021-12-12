@@ -36,11 +36,12 @@
 //=====================================================
 // Chartree Forest
 //=====================================================
-#define TRAINER_DECLAN                       15
-#define TRAINER_GRUNT_RUSTURF_TUNNEL         16
-#define TRAINER_GRUNT_WEATHER_INST_1         17
-#define TRAINER_GRUNT_WEATHER_INST_2         18
-#define TRAINER_GRUNT_WEATHER_INST_3         19
+#define TRAINER_FRANKLIN                     15
+#define TRAINER_MARVIN                       16
+#define TRAINER_WALLY                        17
+#define TRAINER_ZELDA                        18
+#define TRAINER_SARAH                        19
+
 #define TRAINER_GRUNT_MUSEUM_1               20
 #define TRAINER_GRUNT_MUSEUM_2               21
 #define TRAINER_GRUNT_SPACE_CENTER_1         22
@@ -191,7 +192,7 @@
 #define TRAINER_HERMAN                      167
 #define TRAINER_SANTIAGO                    168
 #define TRAINER_GILBERT                     169
-#define TRAINER_FRANKLIN                    170
+#define TRAINER_DECLAN                      170
 #define TRAINER_KEVIN                       171
 #define TRAINER_JACK                        172
 #define TRAINER_DUDLEY                      173
@@ -716,7 +717,7 @@
 #define TRAINER_LISA_AND_RAY                692
 #define TRAINER_CHRIS                       693
 #define TRAINER_DAWSON                      694
-#define TRAINER_SARAH                       695
+#define TRAINER_GRUNT_WEATHER_INST_3        695
 #define TRAINER_DARIAN                      696
 #define TRAINER_HAILEY                      697
 #define TRAINER_CHANDLER                    698

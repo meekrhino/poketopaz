@@ -4455,7 +4455,7 @@
       "id": "LAYOUT_ROUTE203",
       "name": "Route203_Layout",
       "width": 60,
-      "height": 26,
+      "height": 28,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/Route203/border.bin",

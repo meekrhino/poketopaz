@@ -112,7 +112,7 @@ PetalburgWoods_EventScript_DevonResearcherFinish::
 
 PetalburgWoods_EventScript_RemoveDevonResearcher::
 	removeobject LOCALID_DEVON_EMPLOYEE
-	setvar VAR_PETALBURG_WOODS_STATE, 1
+	setvar VAR_CHARTREE_FOREST_STATE, 1
 	releaseall
 	end
 

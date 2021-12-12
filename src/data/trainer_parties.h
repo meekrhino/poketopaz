@@ -192,6 +192,77 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Clifton[] = {
     }
 };
 
+//=====================================================
+// Chartree Forest
+//=====================================================
+static const struct TrainerMonNoItemDefaultMoves sParty_Franklin[] = {
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_MEOWTH,
+    },
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_GROWLITHE,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Marvin[] = {
+    {
+    .iv = 0,
+    .lvl = 7,
+    .species = SPECIES_FIRANT,
+    },
+    {
+    .iv = 0,
+    .lvl = 7,
+    .species = SPECIES_PYROON,
+    },
+    {
+    .iv = 0,
+    .lvl = 7,
+    .species = SPECIES_PINECO,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Wally[] = {
+    {
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_CASCADET,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Zelda[] = {
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_SPIDREAM,
+    },
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_DROWZEE,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Sarah[] = {
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_FINCHERP,
+    },
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_MAREEP,
+    }
+};
+
+//=====================================================
+// Route 204
+//=====================================================
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntSeafloorCavern2[] = {
     {
     .iv = 0,
@@ -2155,14 +2226,6 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Santiago[] = {
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Gilbert[] = {
-    {
-    .iv = 0,
-    .lvl = 34,
-    .species = SPECIES_PINECO,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Franklin[] = {
     {
     .iv = 0,
     .lvl = 34,
@@ -9488,21 +9551,6 @@ static const struct TrainerMonItemDefaultMoves sParty_Dawson[] = {
     .lvl = 8,
     .species = SPECIES_PINECO,
     .heldItem = ITEM_NONE
-    }
-};
-
-static const struct TrainerMonItemDefaultMoves sParty_Sarah[] = {
-    {
-    .iv = 0,
-    .lvl = 8,
-    .species = SPECIES_PINECO,
-    .heldItem = ITEM_NONE
-    },
-    {
-    .iv = 0,
-    .lvl = 8,
-    .species = SPECIES_PINECO,
-    .heldItem = ITEM_NUGGET
     }
 };
 

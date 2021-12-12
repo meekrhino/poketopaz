@@ -66,7 +66,7 @@ script(global) SunsetVillage_PokemonCenter_Fisherman {
         else {
             lock
             faceplayer
-            msgbox(format("That's it\pThat's my Old Rod!\nThank you for finding it!\pAs a reward, take this!"))
+            msgbox(format("That's it!\pThat's my Old Rod!\nThank you for finding it!\pAs a reward, take this!\pAnd keep the rod.\nI bought a nicer one!"))
             giveitem(ITEM_POTION)
             if(var(VAR_RESULT) == FALSE) {
                 goto(Common_EventScript_ShowBagIsFull)

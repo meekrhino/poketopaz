@@ -8,7 +8,7 @@ Route203_RouteSignSoftwindCity::
 
 
 Route203_RouteSignChartreeForest::
-	msgbox Route203_RouteSignSoftwindCity_Text_0, MSGBOX_SIGN
+	msgbox Route203_RouteSignChartreeForest_Text_0, MSGBOX_SIGN
 	end
 
 
@@ -55,6 +55,9 @@ Route203_Hiker::
 Route203_RouteSignSoftwindCity_Text_0:
 	.string "Route 203\n{LEFT_ARROW} Softwind City$"
 
+Route203_RouteSignChartreeForest_Text_0:
+	.string "Chartree Forest\n“Tred carefully, preserve the balance”$"
+
 Route203_Text_LittleBoy::
 	.string "After Pinedale Forest got burned up,\n"
 	.string "lots of new Pokémon came!\p"
@@ -78,7 +81,7 @@ Route203_Text_Bard::
 	.string "as one force, unto the flames…$"
 
 Route203_Text_ReedIntro::
-	.string "Puff… puff\p"
+	.string "Puff… puff…\p"
 	.string "I'm training for the… puff… Kalypso\n"
 	.string "City… marathon!\p"
 	.string "This is going to be the… puff… year!$"
