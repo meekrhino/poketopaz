@@ -7,6 +7,38 @@ mapscripts ChartreeForest_MapScripts {}
 //=====================================
 // Global Scripts
 //=====================================
+script(global) ChartreeForest_TriggerFroy {
+    lockall
+
+    releaseall
+    end
+}
+
+script(global) ChartreeForest_SignRoute203 {
+    msgbox("{DOWN_ARROW} Exit to Route 203", MSGBOX_SIGN)
+    end
+}
+
+script(global) ChartreeForest_SignRoute204 {
+    msgbox("{DOWN_ARROW} Exit to Route 204", MSGBOX_SIGN)
+    end
+}
+
+script(global) ChartreeForest_Sign {
+    msgbox(format("Chartree Forest\p“In memory of Pinedale Forest, which once stood here”"), MSGBOX_SIGN)
+    end
+}
+
+script(global) ChartreeForest_DeadendMan {
+    msgbox(format("Oh man, I must have taken a wrong turn.\pI really wish I was going the other direction!"), MSGBOX_NPC)
+    end
+}
+
+script(global) ChartreeForest_LostWoman {
+    msgbox(format("I'm so lost…\pI jumped over that ledge and now I don't know where to go…"), MSGBOX_NPC)
+    end
+}
+
 
 //=====================================
 // Local Scripts
