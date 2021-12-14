@@ -770,8 +770,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_ILLUMEON] =
     {
-        .size = 0x76,
-        .y_offset = 9,
+        .size = 0x77,
+        .y_offset = 4,
     },
 
     [SPECIES_CHIARAME] =
