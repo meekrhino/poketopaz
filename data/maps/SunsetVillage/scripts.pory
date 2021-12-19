@@ -231,6 +231,7 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
     applymovement(PLAYER, mFaceUp)
     waitmovement(WILLOW)
     msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
+    giveitem(ITEM_POKE_BALL, 5)
     applymovement(WILLOW, mWillowWalksToLab)
     waitmovement(WILLOW)
     return
@@ -276,6 +277,7 @@ script(local) SunsetVillage_BradleyLooksAroundEastVer {
     applymovement(WILLOW, mWalkRight)
     waitmovement(PLAYER)
     msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
+    giveitem(ITEM_POKE_BALL, 5)
     applymovement(WILLOW, mWillowWalksToLabEastVer)
     waitmovement(WILLOW)
     return
@@ -309,7 +311,8 @@ text SunsetVillage_YouGoOnAhead {
         "Therma and get stronger than Bradley!\pThen he'll "
         "have to catch up to you, and rivalry will make "
         "you both stronger.\pOh, listen to me! Well, you "
-        "had better get a move on. See you soon!"
+        "had better get a move on.\pOh!\n"
+        "And take these!\pSee you soon!"
     )
 }
 text SunsetVillage_BradleyRecaps {

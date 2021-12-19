@@ -229,6 +229,7 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
 	waitmovement 1
 	msgbox SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE
+	giveitem ITEM_POKE_BALL, 5
 	applymovement 1, mWillowWalksToLab
 	waitmovement 1
 	return
@@ -274,6 +275,7 @@ SunsetVillage_BradleyLooksAroundEastVer:
 	applymovement 1, mWalkRight
 	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE
+	giveitem ITEM_POKE_BALL, 5
 	applymovement 1, mWillowWalksToLabEastVer
 	waitmovement 1
 	return
@@ -644,7 +646,10 @@ SunsetVillage_YouGoOnAhead::
 	.string "Then he'll have to catch up to you, and\n"
 	.string "rivalry will make you both stronger.\p"
 	.string "Oh, listen to me! Well, you had better\n"
-	.string "get a move on. See you soon!$"
+	.string "get a move on.\p"
+	.string "Oh!\n"
+	.string "And take these!\p"
+	.string "See you soon!$"
 
 SunsetVillage_BradleyRecaps::
 	.string "Bradley: Yeah you did!\n"
