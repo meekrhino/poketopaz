@@ -160,7 +160,7 @@ text Route203_Text_CharliePostBattle {
 
 text Route203_Text_CliftonIntro {
     format(
-        "Ho ho!\pWhat's a young one like doing so far from home?\pYou're not properly geared for long distance travel!"
+        "Ho ho!\pWhat's a young one like you doing so far from home?\pYou're not properly geared for long distance travel!"
     )
 }
 

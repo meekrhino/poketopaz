@@ -1,6 +1,6 @@
 Common_EventScript_SetGymTrainers::
 	switch VAR_0x8008
-	case 1, RustboroCity_Gym_SetGymTrainers
+	case 1, CranewingCity_Gym_SetGymTrainers
 	case 2, DewfordTown_Gym_SetGymTrainers
 	case 3, MauvilleCity_Gym_SetGymTrainers
 	case 4, LavaridgeTown_Gym_SetGymTrainers
@@ -10,10 +10,9 @@ Common_EventScript_SetGymTrainers::
 	case 8, SootopolisCity_Gym_SetGymTrainers
 	end
 
-RustboroCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_JOSH
-	settrainerflag TRAINER_TOMMY
-	settrainerflag TRAINER_MARC
+CranewingCity_Gym_SetGymTrainers::
+	settrainerflag TRAINER_SLADE
+	settrainerflag TRAINER_LOLA
 	return
 
 DewfordTown_Gym_SetGymTrainers::

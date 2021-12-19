@@ -3341,7 +3341,7 @@ u32 GetPlayerIDAsU32(void)
 u8 CheckForPlayersHouseNews(void)
 {
     // Check if not in Littleroot house map group
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(PLAYERS_HOUSE_2F))
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(NEO_BAY_PLAYERS_HOUSE_2F))
         return PLAYERS_HOUSE_TV_NONE;
 
     if (FlagGet(FLAG_SAW_JIRACHI_PROGRAM) == TRUE && VarGet(VAR_NEOBAY_STATE) == 0)

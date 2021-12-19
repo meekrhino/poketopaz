@@ -1,0 +1,246 @@
+// VAR_ROUTE204_STATE values
+const ROUTE204_STATE_INIT = 0
+const ROUTE204_STATE_DEFEATED_FROY = 1
+const ROUTE204_STATE_DEFEATED_SHOOK_ALLARD = 2
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts CranewingCity_Gym_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) CranewingCity_Gym_GymStatue {
+	lockall
+    if(flag(FLAG_BADGE01_GET)) {
+        msgbox(CranewingCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT)
+    }
+    else {
+        msgbox(CranewingCity_Gym_Text_GymStatue, MSGBOX_DEFAULT)
+    }
+    releaseall
+	end
+}
+
+script(global) CranewingCity_Gym_GymGuide {
+    if(flag(FLAG_BADGE01_GET)) {
+        msgbox(CranewingCity_Text_GymGuidePostVictory, MSGBOX_NPC)
+    }
+    else {
+        msgbox(CranewingCity_Text_GymGuide, MSGBOX_NPC)
+    }
+	end
+}
+
+script(global) CranewingCity_Gym_Man {
+    trainerbattle_single(TRAINER_SLADE, CranewingCity_Gym_Text_SladeIntro, CranewingCity_Gym_Text_SladeDefeated)
+    msgbox(CranewingCity_Gym_Text_SladePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) CranewingCity_Gym_Girl {
+    trainerbattle_single(TRAINER_LOLA, CranewingCity_Gym_Text_LolaIntro, CranewingCity_Gym_Text_LolaDefeated)
+    msgbox(CranewingCity_Gym_Text_LolaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) CranewingCity_Gym_Froy {
+    trainerbattle_single(TRAINER_FROY, CranewingCity_Gym_Text_FroyIntro, CranewingCity_Gym_Text_FroyDefeated, CranewingCity_Gym_FroyDefeated, NO_MUSIC)
+    if(!(flag(FLAG_RECEIVED_TM51))) {
+        goto(CranewingCity_Gym_GiveFlare)
+    }
+	msgbox(CranewingCity_Gym_Text_FroyPostBattle, MSGBOX_DEFAULT)
+    release
+	end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) CranewingCity_Gym_FroyDefeated {
+	message(CranewingCity_Gym_Text_ReceivedBadge)
+	waitmessage
+	call(Common_EventScript_PlayGymBadgeFanfare)
+	msgbox(CranewingCity_Gym_Text_CharBadgeInfo, MSGBOX_DEFAULT)
+	setflag(FLAG_DEFEATED_CRANEWING_GYM)
+	setflag(FLAG_BADGE01_GET)
+	setvar(VAR_ROUTE204_STATE, ROUTE204_STATE_DEFEATED_FROY)
+	setvar(VAR_0x8008, 1)
+	call(Common_EventScript_SetGymTrainers)
+	goto(CranewingCity_Gym_GiveFlare)
+	end
+}
+
+script(local) CranewingCity_Gym_GiveFlare {
+	giveitem(ITEM_TM51_FLARE)
+	compare(VAR_RESULT, FALSE)
+    if(var(VAR_RESULT) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+	setflag(FLAG_RECEIVED_TM51)
+	msgbox(CranewingCity_Gym_Text_FlareExplanation, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+//=====================================
+// Text
+//=====================================
+text CranewingCity_Gym_Text_GymStatue {
+    "Cranewing City Pokémon Gym"
+}
+
+text CranewingCity_Gym_Text_GymStatueCertified {
+    "Cranewing City Pokémon Gym\p"
+    "Froy's Certified Trainers:\n"
+    "{PLAYER}$"
+}
+
+text CranewingCity_Text_GymGuide {
+    "Yo, how's it going?\p"
+    "Listen, my friend!\n"
+    "Would you like to climb the Triumph Spire?\p"
+    "Listen, listen.\nI'm no trainer myself,\l"
+    "but I can deal you some great advice\l"
+    "if you're willing to listen.\pWhat do you say?\p"
+    "Perfect!\pWe're going to be GREAT together!\p"
+    "So listen, listen.\pThis Gym is run by Froy.\p"
+    "You might have guessed, but he's known\n"
+    "for using Fire-type Pokémon.\p"
+    "The Fire-type is known for impressive\n"
+    "damage dealing ability, but when it \l"
+    "comes to defense, they're outclassed.\p"
+    "Especially when it comes to Water- and\n"
+    "Ground-type Pokémon!\p"
+    "If you manage to take Froy down, come\n"
+    "and see me after.\pGo get 'em, champ!"
+}
+
+text CranewingCity_Text_GymGuidePostVictory {
+    "Wow! What a match!\n"
+    "We make a heck of a team, we do!\p"
+    "Listen, listen!\n"
+    "Check your Trainer Card.\p"
+    "You'll see your shiny Char Badge"
+    "recorded inside of it.\p"
+    "Congratulations!\p"
+    "You could say you've just climbed the\n"
+    "first step to the top of the\l"
+    "Triump Spire!\p"
+    "You could also say you're miles from\n"
+    "even starting that climb…\p"
+    "But let's look on the positive side!\n"
+    "You're off to a fantastic start, champ!"
+}
+
+text CranewingCity_Gym_Text_SladeIntro {
+    format(
+        "Leader Froy runs his gym just like he runs the glass business.\pAbsolutely no room for error!"
+    )
+}
+
+text CranewingCity_Gym_Text_SladeDefeated {
+    format(
+        "I think I made a mistake…"
+    )
+}
+
+text CranewingCity_Gym_Text_SladePostBattle {
+    format(
+        "Go on then!\pIf anyone can stand up to Froy's exacting standards, it's you!"
+    )
+}
+
+text CranewingCity_Gym_Text_LolaIntro {
+    format(
+        "There's a reason Froy asked me to be the last step before him!\pIf you thought your last fight was hard, well get ready to see a real challenge!"
+    )
+}
+
+text CranewingCity_Gym_Text_LolaDefeated {
+    format(
+        "You're still no match for Froy!"
+    )
+}
+
+text CranewingCity_Gym_Text_LolaPostBattle {
+    format(
+        "Froy's completely mastered the Fire type.\pHe's the best there is, at Pokémon battles and at glass-making!"
+    )
+}
+
+text CranewingCity_Gym_Text_FroyIntro {
+    format(
+        "Ah, {PLAYER}, we meet again!\p"
+        "As you can see, I am the Cranewing Pokémon "
+        "Gym Leader.\pMy Pokémon and I have honed our "
+        "skills together making the finest glass "
+        "in Caldera!\pAllow me to demonstrate what "
+        "it looks like when you settle for nothing "
+        "short of perfection!"
+    )
+}
+
+text CranewingCity_Gym_Text_FroyDefeated {
+    format(
+        "Well, well well…\p… … …ha!\pHa ha ha!\p"
+        "Incredible demonstration!\p"
+        "It's rare that I meet someone with "
+        "dedication equal to my own!\p"
+        "As the Pokémon League's rules say, I "
+        "now owe you a badge to prove your "
+        "victory here.\pPlease accept the "
+        "official Pokémon League Char Badge!"
+    )
+}
+
+text CranewingCity_Gym_Text_FroyPostBattle {
+    format(
+        "I have no doubt that your determination will "
+        "see you through the Pokémon League challenge!\p"
+        "Battle as many Trainers as you can along the "
+        "way.\pThey're sure to have many things to "
+        "teach you and your Pokémon."
+    )
+}
+
+text CranewingCity_Gym_Text_ReceivedBadge {
+    "{PLAYER} received the Char Badge\nfrom Froy."
+}
+
+text CranewingCity_Gym_Text_CharBadgeInfo {
+    format(
+        "The Char Badge allows your Pokémon "
+        "to use the HM move Cut outside of battle.\p"
+        "It also means you are one step along the "
+        "road to the Triumph Spire and becoming "
+        "the Champion!\p"
+        "As my thanks for a heated battle, please "
+        "take this, as well."
+    )
+}
+
+text CranewingCity_Gym_Text_FlareExplanation {
+    format(
+        "That Technical Machine, TM51,\n"
+        "contains Flare.\p"
+        "It inflicts more and more damage with each "
+        "passing turn!\p"
+        "Using a TM, you can instantly teach that "
+        "move to your Pokémon!\p"
+        "Of course TMs can be used as many times as "
+        "you want, so you could be like me and "
+        "teach it to all of your Pokémon!"
+    )
+}
+
+
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================

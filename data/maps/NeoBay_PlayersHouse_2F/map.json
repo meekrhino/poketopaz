@@ -1,5 +1,5 @@
 {
-  "id": "MAP_PLAYERS_HOUSE_2F",
+  "id": "MAP_NEO_BAY_PLAYERS_HOUSE_2F",
   "name": "NeoBay_PlayersHouse_2F",
   "layout": "LAYOUT_PLAYERS_HOUSE_2F",
   "music": "MUS_ABANDONED_SHIP",
@@ -22,14 +22,7 @@
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_PLAYERS_HOUSE_1F",
-      "dest_warp_id": 0
-    },
-    {
-      "x": 4,
-      "y": 4,
-      "elevation": 0,
-      "dest_map": "MAP_PLAYERS_HOUSE_2F",
-      "dest_warp_id": 0
+      "dest_warp_id": 2
     }
   ],
   "coord_events": [

@@ -1,0 +1,65 @@
+const NURSE = 1
+const BRADLEY = 4
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts CranewingCity_PokemonCenter_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) CranewingCity_PokemonCenter_Nurse {
+    setvar(VAR_0x800B, NURSE)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release
+    end
+}
+
+script(global) CranewingCity_PokemonCenter_FatMan {
+    msgbox(CranewingCity_Text_FatMan, MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_PokemonCenter_Beauty {
+    msgbox(CranewingCity_Text_Beauty, MSGBOX_NPC)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+text CranewingCity_Text_FatMan {
+    format(
+        "Hiding?\nNo, not at all!\pI was just studying "
+        "this here plant.\pYou've probably seen plants just "
+        "like this one in other Pokémon centers, right?\p"
+        "Well, they were all grown in old Pinedale Forest "
+        "before it burned down.\pThe ones you see today are "
+        "all just grafts of an old tree before the fire!\p"
+        "… … …\pOkay, fine, I made it up.\pI'm hiding from "
+        "those scary people in black uniforms!"
+    )
+}
+
+text CranewingCity_Text_Beauty {
+    format(
+        "Oh my goodness, you will not BELIEVE the things "
+        "they've got on these shelves!\pThey've got my "
+        "favorite romance series!\pAll but the last one…"
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================

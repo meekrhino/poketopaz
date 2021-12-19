@@ -147,7 +147,7 @@ Route203_Text_CharliePostBattle::
 
 Route203_Text_CliftonIntro::
 	.string "Ho ho!\p"
-	.string "What's a young one like doing so far\n"
+	.string "What's a young one like you doing so far\n"
 	.string "from home?\p"
 	.string "You're not properly geared for long\n"
 	.string "distance travel!$"

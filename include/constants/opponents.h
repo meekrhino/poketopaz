@@ -53,9 +53,9 @@
 //=====================================================
 // Cranewing Gym
 //=====================================================
-#define TRAINER_GRUNT_MT_PYRE_2              24
-#define TRAINER_GRUNT_MT_PYRE_3              25
-#define TRAINER_GRUNT_WEATHER_INST_4         26
+#define TRAINER_SLADE                        24
+#define TRAINER_LOLA                         25
+#define TRAINER_FROY                         26
 
 //=====================================================
 // Route 204  Rocket Encounter

@@ -1109,3 +1109,7 @@ Script_RemoveTint::
 	.include "data/maps/SunsetVillage_PokemonCenter/scripts.inc"
 
 	.include "data/maps/SoftwindCity_PokemonCenter/scripts.inc"
+
+	.include "data/maps/CranewingCity_PokemonCenter/scripts.inc"
+
+	.include "data/maps/CranewingCity_Gym/scripts.inc"

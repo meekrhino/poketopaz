@@ -1,9 +1,9 @@
 {
-  "id": "MAP_SOFTWIND_CITY_POKEMON_CENTER",
-  "name": "SoftwindCity_PokemonCenter",
-  "layout": "LAYOUT_SOFTWIND_CITY_POKEMON_CENTER",
+  "id": "MAP_CRANEWING_CITY_POKEMON_CENTER",
+  "name": "CranewingCity_PokemonCenter",
+  "layout": "LAYOUT_CRANEWING_CITY_POKEMON_CENTER",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_DEWFORD_TOWN",
+  "region_map_section": "MAPSEC_LAVARIDGE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -24,47 +24,47 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SoftwindCity_PokemonCenter_Nurse",
+      "script": "CranewingCity_PokemonCenter_Nurse",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 10,
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 12,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CranewingCity_PokemonCenter_Beauty",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 1,
       "y": 7,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SoftwindCity_PokemonCenter_Boy",
+      "script": "CranewingCity_PokemonCenter_FatMan",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CONTEST_JUDGE",
-      "x": 12,
-      "y": 9,
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 7,
+      "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SoftwindCity_PokemonCenter_Judge",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MOM",
-      "x": 11,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SoftwindCity_PokemonCenter_MomPerson",
-      "flag": "0"
+      "script": "NULL",
+      "flag": "FLAG_HIDE_BRADLEY_CRANEWING_CENTER"
     }
   ],
   "warp_events": [
@@ -72,15 +72,15 @@
       "x": 4,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_SOFTWIND_CITY",
-      "dest_warp_id": 7
+      "dest_map": "MAP_CRANEWING_CITY",
+      "dest_warp_id": 0
     },
     {
       "x": 3,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_SOFTWIND_CITY",
-      "dest_warp_id": 7
+      "dest_map": "MAP_CRANEWING_CITY",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

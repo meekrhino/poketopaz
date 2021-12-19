@@ -4570,6 +4570,26 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/SoftwindCity_PokemonCenter/border.bin",
       "blockdata_filepath": "data/layouts/SoftwindCity_PokemonCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRANEWING_CITY_POKEMON_CENTER",
+      "name": "CranewingCity_PokemonCenter_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/CranewingCity_PokemonCenter/border.bin",
+      "blockdata_filepath": "data/layouts/CranewingCity_PokemonCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRANEWING_CITY_GYM",
+      "name": "CranewingCity_Gym_Layout",
+      "width": 7,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_LavaridgeGym",
+      "border_filepath": "data/layouts/CranewingCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/CranewingCity_Gym/map.bin"
     }
   ]
 }

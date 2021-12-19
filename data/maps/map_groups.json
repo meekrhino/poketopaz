@@ -5,7 +5,7 @@
     "gMapGroup_IndoorNeoBay",
     "gMapGroup_IndoorSunsetVillage",
     "gMapGroup_IndoorSoftwind",
-    "gMapGroup_IndoorLavaridge",
+    "gMapGroup_IndoorCranewing",
     "gMapGroup_IndoorFallarbor",
     "gMapGroup_IndoorVerdanturf",
     "gMapGroup_IndoorPacifidlog",
@@ -132,14 +132,16 @@
     "DewfordTown_House2",
     "SoftwindCity_PokemonCenter"
   ],
-  "gMapGroup_IndoorLavaridge": [
+  "gMapGroup_IndoorCranewing": [
     "LavaridgeTown_HerbShop",
     "LavaridgeTown_Gym_1F",
     "LavaridgeTown_Gym_B1F",
     "LavaridgeTown_House",
     "LavaridgeTown_Mart",
     "LavaridgeTown_PokemonCenter_1F",
-    "LavaridgeTown_PokemonCenter_2F"
+    "LavaridgeTown_PokemonCenter_2F",
+    "CranewingCity_PokemonCenter",
+    "CranewingCity_Gym"
   ],
   "gMapGroup_IndoorFallarbor": [
     "FallarborTown_Mart",

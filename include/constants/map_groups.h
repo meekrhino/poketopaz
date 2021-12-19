@@ -77,7 +77,7 @@
 // gMapGroup_IndoorNeoBay
 #define MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB        (0 | (1 << 8))
 #define MAP_NEO_BAY_PLAYERS_HOUSE_1F             (1 | (1 << 8))
-#define MAP_PLAYERS_HOUSE_2F                     (2 | (1 << 8))
+#define MAP_NEO_BAY_PLAYERS_HOUSE_2F             (2 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (3 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F    (4 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F        (5 | (1 << 8))
@@ -101,7 +101,7 @@
 #define MAP_DEWFORD_TOWN_HOUSE2            (5 | (3 << 8))
 #define MAP_SOFTWIND_CITY_POKEMON_CENTER   (6 | (3 << 8))
 
-// gMapGroup_IndoorLavaridge
+// gMapGroup_IndoorCranewing
 #define MAP_LAVARIDGE_TOWN_HERB_SHOP         (0 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_GYM_1F            (1 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_GYM_B1F           (2 | (4 << 8))
@@ -109,6 +109,8 @@
 #define MAP_LAVARIDGE_TOWN_MART              (4 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F (5 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_POKEMON_CENTER_2F (6 | (4 << 8))
+#define MAP_CRANEWING_CITY_POKEMON_CENTER    (7 | (4 << 8))
+#define MAP_CRANEWING_CITY_GYM               (8 | (4 << 8))
 
 // gMapGroup_IndoorFallarbor
 #define MAP_FALLARBOR_TOWN_MART                    (0 | (5 << 8))

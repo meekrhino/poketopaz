@@ -311,7 +311,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Beatrice[] = {
     },
     {
     .iv = 0,
-    .lvl = 9,
+    .lvl = 10,
     .species = SPECIES_KONDRIA,
     }
 };
@@ -319,6 +319,56 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Beatrice[] = {
 //=====================================================
 // Cranewing Gym
 //=====================================================
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Slade[] = {
+    {
+    .iv = 0,
+    .lvl = 11,
+    .species = SPECIES_GROWLITHE,
+    },
+    {
+    .iv = 0,
+    .lvl = 11,
+    .species = SPECIES_VULPIX,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Lola[] = {
+    {
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_EMBEAR,
+    },
+    {
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_WHISPAW,
+    }
+};
+
+static const struct TrainerMonItemCustomMoves sParty_Froy[] = {
+    {
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_EMBEAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_FLARE, MOVE_FOCUS_ENERGY}
+    },
+    {
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_GROWLITHE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_BITE, MOVE_ROAR, MOVE_EMBER, MOVE_FLARE}
+    },
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_SCORCHION,
+    .heldItem = ITEM_ORAN_BERRY,
+    .moves = {MOVE_BUG_BURN, MOVE_FLARE, MOVE_LEER, MOVE_FURY_CUTTER}
+    }
+};
 
 //=====================================================
 // Route 204  Rocket Encounter
