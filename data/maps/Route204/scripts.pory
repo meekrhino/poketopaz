@@ -1,3 +1,14 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const CAMERA = OBJ_EVENT_ID_CAMERA
+
+const BRADLEY = 3
+const SHOOK = 2
+const ALLARD = 1
+
+// VAR_ROUTE204_STATE values
+const ROUTE204_STATE_INIT = 0
+const ROUTE204_STATE_DEFEATED_FROY = 1
+const ROUTE204_STATE_DEFEATED_SHOOK_ALLARD = 2
 
 //=====================================
 // Map Scripts
@@ -7,6 +18,49 @@ mapscripts Route204_MapScripts {}
 //=====================================
 // Global Scripts
 //=====================================
+script(global) Route204_RouteSignChartreeForest {
+    msgbox("Chartree Forest\nPlease watch your step.", MSGBOX_SIGN)
+    end
+}
+
+script(global) Route204_RouteSignCranewingCity {
+    msgbox("Route 204\n{DOWN_ARROW} Cranewing City", MSGBOX_SIGN)
+    end
+}
+
+script(global) Route204_Boy {
+    if(var(VAR_ROUTE204_STATE) == ROUTE204_STATE_INIT) {
+        msgbox(format("I saw some shady looking people in black lurking around the forest.\pI think Froy chased them away for now."), MSGBOX_NPC)
+    }
+    else {
+        msgbox(format("Phew, I think those goons are gone for good this time.\pWell done!\nYou must be some trainer!"), MSGBOX_NPC)
+    }
+    end
+}
+
+script(global) Route204_Beauty {
+    trainerbattle_single(TRAINER_AINA, Route204_Text_AinaIntro, Route204_Text_AinaDefeated)
+    msgbox(Route204_Text_AinaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route204_RichBoy {
+    trainerbattle_single(TRAINER_DERRICK, Route204_Text_DerrickIntro, Route204_Text_DerrickDefeated)
+    msgbox(Route204_Text_DerrickPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route204_Athlete {
+    trainerbattle_single(TRAINER_LEXI, Route204_Text_LexiIntro, Route204_Text_LexiDefeated)
+    msgbox(Route204_Text_LexiPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route204_ExpertWoman {
+    trainerbattle_single(TRAINER_BEATRICE, Route204_Text_BeatriceIntro, Route204_Text_BeatriceDefeated)
+    msgbox(Route204_Text_BeatricePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
 
 //=====================================
 // Local Scripts
@@ -15,6 +69,78 @@ mapscripts Route204_MapScripts {}
 //=====================================
 // Text
 //=====================================
+text Route204_Text_AinaIntro {
+    format(
+        "Did you know the ash in the forest can be used in makeup, as well as glass?"
+    )
+}
+
+text Route204_Text_AinaDefeated {
+    format(
+        "That's okay.\nPokémon battles are only a hobby."
+    )
+}
+
+text Route204_Text_AinaPostBattle {
+    format(
+        "I'm thinking about starting a new line of beauty products made from ash!\pI'm trying to come up with a name…"
+    )
+}
+
+text Route204_Text_DerrickIntro {
+    format(
+        "I'm not hiding from all of the terrifying bugs in the forest.\pNope!\nNot me!\pJust watch this!"
+    )
+}
+
+text Route204_Text_DerrickDefeated {
+    format(
+        "Okay, okay. M-maybe I'm a little scared."
+    )
+}
+
+text Route204_Text_DerrickPostBattle {
+    format(
+        "Don't tell anyone you saw me back here, okay?\pMy dad would be furious."
+    )
+}
+
+text Route204_Text_LexiIntro {
+    format(
+        "The air out here is so refreshing!\pIt's perfect for a morning run to get the blood flowing.\pYou know what else gets the blood flowing?\pThat's right, a Pokémon battle!"
+    )
+}
+
+text Route204_Text_LexiDefeated {
+    format(
+        "Now that was exhilerating!"
+    )
+}
+
+text Route204_Text_LexiPostBattle {
+    format(
+        "I like to take my Pokémon running with me.\pI wonder if the exercise helps them get stronger, too?"
+    )
+}
+
+text Route204_Text_BeatriceIntro {
+    format(
+        "I've been training Pokémon since before you were born!\pIf you get past me, you'll be in Cranewing.\pThink you can handle me?"
+    )
+}
+
+text Route204_Text_BeatriceDefeated {
+    format(
+        "Ohoho!\nYou certainly are capable!"
+    )
+}
+
+text Route204_Text_BeatricePostBattle {
+    format(
+        "My hobby is training Pokémon.\pWhenever one of mine gets strong, I trade for a weaker, more rare Pokémon.\pThat way I can do the whole thing again!"
+    )
+}
+
 
 //=====================================
 // Movement

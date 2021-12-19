@@ -263,6 +263,82 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Sarah[] = {
 //=====================================================
 // Route 204
 //=====================================================
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Aina[] = {
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_MOGEL,
+    },
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_CLEFAIRY,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Derrick[] = {
+    {
+    .iv = 0,
+    .lvl = 11,
+    .species = SPECIES_EEVEE,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Lexi[] = {
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_FINCHERP,
+    },
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_STRIBRA,
+    },
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_FINCHERP,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Beatrice[] = {
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_MURKROW,
+    },
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_KONDRIA,
+    }
+};
+
+//=====================================================
+// Cranewing Gym
+//=====================================================
+
+//=====================================================
+// Route 204  Rocket Encounter
+//=====================================================
+
+//=====================================================
+// Chartree Forest Rocket Encounter
+//=====================================================
+
+//=====================================================
+// Softwind City Gym
+//=====================================================
+
+//=====================================================
+// Route 205
+//=====================================================
+
+//=====================================================
+// Route 206
+//=====================================================
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntSeafloorCavern2[] = {
     {
     .iv = 0,

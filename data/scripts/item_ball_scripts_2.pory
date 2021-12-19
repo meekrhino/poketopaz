@@ -30,3 +30,18 @@ script(global) Route203_ItemNorthGrass {
     finditem(ITEM_POTION)
     end
 }
+
+script(global) ChartreeForest_ItemLedge {
+    finditem(ITEM_POTION)
+    end
+}
+
+script(global) ChartreeForest_ItemCorner {
+    finditem(ITEM_POTION)
+    end
+}
+
+script(global) Route204_ItemDeadEnd {
+    finditem(ITEM_POTION)
+    end
+}

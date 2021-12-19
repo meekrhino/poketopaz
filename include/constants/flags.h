@@ -51,8 +51,8 @@
 #define FLAG_THERMA_RETURNED                0x27
 #define FLAG_ROCKETS_IN_CHARTREE            0x28
 #define FLAG_HIDE_ROCKETS_IN_CHARTREE       0x29
-#define FLAG_HIDE_FROY_CHARTREE             0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_HIDE_FROY_CHARTREE             0x2A
+#define FLAG_HIDE_SHOOK_ALLARD_ROUTE_204    0x2B
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
@@ -540,11 +540,11 @@
 #define FLAG_HIDDEN_ITEM_SUNSET_VILLAGE_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_ROUTE_203_GARDEN                    (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_ROUTE_203_GRASS                     (FLAG_HIDDEN_ITEMS_START + 0x02)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
-#define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                (FLAG_HIDDEN_ITEMS_START + 0x06)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL               (FLAG_HIDDEN_ITEMS_START + 0x07)
+#define FLAG_HIDDEN_ITEM_CHARTREE_FOREST_WEST                (FLAG_HIDDEN_ITEMS_START + 0x03)
+#define FLAG_HIDDEN_ITEM_CHARTREE_FOREST_DEAD_END            (FLAG_HIDDEN_ITEMS_START + 0x04)
+#define FLAG_HIDDEN_ITEM_CHARTREE_FOREST_NORTH               (FLAG_HIDDEN_ITEMS_START + 0x05)
+#define FLAG_HIDDEN_ITEM_ROUTE_204_NORTH                     (FLAG_HIDDEN_ITEMS_START + 0x06)
+#define FLAG_HIDDEN_ITEM_ROUTE_204_SOUTH                     (FLAG_HIDDEN_ITEMS_START + 0x07)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS               (FLAG_HIDDEN_ITEMS_START + 0x08)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD          (FLAG_HIDDEN_ITEMS_START + 0x09)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x0A)
@@ -1051,8 +1051,8 @@
 #define FLAG_ITEM_ROUTE_202_NORTH_CORNER                            0x3EC
 #define FLAG_ITEM_ROUTE_203_OLD_ROD                                 0x3ED
 #define FLAG_ITEM_ROUTE_203_NORTH_GRASS                             0x3EE
-#define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
-#define FLAG_ITEM_ROUTE_111_TM_37                                   0x3F0
+#define FLAG_ITEM_CHARTREE_FOREST_LEDGE                             0x3EF
+#define FLAG_ITEM_CHARTREE_FOREST_CORNER                            0x3F0
 #define FLAG_ITEM_ROUTE_111_STARDUST                                0x3F1
 #define FLAG_ITEM_ROUTE_111_HP_UP                                   0x3F2
 #define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3

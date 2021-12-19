@@ -27,3 +27,18 @@ Route203_ItemNorthGrass::
 	finditem ITEM_POTION
 	end
 
+
+ChartreeForest_ItemLedge::
+	finditem ITEM_POTION
+	end
+
+
+ChartreeForest_ItemCorner::
+	finditem ITEM_POTION
+	end
+
+
+Route204_ItemDeadEnd::
+	finditem ITEM_POTION
+	end
+

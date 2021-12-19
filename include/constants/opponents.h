@@ -42,22 +42,50 @@
 #define TRAINER_ZELDA                        18
 #define TRAINER_SARAH                        19
 
-#define TRAINER_GRUNT_MUSEUM_1               20
-#define TRAINER_GRUNT_MUSEUM_2               21
-#define TRAINER_GRUNT_SPACE_CENTER_1         22
-#define TRAINER_GRUNT_MT_PYRE_1              23
+//=====================================================
+// Route 204
+//=====================================================
+#define TRAINER_AINA                         20
+#define TRAINER_DERRICK                      21
+#define TRAINER_LEXI                         22
+#define TRAINER_BEATRICE                     23
+
+//=====================================================
+// Cranewing Gym
+//=====================================================
 #define TRAINER_GRUNT_MT_PYRE_2              24
 #define TRAINER_GRUNT_MT_PYRE_3              25
 #define TRAINER_GRUNT_WEATHER_INST_4         26
+
+//=====================================================
+// Route 204  Rocket Encounter
+//=====================================================
 #define TRAINER_GRUNT_AQUA_HIDEOUT_5         27
 #define TRAINER_GRUNT_AQUA_HIDEOUT_6         28
 #define TRAINER_FREDRICK                     29
+
+//=====================================================
+// Chartree Forest Rocket Encounter
+//=====================================================
 #define TRAINER_MATT                         30
 #define TRAINER_ZANDER                       31
 #define TRAINER_SHELLY_WEATHER_INSTITUTE     32
 #define TRAINER_SHELLY_SEAFLOOR_CAVERN       33
+
+//=====================================================
+// Softwind City Gym
+//=====================================================
 #define TRAINER_ARCHIE                       34
 #define TRAINER_LEAH                         35
+
+//=====================================================
+// Route 205
+//=====================================================
+
+//=====================================================
+// Route 206
+//=====================================================
+
 #define TRAINER_DAISY                        36
 #define TRAINER_ROSE_1                       37
 #define TRAINER_FELIX                        38
