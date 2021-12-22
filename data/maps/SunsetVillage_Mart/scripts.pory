@@ -1,0 +1,56 @@
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts SunsetVillage_Mart_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) SunsetVillage_Mart_Clerk {
+    lock
+    faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(SunsetVillage_Mart_Data)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script(global) SunsetVillage_Mart_OldMan {
+    msgbox(format("My grandson is a Pokémon Trainer, and his birthday is coming up.\pI'm buying him a Potion.\nKids love those!"), MSGBOX_NPC)
+    end
+}
+
+script(global) SunsetVillage_Mart_OldWoman {
+    msgbox(format("If there's one thing I've learned, it's that you can never be too prepared.\pIf you buy enough Potions and Antidotes, you'll be ready for anything!"), MSGBOX_NPC)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================
+raw`
+SunsetVillage_Mart_Data:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_NONE
+	release
+	end
+`

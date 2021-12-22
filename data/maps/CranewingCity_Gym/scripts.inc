@@ -178,9 +178,9 @@ CranewingCity_Gym_Text_FroyDefeated::
 	.string "League Char Badge!$"
 
 CranewingCity_Gym_Text_FroyPostBattle::
-	.string "I have no doub that your determination\n"
-	.string "will see you through the Pokémon\l"
-	.string "League challenge!\p"
+	.string "I have no doubt that your\n"
+	.string "determination will see you through the\l"
+	.string "Pokémon League challenge!\p"
 	.string "Battle as many Trainers as you can\n"
 	.string "along the way.\p"
 	.string "They're sure to have many things to\n"
@@ -192,9 +192,9 @@ CranewingCity_Gym_Text_ReceivedBadge::
 CranewingCity_Gym_Text_CharBadgeInfo::
 	.string "The Char Badge allows your Pokémon to\n"
 	.string "use the HM move Cut outside of battle.\p"
-	.string "It also means you one step along the\n"
-	.string "road to Triumph Spire and becoming the\l"
-	.string "Champion!\p"
+	.string "It also means you are one step along\n"
+	.string "the road to the Triumph Spire and\l"
+	.string "becoming the Champion!\p"
 	.string "As my thanks for a heated battle,\n"
 	.string "please take this, as well.$"
 

@@ -4590,6 +4590,16 @@
       "secondary_tileset": "gTileset_LavaridgeGym",
       "border_filepath": "data/layouts/CranewingCity_Gym/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSET_VILLAGE_MART",
+      "name": "SunsetVillage_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/SunsetVillage_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/SunsetVillage_Mart/map.bin"
     }
   ]
 }

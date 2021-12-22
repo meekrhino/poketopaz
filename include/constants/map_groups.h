@@ -91,6 +91,7 @@
 #define MAP_OLDALE_TOWN_POKEMON_CENTER_2F (3 | (2 << 8))
 #define MAP_OLDALE_TOWN_MART              (4 | (2 << 8))
 #define MAP_SUNSET_VILLAGE_POKEMON_CENTER (5 | (2 << 8))
+#define MAP_SUNSET_VILLAGE_MART           (6 | (2 << 8))
 
 // gMapGroup_IndoorSoftwind
 #define MAP_DEWFORD_TOWN_HOUSE1            (0 | (3 << 8))
