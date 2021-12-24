@@ -116,21 +116,21 @@
       "x": 26,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_SUNSET_VILLAGE",
+      "dest_map": "MAP_SUNSET_VILLAGE_HOUSE3",
       "dest_warp_id": 0
     },
     {
       "x": 11,
       "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_SUNSET_VILLAGE",
+      "dest_map": "MAP_SUNSET_VILLAGE_HOUSE1",
       "dest_warp_id": 0
     },
     {
       "x": 13,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_SUNSET_VILLAGE",
+      "dest_map": "MAP_SUNSET_VILLAGE_HOUSE2",
       "dest_warp_id": 0
     },
     {
@@ -202,7 +202,7 @@
       "x": 24,
       "y": 8,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "SunsetVillage_OtherMailbox"
     },
     {

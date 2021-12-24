@@ -178,6 +178,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -239,61 +294,6 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -332,71 +332,6 @@
               }
             ]
           },
-          "land_mons": {
-            "encounter_rate": 20,
-            "mons": [
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
           "fishing_mons": {
             "encounter_rate": 30,
             "mons": [
@@ -451,6 +386,71 @@
                 "species": "SPECIES_PINECO"
               }
             ]
+          },
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              }
+            ]
           }
         },
         {
@@ -482,71 +482,6 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "land_mons": {
-            "encounter_rate": 20,
-            "mons": [
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -602,6 +537,71 @@
               {
                 "min_level": 40,
                 "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 4,
+                "max_level": 4,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -729,6 +729,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -790,61 +845,6 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -913,6 +913,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -974,61 +1029,6 @@
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -1235,6 +1235,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -1296,61 +1351,6 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -1458,6 +1458,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -1522,61 +1577,6 @@
                 "species": "SPECIES_PINECO"
               }
             ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
-                "species": "SPECIES_PINECO"
-              }
-            ]
           }
         },
         {
@@ -1608,6 +1608,61 @@
               {
                 "min_level": 25,
                 "max_level": 30,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -1673,61 +1728,6 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -2629,6 +2629,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -2690,61 +2745,6 @@
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -3208,6 +3208,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -3269,61 +3324,6 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -3431,6 +3431,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 15,
             "mons": [
@@ -3495,6 +3550,40 @@
                 "species": "SPECIES_PINECO"
               }
             ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE120",
+          "base_label": "gRoute120",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              }
+            ]
           },
           "fishing_mons": {
             "encounter_rate": 30,
@@ -3547,40 +3636,6 @@
               {
                 "min_level": 40,
                 "max_level": 45,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          }
-        },
-        {
-          "map": "MAP_ROUTE120",
-          "base_label": "gRoute120",
-          "water_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 20,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 20,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 30,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -3646,61 +3701,6 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -3739,6 +3739,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -3800,61 +3855,6 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -3982,6 +3982,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -4043,61 +4098,6 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -5133,6 +5133,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -5194,61 +5249,6 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -6077,6 +6077,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -6138,61 +6193,6 @@
               {
                 "min_level": 36,
                 "max_level": 36,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -6231,6 +6231,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -6292,61 +6347,6 @@
               {
                 "min_level": 36,
                 "max_level": 36,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -6957,6 +6957,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 35,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 25,
             "mons": [
@@ -7018,61 +7073,6 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 35,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -7210,6 +7210,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 35,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 25,
             "mons": [
@@ -7271,61 +7326,6 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 35,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -7463,6 +7463,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -7527,6 +7582,40 @@
                 "species": "SPECIES_PINECO"
               }
             ]
+          }
+        },
+        {
+          "map": "MAP_METEOR_FALLS_1F_1R",
+          "base_label": "gMeteorFalls_1F_1R",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 15,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 15,
+                "species": "SPECIES_PINECO"
+              }
+            ]
           },
           "fishing_mons": {
             "encounter_rate": 30,
@@ -7567,8 +7656,8 @@
                 "species": "SPECIES_PINECO"
               },
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 20,
+                "max_level": 25,
                 "species": "SPECIES_PINECO"
               },
               {
@@ -7579,40 +7668,6 @@
               {
                 "min_level": 40,
                 "max_level": 45,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          }
-        },
-        {
-          "map": "MAP_METEOR_FALLS_1F_1R",
-          "base_label": "gMeteorFalls_1F_1R",
-          "water_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 15,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 15,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -7681,6 +7736,40 @@
                 "species": "SPECIES_PINECO"
               }
             ]
+          }
+        },
+        {
+          "map": "MAP_METEOR_FALLS_1F_2R",
+          "base_label": "gMeteorFalls_1F_2R",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 15,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 15,
+                "species": "SPECIES_PINECO"
+              }
+            ]
           },
           "fishing_mons": {
             "encounter_rate": 30,
@@ -7721,8 +7810,8 @@
                 "species": "SPECIES_PINECO"
               },
               {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_PINECO"
               },
               {
@@ -7733,40 +7822,6 @@
               {
                 "min_level": 40,
                 "max_level": 45,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          }
-        },
-        {
-          "map": "MAP_METEOR_FALLS_1F_2R",
-          "base_label": "gMeteorFalls_1F_2R",
-          "water_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 15,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 15,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -7832,61 +7887,6 @@
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -7925,6 +7925,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -7986,61 +8041,6 @@
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -8217,6 +8217,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -8278,61 +8333,6 @@
               {
                 "min_level": 32,
                 "max_level": 32,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -8371,6 +8371,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -8432,61 +8487,6 @@
               {
                 "min_level": 32,
                 "max_level": 32,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
                 "species": "SPECIES_PINECO"
               }
             ]
@@ -9547,6 +9547,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 35,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 25,
             "mons": [
@@ -9607,61 +9662,6 @@
               },
               {
                 "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_PINECO"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 35,
-            "mons": [
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 35,
                 "max_level": 40,
                 "species": "SPECIES_PINECO"
               }
@@ -11525,71 +11525,6 @@
               }
             ]
           },
-          "land_mons": {
-            "encounter_rate": 20,
-            "mons": [
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_FINCHERP"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_FINCHERP"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_FINCHERP"
-              },
-              {
-                "min_level": 2,
-                "max_level": 3,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 3,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 3,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_MOGEL"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_MOGEL"
-              }
-            ]
-          },
           "fishing_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -11644,6 +11579,71 @@
                 "species": "SPECIES_PINECO"
               }
             ]
+          },
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_FINCHERP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_FINCHERP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_FINCHERP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 2,
+                "species": "SPECIES_MOGEL"
+              }
+            ]
           }
         },
         {
@@ -11652,6 +11652,61 @@
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TRILLOGILL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TRILLOGILL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
               {
                 "min_level": 5,
                 "max_level": 5,
@@ -11743,35 +11798,14 @@
                 "species": "SPECIES_FINCHERP"
               }
             ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 20,
+          }
+        },
+        {
+          "map": "MAP_ROUTE202",
+          "base_label": "gRoute2020",
+          "water_mons": {
+            "encounter_rate": 4,
             "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_TRILLOGILL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_TRILLOGILL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
               {
                 "min_level": 5,
                 "max_level": 5,
@@ -11798,14 +11832,35 @@
                 "species": "SPECIES_PINECO"
               }
             ]
-          }
-        },
-        {
-          "map": "MAP_ROUTE202",
-          "base_label": "gRoute2020",
-          "water_mons": {
-            "encounter_rate": 4,
+          },
+          "fishing_mons": {
+            "encounter_rate": 10,
             "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TRILLOGILL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TRILLOGILL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
               {
                 "min_level": 5,
                 "max_level": 5,
@@ -11895,61 +11950,6 @@
                 "min_level": 3,
                 "max_level": 3,
                 "species": "SPECIES_AMPURE"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_TRILLOGILL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_TRILLOGILL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
               }
             ]
           }
@@ -12283,6 +12283,61 @@
               }
             ]
           },
+          "fishing_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PINECO"
+              }
+            ]
+          },
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -12347,61 +12402,6 @@
                 "species": "SPECIES_CLEFAIRY"
               }
             ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PINECO"
-              }
-            ]
           }
         },
         {
@@ -12410,6 +12410,61 @@
           "water_mons": {
             "encounter_rate": 0,
             "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
               {
                 "min_level": 5,
                 "max_level": 5,
@@ -12499,61 +12554,6 @@
                 "min_level": 5,
                 "max_level": 5,
                 "species": "SPECIES_CLEFAIRY"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 0,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
               }
             ]
           }

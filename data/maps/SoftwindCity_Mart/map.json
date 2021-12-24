@@ -1,9 +1,9 @@
 {
-  "id": "MAP_SUNSET_VILLAGE_MART",
-  "name": "SunsetVillage_Mart",
-  "layout": "LAYOUT_SUNSET_VILLAGE_MART",
+  "id": "MAP_SOFTWIND_CITY_MART",
+  "name": "SoftwindCity_Mart",
+  "layout": "LAYOUT_SOFTWIND_CITY_MART",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_OLDALE_TOWN",
+  "region_map_section": "MAPSEC_DEWFORD_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -24,12 +24,25 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunsetVillage_Mart_Clerk",
+      "script": "SoftwindCity_Mart_Clerk",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 7,
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 9,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SoftwindCity_Mart_Woman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 4,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -37,20 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunsetVillage_Mart_OldWoman",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 8,
-      "y": 6,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunsetVillage_Mart_OldMan",
+      "script": "SoftwindCity_Mart_Maniac",
       "flag": "0"
     }
   ],
@@ -59,15 +59,15 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_SUNSET_VILLAGE",
-      "dest_warp_id": 4
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 3
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_SUNSET_VILLAGE",
-      "dest_warp_id": 4
+      "dest_map": "MAP_SOFTWIND_CITY",
+      "dest_warp_id": 3
     }
   ],
   "coord_events": [

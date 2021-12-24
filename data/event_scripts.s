@@ -1115,3 +1115,11 @@ Script_RemoveTint::
 	.include "data/maps/CranewingCity_Gym/scripts.inc"
 
 	.include "data/maps/SunsetVillage_Mart/scripts.inc"
+
+	.include "data/maps/SoftwindCity_Mart/scripts.inc"
+
+	.include "data/maps/SunsetVillage_House1/scripts.inc"
+
+	.include "data/maps/SunsetVillage_House2/scripts.inc"
+
+	.include "data/maps/SunsetVillage_House3/scripts.inc"

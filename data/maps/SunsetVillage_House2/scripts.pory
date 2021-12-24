@@ -1,0 +1,34 @@
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts SunsetVillage_House2_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) SunsetVillage_House2_Boy {
+    msgbox(format("I'm one of the only young folks in town, so I always get stuck babysitting the grandchildren.\pI don't mind though.\nIt pays well!"), MSGBOX_NPC)
+    end
+}
+
+script(global) SunsetVillage_House2_LittleBoy {
+    msgbox(format("My grandpa went shopping for my birthday.\pI hope I get the new video game I asked for!\pOh boy oh boy oh boy!"), MSGBOX_NPC)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================

@@ -122,7 +122,10 @@
     "OldaleTown_PokemonCenter_2F",
     "OldaleTown_Mart",
     "SunsetVillage_PokemonCenter",
-    "SunsetVillage_Mart"
+    "SunsetVillage_Mart",
+    "SunsetVillage_House1",
+    "SunsetVillage_House2",
+    "SunsetVillage_House3"
   ],
   "gMapGroup_IndoorSoftwind": [
     "DewfordTown_House1",
@@ -131,7 +134,8 @@
     "DewfordTown_Gym",
     "DewfordTown_Hall",
     "DewfordTown_House2",
-    "SoftwindCity_PokemonCenter"
+    "SoftwindCity_PokemonCenter",
+    "SoftwindCity_Mart"
   ],
   "gMapGroup_IndoorCranewing": [
     "LavaridgeTown_HerbShop",

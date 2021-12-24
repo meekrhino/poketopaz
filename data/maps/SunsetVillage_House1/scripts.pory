@@ -1,0 +1,29 @@
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts SunsetVillage_House1_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) SunsetVillage_House1_OldMan {
+    msgbox(format("My granddaughter left years ago to become a Pokémon Trainer.\pNow she lives in a big city on the coast!\pI'm so proud of her, but I miss her often."), MSGBOX_NPC)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================
