@@ -4,7 +4,7 @@
 .equ LOCALID_BRINEY_DEWFORD, 2
 .equ LOCALID_BOAT_DEWFORD, 4
 
-.equ LOCALID_BOAT_R109, 1 
+.equ LOCALID_BOAT_R109, 1
 .equ LOCALID_BRINEY_R109, 2
 
 .equ LOCALID_BOAT_R104, 7
@@ -85,7 +85,7 @@ DewfordTown_EventScript_HallSign::
 DewfordTown_EventScript_OldRodFisherman::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_OLD_ROD, DewfordTown_EventScript_HowsFishing
+	goto_if_set FLAG_RECEIVED_SOFTWIND_GREAT_BALL, DewfordTown_EventScript_HowsFishing
 	msgbox DewfordTown_Text_GettingItchToFish, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq DewfordTown_EventScript_GiveOldRod
@@ -96,7 +96,7 @@ DewfordTown_EventScript_OldRodFisherman::
 DewfordTown_EventScript_GiveOldRod::
 	msgbox DewfordTown_Text_GiveYouOneOfMyRods, MSGBOX_DEFAULT
 	giveitem ITEM_OLD_ROD
-	setflag FLAG_RECEIVED_OLD_ROD
+	setflag FLAG_RECEIVED_SOFTWIND_GREAT_BALL
 	msgbox DewfordTown_Text_ThrowInFishingAdvice, MSGBOX_DEFAULT
 	release
 	end

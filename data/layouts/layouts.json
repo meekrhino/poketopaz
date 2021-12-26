@@ -4640,6 +4640,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/SunsetVillage_House3/border.bin",
       "blockdata_filepath": "data/layouts/SunsetVillage_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOFTWIND_CITY_HOUSE1",
+      "name": "SoftwindCity_House1_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SoftwindCity_House1/border.bin",
+      "blockdata_filepath": "data/layouts/SoftwindCity_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOFTWIND_CITY_HOUSE2",
+      "name": "SoftwindCity_House2_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SoftwindCity_House2/border.bin",
+      "blockdata_filepath": "data/layouts/SoftwindCity_House2/map.bin"
     }
   ]
 }

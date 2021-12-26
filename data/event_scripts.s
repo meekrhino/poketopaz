@@ -1123,3 +1123,7 @@ Script_RemoveTint::
 	.include "data/maps/SunsetVillage_House2/scripts.inc"
 
 	.include "data/maps/SunsetVillage_House3/scripts.inc"
+
+	.include "data/maps/SoftwindCity_House1/scripts.inc"
+
+	.include "data/maps/SoftwindCity_House2/scripts.inc"

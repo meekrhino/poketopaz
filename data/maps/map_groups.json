@@ -135,7 +135,9 @@
     "DewfordTown_Hall",
     "DewfordTown_House2",
     "SoftwindCity_PokemonCenter",
-    "SoftwindCity_Mart"
+    "SoftwindCity_Mart",
+    "SoftwindCity_House1",
+    "SoftwindCity_House2"
   ],
   "gMapGroup_IndoorCranewing": [
     "LavaridgeTown_HerbShop",

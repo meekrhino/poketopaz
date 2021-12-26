@@ -1,0 +1,41 @@
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts SoftwindCity_House2_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) SoftwindCity_House2_Gentleman {
+    msgbox(format("Thanks to the low cost of living here, my wife and I were able to retire young!\pWe worked our years in Colossus City, and now we get to relax in this lovely town."), MSGBOX_NPC)
+    end
+}
+
+script(global) SoftwindCity_House2_Woman {
+    if(flag(FLAG_RECEIVED_SOFTWIND_GREAT_BALL)) {
+        msgbox(format("I hope your adventure is everything you dream of, and that you end up somewhere wonderful at the end of it.\pThat's what happened to me."), MSGBOX_NPC)
+    }
+    else {
+        msgbox(format("Now that I'm retired, I don't need this anymore.\pWhy don't you take it?"), MSGBOX_NPC)
+        giveitem(ITEM_GREAT_BALL)
+        setflag(FLAG_RECEIVED_SOFTWIND_GREAT_BALL)
+    }
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================
