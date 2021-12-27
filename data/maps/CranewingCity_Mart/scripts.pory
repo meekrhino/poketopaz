@@ -2,29 +2,24 @@
 //=====================================
 // Map Scripts
 //=====================================
-mapscripts SoftwindCity_Mart_MapScripts {}
+mapscripts CranewingCity_Mart_MapScripts {}
 
 //=====================================
 // Global Scripts
 //=====================================
-script(global) SoftwindCity_Mart_Clerk {
+script(global) CranewingCity_Mart_Clerk {
     lock
     faceplayer
     message(gText_HowMayIServeYou)
     waitmessage
-    pokemart(SoftwindCity_Mart_Data)
+    pokemart(CranewingCity_Mart_Data)
     msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
     release
     end
 }
 
-script(global) SoftwindCity_Mart_Maniac {
-    msgbox(format("I'm stocking up on Burn Heals and Poké Balls.\pThen I'm heading to Chartree Forest to catch everything I can find!"), MSGBOX_NPC)
-    end
-}
-
-script(global) SoftwindCity_Mart_Woman {
-    msgbox(format("The small town vibe in Softwind City is wonderful, but the mart has limited stock.\pI miss being able to buy Great Balls whenever I need them!"), MSGBOX_NPC)
+script(global) CranewingCity_Mart_OldMan {
+    msgbox(format("The local glassworks produces the best glass in the region.\pWe export all across Caldera, to Kirant, and beyond!\pMake sure you visit while you're in town!"), MSGBOX_NPC)
     end
 }
 
@@ -44,7 +39,7 @@ script(global) SoftwindCity_Mart_Woman {
 // Raw
 //=====================================
 raw`
-SoftwindCity_Mart_Data:
+CranewingCity_Mart_Data:
     .2byte ITEM_POKE_BALL
     .2byte ITEM_POTION
     .2byte ITEM_ANTIDOTE
@@ -53,6 +48,9 @@ SoftwindCity_Mart_Data:
     .2byte ITEM_BURN_HEAL
     .2byte ITEM_ESCAPE_ROPE
     .2byte ITEM_REPEL
+    .2byte ITEM_X_ATTACK
+    .2byte ITEM_X_DEFEND
+    .2byte ITEM_X_SPEED
     .2byte ITEM_NONE
     release
     end

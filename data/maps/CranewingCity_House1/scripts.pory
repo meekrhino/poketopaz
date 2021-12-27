@@ -1,0 +1,94 @@
+const SCAMMED = 14
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts CranewingCity_House1_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) CranewingCity_House1_Man {
+    msgbox(format("Lupine and Huskii are born rivals.\pFor each, their lifelong goal is to defeat the other in combat.\pI've even heard their evolution is tied to that in some way."), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_House1_Trader {
+	lock
+	faceplayer
+    if(flag(FLAG_CRANEWING_NPC_TRADE_COMPLETED)) {
+        goto(CranewingCity_House1_TradeCompleted)
+    }
+    if(var(VAR_TEMP_0) == SCAMMED) {
+        goto(CranewingCity_House1_Scammed)
+    }
+    setvar(VAR_0x8008, INGAME_TRADE_HUSKII)
+	copyvar(VAR_0x8004, VAR_0x8008)
+	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
+	copyvar(VAR_0x8009, VAR_RESULT)
+	msgbox(format("I caught this {STR_VAR_1} on a ski trip this year.\pIt's great and all, but I've always wanted its rival, {STR_VAR_2}!\pWill you trade me yours?"), MSGBOX_YESNO)
+	if(var(VAR_RESULT) == NO) {
+        goto(CranewingCity_House1_DeclineTrade)
+    }
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_0x800A, VAR_0x8004)
+	if(var(VAR_0x8004) == 255) {
+        goto(CranewingCity_House1_DeclineTrade)
+    }
+	copyvar(VAR_0x8005, VAR_0x800A)
+	specialvar(VAR_RESULT, GetTradeSpecies)
+	copyvar(VAR_0x800B, VAR_RESULT)
+	if(var(VAR_RESULT) != VAR_0x8009) {
+        goto(CranewingCity_House1_NotRequestedMon)
+    }
+	copyvar(VAR_0x8004, VAR_0x8008)
+	copyvar(VAR_0x8005, VAR_0x800A)
+	special(CreateInGameTradePokemon)
+	special(DoInGameTradeScene)
+	waitstate
+	msgbox(format("I can't wait to raise this Pokémon!\pI hope you have fun raising that one!"), MSGBOX_DEFAULT)
+	setflag(FLAG_CRANEWING_NPC_TRADE_COMPLETED)
+	release
+	end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) CranewingCity_House1_TradeCompleted {
+    msgbox(format("I hope my Pokémon is treating you well, and vice versa!\pMaybe someday both of us will manage to evolve them one day!"), MSGBOX_NPC)
+    release
+    end
+}
+
+script(local) CranewingCity_House1_DeclineTrade {
+    msgbox(format("Oh, you don't want to?\pI can't say I blame you.\nYou have a great Pokémon there."), MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script(local) CranewingCity_House1_NotRequestedMon {
+    msgbox(format("Are you trying to scam me?\pYou think I wouldn't know that's the wrong Pokémon?\pDon't waste my time."), MSGBOX_DEFAULT)
+    setvar(VAR_TEMP_0, SCAMMED)
+    release
+    end
+}
+
+script(local) CranewingCity_House1_Scammed {
+    msgbox(format("You still want to trade?\pSorry, I can't trust you.\nYou might try to scam me again.\pCome back later when you've learned not to trick people."))
+    release
+    end
+}
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================

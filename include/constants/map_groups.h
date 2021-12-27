@@ -118,6 +118,8 @@
 #define MAP_LAVARIDGE_TOWN_POKEMON_CENTER_2F (6 | (4 << 8))
 #define MAP_CRANEWING_CITY_POKEMON_CENTER    (7 | (4 << 8))
 #define MAP_CRANEWING_CITY_GYM               (8 | (4 << 8))
+#define MAP_CRANEWING_CITY_MART              (9 | (4 << 8))
+#define MAP_CRANEWING_CITY_HOUSE1            (10 | (4 << 8))
 
 // gMapGroup_IndoorFallarbor
 #define MAP_FALLARBOR_TOWN_MART                    (0 | (5 << 8))

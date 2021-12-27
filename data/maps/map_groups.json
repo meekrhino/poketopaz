@@ -148,7 +148,9 @@
     "LavaridgeTown_PokemonCenter_1F",
     "LavaridgeTown_PokemonCenter_2F",
     "CranewingCity_PokemonCenter",
-    "CranewingCity_Gym"
+    "CranewingCity_Gym",
+    "CranewingCity_Mart",
+    "CranewingCity_House1"
   ],
   "gMapGroup_IndoorFallarbor": [
     "FallarborTown_Mart",

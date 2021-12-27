@@ -34,7 +34,7 @@
       "x": 17,
       "y": 20,
       "elevation": 0,
-      "dest_map": "MAP_CRANEWING_CITY",
+      "dest_map": "MAP_CRANEWING_CITY_MART",
       "dest_warp_id": 0
     },
     {
@@ -42,27 +42,27 @@
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 0
+      "dest_warp_id": 2
     },
     {
       "x": 3,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 0
+      "dest_warp_id": 3
     },
     {
       "x": 6,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 0
+      "dest_warp_id": 4
     },
     {
       "x": 4,
       "y": 28,
       "elevation": 0,
-      "dest_map": "MAP_CRANEWING_CITY",
+      "dest_map": "MAP_CRANEWING_CITY_HOUSE1",
       "dest_warp_id": 0
     },
     {
@@ -77,7 +77,7 @@
       "y": 28,
       "elevation": 0,
       "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 0
+      "dest_warp_id": 7
     }
   ],
   "coord_events": [
