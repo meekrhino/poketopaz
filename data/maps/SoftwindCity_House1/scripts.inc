@@ -10,5 +10,6 @@ SoftwindCity_House1_Boy::
 SoftwindCity_House1_Boy_Text_0:
 	.string "I wasn't around for the big fire in\n"
 	.string "Chartree Forest.\p"
-	.string "That was the last time anything ever\n"
-	.string "happened in this town!$"
+	.string "That was the last time anything\n"
+	.string "interesting ever happened in this\l"
+	.string "town!$"

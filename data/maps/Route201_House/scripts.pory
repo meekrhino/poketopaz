@@ -2,13 +2,13 @@
 //=====================================
 // Map Scripts
 //=====================================
-mapscripts SoftwindCity_House1_MapScripts {}
+mapscripts Route201_House_MapScripts {}
 
 //=====================================
 // Global Scripts
 //=====================================
-script(global) SoftwindCity_House1_Boy {
-    msgbox(format("I wasn't around for the big fire in Chartree Forest.\pThat was the last time anything interesting ever happened in this town!"), MSGBOX_NPC)
+script(global) Route201_House_Gentleman {
+    msgbox(format("I had this cottage built as a vacation home where I can get away from city life.\pI also had the bridge repaired so I could get out for walks.\pI wonder if anyone else will use it?"), MSGBOX_NPC)
     end
 }
 

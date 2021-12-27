@@ -18,8 +18,8 @@
     "gMapGroup_IndoorMossdeep",
     "gMapGroup_IndoorSootopolis",
     "gMapGroup_IndoorEverGrande",
-    "gMapGroup_IndoorRoute104",
-    "gMapGroup_IndoorRoute111",
+    "gMapGroup_IndoorRoute201",
+    "gMapGroup_IndoorRoute203",
     "gMapGroup_IndoorRoute112",
     "gMapGroup_IndoorRoute114",
     "gMapGroup_IndoorRoute116",
@@ -28,7 +28,7 @@
     "gMapGroup_Dungeons",
     "gMapGroup_IndoorDynamic",
     "gMapGroup_SpecialArea",
-    "gMapGroup_IndoorRoute104Prototype",
+    "gMapGroup_IndoorRoute201Prototype",
     "gMapGroup_IndoorRoute109",
     "gMapGroup_IndoorRoute110",
     "gMapGroup_IndoorRoute113",
@@ -320,13 +320,15 @@
     "EverGrandeCity_PokemonCenter_2F",
     "EverGrandeCity_PokemonLeague_2F"
   ],
-  "gMapGroup_IndoorRoute104": [
+  "gMapGroup_IndoorRoute201": [
     "Route104_MrBrineysHouse",
-    "Route104_PrettyPetalFlowerShop"
+    "Route104_PrettyPetalFlowerShop",
+    "Route201_House"
   ],
-  "gMapGroup_IndoorRoute111": [
+  "gMapGroup_IndoorRoute203": [
     "Route111_WinstrateFamilysHouse",
-    "Route111_OldLadysRestStop"
+    "Route111_OldLadysRestStop",
+    "Route203_House"
   ],
   "gMapGroup_IndoorRoute112": [
     "Route112_CableCarStation",
@@ -611,7 +613,7 @@
     "NavelRock_Bottom",
     "TrainerHill_Elevator"
   ],
-  "gMapGroup_IndoorRoute104Prototype": [
+  "gMapGroup_IndoorRoute201Prototype": [
     "Route104_Prototype",
     "Route104_PrototypePrettyPetalFlowerShop"
   ],

@@ -187,14 +187,14 @@
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY",
-      "dest_warp_id": 0
+      "dest_warp_id": 1
     },
     {
       "x": 27,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY",
-      "dest_warp_id": 0
+      "dest_warp_id": 2
     },
     {
       "x": 11,
@@ -208,7 +208,7 @@
       "y": 32,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY",
-      "dest_warp_id": 0
+      "dest_warp_id": 4
     },
     {
       "x": 7,

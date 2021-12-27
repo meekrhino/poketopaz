@@ -4660,6 +4660,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/SoftwindCity_House2/border.bin",
       "blockdata_filepath": "data/layouts/SoftwindCity_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE201_HOUSE",
+      "name": "Route201_House_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/Route201_House/border.bin",
+      "blockdata_filepath": "data/layouts/Route201_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE203_HOUSE",
+      "name": "Route203_House_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route203_House/border.bin",
+      "blockdata_filepath": "data/layouts/Route203_House/map.bin"
     }
   ]
 }

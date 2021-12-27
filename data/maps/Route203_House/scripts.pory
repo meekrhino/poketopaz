@@ -1,0 +1,41 @@
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts Route203_House_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) Route203_House_Woman1 {
+    msgbox(format("There is something so fulfilling about surrounding yourself with growing things.\pIt's my second greatest joy in life."), MSGBOX_NPC)
+    end
+}
+
+script(global) Route203_House_Woman2 {
+    if(flag(FLAG_RECEIVED_SOOTHE_BELL)) {
+        msgbox(format("Please remember to treat your Pokémon with love and respect.\pThey will return the favor."), MSGBOX_NPC)
+    }
+    else {
+    msgbox(format("My wife is incredible with plants.\nThere is nothing more wonderful than watching someone you love succeed!\pHere, why don't you take this?\pIt'll help your Pokémon grow closer to you."), MSGBOX_NPC)
+        giveitem(ITEM_SOOTHE_BELL)
+        setflag(FLAG_RECEIVED_SOOTHE_BELL)
+    }
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================

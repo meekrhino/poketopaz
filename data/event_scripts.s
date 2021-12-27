@@ -1127,3 +1127,7 @@ Script_RemoveTint::
 	.include "data/maps/SoftwindCity_House1/scripts.inc"
 
 	.include "data/maps/SoftwindCity_House2/scripts.inc"
+
+	.include "data/maps/Route201_House/scripts.inc"
+
+	.include "data/maps/Route203_House/scripts.inc"
