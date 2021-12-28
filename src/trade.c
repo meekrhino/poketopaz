@@ -51,6 +51,8 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/union_room.h"
+#include "printf.h"
+#include "mgba.h"
 
 // The following tags are offsets from GFXTAG_MENU_TEXT
 // They're looped over in CB2_CreateTradeMenu and CB2_ReturnToTradeMenu
@@ -3344,7 +3346,7 @@ enum {
     TS_STATE_AFTER_NEW_MON_DELAY,
     TS_STATE_CHECK_RIBBONS,
     TS_STATE_END_LINK_TRADE,
-    TS_STATE_TRY_EVOLUTION,
+    TS_STATE_FADE_OUT_DO_TRADE,
     TS_STATE_FADE_OUT_END,
     TS_STATE_WAIT_FADE_OUT_END,
     // Special states
@@ -3363,6 +3365,7 @@ static bool8 AnimateTradeSequenceCable(void)
 {
     u16 evoTarget;
 
+    mgba_printf(MGBA_LOG_DEBUG, "Trade state is %d", sTradeData->state);
     switch (sTradeData->state)
     {
     case TS_STATE_START:
@@ -3797,6 +3800,10 @@ static bool8 AnimateTradeSequenceCable(void)
             sTradeData->state++;
         }
         break;
+    case TS_STATE_FADE_OUT_DO_TRADE:
+        TradeMons(gSpecialVar_0x8005, 0);
+        sTradeData->state++;
+        break;
     case TS_STATE_FADE_OUT_END:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         sTradeData->state++;
@@ -3826,6 +3833,7 @@ static bool8 AnimateTradeSequenceWireless(void)
 {
     u16 evoTarget;
 
+    mgba_printf(MGBA_LOG_DEBUG, "Trade state is %d", sTradeData->state);
     switch (sTradeData->state)
     {
     case TS_STATE_START:
@@ -4286,6 +4294,10 @@ static bool8 AnimateTradeSequenceWireless(void)
         {
             sTradeData->state++;
         }
+        break;
+    case TS_STATE_FADE_OUT_DO_TRADE:
+        TradeMons(gSpecialVar_0x8005, 0);
+        sTradeData->state++;
         break;
     case TS_STATE_FADE_OUT_END:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);

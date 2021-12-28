@@ -99,10 +99,10 @@ CranewingCity_House1_Man_Text_0:
 	.string "to that in some way.$"
 
 CranewingCity_House1_Trader_Text_0:
-	.string "I caught this {STR_VAR_1} on a ski\n"
+	.string "I caught this {STR_VAR_2} on a ski\n"
 	.string "trip this year.\p"
 	.string "It's great and all, but I've always\n"
-	.string "wanted its rival, {STR_VAR_2}!\p"
+	.string "wanted its rival, {STR_VAR_1}!\p"
 	.string "Will you trade me yours?$"
 
 CranewingCity_House1_Trader_Text_1:
