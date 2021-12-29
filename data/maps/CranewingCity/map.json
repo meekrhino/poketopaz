@@ -20,7 +20,84 @@
     }
   ],
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 6,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Cranewing_West",
+      "flag": "FLAG_ITEM_CRANEWING_WEST"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+      "x": 12,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 32,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Cranewing_North",
+      "flag": "FLAG_ITEM_CRANEWING_NORTH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 21,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_ESCORT_CRANEWING_CITY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
+      "x": 25,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 4,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
   ],
   "warp_events": [
     {
@@ -81,7 +158,60 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_CRANEWING_CITY_STATE",
+      "var_value": "0",
+      "script": "CranewingCity_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_CRANEWING_CITY_STATE",
+      "var_value": "0",
+      "script": "CranewingCity_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_CRANEWING_CITY_STATE",
+      "var_value": "0",
+      "script": "CranewingCity_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_CRANEWING_CITY_STATE",
+      "var_value": "0",
+      "script": "CranewingCity_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_CRANEWING_CITY_STATE",
+      "var_value": "0",
+      "script": "CranewingCity_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_CRANEWING_CITY_STATE",
+      "var_value": "0",
+      "script": "CranewingCity_Escort"
+    }
   ],
   "bg_events": [
     {
@@ -107,6 +237,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 32,
+      "elevation": 3,
+      "item": "ITEM_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_CRANEWING_CITY"
     }
   ]
 }

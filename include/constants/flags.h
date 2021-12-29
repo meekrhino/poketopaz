@@ -54,7 +54,7 @@
 #define FLAG_HIDE_FROY_CHARTREE             0x2A
 #define FLAG_HIDE_SHOOK_ALLARD_ROUTE_204    0x2B
 #define FLAG_HIDE_BRADLEY_CRANEWING_CENTER  0x2C
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
+#define FLAG_HIDE_ESCORT_CRANEWING_CITY     0x2D
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
@@ -545,7 +545,7 @@
 #define FLAG_HIDDEN_ITEM_CHARTREE_FOREST_NORTH               (FLAG_HIDDEN_ITEMS_START + 0x05)
 #define FLAG_HIDDEN_ITEM_ROUTE_204_NORTH                     (FLAG_HIDDEN_ITEMS_START + 0x06)
 #define FLAG_HIDDEN_ITEM_ROUTE_204_SOUTH                     (FLAG_HIDDEN_ITEMS_START + 0x07)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS               (FLAG_HIDDEN_ITEMS_START + 0x08)
+#define FLAG_HIDDEN_ITEM_CRANEWING_CITY                      (FLAG_HIDDEN_ITEMS_START + 0x08)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD          (FLAG_HIDDEN_ITEMS_START + 0x09)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x0A)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL            (FLAG_HIDDEN_ITEMS_START + 0x0B)
@@ -1053,9 +1053,9 @@
 #define FLAG_ITEM_ROUTE_203_NORTH_GRASS                             0x3EE
 #define FLAG_ITEM_CHARTREE_FOREST_LEDGE                             0x3EF
 #define FLAG_ITEM_CHARTREE_FOREST_CORNER                            0x3F0
-#define FLAG_ITEM_ROUTE_111_STARDUST                                0x3F1
-#define FLAG_ITEM_ROUTE_111_HP_UP                                   0x3F2
-#define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3
+#define FLAG_ITEM_ROUTE_204_WEST                                    0x3F1
+#define FLAG_ITEM_CRANEWING_WEST                                    0x3F2
+#define FLAG_ITEM_CRANEWING_NORTH                                   0x3F3
 #define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
 #define FLAG_ITEM_ROUTE_113_SUPER_REPEL                             0x3F5
 #define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6

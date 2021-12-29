@@ -1,3 +1,12 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const ESCORT = 4
+
+// VAR_CRANEWING_CITY_STATE values
+const CRANEWING_STATE_INIT = 0
+const CRANEWING_STATE_SAW_GLASSWORKS = 1
+
+const VAR_TEMP_X = VAR_TEMP_0
+const VAR_TEMP_Y = VAR_TEMP_1
 
 //=====================================
 // Map Scripts
@@ -7,6 +16,81 @@ mapscripts CranewingCity_MapScripts {}
 //=====================================
 // Global Scripts
 //=====================================
+script(global) CranewingCity_Man {
+    msgbox(format("I ran into a scary spider Pokémon in the forest the other day.\pI'm not too prideful to admit it.\pPokémon can be terrifying when you don't have your own."), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Scientist {
+    msgbox(format("I work at the Glassworks in town developing new products.\pI already have two patents in my five years at the company!\pI developed a new luxury glass for storing Potions in."), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Gentleman {
+    msgbox(format("A savvy trainer stores their money at the Cranewing City Bank!\pKeep your money safe and make a little bit besides!"), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Escort {
+    lockall
+    applymovement(ESCORT, mExclamationPoint)
+    delay(60)
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    switch(var(VAR_TEMP_X)) {
+        case 18:
+            applymovement(ESCORT, mEscortApproaches_1)
+        case 19:
+            applymovement(ESCORT, mEscortApproaches_2)
+        case 20:
+            applymovement(ESCORT, mEscortApproaches_3)
+        case 21:
+            applymovement(ESCORT, mEscortApproaches_4)
+        case 22:
+            applymovement(ESCORT, mEscortApproaches_5)
+        case 23:
+            applymovement(ESCORT, mEscortApproaches_6)
+    }
+    waitmovement(0)
+    msgbox(format("Hello there!\nYou must be new in town!\pHave you visited the Glassworks yet?\pYou just have to see it.\nCome with me!"))
+    waitmessage
+    closemessage
+    switch(var(VAR_TEMP_X)) {
+        case 18:
+            applymovement(ESCORT, mEscortMovement_1)
+            applymovement(PLAYER, mPlayerFollowsEscort1)
+            waitmovement(0)
+        case 19:
+            applymovement(ESCORT, mEscortMovement_2)
+            applymovement(PLAYER, mPlayerFollowsEscort2)
+            waitmovement(0)
+        case 20:
+            applymovement(ESCORT, mEscortMovement_3)
+            applymovement(PLAYER, mPlayerFollowsEscort3)
+            waitmovement(0)
+        case 21:
+            applymovement(ESCORT, mEscortMovement_4)
+            applymovement(PLAYER, mPlayerFollowsEscort4)
+            waitmovement(0)
+        case 22:
+            applymovement(ESCORT, mEscortMovement_5)
+            applymovement(PLAYER, mPlayerFollowsEscort5)
+            waitmovement(0)
+        case 23:
+            applymovement(ESCORT, mEscortMovement_6)
+            applymovement(PLAYER, mPlayerFollowsEscort6)
+            waitmovement(0)
+    }
+    applymovement(ESCORT, mEscortFullMovement)
+    applymovement(PLAYER, mPlayerFollowsEscortFull)
+    waitmovement(0)
+    msgbox(format("Here we are!\nThis is the Glassworks!\pThey make some incredible stuff, and there are always opportunities to get involved!\pAnyway, I hope you enjoy your stay."))
+    waitmessage
+    closemessage
+    applymovement(ESCORT, mEscortLeavesTheArea)
+    waitmovement(0)
+    releaseall
+    end
+}
 
 //=====================================
 // Local Scripts
@@ -19,6 +103,113 @@ mapscripts CranewingCity_MapScripts {}
 //=====================================
 // Movement
 //=====================================
+movement mEscortApproaches_1 {
+    walk_left * 3
+    walk_up
+}
+
+movement mEscortApproaches_2 {
+    walk_left * 2
+    walk_up
+}
+
+movement mEscortApproaches_3 {
+    walk_left
+    walk_up
+}
+
+movement mEscortApproaches_4 {
+    walk_up
+}
+
+movement mEscortApproaches_5 {
+    walk_right
+    walk_up
+}
+
+movement mEscortApproaches_6 {
+    walk_right * 2
+    walk_up
+}
+
+movement mEscortMovement_1 {
+    walk_down * 3
+    walk_right * 6
+}
+
+movement mEscortMovement_2 {
+    walk_down * 3
+    walk_right * 5
+}
+
+movement mEscortMovement_3 {
+    walk_down * 3
+    walk_right * 4
+}
+
+movement mEscortMovement_4 {
+    walk_down * 3
+    walk_right * 3
+}
+
+movement mEscortMovement_5 {
+    walk_down * 3
+    walk_right * 2
+}
+
+movement mEscortMovement_6 {
+    walk_down * 3
+    walk_right
+}
+
+movement mPlayerFollowsEscort1 {
+    walk_down * 4
+    walk_right * 5
+}
+
+movement mPlayerFollowsEscort2 {
+    walk_down * 4
+    walk_right * 4
+}
+
+movement mPlayerFollowsEscort3 {
+    walk_down * 4
+    walk_right * 3
+}
+
+movement mPlayerFollowsEscort4 {
+    walk_down * 4
+    walk_right * 2
+}
+
+movement mPlayerFollowsEscort5 {
+    walk_down * 4
+    walk_right
+}
+
+movement mPlayerFollowsEscort6 {
+    walk_down * 4
+}
+
+movement mEscortFullMovement {
+    walk_right * 8
+    walk_up * 17
+    walk_left * 9
+    face_up
+}
+
+movement mPlayerFollowsEscortFull {
+    walk_right * 9
+    walk_up * 17
+    walk_left * 8
+    face_up
+}
+
+movement mEscortLeavesTheArea {
+    walk_down
+    walk_right * 9
+    set_invisible
+}
 
 //=====================================
 // Raw

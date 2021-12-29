@@ -42,3 +42,13 @@ Route204_ItemDeadEnd::
 	finditem ITEM_POTION
 	end
 
+
+Cranewing_West::
+	finditem ITEM_POTION
+	end
+
+
+Cranewing_North::
+	finditem ITEM_POTION
+	end
+

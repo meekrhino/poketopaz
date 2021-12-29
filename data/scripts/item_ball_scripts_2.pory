@@ -45,3 +45,13 @@ script(global) Route204_ItemDeadEnd {
     finditem(ITEM_POTION)
     end
 }
+
+script(global) Cranewing_West {
+    finditem(ITEM_POTION)
+    end
+}
+
+script(global) Cranewing_North {
+    finditem(ITEM_POTION)
+    end
+}
