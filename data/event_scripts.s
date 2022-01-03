@@ -1135,3 +1135,5 @@ Script_RemoveTint::
 	.include "data/maps/CranewingCity_Mart/scripts.inc"
 
 	.include "data/maps/CranewingCity_House1/scripts.inc"
+
+	.include "data/maps/CranewingCity_House2/scripts.inc"

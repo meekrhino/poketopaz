@@ -12,6 +12,11 @@ CranewingCity_Scientist::
 	end
 
 
+CranewingCity_Gentleman::
+	msgbox CranewingCity_Gentleman_Text_0, MSGBOX_NPC
+	end
+
+
 CranewingCity_Escort::
 	lockall
 	applymovement 4, mExclamationPoint
@@ -39,6 +44,11 @@ CranewingCity_Escort_1:
 CranewingCity_Escort_9:
 	applymovement 4, mEscortFullMovement
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerFollowsEscortFull
+	waitmovement 0
+	msgbox CranewingCity_Escort_Text_1
+	waitmessage
+	closemessage
+	applymovement 4, mEscortLeavesTheArea
 	waitmovement 0
 	releaseall
 	end
@@ -194,43 +204,6 @@ mEscortMovement_6:
 	walk_right
 	step_end
 
-mEscortFullMovement:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
 mPlayerFollowsEscort1:
 	walk_down
 	walk_down
@@ -288,6 +261,44 @@ mPlayerFollowsEscort6:
 	walk_down
 	step_end
 
+mEscortFullMovement:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_up
+	step_end
+
 mPlayerFollowsEscortFull:
 	walk_right
 	walk_right
@@ -323,6 +334,21 @@ mPlayerFollowsEscortFull:
 	walk_left
 	walk_left
 	walk_left
+	face_up
+	step_end
+
+mEscortLeavesTheArea:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	set_invisible
 	step_end
 
 CranewingCity_Man_Text_0:
@@ -340,9 +366,23 @@ CranewingCity_Scientist_Text_0:
 	.string "I developed a new luxury glass for\n"
 	.string "storing Potions in.$"
 
+CranewingCity_Gentleman_Text_0:
+	.string "A savvy trainer stores their money at\n"
+	.string "the Cranewing City Bank!\p"
+	.string "Keep your money safe and make a little\n"
+	.string "bit besides!$"
+
 CranewingCity_Escort_Text_0:
 	.string "Hello there!\n"
 	.string "You must be new in town!\p"
 	.string "Have you visited the Glassworks yet?\p"
 	.string "You just have to see it.\n"
-	.string "come with me!$"
+	.string "Come with me!$"
+
+CranewingCity_Escort_Text_1:
+	.string "Here we are!\n"
+	.string "This is the Glassworks!\p"
+	.string "They make some incredible stuff, and\n"
+	.string "there are always opportunities to get\l"
+	.string "involved!\p"
+	.string "Anyway, I hope you enjoy your stay.$"

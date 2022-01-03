@@ -4700,6 +4700,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/CranewingCity_House1/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRANEWING_CITY_HOUSE2",
+      "name": "CranewingCity_House2_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CranewingCity_House2/border.bin",
+      "blockdata_filepath": "data/layouts/CranewingCity_House2/map.bin"
     }
   ]
 }
