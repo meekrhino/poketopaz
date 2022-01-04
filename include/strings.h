@@ -2047,6 +2047,10 @@ extern const u8 gText_PartyFull[];
 extern const u8 gText_Box[];
 extern const u8 gText_JustOnePkmn[];
 
+// bank
+extern const u8 gBankText_Withdraw[];
+extern const u8 gBankText_Deposit[];
+
 // battle main
 extern const u8 gText_LinkStandby3[];
 extern const u8 BattleFrontier_BattleTowerBattleRoom_Text_RecordCouldntBeSaved[];

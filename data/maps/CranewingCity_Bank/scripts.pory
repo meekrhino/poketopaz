@@ -1,0 +1,86 @@
+const MENU_WITHDRAW = 0
+const MENU_DEPOSIT = 1
+const MENU_EXIT = 2
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts CranewingCity_Bank_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) CranewingCity_Bank_Boy {
+    msgbox(format("I can't wait to open a bank account when I become a Pokémon Trainer!\pMom says the only way to make money is to save money."), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Bank_Manager {
+    if(flag(FLAG_BANK_ACCOUNT_CREATED)) {
+        lockall
+        faceplayer
+        msgbox(format("Good day to you!\pWould you like to view your Pokémon Bank balance?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES) {
+            msgbox("placeholder")
+        }
+        else {
+            msgbox(format("Very well then!\pAre you here to close your account with us?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                msgbox("placeholder")
+            }
+            else {
+                msgbox(format("Of course you don't!\pThis is the greatest…\nand only…\lbank in all of Caldera and Kirant!"))
+            }
+        }
+        releaseall
+    }
+    else {
+        msgbox(format("Hi there!\nWhat can I do for you?\pOh?\nYou don't have an account?\pWell, let's get you started with a brand new Pokémon Bank account!\pJust fill out these forms…\pAnd you're done!\nSee the clerk over there to make your first deposit!"), MSGBOX_NPC)
+        setflag(FLAG_BANK_ACCOUNT_CREATED)
+    }
+    end
+}
+
+script(global) CranewingCity_Bank_Clerk {
+    lockall
+    faceplayer
+    msgbox(format("Hello and welcome to the First Regional Pokémon Bank!\pHow may I help you?"))
+    call(CranewingCity_Bank_BankClerkMenu)
+    releaseall
+    end
+}
+
+script(global) CranewingCity_Bank_Duskull {
+    msgbox(format("Oawwoohhoo!"), MSGBOX_NPC)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) CranewingCity_Bank_BankClerkMenu {
+    multichoice(0, 0, MULTI_BANK, FALSE)
+    switch(var(VAR_RESULT)) {
+        case MENU_WITHDRAW:
+            msgbox("placeholder withdraw")
+        case MENU_DEPOSIT:
+            msgbox("placeholder deposit")
+        case MENU_EXIT:
+            msgbox("Thank you for stopping by.\nWe hope to see you again!")
+        case MULTI_B_PRESSED:
+            msgbox("Thank you for stopping by.\nWe hope to see you again!")
+    }
+    return
+}
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================

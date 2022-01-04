@@ -88,6 +88,7 @@ script(global) CranewingCity_Escort {
     closemessage
     applymovement(ESCORT, mEscortLeavesTheArea)
     waitmovement(0)
+    setvar(VAR_CRANEWING_CITY_STATE, CRANEWING_STATE_SAW_GLASSWORKS)
     releaseall
     end
 }

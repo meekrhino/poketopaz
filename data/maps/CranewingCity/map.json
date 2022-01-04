@@ -132,8 +132,8 @@
       "x": 6,
       "y": 18,
       "elevation": 0,
-      "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 4
+      "dest_map": "MAP_CRANEWING_CITY_BANK",
+      "dest_warp_id": 0
     },
     {
       "x": 4,
@@ -153,8 +153,8 @@
       "x": 25,
       "y": 28,
       "elevation": 0,
-      "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 7
+      "dest_map": "MAP_CRANEWING_CITY_HOUSE3",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

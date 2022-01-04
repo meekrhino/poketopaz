@@ -4710,6 +4710,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/CranewingCity_House2/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRANEWING_CITY_HOUSE3",
+      "name": "CranewingCity_House3_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CranewingCity_House3/border.bin",
+      "blockdata_filepath": "data/layouts/CranewingCity_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRANEWING_CITY_BANK",
+      "name": "CranewingCity_Bank_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/CranewingCity_Bank/border.bin",
+      "blockdata_filepath": "data/layouts/CranewingCity_Bank/map.bin"
     }
   ]
 }

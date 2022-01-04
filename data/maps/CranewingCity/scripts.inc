@@ -50,6 +50,7 @@ CranewingCity_Escort_9:
 	closemessage
 	applymovement 4, mEscortLeavesTheArea
 	waitmovement 0
+	setvar VAR_CRANEWING_CITY_STATE, 1
 	releaseall
 	end
 
