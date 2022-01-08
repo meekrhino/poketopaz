@@ -110,7 +110,10 @@ CranewingCity_Bank_Manager_Text_4:
 	.string "You don't have an account?\p"
 	.string "Well, let's get you started with a brand\n"
 	.string "new Pokémon Bank account!\p"
-	.string "Just fill out these forms…$"
+	.string "Just fill out these forms…\p"
+	.string "And you're done!\n"
+	.string "See the clerk over there to make your\l"
+	.string "first deposit!$"
 
 CranewingCity_Bank_Clerk_Text_0:
 	.string "Hello and welcome to the First Regional\n"
