@@ -160,6 +160,7 @@ SECTIONS {
         src/item.o(.text);
         src/contest.o(.text);
         src/shop.o(.text);
+        src/bank.o(.text);
         src/fldeff_escalator.o(.text);
         src/berry.o(.text);
         src/script_menu.o(.text);
@@ -538,6 +539,7 @@ SECTIONS {
         src/item.o(.rodata);
         src/contest.o(.rodata);
         src/shop.o(.rodata);
+        src/bank.o(.rodata);
         src/fldeff_escalator.o(.rodata);
         src/berry.o(.rodata);
         src/script_menu.o(.rodata);

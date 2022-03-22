@@ -312,7 +312,7 @@ struct BattleTowerEReaderTrainer
     /*0xB8*/ u32 checksum;
 };
 
-// For displaying party information on the player's Battle Dome tourney page 
+// For displaying party information on the player's Battle Dome tourney page
 struct DomeMonData
 {
     u16 moves[MAX_MON_MOVES];
@@ -436,7 +436,7 @@ struct PlayersApprentice
     /*0xB1*/ u8 questionsAnswered:4;
     /*0xB1*/ u8 leadMonId:2;
     /*0xB2*/ u8 party:3;
-    /*0xB2*/ u8 saveId:2; 
+    /*0xB2*/ u8 saveId:2;
     /*0xB3*/ u8 unused;
     /*0xB4*/ u8 speciesIds[MULTI_PARTY_SIZE];
     /*0xB8*/ struct ApprenticeQuestion questions[APPRENTICE_MAX_QUESTIONS];
@@ -978,7 +978,8 @@ struct SaveBlock1
     /*0x650*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
     /*0x690*/ //struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
               u8 bagPocket_TMHMOwnedFlags[14]; //allow for a total of 112 TMs/HMs
-              u8 bagPocket_TMHMPadding[242]; //do not touch the save layout, take 242 bytes of free space
+              u8 bagPocket_TMHMPadding[238]; //space leftover from vanilla TM/HM implementation
+    /*0x78C*/ u32 bankedMoney;
     /*0x790*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
     /*0x848*/ struct Pokeblock pokeblocks[POKEBLOCKS_COUNT];
     /*0x988*/ u8 seen1[DEX_FLAGS_NO];

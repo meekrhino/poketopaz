@@ -2,6 +2,7 @@
 #include "rtc.h"
 #include "string_util.h"
 #include "text.h"
+#include "util.h"
 
 // iwram bss
 static u16 sErrorStatus;
@@ -43,7 +44,7 @@ void RtcRestoreInterrupts(void)
     REG_IME = sSavedIme;
 }
 
-u32 ConvertBcdToBinary(u8 bcd)
+u32 Convertu8BcdToBinary(u8 bcd)
 {
     if (bcd > 0x9F)
         return 0xFF;
@@ -88,9 +89,9 @@ u16 ConvertDateToDayCount(u8 year, u8 month, u8 day)
 
 u16 RtcGetDayCount(struct SiiRtcInfo *rtc)
 {
-    u8 year = ConvertBcdToBinary(rtc->year);
-    u8 month = ConvertBcdToBinary(rtc->month);
-    u8 day = ConvertBcdToBinary(rtc->day);
+    u8 year = Convertu8BcdToBinary(rtc->year);
+    u8 month = Convertu8BcdToBinary(rtc->month);
+    u8 day = Convertu8BcdToBinary(rtc->day);
     return ConvertDateToDayCount(year, month, day);
 }
 
@@ -164,17 +165,17 @@ u16 RtcCheckInfo(struct SiiRtcInfo *rtc)
     if (!(rtc->status & SIIRTCINFO_24HOUR))
         errorFlags |= RTC_ERR_12HOUR_CLOCK;
 
-    year = ConvertBcdToBinary(rtc->year);
+    year = Convertu8BcdToBinary(rtc->year);
 
     if (year == 0xFF)
         errorFlags |= RTC_ERR_INVALID_YEAR;
 
-    month = ConvertBcdToBinary(rtc->month);
+    month = Convertu8BcdToBinary(rtc->month);
 
     if (month == 0xFF || month == 0 || month > 12)
         errorFlags |= RTC_ERR_INVALID_MONTH;
 
-    value = ConvertBcdToBinary(rtc->day);
+    value = Convertu8BcdToBinary(rtc->day);
 
     if (value == 0xFF)
         errorFlags |= RTC_ERR_INVALID_DAY;
@@ -190,17 +191,17 @@ u16 RtcCheckInfo(struct SiiRtcInfo *rtc)
             errorFlags |= RTC_ERR_INVALID_DAY;
     }
 
-    value = ConvertBcdToBinary(rtc->hour);
+    value = Convertu8BcdToBinary(rtc->hour);
 
     if (value > 24)
         errorFlags |= RTC_ERR_INVALID_HOUR;
 
-    value = ConvertBcdToBinary(rtc->minute);
+    value = Convertu8BcdToBinary(rtc->minute);
 
     if (value > 60)
         errorFlags |= RTC_ERR_INVALID_MINUTE;
 
-    value = ConvertBcdToBinary(rtc->second);
+    value = Convertu8BcdToBinary(rtc->second);
 
     if (value > 60)
         errorFlags |= RTC_ERR_INVALID_SECOND;
@@ -263,9 +264,9 @@ void FormatHexDate(u8 *dest, s32 year, s32 month, s32 day)
 void RtcCalcTimeDifference(struct SiiRtcInfo *rtc, struct Time *result, struct Time *t)
 {
     u16 days = RtcGetDayCount(rtc);
-    result->seconds = ConvertBcdToBinary(rtc->second) - t->seconds;
-    result->minutes = ConvertBcdToBinary(rtc->minute) - t->minutes;
-    result->hours = ConvertBcdToBinary(rtc->hour) - t->hours;
+    result->seconds = Convertu8BcdToBinary(rtc->second) - t->seconds;
+    result->minutes = Convertu8BcdToBinary(rtc->minute) - t->minutes;
+    result->hours = Convertu8BcdToBinary(rtc->hour) - t->hours;
     result->days = days - t->days;
 
     if (result->seconds < 0)

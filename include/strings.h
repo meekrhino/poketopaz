@@ -2050,6 +2050,10 @@ extern const u8 gText_JustOnePkmn[];
 // bank
 extern const u8 gBankText_Withdraw[];
 extern const u8 gBankText_Deposit[];
+extern const u8 gBankText_DepositedMoney[];
+extern const u8 gBankText_HeldMoney[];
+extern const u8 gBankText_HowMuchToWithdraw[];
+extern const u8 gBankText_HowMuchToDeposit[];
 
 // battle main
 extern const u8 gText_LinkStandby3[];
