@@ -172,10 +172,10 @@ static void InitBankMenu(u8 taskId)
 static void Bank_PrintMainWindow(u8 windowId, u32 depositedMoney, u32 heldMoney)
 {
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
-    PrintMoneyAmount(windowId, 58, 12, depositedMoney, 0);
-    PrintMoneyAmount(windowId, 58, 36, heldMoney, 0);
-    AddTextPrinterParameterized5(windowId, 2, gBankText_DepositedMoney, 0, 1, 0, NULL, 0, 2);
-    AddTextPrinterParameterized5(windowId, 2, gBankText_HeldMoney, 0, 25, 0, NULL, 0, 2);
+    PrintMoneyAmount(windowId, 54, 13, depositedMoney, 0);
+    PrintMoneyAmount(windowId, 54, 35, heldMoney, 0);
+    AddTextPrinterParameterized5(windowId, 0, gBankText_DepositedMoney, 0, 0, 0, NULL, 0, 2);
+    AddTextPrinterParameterized5(windowId, 0, gBankText_HeldMoney, 0, 24, 0, NULL, 0, 2);
 }
 
 void Bank_PrintMoneyAmountLeadingZeroes(u8 windowId, u8 x, u8 y, u32 amount, u8 speed)

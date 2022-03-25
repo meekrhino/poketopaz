@@ -2,6 +2,13 @@ const MENU_WITHDRAW = 0
 const MENU_DEPOSIT = 1
 const MENU_EXIT = 2
 
+const SPECIAL_WITHDRAW = 0
+const SPECIAL_DEPOSIT = 1
+
+const OPERATION_SUCCESS = 0
+const OPERATION_NOT_ENOUGH = 1
+const OPERATION_TOO_MUCH = 2
+
 //=====================================
 // Map Scripts
 //=====================================
@@ -11,7 +18,7 @@ mapscripts CranewingCity_Bank_MapScripts {}
 // Global Scripts
 //=====================================
 script(global) CranewingCity_Bank_Boy {
-    msgbox(format("I can't wait to open a bank account when I become a Pokémon Trainer!\pMom says the only way to make money is to save money."), MSGBOX_NPC)
+    msgbox(format("I can't wait to open a bank account when I become a Pokémon Trainer!\pMom says the only way to make money is to save money, I plan to be rich!"), MSGBOX_NPC)
     end
 }
 
@@ -35,18 +42,27 @@ script(global) CranewingCity_Bank_Manager {
         releaseall
     }
     else {
-        msgbox(format("Hi there!\nWhat can I do for you?\pOh?\nYou don't have an account?\pWell, let's get you started with a brand new Pokémon Bank account!\pJust fill out these forms…\pAnd you're done!\nSee the clerk over there to make your first deposit!"), MSGBOX_NPC)
+        msgbox(format("Hi there!\nWhat can I do for you?\pOh?\nYou don't have an account?\pWell, let's get you started with a brand new Pokémon Bank account!\pJust fill out these forms…\pand these ones…\pAnd you're done!\nSee the clerk over there to make your first deposit!"), MSGBOX_NPC)
         setflag(FLAG_BANK_ACCOUNT_CREATED)
     }
     end
 }
 
 script(global) CranewingCity_Bank_Clerk {
-    lockall
+    lock
     faceplayer
-    msgbox(format("Hello and welcome to the First Regional Pokémon Bank!\pHow may I help you?"))
-    call(CranewingCity_Bank_BankClerkMenu)
-    releaseall
+    msgbox(format("Hello and welcome to the First Regional Pokémon Bank!"))
+    if(flag(FLAG_BANK_ACCOUNT_CREATED)) {
+        goto(CranewingCity_Bank_BankClerkMenu)
+    }
+    else {
+        msgbox(format("I'm so sorry, I'm afraid you don't seem to have an account with us."))
+        waitmessage
+        msgbox(format("See the clerk to open one today!"))
+    }
+    waitmessage
+    closemessage
+    release
     end
 }
 
@@ -59,18 +75,65 @@ script(global) CranewingCity_Bank_Duskull {
 // Local Scripts
 //=====================================
 script(local) CranewingCity_Bank_BankClerkMenu {
+    msgbox("How may I help you?")
     multichoice(0, 0, MULTI_BANK, FALSE)
     switch(var(VAR_RESULT)) {
         case MENU_WITHDRAW:
-            msgbox("placeholder withdraw")
+            call(CranewingCity_Bank_BankClerkWithdraw)
         case MENU_DEPOSIT:
-            msgbox("placeholder deposit")
+            call(CranewingCity_Bank_BankClerkDeposit)
         case MENU_EXIT:
             msgbox("Thank you for stopping by.\nWe hope to see you again!")
         case MULTI_B_PRESSED:
             msgbox("Thank you for stopping by.\nWe hope to see you again!")
     }
     return
+}
+
+script(local) CranewingCity_Bank_BankClerkWithdraw {
+    setvar(VAR_0x8004, SPECIAL_WITHDRAW)
+    special(Bank)
+    waitstate
+    switch(var(VAR_RESULT)) {
+        case OPERATION_SUCCESS:
+            playse(SE_SHOP)
+            waitse
+            msgbox("Thank you for your business!\nPlease come back again soon!")
+
+        case OPERATION_NOT_ENOUGH:
+            msgbox("We don't have that much…")
+            goto(CranewingCity_Bank_BankClerkMenu)
+
+        case OPERATION_TOO_MUCH:
+            msgbox("You can't carry that much!")
+            goto(CranewingCity_Bank_BankClerkMenu)
+
+        default:
+            goto(CranewingCity_Bank_BankClerkMenu)
+    }
+    return
+}
+
+script(local) CranewingCity_Bank_BankClerkDeposit {
+    setvar(VAR_0x8004, SPECIAL_DEPOSIT)
+    special(Bank)
+    waitstate
+    switch(var(VAR_RESULT)) {
+        case OPERATION_SUCCESS:
+            playse(SE_SHOP)
+            waitse
+            msgbox("Your money is safe with us!")
+
+        case OPERATION_NOT_ENOUGH:
+            msgbox("You don't have that much…")
+            goto(CranewingCity_Bank_BankClerkMenu)
+
+        case OPERATION_TOO_MUCH:
+            msgbox("We can't store that much!")
+            goto(CranewingCity_Bank_BankClerkMenu)
+    }
+    releaseall
+    end
 }
 
 //=====================================
