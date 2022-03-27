@@ -28,7 +28,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 21,
-      "y": 8,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -41,7 +41,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 20,
-      "y": 8,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -53,16 +53,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 23,
-      "y": 8,
+      "x": 20,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route204_BradleyHurt",
+      "flag": "FLAG_HIDE_SHOOK_ALLARD_ROUTE_204"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -174,7 +174,7 @@
       "elevation": 0,
       "var": "VAR_ROUTE204_STATE",
       "var_value": "1",
-      "script": "NULL"
+      "script": "Route204_ShookAndAllard"
     },
     {
       "type": "trigger",
@@ -183,7 +183,7 @@
       "elevation": 0,
       "var": "VAR_ROUTE204_STATE",
       "var_value": "1",
-      "script": "NULL"
+      "script": "Route204_ShookAndAllard"
     }
   ],
   "bg_events": [
@@ -198,7 +198,7 @@
     {
       "type": "sign",
       "x": 29,
-      "y": 43,
+      "y": 44,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route204_RouteSignCranewingCity"

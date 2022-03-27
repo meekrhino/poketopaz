@@ -16,6 +16,15 @@ mapscripts CranewingCity_MapScripts {}
 //=====================================
 // Global Scripts
 //=====================================
+script(global) CranewingCity_Sign {
+    msgbox(CranewingCity_Text_TownSign, MSGBOX_SIGN)
+    end
+}
+script(global) CranewingCity_GlassworksSign {
+    msgbox(CranewingCity_Text_GlassworksSign, MSGBOX_SIGN)
+    end
+}
+
 script(global) CranewingCity_Man {
     msgbox(format("I ran into a scary spider Pokémon in the forest the other day.\pI'm not too prideful to admit it.\pPokémon can be terrifying when you don't have your own."), MSGBOX_NPC)
     end
@@ -100,6 +109,18 @@ script(global) CranewingCity_Escort {
 //=====================================
 // Text
 //=====================================
+text CranewingCity_Text_TownSign {
+    format(
+        "Cranewing City\n"
+        "“Home of the world-famous Glassworks!”"
+    )
+}
+text CranewingCity_Text_GlassworksSign {
+    format(
+        "Glassworks\n"
+        "Makers of the finest glassware in two regions."
+    )
+}
 
 //=====================================
 // Movement

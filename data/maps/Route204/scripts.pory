@@ -1,5 +1,7 @@
 const PLAYER = OBJ_EVENT_ID_PLAYER
 const CAMERA = OBJ_EVENT_ID_CAMERA
+const VAR_X_TEMP = VAR_TEMP_0
+const VAR_Y_TEMP = VAR_TEMP_1
 
 const BRADLEY = 3
 const SHOOK = 2
@@ -59,6 +61,95 @@ script(global) Route204_Athlete {
 script(global) Route204_ExpertWoman {
     trainerbattle_single(TRAINER_BEATRICE, Route204_Text_BeatriceIntro, Route204_Text_BeatriceDefeated)
     msgbox(Route204_Text_BeatricePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route204_ShookAndAllard {
+    lock
+    addobject(SHOOK)
+    applymovement(SHOOK, mShookAndAllardApproach1)
+    delay(60)
+    addobject(ALLARD)
+    applymovement(ALLARD, mShookAndAllardApproach1)
+    waitmovement(0)
+    msgbox("Grunt 1: Hey, you!")
+    closemessage
+    applymovement(SHOOK, mShookAndAllardApproach2)
+    applymovement(ALLARD, mShookAndAllardApproach2)
+    waitmovement(0)
+    applymovement(ALLARD, mFaceLeft)
+    waitmovement
+    msgbox("Grunt 2: Uh… Shook?\nWhat should we do with them?")
+    applymovement(ALLARD, mFaceDown)
+    waitmovement
+    msgbox(format("Shook: Balfour will be angry if we let them through…\pI guess we have to take them out, ALLARD."))
+    msgbox("Allard: Get ready, kid!\nWe're both coming at you at once!")
+    closemessage
+    delay(15)
+    msgbox("???: I don't think so!")
+    applymovement(SHOOK, mLookUpStartled)
+    applymovement(ALLARD, mLookUpStartled)
+    waitmovement(0)
+    closemessage
+    addobject(BRADLEY)
+    getplayerxy(VAR_X_TEMP, VAR_Y_TEMP)
+    if(var(VAR_X_TEMP) == 20) {
+        // Player is in front of Shook
+        applymovement(mBradleyApproachesAllard)
+    }
+    else {
+        // Player is in front of Allard
+        applymovement(mBradleyApproachesShook)
+    }
+    waitmovement(0)
+    msgbox(format("Allard: How did you get through the forest!?"))
+    msgbox(format("Bradley: I broke through everything in my way!\pYou Rockets are no match for me!"))
+    closemessage
+    applymovement(BRADLEY, mBradleyFidgetsDown)
+    waitmovement(0)
+    msgbox(format("Bradley: Nice to see you, {PLAYER}!\nAre you ready?\pThese guys are no match for us together!"))
+    closemessage
+    delay(30)
+    applymovement(SHOOK, mFaceRight)
+    applymovement(ALLARD, mFaceLeft)
+    waitmovement(0)
+    msgbox(format("Allard: This is bad, Shook!\pI don't think we can beat both of them…"))
+    msgbox(format("Shook: We have to try…\pWe can't get an executive angry, not on our first mission."))
+    if(var(VAR_X_TEMP) == 20) {
+        // Player is in front of Shook
+        applymovement(SHOOK, mFaceDown)
+        applymovement(ALLARD, mFaceUp)
+    }
+    else {
+        // Player is in front of Allard
+        applymovement(SHOOK, mFaceUp)
+        applymovement(ALLARD, mFaceDown)
+    }
+    msgbox("Shook: Here we come!")
+    closemessage
+    // TODO battle vs shook and allard (team double battle)
+    msgbox("Allard: What do we do now?")
+    msgbox("Shook: … … …\nWe have to run this time.\pBut we'll see you again, {PLAYER}")
+    closemessage
+    applymovement(SHOOK, mShookAndAllardRunAway)
+    applymovement(ALLARD, mShookAndAllardRunAway)
+    waitmovement(0)
+    msgbox(Route204_Text_BradleyIsHurt)
+    closemessage
+    applymovement(BRADLEY, mFaceUP)
+    delay(60)
+    msgbox(Route204_Text_RocketsRipUpPlants)
+    closemessage
+    applymovement(BRADLEY, mBradleyFidgetsDown)
+    waitmovement(0)
+    msgbox(Route204_Text_BradleyDontWorryAboutMe)
+    closemessage
+    release
+    end
+}
+
+script(global) Route204_BradleyHurt {
+    msgbox(format("Bradley: I'll get someone to help me to the Pokémon Center.\pYou need to hurry!"), MSGBOX_NPC)
     end
 }
 
@@ -141,10 +232,56 @@ text Route204_Text_BeatricePostBattle {
     )
 }
 
+text Route204_Text_BradleyIsHurt {
+    format(
+        "Bradley: I put on a show for them, but I hurt myself, {PLAYER}.\p"
+        "I've done something to my ankle, and I don't think I can battle anymore.\p"
+        "I beat a couple of the guys in there, but there are still a few left."
+    )
+}
+
+text Route204_Text_RocketsRipUpPlants {
+    format(
+        "Bradley: They're collecting the ash by ripping all the plants "
+        "with ash on them out of the ground…\p"
+        "If they do that…\nwhere will all the Pokémon live?"
+    )
+}
+
+text Route204_Text_BradleyDontWorryAboutMe {
+    format(
+        "Bradley: {PLAYER}, you have to go in there and stop them!\p"
+        "Don't worry about me, I'll get someone to help me to the Pokémon Center.\p"
+        "You need to hurry!"
+    )
+}
 
 //=====================================
 // Movement
 //=====================================
+
+movement mShookAndAllardApproach1 {
+    walk_down * 3
+    emote_exclamation_mark
+}
+
+movement mShookAndAllardApproach2 {
+    walk_down * 4
+}
+
+movement mBradleyApproachesShook {
+    walk_down * 6
+}
+
+movement mBradleyApproachesAllard {
+    walk_right
+    walk_down * 6
+}
+
+movement mShookAndAllardRunAway {
+    walk_up * 7
+    set_invisible
+}
 
 //=====================================
 // Raw
