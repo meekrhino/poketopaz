@@ -143,6 +143,7 @@ script(global) Route204_ShookAndAllard {
     applymovement(BRADLEY, mBradleyFidgetsDown)
     waitmovement(0)
     msgbox(Route204_Text_BradleyDontWorryAboutMe)
+    setflag(FLAG_ROCKETS_IN_CHARTREE)
     closemessage
     release
     end
