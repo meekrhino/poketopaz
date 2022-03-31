@@ -43,7 +43,6 @@ CranewingCity_Bank_Clerk::
 	msgbox CranewingCity_Bank_Clerk_Text_0
 	goto_if_set FLAG_BANK_ACCOUNT_CREATED, CranewingCity_Bank_Clerk_2
 	msgbox CranewingCity_Bank_Clerk_Text_1
-	waitmessage
 	msgbox CranewingCity_Bank_Clerk_Text_2
 CranewingCity_Bank_Clerk_1:
 	waitmessage
@@ -180,6 +179,7 @@ CranewingCity_Bank_Manager_Text_4:
 	.string "Well, let's get you started with a brand\n"
 	.string "new Pokémon Bank account!\p"
 	.string "Just fill out these forms…\p"
+	.string "and these ones…\p"
 	.string "And you're done!\n"
 	.string "See the clerk over there to make your\l"
 	.string "first deposit!$"
@@ -189,8 +189,8 @@ CranewingCity_Bank_Clerk_Text_0:
 	.string "Pokémon Bank!$"
 
 CranewingCity_Bank_Clerk_Text_1:
-	.string "I'm so sorry, I'm afraid you don't see to\n"
-	.string "have an account with us.$"
+	.string "I'm so sorry, I'm afraid you don't seem\n"
+	.string "to have an account with us.$"
 
 CranewingCity_Bank_Clerk_Text_2:
 	.string "See the clerk to open one today!$"

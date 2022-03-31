@@ -4,7 +4,9 @@ const BRADLEY = 4
 //=====================================
 // Map Scripts
 //=====================================
-mapscripts CranewingCity_PokemonCenter_MapScripts {}
+mapscripts CranewingCity_PokemonCenter_MapScripts  {
+    MAP_SCRIPT_ON_TRANSITION: CranewingCity_PokemonCenter_OnTransition
+}
 
 //=====================================
 // Global Scripts
@@ -31,6 +33,10 @@ script(global) CranewingCity_PokemonCenter_Beauty {
 //=====================================
 // Local Scripts
 //=====================================
+script(local) CranewingCity_PokemonCenter_OnTransition {
+	setrespawn(HEAL_LOCATION_SOFTWIND_CITY)
+    end
+}
 
 //=====================================
 // Text

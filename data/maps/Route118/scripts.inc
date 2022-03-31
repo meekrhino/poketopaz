@@ -188,7 +188,7 @@ Route118_Movement_StevenExit2:
 	step_end
 
 Route118_EventScript_Rose::
-	trainerbattle_single TRAINER_ROSE_1, Route118_Text_RoseIntro, Route118_Text_RoseDefeat, Route118_EventScript_RegisterRose
+	trainerbattle_single TRAINER_ALISA_1_VENAP, Route118_Text_RoseIntro, Route118_Text_RoseDefeat, Route118_EventScript_RegisterRose
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route118_EventScript_RematchRose
@@ -200,12 +200,12 @@ Route118_EventScript_RegisterRose::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route118_Text_RoseRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ROSE_1
+	register_matchcall TRAINER_ALISA_1_VENAP
 	release
 	end
 
 Route118_EventScript_RematchRose::
-	trainerbattle_rematch TRAINER_ROSE_1, Route118_Text_RoseRematchIntro, Route118_Text_RoseRematchDefeat
+	trainerbattle_rematch TRAINER_ALISA_1_VENAP, Route118_Text_RoseRematchIntro, Route118_Text_RoseRematchDefeat
 	msgbox Route118_Text_RosePostRematch, MSGBOX_AUTOCLOSE
 	end
 

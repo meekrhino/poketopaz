@@ -78,7 +78,7 @@ Route203_Text_Bard::
 	.string "flames to just this forest.\p"
 	.string "I can see it now…\p"
 	.string "“And the Pokémon and Trainers did join\n"
-	.string "as one force, unto the flames…$"
+	.string "as one force, unto the flames…”$"
 
 Route203_Text_ReedIntro::
 	.string "Puff… puff…\p"

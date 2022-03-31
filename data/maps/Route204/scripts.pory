@@ -31,7 +31,7 @@ script(global) Route204_RouteSignCranewingCity {
 }
 
 script(global) Route204_Boy {
-    if(var(VAR_ROUTE204_STATE) == ROUTE204_STATE_INIT) {
+    if(var(VAR_ROUTE204_STATE) != ROUTE204_STATE_DEFEATED_SHOOK_ALLARD) {
         msgbox(format("I saw some shady looking people in black lurking around the forest.\pI think Froy chased them away for now."), MSGBOX_NPC)
     }
     else {
@@ -64,7 +64,7 @@ script(global) Route204_ExpertWoman {
     end
 }
 
-script(global) Route204_ShookAndAllard {
+script(global) Route204_MeetShookAndAllard {
     lock
     addobject(SHOOK)
     applymovement(SHOOK, mShookAndAllardApproach1)
@@ -78,10 +78,10 @@ script(global) Route204_ShookAndAllard {
     applymovement(ALLARD, mShookAndAllardApproach2)
     waitmovement(0)
     applymovement(ALLARD, mFaceLeft)
-    waitmovement
+    waitmovement(0)
     msgbox("Grunt 2: Uh… Shook?\nWhat should we do with them?")
     applymovement(ALLARD, mFaceDown)
-    waitmovement
+    waitmovement(0)
     msgbox(format("Shook: Balfour will be angry if we let them through…\pI guess we have to take them out, ALLARD."))
     msgbox("Allard: Get ready, kid!\nWe're both coming at you at once!")
     closemessage
@@ -95,11 +95,11 @@ script(global) Route204_ShookAndAllard {
     getplayerxy(VAR_X_TEMP, VAR_Y_TEMP)
     if(var(VAR_X_TEMP) == 20) {
         // Player is in front of Shook
-        applymovement(mBradleyApproachesAllard)
+        applymovement(BRADLEY, mBradleyApproachesAllard)
     }
     else {
         // Player is in front of Allard
-        applymovement(mBradleyApproachesShook)
+        applymovement(BRADLEY, mBradleyApproachesShook)
     }
     waitmovement(0)
     msgbox(format("Allard: How did you get through the forest!?"))
@@ -125,18 +125,33 @@ script(global) Route204_ShookAndAllard {
         applymovement(SHOOK, mFaceUp)
         applymovement(ALLARD, mFaceDown)
     }
-    msgbox("Shook: Here we come!")
     closemessage
     // TODO battle vs shook and allard (team double battle)
+    copyobjectxytoperm(BRADLEY)
+    copyobjectxytoperm(SHOOK)
+    copyobjectxytoperm(ALLARD)
+    setrespawn(HEAL_LOCATION_CRANEWING_CITY)
+    trainerbattle_double(TRAINER_SHOOK_AND_ALLARD_1, Route204_Text_ShookAndAllardIntro, Route204_Text_ShookAndAllardDefeated, Route204_Text_ShookAndAllardNoMons, Route204_ShookAndAllardDefeated, NO_MUSIC)
+}
+
+script(global) Route204_ShookAndAllardDefeated {
     msgbox("Allard: What do we do now?")
-    msgbox("Shook: … … …\nWe have to run this time.\pBut we'll see you again, {PLAYER}")
+    msgbox("Shook: … … …\nWe have to run this time.\pBut we'll see you again, {PLAYER}.")
     closemessage
-    applymovement(SHOOK, mShookAndAllardRunAway)
-    applymovement(ALLARD, mShookAndAllardRunAway)
+    if(var(VAR_X_TEMP) == 20) {
+        // Player is in front of Shook
+        applymovement(SHOOK, mShookOrAllardRunAway)
+        applymovement(ALLARD, mAllardRunAway)
+    }
+    else {
+        // Player is in front of Allard
+        applymovement(SHOOK, mShookRunAway)
+        applymovement(ALLARD, mShookOrAllardRunAway)
+    }
     waitmovement(0)
     msgbox(Route204_Text_BradleyIsHurt)
     closemessage
-    applymovement(BRADLEY, mFaceUP)
+    applymovement(BRADLEY, mFaceUp)
     delay(60)
     msgbox(Route204_Text_RocketsRipUpPlants)
     closemessage
@@ -144,6 +159,9 @@ script(global) Route204_ShookAndAllard {
     waitmovement(0)
     msgbox(Route204_Text_BradleyDontWorryAboutMe)
     setflag(FLAG_ROCKETS_IN_CHARTREE)
+    clearflag(FLAG_HIDE_ROCKETS_IN_CHARTREE)
+    setvar(VAR_ROUTE204_STATE, ROUTE204_STATE_DEFEATED_SHOOK_ALLARD)
+    setflag(FLAG_HIDE_SHOOK_ALLARD_ROUTE_204)
     closemessage
     release
     end
@@ -257,17 +275,36 @@ text Route204_Text_BradleyDontWorryAboutMe {
     )
 }
 
+text Route204_Text_ShookAndAllardIntro {
+    format(
+        "Shook: Here we come!"
+    )
+}
+
+text Route204_Text_ShookAndAllardDefeated {
+    format(
+        "Allard: Not good, not good!"
+    )
+}
+
+text Route204_Text_ShookAndAllardNoMons {
+    format(
+        "placeholder no mons"
+    )
+}
+
+
 //=====================================
 // Movement
 //=====================================
 
 movement mShookAndAllardApproach1 {
-    walk_down * 3
+    walk_down * 4
     emote_exclamation_mark
 }
 
 movement mShookAndAllardApproach2 {
-    walk_down * 4
+    walk_down * 3
 }
 
 movement mBradleyApproachesShook {
@@ -279,8 +316,20 @@ movement mBradleyApproachesAllard {
     walk_down * 6
 }
 
-movement mShookAndAllardRunAway {
+movement mShookOrAllardRunAway {
     walk_up * 7
+    set_invisible
+}
+
+movement mShookRunAway {
+    walk_right
+    walk_fast_up * 7
+    set_invisible
+}
+
+movement mAllardRunAway {
+    walk_left
+    walk_fast_up * 7
     set_invisible
 }
 

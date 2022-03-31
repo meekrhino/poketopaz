@@ -1,107 +1,111 @@
 #ifndef GUARD_CONSTANTS_OPPONENTS_H
 #define GUARD_CONSTANTS_OPPONENTS_H
 
-#define TRAINER_NONE                          0
+#define TRAINER_NONE                         0
 
 //=====================================================
 // Route 201
 //=====================================================
-#define TRAINER_ALLEN                         1
-#define TRAINER_GUS                           2
+#define TRAINER_ALLEN                        1
+#define TRAINER_GUS                          2
 
 //=====================================================
 // Route 202
 //=====================================================
-#define TRAINER_TYLER                         3
-#define TRAINER_NOAH                          4
-#define TRAINER_MAT                           5
-#define TRAINER_JANICE                        6
+#define TRAINER_TYLER                        3
+#define TRAINER_NOAH                         4
+#define TRAINER_MAT                          5
+#define TRAINER_JANICE                       6
 
 //=====================================================
 // Rival #2
 //=====================================================
-#define TRAINER_BRADLEY_NEOBAY_2_VENAP        7
-#define TRAINER_BRADLEY_NEOBAY_2_CELSINGE     8
-#define TRAINER_BRADLEY_NEOBAY_2_ECHOISE      9
+#define TRAINER_BRADLEY_NEOBAY_2_VENAP       7
+#define TRAINER_BRADLEY_NEOBAY_2_CELSINGE    8
+#define TRAINER_BRADLEY_NEOBAY_2_ECHOISE     9
 
 //=====================================================
 // Route 203
 //=====================================================
-#define TRAINER_REED                         10
-#define TRAINER_RYAN                         11
-#define TRAINER_ALBERTO                      12
-#define TRAINER_CHARLIE                      13
-#define TRAINER_CLIFTON                      14
+#define TRAINER_REED                        10
+#define TRAINER_RYAN                        11
+#define TRAINER_ALBERTO                     12
+#define TRAINER_CHARLIE                     13
+#define TRAINER_CLIFTON                     14
 
 //=====================================================
 // Chartree Forest
 //=====================================================
-#define TRAINER_FRANKLIN                     15
-#define TRAINER_MARVIN                       16
-#define TRAINER_WALLY                        17
-#define TRAINER_ZELDA                        18
-#define TRAINER_SARAH                        19
+#define TRAINER_FRANKLIN                    15
+#define TRAINER_MARVIN                      16
+#define TRAINER_WALLY                       17
+#define TRAINER_ZELDA                       18
+#define TRAINER_SARAH                       19
 
 //=====================================================
 // Route 204
 //=====================================================
-#define TRAINER_AINA                         20
-#define TRAINER_DERRICK                      21
-#define TRAINER_LEXI                         22
-#define TRAINER_BEATRICE                     23
+#define TRAINER_AINA                        20
+#define TRAINER_DERRICK                     21
+#define TRAINER_LEXI                        22
+#define TRAINER_BEATRICE                    23
 
 //=====================================================
 // Cranewing Gym
 //=====================================================
-#define TRAINER_SLADE                        24
-#define TRAINER_LOLA                         25
-#define TRAINER_FROY                         26
+#define TRAINER_SLADE                       24
+#define TRAINER_LOLA                        25
+#define TRAINER_FROY                        26
 
 //=====================================================
 // Route 204  Rocket Encounter
 //=====================================================
-#define TRAINER_GRUNT_AQUA_HIDEOUT_5         27
-#define TRAINER_GRUNT_AQUA_HIDEOUT_6         28
-#define TRAINER_FREDRICK                     29
+#define TRAINER_SHOOK_AND_ALLARD_1          27
 
 //=====================================================
 // Chartree Forest Rocket Encounter
 //=====================================================
-#define TRAINER_MATT                         30
-#define TRAINER_ZANDER                       31
-#define TRAINER_SHELLY_WEATHER_INSTITUTE     32
-#define TRAINER_SHELLY_SEAFLOOR_CAVERN       33
+#define TRAINER_GRUNT_CHARTREE_1            28
+#define TRAINER_GRUNT_CHARTREE_2            29
+#define TRAINER_GRUNT_CHARTREE_3            30
+#define TRAINER_BALFOUR_1                   31
 
 //=====================================================
 // Softwind City Gym
 //=====================================================
-#define TRAINER_ARCHIE                       34
-#define TRAINER_LEAH                         35
+#define TRAINER_YUKI                        32
+#define TRAINER_NESSA                       33
+#define TRAINER_BRANDYN                     34
+#define TRAINER_GREGOR                      35
+#define TRAINER_THERMA                      36
+
+//=====================================================
+// Alisa #1
+//=====================================================
+#define TRAINER_ALISA_1_VENAP               37
+#define TRAINER_ALISA_1_CELSINGE            38
+#define TRAINER_ALISA_1_ECHOISE             39
 
 //=====================================================
 // Route 205
 //=====================================================
+#define TRAINER_FRANCIS                     40
+#define TRAINER_AMY_AND_ALLY                41
+#define TRAINER_TRAVIS                      42
+#define TRAINER_GWEN                        43
+#define TRAINER_PERCY                       44
+#define TRAINER_ISHMAEL                     45
 
 //=====================================================
 // Route 206
 //=====================================================
+#define TRAINER_MIKAEL                      46
+#define TRAINER_JURGEN                      47
+#define TRAINER_WINSTON                     48
+#define TRAINER_ELI                         49
+#define TRAINER_SIERRA                      50
+#define TRAINER_WANDA                       51
 
-#define TRAINER_DAISY                        36
-#define TRAINER_ROSE_1                       37
-#define TRAINER_FELIX                        38
-#define TRAINER_VIOLET                       39
-#define TRAINER_ROSE_2                       40
-#define TRAINER_ROSE_3                       41
-#define TRAINER_ROSE_4                       42
-#define TRAINER_ROSE_5                       43
-#define TRAINER_DUSTY_1                      44
-#define TRAINER_CHIP                         45
-#define TRAINER_FOSTER                       46
-#define TRAINER_DUSTY_2                      47
-#define TRAINER_DUSTY_3                      48
-#define TRAINER_DUSTY_4                      49
-#define TRAINER_DUSTY_5                      50
-#define TRAINER_GABBY_AND_TY_1               51
 #define TRAINER_GABBY_AND_TY_2               52
 #define TRAINER_GABBY_AND_TY_3               53
 #define TRAINER_GABBY_AND_TY_4               54
@@ -109,7 +113,7 @@
 #define TRAINER_GABBY_AND_TY_6               56
 #define TRAINER_LOLA_1                       57
 #define TRAINER_AUSTINA                      58
-#define TRAINER_GWEN                         59
+#define TRAINER_UNUSED_1                     59
 #define TRAINER_LOLA_2                       60
 #define TRAINER_LOLA_3                       61
 #define TRAINER_LOLA_4                       62
@@ -207,7 +211,7 @@
 #define TRAINER_DARRIN                      154
 #define TRAINER_TONY_1                      155
 #define TRAINER_JEROME                      156
-#define TRAINER_MATTHEW                     157
+#define TRAINER_GRUNT_CHARTREE_3HEW                     157
 #define TRAINER_DAVID                       158
 #define TRAINER_SPENCER                     159
 #define TRAINER_ROLAND                      160
@@ -268,7 +272,7 @@
 #define TRAINER_JUSTIN                      215
 #define TRAINER_ETHAN_1                     216
 #define TRAINER_AUTUMN                      217
-#define TRAINER_TRAVIS                      218
+#define TRAINER_UNUSED_2                    218
 #define TRAINER_ETHAN_2                     219
 #define TRAINER_ETHAN_3                     220
 #define TRAINER_ETHAN_4                     221
@@ -551,7 +555,7 @@
 #define TRAINER_ERNEST_3                    498
 #define TRAINER_ERNEST_4                    499
 #define TRAINER_ERNEST_5                    500
-#define TRAINER_ELI                         501
+#define TRAINER_UNUSED_3                    501
 #define TRAINER_ANNIKA                      502
 #define TRAINER_JAZMYN                      503
 #define TRAINER_JONAS                       504

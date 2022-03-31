@@ -13,8 +13,8 @@ Route204_RouteSignCranewingCity::
 
 
 Route204_Boy::
-	compare VAR_ROUTE204_STATE, 0
-	goto_if_eq Route204_Boy_2
+	compare VAR_ROUTE204_STATE, 2
+	goto_if_ne Route204_Boy_2
 	msgbox Route204_Boy_Text_1, MSGBOX_NPC
 Route204_Boy_1:
 	end
@@ -48,6 +48,174 @@ Route204_ExpertWoman::
 	end
 
 
+Route204_ShookAndAllard::
+	lock
+	addobject 2
+	applymovement 2, mShookAndAllardApproach1
+	delay 60
+	addobject 1
+	applymovement 1, mShookAndAllardApproach1
+	waitmovement 0
+	msgbox Route204_ShookAndAllard_Text_0
+	closemessage
+	applymovement 2, mShookAndAllardApproach2
+	applymovement 1, mShookAndAllardApproach2
+	waitmovement 0
+	applymovement 1, mFaceLeft
+	waitmovement 0
+	msgbox Route204_ShookAndAllard_Text_1
+	applymovement 1, mFaceDown
+	waitmovement 0
+	msgbox Route204_ShookAndAllard_Text_2
+	msgbox Route204_ShookAndAllard_Text_3
+	closemessage
+	delay 15
+	msgbox Route204_ShookAndAllard_Text_4
+	applymovement 2, mLookUpStartled
+	applymovement 1, mLookUpStartled
+	waitmovement 0
+	closemessage
+	addobject 3
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 20
+	goto_if_eq Route204_ShookAndAllard_2
+	applymovement 3, mBradleyApproachesShook
+Route204_ShookAndAllard_1:
+	waitmovement 0
+	msgbox Route204_ShookAndAllard_Text_5
+	msgbox Route204_ShookAndAllard_Text_6
+	closemessage
+	applymovement 3, mBradleyFidgetsDown
+	waitmovement 0
+	msgbox Route204_ShookAndAllard_Text_7
+	closemessage
+	delay 30
+	applymovement 2, mFaceRight
+	applymovement 1, mFaceLeft
+	waitmovement 0
+	msgbox Route204_ShookAndAllard_Text_8
+	msgbox Route204_ShookAndAllard_Text_9
+	compare VAR_TEMP_0, 20
+	goto_if_eq Route204_ShookAndAllard_6
+	applymovement 2, mFaceUp
+	applymovement 1, mFaceDown
+Route204_ShookAndAllard_5:
+	msgbox Route204_ShookAndAllard_Text_10
+	closemessage
+	msgbox Route204_ShookAndAllard_Text_11
+	msgbox Route204_ShookAndAllard_Text_12
+	closemessage
+	compare VAR_TEMP_0, 20
+	goto_if_eq Route204_ShookAndAllard_10
+	applymovement 2, mShookRunAway
+	applymovement 1, mShookOrAllardRunAway
+Route204_ShookAndAllard_9:
+	waitmovement 0
+	msgbox Route204_Text_BradleyIsHurt
+	closemessage
+	applymovement 3, mFaceUp
+	delay 60
+	msgbox Route204_Text_RocketsRipUpPlants
+	closemessage
+	applymovement 3, mBradleyFidgetsDown
+	waitmovement 0
+	msgbox Route204_Text_BradleyDontWorryAboutMe
+	setflag FLAG_ROCKETS_IN_CHARTREE
+	clearflag FLAG_HIDE_ROCKETS_IN_CHARTREE
+	setvar VAR_ROUTE204_STATE, 2
+	setflag FLAG_HIDE_SHOOK_ALLARD_ROUTE_204
+	closemessage
+	release
+	end
+
+Route204_ShookAndAllard_2:
+	applymovement 3, mBradleyApproachesAllard
+	goto Route204_ShookAndAllard_1
+
+Route204_ShookAndAllard_6:
+	applymovement 2, mFaceDown
+	applymovement 1, mFaceUp
+	goto Route204_ShookAndAllard_5
+
+Route204_ShookAndAllard_10:
+	applymovement 2, mShookOrAllardRunAway
+	applymovement 1, mAllardRunAway
+	goto Route204_ShookAndAllard_9
+
+
+Route204_BradleyHurt::
+	msgbox Route204_BradleyHurt_Text_0, MSGBOX_NPC
+	end
+
+
+mShookAndAllardApproach1:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	emote_exclamation_mark
+	step_end
+
+mShookAndAllardApproach2:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+mBradleyApproachesShook:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+mBradleyApproachesAllard:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+mShookOrAllardRunAway:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+mShookRunAway:
+	walk_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	set_invisible
+	step_end
+
+mAllardRunAway:
+	walk_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	set_invisible
+	step_end
+
 Route204_RouteSignChartreeForest_Text_0:
 	.string "Chartree Forest\nPlease watch your step.$"
 
@@ -64,6 +232,62 @@ Route204_Boy_Text_1:
 	.string "good this time.\p"
 	.string "Well done!\n"
 	.string "You must be some trainer!$"
+
+Route204_ShookAndAllard_Text_0:
+	.string "Grunt 1: Hey, you!$"
+
+Route204_ShookAndAllard_Text_1:
+	.string "Grunt 2: Uh… Shook?\nWhat should we do with them?$"
+
+Route204_ShookAndAllard_Text_2:
+	.string "Shook: Balfour will be angry if we let\n"
+	.string "them through…\p"
+	.string "I guess we have to take them out,\n"
+	.string "ALLARD.$"
+
+Route204_ShookAndAllard_Text_3:
+	.string "Allard: Get ready, kid!\nWe're both coming at you at once!$"
+
+Route204_ShookAndAllard_Text_4:
+	.string "???: I don't think so!$"
+
+Route204_ShookAndAllard_Text_5:
+	.string "Allard: How did you get through the\n"
+	.string "forest!?$"
+
+Route204_ShookAndAllard_Text_6:
+	.string "Bradley: I broke through everything in\n"
+	.string "my way!\p"
+	.string "You Rockets are no match for me!$"
+
+Route204_ShookAndAllard_Text_7:
+	.string "Bradley: Nice to see you, {PLAYER}!\n"
+	.string "Are you ready?\p"
+	.string "These guys are no match for us\n"
+	.string "together!$"
+
+Route204_ShookAndAllard_Text_8:
+	.string "Allard: This is bad, Shook!\p"
+	.string "I don't think we can beat both of them…$"
+
+Route204_ShookAndAllard_Text_9:
+	.string "Shook: We have to try…\p"
+	.string "We can't get an executive angry, not on\n"
+	.string "our first mission.$"
+
+Route204_ShookAndAllard_Text_10:
+	.string "Shook: Here we come!$"
+
+Route204_ShookAndAllard_Text_11:
+	.string "Allard: What do we do now?$"
+
+Route204_ShookAndAllard_Text_12:
+	.string "Shook: … … …\nWe have to run this time.\pBut we'll see you again, {PLAYER}.$"
+
+Route204_BradleyHurt_Text_0:
+	.string "Bradley: I'll get someone to help me to\n"
+	.string "the Pokémon Center.\p"
+	.string "You need to hurry!$"
 
 Route204_Text_AinaIntro::
 	.string "Did you know the ash in the forest can\n"
@@ -126,3 +350,25 @@ Route204_Text_BeatricePostBattle::
 	.string "Whenever one of mine gets strong, I\n"
 	.string "trade for a weaker, more rare Pokémon.\p"
 	.string "That way I can do the whole thing again!$"
+
+Route204_Text_BradleyIsHurt::
+	.string "Bradley: I put on a show for them, but I\n"
+	.string "hurt myself, {PLAYER}.\p"
+	.string "I've done something to my ankle, and I\n"
+	.string "don't think I can battle anymore.\p"
+	.string "I beat a couple of the guys in there,\n"
+	.string "but there are still a few left.$"
+
+Route204_Text_RocketsRipUpPlants::
+	.string "Bradley: They're collecting the ash by\n"
+	.string "ripping all the plants with ash on them\l"
+	.string "out of the ground…\p"
+	.string "If they do that…\n"
+	.string "where will all the Pokémon live?$"
+
+Route204_Text_BradleyDontWorryAboutMe::
+	.string "Bradley: {PLAYER}, you have to go in\n"
+	.string "there and stop them!\p"
+	.string "Don't worry about me, I'll get someone\n"
+	.string "to help me to the Pokémon Center.\p"
+	.string "You need to hurry!$"

@@ -2,6 +2,16 @@ CranewingCity_MapScripts::
 	.byte 0
 
 
+CranewingCity_Sign::
+	msgbox CranewingCity_Text_TownSign, MSGBOX_SIGN
+	end
+
+
+CranewingCity_GlassworksSign::
+	msgbox CranewingCity_Text_GlassworksSign, MSGBOX_SIGN
+	end
+
+
 CranewingCity_Man::
 	msgbox CranewingCity_Man_Text_0, MSGBOX_NPC
 	end
@@ -50,6 +60,7 @@ CranewingCity_Escort_9:
 	closemessage
 	applymovement 4, mEscortLeavesTheArea
 	waitmovement 0
+	removeobject 4
 	setvar VAR_CRANEWING_CITY_STATE, 1
 	releaseall
 	end
@@ -387,3 +398,12 @@ CranewingCity_Escort_Text_1:
 	.string "there are always opportunities to get\l"
 	.string "involved!\p"
 	.string "Anyway, I hope you enjoy your stay.$"
+
+CranewingCity_Text_TownSign::
+	.string "Cranewing City\n"
+	.string "“Home of the world-famous Glassworks!”$"
+
+CranewingCity_Text_GlassworksSign::
+	.string "Glassworks\n"
+	.string "Makers of the finest glassware in two\l"
+	.string "regions.$"
