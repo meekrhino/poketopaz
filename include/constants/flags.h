@@ -56,7 +56,7 @@
 #define FLAG_HIDE_BRADLEY_CRANEWING_CENTER  0x2C
 #define FLAG_HIDE_ESCORT_CRANEWING_CITY     0x2D
 #define FLAG_BANK_ACCOUNT_CREATED           0x2E
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
+#define FLAG_HIDE_BRADLEY_ROUTE_204         0x2F
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag

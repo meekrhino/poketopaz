@@ -12,6 +12,12 @@ const ROUTE204_STATE_INIT = 0
 const ROUTE204_STATE_DEFEATED_FROY = 1
 const ROUTE204_STATE_DEFEATED_SHOOK_ALLARD = 2
 
+// VAR_CHARTREE_FOREST_STATE values
+const CHARTREE_FOREST_INIT = 0
+const CHARTREE_FOREST_MET_FROY = 1
+const CHARTREE_FOREST_ROCKETS_IN_FOREST = 2
+const CHARTREE_FOREST_ROCKETS_DEFEATED = 3
+
 //=====================================
 // Map Scripts
 //=====================================
@@ -149,6 +155,8 @@ script(global) Route204_ShookAndAllardDefeated {
         applymovement(ALLARD, mShookOrAllardRunAway)
     }
     waitmovement(0)
+    removeobject(SHOOK)
+    removeobject(ALLARD)
     msgbox(Route204_Text_BradleyIsHurt)
     closemessage
     applymovement(BRADLEY, mFaceUp)
@@ -161,6 +169,7 @@ script(global) Route204_ShookAndAllardDefeated {
     setflag(FLAG_ROCKETS_IN_CHARTREE)
     clearflag(FLAG_HIDE_ROCKETS_IN_CHARTREE)
     setvar(VAR_ROUTE204_STATE, ROUTE204_STATE_DEFEATED_SHOOK_ALLARD)
+    setvar(VAR_CHARTREE_FOREST_STATE, CHARTREE_FOREST_ROCKETS_IN_FOREST)
     setflag(FLAG_HIDE_SHOOK_ALLARD_ROUTE_204)
     closemessage
     release

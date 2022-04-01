@@ -116,6 +116,85 @@ ChartreeForest_Lass::
 	end
 
 
+ChartreeForest_RocketGrunt1::
+	trainerbattle_single TRAINER_GRUNT_CHARTREE_1, ChartreeForest_Text_RocketGrunt1Intro, ChartreeForest_Text_RocketGrunt1Defeated
+	msgbox ChartreeForest_Text_RocketGrunt1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+ChartreeForest_RocketGrunt2::
+	trainerbattle_single TRAINER_GRUNT_CHARTREE_2, ChartreeForest_Text_RocketGrunt2Intro, ChartreeForest_Text_RocketGrunt2Defeated
+	msgbox ChartreeForest_Text_RocketGrunt2PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+ChartreeForest_RocketGrunt3::
+	trainerbattle_single TRAINER_GRUNT_CHARTREE_3, ChartreeForest_Text_RocketGrunt3Intro, ChartreeForest_Text_RocketGrunt3Defeated
+	msgbox ChartreeForest_Text_RocketGrunt3PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+ChartreeForest_RocketGrunt4::
+	msgbox ChartreeForest_RocketGrunt4_Text_0, MSGBOX_NPC
+	end
+
+
+ChartreeForest_Balfour::
+	lock
+	applymovement 14, mLookRightStartled
+	waitmovement 0
+	msgbox ChartreeForest_Balfour_Text_0
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	switch VAR_TEMP_1
+	case 6, ChartreeForest_Balfour_3
+	case 7, ChartreeForest_Balfour_4
+ChartreeForest_Balfour_1:
+	msgbox ChartreeForest_Text_BalfourAttacks
+	closemessage
+	applymovement 15, mWalkRight2
+	waitmovement 0
+	msgbox ChartreeForest_Balfour_Text_1
+	closemessage
+	trainerbattle_no_intro 15, ChartreeForest_Text_BalfourDefeated
+	msgbox ChartreeForest_Balfour_Text_2
+	msgbox ChartreeForest_Text_BalfourScoffsAtDefeat
+	closemessage
+	switch VAR_TEMP_1
+	case 6, ChartreeForest_Balfour_7
+	case 7, ChartreeForest_Balfour_8
+ChartreeForest_Balfour_5:
+	waitmovement 0
+	msgbox ChartreeForest_Balfour_Text_3
+	closemessage
+	applymovement 14, mGruntRunsAwayAfterBalfour
+	waitmovement 0
+	removeobject 15
+	removeobject 14
+	setvar VAR_CHARTREE_FOREST_STATE, 3
+	setflag FLAG_HIDE_BRADLEY_ROUTE_204
+	clearflag FLAG_ROCKETS_IN_CHARTREE
+	setflag FLAG_HIDE_ROCKETS_IN_CHARTREE
+	release
+	end
+
+ChartreeForest_Balfour_3:
+	applymovement 15, mBalfourApproachesTop
+	goto ChartreeForest_Balfour_1
+
+ChartreeForest_Balfour_4:
+	applymovement 15, mBalfourApproachesBottom
+	goto ChartreeForest_Balfour_1
+
+ChartreeForest_Balfour_7:
+	applymovement 15, mBalfourDepartsTop
+	goto ChartreeForest_Balfour_5
+
+ChartreeForest_Balfour_8:
+	applymovement 15, mBalfourDepartsBottom
+	goto ChartreeForest_Balfour_5
+
+
 mFroyApproaches_1:
 	walk_up
 	walk_left
@@ -208,6 +287,62 @@ mFroyLeaves_3:
 	set_invisible
 	step_end
 
+mLookRightStartled:
+	face_right
+	emote_exclamation_mark
+	step_end
+
+mBalfourApproachesTop:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mBalfourApproachesBottom:
+	walk_right
+	walk_right
+	walk_down
+	walk_right
+	step_end
+
+mWalkRight2:
+	walk_right
+	walk_right
+	step_end
+
+mBalfourDepartsTop:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	set_invisible
+	step_end
+
+mBalfourDepartsBottom:
+	walk_left
+	walk_left
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	set_invisible
+	step_end
+
+mGruntRunsAwayAfterBalfour:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	set_invisible
+	step_end
+
 ChartreeForest_SignRoute203_Text_0:
 	.string "{DOWN_ARROW} Exit to Route 203$"
 
@@ -229,6 +364,31 @@ ChartreeForest_LostWoman_Text_0:
 	.string "I jumped over that ledge and now I\n"
 	.string "don't know where to go…$"
 
+ChartreeForest_RocketGrunt4_Text_0:
+	.string "Sorry, kid.\n"
+	.string "I was told not to leave this spot.\p"
+	.string "I know better than to get drawn into a\n"
+	.string "fight with one of you Trainer kids.\p"
+	.string "Get gone!$"
+
+ChartreeForest_Balfour_Text_0:
+	.string "Grunt: Uh, Balfour sir?\p"
+	.string "This kid just beat all the workers that\n"
+	.string "were left.$"
+
+ChartreeForest_Balfour_Text_1:
+	.string "Balfour: We're taking this ash, and\n"
+	.string "there isn't anything you can do about\l"
+	.string "it.$"
+
+ChartreeForest_Balfour_Text_2:
+	.string "Grunt: …what?\pThis kid beat an Executive!?$"
+
+ChartreeForest_Balfour_Text_3:
+	.string "Grunt: Where are Allard and Shook?\p"
+	.string "If it wasn't for their failure, we could\n"
+	.string "have collected so much more ash…$"
+
 ChartreeForest_Text_FroyIntroduction::
 	.string "Froy: Hey kid, I'm Froy.\p"
 	.string "Have you seen any people in black\n"
@@ -240,7 +400,7 @@ ChartreeForest_Text_FroyIntroduction::
 	.string "but…$"
 
 ChartreeForest_Text_FroyAboutGym::
-	.string "Froy: It looks liek they've gone, at\n"
+	.string "Froy: It looks like they've gone, at\n"
 	.string "least for now.\p"
 	.string "At's supposed to be my job as gym\n"
 	.string "leader to protect the forest from\l"
@@ -330,3 +490,68 @@ ChartreeForest_Text_SarahDefeated::
 ChartreeForest_Text_SarahPostBattle::
 	.string "…Okay, I might have exaggerated.\p"
 	.string "You're actually very close to the exit.$"
+
+ChartreeForest_Text_RocketGrunt1Intro::
+	.string "Team Rocket has important work in this\n"
+	.string "forest.\p"
+	.string "We have no time for you.\n"
+	.string "Get out of our way!$"
+
+ChartreeForest_Text_RocketGrunt1Defeated::
+	.string "Another kid causing trouble…$"
+
+ChartreeForest_Text_RocketGrunt1PostBattle::
+	.string "Well, you beat me.\p"
+	.string "What, you thought I'd just let you\n"
+	.string "pass?\p"
+	.string "My Pokémon are defeated, but I'm still\n"
+	.string "standing.$"
+
+ChartreeForest_Text_RocketGrunt2Intro::
+	.string "What's a little kid like you doing in a\n"
+	.string "dangerous place like this?$"
+
+ChartreeForest_Text_RocketGrunt2Defeated::
+	.string "This strong at your age?$"
+
+ChartreeForest_Text_RocketGrunt2PostBattle::
+	.string "You may be strong, but you'd still best\n"
+	.string "step lightly.\p"
+	.string "Team Rocket has business here.\n"
+	.string "That means you don't.$"
+
+ChartreeForest_Text_RocketGrunt3Intro::
+	.string "You must be the kid that fool lost to.\p"
+	.string "That won't happen again!\n"
+	.string "I won't disappoint Balfour!$"
+
+ChartreeForest_Text_RocketGrunt3Defeated::
+	.string "Such shame…$"
+
+ChartreeForest_Text_RocketGrunt3PostBattle::
+	.string "Look, just don't mention you saw me,\n"
+	.string "alright?\p"
+	.string "I'd rather Balfour just thinks I missed\n"
+	.string "seeing you…$"
+
+ChartreeForest_Text_BalfourAttacks::
+	.string "Balfour: …This isn't the same one that\n"
+	.string "defeated all of your Pokémon, is it?\p"
+	.string "This is someone new.\p"
+	.string "Why can't any of our missions end\n"
+	.string "peacefully?\p"
+	.string "Why is it that we always end up\n"
+	.string "fighting?\p"
+	.string "Well, I guess it's part of the job,\n"
+	.string "stopping ignorant children.$"
+
+ChartreeForest_Text_BalfourDefeated::
+	.string "…! You're lucky, kid.$"
+
+ChartreeForest_Text_BalfourScoffsAtDefeat::
+	.string "Balfour: Heh, you're lucky, kid.\p"
+	.string "I didn't bring my own Pokémon into this\n"
+	.string "sooty forest, but still…\p"
+	.string "You are impressive.\n"
+	.string "You win this time, but we I have no\l"
+	.string "doubt we will meet again.$"

@@ -48,7 +48,7 @@ Route204_ExpertWoman::
 	end
 
 
-Route204_ShookAndAllard::
+Route204_MeetShookAndAllard::
 	lock
 	addobject 2
 	applymovement 2, mShookAndAllardApproach1
@@ -56,21 +56,21 @@ Route204_ShookAndAllard::
 	addobject 1
 	applymovement 1, mShookAndAllardApproach1
 	waitmovement 0
-	msgbox Route204_ShookAndAllard_Text_0
+	msgbox Route204_MeetShookAndAllard_Text_0
 	closemessage
 	applymovement 2, mShookAndAllardApproach2
 	applymovement 1, mShookAndAllardApproach2
 	waitmovement 0
 	applymovement 1, mFaceLeft
 	waitmovement 0
-	msgbox Route204_ShookAndAllard_Text_1
+	msgbox Route204_MeetShookAndAllard_Text_1
 	applymovement 1, mFaceDown
 	waitmovement 0
-	msgbox Route204_ShookAndAllard_Text_2
-	msgbox Route204_ShookAndAllard_Text_3
+	msgbox Route204_MeetShookAndAllard_Text_2
+	msgbox Route204_MeetShookAndAllard_Text_3
 	closemessage
 	delay 15
-	msgbox Route204_ShookAndAllard_Text_4
+	msgbox Route204_MeetShookAndAllard_Text_4
 	applymovement 2, mLookUpStartled
 	applymovement 1, mLookUpStartled
 	waitmovement 0
@@ -78,39 +78,58 @@ Route204_ShookAndAllard::
 	addobject 3
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 20
-	goto_if_eq Route204_ShookAndAllard_2
+	goto_if_eq Route204_MeetShookAndAllard_2
 	applymovement 3, mBradleyApproachesShook
-Route204_ShookAndAllard_1:
+Route204_MeetShookAndAllard_1:
 	waitmovement 0
-	msgbox Route204_ShookAndAllard_Text_5
-	msgbox Route204_ShookAndAllard_Text_6
+	msgbox Route204_MeetShookAndAllard_Text_5
+	msgbox Route204_MeetShookAndAllard_Text_6
 	closemessage
 	applymovement 3, mBradleyFidgetsDown
 	waitmovement 0
-	msgbox Route204_ShookAndAllard_Text_7
+	msgbox Route204_MeetShookAndAllard_Text_7
 	closemessage
 	delay 30
 	applymovement 2, mFaceRight
 	applymovement 1, mFaceLeft
 	waitmovement 0
-	msgbox Route204_ShookAndAllard_Text_8
-	msgbox Route204_ShookAndAllard_Text_9
+	msgbox Route204_MeetShookAndAllard_Text_8
+	msgbox Route204_MeetShookAndAllard_Text_9
 	compare VAR_TEMP_0, 20
-	goto_if_eq Route204_ShookAndAllard_6
+	goto_if_eq Route204_MeetShookAndAllard_6
 	applymovement 2, mFaceUp
 	applymovement 1, mFaceDown
-Route204_ShookAndAllard_5:
-	msgbox Route204_ShookAndAllard_Text_10
+Route204_MeetShookAndAllard_5:
 	closemessage
-	msgbox Route204_ShookAndAllard_Text_11
-	msgbox Route204_ShookAndAllard_Text_12
+	copyobjectxytoperm 3
+	copyobjectxytoperm 2
+	copyobjectxytoperm 1
+	setrespawn HEAL_LOCATION_CRANEWING_CITY
+	trainerbattle_double TRAINER_SHOOK_AND_ALLARD_1, Route204_Text_ShookAndAllardIntro, Route204_Text_ShookAndAllardDefeated, Route204_Text_ShookAndAllardNoMons, Route204_ShookAndAllardDefeated, NO_MUSIC
+	return
+
+Route204_MeetShookAndAllard_2:
+	applymovement 3, mBradleyApproachesAllard
+	goto Route204_MeetShookAndAllard_1
+
+Route204_MeetShookAndAllard_6:
+	applymovement 2, mFaceDown
+	applymovement 1, mFaceUp
+	goto Route204_MeetShookAndAllard_5
+
+
+Route204_ShookAndAllardDefeated::
+	msgbox Route204_ShookAndAllardDefeated_Text_0
+	msgbox Route204_ShookAndAllardDefeated_Text_1
 	closemessage
 	compare VAR_TEMP_0, 20
-	goto_if_eq Route204_ShookAndAllard_10
+	goto_if_eq Route204_ShookAndAllardDefeated_2
 	applymovement 2, mShookRunAway
 	applymovement 1, mShookOrAllardRunAway
-Route204_ShookAndAllard_9:
+Route204_ShookAndAllardDefeated_1:
 	waitmovement 0
+	removeobject 2
+	removeobject 1
 	msgbox Route204_Text_BradleyIsHurt
 	closemessage
 	applymovement 3, mFaceUp
@@ -123,24 +142,16 @@ Route204_ShookAndAllard_9:
 	setflag FLAG_ROCKETS_IN_CHARTREE
 	clearflag FLAG_HIDE_ROCKETS_IN_CHARTREE
 	setvar VAR_ROUTE204_STATE, 2
+	setvar VAR_CHARTREE_FOREST_STATE, 2
 	setflag FLAG_HIDE_SHOOK_ALLARD_ROUTE_204
 	closemessage
 	release
 	end
 
-Route204_ShookAndAllard_2:
-	applymovement 3, mBradleyApproachesAllard
-	goto Route204_ShookAndAllard_1
-
-Route204_ShookAndAllard_6:
-	applymovement 2, mFaceDown
-	applymovement 1, mFaceUp
-	goto Route204_ShookAndAllard_5
-
-Route204_ShookAndAllard_10:
+Route204_ShookAndAllardDefeated_2:
 	applymovement 2, mShookOrAllardRunAway
 	applymovement 1, mAllardRunAway
-	goto Route204_ShookAndAllard_9
+	goto Route204_ShookAndAllardDefeated_1
 
 
 Route204_BradleyHurt::
@@ -233,55 +244,52 @@ Route204_Boy_Text_1:
 	.string "Well done!\n"
 	.string "You must be some trainer!$"
 
-Route204_ShookAndAllard_Text_0:
+Route204_MeetShookAndAllard_Text_0:
 	.string "Grunt 1: Hey, you!$"
 
-Route204_ShookAndAllard_Text_1:
+Route204_MeetShookAndAllard_Text_1:
 	.string "Grunt 2: Uh… Shook?\nWhat should we do with them?$"
 
-Route204_ShookAndAllard_Text_2:
+Route204_MeetShookAndAllard_Text_2:
 	.string "Shook: Balfour will be angry if we let\n"
 	.string "them through…\p"
 	.string "I guess we have to take them out,\n"
 	.string "ALLARD.$"
 
-Route204_ShookAndAllard_Text_3:
+Route204_MeetShookAndAllard_Text_3:
 	.string "Allard: Get ready, kid!\nWe're both coming at you at once!$"
 
-Route204_ShookAndAllard_Text_4:
+Route204_MeetShookAndAllard_Text_4:
 	.string "???: I don't think so!$"
 
-Route204_ShookAndAllard_Text_5:
+Route204_MeetShookAndAllard_Text_5:
 	.string "Allard: How did you get through the\n"
 	.string "forest!?$"
 
-Route204_ShookAndAllard_Text_6:
+Route204_MeetShookAndAllard_Text_6:
 	.string "Bradley: I broke through everything in\n"
 	.string "my way!\p"
 	.string "You Rockets are no match for me!$"
 
-Route204_ShookAndAllard_Text_7:
+Route204_MeetShookAndAllard_Text_7:
 	.string "Bradley: Nice to see you, {PLAYER}!\n"
 	.string "Are you ready?\p"
 	.string "These guys are no match for us\n"
 	.string "together!$"
 
-Route204_ShookAndAllard_Text_8:
+Route204_MeetShookAndAllard_Text_8:
 	.string "Allard: This is bad, Shook!\p"
 	.string "I don't think we can beat both of them…$"
 
-Route204_ShookAndAllard_Text_9:
+Route204_MeetShookAndAllard_Text_9:
 	.string "Shook: We have to try…\p"
 	.string "We can't get an executive angry, not on\n"
 	.string "our first mission.$"
 
-Route204_ShookAndAllard_Text_10:
-	.string "Shook: Here we come!$"
-
-Route204_ShookAndAllard_Text_11:
+Route204_ShookAndAllardDefeated_Text_0:
 	.string "Allard: What do we do now?$"
 
-Route204_ShookAndAllard_Text_12:
+Route204_ShookAndAllardDefeated_Text_1:
 	.string "Shook: … … …\nWe have to run this time.\pBut we'll see you again, {PLAYER}.$"
 
 Route204_BradleyHurt_Text_0:
@@ -372,3 +380,12 @@ Route204_Text_BradleyDontWorryAboutMe::
 	.string "Don't worry about me, I'll get someone\n"
 	.string "to help me to the Pokémon Center.\p"
 	.string "You need to hurry!$"
+
+Route204_Text_ShookAndAllardIntro::
+	.string "Shook: Here we come!$"
+
+Route204_Text_ShookAndAllardDefeated::
+	.string "Allard: Not good, not good!$"
+
+Route204_Text_ShookAndAllardNoMons::
+	.string "placeholder no mons$"

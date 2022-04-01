@@ -106,6 +106,18 @@
 #define TRAINER_SIERRA                      50
 #define TRAINER_WANDA                       51
 
+
+
+
+
+
+
+
+
+
+
+
+
 #define TRAINER_GABBY_AND_TY_2               52
 #define TRAINER_GABBY_AND_TY_3               53
 #define TRAINER_GABBY_AND_TY_4               54

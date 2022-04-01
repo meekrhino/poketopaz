@@ -1,4 +1,5 @@
 CranewingCity_PokemonCenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CranewingCity_PokemonCenter_OnTransition
 	.byte 0
 
 
@@ -18,6 +19,11 @@ CranewingCity_PokemonCenter_FatMan::
 
 CranewingCity_PokemonCenter_Beauty::
 	msgbox CranewingCity_Text_Beauty, MSGBOX_NPC
+	end
+
+
+CranewingCity_PokemonCenter_OnTransition:
+	setrespawn HEAL_LOCATION_SOFTWIND_CITY
 	end
 
 
