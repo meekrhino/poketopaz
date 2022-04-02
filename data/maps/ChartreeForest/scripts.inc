@@ -150,13 +150,14 @@ ChartreeForest_Balfour::
 	case 6, ChartreeForest_Balfour_3
 	case 7, ChartreeForest_Balfour_4
 ChartreeForest_Balfour_1:
+	waitmovement 0
 	msgbox ChartreeForest_Text_BalfourAttacks
 	closemessage
 	applymovement 15, mWalkRight2
 	waitmovement 0
 	msgbox ChartreeForest_Balfour_Text_1
 	closemessage
-	trainerbattle_no_intro 15, ChartreeForest_Text_BalfourDefeated
+	trainerbattle_no_intro TRAINER_BALFOUR_1, ChartreeForest_Text_BalfourDefeated
 	msgbox ChartreeForest_Balfour_Text_2
 	msgbox ChartreeForest_Text_BalfourScoffsAtDefeat
 	closemessage
@@ -172,9 +173,12 @@ ChartreeForest_Balfour_5:
 	removeobject 15
 	removeobject 14
 	setvar VAR_CHARTREE_FOREST_STATE, 3
+	setvar VAR_SOFTWIND_CITY_STATE, 3
 	setflag FLAG_HIDE_BRADLEY_ROUTE_204
 	clearflag FLAG_ROCKETS_IN_CHARTREE
 	setflag FLAG_HIDE_ROCKETS_IN_CHARTREE
+	clearflag FLAG_HIDE_SOFTWIND_CITY_ORION
+	clearflag FLAG_HIDE_SOFTWIND_CITY_WILLOW
 	release
 	end
 
@@ -546,12 +550,13 @@ ChartreeForest_Text_BalfourAttacks::
 	.string "stopping ignorant children.$"
 
 ChartreeForest_Text_BalfourDefeated::
-	.string "…! You're lucky, kid.$"
+	.string "… … …!\n"
+	.string "Just luck, that's all.$"
 
 ChartreeForest_Text_BalfourScoffsAtDefeat::
 	.string "Balfour: Heh, you're lucky, kid.\p"
 	.string "I didn't bring my own Pokémon into this\n"
 	.string "sooty forest, but still…\p"
 	.string "You are impressive.\n"
-	.string "You win this time, but we I have no\l"
-	.string "doubt we will meet again.$"
+	.string "You win this time, but I have no doubt\l"
+	.string "we will meet again.$"

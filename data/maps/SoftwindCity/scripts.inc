@@ -179,6 +179,8 @@ SoftwindCity_TriggerOrion_1_5:
 SoftwindCity_TriggerOrion_1_11:
 	waitmovement 0
 	removeobject 11
+	setflag FLAG_HIDE_SOFTWIND_CITY_ROCKET
+	setflag FLAG_HIDE_SOFTWIND_CITY_ORION
 	special RemoveCameraObject
 	setvar VAR_SOFTWIND_CITY_STATE, 2
 	releaseall
@@ -208,6 +210,106 @@ SoftwindCity_TriggerOrion_1_10:
 SoftwindCity_TriggerOrion_1_12:
 	applymovement 11, mDefenderWalksPastPlayer_2
 	goto SoftwindCity_TriggerOrion_1_11
+
+
+SoftwindCity_TriggerOrion_2::
+	lockall
+	applymovement 11, mStartledWalkRight
+	waitmovement 0
+	msgbox SoftwindCity_Text_DefenderScolds
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	switch VAR_TEMP_1
+	case 34, SoftwindCity_TriggerOrion_2_3
+	case 35, SoftwindCity_TriggerOrion_2_4
+	case 36, SoftwindCity_TriggerOrion_2_5
+	case 37, SoftwindCity_TriggerOrion_2_6
+SoftwindCity_TriggerOrion_2_1:
+	waitmovement 0
+	trainerbattle_no_intro TRAINER_WOLSEY_1, SoftwindCity_Text_WolseyDefeated
+	msgbox SoftwindCity_TriggerOrion_2_Text_0
+	msgbox SoftwindCity_TriggerOrion_2_Text_1
+	closemessage
+	applymovement 11, mFaceLeft
+	waitmovement 0
+	applymovement 8, mWillowApproachesDefender
+	msgbox SoftwindCity_TriggerOrion_2_Text_2
+	closemessage
+	delay 15
+	applymovement 11, mFaceRight
+	delay 15
+	msgbox SoftwindCity_Text_WolseyWillPunish
+	closemessage
+	switch VAR_TEMP_1
+	case 34, SoftwindCity_TriggerOrion_2_9
+	case 35, SoftwindCity_TriggerOrion_2_10
+	case 36, SoftwindCity_TriggerOrion_2_11
+	case 37, SoftwindCity_TriggerOrion_2_12
+SoftwindCity_TriggerOrion_2_7:
+	waitmovement 0
+	removeobject 11
+	msgbox SoftwindCity_Text_WillowCatchesUp
+	opendoor 29, 32
+	waitdooranim
+	addobject 7
+	setobjectxy 7, 29, 32
+	applymovement 7, mWalkDown
+	closedoor 29, 32
+	waitdooranim
+	delay 15
+	applymovement 7, mExclamationPoint
+	waitmovement 0
+	msgbox SoftwindCity_TriggerOrion_2_Text_3
+	closemessage
+	applymovement 7, mGymDudesApproaches
+	waitmovement 0
+	msgbox SoftwindCity_Text_GymDude
+	msgbox SoftwindCity_TriggerOrion_2_Text_4
+	closemessage
+	applymovement 7, mGymDudeRushesOff
+	waitmovement 0
+	removeobject 7
+	setflag FLAG_THERMA_RETURNED
+	msgbox SoftwindCity_TriggerOrion_2_Text_5
+	closemessage
+	applymovement 8, mWillowDeparts
+	waitmovement 0
+	removeobject 8
+	setvar VAR_SOFTWIND_CITY_STATE, 4
+	releaseall
+	end
+
+SoftwindCity_TriggerOrion_2_3:
+	applymovement 11, mDefenderAprroachesPlayer_2_1
+	goto SoftwindCity_TriggerOrion_2_1
+
+SoftwindCity_TriggerOrion_2_4:
+	applymovement 11, mDefenderAprroachesPlayer_2_2
+	goto SoftwindCity_TriggerOrion_2_1
+
+SoftwindCity_TriggerOrion_2_5:
+	applymovement 11, mDefenderAprroachesPlayer_2_3
+	goto SoftwindCity_TriggerOrion_2_1
+
+SoftwindCity_TriggerOrion_2_6:
+	applymovement 11, mDefenderAprroachesPlayer_2_4
+	goto SoftwindCity_TriggerOrion_2_1
+
+SoftwindCity_TriggerOrion_2_9:
+	applymovement 11, mDefenderRunsOff
+	goto SoftwindCity_TriggerOrion_2_7
+
+SoftwindCity_TriggerOrion_2_10:
+	applymovement 11, mDefenderRunsOff2
+	goto SoftwindCity_TriggerOrion_2_7
+
+SoftwindCity_TriggerOrion_2_11:
+	applymovement 11, mDefenderRunsOff
+	goto SoftwindCity_TriggerOrion_2_7
+
+SoftwindCity_TriggerOrion_2_12:
+	applymovement 11, mDefenderRunsOff
+	goto SoftwindCity_TriggerOrion_2_7
 
 
 mAlisaApproaches_1:
@@ -363,6 +465,86 @@ mDefenderWalksPastPlayer_2:
 	set_invisible
 	step_end
 
+mDefenderAprroachesPlayer_2_1:
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	step_end
+
+mDefenderAprroachesPlayer_2_2:
+	walk_up
+	walk_right
+	walk_right
+	step_end
+
+mDefenderAprroachesPlayer_2_3:
+	walk_right
+	walk_right
+	step_end
+
+mDefenderAprroachesPlayer_2_4:
+	walk_down
+	walk_right
+	walk_right
+	step_end
+
+mWillowApproachesDefender:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mDefenderRunsOff:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+mDefenderRunsOff2:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+mGymDudesApproaches:
+	walk_down
+	walk_left
+	face_down
+	step_end
+
+mGymDudeRushesOff:
+	walk_left
+	walk_down
+	walk_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+mWillowDeparts:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 SoftwindCity_ElderGuard_Text_0:
 	.string "My sisters and I hold the sacred duty\n"
 	.string "of guarding the towers.\p"
@@ -423,6 +605,28 @@ SoftwindCity_TriggerOrion_1_Text_0:
 
 SoftwindCity_TriggerOrion_1_Text_1:
 	.string "Hey you!\pForget you saw me here, okay?\nOtherwise…$"
+
+SoftwindCity_TriggerOrion_2_Text_0:
+	.string "Defender: I don't understand what\n"
+	.string "happened…\p"
+	.string "How could I lose to someone so\n"
+	.string "inexperienced!?$"
+
+SoftwindCity_TriggerOrion_2_Text_1:
+	.string "Willow: {PLAYER}?\n"
+	.string "Is that you?$"
+
+SoftwindCity_TriggerOrion_2_Text_2:
+	.string "Defender: Uh oh.\pI've stayed too long.$"
+
+SoftwindCity_TriggerOrion_2_Text_3:
+	.string "Man: Professor Willow!$"
+
+SoftwindCity_TriggerOrion_2_Text_4:
+	.string "Willow: Thank you very much.$"
+
+SoftwindCity_TriggerOrion_2_Text_5:
+	.string "Willow: Well, {PLAYER}, Therma awaits!\pAfter beating Team Rocket, I have no doubt you'll win! Ohohoho!$"
 
 SoftwindCity_Text_TownSign::
 	.string "Softwind City\n"
@@ -485,3 +689,50 @@ SoftwindCity_Text_DefenderHopesNotSeen::
 	.string "Defenders to be seen in Softwind yet.\p"
 	.string "I hope that Rocket didn't recognize my\n"
 	.string "uniform…$"
+
+SoftwindCity_Text_DefenderScolds::
+	.string "???: Hey, were you the one who defeated\n"
+	.string "the Rockets?\p"
+	.string "… Well, quit sticking your nose in things\n"
+	.string "you know nothing about!\p"
+	.string "Nobody asked you for help.\p"
+	.string "We, the Orion Defenders, were supposed\n"
+	.string "to take them down and capture Balfour,\l"
+	.string "but you just had to let him escape!\p"
+	.string "What am I supposed to tell Ophelia!?\n"
+	.string "You'll pay for this intrusion!$"
+
+SoftwindCity_Text_WolseyDefeated::
+	.string "W… what!?$"
+
+SoftwindCity_Text_WolseyWillPunish::
+	.string "Defender: {PLAYER}, is it?\n"
+	.string "I'm Wolsey.\p"
+	.string "Remember that name, because I'll be\n"
+	.string "back to punish you some other time for\l"
+	.string "your audacity.\p"
+	.string "You hear me!?\p"
+	.string "Until then, stay out of our way!$"
+
+SoftwindCity_Text_WillowCatchesUp::
+	.string "Willow: {PLAYER}, who was that?\p"
+	.string "… … …\n"
+	.string "An Orion Defender?\p"
+	.string "That's odd, I thought that organization\n"
+	.string "died out ages ago…\p"
+	.string "But that doesn't matter.\n"
+	.string "What happened in Chartree?\p"
+	.string "Bradley rushed in there, but it was over\n"
+	.string "before I could get there to help.\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "So Team Rocket has returned…\p"
+	.string "I wonder what they were planning to do\n"
+	.string "with that ash…$"
+
+SoftwindCity_Text_GymDude::
+	.string "Man: Therma has returned!\p"
+	.string "She says she will meet with you straight\n"
+	.string "away, just as soon as she deals with all\l"
+	.string "of the gym challenges that have piled\l"
+	.string "up in her absence.$"

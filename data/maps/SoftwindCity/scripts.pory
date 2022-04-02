@@ -1,5 +1,6 @@
 const PLAYER = OBJ_EVENT_ID_PLAYER
 const CAMERA = OBJ_EVENT_ID_CAMERA
+const GYM_DUDE = 7
 const WILLOW = 8
 const ALISA = 9
 const ROCKET = 10
@@ -14,6 +15,8 @@ const SOFTWIND_STATE_MET_ALISA = 1
 const SOFTWIND_STATE_TEAM_ENCOUNTERED = 2
 const SOFTWIND_STATE_DEFEATED_ROCKETS = 3
 const SOFTWIND_STATE_MET_DEFENDERS = 4
+const SOFTWIND_STATE_ALISA_AND_WILLOW = 5
+const SOFTWIND_STATE_DEFEATED_ALISA = 6
 
 //=====================================
 // Map Scripts
@@ -191,8 +194,86 @@ script SoftwindCity_TriggerOrion_1 {
     }
     waitmovement(0)
     removeobject(DEFENDER)
+    setflag(FLAG_HIDE_SOFTWIND_CITY_ROCKET)
+    setflag(FLAG_HIDE_SOFTWIND_CITY_ORION)
     special(RemoveCameraObject)
     setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_TEAM_ENCOUNTERED)
+    releaseall
+    end
+}
+
+script SoftwindCity_TriggerOrion_2 {
+    lockall
+    applymovement(DEFENDER, mStartledWalkRight)
+    waitmovement(0)
+    msgbox(SoftwindCity_Text_DefenderScolds)
+    closemessage
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    switch(var(VAR_TEMP_Y)) {
+        case 34:
+            applymovement(DEFENDER, mDefenderAprroachesPlayer_2_1)
+        case 35:
+            applymovement(DEFENDER, mDefenderAprroachesPlayer_2_2)
+        case 36:
+            applymovement(DEFENDER, mDefenderAprroachesPlayer_2_3)
+        case 37:
+            applymovement(DEFENDER, mDefenderAprroachesPlayer_2_4)
+    }
+    waitmovement(0)
+    trainerbattle_no_intro(TRAINER_WOLSEY_1, SoftwindCity_Text_WolseyDefeated)
+    msgbox(format("Defender: I don't understand what happened…\pHow could I lose to someone so inexperienced!?"))
+    msgbox(format("Willow: {PLAYER}?\nIs that you?"))
+    closemessage
+    applymovement(DEFENDER, mFaceLeft)
+    waitmovement(0)
+    applymovement(WILLOW, mWillowApproachesDefender)
+    msgbox("Defender: Uh oh.\pI've stayed too long.")
+    closemessage
+    delay(15)
+    applymovement(DEFENDER, mFaceRight)
+    delay(15)
+    msgbox(SoftwindCity_Text_WolseyWillPunish)
+    closemessage
+    switch(var(VAR_TEMP_Y)) {
+        case 34:
+            applymovement(DEFENDER, mDefenderRunsOff)
+        case 35:
+            applymovement(DEFENDER, mDefenderRunsOff2)
+        case 36:
+            applymovement(DEFENDER, mDefenderRunsOff)
+        case 37:
+            applymovement(DEFENDER, mDefenderRunsOff)
+    }
+    waitmovement(0)
+    removeobject(DEFENDER)
+    msgbox(SoftwindCity_Text_WillowCatchesUp)
+    opendoor(29, 32)
+    waitdooranim
+    addobject(GYM_DUDE)
+    setobjectxy(GYM_DUDE, 29, 32)
+    applymovement(GYM_DUDE, mWalkDown)
+    closedoor(29, 32)
+    waitdooranim
+    delay(15)
+    applymovement(GYM_DUDE, mExclamationPoint)
+    waitmovement(0)
+    msgbox("Man: Professor Willow!")
+    closemessage
+    applymovement(GYM_DUDE, mGymDudesApproaches)
+    waitmovement(0)
+    msgbox(SoftwindCity_Text_GymDude)
+    msgbox("Willow: Thank you very much.")
+    closemessage
+    applymovement(GYM_DUDE, mGymDudeRushesOff)
+    waitmovement(0)
+    removeobject(GYM_DUDE)
+    setflag(FLAG_THERMA_RETURNED) //redundant, but clarity
+    msgbox("Willow: Well, {PLAYER}, Therma awaits!\pAfter beating Team Rocket, I have no doubt you'll win! Ohohoho!")
+    closemessage
+    applymovement(WILLOW, mWillowDeparts)
+    waitmovement(0)
+    removeobject(WILLOW)
+    setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_MET_DEFENDERS)
     releaseall
     end
 }
@@ -275,6 +356,51 @@ text SoftwindCity_Text_DefenderHopesNotSeen {
         "didn't want any Orion Defenders to be seen "
         "in Softwind yet.\pI hope that Rocket didn't "
         "recognize my uniform…"
+    )
+}
+
+text SoftwindCity_Text_DefenderScolds {
+    format(
+        "???: Hey, were you the one who defeated the Rockets?\p"
+        "… Well, quit sticking your nose in things you know nothing about!\p"
+        "Nobody asked you for help.\p"
+        "We, the Orion Defenders, were supposed to take them down and "
+        "capture Balfour, but you just had to let him escape!\p"
+        "What am I supposed to tell Ophelia!?\nYou'll pay for this intrusion!"
+    )
+}
+
+text SoftwindCity_Text_WolseyDefeated {
+    "W… what!?"
+}
+
+text SoftwindCity_Text_WolseyWillPunish {
+    format (
+        "Defender: {PLAYER}, is it?\nI'm Wolsey.\p"
+        "Remember that name, because I'll be back to punish you some "
+        "other time for your audacity.\p"
+        "You hear me!?\p"
+        "Until then, stay out of our way!"
+    )
+}
+
+text SoftwindCity_Text_WillowCatchesUp {
+    format (
+        "Willow: {PLAYER}, who was that?\p… … …\nAn Orion Defender?\p"
+        "That's odd, I thought that organization died out ages ago…\p"
+        "But that doesn't matter.\nWhat happened in Chartree?\p"
+        "Bradley rushed in there, but it was over before I could get there to help.\p"
+        "… … …\n… … …\p"
+        "So Team Rocket has returned…\p"
+        "I wonder what they were planning to do with that ash…"
+    )
+}
+
+text SoftwindCity_Text_GymDude {
+    format (
+        "Man: Therma has returned!\p"
+        "She says she will meet with you straight away, just as soon as she deals "
+        "with all of the gym challenges that have piled up in her absence."
     )
 }
 
@@ -371,6 +497,56 @@ movement mDefenderWalksPastPlayer_2 {
     walk_up
     walk_left * 9
     set_invisible
+}
+
+movement mDefenderAprroachesPlayer_2_1 {
+    walk_up * 2
+    walk_right * 2
+}
+
+movement mDefenderAprroachesPlayer_2_2 {
+    walk_up
+    walk_right * 2
+}
+
+movement mDefenderAprroachesPlayer_2_3 {
+    walk_right * 2
+}
+
+movement mDefenderAprroachesPlayer_2_4 {
+    walk_down * 1
+    walk_right * 2
+}
+
+movement mWillowApproachesDefender {
+    walk_right * 3
+}
+
+movement mDefenderRunsOff {
+    walk_fast_left * 9
+}
+
+movement mDefenderRunsOff2 {
+    walk_fast_left * 2
+    walk_fast_down
+    walk_fast_left * 7
+}
+
+movement mGymDudesApproaches {
+    walk_down
+    walk_left
+    face_down
+}
+
+movement mGymDudeRushesOff {
+    walk_left
+    walk_down
+    walk_left
+    walk_fast_left * 5
+}
+
+movement mWillowDeparts {
+    walk_left * 5
 }
 
 //=====================================

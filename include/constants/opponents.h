@@ -71,6 +71,11 @@
 #define TRAINER_BALFOUR_1                   31
 
 //=====================================================
+// Softwind City Orion Encounter
+//=====================================================
+#define TRAINER_WOLSEY_1                    37
+
+//=====================================================
 // Softwind City Gym
 //=====================================================
 #define TRAINER_YUKI                        32
@@ -82,29 +87,29 @@
 //=====================================================
 // Alisa #1
 //=====================================================
-#define TRAINER_ALISA_1_VENAP               37
-#define TRAINER_ALISA_1_CELSINGE            38
-#define TRAINER_ALISA_1_ECHOISE             39
+#define TRAINER_ALISA_1_VENAP               38
+#define TRAINER_ALISA_1_CELSINGE            39
+#define TRAINER_ALISA_1_ECHOISE             40
 
 //=====================================================
 // Route 205
 //=====================================================
-#define TRAINER_FRANCIS                     40
-#define TRAINER_AMY_AND_ALLY                41
-#define TRAINER_TRAVIS                      42
-#define TRAINER_GWEN                        43
-#define TRAINER_PERCY                       44
-#define TRAINER_ISHMAEL                     45
+#define TRAINER_FRANCIS                     41
+#define TRAINER_AMY_AND_ALLY                42
+#define TRAINER_TRAVIS                      43
+#define TRAINER_GWEN                        44
+#define TRAINER_PERCY                       45
+#define TRAINER_ISHMAEL                     46
 
 //=====================================================
 // Route 206
 //=====================================================
-#define TRAINER_MIKAEL                      46
-#define TRAINER_JURGEN                      47
-#define TRAINER_WINSTON                     48
-#define TRAINER_ELI                         49
-#define TRAINER_SIERRA                      50
-#define TRAINER_WANDA                       51
+#define TRAINER_MIKAEL                      47
+#define TRAINER_JURGEN                      48
+#define TRAINER_WINSTON                     49
+#define TRAINER_ELI                         50
+#define TRAINER_SIERRA                      51
+#define TRAINER_WANDA                       52
 
 
 
@@ -118,7 +123,11 @@
 
 
 
-#define TRAINER_GABBY_AND_TY_2               52
+
+
+
+
+
 #define TRAINER_GABBY_AND_TY_3               53
 #define TRAINER_GABBY_AND_TY_4               54
 #define TRAINER_GABBY_AND_TY_5               55

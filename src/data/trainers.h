@@ -484,6 +484,24 @@ const struct Trainer gTrainers[] = {
     },
 
     //=====================================================
+    // Softwind City Orion Encounter
+    //=====================================================
+
+    [TRAINER_WOLSEY_1] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
+        .trainerName = _("Defender"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Wolsey1),
+        .party = {.NoItemDefaultMoves = sParty_Wolsey1},
+    },
+
+    //=====================================================
     // Softwind City Gym
     //=====================================================
 
@@ -843,20 +861,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_GruntWeatherInst3),
         .party = {.NoItemDefaultMoves = sParty_GruntWeatherInst3},
-    },
-
-    [TRAINER_GABBY_AND_TY_2] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_INTERVIEWER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
-        .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .trainerName = _("GABBY & TY"),
-        .items = {},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GabbyAndTy2),
-        .party = {.NoItemDefaultMoves = sParty_GabbyAndTy2},
     },
 
     [TRAINER_GABBY_AND_TY_3] =

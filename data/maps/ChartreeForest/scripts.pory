@@ -9,6 +9,13 @@ const CHARTREE_FOREST_MET_FROY = 1
 const CHARTREE_FOREST_ROCKETS_IN_FOREST = 2
 const CHARTREE_FOREST_ROCKETS_DEFEATED = 3
 
+// VAR_SOFTWIND_CITY_STATE values
+const SOFTWIND_STATE_INIT = 0
+const SOFTWIND_STATE_MET_ALISA = 1
+const SOFTWIND_STATE_TEAM_ENCOUNTERED = 2
+const SOFTWIND_STATE_DEFEATED_ROCKETS = 3
+const SOFTWIND_STATE_MET_DEFENDERS = 4
+
 const VAR_TEMP_X = VAR_TEMP_0
 const VAR_TEMP_Y = VAR_TEMP_1
 
@@ -181,9 +188,12 @@ script(global) ChartreeForest_Balfour {
     removeobject(BALFOUR)
     removeobject(GRUNT)
     setvar(VAR_CHARTREE_FOREST_STATE, CHARTREE_FOREST_ROCKETS_DEFEATED)
+    setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_DEFEATED_ROCKETS)
     setflag(FLAG_HIDE_BRADLEY_ROUTE_204)
     clearflag(FLAG_ROCKETS_IN_CHARTREE)
     setflag(FLAG_HIDE_ROCKETS_IN_CHARTREE)
+    clearflag(FLAG_HIDE_SOFTWIND_CITY_ORION)
+    clearflag(FLAG_HIDE_SOFTWIND_CITY_WILLOW)
     // Teleport to Cranewing Pokemon Center for Bradley scene
     release
     end
@@ -385,7 +395,7 @@ text ChartreeForest_Text_BalfourAttacks {
 
 text ChartreeForest_Text_BalfourDefeated {
     format(
-        "…! You're lucky, kid."
+        "… … …!\nJust luck, that's all."
     )
 }
 

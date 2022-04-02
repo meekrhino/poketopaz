@@ -459,6 +459,24 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Balfour1[] = {
 };
 
 //=====================================================
+// Softwind City Orion Encounter
+//=====================================================
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Wolsey1[] = {
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_SLOWPOKE,
+    },
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_ENGIL,
+    }
+};
+
+
+//=====================================================
 // Softwind City Gym
 //=====================================================
 

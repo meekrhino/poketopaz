@@ -123,7 +123,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ANABEL",
-      "x": 28,
+      "x": 25,
       "y": 35,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -158,7 +158,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_SOFTWIND_CITY_GRUNTS"
+      "flag": "FLAG_HIDE_SOFTWIND_CITY_ROCKET"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -171,7 +171,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_SOFTWIND_CITY_GRUNTS"
+      "flag": "FLAG_HIDE_SOFTWIND_CITY_ORION"
     }
   ],
   "warp_events": [
@@ -322,6 +322,42 @@
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "1",
       "script": "SoftwindCity_TriggerOrion_1"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_SOFTWIND_CITY_STATE",
+      "var_value": "3",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_SOFTWIND_CITY_STATE",
+      "var_value": "3",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_SOFTWIND_CITY_STATE",
+      "var_value": "3",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_SOFTWIND_CITY_STATE",
+      "var_value": "3",
+      "script": "NULL"
     }
   ],
   "bg_events": [

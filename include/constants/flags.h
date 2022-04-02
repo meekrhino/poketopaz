@@ -767,12 +767,11 @@
 #define FLAG_HIDE_SOFTWIND_CITY_ALISA                               0x2D4
 #define FLAG_HIDE_SOFTWIND_CITY_WILLOW                              0x2D5
 #define FLAG_HIDE_ROUTE_205_THERMA_CROWD                            0x2D6
-#define FLAG_HIDE_SOFTWIND_CITY_GRUNTS                              0x2D7
+#define FLAG_HIDE_SOFTWIND_CITY_ROCKET                              0x2D7
 #define FLAG_HIDE_ROUTE_205_THERMA_CROWDS_MOM                       0x2D8
+#define FLAG_HIDE_SOFTWIND_CITY_ORION                               0x2D9
 
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
-
-#define FLAG_HIDE_NEO_BAY_AMPURE                     0x2DA
+#define FLAG_HIDE_NEO_BAY_AMPURE                                    0x2DA
 #define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
 #define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1                    0x2DC
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP              0x2DD
