@@ -192,6 +192,7 @@ script(global) ChartreeForest_Balfour {
     setflag(FLAG_HIDE_BRADLEY_ROUTE_204)
     clearflag(FLAG_ROCKETS_IN_CHARTREE)
     setflag(FLAG_HIDE_ROCKETS_IN_CHARTREE)
+    setflag(FLAG_THERMA_RETURNED) //hides GYM DUDE in softwind
     clearflag(FLAG_HIDE_SOFTWIND_CITY_ORION)
     clearflag(FLAG_HIDE_SOFTWIND_CITY_WILLOW)
     // Teleport to Cranewing Pokemon Center for Bradley scene

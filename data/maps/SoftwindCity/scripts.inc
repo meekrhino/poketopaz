@@ -231,8 +231,8 @@ SoftwindCity_TriggerOrion_2_1:
 	msgbox SoftwindCity_TriggerOrion_2_Text_1
 	closemessage
 	applymovement 11, mFaceLeft
-	waitmovement 0
 	applymovement 8, mWillowApproachesDefender
+	waitmovement 0
 	msgbox SoftwindCity_TriggerOrion_2_Text_2
 	closemessage
 	delay 15
@@ -248,6 +248,13 @@ SoftwindCity_TriggerOrion_2_1:
 SoftwindCity_TriggerOrion_2_7:
 	waitmovement 0
 	removeobject 11
+	switch VAR_TEMP_1
+	case 34, SoftwindCity_TriggerOrion_2_15
+	case 35, SoftwindCity_TriggerOrion_2_16
+	case 36, SoftwindCity_TriggerOrion_2_17
+	case 37, SoftwindCity_TriggerOrion_2_18
+SoftwindCity_TriggerOrion_2_13:
+	waitmovement 0
 	msgbox SoftwindCity_Text_WillowCatchesUp
 	opendoor 29, 32
 	waitdooranim
@@ -261,7 +268,13 @@ SoftwindCity_TriggerOrion_2_7:
 	waitmovement 0
 	msgbox SoftwindCity_TriggerOrion_2_Text_3
 	closemessage
-	applymovement 7, mGymDudesApproaches
+	applymovement 8, mFaceLeft
+	switch VAR_TEMP_1
+	case 34, SoftwindCity_TriggerOrion_2_21
+	case 35, SoftwindCity_TriggerOrion_2_22
+	case 36, SoftwindCity_TriggerOrion_2_23
+	case 37, SoftwindCity_TriggerOrion_2_24
+SoftwindCity_TriggerOrion_2_19:
 	waitmovement 0
 	msgbox SoftwindCity_Text_GymDude
 	msgbox SoftwindCity_TriggerOrion_2_Text_4
@@ -270,6 +283,8 @@ SoftwindCity_TriggerOrion_2_7:
 	waitmovement 0
 	removeobject 7
 	setflag FLAG_THERMA_RETURNED
+	applymovement 8, mFaceRight
+	waitmovement 0
 	msgbox SoftwindCity_TriggerOrion_2_Text_5
 	closemessage
 	applymovement 8, mWillowDeparts
@@ -310,6 +325,38 @@ SoftwindCity_TriggerOrion_2_11:
 SoftwindCity_TriggerOrion_2_12:
 	applymovement 11, mDefenderRunsOff
 	goto SoftwindCity_TriggerOrion_2_7
+
+SoftwindCity_TriggerOrion_2_15:
+	applymovement 8, mWillowApproachesPlayer1
+	goto SoftwindCity_TriggerOrion_2_13
+
+SoftwindCity_TriggerOrion_2_16:
+	applymovement 8, mWillowApproachesPlayer2
+	goto SoftwindCity_TriggerOrion_2_13
+
+SoftwindCity_TriggerOrion_2_17:
+	applymovement 8, mWillowApproachesPlayer3
+	goto SoftwindCity_TriggerOrion_2_13
+
+SoftwindCity_TriggerOrion_2_18:
+	applymovement 8, mWillowApproachesPlayer4
+	goto SoftwindCity_TriggerOrion_2_13
+
+SoftwindCity_TriggerOrion_2_21:
+	applymovement 7, mGymDudesApproaches1
+	goto SoftwindCity_TriggerOrion_2_19
+
+SoftwindCity_TriggerOrion_2_22:
+	applymovement 7, mGymDudesApproaches2
+	goto SoftwindCity_TriggerOrion_2_19
+
+SoftwindCity_TriggerOrion_2_23:
+	applymovement 7, mGymDudesApproaches3
+	goto SoftwindCity_TriggerOrion_2_19
+
+SoftwindCity_TriggerOrion_2_24:
+	applymovement 7, mGymDudesApproaches4
+	goto SoftwindCity_TriggerOrion_2_19
 
 
 mAlisaApproaches_1:
@@ -520,15 +567,43 @@ mDefenderRunsOff2:
 	walk_fast_left
 	step_end
 
-mGymDudesApproaches:
+mGymDudesApproaches1:
 	walk_down
-	walk_left
-	face_down
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mGymDudesApproaches2:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mGymDudesApproaches3:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mGymDudesApproaches4:
+	walk_down
+	walk_down
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
 	step_end
 
 mGymDudeRushesOff:
 	walk_left
-	walk_down
+	walk_left
 	walk_left
 	walk_fast_left
 	walk_fast_left
@@ -537,7 +612,54 @@ mGymDudeRushesOff:
 	walk_fast_left
 	step_end
 
+mWalkRight4:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mWillowApproachesPlayer1:
+	walk_right
+	walk_right
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mWillowApproachesPlayer2:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mWillowApproachesPlayer3:
+	walk_right
+	walk_right
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mWillowApproachesPlayer4:
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 mWillowDeparts:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	walk_left
 	walk_left
 	walk_left
@@ -626,7 +748,9 @@ SoftwindCity_TriggerOrion_2_Text_4:
 	.string "Willow: Thank you very much.$"
 
 SoftwindCity_TriggerOrion_2_Text_5:
-	.string "Willow: Well, {PLAYER}, Therma awaits!\pAfter beating Team Rocket, I have no doubt you'll win! Ohohoho!$"
+	.string "Willow: Well, {PLAYER}, Therma awaits!\p"
+	.string "After beating Team Rocket, I have no\n"
+	.string "doubt you'll win! Ohohoho!$"
 
 SoftwindCity_Text_TownSign::
 	.string "Softwind City\n"

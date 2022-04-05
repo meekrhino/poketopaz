@@ -186,7 +186,7 @@ static const struct MatchCallStructNPC sMrStoneMatchCallHeader =
 
 static const match_call_text_data_t sNormanTextScripts[] = {
     { MatchCall_Text_Norman1, FLAG_ENABLE_NORMAN_MATCH_CALL, 0xFFFF },
-    { MatchCall_Text_Norman2, FLAG_DEFEATED_DEWFORD_GYM,     0xFFFF },
+    { MatchCall_Text_Norman2, FLAG_DEFEATED_SOFTWIND_GYM,     0xFFFF },
     { MatchCall_Text_Norman3, FLAG_DEFEATED_LAVARIDGE_GYM,   0xFFFF },
     { MatchCall_Text_Norman4, FLAG_DEFEATED_PETALBURG_GYM,   0xFFFF },
     { MatchCall_Text_Norman5, FLAG_RECEIVED_RED_OR_BLUE_ORB, 0xFFFF },
@@ -257,7 +257,7 @@ static const struct MatchCallStructNPC sStevenMatchCallHeader =
 
 static const match_call_text_data_t sMayTextScripts[] = {
     { MatchCall_Text_May1,  0xFFFF,                              0xFFFF },
-    { MatchCall_Text_May2,  FLAG_DEFEATED_DEWFORD_GYM,           0xFFFF },
+    { MatchCall_Text_May2,  FLAG_DEFEATED_SOFTWIND_GYM,           0xFFFF },
     { MatchCall_Text_May3,  FLAG_DELIVERED_DEVON_GOODS,          0xFFFF },
     { MatchCall_Text_May4,  FLAG_HIDE_MAUVILLE_CITY_WALLY,       0xFFFF },
     { MatchCall_Text_May5,  FLAG_RECEIVED_HM04,                  0xFFFF },
@@ -286,7 +286,7 @@ static const struct MatchCallRival sMayMatchCallHeader =
 
 static const match_call_text_data_t sBrendanTextScripts[] = {
     { MatchCall_Text_Brendan1,  0xFFFF,                              0xFFFF },
-    { MatchCall_Text_Brendan2,  FLAG_DEFEATED_DEWFORD_GYM,           0xFFFF },
+    { MatchCall_Text_Brendan2,  FLAG_DEFEATED_SOFTWIND_GYM,           0xFFFF },
     { MatchCall_Text_Brendan3,  FLAG_DELIVERED_DEVON_GOODS,          0xFFFF },
     { MatchCall_Text_Brendan4,  FLAG_HIDE_MAUVILLE_CITY_WALLY,       0xFFFF },
     { MatchCall_Text_Brendan5,  FLAG_RECEIVED_HM04,                  0xFFFF },
@@ -658,38 +658,38 @@ static void (*const sMatchCall_GetNameAndDescFunctions[])(match_call_t, const u8
 };
 
 static const struct MatchCallCheckPageOverride sCheckPageOverrides[] = {
-    { 
-        .idx = MC_HEADER_STEVEN,  
-        .facilityClass = FACILITY_CLASS_STEVEN,  
-        .flag = 0xFFFF,                     
-        .flavorTexts = { 
-            [CHECK_PAGE_STRATEGY] = gText_MatchCallSteven_Strategy, 
-            [CHECK_PAGE_POKEMON]  = gText_MatchCallSteven_Pokemon, 
-            [CHECK_PAGE_INTRO_1]  = gText_MatchCallSteven_Intro1_BeforeMeteorFallsBattle, 
-            [CHECK_PAGE_INTRO_2]  = gText_MatchCallSteven_Intro2_BeforeMeteorFallsBattle 
-        } 
+    {
+        .idx = MC_HEADER_STEVEN,
+        .facilityClass = FACILITY_CLASS_STEVEN,
+        .flag = 0xFFFF,
+        .flavorTexts = {
+            [CHECK_PAGE_STRATEGY] = gText_MatchCallSteven_Strategy,
+            [CHECK_PAGE_POKEMON]  = gText_MatchCallSteven_Pokemon,
+            [CHECK_PAGE_INTRO_1]  = gText_MatchCallSteven_Intro1_BeforeMeteorFallsBattle,
+            [CHECK_PAGE_INTRO_2]  = gText_MatchCallSteven_Intro2_BeforeMeteorFallsBattle
+        }
     },
-    { 
-        .idx = MC_HEADER_STEVEN,  
-        .facilityClass = FACILITY_CLASS_STEVEN,  
-        .flag = FLAG_DEFEATED_MOSSDEEP_GYM, 
-        .flavorTexts = { 
-            [CHECK_PAGE_STRATEGY] = gText_MatchCallSteven_Strategy, 
-            [CHECK_PAGE_POKEMON]  = gText_MatchCallSteven_Pokemon, 
-            [CHECK_PAGE_INTRO_1]  = gText_MatchCallSteven_Intro1_AfterMeteorFallsBattle, 
-            [CHECK_PAGE_INTRO_2]  = gText_MatchCallSteven_Intro2_AfterMeteorFallsBattle 
-        } 
+    {
+        .idx = MC_HEADER_STEVEN,
+        .facilityClass = FACILITY_CLASS_STEVEN,
+        .flag = FLAG_DEFEATED_MOSSDEEP_GYM,
+        .flavorTexts = {
+            [CHECK_PAGE_STRATEGY] = gText_MatchCallSteven_Strategy,
+            [CHECK_PAGE_POKEMON]  = gText_MatchCallSteven_Pokemon,
+            [CHECK_PAGE_INTRO_1]  = gText_MatchCallSteven_Intro1_AfterMeteorFallsBattle,
+            [CHECK_PAGE_INTRO_2]  = gText_MatchCallSteven_Intro2_AfterMeteorFallsBattle
+        }
     },
-    { 
-        .idx = MC_HEADER_BRENDAN, 
-        .facilityClass = FACILITY_CLASS_BRENDAN, 
-        .flag = 0xFFFF,                     
+    {
+        .idx = MC_HEADER_BRENDAN,
+        .facilityClass = FACILITY_CLASS_BRENDAN,
+        .flag = 0xFFFF,
         .flavorTexts = MCFLAVOR(Brendan)
     },
-    { 
-        .idx = MC_HEADER_MAY,     
-        .facilityClass = FACILITY_CLASS_MAY,     
-        .flag = 0xFFFF,                     
+    {
+        .idx = MC_HEADER_MAY,
+        .facilityClass = FACILITY_CLASS_MAY,
+        .flag = 0xFFFF,
         .flavorTexts = MCFLAVOR(May)
     }
 };
@@ -896,12 +896,12 @@ static bool32 MatchCall_HasCheckPage_Wally(match_call_t matchCall)
     return TRUE;
 }
 
-static bool32 MatchCall_HasCheckPage_Rival(match_call_t matchCall) 
+static bool32 MatchCall_HasCheckPage_Rival(match_call_t matchCall)
 {
     return FALSE;
 }
 
-static bool32 MatchCall_HasCheckPage_Birch(match_call_t matchCall) 
+static bool32 MatchCall_HasCheckPage_Birch(match_call_t matchCall)
 {
     return FALSE;
 }

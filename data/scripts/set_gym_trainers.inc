@@ -1,7 +1,7 @@
 Common_EventScript_SetGymTrainers::
 	switch VAR_0x8008
 	case 1, CranewingCity_Gym_SetGymTrainers
-	case 2, DewfordTown_Gym_SetGymTrainers
+	case 2, SoftwindCity_Gym_SetGymTrainers
 	case 3, MauvilleCity_Gym_SetGymTrainers
 	case 4, LavaridgeTown_Gym_SetGymTrainers
 	case 5, PetalburgCity_Gym_SetGymTrainers
@@ -15,13 +15,11 @@ CranewingCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_LOLA
 	return
 
-DewfordTown_Gym_SetGymTrainers::
-	settrainerflag TRAINER_TAKAO
-	settrainerflag TRAINER_JOCELYN
-	settrainerflag TRAINER_LAURA
-	settrainerflag TRAINER_BRENDEN
-	settrainerflag TRAINER_CRISTIAN
-	settrainerflag TRAINER_LILITH
+SoftwindCity_Gym_SetGymTrainers::
+	settrainerflag TRAINER_YUKI
+	settrainerflag TRAINER_BRANDYN
+	settrainerflag TRAINER_NESSA
+	settrainerflag TRAINER_GREGOR
 	return
 
 MauvilleCity_Gym_SetGymTrainers::

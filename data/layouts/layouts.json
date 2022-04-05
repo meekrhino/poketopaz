@@ -4730,6 +4730,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/CranewingCity_Bank/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity_Bank/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOFTWIND_CITY_GYM",
+      "name": "SoftwindCity_Gym_Layout",
+      "width": 7,
+      "height": 15,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_FortreeGym",
+      "border_filepath": "data/layouts/SoftwindCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/SoftwindCity_Gym/map.bin"
     }
   ]
 }

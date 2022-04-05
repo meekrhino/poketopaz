@@ -107,6 +107,7 @@
 #define MAP_SOFTWIND_CITY_MART             (7 | (3 << 8))
 #define MAP_SOFTWIND_CITY_HOUSE1           (8 | (3 << 8))
 #define MAP_SOFTWIND_CITY_HOUSE2           (9 | (3 << 8))
+#define MAP_SOFTWIND_CITY_GYM              (10 | (3 << 8))
 
 // gMapGroup_IndoorCranewing
 #define MAP_LAVARIDGE_TOWN_HERB_SHOP         (0 | (4 << 8))

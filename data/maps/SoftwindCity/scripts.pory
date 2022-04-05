@@ -225,8 +225,8 @@ script SoftwindCity_TriggerOrion_2 {
     msgbox(format("Willow: {PLAYER}?\nIs that you?"))
     closemessage
     applymovement(DEFENDER, mFaceLeft)
-    waitmovement(0)
     applymovement(WILLOW, mWillowApproachesDefender)
+    waitmovement(0)
     msgbox("Defender: Uh oh.\pI've stayed too long.")
     closemessage
     delay(15)
@@ -246,6 +246,17 @@ script SoftwindCity_TriggerOrion_2 {
     }
     waitmovement(0)
     removeobject(DEFENDER)
+    switch(var(VAR_TEMP_Y)) {
+        case 34:
+            applymovement(WILLOW, mWillowApproachesPlayer1)
+        case 35:
+            applymovement(WILLOW, mWillowApproachesPlayer2)
+        case 36:
+            applymovement(WILLOW, mWillowApproachesPlayer3)
+        case 37:
+            applymovement(WILLOW, mWillowApproachesPlayer4)
+    }
+    waitmovement(0)
     msgbox(SoftwindCity_Text_WillowCatchesUp)
     opendoor(29, 32)
     waitdooranim
@@ -259,7 +270,17 @@ script SoftwindCity_TriggerOrion_2 {
     waitmovement(0)
     msgbox("Man: Professor Willow!")
     closemessage
-    applymovement(GYM_DUDE, mGymDudesApproaches)
+    applymovement(WILLOW, mFaceLeft)
+    switch(var(VAR_TEMP_Y)) {
+        case 34:
+            applymovement(GYM_DUDE, mGymDudesApproaches1)
+        case 35:
+            applymovement(GYM_DUDE, mGymDudesApproaches2)
+        case 36:
+            applymovement(GYM_DUDE, mGymDudesApproaches3)
+        case 37:
+            applymovement(GYM_DUDE, mGymDudesApproaches4)
+    }
     waitmovement(0)
     msgbox(SoftwindCity_Text_GymDude)
     msgbox("Willow: Thank you very much.")
@@ -267,8 +288,10 @@ script SoftwindCity_TriggerOrion_2 {
     applymovement(GYM_DUDE, mGymDudeRushesOff)
     waitmovement(0)
     removeobject(GYM_DUDE)
-    setflag(FLAG_THERMA_RETURNED) //redundant, but clarity
-    msgbox("Willow: Well, {PLAYER}, Therma awaits!\pAfter beating Team Rocket, I have no doubt you'll win! Ohohoho!")
+    setflag(FLAG_THERMA_RETURNED) //redundant, but set for clarity
+    applymovement(WILLOW, mFaceRight)
+    waitmovement(0)
+    msgbox(format("Willow: Well, {PLAYER}, Therma awaits!\pAfter beating Team Rocket, I have no doubt you'll win! Ohohoho!"))
     closemessage
     applymovement(WILLOW, mWillowDeparts)
     waitmovement(0)
@@ -532,21 +555,61 @@ movement mDefenderRunsOff2 {
     walk_fast_left * 7
 }
 
-movement mGymDudesApproaches {
+movement mGymDudesApproaches1 {
     walk_down
-    walk_left
-    face_down
+    walk_right * 3
+}
+
+movement mGymDudesApproaches2 {
+    walk_down * 2
+    walk_right * 3
+}
+
+movement mGymDudesApproaches3 {
+    walk_down * 3
+    walk_right * 3
+}
+
+movement mGymDudesApproaches4 {
+    walk_down * 2
+    walk_right
+    walk_down * 2
+    walk_right * 2
 }
 
 movement mGymDudeRushesOff {
-    walk_left
-    walk_down
-    walk_left
+    walk_left * 3
     walk_fast_left * 5
 }
 
+movement mWalkRight4 {
+    walk_right * 4
+}
+
+movement mWillowApproachesPlayer1 {
+    walk_right * 2
+    walk_up
+    walk_right * 3
+}
+
+movement mWillowApproachesPlayer2 {
+    walk_right * 5
+}
+
+movement mWillowApproachesPlayer3 {
+    walk_right * 2
+    walk_down
+    walk_right * 3
+}
+
+movement mWillowApproachesPlayer4 {
+    walk_right * 2
+    walk_down * 2
+    walk_right * 3
+}
+
 movement mWillowDeparts {
-    walk_left * 5
+    walk_left * 9
 }
 
 //=====================================

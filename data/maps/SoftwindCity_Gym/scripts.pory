@@ -1,0 +1,288 @@
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts SoftwindCity_Gym_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) SoftwindCity_Gym_GymStatue {
+	lockall
+    if(flag(FLAG_BADGE02_GET)) {
+        msgbox(SoftwindCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT)
+    }
+    else {
+        msgbox(SoftwindCity_Gym_Text_GymStatue, MSGBOX_DEFAULT)
+    }
+    releaseall
+	end
+}
+
+script(global) SoftwindCity_Gym_GymGuide {
+    if(flag(FLAG_BADGE02_GET)) {
+        msgbox(SoftwindCity_Text_GymGuidePostVictory, MSGBOX_NPC)
+    }
+    else {
+        msgbox(SoftwindCity_Text_GymGuide, MSGBOX_NPC)
+    }
+	end
+}
+
+script(global) SoftwindCity_Gym_Yuki {
+    trainerbattle_single(TRAINER_YUKI, SoftwindCity_Gym_Text_YukiIntro, SoftwindCity_Gym_Text_YukiDefeated)
+    msgbox(SoftwindCity_Gym_Text_YukiPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) SoftwindCity_Gym_Brandyn {
+    trainerbattle_single(TRAINER_BRANDYN, SoftwindCity_Gym_Text_BrandynIntro, SoftwindCity_Gym_Text_BrandynDefeated)
+    msgbox(SoftwindCity_Gym_Text_BrandynPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) SoftwindCity_Gym_Nessa {
+    trainerbattle_single(TRAINER_NESSA, SoftwindCity_Gym_Text_NessaIntro, SoftwindCity_Gym_Text_NessaDefeated)
+    msgbox(SoftwindCity_Gym_Text_NessaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) SoftwindCity_Gym_Gregor {
+    trainerbattle_single(TRAINER_GREGOR, SoftwindCity_Gym_Text_GregorIntro, SoftwindCity_Gym_Text_GregorDefeated)
+    msgbox(SoftwindCity_Gym_Text_GregorPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) SoftwindCity_Gym_Therma {
+    trainerbattle_single(TRAINER_THERMA, SoftwindCity_Gym_Text_ThermaIntro, SoftwindCity_Gym_ThermaDefeated, NO_MUSIC)
+    if(!(flag(FLAG_RECEIVED_TM56))) {
+        goto(SoftwindCity_Gym_GiveWindwhistle)
+    }
+    msgbox(SoftwindCity_Gym_Text_ThermaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+script(local) SoftwindCity_Gym_ThermaDefeated {
+	message(SoftwindCity_Gym_Text_ReceivedBadge)
+	waitmessage
+	call(Common_EventScript_PlayGymBadgeFanfare)
+	msgbox(SoftwindCity_Gym_Text_GaleBadgeInfo, MSGBOX_DEFAULT)
+	setflag(FLAG_DEFEATED_SOFTWIND_GYM)
+	setflag(FLAG_BADGE02_GET)
+	setvar(VAR_0x8008, 1)
+	call(Common_EventScript_SetGymTrainers)
+	goto(SoftwindCity_Gym_GiveWindwhistle)
+	end
+}
+
+script(local) SoftwindCity_Gym_GiveWindwhistle {
+	giveitem(ITEM_TM56_WINDWHISTLE)
+	compare(VAR_RESULT, FALSE)
+    if(var(VAR_RESULT) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+	setflag(FLAG_RECEIVED_TM56)
+	msgbox(SoftwindCity_Gym_Text_WindwhistleExplanation, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+//=====================================
+// Text
+//=====================================
+text SoftwindCity_Gym_Text_GymStatue {
+    "Softwind City Pokémon Gym\p"
+    "Therma's Certified Trainers:\n"
+    "Alisa"
+}
+
+text SoftwindCity_Gym_Text_GymStatueCertified {
+    "Softwind City Pokémon Gym\p"
+    "Therma's Certified Trainers:\n"
+    "Alisa\l"
+    "{PLAYER}$"
+}
+
+text SoftwindCity_Text_GymGuide {
+    "Yo, yo!\p"
+    "Listen, listen. \p"
+    "You beat Therma, but it only gets\n"
+    "tougher from here on!\p"
+    "Therma is as cool-headed as they\n"
+    "come, an experienced user of the\l"
+    "Flying-type Pokémon.\p"
+    "They're fast, and fierce!\n"
+    "But listen up!\p"
+    "Catch them by surprise--\n"
+    "SHOCK them with Electric-type,\l"
+    "if you will--and they'll fold like\l"
+    "paper cranes!\p"
+    "That's all I've got, champ!\p"
+    "Take her down and you'll be\n"
+    "one step closer to Triump Spire!\p"
+    "…Figuratively speaking."
+}
+
+text SoftwindCity_Text_GymGuidePostVictory {
+    "Incredible!\p"
+    "That's two in a row!\p"
+    "Quite a feather in your cap if I\n"
+    "do say so myself…\p"
+    "And I do, at that!\p"
+    "Keep up the great work, champ!"
+}
+
+text SoftwindCity_Gym_Text_YukiIntro {
+    format(
+        "Bird Pokémon make the best partners!\pThey're strong and they grow quickly!\pWhat more could you want?"
+    )
+}
+
+text SoftwindCity_Gym_Text_YukiDefeated {
+    format(
+        "Wow, I guess birds aren't the only strong Pokémon!"
+    )
+}
+
+text SoftwindCity_Gym_Text_YukiPostBattle {
+    format(
+        "I wonder if I should think about diversifying my team…"
+    )
+}
+
+text SoftwindCity_Gym_Text_BrandynIntro {
+    format(
+        "What do you think of Flying-type Pokémon?\pThis is my favorite one!"
+    )
+}
+
+text SoftwindCity_Gym_Text_BrandynDefeated {
+    format(
+        "Wow, I can't believe it!\nYou beat my favorite Pokémon!"
+    )
+}
+
+text SoftwindCity_Gym_Text_BrandynPostBattle {
+    format(
+        "Alright, you got me.\nI just use that Grific because I was required to bring a Flying-type."
+    )
+}
+
+text SoftwindCity_Gym_Text_NessaIntro {
+    format(
+        "I was so excited when Therma invited me to be part of her gym!\pI've been training this Pokémon ever since!"
+    )
+}
+
+text SoftwindCity_Gym_Text_NessaDefeated {
+    format(
+        "Aww… I worked so hard…"
+    )
+}
+
+text SoftwindCity_Gym_Text_NessaPostBattle {
+    format(
+        "I don't like teaming up with Brandyn.\pHe says he loves it but somehow I don't believe it…"
+    )
+}
+
+text SoftwindCity_Gym_Text_GregorIntro {
+    format(
+        "Cumulus!\pNimbus!\pStratus!\pCirrus!\pAs…per…atus?\p"
+        "I'm studying types of clouds to help me work better with my Pokémon."
+    )
+}
+
+text SoftwindCity_Gym_Text_GregorDefeated {
+    format(
+        "My studying isn't going so well…"
+    )
+}
+
+text SoftwindCity_Gym_Text_GregorPostBattle {
+    format(
+        "No matter how much I study clouds, I can't figure out how to evolve my Cirroft!"
+    )
+}
+
+text SoftwindCity_Gym_Text_ThermaIntro {
+    format(
+        "Well.\nI'm not surprised you made it this far."
+        "I've worked with Professor Willow for "
+        "years, and I trust her judgment when "
+        "it comes to choosing her aids.\p"
+        "With… one possible exception.\p"
+        "Regardless, I am the Softwind Pokémon "
+        "Gym Leader.\pThrough careful study and "
+        "dutiful preparation, I have honed my "
+        "battle plan.\p"
+        "My Pokémon will strike faster than you "
+        "can blink!"
+    )
+}
+
+text SoftwindCity_Gym_Text_ThermaDefeated {
+    format(
+        "Remarkable!\p"
+        "Willow has done it again.\p"
+        "Where that woman finds these incredible students…\p"
+        "No matter!\p"
+        "Without a doubt you have earned this.\p"
+        "As proof of your success, please take this "
+        "official Pokémon League Badge!"
+    )
+}
+
+text SoftwindCity_Gym_Text_ThermaPostBattle {
+    format(
+        "I encourage you to seek solace in the colorful "
+        "history of Caldera and Kirant as you travel.\p"
+        "I do not doubt that you will travel far and learn much.\p"
+        "As you grow stronger, strive to maintain your "
+        "humility.\pIt will be your greatest ally.\p"
+        "Pray do not let yourself be drawn down the path of your "
+        "predecessor."
+    )
+}
+
+text SoftwindCity_Gym_Text_ReceivedBadge {
+    "{PLAYER} received the Gale Badge\nfrom Therma."
+}
+
+text SoftwindCity_Gym_Text_GaleBadgeInfo {
+    format(
+        "The Gale Badge allows your Pokémon "
+        "to use the hidden move Flash outside of battle.\p"
+        "You will need it as your journey takes you to the "
+        "west, if you are to make it through Mt. Mist.\p"
+        "Furthermore, it will allow you to raise traded "
+        "Pokémon beyond level 30 without fear of "
+        "disobedience.\p"
+        "As an additional reward for you exceptional "
+        "battle skill, please take this as well."
+    )
+}
+
+text SoftwindCity_Gym_Text_WindwhistleExplanation {
+    format(
+        "TM56 is Technical Machine that will allow "
+        "teach your Pokémon Windwhistle.\p"
+        "It is the tool of a cunning Pokémon Trainer.\p"
+        "Not only will this move incapacitate your "
+        "opponent with confusion, it may also weaken "
+        "their defenses!\p"
+        "The combination will doubtless leave your "
+        "opponents a in desperate way."
+    )
+}
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================
