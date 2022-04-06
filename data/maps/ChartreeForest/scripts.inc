@@ -173,6 +173,7 @@ ChartreeForest_Balfour_5:
 	removeobject 15
 	removeobject 14
 	setvar VAR_CHARTREE_FOREST_STATE, 3
+	setvar VAR_CRANEWING_CITY_STATE, 2
 	setvar VAR_SOFTWIND_CITY_STATE, 3
 	setflag FLAG_HIDE_BRADLEY_ROUTE_204
 	clearflag FLAG_ROCKETS_IN_CHARTREE
@@ -180,6 +181,8 @@ ChartreeForest_Balfour_5:
 	setflag FLAG_THERMA_RETURNED
 	clearflag FLAG_HIDE_SOFTWIND_CITY_ORION
 	clearflag FLAG_HIDE_SOFTWIND_CITY_WILLOW
+	clearflag FLAG_HIDE_BRADLEY_CRANEWING_CENTER
+	warp MAP_CRANEWING_CITY_POKEMON_CENTER, 2, 0, 0
 	release
 	end
 

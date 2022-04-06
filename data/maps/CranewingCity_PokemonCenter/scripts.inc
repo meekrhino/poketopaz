@@ -1,6 +1,11 @@
 CranewingCity_PokemonCenter_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CranewingCity_PokemonCenter_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CranewingCity_PokemonCenter_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
+
+CranewingCity_PokemonCenter_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+	map_script_2 VAR_CRANEWING_CITY_STATE, 2, CranewingCity_PokemonCenter_OnWarp
+	.2byte 0
 
 
 CranewingCity_PokemonCenter_Nurse::
@@ -27,6 +32,32 @@ CranewingCity_PokemonCenter_OnTransition:
 	end
 
 
+CranewingCity_PokemonCenter_OnWarp:
+	lock
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	turnobject 4, DIR_WEST
+	delay 30
+	msgbox CranewingCity_PokemonCenter_Text_Bradley
+	closemessage
+	applymovement 4, mBradleyLeavesTheCenter
+	waitmovement 0
+	removeobject 4
+	setflag FLAG_HIDE_BRADLEY_CRANEWING_CENTER
+	setvar VAR_CRANEWING_CITY_STATE, 3
+	release
+	end
+
+
+mBradleyLeavesTheCenter:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	set_invisible
+	step_end
+
 CranewingCity_Text_FatMan::
 	.string "Hiding?\n"
 	.string "No, not at all!\p"
@@ -49,3 +80,15 @@ CranewingCity_Text_Beauty::
 	.string "shelves!\p"
 	.string "They've got my favorite romance series!\p"
 	.string "All but the last one…$"
+
+CranewingCity_PokemonCenter_Text_Bradley::
+	.string "Bradley: They fixed me right up!\p"
+	.string "It didn't take long at all!\n"
+	.string "Now we have to beat Froy and--\p"
+	.string "What?\p"
+	.string "You've already beaten him!?\p"
+	.string "… I guess I have some catching up to do.\p"
+	.string "Prof. Willow is waiting for us back in\n"
+	.string "Softwind City.\p"
+	.string "You go and meet her, I'll stay here and\n"
+	.string "get ready to challenge the gym.$"

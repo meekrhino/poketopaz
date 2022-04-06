@@ -51,7 +51,7 @@ SoftwindCity_Gym_Gregor::
 
 
 SoftwindCity_Gym_Therma::
-	trainerbattle_single TRAINER_THERMA, SoftwindCity_Gym_Text_ThermaIntro, SoftwindCity_Gym_ThermaDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_THERMA, SoftwindCity_Gym_Text_ThermaIntro, SoftwindCity_Gym_Text_ThermaDefeated, SoftwindCity_Gym_ThermaDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_TM56, SoftwindCity_Gym_Therma_2
 SoftwindCity_Gym_Therma_1:
 	msgbox SoftwindCity_Gym_Text_ThermaPostBattle, MSGBOX_AUTOCLOSE
@@ -105,12 +105,12 @@ SoftwindCity_Gym_Text_GymStatueCertified::
 SoftwindCity_Text_GymGuide::
 	.string "Yo, yo!\p"
 	.string "Listen, listen. \p"
-	.string "You beat Therma, but it only gets\n"
+	.string "You beat Froy, but it only gets\n"
 	.string "tougher from here on!\p"
 	.string "Therma is as cool-headed as they\n"
 	.string "come, an experienced user of the\l"
 	.string "Flying-type Pokémon.\p"
-	.string "They're fast, and fierce!\n"
+	.string "They're fast, they're fierce!\n"
 	.string "But listen up!\p"
 	.string "Catch them by surprise--\n"
 	.string "SHOCK them with Electric-type,\l"
@@ -221,8 +221,8 @@ SoftwindCity_Gym_Text_ThermaPostBattle::
 	.string "As you grow stronger, strive to\n"
 	.string "maintain your humility.\p"
 	.string "It will be your greatest ally.\p"
-	.string "Pray do not let yourself be drawn down\n"
-	.string "the path of your predecessor.$"
+	.string "Do not let yourself be drawn down the\n"
+	.string "path of your predecessor.$"
 
 SoftwindCity_Gym_Text_ReceivedBadge::
 	.string "{PLAYER} received the Gale Badge\nfrom Therma.$"
@@ -237,13 +237,13 @@ SoftwindCity_Gym_Text_GaleBadgeInfo::
 	.string "Furthermore, it will allow you to raise\n"
 	.string "traded Pokémon beyond level 30\l"
 	.string "without fear of disobedience.\p"
-	.string "As an additional reward for you\n"
+	.string "As an additional reward for your\n"
 	.string "exceptional battle skill, please take\l"
 	.string "this as well.$"
 
 SoftwindCity_Gym_Text_WindwhistleExplanation::
 	.string "TM56 is Technical Machine that will\n"
-	.string "allow teach your Pokémon Windwhistle.\p"
+	.string "teach your Pokémon Windwhistle.\p"
 	.string "It is the tool of a cunning Pokémon\n"
 	.string "Trainer.\p"
 	.string "Not only will this move incapacitate\n"

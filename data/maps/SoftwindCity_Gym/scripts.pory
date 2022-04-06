@@ -54,7 +54,7 @@ script(global) SoftwindCity_Gym_Gregor {
 }
 
 script(global) SoftwindCity_Gym_Therma {
-    trainerbattle_single(TRAINER_THERMA, SoftwindCity_Gym_Text_ThermaIntro, SoftwindCity_Gym_ThermaDefeated, NO_MUSIC)
+    trainerbattle_single(TRAINER_THERMA, SoftwindCity_Gym_Text_ThermaIntro, SoftwindCity_Gym_Text_ThermaDefeated, SoftwindCity_Gym_ThermaDefeated, NO_MUSIC)
     if(!(flag(FLAG_RECEIVED_TM56))) {
         goto(SoftwindCity_Gym_GiveWindwhistle)
     }
@@ -109,12 +109,12 @@ text SoftwindCity_Gym_Text_GymStatueCertified {
 text SoftwindCity_Text_GymGuide {
     "Yo, yo!\p"
     "Listen, listen. \p"
-    "You beat Therma, but it only gets\n"
+    "You beat Froy, but it only gets\n"
     "tougher from here on!\p"
     "Therma is as cool-headed as they\n"
     "come, an experienced user of the\l"
     "Flying-type Pokémon.\p"
-    "They're fast, and fierce!\n"
+    "They're fast, they're fierce!\n"
     "But listen up!\p"
     "Catch them by surprise--\n"
     "SHOCK them with Electric-type,\l"
@@ -243,7 +243,7 @@ text SoftwindCity_Gym_Text_ThermaPostBattle {
         "I do not doubt that you will travel far and learn much.\p"
         "As you grow stronger, strive to maintain your "
         "humility.\pIt will be your greatest ally.\p"
-        "Pray do not let yourself be drawn down the path of your "
+        "Do not let yourself be drawn down the path of your "
         "predecessor."
     )
 }
@@ -261,14 +261,14 @@ text SoftwindCity_Gym_Text_GaleBadgeInfo {
         "Furthermore, it will allow you to raise traded "
         "Pokémon beyond level 30 without fear of "
         "disobedience.\p"
-        "As an additional reward for you exceptional "
+        "As an additional reward for your exceptional "
         "battle skill, please take this as well."
     )
 }
 
 text SoftwindCity_Gym_Text_WindwhistleExplanation {
     format(
-        "TM56 is Technical Machine that will allow "
+        "TM56 is Technical Machine that will "
         "teach your Pokémon Windwhistle.\p"
         "It is the tool of a cunning Pokémon Trainer.\p"
         "Not only will this move incapacitate your "

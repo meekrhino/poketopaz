@@ -1,11 +1,21 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
 const NURSE = 1
 const BRADLEY = 4
+
+// VAR_CRANEWING_CITY_STATE values
+const CRANEWING_STATE_INIT = 0
+const CRANEWING_STATE_SAW_GLASSWORKS = 1
+const CRANEWING_STATE_MET_BALFOUR = 2
+const CRANEWING_STATE_SAW_BRADLEY_AT_CENTER = 3
 
 //=====================================
 // Map Scripts
 //=====================================
 mapscripts CranewingCity_PokemonCenter_MapScripts  {
     MAP_SCRIPT_ON_TRANSITION: CranewingCity_PokemonCenter_OnTransition
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_CRANEWING_CITY_STATE, CRANEWING_STATE_MET_BALFOUR: CranewingCity_PokemonCenter_OnWarp
+    ]
 }
 
 //=====================================
@@ -38,6 +48,22 @@ script(local) CranewingCity_PokemonCenter_OnTransition {
     end
 }
 
+script(local) CranewingCity_PokemonCenter_OnWarp {
+    lock
+    turnobject(PLAYER, DIR_EAST)
+    turnobject(BRADLEY, DIR_WEST)
+    delay(30)
+    msgbox(CranewingCity_PokemonCenter_Text_Bradley)
+    closemessage
+    applymovement(BRADLEY, mBradleyLeavesTheCenter)
+    waitmovement(0)
+    removeobject(BRADLEY)
+    setflag(FLAG_HIDE_BRADLEY_CRANEWING_CENTER) // redundant for clarity
+    setvar(VAR_CRANEWING_CITY_STATE, CRANEWING_STATE_SAW_BRADLEY_AT_CENTER)
+    release
+    end
+}
+
 //=====================================
 // Text
 //=====================================
@@ -62,9 +88,29 @@ text CranewingCity_Text_Beauty {
     )
 }
 
+text CranewingCity_PokemonCenter_Text_Bradley {
+    format (
+        "Bradley: They fixed me right up!\p"
+        "It didn't take long at all!\n"
+        "Now we have to beat Froy and--\p"
+        "What?\p"
+        "You've already beaten him!?\p"
+        "… I guess I have some catching up to do.\p"
+        "Prof. Willow is waiting for us back in "
+        "Softwind City.\pYou go and meet her, I'll "
+        "stay here and get ready to challenge the gym."
+    )
+}
+
 //=====================================
 // Movement
 //=====================================
+movement mBradleyLeavesTheCenter {
+    walk_down
+    walk_left * 3
+    walk_down * 2
+    set_invisible
+}
 
 //=====================================
 // Raw

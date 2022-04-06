@@ -1610,8 +1610,8 @@ static const u8 sSmiteDescription[] = _(
     "retribution. May flich.");
 
 static const u8 sSootheSongDescription[] = _(
-    "A sweet song that calms the\n"
-    "most frenzied spirits.");
+    "A sweet song that calms\n"
+    "frenzied spirits.");
 
 static const u8 sSoulBurnDescription[] = _(
     "A fierce attack from the\n"

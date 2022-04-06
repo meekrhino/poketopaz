@@ -508,9 +508,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_YUKI] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_LASS,
+        .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerPic = TRAINER_PIC_BATTLE_GIRL,
         .trainerName = _("Yuki"),
         .items = {},
         .doubleBattle = FALSE,
@@ -522,9 +522,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_NESSA] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
+        .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BATTLE_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
         .trainerName = _("Nessa"),
         .items = {},
         .doubleBattle = FALSE,
@@ -536,9 +536,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BRANDYN] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_AQUA_LEADER,
+        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_AQUA_LEADER_ARCHIE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .trainerName = _("Brandyn"),
         .items = {},
         .doubleBattle = FALSE,
@@ -550,15 +550,15 @@ const struct Trainer gTrainers[] = {
     [TRAINER_GREGOR] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_HEX_MANIAC,
+        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .trainerName = _("Gregor"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Leah),
-        .party = {.NoItemDefaultMoves = sParty_Leah},
+        .partySize = ARRAY_COUNT(sParty_Gregor),
+        .party = {.NoItemDefaultMoves = sParty_Gregor},
     },
 
     [TRAINER_THERMA] =
