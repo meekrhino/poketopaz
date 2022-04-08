@@ -1,4 +1,31 @@
 //=====================================================
+// Bradley #1
+//=====================================================
+static const struct TrainerMonNoItemDefaultMoves sParty_BradleyNeoBay1Venap[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_ECHOISE,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_BradleyNeoBay1Celsinge[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_VENAP,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_BradleyNeoBay1Echoise[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_CELSINGE,
+    }
+};
+
+//=====================================================
 // Route 201
 //=====================================================
 static const struct TrainerMonNoItemDefaultMoves sParty_Allen[] = {

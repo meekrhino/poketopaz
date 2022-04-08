@@ -14,6 +14,52 @@ const struct Trainer gTrainers[] = {
     },
 
     //=====================================================
+    // Bradley #1
+    //=====================================================
+
+    [TRAINER_BRADLEY_NEOBAY_1_VENAP] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Bradley"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_BradleyNeoBay1Venap),
+        .party = {.NoItemDefaultMoves = sParty_BradleyNeoBay1Venap},
+    },
+
+    [TRAINER_BRADLEY_NEOBAY_1_CELSINGE] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Bradley"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_BradleyNeoBay1Celsinge),
+        .party = {.NoItemDefaultMoves = sParty_BradleyNeoBay1Celsinge},
+    },
+
+    [TRAINER_BRADLEY_NEOBAY_1_ECHOISE] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Bradley"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_BradleyNeoBay1Echoise),
+        .party = {.NoItemDefaultMoves = sParty_BradleyNeoBay1Echoise},
+    },
+
+    //=====================================================
     // Route 201
     //=====================================================
 
@@ -861,48 +907,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_GruntWeatherInst3),
         .party = {.NoItemDefaultMoves = sParty_GruntWeatherInst3},
-    },
-
-    [TRAINER_GABBY_AND_TY_3] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_INTERVIEWER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
-        .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .trainerName = _("GABBY & TY"),
-        .items = {},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GabbyAndTy3),
-        .party = {.NoItemDefaultMoves = sParty_GabbyAndTy3},
-    },
-
-    [TRAINER_GABBY_AND_TY_4] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_INTERVIEWER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
-        .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .trainerName = _("GABBY & TY"),
-        .items = {},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GabbyAndTy4),
-        .party = {.NoItemDefaultMoves = sParty_GabbyAndTy4},
-    },
-
-    [TRAINER_GABBY_AND_TY_5] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_INTERVIEWER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
-        .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .trainerName = _("GABBY & TY"),
-        .items = {},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GabbyAndTy5),
-        .party = {.NoItemDefaultMoves = sParty_GabbyAndTy5},
     },
 
     [TRAINER_GABBY_AND_TY_6] =

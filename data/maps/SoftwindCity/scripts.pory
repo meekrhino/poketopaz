@@ -15,13 +15,19 @@ const SOFTWIND_STATE_MET_ALISA = 1
 const SOFTWIND_STATE_TEAM_ENCOUNTERED = 2
 const SOFTWIND_STATE_DEFEATED_ROCKETS = 3
 const SOFTWIND_STATE_MET_DEFENDERS = 4
-const SOFTWIND_STATE_ALISA_AND_WILLOW = 5
-const SOFTWIND_STATE_DEFEATED_ALISA = 6
+const SOFTWIND_STATE_DEFEATED_THERMA = 5
+const SOFTWIND_STATE_ALISA_AND_WILLOW = 6
+const SOFTWIND_STATE_DEFEATED_ALISA = 7
 
 //=====================================
 // Map Scripts
 //=====================================
-mapscripts SoftwindCity_MapScripts {}
+mapscripts SoftwindCity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: SoftwindCity_OnTransition
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_DEFEATED_THERMA: SoftwindCity_AfterTherma
+    ]
+}
 
 //=====================================
 // Global Scripts
@@ -62,7 +68,7 @@ script(global) SoftwindCity_WomanInFlowers {
 }
 
 script(global) SoftwindCity_GirlHiding {
-    msgbox(format("Wow, you noticed me hiding behind here?\pIt's so easy to hide behind buildings.\pI've found items behind them a few times!"), MSGBOX_NPC)
+    msgbox(format("Wow, you noticed me hiding behind here?\pIt's so easy to hide behind buildings.\pI've actually stumbled on some lost and forgotten things a few times!"), MSGBOX_NPC)
     end
 }
 
@@ -72,7 +78,7 @@ script(global) SoftwindCity_GuyInFrontOfGym {
 }
 
 script(global) SoftwindCity_BaldingMan {
-    msgbox(format("I'm old enough to remember Pinedale Forest before the fire.\pNow…\pWell, let's just say if you're heading east I hope you have Burn Heals."), MSGBOX_NPC)
+    msgbox(format("I'm old enough to remember Pinedale Forest before the fire.\pNow…\pWell, let's just say this.\pIf you're heading east, I hope you have Burn Heals!"), MSGBOX_NPC)
     end
 }
 
@@ -301,9 +307,84 @@ script SoftwindCity_TriggerOrion_2 {
     end
 }
 
+script(global) SoftwindCity_WillowWaitingByGym {
+    msgbox(format("I'm certain you can beat her.\pShe's not half the prodigy she sees herself as."), MSGBOX_NPC)
+    end
+}
+
+script(global) SoftwindCity_AlisaWaitingByGym {
+    msgbox(format("Well then, {PLAYER}.\pWhy not show me how “special” you are?"), MSGBOX_NPC)
+    switch(var(VAR_STARTER_MON)) {
+        case 0:
+            trainerbattle_no_intro(TRAINER_ALISA_1_VENAP, SoftwindCity_Text_AlisaDefeated2)
+        case 1:
+            trainerbattle_no_intro(TRAINER_ALISA_1_CELSINGE, SoftwindCity_Text_AlisaDefeated2)
+        case 2:
+            trainerbattle_no_intro(TRAINER_ALISA_1_ECHOISE, SoftwindCity_Text_AlisaDefeated2)
+    }
+    end
+}
+
 //=====================================
 // Local Scripts
 //=====================================
+script(local) SoftwindCity_OnTransition {
+    setflag(FLAG_VISITED_SOFTWIND_CITY)
+    call(Common_EventScript_SetupRivalGfxId)
+}
+
+script(local) SoftwindCity_AfterTherma {
+    lock
+    setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_ALISA_AND_WILLOW)
+    delay(60)
+    addobject(WILLOW)
+    applymovement(WILLOW, mWillowApproachesAfterTherma)
+    waitmovement(0)
+    msgbox(SoftwindCity_Text_WillowCongrats)
+    closemessage
+    msgbox("???: Hello?\pAh, it is you, professor.")
+    closemessage
+    applymovement(WILLOW, mFaceLeft)
+    waitmovement(0)
+    addobject(ALISA)
+    setobjectxy(ALISA, 21, 32)
+    applymovement(ALISA, mAlisaApproachesAfterTherma)
+    waitmovement(0)
+    msgbox(format("Alisa: My dear Prof. Willow!\pIt really has been far too long."))
+    msgbox(format("Willow: Is that you, Alisa?\pMy, you have grown up haven't you."))
+    msgbox(SoftwindCity_Text_AlisaCutTheAct)
+    applymovement(WILLOW, mFaceUp)
+    waitmovement(0)
+    msgbox(format("Willow: … Here, {PLAYER}.\pI'll heal your Pokémon for you.\pI'm certain you can beat her.\pShe's not half the prodigy she sees herself as."))
+    closemessage
+    call(Common_EventScript_OutOfCenterPartyHeal)
+    applymovement(WILLOW, mWalkRight)
+    waitmovement(0)
+    applymovement(WILLOW, mFaceLeft)
+    waitmovement(0)
+    copyobjectxytoperm(WILLOW)
+    copyobjectxytoperm(ALISA)
+    msgbox(format("Alisa: Hah!\nThis from you?\pEven with this… person… you'll never find it.\pWell then, {PLAYER}.\pWhy not show me how “special” you are?"))
+    closemessage
+    applymovement(ALISA, mWalkRightLookUp)
+    waitmovement(0)
+    switch(var(VAR_STARTER_MON)) {
+        case 0:
+            trainerbattle_no_intro(TRAINER_ALISA_1_VENAP, SoftwindCity_Text_AlisaDefeated2)
+        case 1:
+            trainerbattle_no_intro(TRAINER_ALISA_1_CELSINGE, SoftwindCity_Text_AlisaDefeated2)
+        case 2:
+            trainerbattle_no_intro(TRAINER_ALISA_1_ECHOISE, SoftwindCity_Text_AlisaDefeated2)
+    }
+    setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_DEFEATED_ALISA)
+    msgbox(SoftwindCity_Text_AlisaRage)
+    closemessage
+    applymovement(ALISA, mAlisaWalksOffAfterBattle)
+    waitmovement(0)
+    removeobject(ALISA)
+    release
+    end
+}
 
 //=====================================
 // Text
@@ -424,6 +505,56 @@ text SoftwindCity_Text_GymDude {
         "Man: Therma has returned!\p"
         "She says she will meet with you straight away, just as soon as she deals "
         "with all of the gym challenges that have piled up in her absence."
+    )
+}
+
+text SoftwindCity_Text_WillowCongrats {
+    format (
+        "Willow: Congratulations, {PLAYER}!\p"
+        "You still have a long way to go until "
+        "the Pokémon League, but it really is an "
+        "achievement to even get this far.\p"
+        "Now, I'd like you to meet Therma with me.\p"
+        "You see, what I want from her is--"
+    )
+}
+
+text SoftwindCity_Text_AlisaCutTheAct {
+    format (
+        "Alisa: Cut the cute act, Professor.\p"
+        "I know what you're doing here, and you "
+        "will not succeed.\p"
+        "You've lost your touch.\nYou can't even "
+        "choose your aids well anymore.\pI mean "
+        "look at this child.\p"
+        "They will never amount to anything.\p"
+        "They're nothing like me!\p"
+        "I could beat him any day of the week."
+    )
+}
+
+text SoftwindCity_Text_AlisaDefeated2 {
+    format (
+        "I can't believe this!"
+    )
+}
+
+text SoftwindCity_Text_AlisaRage {
+    format (
+        "Alisa: You must have gotten lucky.\p"
+        "There's no wa you could have beaten me "
+        "if I was at my best…\p"
+        "Well, {PLAYER}, I hope you've enjoyed "
+        "your little journey, because those "
+        "Rockets in the forest?\p"
+        "That was only the beginning.\p"
+        "Team Rocket and the Orion Defenders "
+        "have come back.\p"
+        "There's a war on the horizon, and you "
+        "had better hope your little job doesn't "
+        "put you in the middle of it.\p"
+        "You're getting in over your head, {PLAYER}."
+        "You had better watch yourself."
     )
 }
 
@@ -610,6 +741,30 @@ movement mWillowApproachesPlayer4 {
 
 movement mWillowDeparts {
     walk_left * 9
+}
+
+movement mWillowApproachesAfterTherma {
+    walk_right * 4
+    walk_up
+}
+
+movement mAlisaApproachesAfterTherma {
+    walk_right
+    walk_down * 3
+    walk_right * 5
+    walk_up
+    walk_right
+}
+
+movement mAlisaWalksOffAfterBattle {
+    walk_down
+    walk_left * 9
+    set_invisible
+}
+
+movement mWalkRightLookUp {
+    walk_right
+    face_up
 }
 
 //=====================================

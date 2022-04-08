@@ -51,7 +51,6 @@ movement mGoWatchJirachiProgram {
     emote_exclamation_mark
     face_up
     delay_16 * 4
-    walk_right
     walk_up * 2
 }
 

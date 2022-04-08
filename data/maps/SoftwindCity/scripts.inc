@@ -1,5 +1,11 @@
 SoftwindCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SoftwindCity_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SoftwindCity_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+SoftwindCity_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_SOFTWIND_CITY_STATE, 5, SoftwindCity_AfterTherma
+	.2byte 0
 
 
 SoftwindCity_TownSign::
@@ -359,6 +365,101 @@ SoftwindCity_TriggerOrion_2_24:
 	goto SoftwindCity_TriggerOrion_2_19
 
 
+SoftwindCity_WillowWaitingByGym::
+	msgbox SoftwindCity_WillowWaitingByGym_Text_0, MSGBOX_NPC
+	end
+
+
+SoftwindCity_AlisaWaitingByGym::
+	msgbox SoftwindCity_AlisaWaitingByGym_Text_0, MSGBOX_NPC
+	switch VAR_STARTER_MON
+	case 0, SoftwindCity_AlisaWaitingByGym_3
+	case 1, SoftwindCity_AlisaWaitingByGym_4
+	case 2, SoftwindCity_AlisaWaitingByGym_5
+SoftwindCity_AlisaWaitingByGym_1:
+	end
+
+SoftwindCity_AlisaWaitingByGym_3:
+	trainerbattle_no_intro TRAINER_ALISA_1_VENAP, SoftwindCity_Text_AlisaDefeated2
+	goto SoftwindCity_AlisaWaitingByGym_1
+
+SoftwindCity_AlisaWaitingByGym_4:
+	trainerbattle_no_intro TRAINER_ALISA_1_CELSINGE, SoftwindCity_Text_AlisaDefeated2
+	goto SoftwindCity_AlisaWaitingByGym_1
+
+SoftwindCity_AlisaWaitingByGym_5:
+	trainerbattle_no_intro TRAINER_ALISA_1_ECHOISE, SoftwindCity_Text_AlisaDefeated2
+	goto SoftwindCity_AlisaWaitingByGym_1
+
+
+SoftwindCity_OnTransition:
+	setflag FLAG_VISITED_SOFTWIND_CITY
+	call Common_EventScript_SetupRivalGfxId
+	return
+
+
+SoftwindCity_AfterTherma:
+	lock
+	setvar VAR_SOFTWIND_CITY_STATE, 6
+	delay 60
+	addobject 8
+	applymovement 8, mWillowApproachesAfterTherma
+	waitmovement 0
+	msgbox SoftwindCity_Text_WillowCongrats
+	closemessage
+	msgbox SoftwindCity_AfterTherma_Text_0
+	closemessage
+	applymovement 8, mFaceLeft
+	waitmovement 0
+	addobject 9
+	setobjectxy 9, 21, 32
+	applymovement 9, mAlisaApproachesAfterTherma
+	waitmovement 0
+	msgbox SoftwindCity_AfterTherma_Text_1
+	msgbox SoftwindCity_AfterTherma_Text_2
+	msgbox SoftwindCity_Text_AlisaCutTheAct
+	applymovement 8, mFaceUp
+	waitmovement 0
+	msgbox SoftwindCity_AfterTherma_Text_3
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	applymovement 8, mWalkRight
+	waitmovement 0
+	applymovement 8, mFaceLeft
+	waitmovement 0
+	copyobjectxytoperm 8
+	copyobjectxytoperm 9
+	msgbox SoftwindCity_AfterTherma_Text_4
+	closemessage
+	applymovement 9, mWalkRightLookUp
+	waitmovement 0
+	switch VAR_STARTER_MON
+	case 0, SoftwindCity_AfterTherma_3
+	case 1, SoftwindCity_AfterTherma_4
+	case 2, SoftwindCity_AfterTherma_5
+SoftwindCity_AfterTherma_1:
+	setvar VAR_SOFTWIND_CITY_STATE, 7
+	msgbox SoftwindCity_Text_AlisaRage
+	closemessage
+	applymovement 9, mAlisaWalksOffAfterBattle
+	waitmovement 0
+	removeobject 9
+	release
+	end
+
+SoftwindCity_AfterTherma_3:
+	trainerbattle_no_intro TRAINER_ALISA_1_VENAP, SoftwindCity_Text_AlisaDefeated2
+	goto SoftwindCity_AfterTherma_1
+
+SoftwindCity_AfterTherma_4:
+	trainerbattle_no_intro TRAINER_ALISA_1_CELSINGE, SoftwindCity_Text_AlisaDefeated2
+	goto SoftwindCity_AfterTherma_1
+
+SoftwindCity_AfterTherma_5:
+	trainerbattle_no_intro TRAINER_ALISA_1_ECHOISE, SoftwindCity_Text_AlisaDefeated2
+	goto SoftwindCity_AfterTherma_1
+
+
 mAlisaApproaches_1:
 	walk_right
 	walk_right
@@ -667,6 +768,47 @@ mWillowDeparts:
 	walk_left
 	step_end
 
+mWillowApproachesAfterTherma:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+mAlisaApproachesAfterTherma:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_right
+	step_end
+
+mAlisaWalksOffAfterBattle:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	set_invisible
+	step_end
+
+mWalkRightLookUp:
+	walk_right
+	face_up
+	step_end
+
 SoftwindCity_ElderGuard_Text_0:
 	.string "My sisters and I hold the sacred duty\n"
 	.string "of guarding the towers.\p"
@@ -682,8 +824,8 @@ SoftwindCity_WomanInFlowers_Text_0:
 SoftwindCity_GirlHiding_Text_0:
 	.string "Wow, you noticed me hiding behind here?\p"
 	.string "It's so easy to hide behind buildings.\p"
-	.string "I've found items behind them a few\n"
-	.string "times!$"
+	.string "I've actually stumbled on some lost and\n"
+	.string "forgotten things a few times!$"
 
 SoftwindCity_GuyInFrontOfGym_Text_0:
 	.string "I'm sorry, Gym Leader Therma is\n"
@@ -695,8 +837,9 @@ SoftwindCity_BaldingMan_Text_0:
 	.string "I'm old enough to remember Pinedale\n"
 	.string "Forest before the fire.\p"
 	.string "Now…\p"
-	.string "Well, let's just say if you're heading\n"
-	.string "east I hope you have Burn Heals.$"
+	.string "Well, let's just say this.\p"
+	.string "If you're heading east, I hope you have\n"
+	.string "Burn Heals!$"
 
 SoftwindCity_TriggerAlisaIntro_Text_0:
 	.string "???: Hi!\n"
@@ -751,6 +894,41 @@ SoftwindCity_TriggerOrion_2_Text_5:
 	.string "Willow: Well, {PLAYER}, Therma awaits!\p"
 	.string "After beating Team Rocket, I have no\n"
 	.string "doubt you'll win! Ohohoho!$"
+
+SoftwindCity_WillowWaitingByGym_Text_0:
+	.string "I'm certain you can beat her.\p"
+	.string "She's not half the prodigy she sees\n"
+	.string "herself as.$"
+
+SoftwindCity_AlisaWaitingByGym_Text_0:
+	.string "Well then, {PLAYER}.\p"
+	.string "Why not show me how “special” you are?$"
+
+SoftwindCity_AfterTherma_Text_0:
+	.string "???: Hello?\pAh, it is you, professor.$"
+
+SoftwindCity_AfterTherma_Text_1:
+	.string "Alisa: My dear Prof. Willow!\p"
+	.string "It really has been far too long.$"
+
+SoftwindCity_AfterTherma_Text_2:
+	.string "Willow: Is that you, Alisa?\p"
+	.string "My, you have grown up haven't you.$"
+
+SoftwindCity_AfterTherma_Text_3:
+	.string "Willow: … Here, {PLAYER}.\p"
+	.string "I'll heal your Pokémon for you.\p"
+	.string "I'm certain you can beat her.\p"
+	.string "She's not half the prodigy she sees\n"
+	.string "herself as.$"
+
+SoftwindCity_AfterTherma_Text_4:
+	.string "Alisa: Hah!\n"
+	.string "This from you?\p"
+	.string "Even with this… person… you'll never\n"
+	.string "find it.\p"
+	.string "Well then, {PLAYER}.\p"
+	.string "Why not show me how “special” you are?$"
 
 SoftwindCity_Text_TownSign::
 	.string "Softwind City\n"
@@ -860,3 +1038,43 @@ SoftwindCity_Text_GymDude::
 	.string "away, just as soon as she deals with all\l"
 	.string "of the gym challenges that have piled\l"
 	.string "up in her absence.$"
+
+SoftwindCity_Text_WillowCongrats::
+	.string "Willow: Congratulations, {PLAYER}!\p"
+	.string "You still have a long way to go until the\n"
+	.string "Pokémon League, but it really is an\l"
+	.string "achievement to even get this far.\p"
+	.string "Now, I'd like you to meet Therma with me.\p"
+	.string "You see, what I want from her is--$"
+
+SoftwindCity_Text_AlisaCutTheAct::
+	.string "Alisa: Cut the cute act, Professor.\p"
+	.string "I know what you're doing here, and you\n"
+	.string "will not succeed.\p"
+	.string "You've lost your touch.\n"
+	.string "You can't even choose your aids well\l"
+	.string "anymore.\p"
+	.string "I mean look at this child.\p"
+	.string "They will never amount to anything.\p"
+	.string "They're nothing like me!\p"
+	.string "I could beat him any day of the week.$"
+
+SoftwindCity_Text_AlisaDefeated2::
+	.string "I can't believe this!$"
+
+SoftwindCity_Text_AlisaRage::
+	.string "Alisa: You must have gotten lucky.\p"
+	.string "There's no wa you could have beaten me\n"
+	.string "if I was at my best…\p"
+	.string "Well, {PLAYER}, I hope you've enjoyed\n"
+	.string "your little journey, because those\l"
+	.string "Rockets in the forest?\p"
+	.string "That was only the beginning.\p"
+	.string "Team Rocket and the Orion Defenders\n"
+	.string "have come back.\p"
+	.string "There's a war on the horizon, and you\n"
+	.string "had better hope your little job doesn't\l"
+	.string "put you in the middle of it.\p"
+	.string "You're getting in over your head,\n"
+	.string "{PLAYER}. You had better watch\l"
+	.string "yourself.$"

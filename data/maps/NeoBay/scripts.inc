@@ -14,7 +14,7 @@ NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 1, NeoBay_EventScript_BradleyLeadsToGrass
 	map_script_2 FLAG_WILD_ENCOUNTER, 1, NeoBay_OnCompletedWildEncounter
-	map_script_2 VAR_AMPURE_RESCUE_STATE, 4, NeoBay_EventScript_AmpureCapture
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 4, NeoBay_EventScript_BradleyBattle
 	.2byte 0
 
 
@@ -74,39 +74,63 @@ NeoBay_EventScript_OtherMailbox::
 
 NeoBay_EventScript_BradleyStopsPlayer::
 	lockall
-	msgbox NeoBay_EventScript_BradleyStopsPlayer_Text_0
+	applymovement 2, mFaceRight
+	waitmovement 0
+	compare VAR_AMPURE_RESCUE_STATE, 6
+	goto_if_eq NeoBay_EventScript_BradleyStopsPlayer_1
+	msgbox NeoBay_EventScript_BradleyStopsPlayer_Text_1
 	waitmessage
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	switch VAR_TEMP_0
-	case 9, NeoBay_EventScript_BradleyStopsPlayer_3
-	case 10, NeoBay_EventScript_BradleyStopsPlayer_4
-	case 16, NeoBay_EventScript_BradleyStopsPlayer_5
+	case 9, NeoBay_EventScript_BradleyStopsPlayer_10
+	case 10, NeoBay_EventScript_BradleyStopsPlayer_11
+	case 16, NeoBay_EventScript_BradleyStopsPlayer_12
 	applymovement OBJ_EVENT_ID_PLAYER, mWalkLeft
-NeoBay_EventScript_BradleyStopsPlayer_1:
+NeoBay_EventScript_BradleyStopsPlayer_8:
 	waitmovement OBJ_EVENT_ID_PLAYER
 	releaseall
 	end
 
-NeoBay_EventScript_BradleyStopsPlayer_3:
-	applymovement OBJ_EVENT_ID_PLAYER, mWalkDown
-	goto NeoBay_EventScript_BradleyStopsPlayer_1
-
+NeoBay_EventScript_BradleyStopsPlayer_1:
+	msgbox NeoBay_EventScript_BradleyStopsPlayer_Text_0
+	waitmessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	switch VAR_TEMP_1
+	case 24, NeoBay_EventScript_BradleyStopsPlayer_6
+	case 25, NeoBay_EventScript_BradleyStopsPlayer_7
 NeoBay_EventScript_BradleyStopsPlayer_4:
-	applymovement OBJ_EVENT_ID_PLAYER, mWalkDown
-	goto NeoBay_EventScript_BradleyStopsPlayer_1
+	waitmovement 0
+	goto NeoBay_EventScript_DoBradleyBattle
+	return
 
-NeoBay_EventScript_BradleyStopsPlayer_5:
+NeoBay_EventScript_BradleyStopsPlayer_6:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerRematchesBradleyAfterLoss1
+	goto NeoBay_EventScript_BradleyStopsPlayer_4
+
+NeoBay_EventScript_BradleyStopsPlayer_7:
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerRematchesBradleyAfterLoss2
+	goto NeoBay_EventScript_BradleyStopsPlayer_4
+
+NeoBay_EventScript_BradleyStopsPlayer_10:
+	applymovement OBJ_EVENT_ID_PLAYER, mWalkDown
+	goto NeoBay_EventScript_BradleyStopsPlayer_8
+
+NeoBay_EventScript_BradleyStopsPlayer_11:
+	applymovement OBJ_EVENT_ID_PLAYER, mWalkDown
+	goto NeoBay_EventScript_BradleyStopsPlayer_8
+
+NeoBay_EventScript_BradleyStopsPlayer_12:
 	applymovement OBJ_EVENT_ID_PLAYER, mWalkLeft
-	goto NeoBay_EventScript_BradleyStopsPlayer_1
+	goto NeoBay_EventScript_BradleyStopsPlayer_8
 
 
 NeoBay_EventScript_BradleyConversation::
 	lock
 	faceplayer
-	switch VAR_NEOBAY_STATE
-	case 3, NeoBay_EventScript_BradleyConversation_3
-	msgbox Placeholder_Text
+	switch VAR_AMPURE_RESCUE_STATE
+	case 6, NeoBay_EventScript_BradleyConversation_3
+	msgbox NeoBay_EventScript_BradleyConversation_Text_0
 NeoBay_EventScript_BradleyConversation_1:
 	waitmessage
 	closemessage
@@ -114,15 +138,15 @@ NeoBay_EventScript_BradleyConversation_1:
 	return
 
 NeoBay_EventScript_BradleyConversation_3:
-	msgbox NeoBay_EventScript_BradleyConversation_Text_0
+	goto NeoBay_EventScript_BradleyBattle
 	goto NeoBay_EventScript_BradleyConversation_1
 
 
-NeoBat_EventScript_BradleyOptional::
-	goto_if_unset FLAG_DEFEATED_RIVAL_NEOBAY_2, NeoBat_EventScript_BradleyOptional_1
+NeoBay_EventScript_BradleyOptional::
+	goto_if_unset FLAG_DEFEATED_RIVAL_NEOBAY_2, NeoBay_EventScript_BradleyOptional_1
 	return
 
-NeoBat_EventScript_BradleyOptional_1:
+NeoBay_EventScript_BradleyOptional_1:
 	lock
 	addobject 2
 	setobjectxy 2, 26, 23
@@ -130,15 +154,15 @@ NeoBat_EventScript_BradleyOptional_1:
 	delay 32
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	waitmovement 0
-	msgbox NeoBat_EventScript_BradleyOptional_Text_0
+	msgbox NeoBay_EventScript_BradleyOptional_Text_0
 	switch VAR_STARTER_MON
-	case 0, NeoBat_EventScript_BradleyOptional_5
-	case 1, NeoBat_EventScript_BradleyOptional_6
-	case 2, NeoBat_EventScript_BradleyOptional_7
-NeoBat_EventScript_BradleyOptional_3:
+	case 0, NeoBay_EventScript_BradleyOptional_5
+	case 1, NeoBay_EventScript_BradleyOptional_6
+	case 2, NeoBay_EventScript_BradleyOptional_7
+NeoBay_EventScript_BradleyOptional_3:
 	setflag FLAG_DEFEATED_RIVAL_NEOBAY_2
 	setvar VAR_NEOBAY_STATE, 7
-	msgbox NeoBat_EventScript_BradleyOptional_Text_1
+	msgbox NeoBay_EventScript_BradleyOptional_Text_1
 	waitmessage
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, mWalkLeft
@@ -156,17 +180,28 @@ NeoBat_EventScript_BradleyOptional_3:
 	release
 	return
 
-NeoBat_EventScript_BradleyOptional_5:
-	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_VENAP, Neobay_Text_BradleyDefeated_2
-	goto NeoBat_EventScript_BradleyOptional_3
+NeoBay_EventScript_BradleyOptional_5:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_VENAP, Neobay_Text_BradleyDefeated
+	goto NeoBay_EventScript_BradleyOptional_3
 
-NeoBat_EventScript_BradleyOptional_6:
-	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_CELSINGE, Neobay_Text_BradleyDefeated_2
-	goto NeoBat_EventScript_BradleyOptional_3
+NeoBay_EventScript_BradleyOptional_6:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_CELSINGE, Neobay_Text_BradleyDefeated
+	goto NeoBay_EventScript_BradleyOptional_3
 
-NeoBat_EventScript_BradleyOptional_7:
-	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_ECHOISE, Neobay_Text_BradleyDefeated_2
-	goto NeoBat_EventScript_BradleyOptional_3
+NeoBay_EventScript_BradleyOptional_7:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_2_ECHOISE, Neobay_Text_BradleyDefeated
+	goto NeoBay_EventScript_BradleyOptional_3
+
+
+NeoBay_EventScript_BradleyBattle::
+	lockall
+	setvar VAR_AMPURE_RESCUE_STATE, 6
+	msgbox NeoBay_EventScript_BradleyBattle_Text_0
+	playfanfare MUS_HEAL
+	waitfanfare
+	special HealPlayerParty
+	goto NeoBay_EventScript_DoBradleyBattle
+	end
 
 
 NeoBay_OnTransition:
@@ -337,7 +372,8 @@ NeoBay_EventScript_SetupBradleyForAmpure:
 
 NeoBay_EventScript_AmpureCapture:
 	lockall
-	setvar VAR_AMPURE_RESCUE_STATE, 6
+	setvar VAR_AMPURE_RESCUE_STATE, 7
+	addobject 3
 	applymovement 3, mAmpureRunsUpToPlayer
 	waitmovement 3
 	applymovement 3, mExclamationPoint
@@ -361,6 +397,30 @@ NeoBay_EventScript_AmpureCapture:
 	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6
 	releaseall
 	return
+
+
+NeoBay_EventScript_DoBradleyBattle:
+	msgbox NeoBay_EventScript_DoBradleyBattle_Text_0
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, NeoBay_EventScript_DoBradleyBattle_3
+	case 1, NeoBay_EventScript_DoBradleyBattle_4
+	case 2, NeoBay_EventScript_DoBradleyBattle_5
+NeoBay_EventScript_DoBradleyBattle_1:
+	goto NeoBay_EventScript_AmpureCapture
+	return
+
+NeoBay_EventScript_DoBradleyBattle_3:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_1_VENAP, Neobay_Text_BradleyDefeated2
+	goto NeoBay_EventScript_DoBradleyBattle_1
+
+NeoBay_EventScript_DoBradleyBattle_4:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_1_CELSINGE, Neobay_Text_BradleyDefeated2
+	goto NeoBay_EventScript_DoBradleyBattle_1
+
+NeoBay_EventScript_DoBradleyBattle_5:
+	trainerbattle_no_intro TRAINER_BRADLEY_NEOBAY_1_ECHOISE, Neobay_Text_BradleyDefeated2
+	goto NeoBay_EventScript_DoBradleyBattle_1
 
 
 mBradleyApproachPlayerTop:
@@ -664,7 +724,28 @@ mBradleyLeavesAfterOptionalFight:
 	set_invisible
 	step_end
 
+mPlayerRematchesBradleyAfterLoss1:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_left
+	step_end
+
+mPlayerRematchesBradleyAfterLoss2:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
 NeoBay_EventScript_BradleyStopsPlayer_Text_0:
+	.string "Bradley: Come on!\n"
+	.string "Let's battle!$"
+
+NeoBay_EventScript_BradleyStopsPlayer_Text_1:
 	.string "Bradley: What are you doing? We need to\n"
 	.string "find Ampure before it gets away!$"
 
@@ -673,7 +754,7 @@ NeoBay_EventScript_BradleyConversation_Text_0:
 	.string "anywhere. You should check that tall\l"
 	.string "grass!$"
 
-NeoBat_EventScript_BradleyOptional_Text_0:
+NeoBay_EventScript_BradleyOptional_Text_0:
 	.string "Bradley: Hey, what are you up to?\p"
 	.string "I'm on my way to grab the things I\n"
 	.string "forgot.\p"
@@ -681,11 +762,18 @@ NeoBat_EventScript_BradleyOptional_Text_0:
 	.string "I know!\p"
 	.string "Let's have a battle since you're here!$"
 
-NeoBat_EventScript_BradleyOptional_Text_1:
+NeoBay_EventScript_BradleyOptional_Text_1:
 	.string "Bradley: If only I didn't have to go\n"
 	.string "back for my things, I'd be twice as\l"
 	.string "strong!\p"
 	.string "I'm gonna pass you up, just you wait!$"
+
+NeoBay_EventScript_BradleyBattle_Text_0:
+	.string "Bradley: Still nothing?\n"
+	.string "I'm tired of looking…\p"
+	.string "Why don't we have a Pokémon battle\n"
+	.string "while we wait?\p"
+	.string "I'll heal you Pokémon first!$"
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
 	.string "Bradley: I think I see some tracks here.\n"
@@ -722,6 +810,14 @@ NeoBay_EventScript_AmpureCapture_Text_1:
 	.string "time, too!\l"
 	.string "Let's go back and return Ampure to\l"
 	.string "Prof. Willow!$"
+
+NeoBay_EventScript_DoBradleyBattle_Text_0:
+	.string "Bradley: Alright!\p"
+	.string "I'm shaking with excitement!\n"
+	.string "Here goes…\p"
+	.string "{PLAYER}, I challenge you to a\n"
+	.string "Pokémon battle!\p"
+	.string "Wow… that felt so good to finally say!$"
 
 NeoBay_Text_TownSign::
 	.string "Neo Bay\n"
@@ -778,7 +874,10 @@ NeoBay_Text_BradleyShowBoatStart::
 	.string "really admire her!\l"
 	.string "Come on, let's go meet her now!$"
 
-Neobay_Text_BradleyDefeated_2::
+Neobay_Text_BradleyDefeated::
+	.string "Hah, I knew I was right!$"
+
+Neobay_Text_BradleyDefeated2::
 	.string "Wow, that good already?$"
 
 Placeholder_Text::

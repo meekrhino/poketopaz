@@ -1,3 +1,12 @@
+// VAR_SOFTWIND_CITY_STATE values
+const SOFTWIND_STATE_INIT = 0
+const SOFTWIND_STATE_MET_ALISA = 1
+const SOFTWIND_STATE_TEAM_ENCOUNTERED = 2
+const SOFTWIND_STATE_DEFEATED_ROCKETS = 3
+const SOFTWIND_STATE_MET_DEFENDERS = 4
+const SOFTWIND_STATE_DEFEATED_THERMA = 5
+const SOFTWIND_STATE_ALISA_AND_WILLOW = 6
+const SOFTWIND_STATE_DEFEATED_ALISA = 7
 
 //=====================================
 // Map Scripts
@@ -72,6 +81,8 @@ script(local) SoftwindCity_Gym_ThermaDefeated {
 	msgbox(SoftwindCity_Gym_Text_GaleBadgeInfo, MSGBOX_DEFAULT)
 	setflag(FLAG_DEFEATED_SOFTWIND_GYM)
 	setflag(FLAG_BADGE02_GET)
+    setvar(VAR_SOFTWIND_CITY_STATE, SOFTWIND_STATE_DEFEATED_THERMA)
+    clearflag(FLAG_HIDE_SOFTWIND_CITY_WILLOW)
 	setvar(VAR_0x8008, 1)
 	call(Common_EventScript_SetGymTrainers)
 	goto(SoftwindCity_Gym_GiveWindwhistle)

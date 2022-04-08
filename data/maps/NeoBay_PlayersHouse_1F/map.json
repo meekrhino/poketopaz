@@ -42,6 +42,13 @@
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY",
       "dest_warp_id": 2
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_NEO_BAY_PLAYERS_HOUSE_2F",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

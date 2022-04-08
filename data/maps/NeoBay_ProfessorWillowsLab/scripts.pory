@@ -21,8 +21,9 @@ const AMPURE_RESCUE_IN_MEADOW = 2
 const AMPURE_RESCUE_FIRST_BATTLE_DONE = 3
 const AMPURE_RESCUE_SECOND_BATTLE_DONE = 4
 const AMPURE_RESCUE_SECOND_BATTLE_DONE_WARP = 5
-const AMPURE_RESCUE_CAPTURE_DONE = 6
-const AMPURE_RESCUE_RETURNED = 7
+const AMPURE_RESCUE_BRADLEY_FIGHT = 6
+const AMPURE_RESCUE_CAPTURE_DONE = 7
+const AMPURE_RESCUE_RETURNED = 8
 
 //=====================================
 // Map Scripts
@@ -211,9 +212,7 @@ script(local) WillowsLab_OnTransition {
 script(local) WillowsLab_OnWarp {
     if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
         turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
-    }
-    if(var(VAR_NEOBAY_STATE) == NEOBAY_STATE_RECEIVED_RUNNING_SHOES) {
-
+        turnobject(BRADLEY, DIR_EAST)
     }
 }
 
@@ -701,11 +700,11 @@ text WillowsLab_AmpureMissionDescription {
 text WillowsLab_PokedexDescription {
     format(
         "Willow: Yes, Bradley.\nIn fact, I'm pretty sure that they're "
-        "the only ones to ever come to Caldera or Kirant.\lProf. Oak "
+        "the only ones to ever come to Caldera or Kirant.\pProf. Oak "
         "of the Kanto region gave these to me when he found out I "
-        "was coming here.\lBut my research has prevented me from "
+        "was coming here.\pBut my research has prevented me from "
         "filling them properly. I think that you two will be perfect "
-        "for the job.\lYour Pokémon are already quite fond of you "
+        "for the job.\pYour Pokémon are already quite fond of you "
         "and you should have no problem catching and trading "
         "Pokémon beyond this town."
     )
@@ -714,7 +713,7 @@ text WillowsLab_PokedexDescription {
 text WillowsLab_SayGoodbyeToMom {
     format(
         "Willow: I've never seen such determination as I see right now "
-        "in both of you.\lI'd be more than happy to take you across the "
+        "in both of you.\pI'd be more than happy to take you across the "
         "water to Sunset Village, but before we leave you much promise "
         "me you will say goodbye to your families."
     )
@@ -723,7 +722,7 @@ text WillowsLab_SayGoodbyeToMom {
 text WillowsLab_HowWasYourMom {
     format(
         "Bradley: How was your mom?\p… … …\nYa, mine was pretty sad "
-        "too, but she's sure we'll be fine. Who knows? Maybe we'll "
+        "too, but she's sure we'll be fine.\pWho knows?\nMaybe we'll "
         "return as Pokémon Champions and our parents will never "
         "have to worry about us again!"
     )
@@ -732,9 +731,9 @@ text WillowsLab_HowWasYourMom {
 text WillowsLab_NotABadIdea {
     format(
         "Willow: That isn't a bad idea, Bradley.\p{PLAYER}, have you "
-        "ever thought of taking the Pokémon League challenge?\lNot only "
+        "ever thought of taking the Pokémon League challenge?\pNot only "
         "will your Pokémon grow along the way, it will help you complete "
-        "your Pokédex and take you all around Caldera and Kirant in "
+        "your Pokédex and take you all around the regions in "
         "search of your friend.\pYou could achive all of your goals "
         "at the same time."
     )

@@ -6,14 +6,14 @@ NeoBay_ProfessorWillowsLab_MapScripts::
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 1, WillowIntroduction
-	map_script_2 VAR_AMPURE_RESCUE_STATE, 6, WillowsLab_AmpureRescued
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 7, WillowsLab_AmpureRescued
 	map_script_2 VAR_NEOBAY_STATE, 5, WillowsLab_Departure
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 0, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
 	map_script_2 VAR_NEOBAY_STATE, 4, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1
-	map_script_2 VAR_AMPURE_RESCUE_STATE, 6, WillowsLab_OnWarp
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 7, WillowsLab_OnWarp
 	map_script_2 VAR_NEOBAY_STATE, 5, WillowsLab_OnWarp
 	.2byte 0
 
@@ -205,7 +205,7 @@ WillowsLab_EventScript_WhereAreYouGoing::
 WillowsLab_OnTransition:
 	compare VAR_NEOBAY_STATE, 1
 	goto_if_eq WillowsLab_OnTransition_1
-	compare VAR_AMPURE_RESCUE_STATE, 6
+	compare VAR_AMPURE_RESCUE_STATE, 7
 	goto_if_eq WillowsLab_OnTransition_2
 	compare VAR_NEOBAY_STATE, 5
 	goto_if_eq WillowsLab_OnTransition_3
@@ -234,7 +234,7 @@ WillowsLab_OnTransition_3:
 
 
 WillowsLab_OnWarp:
-	compare VAR_AMPURE_RESCUE_STATE, 6
+	compare VAR_AMPURE_RESCUE_STATE, 7
 	goto_if_eq WillowsLab_OnWarp_2
 WillowsLab_OnWarp_1:
 	compare VAR_NEOBAY_STATE, 5
@@ -540,7 +540,7 @@ WillowsLab_YourePokemonTrainersNow:
 
 WillowsLab_AmpureRescued:
 	lockall
-	setvar VAR_AMPURE_RESCUE_STATE, 7
+	setvar VAR_AMPURE_RESCUE_STATE, 8
 	setvar VAR_NEOBAY_STATE, 4
 	applymovement 5, mBradleyFidgetsRight
 	waitmovement 5
@@ -1322,14 +1322,14 @@ WillowsLab_PokedexDescription::
 	.string "Willow: Yes, Bradley.\n"
 	.string "In fact, I'm pretty sure that they're\l"
 	.string "the only ones to ever come to Caldera\l"
-	.string "or Kirant.\l"
-	.string "Prof. Oak of the Kanto region gave\l"
+	.string "or Kirant.\p"
+	.string "Prof. Oak of the Kanto region gave\n"
 	.string "these to me when he found out I was\l"
-	.string "coming here.\l"
-	.string "But my research has prevented me from\l"
+	.string "coming here.\p"
+	.string "But my research has prevented me from\n"
 	.string "filling them properly. I think that you\l"
-	.string "two will be perfect for the job.\l"
-	.string "Your Pokémon are already quite fond of\l"
+	.string "two will be perfect for the job.\p"
+	.string "Your Pokémon are already quite fond of\n"
 	.string "you and you should have no problem\l"
 	.string "catching and trading Pokémon beyond\l"
 	.string "this town.$"
@@ -1337,8 +1337,8 @@ WillowsLab_PokedexDescription::
 WillowsLab_SayGoodbyeToMom::
 	.string "Willow: I've never seen such\n"
 	.string "determination as I see right now in\l"
-	.string "both of you.\l"
-	.string "I'd be more than happy to take you\l"
+	.string "both of you.\p"
+	.string "I'd be more than happy to take you\n"
 	.string "across the water to Sunset Village, but\l"
 	.string "before we leave you much promise me\l"
 	.string "you will say goodbye to your families.$"
@@ -1347,20 +1347,20 @@ WillowsLab_HowWasYourMom::
 	.string "Bradley: How was your mom?\p"
 	.string "… … …\n"
 	.string "Ya, mine was pretty sad too, but she's\l"
-	.string "sure we'll be fine. Who knows? Maybe\l"
-	.string "we'll return as Pokémon Champions and\l"
-	.string "our parents will never have to worry\l"
-	.string "about us again!$"
+	.string "sure we'll be fine.\p"
+	.string "Who knows?\n"
+	.string "Maybe we'll return as Pokémon Champions\l"
+	.string "and our parents will never have to\l"
+	.string "worry about us again!$"
 
 WillowsLab_NotABadIdea::
 	.string "Willow: That isn't a bad idea, Bradley.\p"
 	.string "{PLAYER}, have you ever thought of\n"
-	.string "taking the Pokémon League challenge?\l"
-	.string "Not only will your Pokémon grow along\l"
+	.string "taking the Pokémon League challenge?\p"
+	.string "Not only will your Pokémon grow along\n"
 	.string "the way, it will help you complete your\l"
-	.string "Pokédex and take you all around\l"
-	.string "Caldera and Kirant in search of your\l"
-	.string "friend.\p"
+	.string "Pokédex and take you all around the\l"
+	.string "regions in search of your friend.\p"
 	.string "You could achive all of your goals at\n"
 	.string "the same time.$"
 

@@ -29,7 +29,6 @@ mGoWatchJirachiProgram:
 	delay_16
 	delay_16
 	delay_16
-	walk_right
 	walk_up
 	walk_up
 	step_end

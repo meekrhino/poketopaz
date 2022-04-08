@@ -1,4 +1,5 @@
 CranewingCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CranewingCity_OnTransition
 	.byte 0
 
 
@@ -124,6 +125,12 @@ CranewingCity_Escort_16:
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerFollowsEscort6
 	waitmovement 0
 	goto CranewingCity_Escort_9
+
+
+CranewingCity_OnTransition:
+	setflag FLAG_VISITED_CRANEWING_CITY
+	call Common_EventScript_SetupRivalGfxId
+	return
 
 
 mEscortApproaches_1:

@@ -1,3 +1,4 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
 const BRADLEY = 2
 const AMPURE = 3
 
@@ -19,8 +20,9 @@ const AMPURE_RESCUE_IN_MEADOW = 2
 const AMPURE_RESCUE_FIRST_BATTLE_DONE = 3
 const AMPURE_RESCUE_SECOND_BATTLE_DONE = 4
 const AMPURE_RESCUE_SECOND_BATTLE_DONE_WARP = 5
-const AMPURE_RESCUE_CAPTURE_DONE = 6
-const AMPURE_RESCUE_RETURNED = 7
+const AMPURE_RESCUE_BRADLEY_FIGHT = 6
+const AMPURE_RESCUE_CAPTURE_DONE = 7
+const AMPURE_RESCUE_RETURNED = 8
 
 // State descriptions for VAR_NEOBAY_STATE
 // 1: Spoke to Mom
@@ -53,7 +55,7 @@ mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_BradleyLeadsToGrass
         FLAG_WILD_ENCOUNTER, 1: NeoBay_OnCompletedWildEncounter
-        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE: NeoBay_EventScript_AmpureCapture
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE: NeoBay_EventScript_BradleyBattle
     ]
 }
 
@@ -63,13 +65,13 @@ mapscripts NeoBay_MapScripts {
 script NeoBay_EventScript_GoToWillowBradleyTriggerTop {
     lockall
     addobject(BRADLEY)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    applymovement(PLAYER, mFaceLeft)
     setobjectxy(BRADLEY, 12, 18)
     applymovement(BRADLEY, mBradleyApproachPlayerTop)
     waitmovement(0)
     call(NeoBay_EventScript_BradleyIntroText)
     applymovement(BRADLEY, mBradleyEscortsPlayerTop)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEscortedByBradleyTop)
+    applymovement(PLAYER, mPlayerEscortedByBradleyTop)
     waitmovement(0)
     turnobject(BRADLEY, DIR_WEST)
     call(NeoBay_EventScript_BradleyShowBoatText)
@@ -80,13 +82,13 @@ script NeoBay_EventScript_GoToWillowBradleyTriggerTop {
 script NeoBay_EventScript_GoToWillowBradleyTriggerBottom {
     lockall
     addobject(BRADLEY)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    applymovement(PLAYER, mFaceLeft)
     setobjectxy(BRADLEY, 12, 18)
     applymovement(BRADLEY, mBradleyApproachPlayerBottom)
     waitmovement(0)
     call(NeoBay_EventScript_BradleyIntroText)
     applymovement(BRADLEY, mBradleyEscortsPlayerBottom)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEscortedByBradleyBottom)
+    applymovement(PLAYER, mPlayerEscortedByBradleyBottom)
     waitmovement(0)
     turnobject(BRADLEY, DIR_WEST)
     call(NeoBay_EventScript_BradleyShowBoatText)
@@ -116,65 +118,82 @@ script NeoBay_EventScript_OtherMailbox {
 
 script NeoBay_EventScript_BradleyStopsPlayer {
     lockall
-    msgbox(format("Bradley: What are you doing? We need to find Ampure before it gets away!"))
-    waitmessage
-    closemessage
-    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-    switch(var(VAR_TEMP_0)) {
-        case 9:
-            applymovement(OBJ_EVENT_ID_PLAYER, mWalkDown)
-        case 10:
-            applymovement(OBJ_EVENT_ID_PLAYER, mWalkDown)
-        case 16:
-            applymovement(OBJ_EVENT_ID_PLAYER, mWalkLeft)
-        default:
-            applymovement(OBJ_EVENT_ID_PLAYER, mWalkLeft)
+    applymovement(BRADLEY, mFaceRight)
+    waitmovement(0)
+    if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_BRADLEY_FIGHT) {
+        msgbox(format("Bradley: Come on!\nLet's battle!"))
+        waitmessage
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        switch(var(VAR_TEMP_1)) {
+            case 24:
+                applymovement(PLAYER, mPlayerRematchesBradleyAfterLoss1)
+            case 25:
+                applymovement(PLAYER, mPlayerRematchesBradleyAfterLoss2)
+        }
+        waitmovement(0)
+        goto(NeoBay_EventScript_DoBradleyBattle)
     }
-    waitmovement(OBJ_EVENT_ID_PLAYER)
-    releaseall
-    end
+    else {
+        msgbox(format("Bradley: What are you doing? We need to find Ampure before it gets away!"))
+        waitmessage
+        closemessage
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        switch(var(VAR_TEMP_0)) {
+            case 9:
+                applymovement(PLAYER, mWalkDown)
+            case 10:
+                applymovement(PLAYER, mWalkDown)
+            case 16:
+                applymovement(PLAYER, mWalkLeft)
+            default:
+                applymovement(PLAYER, mWalkLeft)
+        }
+        waitmovement(PLAYER)
+        releaseall
+        end
+    }
 }
 
 script NeoBay_EventScript_BradleyConversation {
     lock
     faceplayer
-    switch(var(VAR_NEOBAY_STATE)) {
-        case NEOBAY_STATE_RECEIVED_STARTER:
-            msgbox(format("Bradley: I haven't seen Ampure anywhere. You should check that tall grass!"))
+    switch(var(VAR_AMPURE_RESCUE_STATE)) {
+        case AMPURE_RESCUE_BRADLEY_FIGHT:
+            goto(NeoBay_EventScript_BradleyBattle)
         default:
-            msgbox(Placeholder_Text)
+            msgbox(format("Bradley: I haven't seen Ampure anywhere. You should check that tall grass!"))
     }
     waitmessage
     closemessage
     release
 }
 
-script NeoBat_EventScript_BradleyOptional {
+script NeoBay_EventScript_BradleyOptional {
     if(!flag(FLAG_DEFEATED_RIVAL_NEOBAY_2)) {
         lock
         addobject(BRADLEY)
         setobjectxy(BRADLEY, 26, 23)
         applymovement(BRADLEY, mBradleyApproachesForOptionalFight)
         delay(32)
-        turnobject(OBJ_EVENT_ID_PLAYER, DIR_SOUTH)
+        turnobject(PLAYER, DIR_SOUTH)
         waitmovement(0)
         msgbox(format("Bradley: Hey, what are you up to?\pI'm on my way to grab the things I forgot.\pOh!\nI know!\pLet's have a battle since you're here!"))
         switch(var(VAR_STARTER_MON)) {
             case 0:
-                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_VENAP, Neobay_Text_BradleyDefeated_2)
+                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_VENAP, Neobay_Text_BradleyDefeated)
             case 1:
-                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_CELSINGE, Neobay_Text_BradleyDefeated_2)
+                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_CELSINGE, Neobay_Text_BradleyDefeated)
             case 2:
-                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_ECHOISE, Neobay_Text_BradleyDefeated_2)
+                trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_2_ECHOISE, Neobay_Text_BradleyDefeated)
         }
         setflag(FLAG_DEFEATED_RIVAL_NEOBAY_2)
         setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_OPTIONAL_RIVAL_DONE)
         msgbox(format("Bradley: If only I didn't have to go back for my things, I'd be twice as strong!\pI'm gonna pass you up, just you wait!"))
         waitmessage
         closemessage
-        applymovement(OBJ_EVENT_ID_PLAYER, mWalkLeft)
+        applymovement(PLAYER, mWalkLeft)
         waitmovement(0)
-        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        turnobject(PLAYER, DIR_EAST)
         applymovement(BRADLEY, Common_Movement_WalkUp)
         waitmovement(0)
         opendoor(26, 16)
@@ -186,6 +205,17 @@ script NeoBat_EventScript_BradleyOptional {
         removeobject(BRADLEY)
         release
     }
+}
+
+script(global) NeoBay_EventScript_BradleyBattle {
+    lockall
+    setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_BRADLEY_FIGHT)
+    msgbox(format("Bradley: Still nothing?\nI'm tired of looking…\pWhy don't we have a Pokémon battle while we wait?\pI'll heal you Pokémon first!"))
+	playfanfare(MUS_HEAL)
+	waitfanfare
+	special(HealPlayerParty)
+    goto(NeoBay_EventScript_DoBradleyBattle)
+    end
 }
 
 //=====================================
@@ -241,7 +271,7 @@ script(local) NeoBay_EventScript_BradleyShowBoatText {
     waitmessage
     closemessage
     applymovement(BRADLEY, mEnterShip)
-    applymovement(OBJ_EVENT_ID_PLAYER, mEnterShip)
+    applymovement(PLAYER, mEnterShip)
     waitmovement(0)
     warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0, 0, 0)
     return
@@ -250,21 +280,20 @@ script(local) NeoBay_EventScript_BradleyShowBoatText {
 script(local) NeoBay_EventScript_BradleyLeadsToGrass {
     lockall
     applymovement(BRADLEY, mBradleyWalksUpAndLooksAtPlayer)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerWalksUpAndLooksAtBradley)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mPlayerWalksUpAndLooksAtBradley)
+    waitmovement(PLAYER)
     msgbox(format("Bradley: I think I see some tracks here. They're heading towards… the meadow? I wonder why he'd go there…"))
     msgbox(format("{PLAYER}, I think there may be wild Pokémon where we're going, so be ready!"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(BRADLEY, mBradleyEscortsPlayerToMeadow)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEscortsBradleyToMeadow)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mPlayerEscortsBradleyToMeadow)
+    waitmovement(PLAYER)
     applymovement(BRADLEY, mBradleyLooksAroundAndFidgets)
     waitmovement(BRADLEY)
     msgbox(format("Bradley: Help me look for Ampure, {PLAYER}! He's probably hiding in this tall grass. If you walk around enough, he should appear!"), MSGBOX_AUTOCLOSE)
     waitmessage
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_IN_MEADOW)
     copyobjectxytoperm(BRADLEY)
-    // clearflag(FLAG_HIDE_NEO_BAY_BRADLEY)
     releaseall
     end
 }
@@ -274,7 +303,7 @@ script(local) NeoBay_EventScript_SetupBradleyAtBoat {
     addobject(BRADLEY)
     setobjectxy(BRADLEY, 28, 33)
     turnobject(BRADLEY, DIR_NORTH)
-    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    turnobject(PLAYER, DIR_NORTH)
     return
 }
 
@@ -302,8 +331,8 @@ script(local) NeoBay_UpdateBradleyPositionAfterEncounter {
 script(local) NeoBay_EventScript_AmpureRescueAfterFirst {
     lockall
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_FIRST_BATTLE_DONE)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceRight)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mFaceRight)
+    waitmovement(PLAYER)
     msgbox(format("Bradley: Did you find him?\l… … oh, well keep looking.\lHere, I'll heal your Pokémon for you."))
     waitmessage
     closemessage
@@ -314,8 +343,8 @@ script(local) NeoBay_EventScript_AmpureRescueAfterFirst {
 
 script(local) NeoBay_EventScript_AmpureRescueAfterSecond {
     lockall
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceRight)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mFaceRight)
+    waitmovement(PLAYER)
     msgbox(format("Bradley: Any luck this time?\l… … oh, well keep looking.\lHere, I'll heal your Pokémon again."))
 	playfanfare(MUS_HEAL)
 	waitfanfare
@@ -332,19 +361,20 @@ script(local) NeoBay_EventScript_SetupBradleyForAmpure {
     addobject(AMPURE)
     setobjectxy(BRADLEY, 11, 23)
     turnobject(BRADLEY, DIR_EAST)
-    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    turnobject(PLAYER, DIR_WEST)
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE)
 }
 
 script(local) NeoBay_EventScript_AmpureCapture {
     lockall
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE)
+    addobject(AMPURE)
     applymovement(AMPURE, mAmpureRunsUpToPlayer)
     waitmovement(AMPURE)
     applymovement(AMPURE, mExclamationPoint)
     applymovement(BRADLEY, mLookUpStartled)
-    applymovement(OBJ_EVENT_ID_PLAYER, mLookUpStartled)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mLookUpStartled)
+    waitmovement(PLAYER)
     msgbox(format("Bradley: I think he likes you, {PLAYER}! Just stay still, I'll catch him!"))
     waitmessage
     applymovement(BRADLEY, mWalkUpLookRight)
@@ -352,7 +382,7 @@ script(local) NeoBay_EventScript_AmpureCapture {
 	special(SavePlayerParty)
 	special(PutRivalMonInPlayerParty)
     special(StartBradleyAmpureCatch)
-    delay(60)
+    delay(150)
     removeobject(AMPURE)
     setobjectxy(BRADLEY, 12, 22)
     turnobject(BRADLEY, DIR_SOUTH)
@@ -362,6 +392,20 @@ script(local) NeoBay_EventScript_AmpureCapture {
     warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6)
     releaseall
     return
+}
+
+script(local) NeoBay_EventScript_DoBradleyBattle {
+    msgbox(format("Bradley: Alright!\pI'm shaking with excitement!\nHere goes…\p{PLAYER}, I challenge you to a Pokémon battle!\pWow… that felt so good to finally say!"))
+    closemessage
+    switch(var(VAR_STARTER_MON)) {
+        case 0:
+            trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_1_VENAP, Neobay_Text_BradleyDefeated2)
+        case 1:
+            trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_1_CELSINGE, Neobay_Text_BradleyDefeated2)
+        case 2:
+            trainerbattle_no_intro(TRAINER_BRADLEY_NEOBAY_1_ECHOISE, Neobay_Text_BradleyDefeated2)
+    }
+    goto(NeoBay_EventScript_AmpureCapture)
 }
 
 //=====================================
@@ -413,17 +457,23 @@ text NeoBay_Text_BradleyIntroStartLetsGo {
 text NeoBay_Text_BradleyShowBoatStart {
     format(
         "Bradley: Look! You've noticed this sleek-looking boat moored here for a while now, right? "
-        "Well, this boat belongs to none other than Prof. Willow!\l"
+        "Well, this boat belongs to none other than Prof. Willow!\p"
         "… … …\l"
-        "… … …\l"
-        "What, you haven't heard of her? I guess you're not quite as worldly as your pal Bradley!\l"
+        "… … …\p"
+        "What, you haven't heard of her? I guess you're not quite as worldly as your pal Bradley!\p"
         "… Anyway, she's a world-famous Pokémon Professor, known for her research on ancient Pokémon fossils!\l"
-        "She's cool, calm, composed … and when it comes to Pokémon, she's a genius! I really admire her!\l"
+        "She's cool, calm, composed … and when it comes to Pokémon, she's a genius!\pI really admire her!\n"
         "Come on, let's go meet her now!"
     )
 }
 
-text Neobay_Text_BradleyDefeated_2 {
+text Neobay_Text_BradleyDefeated {
+    format(
+        "Hah, I knew I was right!"
+    )
+}
+
+text Neobay_Text_BradleyDefeated2 {
     format(
         "Wow, that good already?"
     )
@@ -576,6 +626,18 @@ movement mBradleyApproachesForOptionalFight {
 movement mBradleyLeavesAfterOptionalFight {
     walk_up
     set_invisible
+}
+
+movement mPlayerRematchesBradleyAfterLoss1 {
+    walk_left * 3
+    walk_up
+    walk_left
+}
+
+movement mPlayerRematchesBradleyAfterLoss2 {
+    walk_left * 3
+    walk_up * 2
+    walk_left
 }
 
 //=====================================

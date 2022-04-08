@@ -69,6 +69,8 @@ SoftwindCity_Gym_ThermaDefeated:
 	msgbox SoftwindCity_Gym_Text_GaleBadgeInfo, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_SOFTWIND_GYM
 	setflag FLAG_BADGE02_GET
+	setvar VAR_SOFTWIND_CITY_STATE, 5
+	clearflag FLAG_HIDE_SOFTWIND_CITY_WILLOW
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
 	goto SoftwindCity_Gym_GiveWindwhistle
