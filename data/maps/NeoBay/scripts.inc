@@ -387,12 +387,14 @@ NeoBay_EventScript_AmpureCapture:
 	special SavePlayerParty
 	special PutRivalMonInPlayerParty
 	special StartBradleyAmpureCatch
+	waitstate
 	delay 60
+	fadescreen FADE_TO_WHITE
 	removeobject 3
 	setobjectxy 2, 12, 22
 	turnobject 2, DIR_SOUTH
-	waitstate
 	special LoadPlayerParty
+	fadescreen FADE_FROM_WHITE
 	msgbox NeoBay_EventScript_AmpureCapture_Text_1
 	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6
 	releaseall

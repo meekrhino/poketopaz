@@ -109,7 +109,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_NEOBAY_STATE",
-      "var_value": "1",
+      "var_value": "2",
       "script": "WillowsLab_EventScript_WhereAreYouGoing"
     },
     {
@@ -118,7 +118,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_NEOBAY_STATE",
-      "var_value": "1",
+      "var_value": "2",
       "script": "WillowsLab_EventScript_WhereAreYouGoing"
     },
     {
@@ -127,7 +127,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_NEOBAY_STATE",
-      "var_value": "1",
+      "var_value": "2",
       "script": "WillowsLab_EventScript_WhereAreYouGoing"
     }
   ],

@@ -382,12 +382,14 @@ script(local) NeoBay_EventScript_AmpureCapture {
 	special(SavePlayerParty)
 	special(PutRivalMonInPlayerParty)
     special(StartBradleyAmpureCatch)
+    waitstate
     delay(60)
+    fadescreen(FADE_TO_WHITE)
     removeobject(AMPURE)
     setobjectxy(BRADLEY, 12, 22)
     turnobject(BRADLEY, DIR_SOUTH)
-    waitstate
 	special(LoadPlayerParty)
+    fadescreen(FADE_FROM_WHITE)
     msgbox(format("Bradley: ALRIGHT! And that was my first time, too!\lLet's go back and return Ampure to Prof. Willow!"))
     warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6)
     releaseall
