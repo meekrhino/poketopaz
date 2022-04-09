@@ -382,7 +382,7 @@ script(local) NeoBay_EventScript_AmpureCapture {
 	special(SavePlayerParty)
 	special(PutRivalMonInPlayerParty)
     special(StartBradleyAmpureCatch)
-    delay(150)
+    delay(60)
     removeobject(AMPURE)
     setobjectxy(BRADLEY, 12, 22)
     turnobject(BRADLEY, DIR_SOUTH)

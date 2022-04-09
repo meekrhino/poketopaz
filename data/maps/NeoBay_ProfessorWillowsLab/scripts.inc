@@ -235,17 +235,12 @@ WillowsLab_OnTransition_3:
 
 WillowsLab_OnWarp:
 	compare VAR_AMPURE_RESCUE_STATE, 7
-	goto_if_eq WillowsLab_OnWarp_2
-WillowsLab_OnWarp_1:
-	compare VAR_NEOBAY_STATE, 5
-	goto_if_eq WillowsLab_OnWarp_4
+	goto_if_eq WillowsLab_OnWarp_1
 	return
 
-WillowsLab_OnWarp_2:
+WillowsLab_OnWarp_1:
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-	goto WillowsLab_OnWarp_1
-
-WillowsLab_OnWarp_4:
+	turnobject 5, DIR_EAST
 	return
 
 

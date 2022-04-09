@@ -476,10 +476,10 @@ static void sub_80B0828(void)
 // Initiates battle where Wally catches Ralts
 void StartBradleyAmpureCatch(void)
 {
-    CreateMaleMon(&gEnemyParty[0], SPECIES_AMPURE, 5);
+    CreateMaleMon(&gEnemyParty[0], SPECIES_AMPURE, 3);
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
-    gBattleTypeFlags = BATTLE_TYPE_WALLY_TUTORIAL;
+    gBattleTypeFlags = BATTLE_TYPE_BRADLEY_TUTORIAL;
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
 }
 
