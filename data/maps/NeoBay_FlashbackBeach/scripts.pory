@@ -1,0 +1,119 @@
+const PLAYER = OBJ_EVENT_INDEX
+const CAMERA = OBJ_EVENT_ID_CAMERA
+const BRADLEY = 1
+const KRAKLAW = 2
+const SIMON = 3
+
+// VAR_NEOBAY_STATE values
+const NEOBAY_STATE_NEW_GAME = 0
+const NEOBAY_STATE_SPOKE_TO_MOM = 1
+const NEOBAY_STATE_MET_WILLOW = 2
+const NEOBAY_STATE_RECEIVED_STARTER = 3
+const NEOBAY_STATE_AMPURE_RESCUED = 4
+const NEOBAY_STATE_STARTED_FLASHBACK = 5
+const NEOBAY_STATE_SAW_FLASHBACK = 6
+const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 7
+const NEOBAY_STATE_DEPARTED = 8
+const NEOBAY_STATE_OPTIONAL_RIVAL_DONE = 9
+
+//=====================================
+// Map Scripts
+//=====================================
+mapscripts NeoBay_FlashbackBeach_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_NEOBAY_STATE, NEOBAY_STATE_STARTED_FLASHBACK: NeoBay_FlashbackBeach_DoFlashback
+    ]
+}
+
+//=====================================
+// Global Scripts
+//=====================================
+
+
+//=====================================
+// Local Scripts
+//=====================================
+script NeoBay_FlashbackBeach_DoFlashback {
+    lockall
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_STARTED_FLASHBACK)
+    applymovement(BRADLEY, mBradleyRandomSpinning)
+    applymovement(SIMON, mSimonRandomSpinning)
+    msgbox(format("Bradley: {PLAYER}, Simon and I all lived here in Neo Bay"))
+    closemessage
+    delay(180)
+    msgbox(format("My parents had raised Simon for as long as I can remember, and nobody seemed to know who his parents were."))
+    closemessage
+    delay(180)
+    msgbox(format("The three of us always had so much fun together along the beach, searching for Pokémon that we could take with us on adventures."))
+    closemessage
+    delay(60)
+    special(SpawnCameraObject)
+    applymovement(CAMERA, mWalkDownSlow4)
+    msgbox(format("But one day, things were different.\pIt was foggy, and there weren't signs of any Pokémon at all…"))
+    closemessage
+    msgbox(format("Suddenly, a dark shadow rose of the water.\pIt was huge!\p{PLAYER} told us to run, so I did…\p{PLAYER} followed on my heels, but Simon…\pSimon just froze…"))
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    warpsilent(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB)
+    releaseall
+    end
+}
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+movement mBradleyRandomSpinning {
+    face_right
+    delay(125)
+    face_left
+    delay(75)
+    face_down
+    delay(95)
+    face_left
+    delay(110)
+    face_down
+    delay(111)
+    face_right
+    delay(70)
+    face_left
+    delay(100)
+    face_right
+    delay(82)
+    face_down
+    delay(90)
+    face_left
+}
+
+movement mSimonRandomSpinning {
+    face_down
+    delay(78)
+    face_right
+    delay(85)
+    face_down
+    delay(125)
+    face_left
+    delay(120)
+    face_down
+    delay(95)
+    face_up
+    delay(85)
+    face_left
+    delay(85)
+    face_right
+    delay(95)
+    face_up
+    delay(130)
+    face_left
+}
+
+movement mWalkDown4 {
+    walk_slow_down * 4
+}
+
+//=====================================
+// Raw
+//=====================================

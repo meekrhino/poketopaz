@@ -1,3 +1,4 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
 const VENAP_BALL = 1
 const CELSINGE_BALL = 2
 const ECHOISE_BALL = 3
@@ -11,9 +12,11 @@ const NEOBAY_STATE_SPOKE_TO_MOM = 1
 const NEOBAY_STATE_MET_WILLOW = 2
 const NEOBAY_STATE_RECEIVED_STARTER = 3
 const NEOBAY_STATE_AMPURE_RESCUED = 4
-const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 5
-const NEOBAY_STATE_DEPARTED = 6
-const NEOBAY_STATE_OPTIONAL_RIVAL_DONE = 7
+const NEOBAY_STATE_STARTED_FLASHBACK = 5
+const NEOBAY_STATE_SAW_FLASHBACK = 6
+const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 7
+const NEOBAY_STATE_DEPARTED = 8
+const NEOBAY_STATE_OPTIONAL_RIVAL_DONE = 9
 
 // VAR_AMPURE_RESCUE_STATE values
 const AMPURE_RESCUE_STARTED = 1
@@ -34,6 +37,7 @@ mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
         VAR_NEOBAY_STATE, NEOBAY_STATE_SPOKE_TO_MOM: WillowIntroduction
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE: WillowsLab_AmpureRescued
         VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_RUNNING_SHOES: WillowsLab_Departure
+        VAR_NEOBAY_STATE, NEOBAY_STATE_STARTED_FLASHBACK: WillowsLab_AfterFlashback
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_NEOBAY_STATE, NEOBAY_STATE_NEW_GAME {
@@ -179,8 +183,8 @@ script(global) WillowsLab_EventScript_WhereAreYouGoing {
     lock
     msgbox(format("Bradley: Hey! Where are you going? Hurry up and choose a Pokémon already!"), MSGBOX_SIGN)
     waitmessage
-    applymovement(OBJ_EVENT_ID_PLAYER, mWalkDown)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mWalkDown)
+    waitmovement(PLAYER)
     release
     end
 }
@@ -207,11 +211,17 @@ script(local) WillowsLab_OnTransition {
         setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_RIGHT)
         removeobject(BRADLEY)
     }
+    elif(var(VAR_NEOBAY_STATE) == NEOBAY_STATE_STARTED_FLASHBACK) {
+        setobjectxyperm(BRADLEY, 8, 7)
+        setobjectmovementtype(BRADLEY, MOVEMENT_TYPE_FACE_RIGHT)
+        setobjectxyperm(WILLOW, 11, 6)
+        setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_LEFT)
+    }
 }
 
 script(local) WillowsLab_OnWarp {
     if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
-        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        turnobject(PLAYER, DIR_EAST)
         turnobject(BRADLEY, DIR_EAST)
     }
 }
@@ -224,7 +234,7 @@ script(local) WillowIntroduction {
     setobjectxy(BRADLEY, 8, 2)
     applymovement(BRADLEY, mBradleyEntersFirstTime)
     delay(30)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime)
+    applymovement(PLAYER, mPlayerEntersFirstTime)
     waitmovement(0)
     msgbox("Bradley: Hey, Prof. Willow!", MSGBOX_AUTOCLOSE)
     applymovement(WILLOW, mFaceUp)
@@ -238,7 +248,7 @@ script(local) WillowIntroduction {
     special(ShakeCamera)
     waitstate
     applymovement(BRADLEY, mExclamationPoint)
-    applymovement(OBJ_EVENT_ID_PLAYER, mExclamationPoint)
+    applymovement(PLAYER, mExclamationPoint)
     msgbox("CRASH!!", MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(WILLOW, mFaceDown)
@@ -247,7 +257,7 @@ script(local) WillowIntroduction {
     applymovement(AMPURE, mAmpureRunsAround)
     applymovement(BRADLEY, mBradleyRushesUp)
     delay(15)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerWalksDown)
+    applymovement(PLAYER, mPlayerWalksDown)
     setvar(VAR_0x8004, 0)   // vertical pan
     setvar(VAR_0x8005, 1)   // horizontal pan
     setvar(VAR_0x8006, 20)  // num shakes
@@ -263,14 +273,14 @@ script(local) WillowIntroduction {
     applymovement(AMPURE, mAmpureRushesOut2)
     delay(60)
     applymovement(BRADLEY, mFaceRight)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    applymovement(PLAYER, mFaceLeft)
     delay(15)
     applymovement(BRADLEY, mFaceUp)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceUp)
+    applymovement(PLAYER, mFaceUp)
     waitmovement(AMPURE)
     msgbox(format("Willow: Oh, not again … that little rascal just will not keep still!"))
     applymovement(BRADLEY, mFaceLeft)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    applymovement(PLAYER, mFaceLeft)
     waitmovement(BRADLEY)
     msgbox(format("Bradley: Are you alright, Prof. Willow?"))
     msgbox(format("Willow: Ohohoho! Thanks for showing concern, Bradley, but I'm fine. This happens all the time."), MSGBOX_AUTOCLOSE)
@@ -278,7 +288,7 @@ script(local) WillowIntroduction {
     delay(10)
     applymovement(BRADLEY, mFaceDown)
     delay(30)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDown)
+    applymovement(PLAYER, mFaceDown)
     waitmovement(WILLOW)
     msgbox(format("Oh? And who are you?"))
     msgbox(format("Bradley: This is {PLAYER}. They've been my friend for as long as I can remember."))
@@ -286,12 +296,12 @@ script(local) WillowIntroduction {
     waitmessage
     applymovement(BRADLEY, mFaceRight)
     delay(15)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mFaceLeft)
+    waitmovement(PLAYER)
     msgbox(WillowsLab_BradleyIsAnAssistant)
     applymovement(BRADLEY, mFaceDown)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDown)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mFaceDown)
+    waitmovement(PLAYER)
     msgbox(format("Willow: Did I now?\n… Ah, I remember now!\lOhoho, you're quite right!"), MSGBOX_AUTOCLOSE)
     applymovement(WILLOW, mWillowGoesToTable)
     waitmovement(WILLOW)
@@ -300,14 +310,14 @@ script(local) WillowIntroduction {
     applymovement(BRADLEY, mBradleyDeliberates)
     waitmovement(BRADLEY)
     msgbox("Bradley: I want {PLAYER} to have the\nPokémon.", MSGBOX_AUTOCLOSE)
-    applymovement(OBJ_EVENT_ID_PLAYER, mExclamationPoint)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    applymovement(PLAYER, mExclamationPoint)
+    applymovement(PLAYER, mFaceLeft)
     applymovement(WILLOW, mExclamationPoint)
     waitmovement(WILLOW)
     msgbox(format("Willow: But Bradley! You earned this Pokémon yourself! You deserve it!"))
     msgbox(format("Bradley: No, I made up my mind a long time ago. I want {PLAYER} to have the Pokémon!"), MSGBOX_AUTOCLOSE)
     applymovement(WILLOW, mFaceRight)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDown)
+    applymovement(PLAYER, mFaceDown)
     waitmovement(WILLOW)
     msgbox(WillowsLab_WillowCantJustGivePokemon)
     msgbox(WillowsLab_BradleyIsReallySure, MSGBOX_AUTOCLOSE)
@@ -323,7 +333,7 @@ script(local) WillowIntroduction {
     msgbox(format("Bradley: This is awesome! Thank you so much, Prof. Willow!"), MSGBOX_AUTOCLOSE)
     applymovement(BRADLEY, mFaceRight)
     delay(15)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
+    applymovement(PLAYER, mFaceLeft)
     waitmovement(BRADLEY)
     msgbox(format("Bradley: I'm so excited! You go first, {PLAYER}. Come on come on, choose on!"))
     waitmessage
@@ -448,7 +458,7 @@ script(local) WillowsLab_BradleyMadeChoice {
 }
 
 script(local) WillowsLab_RegroupAfterPlayerChoosesVenap {
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterVenap)
+    applymovement(PLAYER, mPlayerRegroupsAfterVenap)
     applymovement(BRADLEY, mBradleyRegroupsAfterEchoise)
     delay(30)
     applymovement(WILLOW, mWillowRegroupsAfterStarter)
@@ -457,7 +467,7 @@ script(local) WillowsLab_RegroupAfterPlayerChoosesVenap {
 }
 
 script(local) WillowsLab_RegroupAfterPlayerChoosesCelsinge {
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterCelsinge)
+    applymovement(PLAYER, mPlayerRegroupsAfterCelsinge)
     applymovement(BRADLEY, mBradleyRegroupsAfterVenap)
     delay(30)
     applymovement(WILLOW, mWillowRegroupsAfterStarter)
@@ -466,7 +476,7 @@ script(local) WillowsLab_RegroupAfterPlayerChoosesCelsinge {
 }
 
 script(local) WillowsLab_RegroupAfterPlayerChoosesEchoise {
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerRegroupsAfterEchoise)
+    applymovement(PLAYER, mPlayerRegroupsAfterEchoise)
     applymovement(BRADLEY, mBradleyRegroupsAfterCelsinge)
     delay(30)
     applymovement(WILLOW, mWillowRegroupsAfterStarter)
@@ -484,15 +494,15 @@ script(local) WillowsLab_YourePokemonTrainersNow {
     msgbox(format("Bradley: Not a problem, Prof. Willow! We'll have your Ampure back before you know it!"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(BRADLEY, mFaceRight)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mFaceLeft)
+    waitmovement(PLAYER)
     delay(30)
     msgbox(format("Bradley: Let's go, {PLAYER}! We owe the professor, so let's go search for her Ampure!\lCome on, race ya there!"))
     waitmessage
     closemessage
     applymovement(BRADLEY, mBradleyExits)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerExits)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mPlayerExits)
+    waitmovement(PLAYER)
     warp(MAP_NEO_BAY, 1, 0, 0)
     releaseall
     end
@@ -523,22 +533,27 @@ script(local) WillowsLab_AmpureRescued {
     msgbox("Bradley: Did you hear that, {PLAYER}!?\nWe're finally going to be able\lto find Simon.")
     waitmessage
     closemessage
-    fadeoutbgm(2)
     fadescreen(FADE_TO_BLACK)
     msgbox("Willow: Who is this Simon?")
     msgbox("Bradley: … … …\nHe was our friend…\l…and he was my brother.")
     waitmessage
     closemessage
-    // warp to flashback scene. The last bit here will play on warping back.
-    fadescreen(FADE_FROM_BLACK)
+    call(Script_SetGrayscaleTint)
+    warpsilent(MAP_NEO_BAY_FLASHBACK_BEACH, 0, 0, 0)
+    releaseall
+    end
+}
+
+script(local) WillowsLab_AfterFlashback {
+    lockall
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_SAW_FLASHBACK)
+    turnobject(PLAYER, DIR_EAST)
     msgbox("Bradley: …We never saw him again.")
-    waitmessage
     closemessage
     delay(60)
     msgbox("Willow: …I'm so sorry.")
     msgbox(format("Bradley: That's why we have to get to the next town, Professor!\lSimon could be anywhere, and he could even be in danger."))
     msgbox(WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE)
-    fadeinbgm(2)
     releaseall
     end
 }
@@ -560,8 +575,8 @@ script(local) WillowsLab_Departure {
     setobjectxy(BRADLEY, 8, 2)
     applymovement(BRADLEY, mBradleyEntersFirstTime)
     delay(30)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mPlayerEntersFirstTime)
+    waitmovement(PLAYER)
     delay(30)
     setvar(VAR_0x8004, 0)  // vertical pan
     setvar(VAR_0x8005, 2)  // horizontal pan
@@ -570,13 +585,13 @@ script(local) WillowsLab_Departure {
     special(ShakeCamera)
     waitstate
     applymovement(BRADLEY, mFaceRight)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceLeft)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mFaceLeft)
+    waitmovement(PLAYER)
     msgbox(WillowsLab_HowWasYourMom)
     waitmessage
     applymovement(BRADLEY, mFaceDown)
-    applymovement(OBJ_EVENT_ID_PLAYER, mFaceDown)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mFaceDown)
+    waitmovement(PLAYER)
     msgbox(WillowsLab_NotABadIdea)
     waitmessage
     msgbox(WillowsLab_DescribePokemonLeague)
@@ -601,8 +616,8 @@ script(local) WillowsLab_Departure {
     delay(96)
     applymovement(BRADLEY, mBradleyExitsInSunset)
     delay(32)
-    applymovement(OBJ_EVENT_ID_PLAYER, mPlayerExitsInSunset)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(PLAYER, mPlayerExitsInSunset)
+    waitmovement(PLAYER)
     warp(MAP_SUNSET_VILLAGE, 0xFF, 11, 34)
     releaseall
     end
