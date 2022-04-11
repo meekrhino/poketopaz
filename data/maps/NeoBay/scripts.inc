@@ -161,7 +161,7 @@ NeoBay_EventScript_BradleyOptional_1:
 	case 2, NeoBay_EventScript_BradleyOptional_7
 NeoBay_EventScript_BradleyOptional_3:
 	setflag FLAG_DEFEATED_RIVAL_NEOBAY_2
-	setvar VAR_NEOBAY_STATE, 7
+	setvar VAR_NEOBAY_STATE, 9
 	msgbox NeoBay_EventScript_BradleyOptional_Text_1
 	waitmessage
 	closemessage

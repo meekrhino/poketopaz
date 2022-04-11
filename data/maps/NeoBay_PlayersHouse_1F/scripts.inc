@@ -12,9 +12,9 @@ PlayersHouse_1F_BradleyReminder::
 	switch VAR_NEOBAY_STATE
 	case 1, PlayersHouse_1F_BradleyReminder_3
 	case 4, PlayersHouse_1F_BradleyReminder_4
-	case 5, PlayersHouse_1F_BradleyReminder_5
-	case 6, PlayersHouse_1F_BradleyReminder_6
-	case 7, PlayersHouse_1F_BradleyReminder_7
+	case 7, PlayersHouse_1F_BradleyReminder_5
+	case 8, PlayersHouse_1F_BradleyReminder_6
+	case 9, PlayersHouse_1F_BradleyReminder_7
 PlayersHouse_1F_BradleyReminder_1:
 	end
 
@@ -46,7 +46,7 @@ PlayersHouse_1F_OnTransition:
 	setrespawn HEAL_LOCATION_NEO_BAY
 	switch VAR_NEOBAY_STATE
 	case 4, PlayersHouse_1F_OnTransition_3
-	case 5, PlayersHouse_1F_OnTransition_4
+	case 7, PlayersHouse_1F_OnTransition_4
 PlayersHouse_1F_OnTransition_1:
 	end
 
@@ -74,7 +74,7 @@ BradleyWasLookingForYou:
 MomGivesRunningShoes:
 	lockall
 	faceplayer
-	setvar VAR_NEOBAY_STATE, 5
+	setvar VAR_NEOBAY_STATE, 7
 	msgbox MomGivesRunningShoes_Text_0
 	waitmessage
 	closemessage

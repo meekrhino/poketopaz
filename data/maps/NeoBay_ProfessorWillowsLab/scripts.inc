@@ -7,14 +7,15 @@ NeoBay_ProfessorWillowsLab_MapScripts::
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 1, WillowIntroduction
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 7, WillowsLab_AmpureRescued
-	map_script_2 VAR_NEOBAY_STATE, 5, WillowsLab_Departure
+	map_script_2 VAR_NEOBAY_STATE, 7, WillowsLab_Departure
+	map_script_2 VAR_NEOBAY_STATE, 5, WillowsLab_AfterFlashback
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	map_script_2 VAR_NEOBAY_STATE, 0, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
 	map_script_2 VAR_NEOBAY_STATE, 4, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 7, WillowsLab_OnWarp
-	map_script_2 VAR_NEOBAY_STATE, 5, WillowsLab_OnWarp
+	map_script_2 VAR_NEOBAY_STATE, 7, WillowsLab_OnWarp
 	.2byte 0
 
 NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
@@ -207,8 +208,10 @@ WillowsLab_OnTransition:
 	goto_if_eq WillowsLab_OnTransition_1
 	compare VAR_AMPURE_RESCUE_STATE, 7
 	goto_if_eq WillowsLab_OnTransition_2
-	compare VAR_NEOBAY_STATE, 5
+	compare VAR_NEOBAY_STATE, 7
 	goto_if_eq WillowsLab_OnTransition_3
+	compare VAR_NEOBAY_STATE, 5
+	goto_if_eq WillowsLab_OnTransition_4
 	return
 
 WillowsLab_OnTransition_1:
@@ -230,6 +233,13 @@ WillowsLab_OnTransition_3:
 	setobjectxyperm 4, 2, 8
 	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_RIGHT
 	removeobject 5
+	return
+
+WillowsLab_OnTransition_4:
+	setobjectxyperm 5, 8, 7
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm 4, 11, 6
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 
@@ -558,21 +568,27 @@ WillowsLab_AmpureRescued:
 	msgbox WillowsLab_AmpureRescued_Text_4
 	waitmessage
 	closemessage
-	fadeoutbgm 2
 	fadescreen FADE_TO_BLACK
 	msgbox WillowsLab_AmpureRescued_Text_5
 	msgbox WillowsLab_AmpureRescued_Text_6
 	waitmessage
 	closemessage
-	fadescreen FADE_FROM_BLACK
-	msgbox WillowsLab_AmpureRescued_Text_7
-	waitmessage
+	call Script_SetGrayscaleTint
+	warpsilent MAP_NEO_BAY_FLASHBACK_BEACH, 0, 0, 0
+	releaseall
+	end
+
+
+WillowsLab_AfterFlashback:
+	lockall
+	setvar VAR_NEOBAY_STATE, 6
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	msgbox WillowsLab_AfterFlashback_Text_0
 	closemessage
 	delay 60
-	msgbox WillowsLab_AmpureRescued_Text_8
-	msgbox WillowsLab_AmpureRescued_Text_9
+	msgbox WillowsLab_AfterFlashback_Text_1
+	msgbox WillowsLab_AfterFlashback_Text_2
 	msgbox WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE
-	fadeinbgm 2
 	releaseall
 	end
 
@@ -589,7 +605,7 @@ WillowsLab_ReceivedPokedex:
 
 WillowsLab_Departure:
 	lockall
-	setvar VAR_NEOBAY_STATE, 6
+	setvar VAR_NEOBAY_STATE, 8
 	delay 30
 	setobjectxy 5, 8, 2
 	applymovement 5, mBradleyEntersFirstTime
@@ -1204,13 +1220,13 @@ WillowsLab_AmpureRescued_Text_5:
 WillowsLab_AmpureRescued_Text_6:
 	.string "Bradley: … … …\nHe was our friend…\l…and he was my brother.$"
 
-WillowsLab_AmpureRescued_Text_7:
+WillowsLab_AfterFlashback_Text_0:
 	.string "Bradley: …We never saw him again.$"
 
-WillowsLab_AmpureRescued_Text_8:
+WillowsLab_AfterFlashback_Text_1:
 	.string "Willow: …I'm so sorry.$"
 
-WillowsLab_AmpureRescued_Text_9:
+WillowsLab_AfterFlashback_Text_2:
 	.string "Bradley: That's why we have to get to\n"
 	.string "the next town, Professor!\l"
 	.string "Simon could be anywhere, and he could\l"
