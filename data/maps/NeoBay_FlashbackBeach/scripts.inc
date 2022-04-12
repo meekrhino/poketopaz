@@ -29,6 +29,7 @@ NeoBay_FlashbackBeach_DoFlashback::
 	msgbox NeoBay_FlashbackBeach_DoFlashback_Text_4
 	closemessage
 	fadescreen FADE_TO_BLACK
+	call Script_RemoveTint
 	warpsilent MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 1, 0, 0
 	releaseall
 	end
@@ -44,13 +45,8 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_left
 	delay_16
 	delay_16
-	delay_16
-	delay_16
-	delay_16
-	face_down
 	delay_16
 	delay_16
 	delay_16
@@ -65,7 +61,46 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -79,6 +114,10 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_left
 	delay_16
 	delay_16
@@ -86,7 +125,18 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -100,7 +150,40 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
 	step_end
 
 mSimonRandomSpinning:
@@ -110,7 +193,17 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -125,7 +218,23 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -141,13 +250,29 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_up
 	delay_16
 	delay_16
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -160,6 +285,12 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_up
 	delay_16
 	delay_16
@@ -169,12 +300,60 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
 	step_end
 
 mWalkDownSlow2:
 	walk_slow_down
 	walk_slow_down
+	step_end
+
+mRunUp2:
+	player_run_up
+	player_run_up
+	step_end
+
+mWalkFastUp2:
+	walk_fast_up
+	walk_fast_up
 	step_end
 
 NeoBay_FlashbackBeach_DoFlashback_Text_0:

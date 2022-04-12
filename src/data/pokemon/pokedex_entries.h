@@ -2,7 +2,7 @@ const struct PokedexEntry gPokedexEntries[] =
 {
     [CALDERA_KIRANT_DEX_NONE] =
     {
-        .categoryName = _("UNKNOWN"),
+        .categoryName = _("Unknown"),
         .height = 0,
         .weight = 0,
         .description = gDummyPokedexText,
@@ -13,7 +13,7 @@ const struct PokedexEntry gPokedexEntries[] =
     },
     [CALDERA_KIRANT_DEX_VENAP] =
     {
-        .categoryName = _("FLYTRAP"),
+        .categoryName = _("Flytrap"),
         .height = 5,
         .weight = 105,
         .description = gVenapPokedexText,
@@ -25,7 +25,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TRAPLENT] =
     {
-        .categoryName = _("FLYTRAP"),
+        .categoryName = _("Flytrap"),
         .height = 11,
         .weight = 445,
         .description = gTraplentPokedexText,
@@ -37,7 +37,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DIONARE] =
     {
-        .categoryName = _("CARNIVOROUS"),
+        .categoryName = _("Carnivorous"),
         .height = 19,
         .weight = 1605,
         .description = gDionarePokedexText,
@@ -49,7 +49,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CELSINGE] =
     {
-        .categoryName = _("LION CUB"),
+        .categoryName = _("Lion Cub"),
         .height = 7,
         .weight = 80,
         .description = gCelsingePokedexText,
@@ -61,7 +61,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FAHRAMANE] =
     {
-        .categoryName = _("LION"),
+        .categoryName = _("Lion"),
         .height = 20,
         .weight = 604,
         .description = gFahramanePokedexText,
@@ -73,7 +73,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_KELVOYANT] =
     {
-        .categoryName = _("LION"),
+        .categoryName = _("Lion"),
         .height = 16,
         .weight = 277,
         .description = gKelvoyantPokedexText,
@@ -85,7 +85,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ECHOISE] =
     {
-        .categoryName = _("PORPOISE"),
+        .categoryName = _("Porpoise"),
         .height = 6,
         .weight = 76,
         .description = gEchoisePokedexText,
@@ -97,7 +97,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MERMEIDON] =
     {
-        .categoryName = _("DOLPHIN"),
+        .categoryName = _("Dolphin"),
         .height = 14,
         .weight = 220,
         .description = gMermeidonPokedexText,
@@ -109,7 +109,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DOLPHURE] =
     {
-        .categoryName = _("DOLPHIN"),
+        .categoryName = _("Dolphin"),
         .height = 14,
         .weight = 220,
         .description = gDolphurePokedexText,
@@ -121,7 +121,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FIRANT] =
     {
-        .categoryName = _("STING"),
+        .categoryName = _("Sting"),
         .height = 4,
         .weight = 9,
         .description = gFirantPokedexText,
@@ -133,7 +133,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PYROON] =
     {
-        .categoryName = _("FIRE COCOON"),
+        .categoryName = _("Fire Cocoon"),
         .height = 7,
         .weight = 355,
         .description = gPyroonPokedexText,
@@ -145,7 +145,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PYREIGN] =
     {
-        .categoryName = _("PYRO CLAW"),
+        .categoryName = _("Pyro Claw"),
         .height = 16,
         .weight = 727,
         .description = gPyreignPokedexText,
@@ -157,7 +157,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FINCHERP] =
     {
-        .categoryName = _("HATCHLING"),
+        .categoryName = _("Hatchling"),
         .height = 3,
         .weight = 22,
         .description = gFincherpPokedexText,
@@ -169,7 +169,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GASHAWK] =
     {
-        .categoryName = _("HAWK"),
+        .categoryName = _("Hawk"),
         .height = 7,
         .weight = 109,
         .description = gGashawkPokedexText,
@@ -181,7 +181,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_EAGLAIR] =
     {
-        .categoryName = _("SWIFT EAGLE"),
+        .categoryName = _("Swift Eagle"),
         .height = 11,
         .weight = 204,
         .description = gEaglairPokedexText,
@@ -193,7 +193,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MOGEL] =
     {
-        .categoryName = _("PLAYFUL"),
+        .categoryName = _("Playful"),
         .height = 4,
         .weight = 95,
         .description = gMogelPokedexText,
@@ -205,7 +205,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FIRREL] =
     {
-        .categoryName = _("CONTENT"),
+        .categoryName = _("Content"),
         .height = 13,
         .weight = 286,
         .description = gFirrelPokedexText,
@@ -217,7 +217,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_AMPURE] =
     {
-        .categoryName = _("SHOCKING"),
+        .categoryName = _("Shocking"),
         .height = 5,
         .weight = 55,
         .description = gAmpurePokedexText,
@@ -229,7 +229,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_OHMURE] =
     {
-        .categoryName = _("VOLT TAIL"),
+        .categoryName = _("Volt Tail"),
         .height = 12,
         .weight = 241,
         .description = gOhmurePokedexText,
@@ -241,7 +241,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SANDSHREW] =
     {
-        .categoryName = _("SHREW"),
+        .categoryName = _("Shrew"),
         .height = 6,
         .weight = 12,
         .description = gSandshrewPokedexText,
@@ -253,7 +253,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SANDSLASH] =
     {
-        .categoryName = _("SHREW"),
+        .categoryName = _("Shrew"),
         .height = 10,
         .weight = 295,
         .description = gSandslashPokedexText,
@@ -265,7 +265,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_LUPINE] =
     {
-        .categoryName = _("WOLF CUB"),
+        .categoryName = _("Wolf Cub"),
         .height = 10,
         .weight = 108,
         .description = gLupinePokedexText,
@@ -277,7 +277,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CANILEAF] =
     {
-        .categoryName = _("WOLF"),
+        .categoryName = _("Wolf"),
         .height = 16,
         .weight = 363,
         .description = gCanileafPokedexText,
@@ -289,7 +289,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_WOLVINE] =
     {
-        .categoryName = _("WOLF"),
+        .categoryName = _("Wolf"),
         .height = 20,
         .weight = 586,
         .description = gWolvinePokedexText,
@@ -301,7 +301,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_JALSIDA] =
     {
-        .categoryName = _("GRASSHOPPER"),
+        .categoryName = _("Grasshopper"),
         .height = 4,
         .weight = 68,
         .description = gJalsidaPokedexText,
@@ -313,7 +313,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SPOINK] =
     {
-        .categoryName = _("BOUNCE"),
+        .categoryName = _("Bounce"),
         .height = 8,
         .weight = 306,
         .description = gSpoinkPokedexText,
@@ -325,7 +325,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GRUMPIG] =
     {
-        .categoryName = _("MANIPULATE"),
+        .categoryName = _("Manipulate"),
         .height = 9,
         .weight = 714,
         .description = gGrumpigPokedexText,
@@ -337,7 +337,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SPIDREAM] =
     {
-        .categoryName = _("DREAM-CATCH"),
+        .categoryName = _("Dream-Catch"),
         .height = 3,
         .weight = 64,
         .description = gSpidreamPokedexText,
@@ -349,7 +349,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ARACHMARE] =
     {
-        .categoryName = _("NIGHTMARE"),
+        .categoryName = _("Nightmare"),
         .height = 14,
         .weight = 395,
         .description = gArachmarePokedexText,
@@ -361,7 +361,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PINECO] =
     {
-        .categoryName = _("BAGWORM"),
+        .categoryName = _("Bagworm"),
         .height = 6,
         .weight = 72,
         .description = gPinecoPokedexText,
@@ -373,7 +373,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FORRETRESS] =
     {
-        .categoryName = _("BAGWORM"),
+        .categoryName = _("Bagworm"),
         .height = 12,
         .weight = 1256,
         .description = gForretressPokedexText,
@@ -385,7 +385,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_EMBEAR] =
     {
-        .categoryName = _("LITTLE BEAR"),
+        .categoryName = _("Little Bear"),
         .height = 5,
         .weight = 73,
         .description = gEmbearPokedexText,
@@ -397,7 +397,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GRIZLARE] =
     {
-        .categoryName = _("MARTIAL"),
+        .categoryName = _("Martial"),
         .height = 19,
         .weight = 703,
         .description = gGrizlarePokedexText,
@@ -409,7 +409,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MANKEY] =
     {
-        .categoryName = _("PIG MONKEY"),
+        .categoryName = _("Pig Monkey"),
         .height = 6,
         .weight = 300,
         .description = gMankeyPokedexText,
@@ -421,7 +421,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PRIMEAPE] =
     {
-        .categoryName = _("PIG MONKEY"),
+        .categoryName = _("Pig Monkey"),
         .height = 10,
         .weight = 320,
         .description = gPrimeapePokedexText,
@@ -433,7 +433,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MAREEP] =
     {
-        .categoryName = _("WOOL"),
+        .categoryName = _("Wool"),
         .height = 7,
         .weight = 78,
         .description = gMareepPokedexText,
@@ -445,7 +445,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FLAAFFY] =
     {
-        .categoryName = _("WOOL"),
+        .categoryName = _("Wool"),
         .height = 8,
         .weight = 133,
         .description = gFlaaffyPokedexText,
@@ -457,7 +457,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_AMPHAROS] =
     {
-        .categoryName = _("WOOL"),
+        .categoryName = _("Wool"),
         .height = 22,
         .weight = 615,
         .description = gAmpharosPokedexText,
@@ -469,7 +469,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_WHISPAW] =
     {
-        .categoryName = _("TINY CUB"),
+        .categoryName = _("Tiny Cub"),
         .height = 4,
         .weight = 40,
         .description = gWhispawPokedexText,
@@ -481,7 +481,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_COROONA] =
     {
-        .categoryName = _("SOLAR"),
+        .categoryName = _("Solar"),
         .height = 13,
         .weight = 472,
         .description = gCoroonaPokedexText,
@@ -493,7 +493,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MOOCALF] =
     {
-        .categoryName = _("CALF"),
+        .categoryName = _("Calf"),
         .height = 10,
         .weight = 227,
         .description = gMoocalfPokedexText,
@@ -505,7 +505,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TAUROS] =
     {
-        .categoryName = _("WILD BULL"),
+        .categoryName = _("Wild Bull"),
         .height = 15,
         .weight = 884,
         .description = gTaurosPokedexText,
@@ -517,7 +517,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MILTANK] =
     {
-        .categoryName = _("MILK COW"),
+        .categoryName = _("Milk Cow"),
         .height = 12,
         .weight = 755,
         .description = gMiltankPokedexText,
@@ -529,7 +529,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_INFLARE] =
     {
-        .categoryName = _("YOUNG EMBER"),
+        .categoryName = _("Young Ember"),
         .height = 9,
         .weight = 386,
         .description = gInflarePokedexText,
@@ -541,7 +541,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_INGERO] =
     {
-        .categoryName = _("FIRE GOLEM"),
+        .categoryName = _("Fire Golem"),
         .height = 22,
         .weight = 2377,
         .description = gIngeroPokedexText,
@@ -553,7 +553,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DROWZEE] =
     {
-        .categoryName = _("HYPNOSIS"),
+        .categoryName = _("Hypnosis"),
         .height = 10,
         .weight = 324,
         .description = gDrowzeePokedexText,
@@ -565,7 +565,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_HYPNO] =
     {
-        .categoryName = _("HYPNOSIS"),
+        .categoryName = _("Hypnosis"),
         .height = 16,
         .weight = 756,
         .description = gHypnoPokedexText,
@@ -577,7 +577,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CLEFFA] =
     {
-        .categoryName = _("STAR SHAPE"),
+        .categoryName = _("Star Shape"),
         .height = 3,
         .weight = 30,
         .description = gCleffaPokedexText,
@@ -589,7 +589,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CLEFAIRY] =
     {
-        .categoryName = _("FAIRY"),
+        .categoryName = _("Fairy"),
         .height = 6,
         .weight = 75,
         .description = gClefairyPokedexText,
@@ -601,7 +601,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CLEFABLE] =
     {
-        .categoryName = _("FAIRY"),
+        .categoryName = _("Fairy"),
         .height = 13,
         .weight = 400,
         .description = gClefablePokedexText,
@@ -613,7 +613,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GRIFIC] =
     {
-        .categoryName = _("GRYPHON"),
+        .categoryName = _("Gryphon"),
         .height = 6,
         .weight = 73,
         .description = gGrificPokedexText,
@@ -625,7 +625,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GRYPHONIC] =
     {
-        .categoryName = _("GRYPHON"),
+        .categoryName = _("Gryphon"),
         .height = 19,
         .weight = 617,
         .description = gGryphonicPokedexText,
@@ -637,7 +637,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_BARKUB] =
     {
-        .categoryName = _("PUPPY"),
+        .categoryName = _("Puppy"),
         .height = 4,
         .weight = 109,
         .description = gBarkubPokedexText,
@@ -649,7 +649,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GROWLITHE] =
     {
-        .categoryName = _("PUPPY"),
+        .categoryName = _("Puppy"),
         .height = 6,
         .weight = 190,
         .description = gGrowlithePokedexText,
@@ -661,7 +661,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ARCANINE] =
     {
-        .categoryName = _("LEGENDARY"),
+        .categoryName = _("Legendary"),
         .height = 20,
         .weight = 1550,
         .description = gArcaninePokedexText,
@@ -673,7 +673,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_VIXUN] =
     {
-        .categoryName = _("KIT"),
+        .categoryName = _("Kit"),
         .height = 4,
         .weight = 50,
         .description = gVixunPokedexText,
@@ -685,7 +685,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_VULPIX] =
     {
-        .categoryName = _("FOX"),
+        .categoryName = _("Fox"),
         .height = 6,
         .weight = 99,
         .description = gVulpixPokedexText,
@@ -697,7 +697,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_NINETALES] =
     {
-        .categoryName = _("FOX"),
+        .categoryName = _("Fox"),
         .height = 12,
         .weight = 190,
         .description = gNinetalesPokedexText,
@@ -709,7 +709,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_KONDRIA] =
     {
-        .categoryName = _("TOXIN"),
+        .categoryName = _("Toxin"),
         .height = 10,
         .weight = 213,
         .description = gKondriaPokedexText,
@@ -721,7 +721,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_WHISMUR] =
     {
-        .categoryName = _("WHISPER"),
+        .categoryName = _("Whisper"),
         .height = 6,
         .weight = 162,
         .description = gWhismurPokedexText,
@@ -733,7 +733,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_LOUDRED] =
     {
-        .categoryName = _("BIG VOICE"),
+        .categoryName = _("Big Voice"),
         .height = 10,
         .weight = 405,
         .description = gLoudredPokedexText,
@@ -745,7 +745,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_EXPLOUD] =
     {
-        .categoryName = _("LOUD NOISE"),
+        .categoryName = _("Loud Noise"),
         .height = 15,
         .weight = 840,
         .description = gExploudPokedexText,
@@ -757,7 +757,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_STRIBRA] =
     {
-        .categoryName = _("STRIPES"),
+        .categoryName = _("Stripes"),
         .height = 15,
         .weight = 467,
         .description = gStribraPokedexText,
@@ -769,7 +769,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MURKROW] =
     {
-        .categoryName = _("DARKNESS"),
+        .categoryName = _("Darkness"),
         .height = 6,
         .weight = 21    ,
         .description = gMurkrowPokedexText,
@@ -781,7 +781,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_HARSKROW] =
     {
-        .categoryName = _("DARK RAVEN"),
+        .categoryName = _("Dark Raven"),
         .height = 14,
         .weight = 250,
         .description = gHarskrowPokedexText,
@@ -793,7 +793,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_JACKALANT] =
     {
-        .categoryName = _("SPROUTED"),
+        .categoryName = _("Sprouted"),
         .height = 2,
         .weight = 288,
         .description = gJackalantPokedexText,
@@ -805,7 +805,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PHANTERN] =
     {
-        .categoryName = _("HALLOWEEN"),
+        .categoryName = _("Halloween"),
         .height = 12,
         .weight = 1045,
         .description = gPhanternPokedexText,
@@ -817,7 +817,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SKALLOY] =
     {
-        .categoryName = _("FLEDGLING"),
+        .categoryName = _("Fledgling"),
         .height = 4,
         .weight = 108,
         .description = gSkalloyPokedexText,
@@ -829,7 +829,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SKARMORY] =
     {
-        .categoryName = _("ARMOR BIRD"),
+        .categoryName = _("Armor Bird"),
         .height = 17,
         .weight = 505,
         .description = gSkarmoryPokedexText,
@@ -841,7 +841,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DUSKULL] =
     {
-        .categoryName = _("REQUIEM"),
+        .categoryName = _("Requiem"),
         .height = 8,
         .weight = 68,
         .description = gDuskullPokedexText,
@@ -853,7 +853,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DUSCLOPS] =
     {
-        .categoryName = _("BECKON"),
+        .categoryName = _("Beckon"),
         .height = 16,
         .weight = 310,
         .description = gDusclopsPokedexText,
@@ -865,7 +865,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CASCADET] =
     {
-        .categoryName = _("STREAM"),
+        .categoryName = _("Stream"),
         .height = 5,
         .weight = 86,
         .description = gCascadetPokedexText,
@@ -877,7 +877,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_VENONAT] =
     {
-        .categoryName = _("INSECT"),
+        .categoryName = _("Insect"),
         .height = 10,
         .weight = 300,
         .description = gVenonatPokedexText,
@@ -889,7 +889,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_VENOMOTH] =
     {
-        .categoryName = _("POISON MOTH"),
+        .categoryName = _("Poison Moth"),
         .height = 15,
         .weight = 125,
         .description = gVenomothPokedexText,
@@ -901,7 +901,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SMALLARD] =
     {
-        .categoryName = _("DUCKLING"),
+        .categoryName = _("Duckling"),
         .height = 5,
         .weight = 145,
         .description = gSmallardPokedexText,
@@ -913,7 +913,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MALLARGE] =
     {
-        .categoryName = _("MARSH DUCK"),
+        .categoryName = _("Marsh Duck"),
         .height = 20,
         .weight = 340,
         .description = gMallargePokedexText,
@@ -925,7 +925,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GRIMER] =
     {
-        .categoryName = _("SLUDGE"),
+        .categoryName = _("Sludge"),
         .height = 10,
         .weight = 300,
         .description = gGrimerPokedexText,
@@ -937,7 +937,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MUK] =
     {
-        .categoryName = _("SLUDGE"),
+        .categoryName = _("Sludge"),
         .height = 12,
         .weight = 300,
         .description = gMukPokedexText,
@@ -949,7 +949,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_KOFFING] =
     {
-        .categoryName = _("POISON GAS"),
+        .categoryName = _("Poison Gas"),
         .height = 6,
         .weight = 9,
         .description = gKoffingPokedexText,
@@ -961,7 +961,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_WEEZING] =
     {
-        .categoryName = _("POISON GAS"),
+        .categoryName = _("Poison Gas"),
         .height = 12,
         .weight = 95,
         .description = gWeezingPokedexText,
@@ -973,7 +973,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ZANGOOSE] =
     {
-        .categoryName = _("CAT FERRET"),
+        .categoryName = _("Cat Ferret"),
         .height = 13,
         .weight = 413,
         .description = gZangoosePokedexText,
@@ -985,7 +985,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ZANTILIDAE] =
     {
-        .categoryName = _("CAT FERRET"),
+        .categoryName = _("Cat Ferret"),
         .height = 16,
         .weight = 726,
         .description = gZantilidaePokedexText,
@@ -997,7 +997,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SEVIPER] =
     {
-        .categoryName = _("FANG SNAKE"),
+        .categoryName = _("Fang Snake"),
         .height = 27,
         .weight = 522,
         .description = gSeviperPokedexText,
@@ -1009,7 +1009,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PYTHANG] =
     {
-        .categoryName = _("FANG SNAKE"),
+        .categoryName = _("Fang Snake"),
         .height = 32,
         .weight = 794,
         .description = gPythangPokedexText,
@@ -1021,7 +1021,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MEOWTH] =
     {
-        .categoryName = _("SCRATCH CAT"),
+        .categoryName = _("Scratch Cat"),
         .height = 4,
         .weight = 42,
         .description = gMeowthPokedexText,
@@ -1033,7 +1033,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PERSIAN] =
     {
-        .categoryName = _("CLASSY CAT"),
+        .categoryName = _("Classy Cat"),
         .height = 10,
         .weight = 320,
         .description = gPersianPokedexText,
@@ -1045,7 +1045,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_LOTAD] =
     {
-        .categoryName = _("WATER WEED"),
+        .categoryName = _("Water Weed"),
         .height = 5,
         .weight = 26,
         .description = gLotadPokedexText,
@@ -1057,7 +1057,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_LOMBRE] =
     {
-        .categoryName = _("JOLLY"),
+        .categoryName = _("Jolly"),
         .height = 12,
         .weight = 325,
         .description = gLombrePokedexText,
@@ -1069,7 +1069,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_LUDICOLO] =
     {
-        .categoryName = _("CAREFREE"),
+        .categoryName = _("Carefree"),
         .height = 15,
         .weight = 550,
         .description = gLudicoloPokedexText,
@@ -1081,7 +1081,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TRILLOGILL] =
     {
-        .categoryName = _("SLIPPERY"),
+        .categoryName = _("Slippery"),
         .height = 4,
         .weight = 82,
         .description = gTrillogillPokedexText,
@@ -1093,7 +1093,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TIDASALE] =
     {
-        .categoryName = _("SAW FISH"),
+        .categoryName = _("Saw Fish"),
         .height = 49,
         .weight = 1750,
         .description = gTidasalePokedexText,
@@ -1105,7 +1105,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_QUIISORD] =
     {
-        .categoryName = _("FENCING"),
+        .categoryName = _("Fencing"),
         .height = 55,
         .weight = 1500,
         .description = gQuiisordPokedexText,
@@ -1117,7 +1117,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TSUNALL] =
     {
-        .categoryName = _("HAMMERHEAD"),
+        .categoryName = _("Hammerhead"),
         .height = 49,
         .weight = 2268,
         .description = gTsunallPokedexText,
@@ -1129,7 +1129,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_YANMA] =
     {
-        .categoryName = _("CLEAR WING"),
+        .categoryName = _("Clear Wing"),
         .height = 12,
         .weight = 380,
         .description = gYanmaPokedexText,
@@ -1141,7 +1141,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SLOWPOKE] =
     {
-        .categoryName = _("DOPEY"),
+        .categoryName = _("Dopey"),
         .height = 12,
         .weight = 360,
         .description = gSlowpokePokedexText,
@@ -1153,7 +1153,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SLOWBRO] =
     {
-        .categoryName = _("HERMIT CRAB"),
+        .categoryName = _("Hermit Crab"),
         .height = 16,
         .weight = 785,
         .description = gSlowbroPokedexText,
@@ -1165,7 +1165,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SLOWKING] =
     {
-        .categoryName = _("ROYAL"),
+        .categoryName = _("Royal"),
         .height = 20,
         .weight = 795,
         .description = gSlowkingPokedexText,
@@ -1177,7 +1177,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SLOWPRIEST] =
     {
-        .categoryName = _("CARDINAL"),
+        .categoryName = _("Cardinal"),
         .height = 18,
         .weight = 721,
         .description = gSlowpriestPokedexText,
@@ -1189,7 +1189,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_REMORAID] =
     {
-        .categoryName = _("JET"),
+        .categoryName = _("Jet"),
         .height = 6,
         .weight = 120,
         .description = gRemoraidPokedexText,
@@ -1201,7 +1201,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_OCTILLERY] =
     {
-        .categoryName = _("JET"),
+        .categoryName = _("Jet"),
         .height = 9,
         .weight = 285,
         .description = gOctilleryPokedexText,
@@ -1213,7 +1213,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PHANTASOMO] =
     {
-        .categoryName = _("SINGING"),
+        .categoryName = _("Singing"),
         .height = 11,
         .weight = 137,
         .description = gPhantasomoPokedexText,
@@ -1225,7 +1225,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SMEARGLE] =
     {
-        .categoryName = _("PAINTER"),
+        .categoryName = _("Painter"),
         .height = 12,
         .weight = 580,
         .description = gSmearglePokedexText,
@@ -1237,7 +1237,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SERAPH] =
     {
-        .categoryName = _("ANGELIC"),
+        .categoryName = _("Angelic"),
         .height = 18,
         .weight = 354,
         .description = gSeraphPokedexText,
@@ -1249,7 +1249,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DUNSPARCE] =
     {
-        .categoryName = _("LAND SNAKE"),
+        .categoryName = _("Land Snake"),
         .height = 15,
         .weight = 140,
         .description = gDunsparcePokedexText,
@@ -1261,7 +1261,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ABSOL] =
     {
-        .categoryName = _("DISASTER"),
+        .categoryName = _("Disaster"),
         .height = 12,
         .weight = 470,
         .description = gAbsolPokedexText,
@@ -1273,7 +1273,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ABYSSUS] =
     {
-        .categoryName = _("CATASTROPHE"),
+        .categoryName = _("Catastrophe"),
         .height = 20,
         .weight = 1192,
         .description = gAbyssusPokedexText,
@@ -1285,7 +1285,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_EQUILL] =
     {
-        .categoryName = _("TINY BIRD"),
+        .categoryName = _("Tiny Bird"),
         .height = 5,
         .weight = 18,
         .description = gEquillPokedexText,
@@ -1297,7 +1297,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TELLURE] =
     {
-        .categoryName = _("GLOSSY"),
+        .categoryName = _("Glossy"),
         .height = 14,
         .weight = 308,
         .description = gTellurePokedexText,
@@ -1309,7 +1309,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CORPHISH] =
     {
-        .categoryName = _("RUFFIAN"),
+        .categoryName = _("Ruffian"),
         .height = 6,
         .weight = 115,
         .description = gCorphishPokedexText,
@@ -1321,7 +1321,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CRAWDAUNT] =
     {
-        .categoryName = _("ROGUE"),
+        .categoryName = _("Rogue"),
         .height = 11,
         .weight = 328,
         .description = gCrawdauntPokedexText,
@@ -1333,7 +1333,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DITTO] =
     {
-        .categoryName = _("TRANSFORM"),
+        .categoryName = _("Transform"),
         .height = 3,
         .weight = 40,
         .description = gDittoPokedexText,
@@ -1345,7 +1345,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GARGOTH] =
     {
-        .categoryName = _("GARGOYLE"),
+        .categoryName = _("Gargoyle"),
         .height = 5,
         .weight = 193,
         .description = gGargothPokedexText,
@@ -1357,7 +1357,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CRAGOYLE] =
     {
-        .categoryName = _("GARGOYLE"),
+        .categoryName = _("Gargoyle"),
         .height = 16,
         .weight = 1914,
         .description = gCragoylePokedexText,
@@ -1369,7 +1369,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TOGEPI] =
     {
-        .categoryName = _("SPIKE BALL"),
+        .categoryName = _("Spike Ball"),
         .height = 3,
         .weight = 15,
         .description = gTogepiPokedexText,
@@ -1381,7 +1381,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TOGETIC] =
     {
-        .categoryName = _("HAPPINESS"),
+        .categoryName = _("Happiness"),
         .height = 6,
         .weight = 32,
         .description = gTogeticPokedexText,
@@ -1393,7 +1393,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CIRROFT] =
     {
-        .categoryName = _("TINY CLOUD"),
+        .categoryName = _("Tiny Cloud"),
         .height = 2,
         .weight = 6,
         .description = gCirroftPokedexText,
@@ -1405,7 +1405,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CUMULOFT] =
     {
-        .categoryName = _("CLOUD"),
+        .categoryName = _("Cloud"),
         .height = 9,
         .weight = 45,
         .description = gCumuloftPokedexText,
@@ -1417,7 +1417,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DESTADO] =
     {
-        .categoryName = _("DUST DEVIL"),
+        .categoryName = _("Dust Devil"),
         .height = 30,
         .weight = 453,
         .description = gDestadoPokedexText,
@@ -1429,7 +1429,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FROSTORM] =
     {
-        .categoryName = _("BLIZZARD"),
+        .categoryName = _("Blizzard"),
         .height = 22,
         .weight = 490,
         .description = gFrostormPokedexText,
@@ -1441,7 +1441,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_NIMBOLT] =
     {
-        .categoryName = _("STORM ANVIL"),
+        .categoryName = _("Storm Anvil"),
         .height = 28,
         .weight = 544,
         .description = gNimboltPokedexText,
@@ -1453,7 +1453,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DRAKODO] =
     {
-        .categoryName = _("MONITOR"),
+        .categoryName = _("Monitor"),
         .height = 14,
         .weight = 966,
         .description = gDrakodoPokedexText,
@@ -1465,7 +1465,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_EEVEE] =
     {
-        .categoryName = _("EVOLUTION"),
+        .categoryName = _("Evolution"),
         .height = 3,
         .weight = 65,
         .description = gEeveePokedexText,
@@ -1477,7 +1477,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_VAPOREON] =
     {
-        .categoryName = _("BUBBLE JET"),
+        .categoryName = _("Bubble Jet"),
         .height = 10,
         .weight = 300,
         .description = gVaporeonPokedexText,
@@ -1489,7 +1489,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_JOLTEON] =
     {
-        .categoryName = _("LIGHTNING"),
+        .categoryName = _("Lightning"),
         .height = 9,
         .weight = 245,
         .description = gJolteonPokedexText,
@@ -1501,7 +1501,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FLAREON] =
     {
-        .categoryName = _("FLAME"),
+        .categoryName = _("Flame"),
         .height = 9,
         .weight = 250,
         .description = gFlareonPokedexText,
@@ -1513,7 +1513,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ESPEON] =
     {
-        .categoryName = _("SUN"),
+        .categoryName = _("Sun"),
         .height = 9,
         .weight = 250,
         .description = gEspeonPokedexText,
@@ -1525,7 +1525,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_UMBREON] =
     {
-        .categoryName = _("MOONLIGHT"),
+        .categoryName = _("Moonlight"),
         .height = 10,
         .weight = 260,
         .description = gUmbreonPokedexText,
@@ -1537,7 +1537,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ILLUMEON] =
     {
-        .categoryName = _("LIGHT"),
+        .categoryName = _("Light"),
         .height = 6,
         .weight = 236,
         .description = gIllumeonPokedexText,
@@ -1549,7 +1549,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CHIARAME] =
     {
-        .categoryName = _("THREEHEADED"),
+        .categoryName = _("Threeheaded"),
         .height = 8,
         .weight = 236,
         .description = gChiaramePokedexText,
@@ -1561,7 +1561,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SERBERINE] =
     {
-        .categoryName = _("TERROR"),
+        .categoryName = _("Terror"),
         .height = 16,
         .weight = 975,
         .description = gSerberinePokedexText,
@@ -1573,7 +1573,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MISDREAVUS] =
     {
-        .categoryName = _("SCREECH"),
+        .categoryName = _("Screech"),
         .height = 7,
         .weight = 10,
         .description = gMisdreavusPokedexText,
@@ -1585,7 +1585,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ENGIL] =
     {
-        .categoryName = _("CHERUB"),
+        .categoryName = _("Cherub"),
         .height = 4,
         .weight = 113,
         .description = gEngilPokedexText,
@@ -1597,7 +1597,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_BENENGIL] =
     {
-        .categoryName = _("HARMONY"),
+        .categoryName = _("Harmony"),
         .height = 18,
         .weight = 426,
         .description = gBenengilPokedexText,
@@ -1609,7 +1609,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_DUVAL] =
     {
-        .categoryName = _("YOUNG DEMON"),
+        .categoryName = _("Young Demon"),
         .height = 4,
         .weight = 90,
         .description = gDuvalPokedexText,
@@ -1621,7 +1621,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MALDUVAL] =
     {
-        .categoryName = _("FLAME DEVIL"),
+        .categoryName = _("Flame Devil"),
         .height = 19,
         .weight = 630,
         .description = gMalduvalPokedexText,
@@ -1633,7 +1633,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_QWILFISH] =
     {
-        .categoryName = _("BALLOON"),
+        .categoryName = _("Balloon"),
         .height = 5,
         .weight = 39,
         .description = gQwilfishPokedexText,
@@ -1645,7 +1645,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TANGELA] =
     {
-        .categoryName = _("VINE"),
+        .categoryName = _("Vine"),
         .height = 10,
         .weight = 350,
         .description = gTangelaPokedexText,
@@ -1657,7 +1657,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TROPIUS] =
     {
-        .categoryName = _("FRUIT"),
+        .categoryName = _("Fruit"),
         .height = 20,
         .weight = 1000,
         .description = gTropiusPokedexText,
@@ -1669,7 +1669,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_BRONTOGON] =
     {
-        .categoryName = _("TREMOR"),
+        .categoryName = _("Tremor"),
         .height = 35,
         .weight = 845,
         .description = gBrontogonPokedexText,
@@ -1681,7 +1681,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_BLITZFAUST] =
     {
-        .categoryName = _("HONOR"),
+        .categoryName = _("Honor"),
         .height = 15,
         .weight = 288,
         .description = gBlitzfaustPokedexText,
@@ -1693,7 +1693,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_VILEPHIST] =
     {
-        .categoryName = _("DECEIT"),
+        .categoryName = _("Deceit"),
         .height = 16,
         .weight = 260,
         .description = gVilephistPokedexText,
@@ -1705,7 +1705,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_RHYHORN] =
     {
-        .categoryName = _("SPIKES"),
+        .categoryName = _("Spikes"),
         .height = 10,
         .weight = 1150,
         .description = gRhyhornPokedexText,
@@ -1717,7 +1717,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_RHYDON] =
     {
-        .categoryName = _("DRILL"),
+        .categoryName = _("Drill"),
         .height = 19,
         .weight = 1200,
         .description = gRhydonPokedexText,
@@ -1729,7 +1729,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TORKOAL] =
     {
-        .categoryName = _("COAL"),
+        .categoryName = _("Coal"),
         .height = 5,
         .weight = 804,
         .description = gTorkoalPokedexText,
@@ -1741,7 +1741,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SINESTRIL] =
     {
-        .categoryName = _("SNOUT"),
+        .categoryName = _("Snout"),
         .height = 4,
         .weight = 32,
         .description = gSinestrilPokedexText,
@@ -1753,7 +1753,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MALISTRIL] =
     {
-        .categoryName = _("DEMON CLAW"),
+        .categoryName = _("Demon Claw"),
         .height = 10,
         .weight = 168,
         .description = gMalistrilPokedexText,
@@ -1765,7 +1765,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SCYTHER] =
     {
-        .categoryName = _("MANTIS"),
+        .categoryName = _("Mantis"),
         .height = 15,
         .weight = 560,
         .description = gScytherPokedexText,
@@ -1777,7 +1777,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SCIZOR] =
     {
-        .categoryName = _("PINCER"),
+        .categoryName = _("Pincer"),
         .height = 18,
         .weight = 1180,
         .description = gScizorPokedexText,
@@ -1789,7 +1789,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_BAKURGE] =
     {
-        .categoryName = _("THUNDER"),
+        .categoryName = _("Thunder"),
         .height = 20,
         .weight = 1555,
         .description = gBakurgePokedexText,
@@ -1801,7 +1801,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_LAPRAS] =
     {
-        .categoryName = _("TRANSPORT"),
+        .categoryName = _("Transport"),
         .height = 25,
         .weight = 2200,
         .description = gLaprasPokedexText,
@@ -1813,7 +1813,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SIRENE] =
     {
-        .categoryName = _("GENTLE RIDE"),
+        .categoryName = _("Gentle Ride"),
         .height = 37,
         .weight = 2379,
         .description = gSirenePokedexText,
@@ -1825,7 +1825,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_IGLONIA] =
     {
-        .categoryName = _("IGLOO SHELL"),
+        .categoryName = _("Igloo Shell"),
         .height = 7,
         .weight = 839,
         .description = gIgloniaPokedexText,
@@ -1837,7 +1837,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_STANTLER] =
     {
-        .categoryName = _("BIG HORN"),
+        .categoryName = _("Big Horn"),
         .height = 14,
         .weight = 712,
         .description = gStantlerPokedexText,
@@ -1849,7 +1849,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CARIBRISK] =
     {
-        .categoryName = _("CARIBOU"),
+        .categoryName = _("Caribou"),
         .height = 16,
         .weight = 862,
         .description = gCaribriskPokedexText,
@@ -1861,7 +1861,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_HUSKII] =
     {
-        .categoryName = _("WOLF CUB"),
+        .categoryName = _("Wolf Cub"),
         .height = 11,
         .weight = 149,
         .description = gHuskiiPokedexText,
@@ -1873,7 +1873,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TUNDROLF] =
     {
-        .categoryName = _("ICE WOLF"),
+        .categoryName = _("Ice Wolf"),
         .height = 18,
         .weight = 442,
         .description = gTundrolfPokedexText,
@@ -1885,7 +1885,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_WOLFROST] =
     {
-        .categoryName = _("LYCANTHROPE"),
+        .categoryName = _("Lycanthrope"),
         .height = 20,
         .weight = 765,
         .description = gWolfrostPokedexText,
@@ -1897,7 +1897,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_REEFRAIN] =
     {
-        .categoryName = _("EEL"),
+        .categoryName = _("Eel"),
         .height = 46,
         .weight = 349,
         .description = gReefrainPokedexText,
@@ -1909,7 +1909,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_POLARA] =
     {
-        .categoryName = _("BEAR CUB"),
+        .categoryName = _("Bear Cub"),
         .height = 10,
         .weight = 190,
         .description = gPolaraPokedexText,
@@ -1921,7 +1921,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_POLARICE] =
     {
-        .categoryName = _("POLAR BEAR"),
+        .categoryName = _("Polar Bear"),
         .height = 22,
         .weight = 1796,
         .description = gPolaricePokedexText,
@@ -1933,7 +1933,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MIRUST] =
     {
-        .categoryName = _("HAUNTED"),
+        .categoryName = _("Haunted"),
         .height = 6,
         .weight = 186,
         .description = gMirustPokedexText,
@@ -1945,7 +1945,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FERRIAN] =
     {
-        .categoryName = _("SPECTRE"),
+        .categoryName = _("Spectre"),
         .height = 18,
         .weight = 499,
         .description = gFerrianPokedexText,
@@ -1957,7 +1957,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CACNEA] =
     {
-        .categoryName = _("CACTUS"),
+        .categoryName = _("Cactus"),
         .height = 4,
         .weight = 51.3,
         .description = gCacneaPokedexText,
@@ -1969,7 +1969,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CACTURNE] =
     {
-        .categoryName = _("SCARECROW"),
+        .categoryName = _("Scarecrow"),
         .height = 13,
         .weight = 774,
         .description = gCacturnePokedexText,
@@ -1981,7 +1981,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CACKINGE] =
     {
-        .categoryName = _("COWBOY"),
+        .categoryName = _("Cowboy"),
         .height = 16,
         .weight = 820,
         .description = gCackingePokedexText,
@@ -1993,7 +1993,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SCORCHION] =
     {
-        .categoryName = _("FIRESTINGER"),
+        .categoryName = _("Firestinger"),
         .height = 15,
         .weight = 467,
         .description = gScorchionPokedexText,
@@ -2005,7 +2005,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TRAPINCH] =
     {
-        .categoryName = _("ANT PIT"),
+        .categoryName = _("Ant Pit"),
         .height = 7,
         .weight = 150,
         .description = gTrapinchPokedexText,
@@ -2017,7 +2017,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_VIBRAVA] =
     {
-        .categoryName = _("VIBRATION"),
+        .categoryName = _("Vibration"),
         .height = 11,
         .weight = 153,
         .description = gVibravaPokedexText,
@@ -2029,7 +2029,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FLYGON] =
     {
-        .categoryName = _("MYSTIC"),
+        .categoryName = _("Mystic"),
         .height = 20,
         .weight = 820,
         .description = gFlygonPokedexText,
@@ -2041,7 +2041,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_STARYU] =
     {
-        .categoryName = _("STAR SHAPE"),
+        .categoryName = _("Star Shape"),
         .height = 8,
         .weight = 345,
         .description = gStaryuPokedexText,
@@ -2053,7 +2053,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_STARMIE] =
     {
-        .categoryName = _("STAR SHAPE"),
+        .categoryName = _("Star Shape"),
         .height = 11,
         .weight = 800,
         .description = gStarmiePokedexText,
@@ -2065,7 +2065,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CORSOLA] =
     {
-        .categoryName = _("CORAL"),
+        .categoryName = _("Coral"),
         .height = 6,
         .weight = 48,
         .description = gCorsolaPokedexText,
@@ -2077,7 +2077,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_CHINCHOU] =
     {
-        .categoryName = _("ANGLER"),
+        .categoryName = _("Angler"),
         .height = 5,
         .weight = 118,
         .description = gChinchouPokedexText,
@@ -2089,7 +2089,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_LANTURN] =
     {
-        .categoryName = _("LIGHT"),
+        .categoryName = _("Light"),
         .height = 12,
         .weight = 227,
         .description = gLanturnPokedexText,
@@ -2101,7 +2101,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_RELICANTH] =
     {
-        .categoryName = _("LONGEVITY"),
+        .categoryName = _("Longevity"),
         .height = 10,
         .weight = 234,
         .description = gRelicanthPokedexText,
@@ -2113,7 +2113,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MISTICADE] =
     {
-        .categoryName = _("RAINCOAT"),
+        .categoryName = _("Raincoat"),
         .height = 16,
         .weight = 29,
         .description = gMisticadePokedexText,
@@ -2125,7 +2125,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_KRAKLAW] =
     {
-        .categoryName = _("KRAKEN"),
+        .categoryName = _("Kraken"),
         .height = 31,
         .weight = 1597,
         .description = gKraklawPokedexText,
@@ -2137,7 +2137,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_LEORACLE] =
     {
-        .categoryName = _("IMPERIAL"),
+        .categoryName = _("Imperial"),
         .height = 22,
         .weight = 3874,
         .description = gLeoraclePokedexText,
@@ -2149,7 +2149,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_KHAPHIX] =
     {
-        .categoryName = _("SPHINX"),
+        .categoryName = _("Sphinx"),
         .height = 18,
         .weight = 957,
         .description = gKhaphixPokedexText,
@@ -2161,7 +2161,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_FLINTUSK] =
     {
-        .categoryName = _("WOOLY"),
+        .categoryName = _("Wooly"),
         .height = 15,
         .weight = 984,
         .description = gFlintuskPokedexText,
@@ -2173,7 +2173,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_METUSK] =
     {
-        .categoryName = _("MAMMOTH"),
+        .categoryName = _("Mammoth"),
         .height = 23,
         .weight = 3057,
         .description = gMetuskPokedexText,
@@ -2185,7 +2185,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ALLUFANG] =
     {
-        .categoryName = _("FROST BITE"),
+        .categoryName = _("Frost Bite"),
         .height = 10,
         .weight = 248,
         .description = gAllufangPokedexText,
@@ -2197,7 +2197,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_KUNAIGA] =
     {
-        .categoryName = _("WHITE FANG"),
+        .categoryName = _("White Fang"),
         .height = 18,
         .weight = 1080,
         .description = gKunaigaPokedexText,
@@ -2209,7 +2209,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_PURIOR] =
     {
-        .categoryName = _("BRAVERY"),
+        .categoryName = _("Bravery"),
         .height = 13,
         .weight = 593,
         .description = gPuriorPokedexText,
@@ -2221,7 +2221,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_GOLDRAKE] =
     {
-        .categoryName = _("LUCKY FISH"),
+        .categoryName = _("Lucky Fish"),
         .height = 9,
         .weight = 181,
         .description = gGoldrakePokedexText,
@@ -2233,7 +2233,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_AROWANA] =
     {
-        .categoryName = _("GOLD DRAGON"),
+        .categoryName = _("Gold Dragon"),
         .height = 35,
         .weight = 2708,
         .description = gArowanaPokedexText,
@@ -2245,7 +2245,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ATLAXA] =
     {
-        .categoryName = _("BONE SQUIRE"),
+        .categoryName = _("Bone Squire"),
         .height = 11,
         .weight = 144,
         .description = gAtlaxaPokedexText,
@@ -2257,7 +2257,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_THORAXA] =
     {
-        .categoryName = _("BONE PRINCE"),
+        .categoryName = _("Bone Prince"),
         .height = 15,
         .weight = 375,
         .description = gThoraxaPokedexText,
@@ -2269,7 +2269,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_ILLUMBRA] =
     {
-        .categoryName = _("BONE KING"),
+        .categoryName = _("Bone King"),
         .height = 22,
         .weight = 669,
         .description = gIllumbraPokedexText,
@@ -2281,7 +2281,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_SNARLIGER] =
     {
-        .categoryName = _("TIGER CUB"),
+        .categoryName = _("Tiger Cub"),
         .height = 6,
         .weight = 122,
         .description = gSnarligerPokedexText,
@@ -2293,7 +2293,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_NOCTIGER] =
     {
-        .categoryName = _("STRIPE TAIL"),
+        .categoryName = _("Stripe Tail"),
         .height = 9,
         .weight = 404,
         .description = gNoctigerPokedexText,
@@ -2305,7 +2305,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_RAIGER] =
     {
-        .categoryName = _("BLACK TIGER"),
+        .categoryName = _("Black Tiger"),
         .height = 17,
         .weight = 1496,
         .description = gRaigerPokedexText,
@@ -2317,7 +2317,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_MATAKITE] =
     {
-        .categoryName = _("SEER"),
+        .categoryName = _("Seer"),
         .height = 16,
         .weight = 513,
         .description = gMatakitePokedexText,
@@ -2329,7 +2329,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TAGATI] =
     {
-        .categoryName = _("DOOMBRINGER"),
+        .categoryName = _("Doombringer"),
         .height = 15,
         .weight = 613,
         .description = gTagatiPokedexText,
@@ -2341,7 +2341,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_NEICHIA] =
     {
-        .categoryName = _("CRAZY FIST"),
+        .categoryName = _("Crazy Fist"),
         .height = 15,
         .weight = 555,
         .description = gNeichiaPokedexText,
@@ -2353,7 +2353,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_KURANPU] =
     {
-        .categoryName = _("BALANCE"),
+        .categoryName = _("Balance"),
         .height = 10,
         .weight = 249,
         .description = gKuranpuPokedexText,
@@ -2365,7 +2365,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_TYPHIDNA] =
     {
-        .categoryName = _("HYDRA"),
+        .categoryName = _("Hydra"),
         .height = 50,
         .weight = 4050,
         .description = gTyphidnaPokedexText,
@@ -2377,7 +2377,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_UNICROWN] =
     {
-        .categoryName = _("MYSTIC HORN"),
+        .categoryName = _("Mystic Horn"),
         .height = 33,
         .weight = 3066,
         .description = gUnicrownPokedexText,
@@ -2389,7 +2389,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_KIPPOROK] =
     {
-        .categoryName = _("JEWELER"),
+        .categoryName = _("Jeweler"),
         .height = 6,
         .weight = 45,
         .description = gKipporokPokedexText,
@@ -2401,7 +2401,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [CALDERA_KIRANT_DEX_JIRACHI] =
     {
-        .categoryName = _("WISH"),
+        .categoryName = _("Wish"),
         .height = 3,
         .weight = 10,
         .description = gJirachiPokedexText,

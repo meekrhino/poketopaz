@@ -1005,7 +1005,7 @@ static const struct InGameTrade sIngameTrades[] =
 {
     [INGAME_TRADE_HUSKII] =
     {
-        .nickname = _("HUSKER"),
+        .nickname = _("Husker"),
         .species = SPECIES_HUSKII,
         .ivs = {4, 5, 5, 4, 4, 5},
         .abilityNum = 0,
@@ -1014,7 +1014,7 @@ static const struct InGameTrade sIngameTrades[] =
         .personality = 0x87,
         .heldItem = ITEM_ASPEAR_BERRY,
         .mailNum = -1,
-        .otName = _("JIM"),
+        .otName = _("Jim"),
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_LUPINE
