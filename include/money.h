@@ -4,7 +4,6 @@
 #define MAX_MONEY 999999
 
 u32 GetMoney(u32* moneyPtr);
-u32 GetBankBalance(void);
 void SetMoney(u32* moneyPtr, u32 newValue);
 bool8 IsEnoughMoney(u32* moneyPtr, u32 cost);
 void AddMoney(u32* moneyPtr, u32 toAdd);

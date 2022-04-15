@@ -2316,3 +2316,12 @@ bool8 ScrCmd_warpsootopolislegend(struct ScriptContext *ctx)
     ResetInitialPlayerAvatarState();
     return TRUE;
 }
+
+void ScrCmd_bufferbankbalance(struct ScriptContext *ctx)
+{
+    u8 stringVarIndex = ScriptReadByte(ctx);
+    u32 bankBalance = GetMoney(&gSaveBlock1Ptr->bankedMoney);
+    u8 numDigits = CountDigits(bankBalance);
+
+    ConvertIntToDecimalStringN(sScriptStringVars[stringVarIndex], bankBalance, STR_CONV_MODE_LEFT_ALIGN, numDigits);
+}

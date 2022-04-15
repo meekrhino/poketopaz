@@ -72,11 +72,6 @@ u32 GetMoney(u32* moneyPtr)
     return *moneyPtr ^ gSaveBlock2Ptr->encryptionKey;
 }
 
-u32 GetBankBalance(void)
-{
-    return GetMoney(&gSaveBlock1Ptr->bankedMoney)
-}
-
 void SetMoney(u32* moneyPtr, u32 newValue)
 {
     *moneyPtr = gSaveBlock2Ptr->encryptionKey ^ newValue;

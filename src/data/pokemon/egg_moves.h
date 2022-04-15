@@ -143,8 +143,9 @@ const u16 gEggMoves[] = {
               MOVE_SIGNAL_BEAM,
               MOVE_LIGHT_WAVE,
               MOVE_SAFEGUARD,
-              MOVE_ODOR_SLEUTH
-              MOVE_LOW_KICK),
+              MOVE_ODOR_SLEUTH,
+              MOVE_LOW_KICK,
+              MOVE_REVERSAL),
 
     egg_moves(SPECIES_WHISPAW,
               MOVE_FLARE,

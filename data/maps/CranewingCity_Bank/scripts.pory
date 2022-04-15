@@ -18,7 +18,7 @@ mapscripts CranewingCity_Bank_MapScripts {}
 // Global Scripts
 //=====================================
 script(global) CranewingCity_Bank_Boy {
-    msgbox(format("I can't wait to open a bank account when I become a Pokémon Trainer!\pMom says the only way to make money is to save money, I plan to be rich!"), MSGBOX_NPC)
+    msgbox(format("I can't wait to open a bank account when I become a Pokémon Trainer!\pMom says the only way to make money is to save money, and I plan to be rich!"), MSGBOX_NPC)
     end
 }
 
@@ -28,17 +28,13 @@ script(global) CranewingCity_Bank_Manager {
         faceplayer
         msgbox(format("Good day to you!\pWould you like to view your Pokémon Bank balance?"), MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES) {
-            msgbox("placeholder")
+            bufferbankbalance(0)
+            msgbox(CranewingCity_Bank_Text_Balance)
         }
         else {
-            msgbox(format("Very well then!\pAre you here to close your account with us?"), MSGBOX_YESNO)
-            if(var(VAR_RESULT) == YES) {
-                msgbox("placeholder")
-            }
-            else {
-                msgbox(format("Of course you don't!\pThis is the greatest…\nand only…\lbank in all of Caldera and Kirant!"))
-            }
+            msgbox(format("Very well then!\pThe First Regional Pokémon Bank thanks you for your continued patronage!"))
         }
+        closemessage
         releaseall
     }
     else {
@@ -138,6 +134,11 @@ script(local) CranewingCity_Bank_BankClerkDeposit {
 //=====================================
 // Text
 //=====================================
+text CranewingCity_Bank_Text_Balance {
+    format (
+        "You current balance is {STR_VAR_1}.\pThank you for your continued patronage!"
+    )
+}
 
 //=====================================
 // Movement

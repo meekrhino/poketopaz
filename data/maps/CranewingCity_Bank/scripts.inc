@@ -9,7 +9,7 @@ CranewingCity_Bank_Boy::
 
 CranewingCity_Bank_Manager::
 	goto_if_set FLAG_BANK_ACCOUNT_CREATED, CranewingCity_Bank_Manager_2
-	msgbox CranewingCity_Bank_Manager_Text_4, MSGBOX_NPC
+	msgbox CranewingCity_Bank_Manager_Text_2, MSGBOX_NPC
 	setflag FLAG_BANK_ACCOUNT_CREATED
 CranewingCity_Bank_Manager_1:
 	end
@@ -20,20 +20,15 @@ CranewingCity_Bank_Manager_2:
 	msgbox CranewingCity_Bank_Manager_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq CranewingCity_Bank_Manager_6
-	msgbox CranewingCity_Bank_Manager_Text_2, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq CranewingCity_Bank_Manager_9
-	msgbox CranewingCity_Bank_Manager_Text_3
+	msgbox CranewingCity_Bank_Manager_Text_1
 CranewingCity_Bank_Manager_5:
+	closemessage
 	releaseall
 	goto CranewingCity_Bank_Manager_1
 
 CranewingCity_Bank_Manager_6:
-	msgbox CranewingCity_Bank_Manager_Text_1
-	goto CranewingCity_Bank_Manager_5
-
-CranewingCity_Bank_Manager_9:
-	msgbox CranewingCity_Bank_Manager_Text_1
+	bufferbankbalance 0
+	msgbox CranewingCity_Bank_Text_Balance
 	goto CranewingCity_Bank_Manager_5
 
 
@@ -150,7 +145,7 @@ CranewingCity_Bank_Boy_Text_0:
 	.string "I can't wait to open a bank account\n"
 	.string "when I become a Pokémon Trainer!\p"
 	.string "Mom says the only way to make money is\n"
-	.string "to save money, I plan to be rich!$"
+	.string "to save money, and I plan to be rich!$"
 
 CranewingCity_Bank_Manager_Text_0:
 	.string "Good day to you!\p"
@@ -158,20 +153,11 @@ CranewingCity_Bank_Manager_Text_0:
 	.string "Bank balance?$"
 
 CranewingCity_Bank_Manager_Text_1:
-	.string "placeholder$"
+	.string "Very well then!\p"
+	.string "The First Regional Pokémon Bank thanks\n"
+	.string "you for your continued patronage!$"
 
 CranewingCity_Bank_Manager_Text_2:
-	.string "Very well then!\p"
-	.string "Are you here to close your account with\n"
-	.string "us?$"
-
-CranewingCity_Bank_Manager_Text_3:
-	.string "Of course you don't!\p"
-	.string "This is the greatest…\n"
-	.string "and only…\l"
-	.string "bank in all of Caldera and Kirant!$"
-
-CranewingCity_Bank_Manager_Text_4:
 	.string "Hi there!\n"
 	.string "What can I do for you?\p"
 	.string "Oh?\n"
@@ -221,3 +207,8 @@ CranewingCity_Bank_BankClerkDeposit_Text_1:
 
 CranewingCity_Bank_BankClerkDeposit_Text_2:
 	.string "We can't store that much!$"
+
+CranewingCity_Bank_Text_Balance::
+	.string "You current balance is {STR_VAR_1}.\p"
+	.string "Thank you for your continued\n"
+	.string "patronage!$"
