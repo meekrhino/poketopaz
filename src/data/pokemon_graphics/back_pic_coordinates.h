@@ -187,8 +187,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_FLAAFFY] =
     {
-        .size = 0x66,
-        .y_offset = 9,
+        .size = 0x88,
+        .y_offset = 4,
     },
     [SPECIES_AMPHAROS] =
     {

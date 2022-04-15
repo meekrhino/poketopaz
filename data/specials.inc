@@ -536,4 +536,5 @@ gSpecials::
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
     def_special Bank
+    def_special GetBankBalance
     def_special PrintTest
