@@ -7613,7 +7613,7 @@ static u8 ChangeStatBuffs(s8 statValue, u8 statId, u8 flags, const u8 *BS_ptr)
         }
         else // try to decrease
         {
-            statValue = -GET_STAT_BUFF_VALUE(statValue) * 2;
+            statValue = -GET_STAT_BUFF_VALUE(statValue);
             if (gBattleMons[gActiveBattler].ability == ABILITY_SERENE_FOCUS)
                 statValue *= 2;
 
