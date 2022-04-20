@@ -11,7 +11,7 @@ NeoBay_PlayersHouse_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 PlayersHouse_1F_BradleyReminder::
 	switch VAR_NEOBAY_STATE
 	case 1, PlayersHouse_1F_BradleyReminder_3
-	case 4, PlayersHouse_1F_BradleyReminder_4
+	case 6, PlayersHouse_1F_BradleyReminder_4
 	case 7, PlayersHouse_1F_BradleyReminder_5
 	case 8, PlayersHouse_1F_BradleyReminder_6
 	case 9, PlayersHouse_1F_BradleyReminder_7
@@ -45,7 +45,7 @@ PlayersHouse_1F_BradleyReminder_7:
 PlayersHouse_1F_OnTransition:
 	setrespawn HEAL_LOCATION_NEO_BAY
 	switch VAR_NEOBAY_STATE
-	case 4, PlayersHouse_1F_OnTransition_3
+	case 6, PlayersHouse_1F_OnTransition_3
 	case 7, PlayersHouse_1F_OnTransition_4
 PlayersHouse_1F_OnTransition_1:
 	end
@@ -91,7 +91,7 @@ MomGivesRunningShoes:
 	playfanfare MUS_OBTAIN_ITEM
 	message MomGivesRunningShoes_Text_2
 	waitfanfare
-	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_B_DASH
 	msgbox PlayersHouse_1F_SayGoodbye
 	waitmessage
 	closemessage

@@ -57,7 +57,7 @@ mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
 // Global Scripts
 //=====================================
 script(global) WillowsLab_YouGoFirst {
-    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_RECEIVED_STARTER) {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SAW_FLASHBACK) {
         msgbox(format("Bradley: I guess we'd better go talk to our folks like the Prof. said…"), MSGBOX_NPC)
         end
     }
@@ -66,7 +66,7 @@ script(global) WillowsLab_YouGoFirst {
 }
 
 script(global) WillowsLab_TakeYourTime {
-    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_AMPURE_RESCUED) {
+    if (var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SAW_FLASHBACK) {
         lockall
         faceplayer
 	    msgbox(format("Willow: So, you stopped by your family to say goodbye, did you?"), MSGBOX_YESNO)
@@ -201,28 +201,29 @@ script(local) WillowsLab_OnTransition {
         clearflag(FLAG_WILLOW_BALL_TAKEN_2)
         removeobject(BRADLEY)
     }
-    elif(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
+    elif(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE
+      || var(VAR_NEOBAY_STATE) == NEOBAY_STATE_STARTED_FLASHBACK
+      || var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SAW_FLASHBACK) {
         addobject(BRADLEY)
         setobjectxyperm(BRADLEY, 8, 7)
+        setobjectmovementtype(BRADLEY, MOVEMENT_TYPE_FACE_RIGHT)
         setobjectxyperm(WILLOW, 11, 6)
+        setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_LEFT)
     }
     elif(var(VAR_NEOBAY_STATE) == NEOBAY_STATE_RECEIVED_RUNNING_SHOES) {
         setobjectxyperm(WILLOW, 2, 8)
         setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_RIGHT)
         removeobject(BRADLEY)
     }
-    elif(var(VAR_NEOBAY_STATE) == NEOBAY_STATE_STARTED_FLASHBACK) {
-        setobjectxyperm(BRADLEY, 8, 7)
-        setobjectmovementtype(BRADLEY, MOVEMENT_TYPE_FACE_RIGHT)
-        setobjectxyperm(WILLOW, 11, 6)
-        setobjectmovementtype(WILLOW, MOVEMENT_TYPE_FACE_LEFT)
-    }
 }
 
 script(local) WillowsLab_OnWarp {
-    if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE) {
+    if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE
+    || var(VAR_NEOBAY_STATE) == NEOBAY_STATE_STARTED_FLASHBACK
+    || var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SAW_FLASHBACK) {
         turnobject(PLAYER, DIR_EAST)
         turnobject(BRADLEY, DIR_EAST)
+        turnobject(WILLOW, DIR_WEST)
     }
 }
 

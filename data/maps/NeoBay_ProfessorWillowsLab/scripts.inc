@@ -28,7 +28,7 @@ NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1:
 
 
 WillowsLab_YouGoFirst::
-	compare VAR_NEOBAY_STATE, 3
+	compare VAR_NEOBAY_STATE, 6
 	goto_if_eq WillowsLab_YouGoFirst_2
 	msgbox WillowsLab_YouGoFirst_Text_1, MSGBOX_NPC
 	end
@@ -39,7 +39,7 @@ WillowsLab_YouGoFirst_2:
 
 
 WillowsLab_TakeYourTime::
-	compare VAR_NEOBAY_STATE, 4
+	compare VAR_NEOBAY_STATE, 6
 	goto_if_eq WillowsLab_TakeYourTime_2
 	msgbox WillowsLab_TakeYourTime_Text_3, MSGBOX_NPC
 WillowsLab_TakeYourTime_1:
@@ -208,10 +208,12 @@ WillowsLab_OnTransition:
 	goto_if_eq WillowsLab_OnTransition_1
 	compare VAR_AMPURE_RESCUE_STATE, 7
 	goto_if_eq WillowsLab_OnTransition_2
+	compare VAR_NEOBAY_STATE, 5
+	goto_if_eq WillowsLab_OnTransition_2
+	compare VAR_NEOBAY_STATE, 6
+	goto_if_eq WillowsLab_OnTransition_2
 	compare VAR_NEOBAY_STATE, 7
 	goto_if_eq WillowsLab_OnTransition_3
-	compare VAR_NEOBAY_STATE, 5
-	goto_if_eq WillowsLab_OnTransition_4
 	return
 
 WillowsLab_OnTransition_1:
@@ -226,7 +228,9 @@ WillowsLab_OnTransition_1:
 WillowsLab_OnTransition_2:
 	addobject 5
 	setobjectxyperm 5, 8, 7
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectxyperm 4, 11, 6
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 WillowsLab_OnTransition_3:
@@ -235,22 +239,20 @@ WillowsLab_OnTransition_3:
 	removeobject 5
 	return
 
-WillowsLab_OnTransition_4:
-	setobjectxyperm 5, 8, 7
-	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm 4, 11, 6
-	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
-	return
-
 
 WillowsLab_OnWarp:
 	compare VAR_AMPURE_RESCUE_STATE, 7
+	goto_if_eq WillowsLab_OnWarp_1
+	compare VAR_NEOBAY_STATE, 5
+	goto_if_eq WillowsLab_OnWarp_1
+	compare VAR_NEOBAY_STATE, 6
 	goto_if_eq WillowsLab_OnWarp_1
 	return
 
 WillowsLab_OnWarp_1:
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	turnobject 5, DIR_EAST
+	turnobject 4, DIR_WEST
 	return
 
 

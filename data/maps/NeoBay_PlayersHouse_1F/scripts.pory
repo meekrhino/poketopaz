@@ -29,7 +29,7 @@ script(global) PlayersHouse_1F_BradleyReminder {
     switch(var(VAR_NEOBAY_STATE)) {
         case NEOBAY_STATE_SPOKE_TO_MOM:
             msgbox(format("Mom: Bradley was looking for you, dear.\lHe said you'd know where to find him."), MSGBOX_NPC)
-        case NEOBAY_STATE_AMPURE_RESCUED:
+        case NEOBAY_STATE_SAW_FLASHBACK:
             call(MomGivesRunningShoes)
         case NEOBAY_STATE_RECEIVED_RUNNING_SHOES:
             msgbox(format("Mom: I'll be fine. Here, why not have a quick rest?"), MSGBOX_NPC)
@@ -50,7 +50,7 @@ script(global) PlayersHouse_1F_BradleyReminder {
 script(local) PlayersHouse_1F_OnTransition {
 	setrespawn(HEAL_LOCATION_NEO_BAY)
     switch(var(VAR_NEOBAY_STATE)) {
-        case NEOBAY_STATE_AMPURE_RESCUED:
+        case NEOBAY_STATE_SAW_FLASHBACK:
             setobjectxyperm(MOM, 2, 2)
             setobjectmovementtype(MOM, MOVEMENT_TYPE_FACE_UP)
         case NEOBAY_STATE_RECEIVED_RUNNING_SHOES:
@@ -90,7 +90,7 @@ script(local) MomGivesRunningShoes {
 	playfanfare(MUS_OBTAIN_ITEM)
 	message("{PLAYER} put on the\nRunning Shoes.")
 	waitfanfare
-	setflag(FLAG_RECEIVED_RUNNING_SHOES)
+	setflag(FLAG_SYS_B_DASH)
     msgbox(PlayersHouse_1F_SayGoodbye)
     waitmessage
     closemessage
