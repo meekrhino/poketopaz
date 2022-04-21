@@ -77,8 +77,8 @@ string generate_map_header_text(Json map_data, Json layouts_data, string version
 
     ostringstream text;
 
-    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/" 
-         << map_data["name"].string_value() 
+    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/"
+         << map_data["name"].string_value()
          << "/map.json\n@\n\n";
 
     text << map_data["name"].string_value() << ":\n"
@@ -128,8 +128,8 @@ string generate_map_connections_text(Json map_data) {
 
     ostringstream text;
 
-    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/" 
-         << map_data["name"].string_value() 
+    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/"
+         << map_data["name"].string_value()
          << "/map.json\n@\n\n";
 
     text << map_data["name"].string_value() << "_MapConnectionsList:\n";
@@ -154,8 +154,8 @@ string generate_map_events_text(Json map_data) {
 
     ostringstream text;
 
-    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/" 
-         << map_data["name"].string_value() 
+    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/"
+         << map_data["name"].string_value()
          << "/map.json\n@\n\n";
 
     string objects_label, warps_label, coords_label, bgs_label;
@@ -466,7 +466,10 @@ string generate_layout_headers_text(Json layouts_data) {
              << "\t.4byte " << border_label << "\n"
              << "\t.4byte " << blockdata_label << "\n"
              << "\t.4byte " << layout["primary_tileset"].string_value() << "\n"
-             << "\t.4byte " << layout["secondary_tileset"].string_value() << "\n\n";
+             << "\t.4byte " << layout["secondary_tileset"].string_value() << "\n"
+             << "\t.byte " << layout["border_width"].int_value() << "\n"
+             << "\t.byte " << layout["border_height"].int_value() << "\n"
+             << "\t.2byte 0\n\n";
     }
 
     return text.str();
