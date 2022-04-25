@@ -1022,14 +1022,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_STARYU] =
     {
-        .size = 0x66,
-        .y_offset = 10,
+        .size = 0x65,
+        .y_offset = 12,
     },
 
     [SPECIES_STARMIE] =
     {
-        .size = 0x77,
-        .y_offset = 6,
+        .size = 0x78,
+        .y_offset = 4,
     },
 
     [SPECIES_CORSOLA] =
