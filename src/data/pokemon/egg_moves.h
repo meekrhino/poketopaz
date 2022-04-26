@@ -690,7 +690,14 @@ const u16 gEggMoves[] = {
               MOVE_DOUBLE_EDGE,
               MOVE_TEMPER),
 
-    egg_moves(SPECIES_STARYU, MOVE_BUBBLE),//TODO
+    egg_moves(SPECIES_STARYU,
+              MOVE_ROCK_SLIDE,
+              MOVE_CONFUSE_RAY,
+              MOVE_AMNESIA,
+              MOVE_BIDE,
+              MOVE_DOUBLE_EDGE,
+              MOVE_ANCIENT_POWER,
+              MOVE_CONVERSION),
 
     egg_moves(SPECIES_CORSOLA,
               MOVE_AMNESIA,
