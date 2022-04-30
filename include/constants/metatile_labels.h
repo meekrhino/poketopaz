@@ -129,6 +129,14 @@
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
 
+// gTileset_ChartreeForest
+#define METATILE_ChartreeForest_AshField       0x200
+#define METATILE_ChartreeForest_AshField_2     0x201
+#define METATILE_ChartreeForest_AshGrass       0x23D
+#define METATILE_ChartreeForest_AshGrass_2     0x213
+#define METATILE_ChartreeForest_NormalGrass    0x245
+#define METATILE_ChartreeForest_NormalGrass_2  0x227
+
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9
 #define METATILE_Contest_CounterFlap_Top     0x2D1

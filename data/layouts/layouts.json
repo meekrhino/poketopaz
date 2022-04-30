@@ -5700,6 +5700,30 @@
       "secondary_tileset": "gTileset_NeoBay",
       "border_filepath": "data/layouts/NeoBay_FlashbackBeach/border.bin",
       "blockdata_filepath": "data/layouts/NeoBay_FlashbackBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_MIST_1F",
+      "name": "MtMist_1F_Layout",
+      "width": 62,
+      "height": 51,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MtMist",
+      "border_filepath": "data/layouts/MtMist_1F/border.bin",
+      "blockdata_filepath": "data/layouts/MtMist_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_MIST_B1F",
+      "name": "MtMist_B1F_Layout",
+      "width": 24,
+      "height": 44,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MtMist",
+      "border_filepath": "data/layouts/MtMist_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/MtMist_B1F/map.bin"
     }
   ]
 }

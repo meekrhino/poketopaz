@@ -586,3 +586,10 @@ gMetatiles_Cranewing::
 	.align 1
 gMetatileAttributes_Cranewing::
 	.incbin "data/tilesets/secondary/cranewing/metatile_attributes.bin"
+	.align 1
+gMetatiles_MtMist::
+	.incbin "data/tilesets/secondary/mtmist/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_MtMist::
+	.incbin "data/tilesets/secondary/mtmist/metatile_attributes.bin"

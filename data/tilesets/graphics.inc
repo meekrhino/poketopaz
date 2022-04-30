@@ -1809,3 +1809,23 @@ gTilesetPalettes_Cranewing::
 	.align 2
 gTilesetTiles_Cranewing::
 	.incbin "data/tilesets/secondary/cranewing/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_MtMist::
+	.incbin "data/tilesets/secondary/mtmist/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/mtmist/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_MtMist::
+	.incbin "data/tilesets/secondary/mtmist/tiles.4bpp.lz"

@@ -874,3 +874,14 @@ gTileset_Cranewing::
 	.4byte gMetatiles_Cranewing
 	.4byte gMetatileAttributes_Cranewing
 	.4byte NULL
+
+	.align 2
+gTileset_MtMist::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_MtMist
+	.4byte gTilesetPalettes_MtMist
+	.4byte gMetatiles_MtMist
+	.4byte gMetatileAttributes_MtMist
+	.4byte NULL

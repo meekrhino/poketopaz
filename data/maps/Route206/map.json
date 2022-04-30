@@ -152,7 +152,20 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 17,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_MT_MIST_1F",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 31,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_MT_MIST_1F",
+      "dest_warp_id": 1
+    }
   ],
   "coord_events": [
 
