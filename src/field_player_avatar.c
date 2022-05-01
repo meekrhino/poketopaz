@@ -4,6 +4,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
+#include "field_screen_effect.h"
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
@@ -620,6 +621,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerNotOnBikeCollideWithFarawayIslandMew(direction);
             return;
         }
+        else if (collision == COLLISION_STAIR_WARP)
+        {
+            PlayerFaceDirection(direction);
+        }
         else
         {
             u8 adjustedCollision = collision - COLLISION_STOP_SURFING;
@@ -656,6 +661,8 @@ static u8 CheckForPlayerAvatarCollision(u8 direction)
 
     x = playerObjEvent->currentCoords.x;
     y = playerObjEvent->currentCoords.y;
+    if (IsDirectionalStairWarpMetatileBehavior(MapGridGetMetatileBehaviorAt(x, y), direction))
+        return COLLISION_STAIR_WARP;
     MoveCoords(direction, &x, &y);
     return CheckForObjectEventCollision(playerObjEvent, x, y, direction, MapGridGetMetatileBehaviorAt(x, y));
 }
@@ -1688,7 +1695,7 @@ static bool8 (*const sFishingStateFuncs[])(struct Task *) =
 {
     Fishing_Init,
     Fishing_GetRodOut,
-    Fishing_WaitBeforeDots, 
+    Fishing_WaitBeforeDots,
     Fishing_InitDots,       // FISHING_START_ROUND
     Fishing_ShowDots,
     Fishing_CheckForBite,
@@ -1730,13 +1737,13 @@ static bool8 Fishing_GetRodOut(struct Task *task)
 {
     struct ObjectEvent *playerObjEvent;
     const s16 minRounds1[] = {
-        [OLD_ROD]   = 1, 
-        [GOOD_ROD]  = 1, 
+        [OLD_ROD]   = 1,
+        [GOOD_ROD]  = 1,
         [SUPER_ROD] = 1
     };
     const s16 minRounds2[] = {
-        [OLD_ROD]   = 1, 
-        [GOOD_ROD]  = 3, 
+        [OLD_ROD]   = 1,
+        [GOOD_ROD]  = 3,
         [SUPER_ROD] = 6
     };
 
@@ -1866,8 +1873,8 @@ static bool8 Fishing_GotBite(struct Task *task)
 static bool8 Fishing_WaitForA(struct Task *task)
 {
     const s16 reelTimeouts[3] = {
-        [OLD_ROD]   = 36, 
-        [GOOD_ROD]  = 33, 
+        [OLD_ROD]   = 36,
+        [GOOD_ROD]  = 33,
         [SUPER_ROD] = 30
     };
 
@@ -2101,7 +2108,7 @@ static void Task_DoPlayerSpinExit(u8 taskId)
             tState++;
         case 1: // Spin while rising
             TrySpinPlayerForWarp(object, &tSpinDelayTimer);
-            
+
             // Rise and accelerate
             tCurY -= tSpeed;
             tSpeed += 3;
