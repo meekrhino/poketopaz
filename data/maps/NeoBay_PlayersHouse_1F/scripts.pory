@@ -1,3 +1,4 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
 const MOM = 1
 
 // VAR_NEOBAY_STATE values
@@ -64,7 +65,8 @@ script(local) BradleyWasLookingForYou {
     lockall
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_SPOKE_TO_MOM)
     applymovement(MOM, mLookUpStartled)
-    waitmovement(MOM)
+    applymovement(PLAYER, mPlayerWalksOverToMom)
+    waitmovement(0)
     msgbox(PlayersHouse_1F_BradleyWasLookingForYou, MSGBOX_AUTOCLOSE)
     releaseall
     end
@@ -149,6 +151,11 @@ movement mMomDeliberates2 {
     delay_16 * 4
     walk_right
     face_down
+}
+
+movement mPlayerWalksOverToMom {
+    walk_left * 2
+    walk_down * 2
 }
 
 //=====================================

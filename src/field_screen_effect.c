@@ -1317,8 +1317,8 @@ static bool8 WaitStairExitMovementFinished(s16 *a0, s16 *a1, s16 *a2, s16 *a3, s
     }
     else
     {
-        sprite->x = 0;
-        sprite->y = 0;
+        sprite->x2 = 0;
+        sprite->y2 = 0;
         return FALSE;
     }
 }

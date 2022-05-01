@@ -65,7 +65,8 @@ BradleyWasLookingForYou:
 	lockall
 	setvar VAR_NEOBAY_STATE, 1
 	applymovement 1, mLookUpStartled
-	waitmovement 1
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalksOverToMom
+	waitmovement 0
 	msgbox PlayersHouse_1F_BradleyWasLookingForYou, MSGBOX_AUTOCLOSE
 	releaseall
 	end
@@ -123,6 +124,13 @@ mMomDeliberates2:
 	delay_16
 	walk_right
 	face_down
+	step_end
+
+mPlayerWalksOverToMom:
+	walk_left
+	walk_left
+	walk_down
+	walk_down
 	step_end
 
 PlayersHouse_1F_BradleyReminder_Text_0:
