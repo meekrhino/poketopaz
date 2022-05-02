@@ -1847,6 +1847,10 @@ static const u16 sBadgeFlags[NUM_BADGES] =
     FLAG_BADGE06_GET,
     FLAG_BADGE07_GET,
     FLAG_BADGE08_GET,
+    FLAG_BADGE09_GET,
+    FLAG_BADGE10_GET,
+    FLAG_BADGE11_GET,
+    FLAG_BADGE12_GET,
 };
 
 static int GetNumOwnedBadges(void)

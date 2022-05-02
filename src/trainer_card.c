@@ -1504,8 +1504,8 @@ static void DrawStarsAndBadgesOnCard(void)
             {
                 FillBgTilemapBufferRect(3, tileNum, x, 15, 1, 1, palNum);
                 FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 16, x, 16, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 16, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum + (NUM_BADGES * 2), x, 16, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum + (NUM_BADGES * 2) + 1, x + 1, 16, 1, 1, palNum);
             }
         }
     }

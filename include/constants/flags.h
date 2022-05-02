@@ -1357,33 +1357,33 @@
 #define FLAG_BADGE06_GET                             (SYSTEM_FLAGS + 0xC)
 #define FLAG_BADGE07_GET                             (SYSTEM_FLAGS + 0xD)
 #define FLAG_BADGE08_GET                             (SYSTEM_FLAGS + 0xE)
-#define NUM_BADGES                                   (1 + FLAG_BADGE08_GET - FLAG_BADGE01_GET)
+#define FLAG_BADGE09_GET                             (SYSTEM_FLAGS + 0xF)
+#define FLAG_BADGE10_GET                             (SYSTEM_FLAGS + 0x10)
+#define FLAG_BADGE11_GET                             (SYSTEM_FLAGS + 0x11)
+#define FLAG_BADGE12_GET                             (SYSTEM_FLAGS + 0x12)
+#define NUM_BADGES                                   (1 + FLAG_BADGE12_GET - FLAG_BADGE01_GET)
 
 // Towns and Cities
-#define FLAG_VISITED_NEOBAY_TOWN                    (SYSTEM_FLAGS + 0xF)
-#define FLAG_VISITED_SUNSET_VILLAGE                 (SYSTEM_FLAGS + 0x10)
-#define FLAG_VISITED_SOFTWIND_CITY                  (SYSTEM_FLAGS + 0x11)
-#define FLAG_VISITED_CRANEWING_CITY                 (SYSTEM_FLAGS + 0x12)
-#define FLAG_VISITED_FALLARBOR_TOWN                 (SYSTEM_FLAGS + 0x13)
-#define FLAG_VISITED_VERDANTURF_TOWN                (SYSTEM_FLAGS + 0x14)
-#define FLAG_VISITED_PACIFIDLOG_TOWN                (SYSTEM_FLAGS + 0x15)
-#define FLAG_VISITED_PETALBURG_CITY                 (SYSTEM_FLAGS + 0x16)
-#define FLAG_VISITED_SLATEPORT_CITY                 (SYSTEM_FLAGS + 0x17)
-#define FLAG_VISITED_MAUVILLE_CITY                  (SYSTEM_FLAGS + 0x18)
-#define FLAG_VISITED_RUSTBORO_CITY                  (SYSTEM_FLAGS + 0x19)
-#define FLAG_VISITED_FORTREE_CITY                   (SYSTEM_FLAGS + 0x1A)
-#define FLAG_VISITED_LILYCOVE_CITY                  (SYSTEM_FLAGS + 0x1B)
-#define FLAG_VISITED_MOSSDEEP_CITY                  (SYSTEM_FLAGS + 0x1C)
-#define FLAG_VISITED_SOOTOPOLIS_CITY                (SYSTEM_FLAGS + 0x1D)
-#define FLAG_VISITED_EVER_GRANDE_CITY               (SYSTEM_FLAGS + 0x1E)
+#define FLAG_VISITED_NEOBAY_TOWN                    (SYSTEM_FLAGS + 0x13)
+#define FLAG_VISITED_SUNSET_VILLAGE                 (SYSTEM_FLAGS + 0x14)
+#define FLAG_VISITED_SOFTWIND_CITY                  (SYSTEM_FLAGS + 0x15)
+#define FLAG_VISITED_CRANEWING_CITY                 (SYSTEM_FLAGS + 0x16)
+#define FLAG_VISITED_FALLARBOR_TOWN                 (SYSTEM_FLAGS + 0x17)
+#define FLAG_VISITED_VERDANTURF_TOWN                (SYSTEM_FLAGS + 0x18)
+#define FLAG_VISITED_PACIFIDLOG_TOWN                (SYSTEM_FLAGS + 0x19)
+#define FLAG_VISITED_PETALBURG_CITY                 (SYSTEM_FLAGS + 0x1A)
+#define FLAG_VISITED_SLATEPORT_CITY                 (SYSTEM_FLAGS + 0x1B)
+#define FLAG_VISITED_MAUVILLE_CITY                  (SYSTEM_FLAGS + 0x1C)
+#define FLAG_VISITED_RUSTBORO_CITY                  (SYSTEM_FLAGS + 0x1D)
+#define FLAG_VISITED_FORTREE_CITY                   (SYSTEM_FLAGS + 0x1E)
+#define FLAG_VISITED_LILYCOVE_CITY                  (SYSTEM_FLAGS + 0x1F)
+#define FLAG_VISITED_MOSSDEEP_CITY                  (SYSTEM_FLAGS + 0x20)
+#define FLAG_VISITED_SOOTOPOLIS_CITY                (SYSTEM_FLAGS + 0x21)
+#define FLAG_VISITED_EVER_GRANDE_CITY               (SYSTEM_FLAGS + 0x22)
 
-#define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
-#define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
+#define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x23) // Seems to be related to linking.
+#define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x24)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
 #define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
 #define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
