@@ -524,14 +524,14 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_LOTAD] =
     {
-        .size = 0x65,
-        .y_offset = 14,
+        .size = 0x43,
+        .y_offset = 21,
     },
 
     [SPECIES_LOMBRE] =
     {
-        .size = 0x66,
-        .y_offset = 9,
+        .size = 0x67,
+        .y_offset = 6,
     },
 
     [SPECIES_LUDICOLO] =
@@ -824,8 +824,8 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_TANGELA] =
     {
-        .size = 0x67,
-        .y_offset = 7,
+        .size = 0x76,
+        .y_offset = 8,
     },
 
     [SPECIES_TROPIUS] =
