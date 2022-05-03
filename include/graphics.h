@@ -1471,6 +1471,8 @@ extern const u32 gTrainerFrontPic_Collector[];
 extern const u32 gTrainerFrontPic_AquaGruntF[];
 extern const u32 gTrainerFrontPic_SwimmerM[];
 extern const u32 gTrainerFrontPic_MagmaGruntM[];
+extern const u32 gTrainerFrontPic_RocketGruntM[];
+extern const u32 gTrainerFrontPic_RocketGruntF[];
 extern const u32 gTrainerFrontPic_ExpertM[];
 extern const u32 gTrainerFrontPic_AquaAdminM[];
 extern const u32 gTrainerFrontPic_BlackBelt[];
@@ -1649,6 +1651,8 @@ extern const u32 gTrainerPalette_Red[];
 extern const u32 gTrainerPalette_Leaf[];
 extern const u32 gTrainerPalette_RubySapphireBrendan[];
 extern const u32 gTrainerPalette_RubySapphireMay[];
+extern const u32 gTrainerPalette_RocketGruntM[];
+extern const u32 gTrainerPalette_RocketGruntF[];
 
 extern const u8 gTrainerBackPic_Brendan[];
 extern const u8 gTrainerBackPic_May[];

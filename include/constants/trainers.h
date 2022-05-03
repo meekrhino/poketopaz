@@ -109,6 +109,8 @@
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
+#define TRAINER_PIC_ROCKET_GRUNT_M        93
+#define TRAINER_PIC_ROCKET_GRUNT_F        94
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1
@@ -293,7 +295,7 @@
 #define TRAINER_CLASS_BIRD_KEEPER    0x6
 #define TRAINER_CLASS_COLLECTOR      0x7
 #define TRAINER_CLASS_SWIMMER_M      0x8
-#define TRAINER_CLASS_TEAM_MAGMA     0x9
+#define TRAINER_CLASS_TEAM_ROCKET    0x9
 #define TRAINER_CLASS_EXPERT         0xa
 #define TRAINER_CLASS_AQUA_ADMIN     0xb
 #define TRAINER_CLASS_BLACK_BELT     0xc

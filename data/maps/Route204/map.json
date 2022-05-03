@@ -26,7 +26,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_GRUNT_M",
       "x": 21,
       "y": 6,
       "elevation": 3,
@@ -39,7 +39,7 @@
       "flag": "FLAG_HIDE_SHOOK_ALLARD_ROUTE_204"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_GRUNT_M",
       "x": 20,
       "y": 6,
       "elevation": 3,
