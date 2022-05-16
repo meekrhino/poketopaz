@@ -437,18 +437,18 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_LOTAD] =
     {
-        .size = 0x75,
-        .y_offset = 15,
+        .size = 0x74,
+        .y_offset = 16,
     },
     [SPECIES_LOMBRE] =
     {
-        .size = 0x86,
-        .y_offset = 8,
+        .size = 0x78,
+        .y_offset = 2,
     },
     [SPECIES_LUDICOLO] =
     {
-        .size = 0x86,
-        .y_offset = 10,
+        .size = 0x88,
+        .y_offset = 2,
     },
     [SPECIES_TRILLOGILL] =
     {
@@ -687,8 +687,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_TANGELA] =
     {
-        .size = 0x85,
-        .y_offset = 14,
+        .size = 0x75,
+        .y_offset = 15,
     },
     [SPECIES_TROPIUS] =
     {
