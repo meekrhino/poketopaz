@@ -5,14 +5,14 @@ for d in *; do sudo ../../tools/gbagfx/gbagfx ${d}/back.png ${d}/back.4bpp; sudo
 
 Generating shiny sprites
 
-for d in *; do ../../tools/gbagfx/gbagfx ${d}/front.png ${d}/front.4bpp; ../../tools/gbagfx/gbagfx ${d}/front.4bpp ${d}/front-shiny.png -palette ${d}/shiny.pal -object -width 8; done
-for d in *; do ../../tools/gbagfx/gbagfx ${d}/back.png ${d}/back.4bpp; ../../tools/gbagfx/gbagfx ${d}/back.4bpp ${d}/back-shiny.png -palette ${d}/shiny.pal -object -width 8; done
+for d in *; do sudo ../../tools/gbagfx/gbagfx ${d}/front.png ${d}/front.4bpp; sudo ../../tools/gbagfx/gbagfx ${d}/front.4bpp ${d}/front-shiny.png -palette ${d}/shiny.pal -object -width 8; done
+for d in *; do sudo ../../tools/gbagfx/gbagfx ${d}/back.png ${d}/back.4bpp; sudo ../../tools/gbagfx/gbagfx ${d}/back.4bpp ${d}/back-shiny.png -palette ${d}/shiny.pal -object -width 8; done
 
 Creating a spritesheet
 
-montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent front-sprites.png
-montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent back-sprites.png
+sudo montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent front-sprites.png
+sudo montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent back-sprites.png
 
 Regenerating anim_front.png files from front.png
 
-while read p; do rm "$p/anim_front.png"; ../../tools/gbagfx/gbagfx $p/front.png $p/front.4bpp; cat $p/front.4bpp $p/front.4bpp > $p/anim_front.4bpp; ../../tools/gbagfx/gbagfx $p/anim_front.4bpp $p/anim_front.png -palette $p/normal.pal -object -width 8;done < pokemonlist-new.txt
+while read p; do sudo rm "$p/anim_front.png"; sudo ../../tools/gbagfx/gbagfx $p/front.png $p/front.4bpp; sudo cat $p/front.4bpp $p/front.4bpp > $p/anim_front.4bpp; sudo ../../tools/gbagfx/gbagfx $p/anim_front.4bpp $p/anim_front.png -palette $p/normal.pal -object -width 8;done < pokemonlist-new.txt
