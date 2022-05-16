@@ -225,7 +225,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_FLAAFFY] =
     {
         .size = 0x77,
-        .y_offset = 5,
+        .y_offset = 6,
     },
 
     [SPECIES_AMPHAROS] =

@@ -37,6 +37,7 @@ Shack
 Shiny Metagross
 Tyrannigon64
 X-Antibody
+Yunru
 
 --World Design--
 MeekRhino
@@ -67,7 +68,7 @@ Alamaster
 Amerac
 Babies
 Balou
-Black Temple Gaurdian 750
+Yunru
 BlackTigress
 Bluefox
 ChaosZard
