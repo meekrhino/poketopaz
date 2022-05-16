@@ -552,8 +552,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_CRAWDAUNT] =
     {
-        .size = 0x87,
-        .y_offset = 5,
+        .size = 0x86,
+        .y_offset = 11,
     },
     [SPECIES_DITTO] =
     {
@@ -572,13 +572,13 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_TOGEPI] =
     {
-        .size = 0x54,
-        .y_offset = 16,
+        .size = 0x44,r
+        .y_offset = 19,
     },
     [SPECIES_TOGETIC] =
     {
-        .size = 0x66,
-        .y_offset = 8,
+        .size = 0x78,
+        .y_offset = 1,
     },
     [SPECIES_CIRROFT] =
     {
