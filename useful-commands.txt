@@ -1,7 +1,7 @@
 Applying transparency to all front sprites
 
-for d in *; do ../../tools/gbagfx/gbagfx ${d}/front.png ${d}/front.4bpp; ../../tools/gbagfx/gbagfx ${d}/front.4bpp ${d}/front.png -palette ${d}/normal.pal -object -width 8; done
-for d in *; do ../../tools/gbagfx/gbagfx ${d}/back.png ${d}/back.4bpp; ../../tools/gbagfx/gbagfx ${d}/back.4bpp ${d}/back.png -palette ${d}/normal.pal -object -width 8; done
+for d in *; do sudo ../../tools/gbagfx/gbagfx ${d}/front.png ${d}/front.4bpp; sudo ../../tools/gbagfx/gbagfx ${d}/front.4bpp ${d}/front.png -palette ${d}/normal.pal -object -width 8; done
+for d in *; do sudo ../../tools/gbagfx/gbagfx ${d}/back.png ${d}/back.4bpp; sudo ../../tools/gbagfx/gbagfx ${d}/back.4bpp ${d}/back.png -palette ${d}/normal.pal -object -width 8; done
 
 Generating shiny sprites
 

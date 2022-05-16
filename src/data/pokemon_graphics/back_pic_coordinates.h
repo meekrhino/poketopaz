@@ -572,7 +572,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_TOGEPI] =
     {
-        .size = 0x44,r
+        .size = 0x44,
         .y_offset = 19,
     },
     [SPECIES_TOGETIC] =
