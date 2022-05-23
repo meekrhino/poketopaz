@@ -375,12 +375,12 @@ const u16 gEggMoves[] = {
               MOVE_ASSIST),
 
     egg_moves(SPECIES_LOTAD,
-              MOVE_RAZOR_LEAF,
               MOVE_SWEET_SCENT,
               MOVE_FLAIL,
               MOVE_SWORDS_DANCE,
               MOVE_KNOCK_OFF,
-              MOVE_DYNAMIC_PUNCH),
+              MOVE_DYNAMIC_PUNCH,
+              MOVE_ARM_THRUST),
 
     egg_moves(SPECIES_TRILLOGILL,
               MOVE_DIVE,
