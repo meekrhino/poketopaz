@@ -451,6 +451,7 @@ const u16 gEggMoves[] = {
               MOVE_MIND_READER),
 
     egg_moves(SPECIES_CORPHISH,
+              MOVE_DIZZY_PUNCH,
               MOVE_WATERFALL,
               MOVE_MUD_SLAP,
               MOVE_FOCUS_ENERGY,
