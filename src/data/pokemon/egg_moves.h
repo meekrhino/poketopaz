@@ -535,10 +535,11 @@ const u16 gEggMoves[] = {
               MOVE_BIDE),
 
     egg_moves(SPECIES_TANGELA,
-              MOVE_LEECH_SEED,
-              MOVE_SWEET_SCENT,
               MOVE_WRAP,
-              MOVE_COTTON_SPORE,
+              MOVE_DISABLE,
+              MOVE_MINIMIZE,
+              MOVE_IRON_DEFENSE,
+              MOVE_MAGIC_COAT,
               MOVE_MAGIC_DUST),
 
     egg_moves(SPECIES_TROPIUS,
