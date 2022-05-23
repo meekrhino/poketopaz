@@ -472,7 +472,7 @@ const u16 gEggMoves[] = {
               MOVE_SACRIFICE,
               MOVE_PURIFY,
               MOVE_FAKE_TEARS,
-              MOVE_SKY_ATTACK),
+              MOVE_FRICTION),
 
     egg_moves(SPECIES_CIRROFT,
               MOVE_EXPLOSION,
