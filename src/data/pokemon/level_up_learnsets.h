@@ -1448,7 +1448,7 @@ static const u16 sLombreLevelUpLearnset[] = {
 };
 
 static const u16 sLudicoloLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, SYNTHESIS),
+    LEVEL_UP_MOVE( 1, MOVE_SYNTHESIS),
     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 7, MOVE_ABSORB),

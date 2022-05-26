@@ -2509,19 +2509,29 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
-    u8 i, j;
+    int i, j;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    // Add field moves to action list
-    for (i = 0; i < MAX_MON_MOVES; i++)
+    // Ad HM moves to action list
+    for (i = 0; sFieldMoveTMHM[i] != 0xFF; i++)
     {
-        for (j = 0; sFieldMoves[j] != FIELD_MOVE_TERMINATOR; j++)
+        if (CanMonLearnTMHM(&mons[slotId], sFieldMoveTMHM[i])
+         && FlagGet(sFieldMoveBadgeFlag[i]) == TRUE)
         {
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, i + MENU_FIELD_MOVES);
+        }
+    }
+
+    // Add field moves to action list; field moves start at FIELD_MOVE_HM_COUNT
+    for (i = 0; sFieldMoves[i] != FIELD_MOVE_TERMINATOR; i++)
+    {
+        for (j = 0; j < MAX_MON_MOVES; j++)
+        {
+            if (GetMonData(&mons[slotId], j + MON_DATA_MOVE1) == sFieldMoves[i])
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, i + FIELD_MOVE_HM_COUNT + MENU_FIELD_MOVES);
                 break;
             }
         }
@@ -3626,13 +3636,7 @@ static void CursorCb_FieldMove(u8 taskId)
     }
     else
     {
-        // All field moves before WATERFALL are HMs.
-        if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
-        {
-            DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
-            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
-        }
-        else if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
+        if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
         {
             switch (fieldMove)
             {

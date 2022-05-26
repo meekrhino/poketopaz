@@ -37,9 +37,9 @@ enum
 
 static const struct PartyMenuBoxInfoRects sPartyBoxInfoRects[] =
 {
-    [PARTY_BOX_LEFT_COLUMN] = 
+    [PARTY_BOX_LEFT_COLUMN] =
     {
-        BlitBitmapToPartyWindow_LeftColumn, 
+        BlitBitmapToPartyWindow_LeftColumn,
         {
             //The below are the x, y, width, and height for each of the following info
             24, 11, 40, 13, // Nickname
@@ -48,12 +48,12 @@ static const struct PartyMenuBoxInfoRects sPartyBoxInfoRects[] =
             38, 37, 24,  8, // HP
             53, 37, 24,  8, // Max HP
             24, 35, 48,  3  // HP bar
-        }, 
+        },
         12, 34, 64, 16      // Description text (e.g. NO USE)
     },
-    [PARTY_BOX_RIGHT_COLUMN] = 
+    [PARTY_BOX_RIGHT_COLUMN] =
     {
-        BlitBitmapToPartyWindow_RightColumn, 
+        BlitBitmapToPartyWindow_RightColumn,
         {
              // See above comment
              22,  3, 40, 13, // Nickname
@@ -62,7 +62,7 @@ static const struct PartyMenuBoxInfoRects sPartyBoxInfoRects[] =
             102, 12, 24,  8, // HP
             117, 12, 24,  8, // Max HP
              88, 10, 48,  3  // HP bar
-        }, 
+        },
         77, 4, 64, 16        // Description text
     },
 };
@@ -73,7 +73,7 @@ static const struct PartyMenuBoxInfoRects sPartyBoxInfoRects[] =
 // Pokemon icon (x, y), held item (x, y), status condition (x, y), menu pokeball (x, y)
 static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
 {
-    [PARTY_LAYOUT_SINGLE] = 
+    [PARTY_LAYOUT_SINGLE] =
     {
         { 16,  40,  20,  50,  50,  52,  16,  34},
         {104,  18, 108,  28, 136,  27, 102,  25},
@@ -82,7 +82,7 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
         {104,  90, 108, 100, 136,  99, 102,  97},
         {104, 114, 108, 124, 136, 123, 102, 121},
     },
-    [PARTY_LAYOUT_DOUBLE] = 
+    [PARTY_LAYOUT_DOUBLE] =
     {
         {16, 24, 20, 34, 50, 36, 16, 18},
         {16, 80, 20, 90, 50, 92, 16, 74},
@@ -91,7 +91,7 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
         {104, 82, 108, 92, 136, 91, 102, 89},
         {104, 114, 108, 124, 136, 123, 102, 121},
     },
-    [PARTY_LAYOUT_MULTI] = 
+    [PARTY_LAYOUT_MULTI] =
     {
         {16, 24, 20, 34, 50, 36, 16, 18},
         {16, 80, 20, 90, 50, 92, 16, 74},
@@ -100,7 +100,7 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
         {104, 82, 106, 92, 136, 91, 102, 89},
         {104, 106, 106, 116, 136, 115, 102, 113},
     },
-    [PARTY_LAYOUT_MULTI_SHOWCASE] = 
+    [PARTY_LAYOUT_MULTI_SHOWCASE] =
     {
         {16, 32, 20, 42, 50, 44, 16, 26},
         {104, 34, 106, 44, 136, 43, 102, 41},
@@ -719,6 +719,8 @@ enum
     FIELD_MOVE_SWEET_SCENT,
 };
 
+#define FIELD_MOVE_HM_COUNT FIELD_MOVE_WATERFALL + 1
+
 // What a weird choice of table termination;
 #define FIELD_MOVE_TERMINATOR MOVE_SWORDS_DANCE
 
@@ -834,8 +836,33 @@ static const u8 sPartyMenuActionCounts[] =
 
 static const u16 sFieldMoves[] =
 {
-    MOVE_CUT, MOVE_FLASH, MOVE_ROCK_SMASH, MOVE_STRENGTH, MOVE_SURF, MOVE_FLY, MOVE_DIVE, MOVE_WATERFALL, MOVE_TELEPORT,
-    MOVE_DIG, MOVE_SECRET_POWER, MOVE_MILK_DRINK, MOVE_SOFT_BOILED, MOVE_SWEET_SCENT, FIELD_MOVE_TERMINATOR
+    MOVE_TELEPORT, MOVE_DIG, MOVE_SECRET_POWER, MOVE_MILK_DRINK,
+    MOVE_SOFT_BOILED, MOVE_SWEET_SCENT, FIELD_MOVE_TERMINATOR
+};
+
+static const u8 sFieldMoveTMHM[] =
+{
+    [FIELD_MOVE_CUT]        = ITEM_HM01_CUT - ITEM_TM01,
+    [FIELD_MOVE_FLASH]      = ITEM_HM02_FLY - ITEM_TM01,
+    [FIELD_MOVE_ROCK_SMASH] = ITEM_HM03_SURF - ITEM_TM01,
+    [FIELD_MOVE_STRENGTH]   = ITEM_HM04_STRENGTH - ITEM_TM01,
+    [FIELD_MOVE_SURF]       = ITEM_HM05_FLASH - ITEM_TM01,
+    [FIELD_MOVE_FLY]        = ITEM_HM06_ROCK_SMASH - ITEM_TM01,
+    [FIELD_MOVE_DIVE]       = ITEM_HM07_WATERFALL - ITEM_TM01,
+    [FIELD_MOVE_WATERFALL]  = ITEM_HM08_DIVE - ITEM_TM01,
+    [FIELD_MOVE_HM_COUNT]   = 0xFF
+};
+
+static const u16 sFieldMoveBadgeFlag[] =
+{
+    [FIELD_MOVE_CUT]        = FLAG_BADGE01_GET,
+    [FIELD_MOVE_FLASH]      = FLAG_BADGE02_GET,
+    [FIELD_MOVE_ROCK_SMASH] = FLAG_BADGE03_GET,
+    [FIELD_MOVE_STRENGTH]   = FLAG_BADGE04_GET,
+    [FIELD_MOVE_SURF]       = FLAG_BADGE05_GET,
+    [FIELD_MOVE_FLY]        = FLAG_BADGE06_GET,
+    [FIELD_MOVE_DIVE]       = FLAG_BADGE07_GET,
+    [FIELD_MOVE_WATERFALL]  = FLAG_BADGE08_GET
 };
 
 struct
@@ -1171,14 +1198,14 @@ static const struct SpriteTemplate sSpriteTemplate_StatusIcons =
 // Mask for the partners party in a multi battle. TRUE if in the partners party, FALSE otherwise
 // The 7th slot is Cancel, and the 8th slot is unreachable
 // Used only to determine whether or not to show the Deoxys form icon sprite
-static const bool8 sMultiBattlePartnersPartyMask[PARTY_SIZE + 2] = 
+static const bool8 sMultiBattlePartnersPartyMask[PARTY_SIZE + 2] =
 {
-    FALSE, 
-    TRUE, 
-    FALSE, 
-    FALSE, 
-    TRUE, 
-    TRUE, 
+    FALSE,
+    TRUE,
+    FALSE,
+    FALSE,
+    TRUE,
+    TRUE,
     FALSE
 };
 
