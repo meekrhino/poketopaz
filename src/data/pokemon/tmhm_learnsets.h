@@ -48,6 +48,9 @@ static const u8 sVenapTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -86,6 +89,9 @@ static const u8 sTraplentTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -126,6 +132,9 @@ static const u8 sDionareTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -162,6 +171,9 @@ static const u8 sCelsingeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -200,6 +212,9 @@ static const u8 sFahramaneTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -244,6 +259,10 @@ static const u8 sKelvoyantTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -279,6 +298,10 @@ static const u8 sEchoiseTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM05_FLASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -314,6 +337,10 @@ static const u8 sMermeidonTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM05_FLASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -349,16 +376,24 @@ static const u8 sDolphureTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM05_FLASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
 static const u8 sFirantTMHMLearnset[] =
 {
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
 static const u8 sPyroonTMHMLearnset[] =
 {
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -392,6 +427,10 @@ static const u8 sPyreignTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -420,6 +459,7 @@ static const u8 sFincherpTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
     0xFF,
 };
 
@@ -454,6 +494,7 @@ static const u8 sGashawkTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
     0xFF,
 };
 
@@ -489,6 +530,8 @@ static const u8 sEaglairTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
     0xFF,
 };
 
@@ -534,6 +577,9 @@ static const u8 sMogelTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -586,6 +632,9 @@ static const u8 sFirrelTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -623,6 +672,8 @@ static const u8 sAmpureTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -665,6 +716,8 @@ static const u8 sOhmureTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -699,6 +752,9 @@ static const u8 sSandshrewTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -734,6 +790,9 @@ static const u8 sSandslashTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -769,6 +828,9 @@ static const u8 sLupineTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -804,6 +866,9 @@ static const u8 sCanileafTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -844,6 +909,9 @@ static const u8 sWolvineTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -927,6 +995,7 @@ static const u8 sSpoinkTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -971,6 +1040,7 @@ static const u8 sGrumpigTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1010,6 +1080,7 @@ static const u8 sSpidreamTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1050,6 +1121,7 @@ static const u8 sArachmareTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1083,6 +1155,7 @@ static const u8 sPinecoTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
     0xFF,
 };
 
@@ -1121,6 +1194,7 @@ static const u8 sForretressTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
     0xFF,
 };
 
@@ -1161,6 +1235,9 @@ static const u8 sEmbearTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1201,6 +1278,9 @@ static const u8 sGrizlareTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1244,6 +1324,8 @@ static const u8 sMankeyTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1287,6 +1369,8 @@ static const u8 sPrimeapeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1320,6 +1404,7 @@ static const u8 sMareepTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1360,6 +1445,9 @@ static const u8 sFlaaffyTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1400,6 +1488,9 @@ static const u8 sAmpharosTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1437,6 +1528,7 @@ static const u8 sWhispawTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1479,6 +1571,7 @@ static const u8 sCoroonaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1524,6 +1617,9 @@ static const u8 sTaurosTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1567,6 +1663,9 @@ static const u8 sMiltankTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1610,6 +1709,8 @@ static const u8 sInflareTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1653,6 +1754,8 @@ static const u8 sIngeroTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -1698,6 +1801,7 @@ static const u8 sDrowzeeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1744,6 +1848,7 @@ static const u8 sHypnoTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1787,6 +1892,7 @@ static const u8 sCleffaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1839,6 +1945,8 @@ static const u8 sClefairyTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1892,6 +2000,8 @@ static const u8 sClefableTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1925,6 +2035,7 @@ static const u8 sGrificTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
     0xFF,
 };
 
@@ -1958,6 +2069,10 @@ static const u8 sGryphonicTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -2019,6 +2134,8 @@ static const u8 sGrowlitheTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -2056,6 +2173,8 @@ static const u8 sArcanineTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
 };
 
 static const u8 sVixunTMHMLearnset[] =
@@ -2207,6 +2326,7 @@ static const u8 sKondriaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
     0xFF,
 };
 
@@ -2297,6 +2417,8 @@ static const u8 sLoudredTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -2343,6 +2465,8 @@ static const u8 sExploudTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -2376,6 +2500,7 @@ static const u8 sStribraTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
     0xFF,
 };
 
@@ -2412,6 +2537,7 @@ static const u8 sMurkrowTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
     0xFF,
 };
 
@@ -2456,6 +2582,8 @@ static const u8 sHarskrowTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
     0xFF,
 };
 
@@ -2489,6 +2617,8 @@ static const u8 sJackalantTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -2525,6 +2655,8 @@ static const u8 sPhanternTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -2563,6 +2695,8 @@ static const u8 sSkalloyTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
     0xFF,
 };
 
@@ -2601,6 +2735,8 @@ static const u8 sSkarmoryTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
     0xFF,
 };
 
@@ -2637,6 +2773,7 @@ static const u8 sDuskullTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -2678,6 +2815,9 @@ static const u8 sDusclopsTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -2716,6 +2856,10 @@ static const u8 sCascadetTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -2760,6 +2904,7 @@ static const u8 sVenonatTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -2803,6 +2948,7 @@ static const u8 sVenomothTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -2837,7 +2983,10 @@ static const u8 sSmallardTMHMLearnset[] =
     TMHM(TM76_TEMPEST),
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
-    TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM03_SURF),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -2873,6 +3022,12 @@ static const u8 sMallargeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -2953,6 +3108,8 @@ static const u8 sMukTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -2989,6 +3146,7 @@ static const u8 sKoffingTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3026,6 +3184,7 @@ static const u8 sWeezingTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3071,6 +3230,9 @@ static const u8 sZangooseTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3121,6 +3283,9 @@ static const u8 sZantilidaeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3160,6 +3325,8 @@ static const u8 sSeviperTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3199,6 +3366,8 @@ static const u8 sPythangTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3240,6 +3409,8 @@ static const u8 sMeowthTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3284,6 +3455,8 @@ static const u8 sPersianTMHMLearnset[] =
     TMHM(TM05_ROAR),
     TMHM(TM15_HYPER_BEAM),
     TMHM(TM59_SOUL_BURN),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3321,6 +3494,7 @@ static const u8 sLotadTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3367,6 +3541,10 @@ static const u8 sLombreTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3416,6 +3594,10 @@ static const u8 sLudicoloTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3452,6 +3634,11 @@ static const u8 sTidasaleTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -3485,6 +3672,10 @@ static const u8 sQuiisordTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -3516,6 +3707,11 @@ static const u8 sTsunallTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -3559,6 +3755,7 @@ static const u8 sYanmaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3598,6 +3795,9 @@ static const u8 sSlowpokeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3641,6 +3841,10 @@ static const u8 sSlowbroTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3683,6 +3887,10 @@ static const u8 sSlowkingTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3724,6 +3932,10 @@ static const u8 sSlowpriestTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -3756,6 +3968,8 @@ static const u8 sRemoraidTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -3788,6 +4002,8 @@ static const u8 sOctilleryTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -3829,6 +4045,7 @@ static const u8 sPhantasomoTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3875,6 +4092,8 @@ static const u8 sSeraphTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -3919,6 +4138,7 @@ static const u8 sDunsparceTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
     0xFF,
 };
 
@@ -3965,6 +4185,10 @@ static const u8 sAbsolTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4011,6 +4235,10 @@ static const u8 sAbyssusTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4057,6 +4285,9 @@ static const u8 sEquillTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4104,6 +4335,9 @@ static const u8 sTellureTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4140,6 +4374,11 @@ static const u8 sCorphishTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
     0xFF,
 };
 
@@ -4182,6 +4421,12 @@ static const u8 sCrawdauntTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -4229,6 +4474,8 @@ static const u8 sGargothTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4273,6 +4520,9 @@ static const u8 sCragoyleTMHMLearnset[] =
     TMHM(TM80_ORION_SWORD),
     TMHM(TM01_FOCUS_PUNCH),
     TMHM(TM02_DRAGON_CLAW),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4313,6 +4563,8 @@ static const u8 sTogepiTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4358,6 +4610,8 @@ static const u8 sTogeticTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4398,6 +4652,7 @@ static const u8 sCumuloftTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
     0xFF,
 };
 
@@ -4438,6 +4693,10 @@ static const u8 sDestadoTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4473,6 +4732,8 @@ static const u8 sFrostormTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4513,6 +4774,8 @@ static const u8 sNimboltTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4552,6 +4815,10 @@ static const u8 sDrakodoTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4617,6 +4884,9 @@ static const u8 sVaporeonTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -4652,6 +4922,7 @@ static const u8 sJolteonTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4723,6 +4994,8 @@ static const u8 sEspeonTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4761,6 +5034,8 @@ static const u8 sUmbreonTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4799,6 +5074,7 @@ static const u8 sIllumeonTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4841,6 +5117,8 @@ static const u8 sChiarameTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4889,6 +5167,8 @@ static const u8 sSerberineTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -4928,6 +5208,7 @@ static const u8 sMisdreavusTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -4972,6 +5253,7 @@ static const u8 sEngilTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -5016,6 +5298,8 @@ static const u8 sBenengilTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -5053,6 +5337,7 @@ static const u8 sDuvalTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5094,6 +5379,10 @@ static const u8 sMalduvalTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5125,6 +5414,9 @@ static const u8 sQwilfishTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -5159,6 +5451,8 @@ static const u8 sTangelaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -5199,6 +5493,11 @@ static const u8 sTropiusTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5235,6 +5534,9 @@ static const u8 sBrontogonTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5276,6 +5578,10 @@ static const u8 sBlitzfaustTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5318,6 +5624,9 @@ static const u8 sVilephistTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5357,6 +5666,8 @@ static const u8 sRhyhornTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5401,6 +5712,10 @@ static const u8 sRhydonTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5435,6 +5750,8 @@ static const u8 sTorkoalTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5477,6 +5794,7 @@ static const u8 sSinestrilTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
     0xFF,
 };
 
@@ -5519,6 +5837,9 @@ static const u8 sMalistrilTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5550,6 +5871,8 @@ static const u8 sScytherTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5583,6 +5906,9 @@ static const u8 sScizorTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5619,6 +5945,9 @@ static const u8 sBakurgeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5656,6 +5985,11 @@ static const u8 sLaprasTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -5693,6 +6027,12 @@ static const u8 sSireneTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -5727,6 +6067,8 @@ static const u8 sIgloniaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -5767,6 +6109,8 @@ static const u8 sStantlerTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -5803,6 +6147,8 @@ static const u8 sCaribriskTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -5840,6 +6186,7 @@ static const u8 sHuskiiTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
     0xFF,
 };
 
@@ -5877,6 +6224,7 @@ static const u8 sTundrolfTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
     0xFF,
 };
 
@@ -5917,6 +6265,9 @@ static const u8 sWolfrostTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -5958,6 +6309,11 @@ static const u8 sReefrainTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -5989,6 +6345,7 @@ static const u8 sPolaraTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
     0xFF,
 };
 
@@ -6025,6 +6382,12 @@ static const u8 sPolariceTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -6061,6 +6424,7 @@ static const u8 sMirustTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -6097,6 +6461,10 @@ static const u8 sFerrianTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6127,6 +6495,8 @@ static const u8 sCacneaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -6160,6 +6530,9 @@ static const u8 sCacturneTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -6198,6 +6571,10 @@ static const u8 sCackingeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6241,6 +6618,8 @@ static const u8 sScorchionTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -6277,6 +6656,8 @@ static const u8 sTrapinchTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6318,6 +6699,9 @@ static const u8 sVibravaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6366,6 +6750,9 @@ static const u8 sFlygonTMHMLearnset[] =
     TMHM(TM50_OVERHEAT),
     TMHM(TM51_FLARE),
     TMHM(TM59_SOUL_BURN),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6399,6 +6786,7 @@ static const u8 sStaryuTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -6434,6 +6822,7 @@ static const u8 sStarmieTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -6477,6 +6866,10 @@ static const u8 sCorsolaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -6513,6 +6906,10 @@ static const u8 sChinchouTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM05_FLASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -6552,6 +6949,10 @@ static const u8 sLanturnTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM05_FLASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -6584,6 +6985,10 @@ static const u8 sRelicanthTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -6631,6 +7036,9 @@ static const u8 sMisticadeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM05_FLASH),
+    TMHM(HM07_WATERFALL),
     0xFF,
 };
 
@@ -6668,6 +7076,12 @@ static const u8 sKraklawTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -6704,6 +7118,10 @@ static const u8 sLeoracleTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6741,6 +7159,8 @@ static const u8 sKhaphixTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6778,6 +7198,8 @@ static const u8 sFlintuskTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6816,6 +7238,8 @@ static const u8 sMetuskTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6857,6 +7281,9 @@ static const u8 sAllufangTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6898,6 +7325,9 @@ static const u8 sKunaigaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6942,6 +7372,10 @@ static const u8 sPuriorTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -6975,6 +7409,8 @@ static const u8 sGoldrakeTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM03_SURF),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -7021,6 +7457,13 @@ static const u8 sArowanaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
+    TMHM(HM07_WATERFALL),
+    TMHM(HM08_DIVE),
     0xFF,
 };
 
@@ -7062,6 +7505,7 @@ static const u8 sAtlaxaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -7103,6 +7547,7 @@ static const u8 sThoraxaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -7144,6 +7589,7 @@ static const u8 sIllumbraTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -7184,6 +7630,9 @@ static const u8 sSnarligerTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -7224,6 +7673,10 @@ static const u8 sNoctigerTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -7264,6 +7717,11 @@ static const u8 sRaigerTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -7305,6 +7763,8 @@ static const u8 sMatakiteTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -7341,6 +7801,10 @@ static const u8 sTagatiTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -7377,6 +7841,10 @@ static const u8 sNeichiaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -7426,6 +7894,8 @@ static const u8 sKuranpuTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -7469,6 +7939,11 @@ static const u8 sTyphidnaTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM03_SURF),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -7516,6 +7991,9 @@ static const u8 sUnicrownTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM04_STRENGTH),
+    TMHM(HM05_FLASH),
+    TMHM(HM06_ROCK_SMASH),
     0xFF,
 };
 
@@ -7561,6 +8039,9 @@ static const u8 sKipporokTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
+    TMHM(HM02_FLY),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -7602,6 +8083,7 @@ static const u8 sJirachiTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM05_FLASH),
     0xFF,
 };
 
