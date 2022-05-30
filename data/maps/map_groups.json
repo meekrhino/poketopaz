@@ -114,7 +114,9 @@
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
     "LittlerootTown_ProfessorBirchsLab",
-    "NeoBay_FlashbackBeach"
+    "NeoBay_FlashbackBeach",
+    "NeoBay_BradleysHouse_1F",
+    "NeoBay_BradleysHouse_2F"
   ],
   "gMapGroup_IndoorSunsetVillage": [
     "OldaleTown_House1",

@@ -1149,3 +1149,7 @@ Script_RemoveTint::
 	.include "data/maps/MtMist_1F/scripts.inc"
 
 	.include "data/maps/MtMist_B1F/scripts.inc"
+
+	.include "data/maps/NeoBay_BradleysHouse_1F/scripts.inc"
+
+	.include "data/maps/NeoBay_BradleysHouse_2F/scripts.inc"

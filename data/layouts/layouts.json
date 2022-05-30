@@ -5724,6 +5724,30 @@
       "secondary_tileset": "gTileset_MtMist",
       "border_filepath": "data/layouts/MtMist_B1F/border.bin",
       "blockdata_filepath": "data/layouts/MtMist_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEO_BAY_BRADLEYS_HOUSE_1F",
+      "name": "NeoBay_BradleysHouse_1F_Layout",
+      "width": 12,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/NeoBay_BradleysHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NeoBay_BradleysHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEO_BAY_BRADLEYS_HOUSE_2F",
+      "name": "NeoBay_BradleysHouse_2F_Layout",
+      "width": 7,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/NeoBay_BradleysHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NeoBay_BradleysHouse_2F/map.bin"
     }
   ]
 }

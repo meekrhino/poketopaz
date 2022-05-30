@@ -65,6 +65,7 @@ script(local) BradleyWasLookingForYou {
     lockall
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_SPOKE_TO_MOM)
     applymovement(MOM, mLookUpStartled)
+    delay(60)
     applymovement(PLAYER, mPlayerWalksOverToMom)
     waitmovement(0)
     msgbox(PlayersHouse_1F_BradleyWasLookingForYou, MSGBOX_AUTOCLOSE)
