@@ -1,1 +1,13 @@
 mapscripts CranewingCity_House3_MapScripts {}
+
+script(global) CranewingCity_House3_Employee {
+    if(flag(FLAG_RECEIVED_CRANEWING_CHARCOAL)) {
+        msgbox(format("I tried to give one of those to Froy, but he was too fired up about something to listen."), MSGBOX_NPC)
+    }
+    else {
+        msgbox(format("Good evening!\pFirey gaze…\nFearsome expression…\pYou must be a Pokémon Trainer!\pI make these from recycled scrap after my work at the Glassworks.\pPlease, take it!\pIt will help compete with the best!"), MSGBOX_NPC)
+        giveitem(ITEM_CHARCOAL)
+        setflag(FLAG_RECEIVED_CRANEWING_CHARCOAL)
+    }
+    end
+}
