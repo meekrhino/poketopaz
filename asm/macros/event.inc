@@ -1263,10 +1263,10 @@
 	map \map
 	.endm
 
-	.macro createvobject sprite:req, byte2:req, x:req, y:req, elevation, direction
+	.macro createvobject graphicsId:req, id:req, x:req, y:req, elevation=3, direction=DIR_SOUTH
 	.byte 0xaa
-	.byte \sprite
-	.byte \byte2
+	.2byte \graphicsId
+	.byte \id
 	.2byte \x
 	.2byte \y
 	.byte \elevation
