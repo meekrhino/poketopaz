@@ -239,7 +239,7 @@ const u8 gFlaaffyPokedexText[] = _(
 
 const u8 gAmpharosPokedexText[] = _(
     "Ampharos' statically charged wool causes\n"
-    "it constant electric shocks. It is thought\n"
+    "it constant irritation. It is thought\n"
     "that long exposure to this discomfort\n"
     "leads to its unshakeable calm demeanor.");
 
@@ -726,18 +726,18 @@ const u8 gCragoylePokedexText[] = _(
     "building, scanning its surroundings.");
 
 const u8 gTogepiPokedexText[] = _(
-    "When a TOGEPI hatches from its EGG, only\n"
-    "its head and limbs are visible. The\n"
-    "colorful shapes on its eggshell seem\n"
-    "to contain a enigmatic power that\n"
-    "prepares it for evolution.");
+    "The geode that forms its body gives\n"
+    "Togepi a natural protection as it grows.\n"
+    "When light reflected from the amethysts\n"
+    "lands on person, it said to bring a\n"
+    "feeling of peace and acceptance.");
 
 const u8 gTogeticPokedexText[] = _(
-    "Playful and caring, TOGETIC is easily\n"
-    "affected by the emotions of those around\n"
-    "it. You can often discern a person's true\n"
-    "nature by observing TOGETIC's behavior\n"
-    "around them.");
+    "Togetic are often found caring for lost\n"
+    "or abandoned young Pokémon. Constant\n"
+    "exposure to its light nurtures those\n"
+    "around it, developing them into kind and\n"
+    "compassionate souls.");
 
 const u8 gCirroftPokedexText[] = _(
     "Almost invisible to the naked eye, CIRROFT\n"
@@ -1096,10 +1096,10 @@ const u8 gStaryuPokedexText[] = _(
     "it to blind would-be attackers.");
 
 const u8 gStarmiePokedexText[] = _(
-    "Starmie's body is reinforced by naturally\n"
-    "occurring iron from the tunnels in which\n"
-    "it lives. Its incredibly dense body grows\n"
-    "more durable with age.");
+    "Seasoned miners know to avoid the glimmer\n"
+    "of Starmie's diamond. They are fiercely\n"
+    "territorial of the veins of ore they feed\n"
+    "upon to form their incredibly dense bodies.");
 
 const u8 gCorsolaPokedexText[] = _(
     "CORSOLA's environmental sensitivity is so\n"
