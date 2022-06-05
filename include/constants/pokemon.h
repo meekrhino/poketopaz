@@ -184,7 +184,7 @@
 #define MON_DATA_SPATK2            87
 #define MON_DATA_SPDEF2            88
 
-// Ribbon IDs used by TV and Pokénav
+// Ribbon IDs used by TV and PokéNav
 #define CHAMPION_RIBBON       0
 #define COOL_RIBBON_NORMAL    1
 #define COOL_RIBBON_SUPER     2

@@ -446,12 +446,12 @@ text SoftwindCity_Text_AlisaAboutTherma_2 {
         "You could always do that instead.\pFroy has "
         "his gym in Cranewing, which is to the east "
         "of here through Chartree Forest.\p"
-        "You can see where that is on the Pokénav I gave you."
+        "You can see where that is on the PokéNav I gave you."
     )
 }
 
 text SoftwindCity_Text_ReceivedPokenav {
-	"{PLAYER} received a Pokénav."
+	"{PLAYER} received a PokéNav."
 }
 
 text SoftwindCity_Text_DefenderHopesNotSeen {

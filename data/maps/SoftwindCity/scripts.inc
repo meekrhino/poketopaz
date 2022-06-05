@@ -980,10 +980,10 @@ SoftwindCity_Text_AlisaAboutTherma_2::
 	.string "to the east of here through Chartree\l"
 	.string "Forest.\p"
 	.string "You can see where that is on the\n"
-	.string "Pokénav I gave you.$"
+	.string "PokéNav I gave you.$"
 
 SoftwindCity_Text_ReceivedPokenav::
-	.string "{PLAYER} received a Pokénav.$"
+	.string "{PLAYER} received a PokéNav.$"
 
 SoftwindCity_Text_DefenderHopesNotSeen::
 	.string "???: …that isn't good.\p"

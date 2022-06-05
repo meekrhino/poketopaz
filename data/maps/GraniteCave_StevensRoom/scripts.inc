@@ -110,12 +110,12 @@ GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
 	.string "LEAGUE one day. That's what I think.\p"
 	.string "I know, since we've gotten to know each\n"
 	.string "other, let's register one another in\l"
-	.string "our POKéNAVS.\p"
+	.string "our PokéNavS.\p"
 	.string "… … … … … …$"
 
 GraniteCave_StevensRoom_Text_RegisteredSteven:
 	.string "Registered STEVEN\n"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 
 GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
 	.string "Now, I've got to hurry along.$"
