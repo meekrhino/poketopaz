@@ -33,7 +33,7 @@ LilycoveCity_DepartmentStore_5F_Pokemart_Dolls:
 	.2byte DECOR_PIKACHU_DOLL
 	.2byte DECOR_MARILL_DOLL
 	.2byte DECOR_JIGGLYPUFF_DOLL
-	.2byte DECOR_DUSKULL_DOLL 
+	.2byte DECOR_DUSKULL_DOLL
 	.2byte DECOR_WYNAUT_DOLL
 	.2byte DECOR_BALTOY_DOLL
 	.2byte DECOR_KECLEON_DOLL
@@ -160,7 +160,7 @@ LilycoveCity_DepartmentStore_5F_Text_PlaceFullOfCuteDolls:
 	.string "just for my children.$"
 
 LilycoveCity_DepartmentStore_5F_Text_GettingDollInsteadOfPokemon:
-	.string "I'm not big enough to raise POKéMON,\n"
+	.string "I'm not big enough to raise Pokémon,\n"
 	.string "so I'm getting a cute DOLL instead.$"
 
 LilycoveCity_DepartmentStore_5F_Text_SellManyCuteMatsHere:

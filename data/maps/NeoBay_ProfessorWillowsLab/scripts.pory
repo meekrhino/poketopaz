@@ -646,8 +646,8 @@ text WillowsLab_BradleyIsAnAssistant {
 
 text WillowsLab_WillowCantJustGivePokemon {
     format(
-        "Willow: Even so, I can't just hand a POKéMON to anybody! "
-        "Owning a POKéMON comes with many responsibilities. Bradley, "
+        "Willow: Even so, I can't just hand a Pokémon to anybody! "
+        "Owning a Pokémon comes with many responsibilities. Bradley, "
         "you've already shown me that you're capable of becoming a Pokémon Trainer. "
         "I only met {PLAYER} today!"
     )

@@ -180,7 +180,7 @@ BerryBlender_Text_LookGoodAtBlendingJoinUs:
 
 BerryBlender_Text_MakeDeliciousPokeblocks:
 	.string "I'm going to make delicious {POKEBLOCK}S\n"
-	.string "and make my POKéMON cuter.$"
+	.string "and make my Pokémon cuter.$"
 
 BerryBlender_Text_SaveGameBeforeBerryBlenderLink:
 	.string "{POKEBLOCK}S will be made with your friends \n"
@@ -641,7 +641,7 @@ BerryBlender_EventScript_DoLinkBerryBlending:
 	fadescreen FADE_TO_BLACK
 	removeobject 240 @ Unclear where these local IDs come from,
 	removeobject 239 @ but presumably they'd be the 4 link players
-	removeobject 238 
+	removeobject 238
 	removeobject 237
 	special DoBerryBlending
 	waitstate

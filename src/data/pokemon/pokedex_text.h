@@ -1,5 +1,5 @@
 const u8 gDummyPokedexText[] = _(
-    "This is a newly discovered POKéMON.\n"
+    "This is a newly discovered Pokémon.\n"
     "It is currently under investigation.\n"
     "No detailed information is available\n"
     "at this time.");
@@ -346,13 +346,13 @@ const u8 gGrowlithePokedexText[] = _(
 
 const u8 gArcaninePokedexText[] = _(
     "The regal ARCANINE is renowned for its\n"
-    "speed. The sight of the majestic POKéMON\n"
+    "speed. The sight of the majestic Pokémon\n"
     "running has charmed the hearts of\n"
     "people since ancient times.");
 
 const u8 gVixunPokedexText[] = _(
     "Although small, VIXUN likes to playfully\n"
-    "scare bigger POKéMON by shooting fire\n"
+    "scare bigger Pokémon by shooting fire\n"
     "at them. When VIXUN is extremely\n"
     "happy, its tail will split.");
 
@@ -372,7 +372,7 @@ const u8 gNinetalesPokedexText[] = _(
 const u8 gKondriaPokedexText[] = _(
     "When hiding from prey, only the shoots on\n"
     "KONDRIA's head can be seen. Unfortunate\n"
-    "POKéMON will nibble on these shoots, which\n"
+    "Pokémon will nibble on these shoots, which\n"
     "promptly inflict the victim\n"
     "with a debilitating poison.");
 
@@ -542,14 +542,14 @@ const u8 gPythangPokedexText[] = _(
 const u8 gMeowthPokedexText[] = _(
     "Meowth withdraw their sharp claws into\n"
     "their paws to silently sneak about.\n"
-    "For some reason, this POKéMON loves\n"
+    "For some reason, this Pokémon loves\n"
     "shiny coins that glitter with light.");
 
 const u8 gPersianPokedexText[] = _(
     "Persian has six bold whiskers that give it\n"
     "a look of toughness. The whiskers sense air\n"
     "movements to determine what is in the\n"
-    "POKéMON's surrounding vicinity. It becomes\n"
+    "Pokémon's surrounding vicinity. It becomes\n"
     "docile if grabbed by the whiskers.");
 
 const u8 gLotadPokedexText[] = _(
@@ -582,7 +582,7 @@ const u8 gTrillogillPokedexText[] = _(
 
 const u8 gTidasalePokedexText[] = _(
     "TIDASALE exhibits an amount of patience\n"
-    "rarely seen in other POKéMON. It slowly\n"
+    "rarely seen in other Pokémon. It slowly\n"
     "saws through a rock face to make a groove\n"
     "deep enough to spawn its eggs.");
 
@@ -596,7 +596,7 @@ const u8 gQuiisordPokedexText[] = _(
 const u8 gTsunallPokedexText[] = _(
     "TSUNALL is known by sailors the world over\n"
     "as 'The Aquatic Beserker'. Once enraged,\n"
-    "this POKéMON will thrash wildly, striking\n"
+    "this Pokémon will thrash wildly, striking\n"
     "anything nearby with its rock-hard head.");
 
 const u8 gYanmaPokedexText[] = _(
@@ -674,7 +674,7 @@ const u8 gDunsparcePokedexText[] = _(
 const u8 gAbsolPokedexText[] = _(
     "For centuries there have been tales of the\n"
     "disasters caused by ABSOL. Recent studies\n"
-    "show that these POKéMON are simply\n"
+    "show that these Pokémon are simply\n"
     "attracted to the disaster sites,\n"
     "intending to warn the affected people.");
 
@@ -700,7 +700,7 @@ const u8 gCorphishPokedexText[] = _(
     "The meaty insides of a CORPHISH's claws\n"
     "can be boiled down and consumed for their\n"
     "high protein content. For this reason,\n"
-    "this POKéMON is mass-raised to huge\n"
+    "this Pokémon is mass-raised to huge\n"
     "sizes on aquatic farms.");
 
 const u8 gCrawdauntPokedexText[] = _(
@@ -760,7 +760,7 @@ const u8 gCumuloftPokedexText[] = _(
 const u8 gDestadoPokedexText[] = _(
     "The spinning of a DESTADO's wind tunnel\n"
     "can exceed speeds of over 300 mph. The\n"
-    "larger this POKéMON grows, the more\n"
+    "larger this Pokémon grows, the more\n"
     "powerful its spinning becomes.");
 
 const u8 gFrostormPokedexText[] = _(
@@ -800,7 +800,7 @@ const u8 gVaporeonPokedexText[] = _(
 const u8 gJolteonPokedexText[] = _(
     "JOLTEON runs at incredibly fast speeds,\n"
     "making it look like a large yellow blur.\n"
-    "When agitated, this POKéMON releases enough\n"
+    "When agitated, this Pokémon releases enough\n"
     "electricity to cause massive power outages.");
 
 const u8 gFlareonPokedexText[] = _(
@@ -825,7 +825,7 @@ const u8 gUmbreonPokedexText[] = _(
 
 const u8 gIllumeonPokedexText[] = _(
     "Despite its appearance, ILLUMEON is a\n"
-    "nocturnal POKéMON. It stores energy from\n"
+    "nocturnal Pokémon. It stores energy from\n"
     "the sun during the day, releasing it\n"
     "during the night to blind predators.");
 
@@ -840,7 +840,7 @@ const u8 gSerberinePokedexText[] = _(
     "ideal guard dog; alert, vigilant, and\n"
     "always awake. KIRANT's leading security\n"
     "systems operator, SERBER-i, uses this\n"
-    "POKéMON as their logo.");
+    "Pokémon as their logo.");
 
 const u8 gMisdreavusPokedexText[] = _(
     "Born silent, MISDREAVUS follows people\n"
@@ -915,7 +915,7 @@ const u8 gVilephistPokedexText[] = _(
 const u8 gRhyhornPokedexText[] = _(
     "Despite a reputation for being destructive,\n"
     "RHYHORN are quite gentle towards smaller\n"
-    "POKéMON. It shifts its course when it sees\n"
+    "Pokémon. It shifts its course when it sees\n"
     "something defenseless in the path of\n"
     "its charge.");
 
@@ -966,12 +966,12 @@ const u8 gBakurgePokedexText[] = _(
 const u8 gLaprasPokedexText[] = _(
     "Humans have driven Lapras almost to the\n"
     "point of extinction. In the evenings, this\n"
-    "POKéMON is said to sing plaintively as it\n"
+    "Pokémon is said to sing plaintively as it\n"
     "seeks what few others of its kind remain.");
 
 const u8 gSirenePokedexText[] = _(
     "SIRENE sings a captivating song that calms\n"
-    "both the seas and POKéMON alike. This\n"
+    "both the seas and Pokémon alike. This\n"
     "power makes it an omen of good luck among\n"
     "sailors in their travels.");
 
@@ -985,7 +985,7 @@ const u8 gIgloniaPokedexText[] = _(
 const u8 gStantlerPokedexText[] = _(
     "STANTLER's magnificent antlers were traded\n"
     "at high prices as works of art. As a\n"
-    "result, this POKéMON was hunted close\n"
+    "result, this Pokémon was hunted close\n"
     "to extinction by those who were after"
     "the priceless antlers.");
 
@@ -1076,12 +1076,12 @@ const u8 gTrapinchPokedexText[] = _(
     "TRAPINCH is a patient hunter. It digs an\n"
     "inescapable pit in a desert and waits for\n"
     "its prey to come tumbling down. This\n"
-    "POKéMON can last weeks with no water.");
+    "Pokémon can last weeks with no water.");
 
 const u8 gVibravaPokedexText[] = _(
     "To make prey faint, VIBRAVA generates\n"
     "ultrasonic waves by vibrating its wings.\n"
-    "This POKéMON's ultrasonic waves are so\n"
+    "This Pokémon's ultrasonic waves are so\n"
     "powerful they often cause headaches.");
 
 const u8 gFlygonPokedexText[] = _(
@@ -1089,7 +1089,7 @@ const u8 gFlygonPokedexText[] = _(
     "its wings. The wings create a series of\n"
     "notes that sound like singing. Because the\n"
     "'singing' is the only thing that can be\n"
-    "heard in a sandstorm, this POKéMON is said\n"
+    "heard in a sandstorm, this Pokémon is said\n"
     "to be the desert spirit.");
 
 const u8 gStaryuPokedexText[] = _(
@@ -1128,7 +1128,7 @@ const u8 gLanturnPokedexText[] = _(
 const u8 gRelicanthPokedexText[] = _(
     "Recent research suggests that RELICANTH\n"
     "survived through several eras of now\n"
-    "extinct POKéMON. A widely accepted theory\n"
+    "extinct Pokémon. A widely accepted theory\n"
     "proposes that all fish POKEMON today are\n"
     "its descendants.");
 
@@ -1222,7 +1222,7 @@ const u8 gIllumbraPokedexText[] = _(
 
 const u8 gSnarligerPokedexText[] = _(
     "SNARLIGER's large green eyes are rumored\n"
-    "only to reflect moonlight. This POKéMON's\n"
+    "only to reflect moonlight. This Pokémon's\n"
     "shadow consists entirely of an umbra, no\n"
     "matter how light is cast upon it.");
 
@@ -1268,7 +1268,7 @@ const u8 gKuranpuPokedexText[] = _(
 const u8 gTyphidnaPokedexText[] = _(
     "TYPHIDNA is regarded as the bringer of\n"
     "catastrophe. Keeping ancient tradition,\n"
-    "sailors today ask for this POKéMON's\n"
+    "sailors today ask for this Pokémon's\n"
     "mercy before setting sail.");
 
 const u8 gUnicrownPokedexText[] = _(

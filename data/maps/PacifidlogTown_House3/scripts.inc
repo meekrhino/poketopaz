@@ -87,6 +87,6 @@ PacifidlogTown_House3_Text_ReallyWantedToGetBagon:
 PacifidlogTown_House3_Text_IsThatAPokedex:
 	.string "Is that a POKéDEX?\p"
 	.string "Did you get to meet a lot of different\n"
-	.string "POKéMON?\p"
+	.string "Pokémon?\p"
 	.string "I wish I was like you.$"
 

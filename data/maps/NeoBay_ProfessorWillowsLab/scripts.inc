@@ -1265,7 +1265,7 @@ WillowsLab_BradleyIsAnAssistant::
 
 WillowsLab_WillowCantJustGivePokemon::
 	.string "Willow: Even so, I can't just hand a\n"
-	.string "POKéMON to anybody! Owning a POKéMON\l"
+	.string "Pokémon to anybody! Owning a Pokémon\l"
 	.string "comes with many responsibilities.\l"
 	.string "Bradley, you've already shown me that\l"
 	.string "you're capable of becoming a Pokémon\l"
