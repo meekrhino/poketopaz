@@ -553,22 +553,25 @@ const u8 gPersianPokedexText[] = _(
     "docile if grabbed by the whiskers.");
 
 const u8 gLotadPokedexText[] = _(
-    "This POKéMON lives in ponds with clean\n"
-    "water. It is known to ferry small POKéMON\n"
-    "across ponds by carrying them on the\n"
-    "broad leaf on its head.");
+    "Unlike the Lotad in other regions, this\n"
+    "Pokémon cannot stand the water. The leaf\n"
+    "on its head keeps it from getting too\n"
+    "damp by acting both as a shield against\n"
+    "rain and a pathway for transpiration.");
 
 const u8 gLombrePokedexText[] = _(
-    "In the evening, it takes great delight in\n"
-    "popping out of rivers and startling\n"
-    "people. It feeds on aquatic moss that\n"
-    "grows on rocks in the riverbed.");
+    "Lombre take great delight in hiding in\n"
+    "trees to leap down and surprise passing\n"
+    "people and Pokémon. Their love of\n"
+    "dramatics has earned them a reputation\n"
+    "as 'Forest Troupers'.");
 
 const u8 gLudicoloPokedexText[] = _(
-    "When it hears festive music, all the cells\n"
-    "in its body become stimulated, and it\n"
-    "begins moving in rhythm. It does not quail\n"
-    "even when it faces a tough opponent.");
+    "Though their boisterous nature may seem\n"
+    "intimdating, Ludicolo actually make ideal\n"
+    "companions for young children. They are\n"
+    "very protective, and will not quail even\n"
+    "in the face of overwhelming odds.");
 
 const u8 gTrillogillPokedexText[] = _(
     "TRILLOGILL adjusts its shape almost\n"
@@ -701,10 +704,11 @@ const u8 gCorphishPokedexText[] = _(
     "sizes on aquatic farms.");
 
 const u8 gCrawdauntPokedexText[] = _(
-    "Though its bioluminescent star would be\n"
-    "useful for luring prey, CRAWDAUNT is fast\n"
-    "and strong enough not to need it. Its true\n"
-    "purpose remains a mystery.");
+    "Crawdaunt is highly aggressive, always\n"
+    "searching for a fight. Its sense of honor\n"
+    "keeps it from picking fights with Pokémon"
+    "smaller than itself, instead honing its\n"
+    "skill to tackle ever larger opponents.");
 
 const u8 gDittoPokedexText[] = _(
     "A Ditto rearranges its cell structure to\n"
