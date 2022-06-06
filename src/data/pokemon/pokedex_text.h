@@ -557,7 +557,7 @@ const u8 gLotadPokedexText[] = _(
     "Pokémon cannot stand the water. The leaf\n"
     "on its head keeps it from getting too\n"
     "damp by acting both as a shield against\n"
-    "rain and a pathway for transpiration.");
+    "rain and a pathway for evaporation.");
 
 const u8 gLombrePokedexText[] = _(
     "Lombre take great delight in hiding in\n"
