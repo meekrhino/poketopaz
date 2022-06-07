@@ -385,15 +385,11 @@ static const u8 sDolphureTMHMLearnset[] =
 
 static const u8 sFirantTMHMLearnset[] =
 {
-    TMHM(HM01_CUT),
-    TMHM(HM05_FLASH),
     0xFF,
 };
 
 static const u8 sPyroonTMHMLearnset[] =
 {
-    TMHM(HM01_CUT),
-    TMHM(HM05_FLASH),
     0xFF,
 };
 
@@ -1121,6 +1117,7 @@ static const u8 sArachmareTMHMLearnset[] =
     TMHM(TM78_SUBSTITUTE),
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
+    TMHM(HM01_CUT),
     TMHM(HM05_FLASH),
     0xFF,
 };
@@ -2696,7 +2693,6 @@ static const u8 sSkalloyTMHMLearnset[] =
     TMHM(TM79_ROCKET_PUNCH),
     TMHM(TM80_ORION_SWORD),
     TMHM(HM01_CUT),
-    TMHM(HM02_FLY),
     0xFF,
 };
 
