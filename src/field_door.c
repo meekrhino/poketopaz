@@ -223,6 +223,7 @@ static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7,
 static const u8 sDoorAnimPalettes_NeoBayBlue[] = {0, 0, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_NeoBayYellow[] = {9, 9, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_NeoBayGreen[] = {8, 8, 1, 1, 1, 1, 1, 1};
+static const u8 sDoorAnimPalettes_Cranewing[] = {11, 11, 11, 11, 11, 11, 11, 11};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -283,6 +284,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_NeoBay_Door_Blue,                             DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_NeoBayBlue},
     {METATILE_NeoBay_Door_Green,                            DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_NeoBayGreen},
     {METATILE_NeoBay_Door_Yellow,                           DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_NeoBayYellow},
+    {METATILE_Cranewing_Door,                               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Littleroot, sDoorAnimPalettes_Cranewing},
     {},
 };
 

@@ -143,6 +143,11 @@
 #define METATILE_Contest_FloorShadow         0x261
 #define METATILE_Contest_WallShadow          0x221
 
+// gTileset_Cranewing
+#define METATILE_Cranewing_Door             0x2AE
+#define METATILE_Cranewing_Door_Bank        0x2B2
+#define METATILE_Cranewing_Door_Glassworks  0x2EC
+
 // gTileset_Dewford
 #define METATILE_Dewford_Door              0x225
 #define METATILE_Dewford_Door_BattleTower  0x25D
