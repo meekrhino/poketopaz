@@ -93,14 +93,14 @@
       "x": 21,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_NEO_BAY",
-      "dest_warp_id": 4
+      "dest_map": "MAP_NEO_BAY_HOUSE1",
+      "dest_warp_id": 0
     },
     {
       "x": 28,
       "y": 28,
       "elevation": 0,
-      "dest_map": "MAP_NEO_BAY",
+      "dest_map": "MAP_NEO_BAR_HOUSE2",
       "dest_warp_id": 5
     },
     {

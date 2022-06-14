@@ -1153,3 +1153,11 @@ Script_RemoveTint::
 	.include "data/maps/NeoBay_BradleysHouse_1F/scripts.inc"
 
 	.include "data/maps/NeoBay_BradleysHouse_2F/scripts.inc"
+
+	.include "data/maps/NeoBay_House1/scripts.inc"
+
+	.include "data/maps/NeoBay_House2/scripts.inc"
+
+	.include "data/maps/NeoBay_CliffsideHouse_1F/scripts.inc"
+
+	.include "data/maps/NeoBay_CliffsideHouse_2F/scripts.inc"

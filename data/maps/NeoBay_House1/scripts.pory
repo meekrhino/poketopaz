@@ -1,0 +1,35 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+
+// VAR_NEOBAY_STATE values
+const NEOBAY_STATE_NEW_GAME = 0
+const NEOBAY_STATE_SPOKE_TO_MOM = 1
+const NEOBAY_STATE_MET_WILLOW = 2
+const NEOBAY_STATE_RECEIVED_STARTER = 3
+const NEOBAY_STATE_AMPURE_RESCUED = 4
+const NEOBAY_STATE_STARTED_FLASHBACK = 5
+const NEOBAY_STATE_SAW_FLASHBACK = 6
+const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 7
+const NEOBAY_STATE_DEPARTED = 8
+const NEOBAY_STATE_OPTIONAL_RIVAL_DONE = 9
+
+mapscripts NeoBay_House1_MapScripts {}
+
+script(global) NeoBay_House1_Woman {
+    if( var( VAR_NEOBAY_STATE ) < NEOBAY_STATE_RECEIVED_STARTER) {
+        msgbox(format("What a beautiful day!\pSomeone your age should get out and have some fun!\pStay away from the tall grass, though!\pIt's not safe without a Pokémon of your own."), MSGBOX_NPC)
+    }
+    else {
+        msgbox(format("What a beautiful day!\pWow, you got a Pokémon?\nThat's wonderful, dear!\pTake good care of it, would you?"), MSGBOX_NPC)
+    }
+    end
+}
+
+script(global) NeoBay_House1_Man {
+    if( var( VAR_NEOBAY_STATE ) < NEOBAY_STATE_SAW_FLASHBACK ) {
+        msgbox(format("I heard that the old bridge on Route 201 might be repaired soon!\pMy wife and I can't wait to visit friends in Sunset Village."), MSGBOX_NPC)
+    }
+    else {
+        msgbox(format("I just got word that the old bridge on Route 201 has been repaired!\pOh, you have your own Pokémon now?\pYou should take a trip to Sunset Village!\pIt's a long walk, but worth it!"), MSGBOX_NPC)
+    }
+    end
+}

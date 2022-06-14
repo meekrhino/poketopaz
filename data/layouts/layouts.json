@@ -5748,6 +5748,54 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/NeoBay_BradleysHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/NeoBay_BradleysHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEO_BAY_HOUSE1",
+      "name": "NeoBay_House1_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/NeoBay_House1/border.bin",
+      "blockdata_filepath": "data/layouts/NeoBay_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEO_BAR_HOUSE2",
+      "name": "NeoBay_House2_Layout",
+      "width": 9,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/NeoBay_House2/border.bin",
+      "blockdata_filepath": "data/layouts/NeoBay_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEO_BAY_CLIFFSIDE_HOUSE",
+      "name": "NeoBay_CliffsideHouse_1F_Layout",
+      "width": 14,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/NeoBay_CliffsideHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NeoBay_CliffsideHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEO_BAY_CLIFFSIDE_HOUSE_2F",
+      "name": "NeoBay_CliffsideHouse_2F_Layout",
+      "width": 18,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/NeoBay_CliffsideHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NeoBay_CliffsideHouse_2F/map.bin"
     }
   ]
 }

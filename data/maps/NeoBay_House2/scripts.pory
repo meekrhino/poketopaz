@@ -1,0 +1,25 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+
+// VAR_NEOBAY_STATE values
+const NEOBAY_STATE_NEW_GAME = 0
+const NEOBAY_STATE_SPOKE_TO_MOM = 1
+const NEOBAY_STATE_MET_WILLOW = 2
+const NEOBAY_STATE_RECEIVED_STARTER = 3
+const NEOBAY_STATE_AMPURE_RESCUED = 4
+const NEOBAY_STATE_STARTED_FLASHBACK = 5
+const NEOBAY_STATE_SAW_FLASHBACK = 6
+const NEOBAY_STATE_RECEIVED_RUNNING_SHOES = 7
+const NEOBAY_STATE_DEPARTED = 8
+const NEOBAY_STATE_OPTIONAL_RIVAL_DONE = 9
+
+mapscripts NeoBay_House2_MapScripts {}
+
+script(global) NeoBay_House2_FatMan {
+    if( var( VAR_NEOBAY_STATE ) < NEOBAY_STATE_DEPARTED ) {
+        msgbox(format("Did you see that ship floating at the dock?\pI can hardly believe it, myself!\pI wonder what it's doing here!"), MSGBOX_NPC)
+    }
+    else {
+        msgbox(format("That Professor was really something.\pI wonder what business she had in Neo Bay."), MSGBOX_NPC)
+    }
+    end
+}

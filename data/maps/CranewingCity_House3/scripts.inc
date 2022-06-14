@@ -21,7 +21,6 @@ CranewingCity_House3_Employee_Text_0:
 	.string "something to listen.$"
 
 CranewingCity_House3_Employee_Text_1:
-	.string "Good evening!\p"
 	.string "Firey gaze…\n"
 	.string "Fearsome expression…\p"
 	.string "You must be a Pokémon Trainer!\p"
