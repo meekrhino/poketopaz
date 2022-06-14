@@ -1,5 +1,5 @@
 {
-  "id": "MAP_NEO_BAR_HOUSE2",
+  "id": "MAP_NEO_BAY_HOUSE2",
   "name": "NeoBay_House2",
   "layout": "LAYOUT_NEO_BAR_HOUSE2",
   "music": "MUS_ABANDONED_SHIP",
@@ -34,14 +34,14 @@
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY",
-      "dest_warp_id": 5
+      "dest_warp_id": 6
     },
     {
       "x": 5,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY",
-      "dest_warp_id": 5
+      "dest_warp_id": 6
     }
   ],
   "coord_events": [

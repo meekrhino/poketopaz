@@ -87,7 +87,7 @@
 #define MAP_NEO_BAY_BRADLEYS_HOUSE_1F            (9 | (1 << 8))
 #define MAP_NEO_BAY_BRADLEYS_HOUSE_2F            (10 | (1 << 8))
 #define MAP_NEO_BAY_HOUSE1                       (11 | (1 << 8))
-#define MAP_NEO_BAR_HOUSE2                       (12 | (1 << 8))
+#define MAP_NEO_BAY_HOUSE2                       (12 | (1 << 8))
 #define MAP_NEO_BAY_CLIFFSIDE_HOUSE_1F           (13 | (1 << 8))
 #define MAP_NEO_BAY_CLIFFSIDE_HOUSE_2F           (14 | (1 << 8))
 

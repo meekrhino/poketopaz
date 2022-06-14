@@ -97,18 +97,18 @@
       "dest_warp_id": 0
     },
     {
-      "x": 28,
-      "y": 28,
-      "elevation": 0,
-      "dest_map": "MAP_NEO_BAR_HOUSE2",
-      "dest_warp_id": 5
-    },
-    {
       "x": 18,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_NEO_BAY",
+      "dest_map": "MAP_NEO_BAY_CLIFFSIDE_HOUSE_1F",
       "dest_warp_id": 6
+    },
+    {
+      "x": 28,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_NEO_BAY_HOUSE2",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

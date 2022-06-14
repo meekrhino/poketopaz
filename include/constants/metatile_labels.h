@@ -383,6 +383,9 @@
 #define METATILE_NeoBay_BridgeReflection_Right  0x34F
 #define METATILE_NeoBay_BridgeWarp_Left         0x35E
 #define METATILE_NeoBay_BridgeWarp_Right        0x35F
+#define METATILE_NeoBay_Door_Blue               0x2A0
+#define METATILE_NeoBay_Door_Green              0x2B0
+#define METATILE_NeoBay_Door_Yellow             0x2A2
 #define METATILE_NeoBay_TallGrass_Sand          0x215
 
 // gTileset_Pacifidlog
