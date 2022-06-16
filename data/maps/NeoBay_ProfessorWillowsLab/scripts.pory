@@ -6,6 +6,9 @@ const WILLOW = 4
 const BRADLEY = 5
 const AMPURE = 6
 
+const DOOR_POS_X = 8
+const DOOR_POS_Y = 2
+
 // VAR_NEOBAY_STATE values
 const NEOBAY_STATE_NEW_GAME = 0
 const NEOBAY_STATE_SPOKE_TO_MOM = 1
@@ -33,6 +36,7 @@ const AMPURE_RESCUE_RETURNED = 8
 //=====================================
 mapscripts NeoBay_ProfessorWillowsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: WillowsLab_OnTransition
+    MAP_SCRIPT_ON_LOAD: WillowsLab_OnLoad
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_NEOBAY_STATE, NEOBAY_STATE_SPOKE_TO_MOM: WillowIntroduction
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_CAPTURE_DONE: WillowsLab_AmpureRescued
@@ -217,6 +221,15 @@ script(local) WillowsLab_OnTransition {
     }
 }
 
+script(local) WillowsLab_OnLoad {
+    if(var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SPOKE_TO_MOM) {
+        setmetatile(8, 2, METATILE_Lab_Door_WillowsLabNoWarp, 0)
+    }
+    else {
+        setmetatile(8, 2, METATILE_Lab_Door_WillowsLabExit, 0)
+    }
+}
+
 script(local) WillowsLab_OnWarp {
     if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_CAPTURE_DONE
     || var(VAR_NEOBAY_STATE) == NEOBAY_STATE_STARTED_FLASHBACK
@@ -231,10 +244,15 @@ script(local) WillowIntroduction {
     lockall
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_MET_WILLOW)
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED)
-    delay(30)
-    setobjectxy(BRADLEY, 8, 2)
+    setmetatile(8, 2, METATILE_Lab_Door_WillowsLabExit, 0)
+    opendoor(DOOR_POS_X, DOOR_POS_Y)
+    waitdooranim
+    addobject(BRADLEY)
+    setobjectxy(BRADLEY, DOOR_POS_X, DOOR_POS_Y)
     applymovement(BRADLEY, mBradleyEntersFirstTime)
-    delay(30)
+    delay(16)
+    applymovement(PLAYER, mEntersDoorFromTop)
+    waitmovement(0)
     applymovement(PLAYER, mPlayerEntersFirstTime)
     waitmovement(0)
     msgbox("Bradley: Hey, Prof. Willow!", MSGBOX_AUTOCLOSE)
@@ -540,6 +558,7 @@ script(local) WillowsLab_AmpureRescued {
     waitmessage
     closemessage
     call(Script_SetGrayscaleTint)
+    clearflag(FLAG_HIDE_WILLOWS_LAB_BRADLEY)
     warpsilent(MAP_NEO_BAY_FLASHBACK_BEACH, 0, 0, 0)
     releaseall
     end
@@ -553,7 +572,7 @@ script(local) WillowsLab_AfterFlashback {
     closemessage
     delay(60)
     msgbox("Willow: …I'm so sorry.")
-    msgbox(format("Bradley: That's why we have to get to the next town, Professor!\lSimon could be anywhere, and he could even be in danger."))
+    msgbox(format("Bradley: That's why we have to get to the next town, Professor!\pSimon could be anywhere, and he could even be in danger."))
     msgbox(WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE)
     releaseall
     end
@@ -573,11 +592,17 @@ script(local) WillowsLab_Departure {
     lockall
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_DEPARTED)
     delay(30)
-    setobjectxy(BRADLEY, 8, 2)
-    applymovement(BRADLEY, mBradleyEntersFirstTime)
-    delay(30)
-    applymovement(PLAYER, mPlayerEntersFirstTime)
-    waitmovement(PLAYER)
+    applymovement(PLAYER, mPlayerEntersSecondTime)
+    opendoor(DOOR_POS_X, DOOR_POS_Y)
+    waitdooranim
+    addobject(BRADLEY)
+    setobjectxy(BRADLEY, DOOR_POS_X, DOOR_POS_Y)
+    applymovement(BRADLEY, mEntersDoorFromTop)
+    waitmovement(0)
+    closedoor(DOOR_POS_X, DOOR_POS_Y)
+    waitdooranim
+    applymovement(BRADLEY, mBradleyEntersSecondTime)
+    waitmovement(0)
     delay(30)
     setvar(VAR_0x8004, 0)  // vertical pan
     setvar(VAR_0x8005, 2)  // horizontal pan
@@ -614,11 +639,19 @@ script(local) WillowsLab_Departure {
     waitse
     closemessage
     applymovement(WILLOW, mWillowExitsInSunset)
-    delay(96)
     applymovement(BRADLEY, mBradleyExitsInSunset)
-    delay(32)
     applymovement(PLAYER, mPlayerExitsInSunset)
     waitmovement(PLAYER)
+    opendoor(DOOR_POS_X, DOOR_POS_Y)
+    waitdooranim
+    applymovement(WILLOW, mWillowHoldsDoor)
+    waitmovement(WILLOW)
+    applymovement(WILLOW, mWillowWalkOutDoorInSunset)
+    applymovement(BRADLEY, mBradleyWalkOutDoorInSunset)
+    applymovement(PLAYER, mPlayerWalkOutDoorInSunset)
+    waitmovement(WILLOW)
+    closedoor(DOOR_POS_X, DOOR_POS_Y)
+    waitdooranim
     warp(MAP_SUNSET_VILLAGE, 0xFF, 11, 34)
     releaseall
     end
@@ -785,8 +818,26 @@ movement mBradleyEntersFirstTime {
     face_down
 }
 
-movement mPlayerEntersFirstTime {
+movement mBradleyEntersSecondTime {
+    walk_down * 4
+    walk_left * 3
+    walk_up
+    face_down
+}
+
+movement mEntersDoorFromTop {
     set_visible
+    walk_down
+}
+
+movement mPlayerEntersFirstTime {
+    delay_16 * 2
+    walk_down * 3
+    walk_left * 2
+    face_down
+}
+
+movement mPlayerEntersSecondTime {
     walk_down * 3
     walk_left * 2
     face_down
@@ -980,21 +1031,43 @@ movement mWillowDeliberates {
 }
 
 movement mPlayerExitsInSunset {
+    delay_16 * 8
     walk_right * 2
-    walk_up * 4
-    set_invisible
+    walk_up
 }
 
 movement mBradleyExitsInSunset {
+    delay_16 * 6
     walk_up
     walk_right * 3
-    walk_up * 3
-    set_invisible
+    walk_up
 }
 
 movement mWillowExitsInSunset {
     walk_right * 6
-    walk_up * 6
+    walk_up * 5
+}
+
+movement mWillowHoldsDoor {
+    walk_right
+    face_left
+    delay_16 * 2
+}
+
+movement mPlayerWalkOutDoorInSunset {
+    walk_up * 3
+    set_invisible
+}
+
+movement mBradleyWalkOutDoorInSunset {
+    walk_up * 2
+    set_invisible
+}
+
+movement mWillowWalkOutDoorInSunset {
+    delay_16 * 3
+    walk_left
+    walk_up * 1
     set_invisible
 }
 

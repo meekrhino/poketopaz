@@ -52,6 +52,7 @@ mapscripts NeoBay_MapScripts {
     MAP_SCRIPT_ON_RESUME: NeoBay_OnResume
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED: NeoBay_EventScript_SetupBradleyAtBoat
+        VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_BRADLEY_FIGHT: NeoBay_EventScript_SetupBradleyForFight
         VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE_WARP: NeoBay_EventScript_SetupBradleyForAmpure
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
@@ -125,6 +126,7 @@ script NeoBay_EventScript_BradleyStopsPlayer {
     if(var(VAR_AMPURE_RESCUE_STATE) == AMPURE_RESCUE_BRADLEY_FIGHT) {
         msgbox(format("Bradley: Come on!\nLet's battle!"))
         waitmessage
+        closemessage
         getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
         switch(var(VAR_TEMP_1)) {
             case 24:
@@ -275,7 +277,8 @@ script(local) NeoBay_EventScript_BradleyShowBoatText {
     applymovement(BRADLEY, mEnterShip)
     applymovement(PLAYER, mEnterShip)
     waitmovement(0)
-    warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0, 0, 0)
+    setflag(FLAG_SPAWN_INVISIBLE)
+    warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 2)
     return
 }
 
@@ -365,6 +368,11 @@ script(local) NeoBay_EventScript_SetupBradleyForAmpure {
     turnobject(BRADLEY, DIR_EAST)
     turnobject(PLAYER, DIR_WEST)
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_SECOND_BATTLE_DONE)
+}
+
+script(local) NeoBay_EventScript_SetupBradleyForFight {
+    addobject(BRADLEY)
+    setobjectxyperm(BRADLEY, 11, 23)
 }
 
 script(local) NeoBay_EventScript_AmpureCapture {

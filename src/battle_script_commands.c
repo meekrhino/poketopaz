@@ -1272,7 +1272,8 @@ static void Cmd_accuracycheck(void)
             calc = (calc * 80) / 100; // 1.2 hustle loss
         if ((WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_DARKNESS_ANY)
          && (gBattleMons[gBattlerAttacker].type1 != TYPE_DARK && gBattleMons[gBattlerAttacker].type1 != TYPE_LIGHT
-          && gBattleMons[gBattlerAttacker].type2 != TYPE_DARK && gBattleMons[gBattlerAttacker].type2 != TYPE_LIGHT))
+          && gBattleMons[gBattlerAttacker].type2 != TYPE_DARK && gBattleMons[gBattlerAttacker].type2 != TYPE_LIGHT
+          && gBattleMons[gBattlerAttacker].ability != ABILITY_NIGHT_VISION))
             calc = (calc * 80) / 100; // 1.2 darkness loss
 
         if (gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY)

@@ -1,5 +1,6 @@
 NeoBay_ProfessorWillowsLab_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, WillowsLab_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, WillowsLab_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NeoBay_ProfessorWillowsLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
@@ -240,6 +241,17 @@ WillowsLab_OnTransition_3:
 	return
 
 
+WillowsLab_OnLoad:
+	compare VAR_NEOBAY_STATE, 1
+	goto_if_eq WillowsLab_OnLoad_1
+	setmetatile 8, 2, METATILE_Lab_Door_WillowsLabExit, 0
+	return
+
+WillowsLab_OnLoad_1:
+	setmetatile 8, 2, METATILE_Lab_Door_WillowsLabNoWarp, 0
+	return
+
+
 WillowsLab_OnWarp:
 	compare VAR_AMPURE_RESCUE_STATE, 7
 	goto_if_eq WillowsLab_OnWarp_1
@@ -260,10 +272,15 @@ WillowIntroduction:
 	lockall
 	setvar VAR_NEOBAY_STATE, 2
 	setvar VAR_AMPURE_RESCUE_STATE, 1
-	delay 30
+	setmetatile 8, 2, METATILE_Lab_Door_WillowsLabExit, 0
+	opendoor 8, 2
+	waitdooranim
+	addobject 5
 	setobjectxy 5, 8, 2
 	applymovement 5, mBradleyEntersFirstTime
-	delay 30
+	delay 16
+	applymovement OBJ_EVENT_ID_PLAYER, mEntersDoorFromTop
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime
 	waitmovement 0
 	msgbox WillowIntroduction_Text_0, MSGBOX_AUTOCLOSE
@@ -576,6 +593,7 @@ WillowsLab_AmpureRescued:
 	waitmessage
 	closemessage
 	call Script_SetGrayscaleTint
+	clearflag FLAG_HIDE_WILLOWS_LAB_BRADLEY
 	warpsilent MAP_NEO_BAY_FLASHBACK_BEACH, 0, 0, 0
 	releaseall
 	end
@@ -609,11 +627,17 @@ WillowsLab_Departure:
 	lockall
 	setvar VAR_NEOBAY_STATE, 8
 	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersSecondTime
+	opendoor 8, 2
+	waitdooranim
+	addobject 5
 	setobjectxy 5, 8, 2
-	applymovement 5, mBradleyEntersFirstTime
-	delay 30
-	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersFirstTime
-	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 5, mEntersDoorFromTop
+	waitmovement 0
+	closedoor 8, 2
+	waitdooranim
+	applymovement 5, mBradleyEntersSecondTime
+	waitmovement 0
 	delay 30
 	setvar VAR_0x8004, 0
 	setvar VAR_0x8005, 2
@@ -650,11 +674,19 @@ WillowsLab_Departure:
 	waitse
 	closemessage
 	applymovement 4, mWillowExitsInSunset
-	delay 96
 	applymovement 5, mBradleyExitsInSunset
-	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerExitsInSunset
 	waitmovement OBJ_EVENT_ID_PLAYER
+	opendoor 8, 2
+	waitdooranim
+	applymovement 4, mWillowHoldsDoor
+	waitmovement 4
+	applymovement 4, mWillowWalkOutDoorInSunset
+	applymovement 5, mBradleyWalkOutDoorInSunset
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalkOutDoorInSunset
+	waitmovement 4
+	closedoor 8, 2
+	waitdooranim
 	warp MAP_SUNSET_VILLAGE, 0xFF, 11, 34
 	releaseall
 	end
@@ -672,8 +704,35 @@ mBradleyEntersFirstTime:
 	face_down
 	step_end
 
-mPlayerEntersFirstTime:
+mBradleyEntersSecondTime:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	face_down
+	step_end
+
+mEntersDoorFromTop:
 	set_visible
+	walk_down
+	step_end
+
+mPlayerEntersFirstTime:
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+mPlayerEntersSecondTime:
 	walk_down
 	walk_down
 	walk_down
@@ -956,24 +1015,31 @@ mWillowDeliberates:
 	step_end
 
 mPlayerExitsInSunset:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_right
 	walk_right
 	walk_up
-	walk_up
-	walk_up
-	walk_up
-	set_invisible
 	step_end
 
 mBradleyExitsInSunset:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_up
 	walk_right
 	walk_right
 	walk_right
 	walk_up
-	walk_up
-	walk_up
-	set_invisible
 	step_end
 
 mWillowExitsInSunset:
@@ -988,6 +1054,33 @@ mWillowExitsInSunset:
 	walk_up
 	walk_up
 	walk_up
+	step_end
+
+mWillowHoldsDoor:
+	walk_right
+	face_left
+	delay_16
+	delay_16
+	step_end
+
+mPlayerWalkOutDoorInSunset:
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+mBradleyWalkOutDoorInSunset:
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+mWillowWalkOutDoorInSunset:
+	delay_16
+	delay_16
+	delay_16
+	walk_left
 	walk_up
 	set_invisible
 	step_end
@@ -1230,8 +1323,8 @@ WillowsLab_AfterFlashback_Text_1:
 
 WillowsLab_AfterFlashback_Text_2:
 	.string "Bradley: That's why we have to get to\n"
-	.string "the next town, Professor!\l"
-	.string "Simon could be anywhere, and he could\l"
+	.string "the next town, Professor!\p"
+	.string "Simon could be anywhere, and he could\n"
 	.string "even be in danger.$"
 
 WillowsLab_ReceivedPokedex_Text_0:

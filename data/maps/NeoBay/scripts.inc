@@ -8,6 +8,7 @@ NeoBay_MapScripts::
 
 NeoBay_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 1, NeoBay_EventScript_SetupBradleyAtBoat
+	map_script_2 VAR_AMPURE_RESCUE_STATE, 6, NeoBay_EventScript_SetupBradleyForFight
 	map_script_2 VAR_AMPURE_RESCUE_STATE, 5, NeoBay_EventScript_SetupBradleyForAmpure
 	.2byte 0
 
@@ -271,7 +272,8 @@ NeoBay_EventScript_BradleyShowBoatText:
 	applymovement 2, mEnterShip
 	applymovement OBJ_EVENT_ID_PLAYER, mEnterShip
 	waitmovement 0
-	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0, 0, 0
+	setflag FLAG_SPAWN_INVISIBLE
+	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 2
 	return
 
 
@@ -367,6 +369,12 @@ NeoBay_EventScript_SetupBradleyForAmpure:
 	turnobject 2, DIR_EAST
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	setvar VAR_AMPURE_RESCUE_STATE, 4
+	return
+
+
+NeoBay_EventScript_SetupBradleyForFight:
+	addobject 2
+	setobjectxyperm 2, 11, 23
 	return
 
 
