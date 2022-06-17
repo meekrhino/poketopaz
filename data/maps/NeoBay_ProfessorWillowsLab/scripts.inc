@@ -273,6 +273,7 @@ WillowIntroduction:
 	setvar VAR_NEOBAY_STATE, 2
 	setvar VAR_AMPURE_RESCUE_STATE, 1
 	setmetatile 8, 2, METATILE_Lab_Door_WillowsLabExit, 0
+	special DrawWholeMapView
 	opendoor 8, 2
 	waitdooranim
 	addobject 5
@@ -1090,8 +1091,9 @@ WillowsLab_YouGoFirst_Text_0:
 	.string "our folks like the Prof. said…$"
 
 WillowsLab_YouGoFirst_Text_1:
-	.string "Bradley: I just can't decide! You go\n"
-	.string "first, {PLAYER}! Come on, come on!$"
+	.string "Bradley: I just can't decide!\n"
+	.string "You go first, {PLAYER}!\p"
+	.string "Come on, come on, come on!$"
 
 WillowsLab_TakeYourTime_Text_0:
 	.string "Willow: So, you stopped by your family to\n"
@@ -1100,46 +1102,49 @@ WillowsLab_TakeYourTime_Text_0:
 WillowsLab_TakeYourTime_Text_1:
 	.string "Willow: … … …\n"
 	.string "… … …\p"
-	.string "You haven't even left my lab. Get going\n"
-	.string "before I regret giving you a Pokémon!$"
+	.string "You haven't even left my lab.\p"
+	.string "Get going before I regret giving you a\n"
+	.string "Pokémon!$"
 
 WillowsLab_TakeYourTime_Text_2:
-	.string "Willow: Better get going! If you're not\n"
-	.string "back in time, we'll meet you at Sunset\l"
-	.string "Village.\p"
-	.string "I believe Route 201 is open now, if\n"
-	.string "you'd rather take that path.$"
+	.string "Willow: Better get going!\p"
+	.string "If you're not back in time, we'll meet\n"
+	.string "you at Sunset Village.\p"
+	.string "I believe Route 201 is open now, if you'd\n"
+	.string "rather take that path.$"
 
 WillowsLab_TakeYourTime_Text_3:
-	.string "Willow: Ohoho, can't decide? Take your\n"
-	.string "time, this is a big decision!$"
+	.string "Willow: Ohoho, can't decide?\p"
+	.string "Take your time, this is a big decision!$"
 
 WillowsLab_Books1_Text_0:
 	.string "There's a book titled “People and\n"
-	.string "Pokémon: Nature's Balance” …sounds a\l"
-	.string "little dense…$"
+	.string "Pokémon: Nature's Balance”…\p"
+	.string "Sounds a little dense…$"
 
 WillowsLab_Books2_Text_0:
 	.string "There's a book titled “Ancient Pokémon\n"
-	.string "Mythos” …sounds intruguing!$"
+	.string "Mythos”…\p"
+	.string "Sounds intruguing!$"
 
 WillowsLab_Books3_Text_0:
 	.string "There's a book titled “The Lifecycles\n"
-	.string "of Bug Pokémon” …sounds gross!$"
+	.string "of Bug Pokémon”…\p"
+	.string "Sounds gross!$"
 
 WillowsLab_Books4_Text_0:
 	.string "There's a book titled “The Varied\n"
-	.string "Pokémon of Mt. Frost” …sounds like an\l"
-	.string "interesting place!$"
+	.string "Pokémon of Mt. Frost”…\p"
+	.string "Sounds like an interesting place!$"
 
 WillowsLab_Books5_Text_0:
-	.string "There are tons of dusty textbooks … it\n"
-	.string "looks like Prof. Willow hasn't used this\l"
-	.string "shelf in a while.$"
+	.string "There are tons of dusty textbooks…\p"
+	.string "It looks like Prof. Willow hasn't used\n"
+	.string "this shelf in a while.$"
 
 WillowsLab_WillowsComputer_Text_0:
-	.string "This is Prof. Willow's personal computer.\n"
-	.string "The screen is covered in graphs and\l"
+	.string "This is Prof. Willow's personal computer.\p"
+	.string "The screen is covered in graphs and\n"
 	.string "data!$"
 
 WillowsLab_WillowsNotes_Text_0:
@@ -1147,17 +1152,17 @@ WillowsLab_WillowsNotes_Text_0:
 	.string "Prof. Willow sure is thorough!$"
 
 WillowsLab_ExpensiveMachine_Text_0:
-	.string "Looks like an expensive machine.\n"
-	.string "Hopefully Ampure didn't break\l"
-	.string "anything!$"
+	.string "Looks like an expensive machine.\p"
+	.string "Hopefully Ampure didn't break anything!$"
 
 WillowsLab_TrashCan_Text_0:
 	.string "It's filled to the brim with crumpled\n"
 	.string "notes.$"
 
 WillowsLab_EventScript_WhereAreYouGoing_Text_0:
-	.string "Bradley: Hey! Where are you going? Hurry\n"
-	.string "up and choose a Pokémon already!$"
+	.string "Bradley: Hey!\n"
+	.string "Where are you going?\p"
+	.string "Hurry up and choose a Pokémon already!$"
 
 WillowIntroduction_Text_0:
 	.string "Bradley: Hey, Prof. Willow!$"
@@ -1166,7 +1171,8 @@ WillowIntroduction_Text_1:
 	.string "CRASH!!$"
 
 WillowIntroduction_Text_2:
-	.string "Willow: Come on, Ampure! That's fragile!\n"
+	.string "Willow: Come on, Ampure!\n"
+	.string "That's fragile!\p"
 	.string "Get back in your Pokéball!$"
 
 WillowIntroduction_Text_3:
@@ -1176,35 +1182,39 @@ WillowIntroduction_Text_4:
 	.string "Willow: Watch out!$"
 
 WillowIntroduction_Text_5:
-	.string "Willow: Oh, not again … that little rascal\n"
-	.string "just will not keep still!$"
+	.string "Willow: Oh, not again…\p"
+	.string "That little rascal just will not keep\n"
+	.string "still!$"
 
 WillowIntroduction_Text_6:
 	.string "Bradley: Are you alright, Prof. Willow?$"
 
 WillowIntroduction_Text_7:
-	.string "Willow: Ohohoho! Thanks for showing\n"
-	.string "concern, Bradley, but I'm fine. This\l"
-	.string "happens all the time.$"
+	.string "Willow: Ohohoho!\p"
+	.string "Thanks for showing concern, Bradley,\n"
+	.string "but I'm fine.\p"
+	.string "This happens all the time.$"
 
 WillowIntroduction_Text_8:
 	.string "Oh? And who are you?$"
 
 WillowIntroduction_Text_9:
-	.string "Bradley: This is {PLAYER}. They've\n"
-	.string "been my friend for as long as I can\l"
-	.string "remember.$"
+	.string "Bradley: This is {PLAYER}.\p"
+	.string "They've been my friend for as long as I\n"
+	.string "can remember.$"
 
 WillowIntroduction_Text_10:
 	.string "Willow: Did I now?\n"
-	.string "… Ah, I remember now!\l"
+	.string "… Ah, I remember now!\p"
 	.string "Ohoho, you're quite right!$"
 
 WillowIntroduction_Text_11:
 	.string "Willow: There are three Pokéballs on\n"
-	.string "this table. Each one contains an\l"
-	.string "extremely rare Pokémon. Bradley, go\l"
-	.string "ahead and choose whichever you like!$"
+	.string "this table.\p"
+	.string "Each one contains an extremely rare\n"
+	.string "Pokémon.\p"
+	.string "Bradley, go ahead and choose whichever\n"
+	.string "you like!$"
 
 WillowIntroduction_Text_12:
 	.string "Bradley: Actually…$"
@@ -1213,17 +1223,18 @@ WillowIntroduction_Text_13:
 	.string "Bradley: I want {PLAYER} to have the\nPokémon.$"
 
 WillowIntroduction_Text_14:
-	.string "Willow: But Bradley! You earned this\n"
-	.string "Pokémon yourself! You deserve it!$"
+	.string "Willow: But Bradley!\n"
+	.string "You earned this Pokémon yourself!\l"
+	.string "You deserve it!$"
 
 WillowIntroduction_Text_15:
 	.string "Bradley: No, I made up my mind a long\n"
-	.string "time ago. I want {PLAYER} to have the\l"
-	.string "Pokémon!$"
+	.string "time ago.\p"
+	.string "I want {PLAYER} to have the Pokémon!$"
 
 WillowIntroduction_Text_16:
-	.string "Alright, I've decided. Both of you will\n"
-	.string "receive a Pokémon!$"
+	.string "Alright, I've decided.\p"
+	.string "Both of you will receive a Pokémon!$"
 
 WillowIntroduction_Text_17:
 	.string "Bradley: Wow, Prof. Willow!\n"
@@ -1231,16 +1242,18 @@ WillowIntroduction_Text_17:
 
 WillowIntroduction_Text_18:
 	.string "Willow: Ohoho, how can I refuse such a\n"
-	.string "sincere request? Go ahead and choose\l"
-	.string "any Pokéball on the table.$"
+	.string "sincere request?\p"
+	.string "Go ahead and choose any Pokéball on\n"
+	.string "the table.$"
 
 WillowIntroduction_Text_19:
-	.string "Bradley: This is awesome! Thank you so\n"
-	.string "much, Prof. Willow!$"
+	.string "Bradley: This is awesome!\n"
+	.string "Thank you so much, Prof. Willow!$"
 
 WillowIntroduction_Text_20:
-	.string "Bradley: I'm so excited! You go first,\n"
-	.string "{PLAYER}. Come on come on, choose on!$"
+	.string "Bradley: I'm so excited!\n"
+	.string "You go first, {PLAYER}.\p"
+	.string "Come on come on, choose one!$"
 
 WillowsLab_TakeYourTime2_Text_0:
 	.string "Willow: Take your time, this is a big\n"
@@ -1250,22 +1263,23 @@ WillowsLab_ReceivedStarter_Text_0:
 	.string "{PLAYER} received the {STR_VAR_1}\nfrom Prof. Willow!$"
 
 WillowsLab_BradleyChoosesVenap_Text_0:
-	.string "Bradley: I've made up my mind. I'll take\n"
-	.string "this one!$"
+	.string "Bradley: I've made up my mind.\p"
+	.string "I'll take this one!$"
 
 WillowsLab_BradleyMadeChoice_Text_0:
 	.string "Bradley received the {STR_VAR_1}\nfrom Prof. Willow!$"
 
 WillowsLab_YourePokemonTrainersNow_Text_0:
 	.string "Willow: Ohohoho, the looks on your faces\n"
-	.string "are priceless!\l"
-	.string "From now on, both of you are officially\l"
-	.string "Pokémon Trainers! Congratulations!$"
+	.string "are priceless!\p"
+	.string "From now on, both of you are officially\n"
+	.string "Pokémon Trainers!\l"
+	.string "Congratulations!$"
 
 WillowsLab_YourePokemonTrainersNow_Text_1:
 	.string "Bradley: You hear that, {PLAYER}?\n"
-	.string "We're legit Pokémon Trainers now! We're\l"
-	.string "going straight to the big leagues!$"
+	.string "We're legit Pokémon Trainers now!\p"
+	.string "We're going straight to the big leagues!$"
 
 WillowsLab_YourePokemonTrainersNow_Text_2:
 	.string "Willow: Ahem!\n"
@@ -1277,14 +1291,14 @@ WillowsLab_YourePokemonTrainersNow_Text_3:
 	.string "Bradley: Anything, professor!$"
 
 WillowsLab_YourePokemonTrainersNow_Text_4:
-	.string "Bradley: Not a problem, Prof. Willow!\n"
-	.string "We'll have your Ampure back before you\l"
+	.string "Bradley: Not a problem, Prof. Willow!\p"
+	.string "We'll have your Ampure back before you\n"
 	.string "know it!$"
 
 WillowsLab_YourePokemonTrainersNow_Text_5:
-	.string "Bradley: Let's go, {PLAYER}! We owe\n"
-	.string "the professor, so let's go search for\l"
-	.string "her Ampure!\l"
+	.string "Bradley: Let's go, {PLAYER}!\p"
+	.string "We owe the professor, so let's go search\n"
+	.string "for her Ampure!\p"
 	.string "Come on, race ya there!$"
 
 WillowsLab_AmpureRescued_Text_0:
@@ -1293,27 +1307,29 @@ WillowsLab_AmpureRescued_Text_0:
 	.string "it!$"
 
 WillowsLab_AmpureRescued_Text_1:
-	.string "Willow: Ohohohoho! I'm glad. It would\n"
-	.string "have taken me ages to find Ampure by\l"
-	.string "myself. Thank you very much, you two.$"
+	.string "Willow: Ohohohoho!\n"
+	.string "I'm glad.\p"
+	.string "It would have taken me ages to find\n"
+	.string "Ampure by myself.\p"
+	.string "Thank you very much, you two.$"
 
 WillowsLab_AmpureRescued_Text_2:
 	.string "Willow: I think I have the perfect way\n"
-	.string "to reward you. Each of you can take one\l"
-	.string "of these.$"
+	.string "to reward you.\p"
+	.string "Each of you can take one of these.$"
 
 WillowsLab_AmpureRescued_Text_3:
 	.string "Bradley: This is one of those Pokédex\n"
 	.string "things, right?$"
 
 WillowsLab_AmpureRescued_Text_4:
-	.string "Bradley: Did you hear that, {PLAYER}!?\nWe're finally going to be able\lto find Simon.$"
+	.string "Bradley: Did you hear that, {PLAYER}!?\pWe're finally going to be able\nto find Simon.$"
 
 WillowsLab_AmpureRescued_Text_5:
 	.string "Willow: Who is this Simon?$"
 
 WillowsLab_AmpureRescued_Text_6:
-	.string "Bradley: … … …\nHe was our friend…\l…and he was my brother.$"
+	.string "Bradley: … … …\nHe was our friend…\p…and he was my brother.$"
 
 WillowsLab_AfterFlashback_Text_0:
 	.string "Bradley: …We never saw him again.$"
@@ -1335,125 +1351,139 @@ WillowsLab_Departure_Text_0:
 	.string "land!$"
 
 WillowsLab_Departure_Text_1:
-	.string "Willow: Ohohoho! That's good, Bradley,\n"
-	.string "because we've arrived!$"
+	.string "Willow: Ohohoho!\p"
+	.string "That's good, Bradley, because we've\n"
+	.string "arrived!$"
 
 WillowsLab_WillowIntroduction::
 	.string "Willow: Ohoho, so you're {PLAYER}!\n"
-	.string "Bradley talks about you quite a lot.\l"
-	.string "You can call me Prof. Willow. I'm here\l"
-	.string "studying Pokémon habitats in the Neo\l"
-	.string "Bay area. Research is what I do best.\l"
-	.string "I'm not too good at handling Pokémon\l"
-	.string "themselves, unfortunately …$"
+	.string "Bradley talks about you quite a lot.\p"
+	.string "You can call me Prof. Willow.\p"
+	.string "I'm here studying Pokémon habitats in\n"
+	.string "the Neo Bay area.\p"
+	.string "Research is what I do best.\p"
+	.string "I'm not too good at handling Pokémon\n"
+	.string "themselves, unfortunately…$"
 
 WillowsLab_BradleyIsAnAssistant::
 	.string "Bradley: I never told you this, but I\n"
 	.string "have been helping PROF. WILLOW with\l"
-	.string "her research. Collecting samples,\l"
-	.string "taking measurements, all that\l"
-	.string "science-y stuff.\l"
-	.string "It's hard work, but in return she\l"
+	.string "her research.\p"
+	.string "Collecting samples, taking\n"
+	.string "measurements, all that science-y\l"
+	.string "stuff.\p"
+	.string "It's hard work, but in return she\n"
 	.string "promised me a rare Pokémon!$"
 
 WillowsLab_WillowCantJustGivePokemon::
 	.string "Willow: Even so, I can't just hand a\n"
-	.string "Pokémon to anybody! Owning a Pokémon\l"
-	.string "comes with many responsibilities.\l"
-	.string "Bradley, you've already shown me that\l"
+	.string "Pokémon to anybody!\p"
+	.string "Owning a Pokémon comes with many\n"
+	.string "responsibilities.\p"
+	.string "Bradley, you've already shown me that\n"
 	.string "you're capable of becoming a Pokémon\l"
-	.string "Trainer. I only met {PLAYER} today!$"
+	.string "Trainer.\p"
+	.string "I only met {PLAYER} today!$"
 
 WillowsLab_BradleyIsReallySure::
 	.string "Bradley: {PLAYER} has wanted to be a\n"
-	.string "Pokémon Trainer their entire life!\l"
-	.string "Nobody is more passionate and\l"
+	.string "Pokémon Trainer their entire life!\p"
+	.string "Nobody is more passionate and\n"
 	.string "responsible than them, and they'd\l"
 	.string "definitely make a better Pokémon\l"
-	.string "Trainer than I would!\l"
-	.string "Trust me on this one, professor!$"
+	.string "Trainer than I would!\p"
+	.string "Please, professor.\n"
+	.string "Trust me on this one!$"
 
 WillowsLab_WillowConcedes::
 	.string "… … … …\n"
 	.string "… … … …\l"
-	.string "… Ohohohohoho! I see, I see. So that's\l"
-	.string "how it is!\l"
-	.string "You're a subborn one, Bradley, but I like\l"
-	.string "that. {PLAYER}, you're lucky to have\l"
-	.string "such a good friend.\l"
+	.string "… … … …\l"
+	.string "… … … …\p"
+	.string "… Ohohohohoho! I see, I see. So that's\n"
+	.string "how it is!\p"
+	.string "You're a subborn one, Bradley, but I like\n"
+	.string "that.\p"
+	.string "{PLAYER}, you're lucky to have such a\n"
+	.string "good friend.\p"
 	.string "I must say, I'm a bit envious myself!$"
 
 WillowsLab_DontBeGreedyText::
-	.string "You already chose a Pokémon! Better\n"
-	.string "not be greedy.$"
+	.string "You already chose a Pokémon!\n"
+	.string "Better not be greedy.$"
 
 WillowsLab_DoYouWantVenap::
 	.string "Prof. Willow: The Grass Pokémon Venap\n"
 	.string "caught your eye?\p"
-	.string "It might be difficult to raise…but you\n"
-	.string "won't regret it!\p"
+	.string "It might be difficult to raise…\n"
+	.string "but you won't regret it!\p"
 	.string "Is Venap your final decision?$"
 
 WillowsLab_DoYouWantCelsinge::
 	.string "Prof. Willow: The Fire Pokémon Celsinge\n"
 	.string "is your pick?\p"
-	.string "You can't go wrong there! You'll be set\n"
-	.string "up for success!\p"
+	.string "You can't go wrong there!\n"
+	.string "You'll be set up for success!\p"
 	.string "Do you want to choose Celsinge?$"
 
 WillowsLab_DoYouWantEchoise::
 	.string "Prof. Willow: The Water Pokémon Echoise\n"
 	.string "is your favorite?\p"
-	.string "Excellent choice! Isn't it just the\n"
-	.string "cutest?\p"
+	.string "Excellent choice!\n"
+	.string "Isn't it just the cutest?\p"
 	.string "Are you certain you want Echoise?$"
 
 WillowsLab_AmpureMissionDescription::
-	.string "Willow: Very well.\n"
-	.string "As you saw earlier, my Ampure has\l"
-	.string "escaped…\l"
+	.string "Willow: Very well.\p"
+	.string "As you saw earlier, my Ampure has\n"
+	.string "escaped…\n"
 	.string "…again. I'd go find him myself, but with\l"
 	.string "my luck, it would take a whole day for\l"
-	.string "me to catch him. That's where you two\l"
-	.string "come in! Please find my Ampure and\l"
-	.string "bring him back to me. He couldn't have\l"
-	.string "wandered off too far, so try searching\l"
-	.string "between here and Sunset Village. As\l"
-	.string "long as you have your Pokémon, you'll\l"
-	.string "be safe in the tall grass.\l"
-	.string "I entrust you two with bringing Ampure\l"
+	.string "me to catch him.\p"
+	.string "That's where you two come in!\n"
+	.string "Please find my Ampure and bring him\l"
+	.string "back to me.\p"
+	.string "He couldn't have wandered off too far,\n"
+	.string "so try searching between here and\l"
+	.string "Sunset Village.\p"
+	.string "As long as you have your Pokémon, you'll\n"
+	.string "be safe in the tall grass.\p"
+	.string "I entrust you two with bringing Ampure\n"
 	.string "back safely!$"
 
 WillowsLab_PokedexDescription::
-	.string "Willow: Yes, Bradley.\n"
-	.string "In fact, I'm pretty sure that they're\l"
+	.string "Willow: Yes, Bradley.\p"
+	.string "In fact, I'm pretty sure that they're\n"
 	.string "the only ones to ever come to Caldera\l"
 	.string "or Kirant.\p"
 	.string "Prof. Oak of the Kanto region gave\n"
-	.string "these to me when he found out I was\l"
-	.string "coming here.\p"
+	.string "these to me when he heard I was coming\l"
+	.string "here.\p"
 	.string "But my research has prevented me from\n"
-	.string "filling them properly. I think that you\l"
-	.string "two will be perfect for the job.\p"
+	.string "filling them properly.\p"
+	.string "I think that you two will be perfect for\n"
+	.string "the job.\p"
 	.string "Your Pokémon are already quite fond of\n"
-	.string "you and you should have no problem\l"
-	.string "catching and trading Pokémon beyond\l"
-	.string "this town.$"
+	.string "you.\p"
+	.string "You should have no problem catching\n"
+	.string "and trading Pokémon beyond this town!$"
 
 WillowsLab_SayGoodbyeToMom::
 	.string "Willow: I've never seen such\n"
 	.string "determination as I see right now in\l"
 	.string "both of you.\p"
 	.string "I'd be more than happy to take you\n"
-	.string "across the water to Sunset Village, but\l"
-	.string "before we leave you much promise me\l"
+	.string "across the water to Sunset Village.\p"
+	.string "But before we leave you much promise me\n"
 	.string "you will say goodbye to your families.$"
 
 WillowsLab_HowWasYourMom::
 	.string "Bradley: How was your mom?\p"
 	.string "… … …\n"
-	.string "Ya, mine was pretty sad too, but she's\l"
-	.string "sure we'll be fine.\p"
+	.string "… … …\p"
+	.string "Yeah…\n"
+	.string "Mine was pretty sad too, but she's sure\l"
+	.string "we'll be fine.\p"
 	.string "Who knows?\n"
 	.string "Maybe we'll return as Pokémon Champions\l"
 	.string "and our parents will never have to\l"
@@ -1472,12 +1502,12 @@ WillowsLab_NotABadIdea::
 
 WillowsLab_DescribePokemonLeague::
 	.string "Bradley: Yeah, {PLAYER}!\n"
-	.string "That will be perfect!\l"
-	.string "Here, I'll explain how the League works\l"
+	.string "That will be perfect!\p"
+	.string "Here, I'll explain how the League works\n"
 	.string "in our region.\p"
 	.string "Unlike other places, our League has 12\n"
-	.string "gyms!\l"
-	.string "Six gyms here in Caldera, and six in\l"
+	.string "gyms!\p"
+	.string "Six gyms here in Caldera, and six in\n"
 	.string "Kirant.\p"
 	.string "If you defeat all 12 and collect the\n"
 	.string "badges they give you, you'll be allowed\l"
@@ -1488,6 +1518,7 @@ WillowsLab_DescribePokemonLeague::
 
 WillowsLab_FroyLivesAway::
 	.string "Willow: I'm only taking you as far as\n"
-	.string "Sunset Village. The first gym leader,\l"
-	.string "Froy, lives in Cranewing City. That's\l"
-	.string "another two towns over.$"
+	.string "Sunset Village.\p"
+	.string "The first gym leader, Froy, lives in\n"
+	.string "Cranewing City.\p"
+	.string "That's another two towns over.$"

@@ -96,6 +96,7 @@ NeoBay_EventScript_BradleyStopsPlayer_8:
 NeoBay_EventScript_BradleyStopsPlayer_1:
 	msgbox NeoBay_EventScript_BradleyStopsPlayer_Text_0
 	waitmessage
+	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	switch VAR_TEMP_1
 	case 24, NeoBay_EventScript_BradleyStopsPlayer_6
@@ -756,13 +757,14 @@ NeoBay_EventScript_BradleyStopsPlayer_Text_0:
 	.string "Let's battle!$"
 
 NeoBay_EventScript_BradleyStopsPlayer_Text_1:
-	.string "Bradley: What are you doing? We need to\n"
-	.string "find Ampure before it gets away!$"
+	.string "Bradley: What are you doing?\n"
+	.string "We need to find Ampure before it gets\l"
+	.string "away!$"
 
 NeoBay_EventScript_BradleyConversation_Text_0:
 	.string "Bradley: I haven't seen Ampure\n"
-	.string "anywhere. You should check that tall\l"
-	.string "grass!$"
+	.string "anywhere.\p"
+	.string "You should check that tall grass!$"
 
 NeoBay_EventScript_BradleyOptional_Text_0:
 	.string "Bradley: Hey, what are you up to?\p"
@@ -787,7 +789,7 @@ NeoBay_EventScript_BradleyBattle_Text_0:
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
 	.string "Bradley: I think I see some tracks here.\n"
-	.string "They're heading towards… the meadow?\l"
+	.string "They're heading towards… the meadow?\p"
 	.string "I wonder why he'd go there…$"
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_1:
@@ -796,29 +798,32 @@ NeoBay_EventScript_BradleyLeadsToGrass_Text_1:
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_2:
 	.string "Bradley: Help me look for Ampure,\n"
-	.string "{PLAYER}! He's probably hiding in this\l"
-	.string "tall grass. If you walk around enough,\l"
-	.string "he should appear!$"
+	.string "{PLAYER}!\p"
+	.string "He's probably hiding in this tall grass.\p"
+	.string "If you walk around enough, he should\n"
+	.string "appear!$"
 
 NeoBay_EventScript_AmpureRescueAfterFirst_Text_0:
-	.string "Bradley: Did you find him?\l"
-	.string "… … oh, well keep looking.\l"
+	.string "Bradley: Did you find him?\n"
+	.string "… … …\p"
+	.string "Oh, well keep looking.\p"
 	.string "Here, I'll heal your Pokémon for you.$"
 
 NeoBay_EventScript_AmpureRescueAfterSecond_Text_0:
-	.string "Bradley: Any luck this time?\l"
-	.string "… … oh, well keep looking.\l"
+	.string "Bradley: Any luck this time?\n"
+	.string "… … …\p"
+	.string "Oh, well keep looking.\p"
 	.string "Here, I'll heal your Pokémon again.$"
 
 NeoBay_EventScript_AmpureCapture_Text_0:
 	.string "Bradley: I think he likes you,\n"
-	.string "{PLAYER}! Just stay still, I'll catch\l"
-	.string "him!$"
+	.string "{PLAYER}!\p"
+	.string "Just stay still, I'll catch him!$"
 
 NeoBay_EventScript_AmpureCapture_Text_1:
 	.string "Bradley: ALRIGHT! And that was my first\n"
-	.string "time, too!\l"
-	.string "Let's go back and return Ampure to\l"
+	.string "time, too!\p"
+	.string "Let's go back and return Ampure to\n"
 	.string "Prof. Willow!$"
 
 NeoBay_EventScript_DoBradleyBattle_Text_0:
@@ -848,39 +853,41 @@ NeoBay_Text_OtherMailbox::
 	.string "people's mail!$"
 
 NeoBay_Text_BradleyIntroStart::
-	.string "Bradley: Well, if it isn't {PLAYER}!\n"
-	.string "So you've finally woken up, sleepyhead?\l"
-	.string "Honestly, you've got a whole lot of\l"
-	.string "nerve, making a friend wait like that!\l"
-	.string "… … Nah, I'm just kidding! I'm not that\l"
-	.string "bad of a guy, y'know? Anyway!$"
+	.string "Bradley: Well, if it isn't {PLAYER}!\p"
+	.string "So you've finally woken up, sleepyhead?\p"
+	.string "Honestly, you've got a whole lot of\n"
+	.string "nerve, making a friend wait like that!\p"
+	.string "… … Nah, I'm just kidding!\n"
+	.string "I'm not that bad of a guy, y'know?\p"
+	.string "Anyway!$"
 
 NeoBay_Text_BradleyIntroStartLetsGo::
 	.string "Bradley: I called you here because I've\n"
 	.string "got a once-in-a-lifetime opportunity\l"
-	.string "for ya!\l"
-	.string "There's someone you absolutely,\l"
-	.string "definitely, positively HAVE to meet!\l"
-	.string "Trust me, it'll be worth your time. I\l"
-	.string "promise!\l"
+	.string "for ya!\p"
+	.string "There's someone you absolutely,\n"
+	.string "definitely, positively HAVE to meet!\p"
+	.string "Trust me, it'll be worth your time.\n"
+	.string "I promise!\p"
 	.string "Come on, come on! This way!$"
 
 NeoBay_Text_BradleyShowBoatStart::
-	.string "Bradley: Look! You've noticed this\n"
-	.string "sleek-looking boat moored here for a\l"
-	.string "while now, right? Well, this boat\l"
-	.string "belongs to none other than Prof.\l"
-	.string "Willow!\p"
-	.string "… … …\l"
+	.string "Bradley: Look!\n"
+	.string "You've noticed this sleek- looking boat\l"
+	.string "moored here for a while now, right?\p"
+	.string "Well, this boat belongs to none other\n"
+	.string "than Prof. Willow!\p"
+	.string "… … …\n"
 	.string "… … …\p"
-	.string "What, you haven't heard of her? I guess\n"
-	.string "you're not quite as worldly as your pal\l"
-	.string "Bradley!\p"
+	.string "What, you haven't heard of her?\n"
+	.string "I guess you're not quite as worldly as\l"
+	.string "your pal Bradley!\p"
 	.string "… Anyway, she's a world-famous Pokémon\n"
 	.string "Professor, known for her research on\l"
-	.string "ancient Pokémon fossils!\l"
-	.string "She's cool, calm, composed … and when it\l"
-	.string "comes to Pokémon, she's a genius!\p"
+	.string "ancient Pokémon fossils!\p"
+	.string "She's cool, calm, composed…\n"
+	.string "and when it comes to Pokémon, she's a\l"
+	.string "genius!\p"
 	.string "I really admire her!\n"
 	.string "Come on, let's go meet her now!$"
 

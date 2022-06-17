@@ -65,7 +65,7 @@ script(global) WillowsLab_YouGoFirst {
         msgbox(format("Bradley: I guess we'd better go talk to our folks like the Prof. said…"), MSGBOX_NPC)
         end
     }
-    msgbox(format("Bradley: I just can't decide! You go first, {PLAYER}! Come on, come on!"), MSGBOX_NPC)
+    msgbox(format("Bradley: I just can't decide!\nYou go first, {PLAYER}!\pCome on, come on, come on!"), MSGBOX_NPC)
     end
 }
 
@@ -75,46 +75,46 @@ script(global) WillowsLab_TakeYourTime {
         faceplayer
 	    msgbox(format("Willow: So, you stopped by your family to say goodbye, did you?"), MSGBOX_YESNO)
 	    if(var(VAR_RESULT) == YES) {
-            msgbox(format("Willow: … … …\n… … …\pYou haven't even left my lab. Get going before I regret giving you a Pokémon!"), MSGBOX_NPC)
+            msgbox(format("Willow: … … …\n… … …\pYou haven't even left my lab.\pGet going before I regret giving you a Pokémon!"), MSGBOX_NPC)
         }
         else {
-            msgbox(format("Willow: Better get going! If you're not back in time, we'll meet you at Sunset Village.\pI believe Route 201 is open now, if\nyou'd rather take that path."))
+            msgbox(format("Willow: Better get going!\pIf you're not back in time, we'll meet you at Sunset Village.\pI believe Route 201 is open now, if you'd rather take that path."))
         }
         releaseall
     }
     else {
-        msgbox(format("Willow: Ohoho, can't decide? Take your time, this is a big decision!"), MSGBOX_NPC)
+        msgbox(format("Willow: Ohoho, can't decide?\pTake your time, this is a big decision!"), MSGBOX_NPC)
     }
     end
 }
 
 script(global) WillowsLab_Books1 {
-    msgbox(format("There's a book titled “People and Pokémon: Nature's Balance” …sounds a little dense…"), MSGBOX_SIGN)
+    msgbox(format("There's a book titled “People and Pokémon: Nature's Balance”…\pSounds a little dense…"), MSGBOX_SIGN)
     end
 }
 
 script(global) WillowsLab_Books2 {
-    msgbox(format("There's a book titled “Ancient Pokémon Mythos” …sounds intruguing!"), MSGBOX_SIGN)
+    msgbox(format("There's a book titled “Ancient Pokémon Mythos”…\pSounds intruguing!"), MSGBOX_SIGN)
     end
 }
 
 script(global) WillowsLab_Books3 {
-    msgbox(format("There's a book titled “The Lifecycles of Bug Pokémon” …sounds gross!"), MSGBOX_SIGN)
+    msgbox(format("There's a book titled “The Lifecycles of Bug Pokémon”…\pSounds gross!"), MSGBOX_SIGN)
     end
 }
 
 script(global) WillowsLab_Books4 {
-    msgbox(format("There's a book titled “The Varied Pokémon of Mt. Frost” …sounds like an interesting place!"), MSGBOX_SIGN)
+    msgbox(format("There's a book titled “The Varied Pokémon of Mt. Frost”…\pSounds like an interesting place!"), MSGBOX_SIGN)
     end
 }
 
 script(global) WillowsLab_Books5 {
-    msgbox(format("There are tons of dusty textbooks … it looks like Prof. Willow hasn't used this shelf in a while."), MSGBOX_SIGN)
+    msgbox(format("There are tons of dusty textbooks…\pIt looks like Prof. Willow hasn't used this shelf in a while."), MSGBOX_SIGN)
     end
 }
 
 script(global) WillowsLab_WillowsComputer {
-    msgbox(format("This is Prof. Willow's personal computer. The screen is covered in graphs and data!"), MSGBOX_SIGN)
+    msgbox(format("This is Prof. Willow's personal computer.\pThe screen is covered in graphs and data!"), MSGBOX_SIGN)
 }
 
 script(global) WillowsLab_WillowsNotes {
@@ -122,7 +122,7 @@ script(global) WillowsLab_WillowsNotes {
 }
 
 script(global) WillowsLab_ExpensiveMachine {
-    msgbox(format("Looks like an expensive machine. Hopefully Ampure didn't break anything!"), MSGBOX_SIGN)
+    msgbox(format("Looks like an expensive machine.\pHopefully Ampure didn't break anything!"), MSGBOX_SIGN)
 }
 
 script(global) WillowsLab_TrashCan {
@@ -185,7 +185,7 @@ script(global) WillowsLab_EventScript_SelectEchoise {
 
 script(global) WillowsLab_EventScript_WhereAreYouGoing {
     lock
-    msgbox(format("Bradley: Hey! Where are you going? Hurry up and choose a Pokémon already!"), MSGBOX_SIGN)
+    msgbox(format("Bradley: Hey!\nWhere are you going?\pHurry up and choose a Pokémon already!"), MSGBOX_SIGN)
     waitmessage
     applymovement(PLAYER, mWalkDown)
     waitmovement(PLAYER)
@@ -245,6 +245,7 @@ script(local) WillowIntroduction {
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_MET_WILLOW)
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_STARTED)
     setmetatile(8, 2, METATILE_Lab_Door_WillowsLabExit, 0)
+    special(DrawWholeMapView)
     opendoor(DOOR_POS_X, DOOR_POS_Y)
     waitdooranim
     addobject(BRADLEY)
@@ -272,7 +273,7 @@ script(local) WillowIntroduction {
     waitmessage
     applymovement(WILLOW, mFaceDown)
     waitmovement(WILLOW)
-    msgbox(format("Willow: Come on, Ampure! That's fragile! Get back in your Pokéball!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Willow: Come on, Ampure!\nThat's fragile!\pGet back in your Pokéball!"), MSGBOX_AUTOCLOSE)
     applymovement(AMPURE, mAmpureRunsAround)
     applymovement(BRADLEY, mBradleyRushesUp)
     delay(15)
@@ -297,12 +298,12 @@ script(local) WillowIntroduction {
     applymovement(BRADLEY, mFaceUp)
     applymovement(PLAYER, mFaceUp)
     waitmovement(AMPURE)
-    msgbox(format("Willow: Oh, not again … that little rascal just will not keep still!"))
+    msgbox(format("Willow: Oh, not again…\pThat little rascal just will not keep still!"))
     applymovement(BRADLEY, mFaceLeft)
     applymovement(PLAYER, mFaceLeft)
     waitmovement(BRADLEY)
     msgbox(format("Bradley: Are you alright, Prof. Willow?"))
-    msgbox(format("Willow: Ohohoho! Thanks for showing concern, Bradley, but I'm fine. This happens all the time."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Willow: Ohohoho!\pThanks for showing concern, Bradley, but I'm fine.\pThis happens all the time."), MSGBOX_AUTOCLOSE)
     applymovement(WILLOW, mWillowComesUpToFriends)
     delay(10)
     applymovement(BRADLEY, mFaceDown)
@@ -310,7 +311,7 @@ script(local) WillowIntroduction {
     applymovement(PLAYER, mFaceDown)
     waitmovement(WILLOW)
     msgbox(format("Oh? And who are you?"))
-    msgbox(format("Bradley: This is {PLAYER}. They've been my friend for as long as I can remember."))
+    msgbox(format("Bradley: This is {PLAYER}.\pThey've been my friend for as long as I can remember."))
     msgbox(WillowsLab_WillowIntroduction, MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(BRADLEY, mFaceRight)
@@ -321,10 +322,10 @@ script(local) WillowIntroduction {
     applymovement(BRADLEY, mFaceDown)
     applymovement(PLAYER, mFaceDown)
     waitmovement(PLAYER)
-    msgbox(format("Willow: Did I now?\n… Ah, I remember now!\lOhoho, you're quite right!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Willow: Did I now?\n… Ah, I remember now!\pOhoho, you're quite right!"), MSGBOX_AUTOCLOSE)
     applymovement(WILLOW, mWillowGoesToTable)
     waitmovement(WILLOW)
-    msgbox(format("Willow: There are three Pokéballs on this table. Each one contains an extremely rare Pokémon. Bradley, go ahead and choose whichever you like!"))
+    msgbox(format("Willow: There are three Pokéballs on this table.\pEach one contains an extremely rare Pokémon.\pBradley, go ahead and choose whichever you like!"))
     msgbox("Bradley: Actually…", MSGBOX_AUTOCLOSE)
     applymovement(BRADLEY, mBradleyDeliberates)
     waitmovement(BRADLEY)
@@ -333,8 +334,8 @@ script(local) WillowIntroduction {
     applymovement(PLAYER, mFaceLeft)
     applymovement(WILLOW, mExclamationPoint)
     waitmovement(WILLOW)
-    msgbox(format("Willow: But Bradley! You earned this Pokémon yourself! You deserve it!"))
-    msgbox(format("Bradley: No, I made up my mind a long time ago. I want {PLAYER} to have the Pokémon!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Willow: But Bradley!\nYou earned this Pokémon yourself!\lYou deserve it!"))
+    msgbox(format("Bradley: No, I made up my mind a long time ago.\pI want {PLAYER} to have the Pokémon!"), MSGBOX_AUTOCLOSE)
     applymovement(WILLOW, mFaceRight)
     applymovement(PLAYER, mFaceDown)
     waitmovement(WILLOW)
@@ -345,16 +346,16 @@ script(local) WillowIntroduction {
     applymovement(WILLOW, mFaceUp)
     waitmovement(WILLOW)
     msgbox(WillowsLab_WillowConcedes)
-    msgbox(format("Alright, I've decided. Both of you will receive a Pokémon!"))
+    msgbox(format("Alright, I've decided.\pBoth of you will receive a Pokémon!"))
     applymovement(BRADLEY, mBradleyFidgetsDown)
     msgbox(format("Bradley: Wow, Prof. Willow!\nReally!?"))
-    msgbox(format("Willow: Ohoho, how can I refuse such a sincere request? Go ahead and choose any Pokéball on the table."))
-    msgbox(format("Bradley: This is awesome! Thank you so much, Prof. Willow!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Willow: Ohoho, how can I refuse such a sincere request?\pGo ahead and choose any Pokéball on the table."))
+    msgbox(format("Bradley: This is awesome!\nThank you so much, Prof. Willow!"), MSGBOX_AUTOCLOSE)
     applymovement(BRADLEY, mFaceRight)
     delay(15)
     applymovement(PLAYER, mFaceLeft)
     waitmovement(BRADLEY)
-    msgbox(format("Bradley: I'm so excited! You go first, {PLAYER}. Come on come on, choose on!"))
+    msgbox(format("Bradley: I'm so excited!\nYou go first, {PLAYER}.\pCome on come on, choose one!"))
     waitmessage
     closemessage
     copyobjectxytoperm(BRADLEY)
@@ -435,7 +436,7 @@ script(local) WillowsLab_ReceivedStarter {
 script(local) WillowsLab_BradleyChoosesVenap {
     applymovement(BRADLEY, mBradleyWalksToVenap)
     waitmovement(BRADLEY)
-    msgbox(format("Bradley: I've made up my mind. I'll take this one!"))
+    msgbox(format("Bradley: I've made up my mind.\pI'll take this one!"))
     bufferspeciesname(0, SPECIES_VENAP)
     setvar(VAR_TEMP_1, SPECIES_VENAP)
     removeobject(VENAP_BALL)
@@ -447,7 +448,7 @@ script(local) WillowsLab_BradleyChoosesVenap {
 script(local) WillowsLab_BradleyChoosesCelsinge {
     applymovement(BRADLEY, mBradleyWalksToCelsinge)
     waitmovement(BRADLEY)
-    msgbox(format("Bradley: I've made up my mind. I'll take this one!"))
+    msgbox(format("Bradley: I've made up my mind.\pI'll take this one!"))
     bufferspeciesname(0, SPECIES_CELSINGE)
     setvar(VAR_TEMP_1, SPECIES_CELSINGE)
     removeobject(CELSINGE_BALL)
@@ -459,7 +460,7 @@ script(local) WillowsLab_BradleyChoosesCelsinge {
 script(local) WillowsLab_BradleyChoosesEchoise {
     applymovement(BRADLEY, mBradleyWalksToEchoise)
     waitmovement(BRADLEY)
-    msgbox(format("Bradley: I've made up my mind. I'll take this one!"))
+    msgbox(format("Bradley: I've made up my mind.\pI'll take this one!"))
     bufferspeciesname(0, SPECIES_ECHOISE)
     setvar(VAR_TEMP_1, SPECIES_ECHOISE)
     removeobject(ECHOISE_BALL)
@@ -505,18 +506,18 @@ script(local) WillowsLab_RegroupAfterPlayerChoosesEchoise {
 
 script(local) WillowsLab_YourePokemonTrainersNow {
     setflag(FLAG_SYS_POKEMON_GET)
-    msgbox(format("Willow: Ohohoho, the looks on your faces are priceless!\lFrom now on, both of you are officially Pokémon Trainers! Congratulations!"))
-    msgbox(format("Bradley: You hear that, {PLAYER}? We're legit Pokémon Trainers now! We're going straight to the big leagues!"))
+    msgbox(format("Willow: Ohohoho, the looks on your faces are priceless!\pFrom now on, both of you are officially Pokémon Trainers!\lCongratulations!"))
+    msgbox(format("Bradley: You hear that, {PLAYER}?\nWe're legit Pokémon Trainers now!\pWe're going straight to the big leagues!"))
     msgbox(format("Willow: Ahem!\nBefore scampering off with your new Pokémon, there's something I'd like you to do for me in return."))
     msgbox(format("Bradley: Anything, professor!"))
     msgbox(WillowsLab_AmpureMissionDescription)
-    msgbox(format("Bradley: Not a problem, Prof. Willow! We'll have your Ampure back before you know it!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Bradley: Not a problem, Prof. Willow!\pWe'll have your Ampure back before you know it!"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(BRADLEY, mFaceRight)
     applymovement(PLAYER, mFaceLeft)
     waitmovement(PLAYER)
     delay(30)
-    msgbox(format("Bradley: Let's go, {PLAYER}! We owe the professor, so let's go search for her Ampure!\lCome on, race ya there!"))
+    msgbox(format("Bradley: Let's go, {PLAYER}!\pWe owe the professor, so let's go search for her Ampure!\pCome on, race ya there!"))
     waitmessage
     closemessage
     applymovement(BRADLEY, mBradleyExits)
@@ -534,12 +535,12 @@ script(local) WillowsLab_AmpureRescued {
     applymovement(BRADLEY, mBradleyFidgetsRight)
     waitmovement(BRADLEY)
     msgbox(format("Bradley: We did it professor!\n{PLAYER} found Ampure and I caught it!"))
-    msgbox(format("Willow: Ohohohoho! I'm glad. It would have taken me ages to find Ampure by myself. Thank you very much, you two."))
+    msgbox(format("Willow: Ohohohoho!\nI'm glad.\pIt would have taken me ages to find Ampure by myself.\pThank you very much, you two."))
     waitmessage
     closemessage
     applymovement(WILLOW, mWillowDeliberates)
     waitmovement(WILLOW)
-    msgbox(format("Willow: I think I have the perfect way to reward you. Each of you can take one of these."))
+    msgbox(format("Willow: I think I have the perfect way to reward you.\pEach of you can take one of these."))
     waitmessage
     closemessage
     call(WillowsLab_ReceivedPokedex)
@@ -549,12 +550,12 @@ script(local) WillowsLab_AmpureRescued {
     closemessage
     applymovement(BRADLEY, mBradleyFidgetsUp)
     waitmovement(BRADLEY)
-    msgbox("Bradley: Did you hear that, {PLAYER}!?\nWe're finally going to be able\lto find Simon.")
+    msgbox("Bradley: Did you hear that, {PLAYER}!?\pWe're finally going to be able\nto find Simon.")
     waitmessage
     closemessage
     fadescreen(FADE_TO_BLACK)
     msgbox("Willow: Who is this Simon?")
-    msgbox("Bradley: … … …\nHe was our friend…\l…and he was my brother.")
+    msgbox("Bradley: … … …\nHe was our friend…\p…and he was my brother.")
     waitmessage
     closemessage
     call(Script_SetGrayscaleTint)
@@ -627,7 +628,7 @@ script(local) WillowsLab_Departure {
     applymovement(BRADLEY, mBradleyFidgetsDown)
     msgbox(format("Bradley: I can't wait until we get to land!"))
     waitmessage
-    msgbox(format("Willow: Ohohoho! That's good, Bradley, because we've arrived!"))
+    msgbox(format("Willow: Ohohoho!\pThat's good, Bradley, because we've arrived!"))
     waitmessage
     setvar(VAR_0x8004, 0)  // vertical pan
     setvar(VAR_0x8005, 2)  // horizontal pan
@@ -663,35 +664,36 @@ script(local) WillowsLab_Departure {
 //=====================================
 text WillowsLab_WillowIntroduction {
     format(
-        "Willow: Ohoho, so you're {PLAYER}! Bradley talks about you quite a lot. "
-        "You can call me Prof. Willow. I'm here studying Pokémon habitats in the Neo Bay area. Research is what I do best.\l"
-        "I'm not too good at handling Pokémon themselves, unfortunately …"
+        "Willow: Ohoho, so you're {PLAYER}!\nBradley talks about you quite a lot.\p"
+        "You can call me Prof. Willow.\pI'm here studying Pokémon habitats in the Neo Bay area.\pResearch is what I do best.\p"
+        "I'm not too good at handling Pokémon themselves, unfortunately…"
     )
 }
 
 text WillowsLab_BradleyIsAnAssistant {
     format(
-        "Bradley: I never told you this, but I have been helping PROF. WILLOW with her research. "
-        "Collecting samples, taking measurements, all that science-y stuff.\l"
+        "Bradley: I never told you this, but I have been helping PROF. WILLOW with her research.\p"
+        "Collecting samples, taking measurements, all that science-y stuff.\p"
         "It's hard work, but in return she promised me a rare Pokémon!"
     )
 }
 
 text WillowsLab_WillowCantJustGivePokemon {
     format(
-        "Willow: Even so, I can't just hand a Pokémon to anybody! "
-        "Owning a Pokémon comes with many responsibilities. Bradley, "
-        "you've already shown me that you're capable of becoming a Pokémon Trainer. "
+        "Willow: Even so, I can't just hand a Pokémon to anybody!\p"
+        "Owning a Pokémon comes with many responsibilities.\p"
+        "Bradley, you've already shown me that "
+        "you're capable of becoming a Pokémon Trainer.\p"
         "I only met {PLAYER} today!"
     )
 }
 
 text WillowsLab_BradleyIsReallySure {
     format(
-        "Bradley: {PLAYER} has wanted to be a Pokémon Trainer their entire life! "
+        "Bradley: {PLAYER} has wanted to be a Pokémon Trainer their entire life!\p"
         "Nobody is more passionate and responsible than them, and they'd definitely "
-        "make a better Pokémon Trainer than I would!\l"
-        "Trust me on this one, professor!"
+        "make a better Pokémon Trainer than I would!\p"
+        "Please, professor.\nTrust me on this one!"
     )
 }
 
@@ -699,22 +701,25 @@ text WillowsLab_WillowConcedes {
     format(
         "… … … …\n"
         "… … … …\l"
-        "… Ohohohohoho! I see, I see. So that's how it is!\l"
-        "You're a subborn one, Bradley, but I like that. {PLAYER}, you're lucky to have such a good friend.\l"
+        "… … … …\l"
+        "… … … …\p"
+        "… Ohohohohoho! I see, I see. So that's how it is!\p"
+        "You're a subborn one, Bradley, but I like that.\p"
+        "{PLAYER}, you're lucky to have such a good friend.\p"
         "I must say, I'm a bit envious myself!"
     )
 }
 
 text WillowsLab_DontBeGreedyText {
     format(
-        "You already chose a Pokémon! Better not be greedy."
+        "You already chose a Pokémon!\nBetter not be greedy."
     )
 }
 
 text WillowsLab_DoYouWantVenap {
     format(
         "Prof. Willow: The Grass Pokémon Venap caught your eye?\p"
-        "It might be difficult to raise…but you won't regret it!\p"
+        "It might be difficult to raise…\nbut you won't regret it!\p"
         "Is Venap your final decision?"
     )
 }
@@ -722,7 +727,7 @@ text WillowsLab_DoYouWantVenap {
 text WillowsLab_DoYouWantCelsinge {
     format(
         "Prof. Willow: The Fire Pokémon Celsinge is your pick?\p"
-        "You can't go wrong there! You'll be set up for success!\p"
+        "You can't go wrong there!\nYou'll be set up for success!\p"
         "Do you want to choose Celsinge?"
     )
 }
@@ -730,81 +735,94 @@ text WillowsLab_DoYouWantCelsinge {
 text WillowsLab_DoYouWantEchoise {
     format(
         "Prof. Willow: The Water Pokémon Echoise is your favorite?\p"
-        "Excellent choice! Isn't it just the cutest?\p"
+        "Excellent choice!\nIsn't it just the cutest?\p"
         "Are you certain you want Echoise?"
     )
 }
 
 text WillowsLab_AmpureMissionDescription {
     format(
-        "Willow: Very well.\nAs you saw earlier, my Ampure has escaped…\l…again."
-        "I'd go find him myself, but with my luck, it would take a whole day for me to catch him."
-        "That's where you two come in! Please find my Ampure and bring him back to me."
-        "He couldn't have wandered off too far, so try searching between here and Sunset Village."
-        "As long as you have your Pokémon, you'll be safe in the tall grass.\l"
+        "Willow: Very well.\p"
+        "As you saw earlier, my Ampure has escaped…\n…again."
+        "I'd go find him myself, but with my luck, "
+        "it would take a whole day for me to catch him.\p"
+        "That's where you two come in!\n"
+        "Please find my Ampure and bring him back to me.\p"
+        "He couldn't have wandered off too far, "
+        "so try searching between here and Sunset Village.\p"
+        "As long as you have your Pokémon, you'll be safe in the tall grass.\p"
         "I entrust you two with bringing Ampure back safely!"
     )
 }
 
 text WillowsLab_PokedexDescription {
     format(
-        "Willow: Yes, Bradley.\nIn fact, I'm pretty sure that they're "
-        "the only ones to ever come to Caldera or Kirant.\pProf. Oak "
-        "of the Kanto region gave these to me when he found out I "
-        "was coming here.\pBut my research has prevented me from "
-        "filling them properly. I think that you two will be perfect "
-        "for the job.\pYour Pokémon are already quite fond of you "
-        "and you should have no problem catching and trading "
-        "Pokémon beyond this town."
+        "Willow: Yes, Bradley.\p"
+        "In fact, I'm pretty sure that they're "
+        "the only ones to ever come to Caldera or Kirant.\p"
+        "Prof. Oak of the Kanto region gave these to me when he heard I "
+        "was coming here.\p"
+        "But my research has prevented me from filling them properly.\p"
+        "I think that you two will be perfect for the job.\p"
+        "Your Pokémon are already quite fond of you.\p"
+        "You should have no problem catching and trading "
+        "Pokémon beyond this town!"
     )
 }
 
 text WillowsLab_SayGoodbyeToMom {
     format(
-        "Willow: I've never seen such determination as I see right now "
-        "in both of you.\pI'd be more than happy to take you across the "
-        "water to Sunset Village, but before we leave you much promise "
+        "Willow: I've never seen such determination "
+        "as I see right now in both of you.\p"
+        "I'd be more than happy to take you across the "
+        "water to Sunset Village.\p"
+        "But before we leave you much promise "
         "me you will say goodbye to your families."
     )
 }
 
 text WillowsLab_HowWasYourMom {
     format(
-        "Bradley: How was your mom?\p… … …\nYa, mine was pretty sad "
-        "too, but she's sure we'll be fine.\pWho knows?\nMaybe we'll "
-        "return as Pokémon Champions and our parents will never "
-        "have to worry about us again!"
+        "Bradley: How was your mom?\p"
+        "… … …\n… … …\p"
+        "Yeah…\n"
+        "Mine was pretty sad too, but she's sure we'll be fine.\p"
+        "Who knows?\n"
+        "Maybe we'll return as Pokémon Champions "
+        "and our parents will never have to worry about us again!"
     )
 }
 
 text WillowsLab_NotABadIdea {
     format(
-        "Willow: That isn't a bad idea, Bradley.\p{PLAYER}, have you "
-        "ever thought of taking the Pokémon League challenge?\pNot only "
-        "will your Pokémon grow along the way, it will help you complete "
-        "your Pokédex and take you all around the regions in "
-        "search of your friend.\pYou could achive all of your goals "
-        "at the same time."
+        "Willow: That isn't a bad idea, Bradley.\p"
+        "{PLAYER}, have you ever thought of taking the Pokémon League challenge?\p"
+        "Not only will your Pokémon grow along the way, "
+        "it will help you complete your Pokédex and take you "
+        "all around the regions in search of your friend.\p"
+        "You could achive all of your goals at the same time."
     )
 }
 
 text WillowsLab_DescribePokemonLeague {
     format(
-        "Bradley: Yeah, {PLAYER}!\nThat will be perfect!\lHere, I'll explain "
-        "how the League works in our region.\pUnlike other places, "
-        "our League has 12 gyms!\lSix gyms here in Caldera, and six in "
-        "Kirant.\pIf you defeat all 12 and collect the badges they give "
+        "Bradley: Yeah, {PLAYER}!\n"
+        "That will be perfect!\p"
+        "Here, I'll explain how the League works in our region.\p"
+        "Unlike other places, our League has 12 gyms!\p"
+        "Six gyms here in Caldera, and six in Kirant.\p"
+        "If you defeat all 12 and collect the badges they give "
         "you, you'll be allowed into Triumph Spire, where the "
-        "Elite Four await…\pBut we have a LONG way to go before that "
-        "happens!"
+        "Elite Four await…\p"
+        "But we have a LONG way to go before that happens!"
     )
 }
 
 text WillowsLab_FroyLivesAway {
     format(
-        "Willow: I'm only taking you as far as Sunset Village. The first "
-        "gym leader, Froy, lives in Cranewing City.  That's another two "
-        "towns over."
+        "Willow: I'm only taking you as far as Sunset Village.\p"
+        "The first gym leader, Froy, lives in Cranewing City.\p"
+        "That's another two towns over."
     )
 }
 

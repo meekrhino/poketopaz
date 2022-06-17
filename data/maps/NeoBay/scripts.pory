@@ -138,7 +138,7 @@ script NeoBay_EventScript_BradleyStopsPlayer {
         goto(NeoBay_EventScript_DoBradleyBattle)
     }
     else {
-        msgbox(format("Bradley: What are you doing? We need to find Ampure before it gets away!"))
+        msgbox(format("Bradley: What are you doing?\nWe need to find Ampure before it gets away!"))
         waitmessage
         closemessage
         getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
@@ -165,7 +165,7 @@ script NeoBay_EventScript_BradleyConversation {
         case AMPURE_RESCUE_BRADLEY_FIGHT:
             goto(NeoBay_EventScript_BradleyBattle)
         default:
-            msgbox(format("Bradley: I haven't seen Ampure anywhere. You should check that tall grass!"))
+            msgbox(format("Bradley: I haven't seen Ampure anywhere.\pYou should check that tall grass!"))
     }
     waitmessage
     closemessage
@@ -287,7 +287,7 @@ script(local) NeoBay_EventScript_BradleyLeadsToGrass {
     applymovement(BRADLEY, mBradleyWalksUpAndLooksAtPlayer)
     applymovement(PLAYER, mPlayerWalksUpAndLooksAtBradley)
     waitmovement(PLAYER)
-    msgbox(format("Bradley: I think I see some tracks here. They're heading towards… the meadow? I wonder why he'd go there…"))
+    msgbox(format("Bradley: I think I see some tracks here.\nThey're heading towards… the meadow?\pI wonder why he'd go there…"))
     msgbox(format("{PLAYER}, I think there may be wild Pokémon where we're going, so be ready!"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(BRADLEY, mBradleyEscortsPlayerToMeadow)
@@ -295,7 +295,7 @@ script(local) NeoBay_EventScript_BradleyLeadsToGrass {
     waitmovement(PLAYER)
     applymovement(BRADLEY, mBradleyLooksAroundAndFidgets)
     waitmovement(BRADLEY)
-    msgbox(format("Bradley: Help me look for Ampure, {PLAYER}! He's probably hiding in this tall grass. If you walk around enough, he should appear!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Bradley: Help me look for Ampure, {PLAYER}!\pHe's probably hiding in this tall grass.\pIf you walk around enough, he should appear!"), MSGBOX_AUTOCLOSE)
     waitmessage
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_IN_MEADOW)
     copyobjectxytoperm(BRADLEY)
@@ -338,7 +338,7 @@ script(local) NeoBay_EventScript_AmpureRescueAfterFirst {
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_FIRST_BATTLE_DONE)
     applymovement(PLAYER, mFaceRight)
     waitmovement(PLAYER)
-    msgbox(format("Bradley: Did you find him?\l… … oh, well keep looking.\lHere, I'll heal your Pokémon for you."))
+    msgbox(format("Bradley: Did you find him?\n… … …\pOh, well keep looking.\pHere, I'll heal your Pokémon for you."))
     waitmessage
     closemessage
     call(Common_EventScript_OutOfCenterPartyHeal)
@@ -350,7 +350,7 @@ script(local) NeoBay_EventScript_AmpureRescueAfterSecond {
     lockall
     applymovement(PLAYER, mFaceRight)
     waitmovement(PLAYER)
-    msgbox(format("Bradley: Any luck this time?\l… … oh, well keep looking.\lHere, I'll heal your Pokémon again."))
+    msgbox(format("Bradley: Any luck this time?\n… … …\pOh, well keep looking.\pHere, I'll heal your Pokémon again."))
 	playfanfare(MUS_HEAL)
 	waitfanfare
     closemessage
@@ -385,7 +385,7 @@ script(local) NeoBay_EventScript_AmpureCapture {
     applymovement(BRADLEY, mLookUpStartled)
     applymovement(PLAYER, mLookUpStartled)
     waitmovement(PLAYER)
-    msgbox(format("Bradley: I think he likes you, {PLAYER}! Just stay still, I'll catch him!"))
+    msgbox(format("Bradley: I think he likes you, {PLAYER}!\pJust stay still, I'll catch him!"))
     waitmessage
     applymovement(BRADLEY, mWalkUpLookRight)
     waitmovement(BRADLEY)
@@ -400,7 +400,7 @@ script(local) NeoBay_EventScript_AmpureCapture {
     turnobject(BRADLEY, DIR_SOUTH)
 	special(LoadPlayerParty)
     fadescreen(FADE_FROM_WHITE)
-    msgbox(format("Bradley: ALRIGHT! And that was my first time, too!\lLet's go back and return Ampure to Prof. Willow!"))
+    msgbox(format("Bradley: ALRIGHT! And that was my first time, too!\pLet's go back and return Ampure to Prof. Willow!"))
     warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6)
     releaseall
     return
@@ -452,29 +452,38 @@ text NeoBay_Text_OtherMailbox {
 
 text NeoBay_Text_BradleyIntroStart {
     format(
-        "Bradley: Well, if it isn't {PLAYER}!\n"
-        "So you've finally woken up, sleepyhead? Honestly, you've got a whole lot of nerve, making a friend wait like that!\l"
-        "… … Nah, I'm just kidding! I'm not that bad of a guy, y'know? Anyway!"
+        "Bradley: Well, if it isn't {PLAYER}!\p"
+        "So you've finally woken up, sleepyhead?\p"
+        "Honestly, you've got a whole lot of nerve, making a friend wait like that!\p"
+        "… … Nah, I'm just kidding!\nI'm not that bad of a guy, y'know?\p"
+        "Anyway!"
     )
 }
 
 text NeoBay_Text_BradleyIntroStartLetsGo {
     format(
-        "Bradley: I called you here because I've got a once-in-a-lifetime opportunity for ya!\l"
-        "There's someone you absolutely, definitely, positively HAVE to meet! Trust me, it'll be worth your time. I promise!\l"
+        "Bradley: I called you here because I've got "
+        "a once-in-a-lifetime opportunity for ya!\p"
+        "There's someone you absolutely, definitely, positively HAVE to meet!\p"
+        "Trust me, it'll be worth your time.\nI promise!\p"
         "Come on, come on! This way!"
     )
 }
 
 text NeoBay_Text_BradleyShowBoatStart {
     format(
-        "Bradley: Look! You've noticed this sleek-looking boat moored here for a while now, right? "
+        "Bradley: Look!\nYou've noticed this sleek-"
+        "looking boat moored here for a while now, right?\p"
         "Well, this boat belongs to none other than Prof. Willow!\p"
-        "… … …\l"
+        "… … …\n"
         "… … …\p"
-        "What, you haven't heard of her? I guess you're not quite as worldly as your pal Bradley!\p"
-        "… Anyway, she's a world-famous Pokémon Professor, known for her research on ancient Pokémon fossils!\l"
-        "She's cool, calm, composed … and when it comes to Pokémon, she's a genius!\pI really admire her!\n"
+        "What, you haven't heard of her?\n"
+        "I guess you're not quite as worldly as your pal Bradley!\p"
+        "… Anyway, she's a world-famous Pokémon Professor, "
+        "known for her research on ancient Pokémon fossils!\p"
+        "She's cool, calm, composed…\n"
+        "and when it comes to Pokémon, she's a genius!\p"
+        "I really admire her!\n"
         "Come on, let's go meet her now!"
     )
 }
