@@ -29,7 +29,7 @@ mapscripts NeoBay_PlayersHouse_1F_MapScripts {
 script(global) PlayersHouse_1F_BradleyReminder {
     switch(var(VAR_NEOBAY_STATE)) {
         case NEOBAY_STATE_SPOKE_TO_MOM:
-            msgbox(format("Mom: Bradley was looking for you, dear.\lHe said you'd know where to find him."), MSGBOX_NPC)
+            msgbox(format("Mom: Bradley was looking for you, dear.\nHe said you'd know where to find him."), MSGBOX_NPC)
         case NEOBAY_STATE_SAW_FLASHBACK:
             call(MomGivesRunningShoes)
         case NEOBAY_STATE_RECEIVED_RUNNING_SHOES:
@@ -77,12 +77,12 @@ script(local) MomGivesRunningShoes {
     lockall
     faceplayer
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_RUNNING_SHOES)
-    msgbox(format("Mom: Hi {PLAYER}. Where have you been all day?\p… … …\pWow, it sounds like an adventure.\nBut I'm not sure I like the idea of you\lleaving…"))
+    msgbox(format("Mom: Hi {PLAYER}. Where have you been all day?\p… … …\n… … …\l… … …\pWow, that sounds like an adventure.\nBut I'm not sure I like the idea of you\lleaving…"))
     waitmessage
     closemessage
     applymovement(MOM, mMomDeliberates1)
     waitmovement(MOM)
-    msgbox(format("Mom: It's dangerous out there, {PLAYER}. I don't think you have any idea…"))
+    msgbox(format("Mom: It's dangerous out there, {PLAYER}.\pI don't think you have any idea…"))
     waitmessage
     closemessage
     applymovement(MOM, mMomDeliberates2)
@@ -106,20 +106,23 @@ script(local) MomGivesRunningShoes {
 //=====================================
 text PlayersHouse_1F_BradleyWasLookingForYou {
     format(
-        "Mom: Oh {PLAYER}! Your friend Bradley just came by looking for you.\p"
-        "He said it was urgent, but I sent him away because you were still "
-        "napping.\pYou should go find him, he was very excited.\lWell, more "
-        "excited than he usually is!"
+        "Mom: Oh {PLAYER}!\nBradley just came by looking for you.\p"
+        "He said it was urgent, but I sent him "
+        "away because you were still asleep.\p"
+        "You should go find him, he was very excited.\p"
+        "Well, even more excited than he usually is."
     )
 }
 
 text PlayersHouse_1F_GivesRunningShoes {
     format(
         "Mom: I understand that you want to find Simon, but there's no "
-        "telling where he could be now.\p… … …\nI guess I've held you "
-        "back for long enough. You'll be with your Pokémon. That should "
-        "be enough.\pBut take these with you, {PLAYER}, and make sure "
-        "you use them."
+        "telling where he could be now.\p"
+        "… … …\n… … …\l… … …\l… … …\p"
+        "I guess I've held you back for long enough.\p"
+        "You'll be with your Pokémon.\n"
+        "That should be enough.\p"
+        "But take these with you, {PLAYER}, and make sure you use them."
     )
 }
 
@@ -127,7 +130,7 @@ text PlayersHouse_1F_SayGoodbye {
     format(
         "Mom: If you're ever in danger, or you need to come home, "
         "these running shoes will help you move much faster.\p"
-        "I'll miss you, {PLAYER}. Make sure you come home once in "
+        "I'll miss you, {PLAYER}.\pMake sure you come home once in "
         "a while."
     )
 }
