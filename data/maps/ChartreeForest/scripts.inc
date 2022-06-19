@@ -1,4 +1,5 @@
 ChartreeForest_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, ChartreeForest_OnResume
 	.byte 0
 
 
@@ -201,6 +202,11 @@ ChartreeForest_Balfour_7:
 ChartreeForest_Balfour_8:
 	applymovement 15, mBalfourDepartsBottom
 	goto ChartreeForest_Balfour_5
+
+
+ChartreeForest_OnResume::
+	setstepcallback STEP_CB_ASH
+	return
 
 
 mFroyApproaches_1:

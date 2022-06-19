@@ -135,7 +135,7 @@ mPlayerWalksOverToMom:
 	step_end
 
 PlayersHouse_1F_BradleyReminder_Text_0:
-	.string "Mom: Bradley was looking for you, dear.\l"
+	.string "Mom: Bradley was looking for you, dear.\n"
 	.string "He said you'd know where to find him.$"
 
 PlayersHouse_1F_BradleyReminder_Text_1:
@@ -157,35 +157,42 @@ PlayersHouse_1F_BradleyReminder_Text_3:
 MomGivesRunningShoes_Text_0:
 	.string "Mom: Hi {PLAYER}. Where have you been\n"
 	.string "all day?\p"
+	.string "… … …\n"
+	.string "… … …\l"
 	.string "… … …\p"
-	.string "Wow, it sounds like an adventure.\n"
+	.string "Wow, that sounds like an adventure.\n"
 	.string "But I'm not sure I like the idea of you\l"
 	.string "leaving…$"
 
 MomGivesRunningShoes_Text_1:
 	.string "Mom: It's dangerous out there,\n"
-	.string "{PLAYER}. I don't think you have any\l"
-	.string "idea…$"
+	.string "{PLAYER}.\p"
+	.string "I don't think you have any idea…$"
 
 MomGivesRunningShoes_Text_2:
 	.string "{PLAYER} put on the\nRunning Shoes.$"
 
 PlayersHouse_1F_BradleyWasLookingForYou::
-	.string "Mom: Oh {PLAYER}! Your friend Bradley\n"
-	.string "just came by looking for you.\p"
+	.string "Mom: Oh {PLAYER}!\n"
+	.string "Bradley just came by looking for you.\p"
 	.string "He said it was urgent, but I sent him\n"
-	.string "away because you were still napping.\p"
+	.string "away because you were still asleep.\p"
 	.string "You should go find him, he was very\n"
-	.string "excited.\l"
-	.string "Well, more excited than he usually is!$"
+	.string "excited.\p"
+	.string "Well, even more excited than he usually\n"
+	.string "is.$"
 
 PlayersHouse_1F_GivesRunningShoes::
 	.string "Mom: I understand that you want to find\n"
 	.string "Simon, but there's no telling where he\l"
 	.string "could be now.\p"
 	.string "… … …\n"
-	.string "I guess I've held you back for long\l"
-	.string "enough. You'll be with your Pokémon.\l"
+	.string "… … …\l"
+	.string "… … …\l"
+	.string "… … …\p"
+	.string "I guess I've held you back for long\n"
+	.string "enough.\p"
+	.string "You'll be with your Pokémon.\n"
 	.string "That should be enough.\p"
 	.string "But take these with you, {PLAYER},\n"
 	.string "and make sure you use them.$"
@@ -194,5 +201,5 @@ PlayersHouse_1F_SayGoodbye::
 	.string "Mom: If you're ever in danger, or you\n"
 	.string "need to come home, these running shoes\l"
 	.string "will help you move much faster.\p"
-	.string "I'll miss you, {PLAYER}. Make sure you\n"
-	.string "come home once in a while.$"
+	.string "I'll miss you, {PLAYER}.\p"
+	.string "Make sure you come home once in a while.$"

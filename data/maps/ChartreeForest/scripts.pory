@@ -28,7 +28,9 @@ const VAR_TEMP_Y = VAR_TEMP_1
 //=====================================
 // Map Scripts
 //=====================================
-mapscripts ChartreeForest_MapScripts {}
+mapscripts ChartreeForest_MapScripts {
+    MAP_SCRIPT_ON_RESUME: ChartreeForest_OnResume
+}
 
 //=====================================
 // Global Scripts
@@ -211,6 +213,9 @@ script(global) ChartreeForest_Balfour {
 //=====================================
 // Local Scripts
 //=====================================
+script ChartreeForest_OnResume {
+	setstepcallback(STEP_CB_ASH)
+}
 
 //=====================================
 // Text
