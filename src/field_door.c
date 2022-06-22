@@ -134,6 +134,12 @@ static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/d
 static const u16 sDoorNullPalette49[16] = {};
 static const u8 sDoorAnimTiles_WillowsLab[] = INCBIN_U8("graphics/door_anims/willows_lab.4bpp");
 static const u16 sDoorNullPalette50[16] = {};
+static const u8 sDoorAnimTiles_Cranewing[] = INCBIN_U8("graphics/door_anims/cranewing.4bpp");
+static const u16 sDoorNullPalette51[16] = {};
+static const u8 sDoorAnimTiles_CranewingBank[] = INCBIN_U8("graphics/door_anims/cranewing_bank.4bpp");
+static const u16 sDoorNullPalette52[16] = {};
+static const u8 sDoorAnimTiles_CranewingGlassworks[] = INCBIN_U8("graphics/door_anims/cranewing_glassworks.4bpp");
+static const u16 sDoorNullPalette53[16] = {};
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -227,6 +233,8 @@ static const u8 sDoorAnimPalettes_NeoBayYellow[] = {9, 9, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_NeoBayGreen[] = {8, 8, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_WillowsLabExit[] = {12, 12, 12, 12, 12, 12, 12, 12};
 static const u8 sDoorAnimPalettes_Cranewing[] = {11, 11, 11, 11, 11, 11, 11, 11};
+static const u8 sDoorAnimPalettes_CranewingBank[] = {12, 12, 12, 12, 5, 5, 5, 5};
+static const u8 sDoorAnimPalettes_CranewingGlassworks[] = {10, 10, 10, 10, 11, 11, 11, 11};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -287,7 +295,9 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_NeoBay_Door_Blue,                             DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_NeoBayBlue},
     {METATILE_NeoBay_Door_Green,                            DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_NeoBayGreen},
     {METATILE_NeoBay_Door_Yellow,                           DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_NeoBayYellow},
-    {METATILE_Cranewing_Door,                               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Littleroot, sDoorAnimPalettes_Cranewing},
+    {METATILE_Cranewing_Door,                               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Cranewing, sDoorAnimPalettes_Cranewing},
+    {METATILE_Cranewing_Door_Bank,                          DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_CranewingBank, sDoorAnimPalettes_CranewingBank},
+    {METATILE_Cranewing_Door_Glassworks,                    DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_CranewingGlassworks, sDoorAnimPalettes_CranewingGlassworks},
     {},
 };
 
