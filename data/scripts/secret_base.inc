@@ -29,7 +29,7 @@ SecretBase_EventScript_CheckEntrance::
 	special CheckPlayerHasSecretBase
 	compare VAR_RESULT, TRUE
 	goto_if_eq SecretBase_EventScript_AlreadyHasSecretBase
-	checkpartymove MOVE_SECRET_POWER
+	checkpartyhm MOVE_SECRET_POWER
 	setfieldeffectargument 0, VAR_RESULT
 	buffermovename 1, MOVE_SECRET_POWER
 	compare VAR_0x8007, SECRET_BASE_RED_CAVE
@@ -201,7 +201,7 @@ SecretBase_EventScript_EnterPlayersBase::
 	end
 
 SecretBase_EventScript_AlreadyHasSecretBase::
-	checkpartymove MOVE_SECRET_POWER
+	checkpartyhm MOVE_SECRET_POWER
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq SecretBase_EventScript_NoSecretPower
 	setfieldeffectargument 0, VAR_RESULT

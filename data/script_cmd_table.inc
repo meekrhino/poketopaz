@@ -124,7 +124,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_givemon                   @ 0x79
 	.4byte ScrCmd_giveegg                   @ 0x7a
 	.4byte ScrCmd_setmonmove                @ 0x7b
-	.4byte ScrCmd_checkpartymove            @ 0x7c
+	.4byte ScrCmd_checkpartyhm            @ 0x7c
 	.4byte ScrCmd_bufferspeciesname         @ 0x7d
 	.4byte ScrCmd_bufferleadmonspeciesname  @ 0x7e
 	.4byte ScrCmd_bufferpartymonnick        @ 0x7f

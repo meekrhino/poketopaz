@@ -77,6 +77,12 @@ static const u8 sPkblToEscapeFactor[][3] = {
 static const u8 sGoNearCounterToCatchFactor[] = {4, 3, 2, 1};
 static const u8 sGoNearCounterToEscapeFactor[] = {4, 4, 4, 4};
 
+static const u16 sBadgeFlags[NUM_BADGES] = {
+    FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
+    FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET,
+    FLAG_BADGE09_GET, FLAG_BADGE10_GET, FLAG_BADGE11_GET, FLAG_BADGE12_GET,
+};
+
 void HandleAction_UseMove(void)
 {
     u8 side;
@@ -4505,6 +4511,7 @@ static bool32 IsMonEventLegal(u8 battlerId)
 
 u8 IsMonDisobedient(void)
 {
+    s32 i, count;
     s32 rnd;
     s32 calc;
     u8 obedienceLevel = 0;
@@ -4524,25 +4531,14 @@ u8 IsMonDisobedient(void)
             return 0;
         if (!IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
             return 0;
-        if (FlagGet(FLAG_BADGE08_GET))
-            return 0;
 
-        obedienceLevel = 10;
+        for (count = 0, i = 0; i < ARRAY_COUNT(sBadgeFlags); i++)
+        {
+            if (FlagGet(sBadgeFlags[i]) == TRUE)
+                ++count;
+        }
 
-        if (FlagGet(FLAG_BADGE01_GET))
-            obedienceLevel = 20;
-        if (FlagGet(FLAG_BADGE02_GET))
-            obedienceLevel = 30;
-        if (FlagGet(FLAG_BADGE03_GET))
-            obedienceLevel = 40;
-        if (FlagGet(FLAG_BADGE04_GET))
-            obedienceLevel = 50;
-        if (FlagGet(FLAG_BADGE05_GET))
-            obedienceLevel = 60;
-        if (FlagGet(FLAG_BADGE06_GET))
-            obedienceLevel = 70;
-        if (FlagGet(FLAG_BADGE07_GET))
-            obedienceLevel = 80;
+        obedienceLevel = 10 + (count * 10);
     }
 
     if (gBattleMons[gBattlerAttacker].level <= obedienceLevel)

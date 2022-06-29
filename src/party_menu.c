@@ -2518,7 +2518,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     for (i = 0; sFieldMoveTMHM[i] != 0xFF; i++)
     {
         if (CanMonLearnTMHM(&mons[slotId], sFieldMoveTMHM[i])
-         && FlagGet(sFieldMoveBadgeFlag[i]) == TRUE)
+         && FieldMoveUnlocked(i) == TRUE)
         {
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, i + MENU_FIELD_MOVES);
         }
@@ -4611,6 +4611,18 @@ u16 ItemIdToBattleMoveId(u16 item)
     return sTMHMMoves[tmNumber];
 }
 
+u16 BattleMoveIdToTMId(u16 move)
+{
+    int i;
+
+    for (i = 0; i < NUM_TECHNICAL_MACHINES; i++)
+    {
+        if (sTMHMMoves[i] == move)
+            return sTMHMMoves[i];
+    }
+    return 0xFFFF;
+}
+
 bool8 IsMoveHm(u16 move)
 {
     u8 i;
@@ -4621,6 +4633,23 @@ bool8 IsMoveHm(u16 move)
             return TRUE;
     }
     return FALSE;
+}
+
+static const u16 sFieldMoveBadgeFlag[] =
+{
+    [FIELD_MOVE_CUT]        = FLAG_BADGE01_GET,
+    [FIELD_MOVE_FLASH]      = FLAG_BADGE02_GET,
+    [FIELD_MOVE_ROCK_SMASH] = FLAG_BADGE03_GET,
+    [FIELD_MOVE_STRENGTH]   = FLAG_BADGE04_GET,
+    [FIELD_MOVE_SURF]       = FLAG_BADGE05_GET,
+    [FIELD_MOVE_FLY]        = FLAG_BADGE06_GET,
+    [FIELD_MOVE_DIVE]       = FLAG_BADGE07_GET,
+    [FIELD_MOVE_WATERFALL]  = FLAG_BADGE08_GET
+};
+
+bool8 FieldMoveUnlocked(u8 fieldMove)
+{
+    return FlagGet(sFieldMoveBadgeFlag[fieldMove]);
 }
 
 bool8 MonKnowsMove(struct Pokemon *mon, u16 move)

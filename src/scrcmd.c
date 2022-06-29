@@ -1718,10 +1718,32 @@ bool8 ScrCmd_setmonmove(struct ScriptContext *ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
+static const u16 sFieldMoveId[] =
+{
+    [FIELD_MOVE_CUT]        = MOVE_CUT,
+    [FIELD_MOVE_FLASH]      = MOVE_FLASH,
+    [FIELD_MOVE_ROCK_SMASH] = MOVE_ROCK_SMASH,
+    [FIELD_MOVE_STRENGTH]   = MOVE_STRENGTH,
+    [FIELD_MOVE_SURF]       = MOVE_SURF,
+    [FIELD_MOVE_FLY]        = MOVE_FLY,
+    [FIELD_MOVE_DIVE]       = MOVE_DIVE,
+    [FIELD_MOVE_WATERFALL]  = MOVE_WATERFALL
+};
+
+bool8 ScrCmd_checkpartyhm(struct ScriptContext *ctx)
 {
     u8 i;
     u16 moveId = ScriptReadHalfword(ctx);
+    u8 fieldMove;
+
+    for (i = 0; i < FIELD_MOVE_HM_COUNT; i++) {
+        if (sFieldMoveId[i] == moveId) {
+            fieldMove = i;
+            break;
+        }
+    }
+    if (i == FIELD_MOVE_HM_COUNT)
+        return FALSE;
 
     gSpecialVar_Result = PARTY_SIZE;
     for (i = 0; i < PARTY_SIZE; i++)
@@ -1729,7 +1751,9 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], moveId) == TRUE)
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
+          && CanMonLearnTMHMMove(&gPlayerParty[i], moveId) == TRUE
+          && FieldMoveUnlocked(fieldMove) == TRUE)
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;

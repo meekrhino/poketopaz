@@ -598,12 +598,6 @@ static const s8 sFriendshipEventModifiers[][3] =
     [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-5, -5, -10},
 };
 
-static const u16 sHMMoves[] =
-{
-    MOVE_CUT, MOVE_FLY, MOVE_SURF, MOVE_STRENGTH, MOVE_FLASH,
-    MOVE_ROCK_SMASH, MOVE_WATERFALL, MOVE_DIVE, 0xFFFF
-};
-
 static const struct SpeciesItem sAlteringCaveWildMonHeldItems[] =
 {
     {SPECIES_NONE,      ITEM_NONE},
@@ -4403,6 +4397,12 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
     }
 }
 
+u32 CanMonLearnTMHMMove(struct Pokemon *mon, u16 move)
+{
+    u16 tm = BattleMoveIdToTMId(move);
+    return CanMonLearnTMHM(mon, tm);
+}
+
 u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
@@ -4678,17 +4678,6 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
         return &gMonShinyPaletteTable[species];
     else
         return &gMonPaletteTable[species];
-}
-
-bool32 IsHMMove2(u16 move)
-{
-    int i = 0;
-    while (sHMMoves[i] != 0xFFFF)
-    {
-        if (sHMMoves[i++] == move)
-            return TRUE;
-    }
-    return FALSE;
 }
 
 bool8 IsMonSpriteNotFlipped(u16 species)

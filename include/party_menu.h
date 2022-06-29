@@ -20,6 +20,26 @@ struct PartyMenu
     s16 learnMoveState;  // data2, used only as a learn move state
 };
 
+enum
+{
+    FIELD_MOVE_CUT,
+    FIELD_MOVE_FLASH,
+    FIELD_MOVE_ROCK_SMASH,
+    FIELD_MOVE_STRENGTH,
+    FIELD_MOVE_SURF,
+    FIELD_MOVE_FLY,
+    FIELD_MOVE_DIVE,
+    FIELD_MOVE_WATERFALL,
+    FIELD_MOVE_TELEPORT,
+    FIELD_MOVE_DIG,
+    FIELD_MOVE_SECRET_POWER,
+    FIELD_MOVE_MILK_DRINK,
+    FIELD_MOVE_SOFT_BOILED,
+    FIELD_MOVE_SWEET_SCENT,
+};
+
+#define FIELD_MOVE_HM_COUNT FIELD_MOVE_WATERFALL + 1
+
 #define TMHM_COUNT 88
 extern const u16 gTMHMMoves[TMHM_COUNT];
 
@@ -56,7 +76,9 @@ void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task);
 void ItemUseCB_PPRecovery(u8 taskId, TaskFunc task);
 void ItemUseCB_PPUp(u8 taskId, TaskFunc task);
 u16 ItemIdToBattleMoveId(u16 item);
+u16 BattleMoveIdToTMId(u16 move);
 bool8 IsMoveHm(u16 move);
+bool8 FieldMoveUnlocked(u8 fieldMove);
 bool8 MonKnowsMove(struct Pokemon *mon, u16 move);
 void ItemUseCB_TMHM(u8 taskId, TaskFunc task);
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc task);
