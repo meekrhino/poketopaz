@@ -3,7 +3,7 @@
   "name": "MtMist_B1F",
   "layout": "LAYOUT_MT_MIST_B1F",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_MT_MOON",
+  "region_map_section": "MAPSEC_MT_MIST",
   "requires_flash": true,
   "weather": "WEATHER_FOG_HORIZONTAL",
   "map_type": "MAP_TYPE_UNDERGROUND",

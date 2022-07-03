@@ -501,7 +501,7 @@ static void BuildAreaGlowTilemap(void)
             for (x = 0; x < AREA_SCREEN_WIDTH; x++)
             {
                 if (GetRegionMapSecIdAt(x, y) == sPokedexAreaScreen->overworldAreasWithMons[i].regionMapSectionId)
-                    sPokedexAreaScreen->areaGlowTilemap[j] = GLOW_TILE_FULL;
+                    sPokedexAreaScreen->areaGlowTilemap[j - 33] = GLOW_TILE_FULL;
 
                 j++;
             }
@@ -774,8 +774,8 @@ static void CreateAreaMarkerSprites(void)
     for (i = 0; i < sPokedexAreaScreen->numSpecialAreas; i++)
     {
         mapSecId = sPokedexAreaScreen->specialAreaRegionMapSectionIds[i];
-        x = 8 * (gRegionMapEntries[mapSecId].x + 1) + 4;
-        y = 8 * (gRegionMapEntries[mapSecId].y) + 28;
+        x = 8 * (gRegionMapEntries[mapSecId].x) + 4;
+        y = 8 * (gRegionMapEntries[mapSecId].y - 1) + 28;
         x += 4 * (gRegionMapEntries[mapSecId].width - 1);
         y += 4 * (gRegionMapEntries[mapSecId].height - 1);
         spriteId = CreateSprite(&sAreaMarkerSpriteTemplate, x, y, 0);

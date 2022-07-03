@@ -3924,15 +3924,15 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
                         targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LOCATION_SAND:
-                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_OLDALE_TOWN) // TODO - specific mapsec
+                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_SUNSET_VILLAGE) // TODO - specific mapsec
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LOCATION_SNOW:
-                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_ROUTE_101) // TODO - specific mapsec
+                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_ROUTE_201) // TODO - specific mapsec
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LOCATION_FACTORY:
-                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_ROUTE_103) // TODO - specific mapsec
+                if (gEvolutionTable[species][i].param <= level && gMapHeader.regionMapSectionId == MAPSEC_ROUTE_203) // TODO - specific mapsec
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             }

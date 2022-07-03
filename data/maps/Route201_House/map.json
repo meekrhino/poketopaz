@@ -3,7 +3,7 @@
   "name": "Route201_House",
   "layout": "LAYOUT_ROUTE201_HOUSE",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ROUTE_101",
+  "region_map_section": "MAPSEC_ROUTE_201",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
