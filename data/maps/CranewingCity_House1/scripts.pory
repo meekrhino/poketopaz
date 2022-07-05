@@ -9,7 +9,7 @@ mapscripts CranewingCity_House1_MapScripts {}
 // Global Scripts
 //=====================================
 script(global) CranewingCity_House1_Man {
-    msgbox(format("Lupine and Huskii are born rivals.\pFor each, their lifelong goal is to defeat the other in combat.\pI've even heard their evolution is tied to that in some way."), MSGBOX_NPC)
+    msgbox(format("Lupine and Huskii are born rivals.\pFor each, their lifelong goal is to defeat the other in combat.\pI've even heard their evolution is tied to each other in some way."), MSGBOX_NPC)
     end
 }
 

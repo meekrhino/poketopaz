@@ -82,7 +82,9 @@ script(local) CranewingCity_Bank_BankClerkMenu {
         case MULTI_B_PRESSED:
             msgbox("Thank you for stopping by.\nWe hope to see you again!")
     }
-    return
+    waitmessage
+    closemessage
+    release
 }
 
 script(local) CranewingCity_Bank_BankClerkWithdraw {
@@ -126,9 +128,11 @@ script(local) CranewingCity_Bank_BankClerkDeposit {
         case OPERATION_TOO_MUCH:
             msgbox("We can't store that much!")
             goto(CranewingCity_Bank_BankClerkMenu)
+
+        default:
+            goto(CranewingCity_Bank_BankClerkMenu)
     }
-    releaseall
-    end
+    return
 }
 
 //=====================================

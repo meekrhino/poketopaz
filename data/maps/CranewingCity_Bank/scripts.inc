@@ -64,6 +64,9 @@ CranewingCity_Bank_BankClerkMenu:
 	case 2, CranewingCity_Bank_BankClerkMenu_5
 	case MULTI_B_PRESSED, CranewingCity_Bank_BankClerkMenu_6
 CranewingCity_Bank_BankClerkMenu_1:
+	waitmessage
+	closemessage
+	release
 	return
 
 CranewingCity_Bank_BankClerkMenu_3:
@@ -120,9 +123,9 @@ CranewingCity_Bank_BankClerkDeposit:
 	case 0, CranewingCity_Bank_BankClerkDeposit_3
 	case 1, CranewingCity_Bank_BankClerkDeposit_4
 	case 2, CranewingCity_Bank_BankClerkDeposit_5
+	goto CranewingCity_Bank_BankClerkMenu
 CranewingCity_Bank_BankClerkDeposit_1:
-	releaseall
-	end
+	return
 
 CranewingCity_Bank_BankClerkDeposit_3:
 	playse SE_SHOP
