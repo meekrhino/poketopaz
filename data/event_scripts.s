@@ -1076,7 +1076,7 @@ Script_RemoveTint::
 	.include "data/scripts/test_signpost.inc"
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
-	.include "data/text/birch_speech.inc"
+	.include "data/text/willow_speech.inc"
 
 	.include "data/maps/NeoBay/scripts.inc"
 

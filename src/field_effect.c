@@ -242,9 +242,8 @@ extern const struct CompressedSpriteSheet gTrainerFrontPicTable[];
 extern u8 *gFieldEffectScriptPointers[];
 extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
-static const u32 sNewGameBirch_Gfx[] = INCBIN_U32("graphics/birch_speech/birch.4bpp");
-static const u32 sUnusedBirchBeauty[] = INCBIN_U32("graphics/unused/intro_birch_beauty.4bpp");
-static const u16 sNewGameBirch_Pal[16] = INCBIN_U16("graphics/birch_speech/birch.gbapal");
+static const u32 sNewGameWillow_Gfx[] = INCBIN_U32("graphics/willow_speech/willow.4bpp");
+static const u16 sNewGameWillow_Pal[16] = INCBIN_U16("graphics/willow_speech/willow.gbapal");
 static const u32 sPokeballGlow_Gfx[] = INCBIN_U32("graphics/misc/pokeball_glow.4bpp");
 static const u16 sPokeballGlow_Pal[16] = INCBIN_U16("graphics/field_effects/palettes/pokeball_glow.gbapal");
 static const u32 sPokecenterMonitor0_Gfx[] = INCBIN_U32("graphics/misc/pokecenter_monitor/0.4bpp");
@@ -324,35 +323,35 @@ static const struct OamData sOam_16x16 =
     .paletteNum = 0,
 };
 
-static const struct SpriteFrameImage sPicTable_NewGameBirch[] =
+static const struct SpriteFrameImage sPicTable_NewGameWillow[] =
 {
-    obj_frame_tiles(sNewGameBirch_Gfx)
+    obj_frame_tiles(sNewGameWillow_Gfx)
 };
 
-static const struct SpritePalette sSpritePalette_NewGameBirch =
+static const struct SpritePalette sSpritePalette_NewGameWillow =
 {
-    .data = sNewGameBirch_Pal,
+    .data = sNewGameWillow_Pal,
     .tag = 0x1006
 };
 
-static const union AnimCmd sAnim_NewGameBirch[] =
+static const union AnimCmd sAnim_NewGameWillow[] =
 {
     ANIMCMD_FRAME(.imageValue = 0, .duration = 1),
     ANIMCMD_END
 };
 
-static const union AnimCmd *const sAnimTable_NewGameBirch[] =
+static const union AnimCmd *const sAnimTable_NewGameWillow[] =
 {
-    sAnim_NewGameBirch
+    sAnim_NewGameWillow
 };
 
-static const struct SpriteTemplate sSpriteTemplate_NewGameBirch =
+static const struct SpriteTemplate sSpriteTemplate_NewGameWillow =
 {
     .tileTag = 0xFFFF,
     .paletteTag = 0x1006,
     .oam = &sOam_64x64,
-    .anims = sAnimTable_NewGameBirch,
-    .images = sPicTable_NewGameBirch,
+    .anims = sAnimTable_NewGameWillow,
+    .images = sPicTable_NewGameWillow,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy
 };
@@ -917,10 +916,10 @@ void LoadTrainerGfx_TrainerCard(u8 gender, u16 palOffset, u8 *dest)
     LoadCompressedPalette(gTrainerFrontPicPaletteTable[gender].data, palOffset, 0x20);
 }
 
-u8 AddNewGameBirchObject(s16 x, s16 y, u8 subpriority)
+u8 AddNewGameWillowObject(s16 x, s16 y, u8 subpriority)
 {
-    LoadSpritePalette(&sSpritePalette_NewGameBirch);
-    return CreateSprite(&sSpriteTemplate_NewGameBirch, x, y, subpriority);
+    LoadSpritePalette(&sSpritePalette_NewGameWillow);
+    return CreateSprite(&sSpriteTemplate_NewGameWillow, x, y, subpriority);
 }
 
 u8 CreateMonSprite_PicBox(u16 species, s16 x, s16 y, u8 subpriority)

@@ -158,6 +158,10 @@ static const union AnimCmd *const sAnims_EliteFourDrake[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_LeaderFroy[] ={
+    sAnim_GeneralFrame0,
+};
+
 static const union AnimCmd *const sAnims_LeaderRoxanne[] ={
     sAnim_GeneralFrame0,
 };
@@ -375,6 +379,22 @@ static const union AnimCmd *const sAnims_RocketGruntM[] ={
 };
 
 static const union AnimCmd *const sAnims_RocketGruntF[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_PlayerN[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Bradley[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Simon[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Alisa[] ={
     sAnim_GeneralFrame0,
 };
 

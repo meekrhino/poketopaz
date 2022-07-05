@@ -250,13 +250,13 @@ static void NewGameBirchSpeech_CreateDialogueWindowBorder(u8, u8, u8, u8, u8, u8
 // .rodata
 
 static const u16 sBirchSpeechBgPals[][16] = {
-    INCBIN_U16("graphics/birch_speech/bg0.gbapal"),
-    INCBIN_U16("graphics/birch_speech/bg1.gbapal")
+    INCBIN_U16("graphics/willow_speech/bg0.gbapal"),
+    INCBIN_U16("graphics/willow_speech/bg1.gbapal")
 };
 
-static const u32 sBirchSpeechShadowGfx[] = INCBIN_U32("graphics/birch_speech/shadow.4bpp.lz");
-static const u32 sBirchSpeechBgMap[] = INCBIN_U32("graphics/birch_speech/map.bin.lz");
-static const u16 sBirchSpeechBgGradientPal[] = INCBIN_U16("graphics/birch_speech/bg2.gbapal");
+static const u32 sBirchSpeechShadowGfx[] = INCBIN_U32("graphics/willow_speech/shadow.4bpp.lz");
+static const u32 sBirchSpeechBgMap[] = INCBIN_U32("graphics/willow_speech/map.bin.lz");
+static const u16 sBirchSpeechBgGradientPal[] = INCBIN_U16("graphics/willow_speech/bg2.gbapal");
 static const u16 sBirchSpeechPlatformBlackPal[] = {RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK};
 
 #define MENU_LEFT 2
@@ -1886,7 +1886,7 @@ static void AddBirchSpeechObjects(u8 taskId)
     u8 brendanSpriteId;
     u8 maySpriteId;
 
-    birchSpriteId = AddNewGameBirchObject(0x88, 0x3C, 1);
+    birchSpriteId = AddNewGameWillowObject(0x88, 0x3C, 1);
     gSprites[birchSpriteId].callback = SpriteCB_Null;
     gSprites[birchSpriteId].oam.priority = 0;
     gSprites[birchSpriteId].invisible = TRUE;
@@ -1896,12 +1896,12 @@ static void AddBirchSpeechObjects(u8 taskId)
     gSprites[lotadSpriteId].oam.priority = 0;
     gSprites[lotadSpriteId].invisible = TRUE;
     gTasks[taskId].tLotadSpriteId = lotadSpriteId;
-    brendanSpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN), 120, 60, 0, &gDecompressionBuffer[0]);
+    brendanSpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_PLAYER_N), 120, 60, 0, &gDecompressionBuffer[0]);
     gSprites[brendanSpriteId].callback = SpriteCB_Null;
     gSprites[brendanSpriteId].invisible = TRUE;
     gSprites[brendanSpriteId].oam.priority = 0;
     gTasks[taskId].tBrendanSpriteId = brendanSpriteId;
-    maySpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_MAY), 120, 60, 0, &gDecompressionBuffer[0x800]);
+    maySpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_PLAYER_N), 120, 60, 0, &gDecompressionBuffer[0x800]);
     gSprites[maySpriteId].callback = SpriteCB_Null;
     gSprites[maySpriteId].invisible = TRUE;
     gSprites[maySpriteId].oam.priority = 0;
