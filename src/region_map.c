@@ -747,7 +747,7 @@ static u8 ProcessRegionMapInput_Zoomed(void)
         gRegionMap->zoomedCursorDeltaY = -1;
         input = MAP_INPUT_MOVE_START;
     }
-    if (JOY_HELD(DPAD_DOWN) && gRegionMap->scrollY < (MAPCURSOR_Y_MAX - 9) * 8 + 4)
+    if (JOY_HELD(DPAD_DOWN) && gRegionMap->scrollY < (MAPCURSOR_Y_MAX - 8) * 8 - 4)
     {
         gRegionMap->zoomedCursorDeltaY = +1;
         input = MAP_INPUT_MOVE_START;
@@ -757,7 +757,7 @@ static u8 ProcessRegionMapInput_Zoomed(void)
         gRegionMap->zoomedCursorDeltaX = -1;
         input = MAP_INPUT_MOVE_START;
     }
-    if (JOY_HELD(DPAD_RIGHT) && gRegionMap->scrollX < (MAPCURSOR_X_MAX - 7) * 8 + 4)
+    if (JOY_HELD(DPAD_RIGHT) && gRegionMap->scrollX < (MAPCURSOR_X_MAX - 6) * 8 - 4)
     {
         gRegionMap->zoomedCursorDeltaX = +1;
         input = MAP_INPUT_MOVE_START;
