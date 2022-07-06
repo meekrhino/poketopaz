@@ -39,12 +39,14 @@
  *
  */
 
-#define MAP_WIDTH 28
-#define MAP_HEIGHT 15
-#define MAPCURSOR_X_MIN 1
-#define MAPCURSOR_Y_MIN 2
+#define MAP_WIDTH 30
+#define MAP_HEIGHT 16
+#define MAPCURSOR_X_MIN 0
+#define MAPCURSOR_Y_MIN 1
 #define MAPCURSOR_X_MAX (MAPCURSOR_X_MIN + MAP_WIDTH - 1)
 #define MAPCURSOR_Y_MAX (MAPCURSOR_Y_MIN + MAP_HEIGHT - 1)
+#define MAP_TRANSLATE_X 8
+#define MAP_TRANSLATE_Y 16
 
 #define FLYDESTICON_RED_OUTLINE 6
 
@@ -592,7 +594,7 @@ bool8 LoadRegionMapGfx(void)
     case 6:
         if (gRegionMap->zoomed == FALSE)
         {
-            CalcZoomScrollParams(0, 0, 0, 0, 0x100, 0x100, 0);
+            CalcZoomScrollParams(MAP_TRANSLATE_X, MAP_TRANSLATE_Y, 0, 0, 0x100, 0x100, 0);
         }
         else
         {
@@ -600,7 +602,7 @@ bool8 LoadRegionMapGfx(void)
             gRegionMap->scrollY = gRegionMap->cursorPosY * 8 - 0x44;
             gRegionMap->zoomedCursorPosX = gRegionMap->cursorPosX;
             gRegionMap->zoomedCursorPosY = gRegionMap->cursorPosY;
-            CalcZoomScrollParams(gRegionMap->scrollX, gRegionMap->scrollY, 0x38, 0x48, 0x80, 0x80, 0);
+            CalcZoomScrollParams(gRegionMap->scrollX + MAP_TRANSLATE_X, gRegionMap->scrollY + MAP_TRANSLATE_Y, 0x38, 0x48, 0x80, 0x80, 0);
         }
         break;
     case 7:
@@ -740,22 +742,22 @@ static u8 ProcessRegionMapInput_Zoomed(void)
     input = MAP_INPUT_NONE;
     gRegionMap->zoomedCursorDeltaX = 0;
     gRegionMap->zoomedCursorDeltaY = 0;
-    if (JOY_HELD(DPAD_UP) && gRegionMap->scrollY > -0x34)
+    if (JOY_HELD(DPAD_UP) && gRegionMap->scrollY > (MAPCURSOR_Y_MIN - 8) * 8 - 4)
     {
         gRegionMap->zoomedCursorDeltaY = -1;
         input = MAP_INPUT_MOVE_START;
     }
-    if (JOY_HELD(DPAD_DOWN) && gRegionMap->scrollY < 0x3c)
+    if (JOY_HELD(DPAD_DOWN) && gRegionMap->scrollY < (MAPCURSOR_Y_MAX - 9) * 8 + 4)
     {
         gRegionMap->zoomedCursorDeltaY = +1;
         input = MAP_INPUT_MOVE_START;
     }
-    if (JOY_HELD(DPAD_LEFT) && gRegionMap->scrollX > -0x2c)
+    if (JOY_HELD(DPAD_LEFT) && gRegionMap->scrollX > (MAPCURSOR_X_MIN - 6) * 8 - 4)
     {
         gRegionMap->zoomedCursorDeltaX = -1;
         input = MAP_INPUT_MOVE_START;
     }
-    if (JOY_HELD(DPAD_RIGHT) && gRegionMap->scrollX < 0xac)
+    if (JOY_HELD(DPAD_RIGHT) && gRegionMap->scrollX < (MAPCURSOR_X_MAX - 7) * 8 + 4)
     {
         gRegionMap->zoomedCursorDeltaX = +1;
         input = MAP_INPUT_MOVE_START;
@@ -784,7 +786,7 @@ static u8 MoveRegionMapCursor_Zoomed(void)
 
     gRegionMap->scrollY += gRegionMap->zoomedCursorDeltaY;
     gRegionMap->scrollX += gRegionMap->zoomedCursorDeltaX;
-    RegionMap_SetBG2XAndBG2Y(gRegionMap->scrollX, gRegionMap->scrollY);
+    RegionMap_SetBG2XAndBG2Y(gRegionMap->scrollX + MAP_TRANSLATE_X, gRegionMap->scrollY + MAP_TRANSLATE_Y);
     gRegionMap->zoomedCursorMovementFrameCounter++;
     if (gRegionMap->zoomedCursorMovementFrameCounter == 8)
     {
@@ -902,7 +904,7 @@ bool8 UpdateRegionMapZoom(void)
         }
         retVal = TRUE;
     }
-    CalcZoomScrollParams(gRegionMap->scrollX, gRegionMap->scrollY, 0x38, 0x48, gRegionMap->unk_04c >> 8, gRegionMap->unk_04c >> 8, 0);
+    CalcZoomScrollParams(gRegionMap->scrollX + MAP_TRANSLATE_X, gRegionMap->scrollY + MAP_TRANSLATE_Y, 0x38, 0x48, gRegionMap->unk_04c >> 8, gRegionMap->unk_04c >> 8, 0);
     return retVal;
 }
 
@@ -965,7 +967,7 @@ void PokedexAreaScreen_UpdateRegionMapVariablesAndVideoRegs(s16 x, s16 y)
 
 static u16 GetMapSecIdAt(u16 x, u16 y)
 {
-    if (y < MAPCURSOR_Y_MIN || y > MAPCURSOR_Y_MAX || x < MAPCURSOR_X_MIN || x > MAPCURSOR_X_MAX)
+    if (y > MAPCURSOR_Y_MAX || x > MAPCURSOR_X_MAX || y < MAPCURSOR_Y_MIN)
     {
         return MAPSEC_NONE;
     }

@@ -96,7 +96,7 @@ CranewingCity_House1_Man_Text_0:
 	.string "For each, their lifelong goal is to\n"
 	.string "defeat the other in combat.\p"
 	.string "I've even heard their evolution is tied\n"
-	.string "to that in some way.$"
+	.string "to each other in some way.$"
 
 CranewingCity_House1_Trader_Text_0:
 	.string "I caught this {STR_VAR_2} on a ski\n"
