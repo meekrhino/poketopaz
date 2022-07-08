@@ -253,6 +253,7 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(ELITE_FOUR_GLACIA, gTrainerPalette_EliteFourGlacia),
     TRAINER_PAL(ELITE_FOUR_DRAKE, gTrainerPalette_EliteFourDrake),
     TRAINER_PAL(LEADER_FROY, gTrainerPalette_LeaderFroy),
+    TRAINER_PAL(LEADER_THERMA, gTrainerPalette_LeaderTherma),
     TRAINER_PAL(LEADER_ROXANNE, gTrainerPalette_LeaderRoxanne),
     TRAINER_PAL(LEADER_BRAWLY, gTrainerPalette_LeaderBrawly),
     TRAINER_PAL(LEADER_WATTSON, gTrainerPalette_LeaderWattson),
@@ -312,4 +313,9 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(BRADLEY, gTrainerPalette_Bradley),
     TRAINER_PAL(SIMON, gTrainerPalette_Simon),
     TRAINER_PAL(ALISA, gTrainerPalette_Alisa),
+    TRAINER_PAL(ORION_GRUNT_M, gTrainerPalette_OrionGruntM),
+    TRAINER_PAL(ORION_GRUNT_F, gTrainerPalette_OrionGruntF),
+    TRAINER_PAL(WOLSEY, gTrainerPalette_Wolsey),
+    TRAINER_PAL(SHOOK_AND_ALLARD, gTrainerPalette_ShookAndAllard),
+    TRAINER_PAL(BALFOUR, gTrainerPalette_Balfour),
 };

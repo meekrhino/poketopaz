@@ -162,6 +162,10 @@ static const union AnimCmd *const sAnims_LeaderFroy[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_LeaderTherma[] ={
+    sAnim_GeneralFrame0,
+};
+
 static const union AnimCmd *const sAnims_LeaderRoxanne[] ={
     sAnim_GeneralFrame0,
 };
@@ -395,6 +399,26 @@ static const union AnimCmd *const sAnims_Simon[] ={
 };
 
 static const union AnimCmd *const sAnims_Alisa[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_OrionGruntM[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_OrionGruntF[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Wolsey[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_ShookAndAllard[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Balfour[] ={
     sAnim_GeneralFrame0,
 };
 
