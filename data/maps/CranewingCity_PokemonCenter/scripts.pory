@@ -44,7 +44,7 @@ script(global) CranewingCity_PokemonCenter_Beauty {
 // Local Scripts
 //=====================================
 script(local) CranewingCity_PokemonCenter_OnTransition {
-	setrespawn(HEAL_LOCATION_SOFTWIND_CITY)
+	setrespawn(HEAL_LOCATION_CRANEWING_CITY)
     end
 }
 
