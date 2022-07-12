@@ -525,7 +525,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_POTION, ITEM_POTION, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Froy),
+        .partySize = ARRAY_COUNT(sParty_Balfour1),
         .party = {.NoItemDefaultMoves = sParty_Balfour1},
     },
 

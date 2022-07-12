@@ -41,6 +41,7 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_ELITE_FOUR_GLACIA] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_ELITE_FOUR_DRAKE] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_LEADER_FROY] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_LEADER_THERMA] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_LEADER_ROXANNE] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_LEADER_BRAWLY] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_LEADER_WATTSON] = {.size = 8, .y_offset = 1},
@@ -100,6 +101,11 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_BRADLEY] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_SIMON] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_ALISA] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_ORION_GRUNT_M] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_ORION_GRUNT_F] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_WOLSEY] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_SHOOK_AND_ALLARD] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_BALFOUR] = {.size = 8, .y_offset = 1},
 };
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
@@ -147,6 +153,7 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(ELITE_FOUR_GLACIA, gTrainerFrontPic_EliteFourGlacia, 0x800),
     TRAINER_SPRITE(ELITE_FOUR_DRAKE, gTrainerFrontPic_EliteFourDrake, 0x800),
     TRAINER_SPRITE(LEADER_FROY, gTrainerFrontPic_LeaderFroy, 0x800),
+    TRAINER_SPRITE(LEADER_THERMA, gTrainerFrontPic_LeaderTherma, 0x800),
     TRAINER_SPRITE(LEADER_ROXANNE, gTrainerFrontPic_LeaderRoxanne, 0x800),
     TRAINER_SPRITE(LEADER_BRAWLY, gTrainerFrontPic_LeaderBrawly, 0x800),
     TRAINER_SPRITE(LEADER_WATTSON, gTrainerFrontPic_LeaderWattson, 0x800),
@@ -206,6 +213,11 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(BRADLEY, gTrainerFrontPic_Bradley, 0x800),
     TRAINER_SPRITE(SIMON, gTrainerFrontPic_Simon, 0x800),
     TRAINER_SPRITE(ALISA, gTrainerFrontPic_Alisa, 0x800),
+    TRAINER_SPRITE(ORION_GRUNT_M, gTrainerFrontPic_OrionGruntM, 0x800),
+    TRAINER_SPRITE(ORION_GRUNT_F, gTrainerFrontPic_OrionGruntF, 0x800),
+    TRAINER_SPRITE(WOLSEY, gTrainerFrontPic_Wolsey, 0x800),
+    TRAINER_SPRITE(SHOOK_AND_ALLARD, gTrainerFrontPic_ShookAndAllard, 0x800),
+    TRAINER_SPRITE(BALFOUR, gTrainerFrontPic_Balfour, 0x800),
 };
 
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
