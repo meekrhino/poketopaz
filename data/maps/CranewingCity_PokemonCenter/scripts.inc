@@ -28,7 +28,7 @@ CranewingCity_PokemonCenter_Beauty::
 
 
 CranewingCity_PokemonCenter_OnTransition:
-	setrespawn HEAL_LOCATION_SOFTWIND_CITY
+	setrespawn HEAL_LOCATION_CRANEWING_CITY
 	end
 
 
