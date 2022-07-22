@@ -593,3 +593,10 @@ gMetatiles_MtMist::
 	.align 1
 gMetatileAttributes_MtMist::
 	.incbin "data/tilesets/secondary/mtmist/metatile_attributes.bin"
+	.align 1
+gMetatiles_Glassworks::
+	.incbin "data/tilesets/secondary/glassworks/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Glassworks::
+	.incbin "data/tilesets/secondary/glassworks/metatile_attributes.bin"

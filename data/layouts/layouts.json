@@ -5796,6 +5796,30 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/NeoBay_CliffsideHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/NeoBay_CliffsideHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRANEWING_CITY_GLASSWORKS_1F",
+      "name": "CranewingCity_Glassworks_1F_Layout",
+      "width": 21,
+      "height": 12,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Glassworks",
+      "border_filepath": "data/layouts/CranewingCity_Glassworks_1F/border.bin",
+      "blockdata_filepath": "data/layouts/CranewingCity_Glassworks_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRANEWING_CITY_GLASSWORKS_2F",
+      "name": "CranewingCity_Glassworks_2F_Layout",
+      "width": 19,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Glassworks",
+      "border_filepath": "data/layouts/CranewingCity_Glassworks_2F/border.bin",
+      "blockdata_filepath": "data/layouts/CranewingCity_Glassworks_2F/map.bin"
     }
   ]
 }

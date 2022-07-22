@@ -131,6 +131,8 @@
 #define MAP_CRANEWING_CITY_HOUSE2            (11 | (4 << 8))
 #define MAP_CRANEWING_CITY_HOUSE3            (12 | (4 << 8))
 #define MAP_CRANEWING_CITY_BANK              (13 | (4 << 8))
+#define MAP_CRANEWING_CITY_GLASSWORKS_1F     (14 | (4 << 8))
+#define MAP_CRANEWING_CITY_GLASSWORKS_2F     (15 | (4 << 8))
 
 // gMapGroup_IndoorFallarbor
 #define MAP_FALLARBOR_TOWN_MART                    (0 | (5 << 8))

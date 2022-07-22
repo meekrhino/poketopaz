@@ -885,3 +885,14 @@ gTileset_MtMist::
 	.4byte gMetatiles_MtMist
 	.4byte gMetatileAttributes_MtMist
 	.4byte NULL
+
+	.align 2
+gTileset_Glassworks::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Glassworks
+	.4byte gTilesetPalettes_Glassworks
+	.4byte gMetatiles_Glassworks
+	.4byte gMetatileAttributes_Glassworks
+	.4byte NULL

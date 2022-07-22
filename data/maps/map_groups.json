@@ -161,7 +161,9 @@
     "CranewingCity_House1",
     "CranewingCity_House2",
     "CranewingCity_House3",
-    "CranewingCity_Bank"
+    "CranewingCity_Bank",
+    "CranewingCity_Glassworks_1F",
+    "CranewingCity_Glassworks_2F"
   ],
   "gMapGroup_IndoorFallarbor": [
     "FallarborTown_Mart",

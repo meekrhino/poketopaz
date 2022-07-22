@@ -1161,3 +1161,7 @@ Script_RemoveTint::
 	.include "data/maps/NeoBay_CliffsideHouse_1F/scripts.inc"
 
 	.include "data/maps/NeoBay_CliffsideHouse_2F/scripts.inc"
+
+	.include "data/maps/CranewingCity_Glassworks_1F/scripts.inc"
+
+	.include "data/maps/CranewingCity_Glassworks_2F/scripts.inc"
