@@ -242,8 +242,17 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_ROCKET_GRUNT_M             239
 #define OBJ_EVENT_GFX_ROCKET_GRUNT_F             240
+#define OBJ_EVENT_GFX_ROCKET_ADMIN_BALFOUR       241
+#define OBJ_EVENT_GFX_ORION_DEFENDER_M           242
+#define OBJ_EVENT_GFX_ORION_DEFENDER_F           243
+#define OBJ_EVENT_GFX_ALISA                      244
+#define OBJ_EVENT_GFX_BRADLEY                    245
+#define OBJ_EVENT_GFX_SIMON                      246
+#define OBJ_EVENT_GFX_PROF_WILLOW                247
+#define OBJ_EVENT_GFX_FROY                       248
+#define OBJ_EVENT_GFX_THERMA                     249
 
-#define NUM_OBJ_EVENT_GFX                        241
+#define NUM_OBJ_EVENT_GFX                        250
 
 
 // These are dynamic object gfx ids.

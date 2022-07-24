@@ -138,7 +138,7 @@ static const u8 sDoorAnimTiles_Cranewing[] = INCBIN_U8("graphics/door_anims/cran
 static const u16 sDoorNullPalette51[16] = {};
 static const u8 sDoorAnimTiles_CranewingBank[] = INCBIN_U8("graphics/door_anims/cranewing_bank.4bpp");
 static const u16 sDoorNullPalette52[16] = {};
-static const u8 sDoorAnimTiles_CranewingGlassworks[] = INCBIN_U8("graphics/door_anims/cranewing_Glassworks.4bpp");
+static const u8 sDoorAnimTiles_CranewingGlassworks[] = INCBIN_U8("graphics/door_anims/cranewing_glassworks.4bpp");
 static const u16 sDoorNullPalette53[16] = {};
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =

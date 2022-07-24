@@ -63,6 +63,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BerryTreeEarlyStag
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BerryTreeLateStages;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanAcroBike;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfBirch;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfWillow;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man4;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man5;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReporterM;
@@ -97,6 +98,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothCarryingBo
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothFacingAway;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirchsBag;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EnemyZigzagoon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Alisa;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bradley;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Artist;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalBrendanNormal;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalBrendanMachBike;
@@ -121,6 +124,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MagmaMemberM;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MagmaMemberF;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntF;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketAdminBalfour;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OrionDefenderM;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OrionDefenderF;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sidney;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Phoebe;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Glacia;
@@ -134,6 +140,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Winona;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Liza;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tate;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wallace;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Froy;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Therma;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Simon;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Steven;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wally;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireLittleBoy;
@@ -314,6 +323,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES] =   &gObjectEventGraphicsInfo_BerryTreeLateStages,
     [OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE] =        &gObjectEventGraphicsInfo_BrendanAcroBike,
     [OBJ_EVENT_GFX_PROF_BIRCH] =               &gObjectEventGraphicsInfo_ProfBirch,
+    [OBJ_EVENT_GFX_PROF_WILLOW] =              &gObjectEventGraphicsInfo_ProfWillow,
     [OBJ_EVENT_GFX_MAN_4] =                    &gObjectEventGraphicsInfo_Man4,
     [OBJ_EVENT_GFX_MAN_5] =                    &gObjectEventGraphicsInfo_Man5,
     [OBJ_EVENT_GFX_REPORTER_M] =               &gObjectEventGraphicsInfo_ReporterM,
@@ -348,6 +358,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY] =     &gObjectEventGraphicsInfo_VigorothFacingAway,
     [OBJ_EVENT_GFX_BIRCHS_BAG] =               &gObjectEventGraphicsInfo_BirchsBag,
     [OBJ_EVENT_GFX_ZIGZAGOON_1] =              &gObjectEventGraphicsInfo_EnemyZigzagoon,
+    [OBJ_EVENT_GFX_ALISA] =                    &gObjectEventGraphicsInfo_Alisa,
+    [OBJ_EVENT_GFX_BRADLEY] =                  &gObjectEventGraphicsInfo_Bradley,
     [OBJ_EVENT_GFX_ARTIST] =                   &gObjectEventGraphicsInfo_Artist,
     [OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL] =     &gObjectEventGraphicsInfo_RivalBrendanNormal,
     [OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE] =  &gObjectEventGraphicsInfo_RivalBrendanMachBike,
@@ -372,6 +384,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MAGMA_MEMBER_F] =           &gObjectEventGraphicsInfo_MagmaMemberF,
     [OBJ_EVENT_GFX_ROCKET_GRUNT_M] =           &gObjectEventGraphicsInfo_RocketGruntM,
     [OBJ_EVENT_GFX_ROCKET_GRUNT_F] =           &gObjectEventGraphicsInfo_RocketGruntF,
+    [OBJ_EVENT_GFX_ROCKET_ADMIN_BALFOUR] =     &gObjectEventGraphicsInfo_RocketAdminBalfour,
+    [OBJ_EVENT_GFX_ORION_DEFENDER_M] =         &gObjectEventGraphicsInfo_OrionDefenderM,
+    [OBJ_EVENT_GFX_ORION_DEFENDER_F] =         &gObjectEventGraphicsInfo_OrionDefenderF,
     [OBJ_EVENT_GFX_SIDNEY] =                   &gObjectEventGraphicsInfo_Sidney,
     [OBJ_EVENT_GFX_PHOEBE] =                   &gObjectEventGraphicsInfo_Phoebe,
     [OBJ_EVENT_GFX_GLACIA] =                   &gObjectEventGraphicsInfo_Glacia,
@@ -385,6 +400,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LIZA] =                     &gObjectEventGraphicsInfo_Liza,
     [OBJ_EVENT_GFX_TATE] =                     &gObjectEventGraphicsInfo_Tate,
     [OBJ_EVENT_GFX_WALLACE] =                  &gObjectEventGraphicsInfo_Wallace,
+    [OBJ_EVENT_GFX_FROY] =                     &gObjectEventGraphicsInfo_Froy,
+    [OBJ_EVENT_GFX_THERMA] =                   &gObjectEventGraphicsInfo_Therma,
+    [OBJ_EVENT_GFX_SIMON] =                    &gObjectEventGraphicsInfo_Simon,
     [OBJ_EVENT_GFX_STEVEN] =                   &gObjectEventGraphicsInfo_Steven,
     [OBJ_EVENT_GFX_WALLY] =                    &gObjectEventGraphicsInfo_Wally,
     [OBJ_EVENT_GFX_LITTLE_BOY_3] =             &gObjectEventGraphicsInfo_RubySapphireLittleBoy,

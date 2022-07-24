@@ -118,8 +118,8 @@
       "x": 23,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 2
+      "dest_map": "MAP_CRANEWING_CITY_GLASSWORKS_1F",
+      "dest_warp_id": 0
     },
     {
       "x": 3,
