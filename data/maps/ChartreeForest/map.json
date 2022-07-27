@@ -197,7 +197,7 @@
       "flag": "FLAG_HIDE_ROCKETS_IN_CHARTREE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_ADMIN_BALFOUR",
       "x": 40,
       "y": 7,
       "elevation": 3,
