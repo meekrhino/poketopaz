@@ -768,37 +768,37 @@ mAmpureMakesCrash:
 	walk_in_place_fast_left
 	walk_in_place_fast_left
 	slide_right
-	walk_fastest_left
+	walk_faster_left
 	step_end
 
 mAmpureRunsAround:
 	walk_fast_right
 	walk_fast_down
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
 	walk_fast_up
 	walk_fast_down
 	walk_fast_up
 	walk_fast_down
 	walk_fast_up
 	walk_fast_down
-	walk_fastest_left
-	walk_fastest_left
-	walk_fastest_left
-	walk_fastest_left
-	walk_fastest_left
-	walk_fastest_left
-	walk_fastest_up
-	walk_fastest_left
-	walk_fastest_left
-	walk_fastest_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_up
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
 	step_end
 
 mBradleyRushesUp:
@@ -827,16 +827,16 @@ mAmpureRushesOut2:
 	walk_in_place_fast_up
 	walk_in_place_fast_up
 	walk_in_place_fast_up
-	walk_fastest_up
-	walk_fastest_up
-	walk_fastest_up
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_up
-	walk_fastest_up
-	walk_fastest_up
-	walk_fastest_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
 	set_invisible
 	step_end
 

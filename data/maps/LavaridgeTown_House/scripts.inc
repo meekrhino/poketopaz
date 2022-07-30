@@ -9,7 +9,7 @@ LavaridgeTown_House_EventScript_Zigzagoon::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_PINECO, 0
+	playmoncry SPECIES_PINECO, CRY_MODE_NORMAL
 	msgbox LavaridgeTown_House_Text_Zigzagoon, MSGBOX_DEFAULT
 	waitmoncry
 	release

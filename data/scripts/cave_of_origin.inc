@@ -2,7 +2,7 @@
 CaveOfOrigin_EventScript_LegendaryCry::
 	lockall
 	waitse
-	playmoncry SPECIES_PINECO, 2  @ SPECIES_PINECO in Ruby
+	playmoncry SPECIES_PINECO, CRY_MODE_ENCOUNTER  @ SPECIES_GROUDON in Ruby
 	waitmoncry
 	setvar VAR_TEMP_5, 1
 	releaseall

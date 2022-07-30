@@ -170,7 +170,7 @@
 #define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
-#define FLAG_CRANEWING_NPC_TRADE_COMPLETED    0x99
+#define FLAG_CRANEWING_NPC_TRADE_COMPLETED   0x99
 #define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED  0x9A
 #define FLAG_FORTREE_NPC_TRADE_COMPLETED     0x9B
 #define FLAG_BATTLE_FRONTIER_TRADE_DONE      0x9C
@@ -190,7 +190,7 @@
 #define FLAG_RECEIVED_TM40                   0xAA
 #define FLAG_RECEIVED_TM04                   0xAB
 #define FLAG_RECEIVED_TM03                   0xAC
-#define FLAG_DECORATION_0                    0xAD
+#define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
 #define FLAG_DECORATION_3                    0xB0
@@ -336,23 +336,24 @@
 #define FLAG_RECEIVED_AURORA_TICKET          0x13A
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
-#define FLAG_UNUSED_MYSTERY_GIFT_0x13D       0x13D
-#define FLAG_UNUSED_MYSTERY_GIFT_0x13E       0x13E
-#define FLAG_UNUSED_MYSTERY_GIFT_0x13F       0x13F
-#define FLAG_UNUSED_MYSTERY_GIFT_0x140       0x140
-#define FLAG_UNUSED_MYSTERY_GIFT_0x141       0x141
-#define FLAG_UNUSED_MYSTERY_GIFT_0x142       0x142
-#define FLAG_UNUSED_MYSTERY_GIFT_0x143       0x143
-#define FLAG_UNUSED_MYSTERY_GIFT_0x144       0x144
-#define FLAG_UNUSED_MYSTERY_GIFT_0x145       0x145
-#define FLAG_UNUSED_MYSTERY_GIFT_0x146       0x146
-#define FLAG_UNUSED_MYSTERY_GIFT_0x147       0x147
-#define FLAG_UNUSED_MYSTERY_GIFT_0x148       0x148
-#define FLAG_UNUSED_MYSTERY_GIFT_0x149       0x149
-#define FLAG_UNUSED_MYSTERY_GIFT_0x14A       0x14A
-#define FLAG_UNUSED_MYSTERY_GIFT_0x14B       0x14B
-#define FLAG_UNUSED_MYSTERY_GIFT_0x14C       0x14C
-#define FLAG_UNUSED_MYSTERY_GIFT_0x14D       0x14D
+#define FLAG_WONDER_CARD_UNUSED_1            0x13D // These Wonder Card flags are referenced but never set
+#define FLAG_WONDER_CARD_UNUSED_2            0x13E
+#define FLAG_WONDER_CARD_UNUSED_3            0x13F
+#define FLAG_WONDER_CARD_UNUSED_4            0x140
+#define FLAG_WONDER_CARD_UNUSED_5            0x141
+#define FLAG_WONDER_CARD_UNUSED_6            0x142
+#define FLAG_WONDER_CARD_UNUSED_7            0x143
+#define FLAG_WONDER_CARD_UNUSED_8            0x144
+#define FLAG_WONDER_CARD_UNUSED_9            0x145
+#define FLAG_WONDER_CARD_UNUSED_10           0x146
+#define FLAG_WONDER_CARD_UNUSED_11           0x147
+#define FLAG_WONDER_CARD_UNUSED_12           0x148
+#define FLAG_WONDER_CARD_UNUSED_13           0x149
+#define FLAG_WONDER_CARD_UNUSED_14           0x14A
+#define FLAG_WONDER_CARD_UNUSED_15           0x14B
+#define FLAG_WONDER_CARD_UNUSED_16           0x14C
+#define FLAG_WONDER_CARD_UNUSED_17           0x14D
+#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F
@@ -516,22 +517,22 @@
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)
-#define FLAG_MYSTERY_EVENT_DONE              0x1E4
-#define FLAG_MYSTERY_EVENT_1                 0x1E5
-#define FLAG_MYSTERY_EVENT_2                 0x1E6
-#define FLAG_MYSTERY_EVENT_3                 0x1E7
-#define FLAG_MYSTERY_EVENT_4                 0x1E8
-#define FLAG_MYSTERY_EVENT_5                 0x1E9
-#define FLAG_MYSTERY_EVENT_6                 0x1EA
-#define FLAG_MYSTERY_EVENT_7                 0x1EB
-#define FLAG_MYSTERY_EVENT_8                 0x1EC
-#define FLAG_MYSTERY_EVENT_9                 0x1ED
-#define FLAG_MYSTERY_EVENT_10                0x1EE
-#define FLAG_MYSTERY_EVENT_11                0x1EF
-#define FLAG_MYSTERY_EVENT_12                0x1F0
-#define FLAG_MYSTERY_EVENT_13                0x1F1
-#define FLAG_MYSTERY_EVENT_14                0x1F2
-#define FLAG_MYSTERY_EVENT_15                0x1F3
+#define FLAG_MYSTERY_GIFT_DONE               0x1E4
+#define FLAG_MYSTERY_GIFT_1                  0x1E5
+#define FLAG_MYSTERY_GIFT_2                  0x1E6
+#define FLAG_MYSTERY_GIFT_3                  0x1E7
+#define FLAG_MYSTERY_GIFT_4                  0x1E8
+#define FLAG_MYSTERY_GIFT_5                  0x1E9
+#define FLAG_MYSTERY_GIFT_6                  0x1EA
+#define FLAG_MYSTERY_GIFT_7                  0x1EB
+#define FLAG_MYSTERY_GIFT_8                  0x1EC
+#define FLAG_MYSTERY_GIFT_9                  0x1ED
+#define FLAG_MYSTERY_GIFT_10                 0x1EE
+#define FLAG_MYSTERY_GIFT_11                 0x1EF
+#define FLAG_MYSTERY_GIFT_12                 0x1F0
+#define FLAG_MYSTERY_GIFT_13                 0x1F1
+#define FLAG_MYSTERY_GIFT_14                 0x1F2
+#define FLAG_MYSTERY_GIFT_15                 0x1F3
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
@@ -1630,7 +1631,7 @@
 
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)
 
-// Special Flags (Stored in EWRAM (gSpecialFlags), not in the SaveBlock)
+// Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000
 #define FLAG_HIDE_MAP_NAME_POPUP                (SPECIAL_FLAGS_START + 0x0)
 #define FLAG_DONT_TRANSITION_MUSIC              (SPECIAL_FLAGS_START + 0x1)

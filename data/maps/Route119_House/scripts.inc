@@ -9,7 +9,7 @@ Route119_House_EventScript_Wingull::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_PINECO, 0
+	playmoncry SPECIES_PINECO, CRY_MODE_NORMAL
 	msgbox Route119_House_Text_Wingull, MSGBOX_DEFAULT
 	waitmoncry
 	release

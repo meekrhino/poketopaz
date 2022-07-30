@@ -107,7 +107,7 @@ static const union AnimCmd *const sSpriteAnimTable_Arrow[] =
 
 static const struct SpriteTemplate sSpriteTemplate_85104F0 =
 {
-    .tileTag = SPRITE_INVALID_TAG,
+    .tileTag = TAG_NONE,
     .paletteTag = 0x1000,
     .oam = &sOamData_Arrow,
     .anims = sSpriteAnimTable_Arrow,

@@ -3,6 +3,7 @@
 *.i
 *.elf
 *.gba
+!data/*.gba
 *.sgm
 *.sa1
 *.ss[0-9]
@@ -34,5 +35,7 @@ build/
 *.a
 .fuse_hidden*
 *.sna
-
+*.diff
+*.sym
+*.js
 *.mp4

@@ -9,7 +9,7 @@ RustboroCity_Flat2_1F_EventScript_Skitty::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_PINECO, 0
+	playmoncry SPECIES_PINECO, CRY_MODE_NORMAL
 	msgbox RustboroCity_Flat2_1F_Text_Skitty, MSGBOX_DEFAULT
 	waitmoncry
 	release

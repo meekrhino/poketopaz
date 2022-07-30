@@ -13,7 +13,7 @@ SootopolisCity_House4_EventScript_Azumarill::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_PINECO, 0
+	playmoncry SPECIES_PINECO, CRY_MODE_NORMAL
 	msgbox SootopolisCity_House4_Text_Azumarill, MSGBOX_DEFAULT
 	waitmoncry
 	release

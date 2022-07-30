@@ -1,8 +1,4 @@
 #include "easy_chat.h"
-#include "constants/easy_chat.h"
-#ifdef __VSCODE
-//#include "moves.h"
-#endif
 
 #define DOUBLE_SPECIES_NAME EC_EMPTY_WORD, 2,
 

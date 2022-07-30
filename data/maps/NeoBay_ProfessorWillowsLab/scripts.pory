@@ -884,22 +884,22 @@ movement mFaceLeft {
 movement mAmpureMakesCrash {
     walk_in_place_fast_left * 4
     slide_right
-    walk_fastest_left
+    walk_faster_left
 }
 
 movement mAmpureRunsAround {
     walk_fast_right
     walk_fast_down
-    walk_fastest_right * 9
+    walk_faster_right * 9
     walk_fast_up
     walk_fast_down
     walk_fast_up
     walk_fast_down
     walk_fast_up
     walk_fast_down
-    walk_fastest_left * 6
-    walk_fastest_up
-    walk_fastest_left * 3
+    walk_faster_left * 6
+    walk_faster_up
+    walk_faster_left * 3
 }
 
 movement mBradleyRushesUp {
@@ -920,9 +920,9 @@ movement mAmpureRushesOut {
 
 movement mAmpureRushesOut2 {
     walk_in_place_fast_up * 8
-    walk_fastest_up * 3
-    walk_fastest_right * 3
-    walk_fastest_up * 4
+    walk_faster_up * 3
+    walk_faster_right * 3
+    walk_faster_up * 4
     set_invisible
 }
 

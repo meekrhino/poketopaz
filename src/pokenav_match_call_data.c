@@ -324,7 +324,7 @@ static const match_call_text_data_t sWallyTextScripts[] = {
     { NULL,                  0xFFFF,                              0xFFFF }
 };
 
-const struct MatchCallLocationOverride sWallyLocationData[] = {
+static const struct MatchCallLocationOverride sWallyLocationData[] = {
     { FLAG_HIDE_MAUVILLE_CITY_WALLY,          MAPSEC_ROOTHAVEN_CITY },
     { FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT,    MAPSEC_NONE },
     { FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY,  MAPSEC_VICTORY_ROAD },
@@ -336,7 +336,7 @@ static const struct MatchCallWally sWallyMatchCallHeader =
     .type = MC_TYPE_WALLY,
     .mapSec = 0,
     .flag = FLAG_ENABLE_WALLY_MATCH_CALL,
-    .rematchTableIdx = REMATCH_WALLY_3,
+    .rematchTableIdx = REMATCH_WALLY_VR,
     .desc = gText_WallyMatchCallDesc,
     .textData = sWallyTextScripts,
     .locationData = sWallyLocationData
