@@ -1734,6 +1734,22 @@
 	.byte \out
 	.endm
 
+    .macro questmenu case:req, questId:req
+    .byte 0xe4
+    .byte \case
+    .byte \questId
+    .endm
+
+    .macro subquestmenu case:req, parentId:req, childId:req
+    .byte 0xe5
+    .byte \case
+    .2byte \parentId
+    .2byte \childId
+    .endm
+    
+    .macro openquestmenu
+    questmenu 0 0
+    .endm
 
 @ Supplementary
 
