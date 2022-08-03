@@ -2405,29 +2405,32 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
             QuestMenu_CopyQuestName(gStringVar1, questId);
         break;
     }
-    
+
     return TRUE;
 }
 
 bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
 {
     u8 caseId = ScriptReadByte(ctx);
-    u8 parentId = VarGet(ScriptReadHalfword(ctx));
-    u8 childId = VarGet(ScriptReadHalfword(ctx));
+    u8 subquestId = VarGet(ScriptReadHalfword(ctx));
+    int i;
 
     switch (caseId)
     {
         case QUEST_MENU_COMPLETE_QUEST:
-            QuestMenu_GetSetSubquestState(parentId ,FLAG_SET_COMPLETED,childId);
+            QuestMenu_GetSetSubquestState(FLAG_SET_COMPLETED,subquestId);
             break;
         case QUEST_MENU_CHECK_COMPLETE:
-            if (QuestMenu_GetSetSubquestState(parentId ,FLAG_GET_COMPLETED,childId))
+            if (QuestMenu_GetSetSubquestState(FLAG_GET_COMPLETED,subquestId))
                 gSpecialVar_Result = TRUE;
             else
                 gSpecialVar_Result = FALSE;
             break;
         case QUEST_MENU_BUFFER_QUEST_NAME:
-            QuestMenu_CopySubquestName(gStringVar1,parentId,childId);
+            for (i = 0; i < QUEST_COUNT; i++)
+            {
+                QuestMenu_CopySubquestName(gStringVar1,subquestId);
+            }
             break;
     }
 

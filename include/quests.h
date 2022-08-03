@@ -18,7 +18,7 @@
 #define SORT_SUBQUEST 100
 
 #define INCREMENT 1
-#define ALPHA 2 
+#define ALPHA 2
 #define SUB 3
 
 #define OBJECT 1
@@ -34,7 +34,7 @@ struct SubQuest
 	const u8 sprite;
     const u8 spritetype;
     const u8 *type;
-}; 
+};
 
 struct SideQuest
 {
@@ -44,32 +44,28 @@ struct SideQuest
 	const u8 *map;
 	const u8 sprite;
     const u8 spritetype;
-	const struct SubQuest *subquests;
+	const u8 *subquests;
 	const u8 numSubquests;
-}; 
-
-extern const struct SubQuest gSubQuests1[QUEST_1_SUB_COUNT];
-extern const struct SubQuest gSubQuests2[QUEST_2_SUB_COUNT];
-extern const struct SideQuest gSideQuests[QUEST_COUNT];
+};
 
 enum QuestCases
 {
 	FLAG_GET_UNLOCKED,      // check if quest is unlocked
-	FLAG_GET_INACTIVE, //check if quest is unlocked but has no other state
+	FLAG_GET_INACTIVE,      // check if quest is unlocked but has no other state
 	FLAG_GET_ACTIVE,        // check if quest is active
-	FLAG_GET_REWARD,     // check if quest is ready for reward
+	FLAG_GET_REWARD,        // check if quest is ready for reward
 	FLAG_GET_COMPLETED,     // check if quest is completed
-	FLAG_GET_FAVORITE,     // check if quest is favorited
+	FLAG_GET_FAVORITE,      // check if quest is favorited
 	FLAG_SET_UNLOCKED,      // mark quest as unlocked
-	FLAG_SET_INACTIVE, //mark quest as inactive
+	FLAG_SET_INACTIVE,      // mark quest as inactive
 	FLAG_SET_ACTIVE,        // mark quest as active
-	FLAG_SET_REWARD,     // mark quest ready for reward
+	FLAG_SET_REWARD,        // mark quest ready for reward
 	FLAG_SET_COMPLETED,     // mark completed quest
-	FLAG_SET_FAVORITE,     // mark quest as a favorite
-	FLAG_REMOVE_INACTIVE, //remove inactive flag from quest
-	FLAG_REMOVE_ACTIVE, //remove active flag from quest
-	FLAG_REMOVE_REWARD, //remove reward flag from quest
-	FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
+	FLAG_SET_FAVORITE,      // mark quest as a favorite
+	FLAG_REMOVE_INACTIVE,   // remove inactive flag from quest
+	FLAG_REMOVE_ACTIVE,     // remove active flag from quest
+	FLAG_REMOVE_REWARD,     // remove reward flag from quest
+	FLAG_REMOVE_FAVORITE,   // remove favorite flag from quest
 };
 
 enum SubQuestTypes
@@ -82,11 +78,11 @@ enum SubQuestTypes
 
 // functions
 void QuestMenu_Init(u8 a0, MainCallback callback);
-u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest);
+u8 QuestMenu_GetSetSubquestState(u8 caseId, u8 subquestId);
 u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId);
 void Task_QuestMenu_OpenFromStartMenu(u8);
 void QuestMenu_CopyQuestName(u8 *dst, u8 questId);
-void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId);
+void QuestMenu_CopySubquestName(u8 *dst, u8 subquestId);
 void QuestMenu_ResetMenuSaveData(void);
 
 #endif // GUARD_QUESTS_H

@@ -2999,8 +2999,8 @@ extern const u8 gText_Beauty3[];
 
 ////side quests
 //names
-extern const u8 gText_SideQuestName_1[];
-extern const u8 gText_SideQuestName_2[];
+extern const u8 gText_SideQuestName_GettingStarted[];
+extern const u8 gText_SideQuestName_AmpureRescue[];
 extern const u8 gText_SideQuestName_3[];
 extern const u8 gText_SideQuestName_4[];
 extern const u8 gText_SideQuestName_5[];

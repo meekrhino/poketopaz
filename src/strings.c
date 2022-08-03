@@ -1828,7 +1828,8 @@ const u8 gText_Berries[] = _("BERRIES");
 
 //// side quest data
 //names
-const u8 gText_SideQuestName_1[] = _("Side Quest 1");
+const u8 gText_SideQuestName_GettingStarted[] = _("Getting Started");
+const u8 gText_SideQuestName_AmpureRescue[] = _("Rescue Ampure");
 const u8 gText_SideQuestName_2[] = _("Side Quest 2");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
 const u8 gText_SideQuestName_4[] = _("Side Quest 4");
