@@ -116,7 +116,7 @@
 	.4byte NULL
 	.endm
 
-	.macro tryfaintmon_spikes battler:req, ptr:req
+	.macro jumpiffainted battler:req, ptr:req
 	.byte 0x19
 	.byte \battler
 	.byte TRUE
@@ -1282,7 +1282,7 @@
 	.macro updatechoicemoveonlvlup battler:req
 	various \battler, VARIOUS_UPDATE_CHOICE_MOVE_ON_LVL_UP, 0
 	.endm
-	
+
 	.macro resetplayerfainted
 	various BS_ATTACKER, VARIOUS_RESET_PLAYER_FAINTED, 0
 	.endm
@@ -1310,11 +1310,11 @@
 	.macro forfeityesnobox battler:req
 	various \battler, VARIOUS_EMIT_YESNOBOX, 0
 	.endm
-	
+
 	.macro arenadrawreftextbox
 	various BS_ATTACKER, VARIOUS_DRAW_ARENA_REF_TEXT_BOX, 0
 	.endm
-	
+
 	.macro arenaerasereftextbox
 	various BS_ATTACKER, VARIOUS_ERASE_ARENA_REF_TEXT_BOX, 0
 	.endm
@@ -1346,11 +1346,11 @@
 	.macro volumeup
 	various BS_ATTACKER, VARIOUS_VOLUME_UP, 0
 	.endm
-	
+
 	.macro setalreadystatusedmoveattempt battler:req
 	various \battler, VARIOUS_SET_ALREADY_STATUS_MOVE_ATTEMPT, 0
 	.endm
-	
+
 	.macro palacetryescapestatus battler:req
 	various \battler, VARIOUS_PALACE_TRY_ESCAPE_STATUS, 0
 	.endm

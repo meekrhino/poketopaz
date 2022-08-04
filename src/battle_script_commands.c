@@ -3271,8 +3271,6 @@ static void Cmd_tryfaintmon(void)
 
             BattleScriptPop();
             gBattlescriptCurrInstr = BS_ptr;
-            gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~SIDE_STATUS_SPIKES_DAMAGED;
-            gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~SIDE_STATUS_CINDERS_DAMAGED;
         }
         else
         {

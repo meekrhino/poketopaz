@@ -292,8 +292,10 @@ BattleScript_HitFromAfterAtkAnimation::
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
 	seteffectwithchance
-	tryfaintmon_spikes BS_TARGET, BattleScript_MoveEnd
+	jumpiffainted BS_TARGET, BattleScript_MoveEndTryFaint
     call BattleScript_TryEcho
+BattleScript_MoveEndTryFaint::
+    tryfaintmon BS_TARGET
 BattleScript_MoveEnd::
 	moveendall
 	end
@@ -3903,7 +3905,7 @@ BattleScript_SpikesOnAttacker::
 	datahpupdate BS_ATTACKER
 	call BattleScript_PrintHurtBySpikes
 	tryfaintmon BS_ATTACKER
-	tryfaintmon_spikes BS_ATTACKER, BattleScript_SpikesOnAttackerFainted
+	jumpiffainted BS_ATTACKER, BattleScript_SpikesOnAttackerFainted
 	return
 
 BattleScript_SpikesOnAttackerFainted::
@@ -3918,7 +3920,7 @@ BattleScript_SpikesOnTarget::
 	datahpupdate BS_TARGET
 	call BattleScript_PrintHurtBySpikes
 	tryfaintmon BS_TARGET
-	tryfaintmon_spikes BS_TARGET, BattleScript_SpikesOnTargetFainted
+	jumpiffainted BS_TARGET, BattleScript_SpikesOnTargetFainted
 	return
 
 BattleScript_SpikesOnTargetFainted::
@@ -3933,7 +3935,7 @@ BattleScript_SpikesOnFaintedBattler::
 	datahpupdate BS_FAINTED
 	call BattleScript_PrintHurtBySpikes
 	tryfaintmon BS_FAINTED
-	tryfaintmon_spikes BS_FAINTED, BattleScript_SpikesOnFaintedBattlerFainted
+	jumpiffainted BS_FAINTED, BattleScript_SpikesOnFaintedBattlerFainted
 	return
 
 BattleScript_SpikesOnFaintedBattlerFainted::
@@ -3953,7 +3955,7 @@ BattleScript_CindersOnAttacker::
 	datahpupdate BS_ATTACKER
 	call BattleScript_PrintHurtByCinders
 	tryfaintmon BS_ATTACKER
-	tryfaintmon_spikes BS_ATTACKER, BattleScript_CindersOnAttackerFainted
+	jumpiffainted BS_ATTACKER, BattleScript_CindersOnAttackerFainted
 	return
 
 BattleScript_CindersOnAttackerFainted::
@@ -3968,7 +3970,7 @@ BattleScript_CindersOnTarget::
 	datahpupdate BS_TARGET
 	call BattleScript_PrintHurtByCinders
 	tryfaintmon BS_TARGET
-	tryfaintmon_spikes BS_TARGET, BattleScript_CindersOnTargetFainted
+	jumpiffainted BS_TARGET, BattleScript_CindersOnTargetFainted
 	return
 
 BattleScript_CindersOnTargetFainted::
@@ -3983,7 +3985,7 @@ BattleScript_CindersOnFaintedBattler::
 	datahpupdate BS_FAINTED
 	call BattleScript_PrintHurtByCinders
 	tryfaintmon BS_FAINTED
-	tryfaintmon_spikes BS_FAINTED, BattleScript_CindersOnFaintedBattlerFainted
+	jumpiffainted BS_FAINTED, BattleScript_CindersOnFaintedBattlerFainted
 	return
 
 BattleScript_CindersOnFaintedBattlerFainted::
