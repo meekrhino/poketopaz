@@ -113,7 +113,7 @@ CranewingCity_Text_GymGuidePostVictory::
 	.string "We make a heck of a team, we do!\p"
 	.string "Listen, listen!\n"
 	.string "Check your Trainer Card.\p"
-	.string "You'll see your shiny Char Badge"
+	.string "You'll see your shiny Char Badge\n"
 	.string "recorded inside of it.\p"
 	.string "Congratulations!\p"
 	.string "You could say you've just climbed the\n"

@@ -1262,3 +1262,9 @@ $(MID_SUBDIR)/se_m_leer.s: %.s: %.mid
 
 $(MID_SUBDIR)/se_dex_search.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G127 -v100 -P5
+
+$(MID_SUBDIR)/lungfish01.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G149 -v100
+
+$(MID_SUBDIR)/mus_route201.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v100

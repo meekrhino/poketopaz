@@ -4,6 +4,7 @@ CranewingCity_MapScripts::
 
 
 CranewingCity_Sign::
+	setflag FLAG_SYS_QUEST_MENU_GET
 	msgbox CranewingCity_Text_TownSign, MSGBOX_SIGN
 	end
 
