@@ -542,6 +542,7 @@
 #define PH_NURSE_SOLO               609
 #define MUS_LUNGFISH01              610
 #define MUS_ROUTE201                611
+#define MUS_BRADLEYS_THEME          612
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

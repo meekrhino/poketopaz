@@ -1268,3 +1268,6 @@ $(MID_SUBDIR)/lungfish01.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_route201.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v100
+
+$(MID_SUBDIR)/mus_bradleys_theme.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v100
