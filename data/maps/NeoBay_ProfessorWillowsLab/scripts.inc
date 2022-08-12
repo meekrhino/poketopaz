@@ -115,6 +115,7 @@ WillowsLab_EventScript_SelectVenap::
 	compare VAR_NEOBAY_STATE, 2
 	goto_if_ne WillowsLab_EventScript_SelectVenap_5
 WillowsLab_EventScript_SelectVenap_4:
+	playmoncry SPECIES_VENAP, CRY_MODE_NORMAL
 	showmonpic SPECIES_VENAP, 10, 3
 	msgbox WillowsLab_DoYouWantVenap, MSGBOX_YESNO
 	waitmessage
@@ -144,6 +145,7 @@ WillowsLab_EventScript_SelectCelsinge::
 	compare VAR_NEOBAY_STATE, 2
 	goto_if_ne WillowsLab_EventScript_SelectCelsinge_5
 WillowsLab_EventScript_SelectCelsinge_4:
+	playmoncry SPECIES_CELSINGE, CRY_MODE_NORMAL
 	showmonpic SPECIES_CELSINGE, 10, 3
 	msgbox WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO
 	waitmessage
@@ -173,6 +175,7 @@ WillowsLab_EventScript_SelectEchoise::
 	compare VAR_NEOBAY_STATE, 2
 	goto_if_ne WillowsLab_EventScript_SelectEchoise_5
 WillowsLab_EventScript_SelectEchoise_4:
+	playmoncry SPECIES_ECHOISE, CRY_MODE_NORMAL
 	showmonpic SPECIES_ECHOISE, 10, 3
 	msgbox WillowsLab_DoYouWantEchoise, MSGBOX_YESNO
 	waitmessage
@@ -1096,8 +1099,8 @@ WillowsLab_YouGoFirst_Text_1:
 	.string "Come on, come on, come on!$"
 
 WillowsLab_TakeYourTime_Text_0:
-	.string "Willow: So, you stopped by your family to\n"
-	.string "say goodbye, did you?$"
+	.string "Willow: So, you stopped by your family\n"
+	.string "to say goodbye, did you?$"
 
 WillowsLab_TakeYourTime_Text_1:
 	.string "Willow: … … …\n"
@@ -1270,8 +1273,8 @@ WillowsLab_BradleyMadeChoice_Text_0:
 	.string "Bradley received the {STR_VAR_1}\nfrom Prof. Willow!$"
 
 WillowsLab_YourePokemonTrainersNow_Text_0:
-	.string "Willow: Ohohoho, the looks on your faces\n"
-	.string "are priceless!\p"
+	.string "Willow: Ohohoho, the looks on your\n"
+	.string "faces are priceless!\p"
 	.string "From now on, both of you are officially\n"
 	.string "Pokémon Trainers!\l"
 	.string "Congratulations!$"

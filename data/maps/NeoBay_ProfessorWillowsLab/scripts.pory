@@ -138,6 +138,7 @@ script(global) WillowsLab_EventScript_SelectVenap {
     if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
     }
+    playmoncry(SPECIES_VENAP, CRY_MODE_NORMAL)
     showmonpic(SPECIES_VENAP, 10, 3)
     msgbox(WillowsLab_DoYouWantVenap, MSGBOX_YESNO)
     waitmessage
@@ -156,6 +157,7 @@ script(global) WillowsLab_EventScript_SelectCelsinge {
     if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
     }
+    playmoncry(SPECIES_CELSINGE, CRY_MODE_NORMAL)
     showmonpic(SPECIES_CELSINGE, 10, 3)
     msgbox(WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO)
     waitmessage
@@ -174,6 +176,7 @@ script(global) WillowsLab_EventScript_SelectEchoise {
     if(var(VAR_NEOBAY_STATE) != NEOBAY_STATE_MET_WILLOW) {
         goto(WillowsLab_DontBeGreedy)
     }
+    playmoncry(SPECIES_ECHOISE, CRY_MODE_NORMAL)
     showmonpic(SPECIES_ECHOISE, 10, 3)
     msgbox(WillowsLab_DoYouWantEchoise, MSGBOX_YESNO)
     waitmessage

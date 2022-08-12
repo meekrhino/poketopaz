@@ -388,7 +388,7 @@ DirectSoundWaveData_unknown_17::
 
     .align 2
 Cry_Venap::
-    .incbin "sound/direct_sound_samples/cries/bulbasaur.bin"
+    .incbin "sound/direct_sound_samples/cries/venap.bin"
 
     .align 2
 Cry_Traplent::

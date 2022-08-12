@@ -183,9 +183,9 @@ PlayersHouse_1F_BradleyWasLookingForYou::
 	.string "is.$"
 
 PlayersHouse_1F_GivesRunningShoes::
-	.string "Mom: I understand that you want to find\n"
-	.string "Simon, but there's no telling where he\l"
-	.string "could be now.\p"
+	.string "Mom: I understand that you want to\n"
+	.string "find Simon, but there's no telling where\l"
+	.string "he could be now.\p"
 	.string "… … …\n"
 	.string "… … …\l"
 	.string "… … …\l"

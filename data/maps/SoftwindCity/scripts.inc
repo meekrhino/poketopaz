@@ -851,9 +851,9 @@ SoftwindCity_TriggerAlisaIntro_Text_0:
 	.string "there.$"
 
 SoftwindCity_TriggerAlisaIntro_Text_1:
-	.string "???: This is Softwind City, and I've been\n"
-	.string "waiting ages for the Gym Leader to get\l"
-	.string "back…$"
+	.string "???: This is Softwind City, and I've\n"
+	.string "been waiting ages for the Gym Leader\l"
+	.string "to get back…$"
 
 SoftwindCity_TriggerAlisaIntro_Text_2:
 	.string "???: What?\n"
