@@ -240,8 +240,8 @@ static const u8 sText_AZ[] = _(" A-Z");
 //Declaration of subquest structures. Edits to subquests are made here.
 
 static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
-    [SUB_QUEST_1] = {
-	    .id = SUB_QUEST_1,
+    [SUB_QUEST_FIND_BRADLEY] = {
+	    .id = SUB_QUEST_FIND_BRADLEY,
 	    .name = gText_SubQuest1_Name1,
 	    .desc = gText_SubQuest1_Desc1,
 	    .map = gText_SideQuestMap1,
@@ -249,8 +249,8 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .spritetype = OBJECT,
 	    .type = sText_Found
     },
-	[SUB_QUEST_2] = {
-	    .id = SUB_QUEST_2,
+	[SUB_QUEST_RESCUE_AMPURE] = {
+	    .id = SUB_QUEST_RESCUE_AMPURE,
 	    .name = gText_SubQuest1_Name2,
 	    .desc = gText_SubQuest1_Desc2,
 	    .map = gText_SideQuestMap2,
@@ -258,8 +258,8 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .spritetype = OBJECT,
 	    .type = sText_Found
     },
-	[SUB_QUEST_3] = {
-	    .id = SUB_QUEST_3,
+	[SUB_QUEST_SAY_GOODBYE] = {
+	    .id = SUB_QUEST_SAY_GOODBYE,
 	    .name = gText_SubQuest1_Name3,
 	    .desc = gText_SubQuest1_Desc3,
 	    .map = gText_SideQuestMap3,
@@ -267,51 +267,195 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .spritetype = OBJECT,
 	    .type = sText_Found
     },
-	[SUB_QUEST_4] = {
-	    .id = SUB_QUEST_4,
-	    .name = gText_SubQuest2_Name1,
-	    .desc = gText_SubQuest2_Desc1,
+	[SUB_QUEST_FIND_SIMON] = {
+	    .id = SUB_QUEST_FIND_SIMON,
+	    .name = gText_SubQuest1_Name1,
+	    .desc = gText_SubQuest1_Desc1,
 	    .map = gText_SideQuestMap1,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
 	    .type = sText_Found
     },
-	[SUB_QUEST_5] = {
-	    .id = SUB_QUEST_5,
-	    .name = gText_SubQuest2_Name2,
-	    .desc = gText_SubQuest2_Desc2,
+	[SUB_QUEST_GYM_1_CRANEWING] = {
+	    .id = SUB_QUEST_GYM_1_CRANEWING,
+	    .name = gText_SubQuest1_Name2,
+	    .desc = gText_SubQuest1_Desc2,
 	    .map = gText_SideQuestMap2,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
 	    .type = sText_Found
     },
-	[SUB_QUEST_6] = {
-	    .id = SUB_QUEST_6,
-	    .name = gText_SubQuest2_Name3,
-	    .desc = gText_SubQuest2_Desc3,
+	[SUB_QUEST_GYM_2_SOFTWIND] = {
+	    .id = SUB_QUEST_GYM_2_SOFTWIND,
+	    .name = gText_SubQuest1_Name3,
+	    .desc = gText_SubQuest1_Desc3,
 	    .map = gText_SideQuestMap3,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
 	    .type = sText_Found
 	},
-	[SUB_QUEST_7] = {
-	    .id = SUB_QUEST_7,
-	    .name = gText_SubQuest2_Name4,
-	    .desc = gText_SubQuest2_Desc4,
+	[SUB_QUEST_GYM_3_ROOTHAVEN] = {
+	    .id = SUB_QUEST_GYM_3_ROOTHAVEN,
+	    .name = gText_SubQuest1_Name4,
+	    .desc = gText_SubQuest1_Desc4,
 	    .map = gText_SideQuestMap4,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
 	    .type = sText_Found
 	},
-	[SUB_QUEST_8] = {
-	    .id = SUB_QUEST_8,
-	    .name = gText_SubQuest2_Name5,
-	    .desc = gText_SubQuest2_Desc5,
+	[SUB_QUEST_GYM_4_KALYPSO] = {
+	    .id = SUB_QUEST_GYM_4_KALYPSO,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
 	    .map = gText_SideQuestMap5,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
 	    .type = sText_Found
 	},
+    [SUB_QUEST_GYM_5_GALLEA] = {
+        .id = SUB_QUEST_GYM_5_GALLEA,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_GYM_6_PORTWIND] = {
+        .id = SUB_QUEST_GYM_6_PORTWIND,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_GYM_7_SEDCINI] = {
+        .id = SUB_QUEST_GYM_7_SEDCINI,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_GYM_8_ENCHESTRA] = {
+        .id = SUB_QUEST_GYM_8_ENCHESTRA,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_GYM_9_DYNAMO_GARDENS] = {
+        .id = SUB_QUEST_GYM_9_DYNAMO_GARDENS,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_GYM_10_SKOBELOFF] = {
+        .id = SUB_QUEST_GYM_10_SKOBELOFF,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_GYM_11_SAHARAN] = {
+        .id = SUB_QUEST_GYM_11_SAHARAN,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_GYM_12_AQUAPOLIS] = {
+        .id = SUB_QUEST_GYM_12_AQUAPOLIS,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_TRIUMPH_SPIRE] = {
+        .id = SUB_QUEST_TRIUMPH_SPIRE,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_FIND_MILK] = {
+        .id = SUB_QUEST_FIND_MILK,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_FIND_BOTTLE] = {
+        .id = SUB_QUEST_FIND_BOTTLE,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_DELIVER_ASH] = {
+        .id = SUB_QUEST_DELIVER_ASH,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_GET_MILK] = {
+        .id = SUB_QUEST_GET_MILK,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_DELIVER_MILK] = {
+        .id = SUB_QUEST_DELIVER_MILK,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_INVESTIGATE_FOREST] = {
+        .id = SUB_QUEST_INVESTIGATE_FOREST,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
+    [SUB_QUEST_DEFEAT_ROCKETS] = {
+        .id = SUB_QUEST_DEFEAT_ROCKETS,
+	    .name = gText_SubQuest1_Name5,
+	    .desc = gText_SubQuest1_Desc5,
+	    .map = gText_SideQuestMap5,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .type = sText_Found
+    },
 };
 
 //Declaration of side quest structures. Edits to quests are made here.
@@ -327,41 +471,52 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
         .sprite = OBJ_EVENT_GFX_WALLY,
         .spritetype = OBJECT,
         .subquests = subquest_list(
-            QUEST_1_SUB_COUNT,
-            SUB_QUEST_1,
-            SUB_QUEST_2,
-            SUB_QUEST_3
+            QUEST_GETTING_STARTED_SUB_COUNT,
+            SUB_QUEST_FIND_BRADLEY,
+            SUB_QUEST_RESCUE_AMPURE,
+            SUB_QUEST_SAY_GOODBYE
         ),
-        .numSubquests = QUEST_1_SUB_COUNT
+        .numSubquests = QUEST_GETTING_STARTED_SUB_COUNT
     },
-	[QUEST_AMPURE_RESCUE] = {
-        .name = gText_SideQuestName_AmpureRescue,
+	[QUEST_FINDING_SIMON] = {
+        .name = gText_SideQuestName_FindingSimon,
         .desc = gText_SideQuestDesc_2,
         .donedesc = gText_SideQuestDoneDesc_2,
         .map = gText_SideQuestMap2,
         .sprite = SPECIES_AMPURE,
         .spritetype = PKMN,
         .subquests = subquest_list(
-            QUEST_2_SUB_COUNT,
-            SUB_QUEST_4,
-            SUB_QUEST_5,
-            SUB_QUEST_6,
-            SUB_QUEST_7,
-            SUB_QUEST_8
+            QUEST_FINDING_SIMON_SUB_COUNT,
+            SUB_QUEST_FIND_SIMON
         ),
-        .numSubquests = QUEST_2_SUB_COUNT
+        .numSubquests = QUEST_FINDING_SIMON_SUB_COUNT
     },
-	[QUEST_3] = {
+	[QUEST_TRIUMPH_SPIRE] = {
 	    .name = gText_SideQuestName_3,
 	    .desc = gText_SideQuestDesc_3,
 	    .donedesc = gText_SideQuestDoneDesc_3,
 	    .map = gText_SideQuestMap3,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .subquests = NULL,
-        .numSubquests = 0
+	    .subquests = subquest_list(
+            QUEST_TRIUMPH_SPIRE_SUB_COUNT,
+            SUB_QUEST_GYM_1_CRANEWING,
+            SUB_QUEST_GYM_2_SOFTWIND,
+            SUB_QUEST_GYM_3_ROOTHAVEN,
+            SUB_QUEST_GYM_4_KALYPSO,
+            SUB_QUEST_GYM_5_GALLEA,
+            SUB_QUEST_GYM_6_PORTWIND,
+            SUB_QUEST_GYM_7_SEDCINI,
+            SUB_QUEST_GYM_8_ENCHESTRA,
+            SUB_QUEST_GYM_9_DYNAMO_GARDENS,
+            SUB_QUEST_GYM_10_SKOBELOFF,
+            SUB_QUEST_GYM_11_SAHARAN,
+            SUB_QUEST_GYM_12_AQUAPOLIS,
+            SUB_QUEST_TRIUMPH_SPIRE
+        ),
+        .numSubquests = QUEST_TRIUMPH_SPIRE_SUB_COUNT
     },
-	[QUEST_4] = {
+	[QUEST_LOST_FISHING_POLE] = {
 	    .name = gText_SideQuestName_4,
 	    .desc = gText_SideQuestDesc_4,
 	    .donedesc = gText_SideQuestDoneDesc_4,
@@ -371,6 +526,57 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	    .subquests = NULL,
         .numSubquests = 0
     },
+	[QUEST_HIDDEN_ITEMS] = {
+	    .name = gText_SideQuestName_4,
+	    .desc = gText_SideQuestDesc_4,
+	    .donedesc = gText_SideQuestDoneDesc_4,
+	    .map = gText_SideQuestMap4,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .subquests = NULL,
+        .numSubquests = 0
+    },
+	[QUEST_MOOCALF_ORPHAN] = {
+	    .name = gText_SideQuestName_4,
+	    .desc = gText_SideQuestDesc_4,
+	    .donedesc = gText_SideQuestDoneDesc_4,
+	    .map = gText_SideQuestMap4,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .subquests = subquest_list(
+            QUEST_MOOCALF_ORPHAN_SUB_COUNT,
+            SUB_QUEST_FIND_MILK,
+            SUB_QUEST_FIND_BOTTLE,
+            SUB_QUEST_DELIVER_MILK,
+            SUB_QUEST_GET_MILK,
+            SUB_QUEST_DELIVER_MILK
+        ),
+        .numSubquests = QUEST_MOOCALF_ORPHAN_SUB_COUNT
+    },
+	[QUEST_TRADE_LUPINE] = {
+	    .name = gText_SideQuestName_4,
+	    .desc = gText_SideQuestDesc_4,
+	    .donedesc = gText_SideQuestDoneDesc_4,
+	    .map = gText_SideQuestMap4,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .subquests = NULL,
+        .numSubquests = 0
+    },
+	[QUEST_CHARTREE_ROCKETS] = {
+	    .name = gText_SideQuestName_4,
+	    .desc = gText_SideQuestDesc_4,
+	    .donedesc = gText_SideQuestDoneDesc_4,
+	    .map = gText_SideQuestMap4,
+	    .sprite = OBJ_EVENT_GFX_WALLY,
+	    .spritetype = OBJECT,
+	    .subquests = subquest_list(
+            QUEST_CHARTREE_ROCKETS_SUB_COUNT,
+            SUB_QUEST_INVESTIGATE_FOREST,
+            SUB_QUEST_DEFEAT_ROCKETS
+        ),
+        .numSubquests = QUEST_CHARTREE_ROCKETS_SUB_COUNT
+    }
 };
 
 //BG layer defintions
