@@ -1826,63 +1826,104 @@ const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
 
-//// side quest data
-//names
-const u8 gText_SideQuestName_GettingStarted[] = _("Begin With Beginning");
-const u8 gText_SideQuestName_FindingSimon[] = _("A Waryward Friend");
-const u8 gText_SideQuestName_2[] = _("Side Quest 2");
-const u8 gText_SideQuestName_3[] = _("Side Quest 3");
-const u8 gText_SideQuestName_4[] = _("Side Quest 4");
-const u8 gText_SideQuestName_5[] = _("Side Quest 5");
-const u8 gText_SideQuestName_6[] = _("Side Quest 6");
-const u8 gText_SideQuestName_7[] = _("Side Quest 7");
-const u8 gText_SideQuestName_8[] = _("Side Quest 8");
+// Quest data
+// Getting Started
+const u8 gText_Quest_GettingStartedName[] = _("Begin With Beginning");
+const u8 gText_Quest_GettingStartedDesc[] = _("Every great journey begins with a\nsingle step.");
+const u8 gText_Quest_GettingStartedDone[] = _("Took the first step on an\nincredible journey.");
+const u8 gText_Quest_GettingStartedMap[] = _("Neo Bay");
 
-//descriptions
-const u8 gText_SideQuestDesc_1[] = _("Description 1");
-const u8 gText_SideQuestDesc_2[] = _("Description 2");
-const u8 gText_SideQuestDesc_3[] = _("Description 3");
-const u8 gText_SideQuestDesc_4[] = _("Description 4");
-const u8 gText_SideQuestDesc_5[] = _("Description 5");
-const u8 gText_SideQuestDesc_6[] = _("Description 6");
-const u8 gText_SideQuestDesc_7[] = _("Description 7");
-const u8 gText_SideQuestDesc_8[] = _("Description 8");
+const u8 gText_SubQuest_FindBradleyName[] = _("Find Bradley");
+const u8 gText_SubQuest_FindBradleyDesc[] = _("You know where to find him, of course.");
+const u8 gText_SubQuest_RescueAmpureName[] = _("Return Ampure");
+const u8 gText_SubQuest_RescueAmpureDesc[] = _("Search the grass for the runaway Ampure.");
+const u8 gText_SubQuest_SayGoodbyeName[] = _("Say Goodbye");
+const u8 gText_SubQuest_SayGoodbyeDesc[] = _("Say goodbye to Mom.\nYou'll come back to visit, right?");
 
-//completed quest description
-const u8 gText_SideQuestDoneDesc_1[] = _("Completed Quest 1");
-const u8 gText_SideQuestDoneDesc_2[] = _("Completed Quest 2");
-const u8 gText_SideQuestDoneDesc_3[] = _("Completed Quest 3");
-const u8 gText_SideQuestDoneDesc_4[] = _("Completed Quest 4");
-const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5");
-const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
-const u8 gText_SideQuestDoneDesc_7[] = _("Completed Quest 7");
-const u8 gText_SideQuestDoneDesc_8[] = _("Completed Quest 8");
+// Finding Simon
+const u8 gText_Quest_FindingSimonName[] = _("A Wayward Friend");
+const u8 gText_Quest_FindingSimonDesc[] = _("Find and return the Bradley's\nlong lost brother Simon.");
+const u8 gText_Quest_FindingSimonDone[] = _("TODO");
+const u8 gText_Quest_FindingSimonMap[] = _("Unknown");
 
-//map
-const u8 gText_SideQuestMap1[] = _("Map 1");
-const u8 gText_SideQuestMap2[] = _("Map 2");
-const u8 gText_SideQuestMap3[] = _("Map 3");
-const u8 gText_SideQuestMap4[] = _("Map 4");
-const u8 gText_SideQuestMap5[] = _("Map 5");
-const u8 gText_SideQuestMap6[] = _("Map 6");
-const u8 gText_SideQuestMap7[] = _("Map 7");
-const u8 gText_SideQuestMap8[] = _("Map 8");
+const u8 gText_SubQuest_FindSimonName[] = _("Search Everywhere");
+const u8 gText_SubQuest_FindSimonDesc[] = _("He was dragged into the sea by some\nmassive Pokémon. He's probably fine.");
 
-//subquests
-const u8 gText_SubQuest1_Name1[] = _("Part 1");
-const u8 gText_SubQuest1_Name2[] = _("Part 2");
-const u8 gText_SubQuest1_Name3[] = _("Part 3");
-const u8 gText_SubQuest1_Name4[] = _("Part 4");
-const u8 gText_SubQuest1_Name5[] = _("Part 5");
-const u8 gText_SubQuest1_Name6[] = _("Part 6");
-const u8 gText_SubQuest1_Name7[] = _("Part 7");
-const u8 gText_SubQuest1_Name8[] = _("Part 8");
+// Triumph Spire
+const u8 gText_Quest_TriumphSpireName[] = _("Triumph Spire");
+const u8 gText_Quest_TriumphSpireDesc[] = _("Take on the ultimate Pokémon Trainer\nchallenge and climb to its height.");
+const u8 gText_Quest_TriumphSpireDone[] = _("Became the Pokémon Champion by climbing\nto the pinnacle of Triump Spire.");
+const u8 gText_Quest_TriumphSpireMap[] = _("Triumph Spire");
 
-const u8 gText_SubQuest1_Desc1[] = _("Description Sub 1");
-const u8 gText_SubQuest1_Desc2[] = _("Description Sub 2");
-const u8 gText_SubQuest1_Desc3[] = _("Description Sub 3");
-const u8 gText_SubQuest1_Desc4[] = _("Description Sub 4");
-const u8 gText_SubQuest1_Desc5[] = _("Description Sub 5");
-const u8 gText_SubQuest1_Desc6[] = _("Description Sub 6");
-const u8 gText_SubQuest1_Desc7[] = _("Description Sub 7");
-const u8 gText_SubQuest1_Desc8[] = _("Description Sub 8");
+const u8 gText_SubQuest_GymCranewingName[] = _("Cranewing City");
+const u8 gText_SubQuest_GymCranewingDesc[] = _("Defeat the Cranewing City\nGym Leader");
+const u8 gText_SubQuest_GymSoftwindName[] = _("Softwind City");
+const u8 gText_SubQuest_GymSoftwindDesc[] = _("Defeat the Softwind City\nGym Leader");
+const u8 gText_SubQuest_GymRoothavenName[] = _("Roothaven City");
+const u8 gText_SubQuest_GymRoothavenDesc[] = _("Defeat the Roothaven City\nGym Leader");
+const u8 gText_SubQuest_GymKalypsoName[] = _("Kalypso City");
+const u8 gText_SubQuest_GymKalypsoDesc[] = _("Defeat the Kalypso City\nGym Leader");
+const u8 gText_SubQuest_GymGalleaName[] = _("Gallea City");
+const u8 gText_SubQuest_GymGalleaDesc[] = _("Defeat the Gallea City\nGym Leader");
+const u8 gText_SubQuest_GymPortwindName[] = _("Portwind City");
+const u8 gText_SubQuest_GymPortwindDesc[] = _("Defeat the Portwind City\nGym Leader");
+const u8 gText_SubQuest_GymSedciniName[] = _("Sedcini City");
+const u8 gText_SubQuest_GymSedciniDesc[] = _("Defeat the Sedcini City\nGym Leader");
+const u8 gText_SubQuest_GymEnchestraName[] = _("Enchestra City");
+const u8 gText_SubQuest_GymEnchestraDesc[] = _("Defeat the Enchestra City\nGym Leader");
+const u8 gText_SubQuest_GymDynamoGardensName[] = _("Dynamo Gardens");
+const u8 gText_SubQuest_GymDynamoGardensDesc[] = _("Defeat the Dynamo Gardens\nGym Leader");
+const u8 gText_SubQuest_GymSkobeloffName[] = _("Skobeloff City");
+const u8 gText_SubQuest_GymSkobeloffDesc[] = _("Defeat the Skobeloff City\nGym Leader");
+const u8 gText_SubQuest_GymSaharanName[] = _("Saharan City");
+const u8 gText_SubQuest_GymSaharanDesc[] = _("Defeat the Saharan City\nGym Leader");
+const u8 gText_SubQuest_GymAquapolisName[] = _("Aquapolis");
+const u8 gText_SubQuest_GymAquapolisDesc[] = _("Defeat the Aquapolis\nGym Leader");
+const u8 gText_SubQuest_TriumphSpireName[] = _("Triumph Spire");
+const u8 gText_SubQuest_TriumphSpireDesc[] = _("Climb the Triumph Spire and\nbecome the Pokémon Champion.");
+
+// Fishing Pole
+const u8 gText_Quest_FishingPoleName[] = _("Forgetful Fisherman");
+const u8 gText_Quest_FishingPoleDesc[] = _("Return the impressively forgetful\nfisherman's lost Old Rod.");
+const u8 gText_Quest_FishingPoleDone[] = _("Found the drunked fisherman's old rod\nand got a reward for honesty.");
+const u8 gText_Quest_FishingPoleMap[] = _("Sunset Village");
+
+// Hidden Items
+const u8 gText_Quest_HiddenItemsName[] = _("Pearls of Wisdom");
+const u8 gText_Quest_HiddenItemsDesc[] = _("Complete the old man's challenge by\nfinding a hidden item in Sunset Village.");
+const u8 gText_Quest_HiddenItemsDone[] = _("Solved the old man's “puzzle”.");
+const u8 gText_Quest_HiddenItemsMap[] = _("Sunset Village");
+
+// Moocalf Orphan
+const u8 gText_Quest_MoocalfOrphanName[] = _("Veterinary Venture");
+const u8 gText_Quest_MoocalfOrphanDesc[] = _("Bring the ailing Moocalf some\nmilk to aid in its recovery.");
+const u8 gText_Quest_MoocalfOrphanDone[] = _("Restored the young Moocalf to health.");
+const u8 gText_Quest_MoocalfOrphanMap[] = _("Softwind City");
+
+const u8 gText_SubQuest_FindMilkName[] = _("Find Milk");
+const u8 gText_SubQuest_FindMilkDesc[] = _("The ailing Moocalf orphan needs milk\nto help it recover.");
+const u8 gText_SubQuest_FindBottleName[] = _("Find a Bottle");
+const u8 gText_SubQuest_FindBottleDesc[] = _("Find a bottle to carry the milk.\nMaybe something made of glass…");
+const u8 gText_SubQuest_DeliverAshName[] = _("Collect Ash");
+const u8 gText_SubQuest_DeliverAshDesc[] = _("Collect ash for a glass bottle and\nreturn to the Cranewing Glassworks.");
+const u8 gText_SubQuest_GetMilkName[] = _("Retrieve Milk");
+const u8 gText_SubQuest_GetMilkDesc[] = _("Return to TODO and fill the glass\nbottle with milk for the Moocalf.");
+const u8 gText_SubQuest_DeliverMilkName[] = _("Deliver Milk");
+const u8 gText_SubQuest_DeliverMilkDesc[] = _("Give the milk to the sick Moocalf.");
+
+// Trade Lupine
+const u8 gText_Quest_TradeLupineName[] = _("Barking Bargain");
+const u8 gText_Quest_TradeLupineDesc[] = _("Trade the dissatisfied traveler a\nLupine in exchange for their Huskii.");
+const u8 gText_Quest_TradeLupineDone[] = _("Acquired a Huskii in trade for your Lupine.");
+const u8 gText_Quest_TradeLupineMap[] = _("Cranewing City");
+
+// Chartree Rockets
+const u8 gText_Quest_ChartreeRocketsName[] = _("Ash Agitators");
+const u8 gText_Quest_ChartreeRocketsDesc[] = _("Mysterious figures are disrupting\nthe Chartree Forest ecosystem!");
+const u8 gText_Quest_ChartreeRocketsDone[] = _("Chased Team Rocket out of Chartree Forest.");
+const u8 gText_Quest_ChartreeRocketsMap[] = _("Chartree Forest");
+
+const u8 gText_SubQuest_InvestigateForestName[] = _("Investigate");
+const u8 gText_SubQuest_InvestigateForestDesc[] = _("Investigate the mysterious figures\ndisrupting the balance of the forest.");
+const u8 gText_SubQuest_DefeatRocketsName[] = _("Defeat Rockets");
+const u8 gText_SubQuest_DefeatRocketsDesc[] = _("Find and defeat the Team Rocket\nmembers in Chartree Forest.");

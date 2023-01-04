@@ -2997,65 +2997,107 @@ extern const u8 gText_Smartness[];
 extern const u8 gText_Cuteness[];
 extern const u8 gText_Beauty3[];
 
-////side quests
-//names
-extern const u8 gText_SideQuestName_GettingStarted[];
-extern const u8 gText_SideQuestName_FindingSimon[];
-extern const u8 gText_SideQuestName_3[];
-extern const u8 gText_SideQuestName_4[];
-extern const u8 gText_SideQuestName_5[];
-extern const u8 gText_SideQuestName_6[];
-extern const u8 gText_SideQuestName_7[];
-extern const u8 gText_SideQuestName_8[];
+//----- quests ------
+// Getting Started
+extern const u8 gText_Quest_GettingStartedName[];
+extern const u8 gText_Quest_GettingStartedDesc[];
+extern const u8 gText_Quest_GettingStartedDone[];
+extern const u8 gText_Quest_GettingStartedMap[];
 
-//descriptions
-extern const u8 gText_SideQuestDesc_1[];
-extern const u8 gText_SideQuestDesc_2[];
-extern const u8 gText_SideQuestDesc_3[];
-extern const u8 gText_SideQuestDesc_4[];
-extern const u8 gText_SideQuestDesc_5[];
-extern const u8 gText_SideQuestDesc_6[];
-extern const u8 gText_SideQuestDesc_7[];
-extern const u8 gText_SideQuestDesc_8[];
+extern const u8 gText_SubQuest_FindBradleyName[];
+extern const u8 gText_SubQuest_FindBradleyDesc[];
+extern const u8 gText_SubQuest_RescueAmpureName[];
+extern const u8 gText_SubQuest_RescueAmpureDesc[];
+extern const u8 gText_SubQuest_SayGoodbyeName[];
+extern const u8 gText_SubQuest_SayGoodbyeDesc[];
 
-//completed quest description
-extern const u8 gText_SideQuestDoneDesc_1[];
-extern const u8 gText_SideQuestDoneDesc_2[];
-extern const u8 gText_SideQuestDoneDesc_3[];
-extern const u8 gText_SideQuestDoneDesc_4[];
-extern const u8 gText_SideQuestDoneDesc_5[];
-extern const u8 gText_SideQuestDoneDesc_6[];
-extern const u8 gText_SideQuestDoneDesc_7[];
-extern const u8 gText_SideQuestDoneDesc_8[];
+// Finding Simon
+extern const u8 gText_Quest_FindingSimonName[];
+extern const u8 gText_Quest_FindingSimonDesc[];
+extern const u8 gText_Quest_FindingSimonDone[];
+extern const u8 gText_Quest_FindingSimonMap[];
 
-//map
-extern const u8 gText_SideQuestMap1[];
-extern const u8 gText_SideQuestMap2[];
-extern const u8 gText_SideQuestMap3[];
-extern const u8 gText_SideQuestMap4[];
-extern const u8 gText_SideQuestMap5[];
-extern const u8 gText_SideQuestMap6[];
-extern const u8 gText_SideQuestMap7[];
-extern const u8 gText_SideQuestMap8[];
+extern const u8 gText_SubQuest_FindSimonName[];
+extern const u8 gText_SubQuest_FindSimonDesc[];
 
-//subquests
-extern const u8 gText_SubQuest1_Name1[];
-extern const u8 gText_SubQuest1_Name2[];
-extern const u8 gText_SubQuest1_Name3[];
-extern const u8 gText_SubQuest1_Name4[];
-extern const u8 gText_SubQuest1_Name5[];
-extern const u8 gText_SubQuest1_Name6[];
-extern const u8 gText_SubQuest1_Name7[];
-extern const u8 gText_SubQuest1_Name8[];
+// Triumph Spire
+extern const u8 gText_Quest_TriumphSpireName[];
+extern const u8 gText_Quest_TriumphSpireDesc[];
+extern const u8 gText_Quest_TriumphSpireDone[];
+extern const u8 gText_Quest_TriumphSpireMap[];
 
-extern const u8 gText_SubQuest1_Desc1[];
-extern const u8 gText_SubQuest1_Desc2[];
-extern const u8 gText_SubQuest1_Desc3[];
-extern const u8 gText_SubQuest1_Desc4[];
-extern const u8 gText_SubQuest1_Desc5[];
-extern const u8 gText_SubQuest1_Desc6[];
-extern const u8 gText_SubQuest1_Desc7[];
-extern const u8 gText_SubQuest1_Desc8[];
+extern const u8 gText_SubQuest_GymCranewingName[];
+extern const u8 gText_SubQuest_GymCranewingDesc[];
+extern const u8 gText_SubQuest_GymSoftwindName[];
+extern const u8 gText_SubQuest_GymSoftwindDesc[];
+extern const u8 gText_SubQuest_GymRoothavenName[];
+extern const u8 gText_SubQuest_GymRoothavenDesc[];
+extern const u8 gText_SubQuest_GymKalypsoName[];
+extern const u8 gText_SubQuest_GymKalypsoDesc[];
+extern const u8 gText_SubQuest_GymGalleaName[];
+extern const u8 gText_SubQuest_GymGalleaDesc[];
+extern const u8 gText_SubQuest_GymPortwindName[];
+extern const u8 gText_SubQuest_GymPortwindDesc[];
+extern const u8 gText_SubQuest_GymSedciniName[];
+extern const u8 gText_SubQuest_GymSedciniDesc[];
+extern const u8 gText_SubQuest_GymEnchestraName[];
+extern const u8 gText_SubQuest_GymEnchestraDesc[];
+extern const u8 gText_SubQuest_GymDynamoGardensName[];
+extern const u8 gText_SubQuest_GymDynamoGardensDesc[];
+extern const u8 gText_SubQuest_GymSkobeloffName[];
+extern const u8 gText_SubQuest_GymSkobeloffDesc[];
+extern const u8 gText_SubQuest_GymSaharanName[];
+extern const u8 gText_SubQuest_GymSaharanDesc[];
+extern const u8 gText_SubQuest_GymAquapolisName[];
+extern const u8 gText_SubQuest_GymAquapolisDesc[];
+extern const u8 gText_SubQuest_TriumphSpireName[];
+extern const u8 gText_SubQuest_TriumphSpireDesc[];
+
+// Fishing Pole
+extern const u8 gText_Quest_FishingPoleName[];
+extern const u8 gText_Quest_FishingPoleDesc[];
+extern const u8 gText_Quest_FishingPoleDone[];
+extern const u8 gText_Quest_FishingPoleMap[];
+
+// Hidden Items
+extern const u8 gText_Quest_HiddenItemsName[];
+extern const u8 gText_Quest_HiddenItemsDesc[];
+extern const u8 gText_Quest_HiddenItemsDone[];
+extern const u8 gText_Quest_HiddenItemsMap[];
+
+// Moocalf Orphan
+extern const u8 gText_Quest_MoocalfOrphanName[];
+extern const u8 gText_Quest_MoocalfOrphanDesc[];
+extern const u8 gText_Quest_MoocalfOrphanDone[];
+extern const u8 gText_Quest_MoocalfOrphanMap[];
+
+extern const u8 gText_SubQuest_FindMilkName[];
+extern const u8 gText_SubQuest_FindMilkDesc[];
+extern const u8 gText_SubQuest_FindBottleName[];
+extern const u8 gText_SubQuest_FindBottleDesc[];
+extern const u8 gText_SubQuest_DeliverAshName[];
+extern const u8 gText_SubQuest_DeliverAshDesc[];
+extern const u8 gText_SubQuest_GetMilkName[];
+extern const u8 gText_SubQuest_GetMilkDesc[];
+extern const u8 gText_SubQuest_DeliverMilkName[];
+extern const u8 gText_SubQuest_DeliverMilkDesc[];
+
+// Trade Lupine
+extern const u8 gText_Quest_TradeLupineName[];
+extern const u8 gText_Quest_TradeLupineDesc[];
+extern const u8 gText_Quest_TradeLupineDone[];
+extern const u8 gText_Quest_TradeLupineMap[];
+
+// Chartree Rockets
+extern const u8 gText_Quest_ChartreeRocketsName[];
+extern const u8 gText_Quest_ChartreeRocketsDesc[];
+extern const u8 gText_Quest_ChartreeRocketsDone[];
+extern const u8 gText_Quest_ChartreeRocketsMap[];
+
+extern const u8 gText_SubQuest_InvestigateForestName[];
+extern const u8 gText_SubQuest_InvestigateForestDesc[];
+extern const u8 gText_SubQuest_DefeatRocketsName[];
+extern const u8 gText_SubQuest_DefeatRocketsDesc[];
 
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
