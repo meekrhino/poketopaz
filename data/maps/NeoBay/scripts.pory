@@ -472,8 +472,8 @@ text NeoBay_Text_BradleyIntroStartLetsGo {
 
 text NeoBay_Text_BradleyShowBoatStart {
     format(
-        "Bradley: Look!\nYou've noticed this sleek-"
-        "looking boat moored here for a while now, right?\p"
+        "Bradley: Look!\nYou've noticed this sleek-looking"
+        "boat moored here for a while now, right?\p"
         "Well, this boat belongs to none other than Prof. Willow!\p"
         "… … …\n"
         "… … …\p"

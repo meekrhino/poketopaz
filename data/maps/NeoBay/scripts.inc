@@ -873,7 +873,7 @@ NeoBay_Text_BradleyIntroStartLetsGo::
 
 NeoBay_Text_BradleyShowBoatStart::
 	.string "Bradley: Look!\n"
-	.string "You've noticed this sleek- looking boat\l"
+	.string "You've noticed this sleek-looking boat\l"
 	.string "moored here for a while now, right?\p"
 	.string "Well, this boat belongs to none other\n"
 	.string "than Prof. Willow!\p"

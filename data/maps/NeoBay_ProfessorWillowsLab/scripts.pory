@@ -746,8 +746,8 @@ text WillowsLab_DoYouWantEchoise {
 text WillowsLab_AmpureMissionDescription {
     format(
         "Willow: Very well.\p"
-        "As you saw earlier, my Ampure has escaped…\n…again."
-        "I'd go find him myself, but with my luck, "
+        "As you saw earlier, my Ampure has escaped…\n…again.\p"
+        "I'd go find him myself, but with my luck,\n"
         "it would take a whole day for me to catch him.\p"
         "That's where you two come in!\n"
         "Please find my Ampure and bring him back to me.\p"
