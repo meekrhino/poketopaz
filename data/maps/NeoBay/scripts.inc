@@ -391,6 +391,8 @@ NeoBay_EventScript_AmpureCapture:
 	applymovement 2, mLookUpStartled
 	applymovement OBJ_EVENT_ID_PLAYER, mLookUpStartled
 	waitmovement OBJ_EVENT_ID_PLAYER
+	playmoncry SPECIES_AMPURE, CRY_MODE_NORMAL
+	waitmoncry
 	msgbox NeoBay_EventScript_AmpureCapture_Text_0
 	waitmessage
 	applymovement 2, mWalkUpLookRight

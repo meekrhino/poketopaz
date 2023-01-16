@@ -387,6 +387,8 @@ script(local) NeoBay_EventScript_AmpureCapture {
     applymovement(BRADLEY, mLookUpStartled)
     applymovement(PLAYER, mLookUpStartled)
     waitmovement(PLAYER)
+    playmoncry(SPECIES_AMPURE, CRY_MODE_NORMAL)
+    waitmoncry
     msgbox(format("Bradley: I think he likes you, {PLAYER}!\pJust stay still, I'll catch him!"))
     waitmessage
     applymovement(BRADLEY, mWalkUpLookRight)

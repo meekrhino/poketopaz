@@ -139,6 +139,7 @@ script(global) WillowsLab_EventScript_SelectVenap {
         goto(WillowsLab_DontBeGreedy)
     }
     playmoncry(SPECIES_VENAP, CRY_MODE_NORMAL)
+    waitmoncry
     showmonpic(SPECIES_VENAP, 10, 3)
     msgbox(WillowsLab_DoYouWantVenap, MSGBOX_YESNO)
     waitmessage
@@ -158,6 +159,7 @@ script(global) WillowsLab_EventScript_SelectCelsinge {
         goto(WillowsLab_DontBeGreedy)
     }
     playmoncry(SPECIES_CELSINGE, CRY_MODE_NORMAL)
+    waitmoncry
     showmonpic(SPECIES_CELSINGE, 10, 3)
     msgbox(WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO)
     waitmessage
@@ -177,6 +179,7 @@ script(global) WillowsLab_EventScript_SelectEchoise {
         goto(WillowsLab_DontBeGreedy)
     }
     playmoncry(SPECIES_ECHOISE, CRY_MODE_NORMAL)
+    waitmoncry
     showmonpic(SPECIES_ECHOISE, 10, 3)
     msgbox(WillowsLab_DoYouWantEchoise, MSGBOX_YESNO)
     waitmessage
@@ -296,6 +299,8 @@ script(local) WillowIntroduction {
     applymovement(AMPURE, mAmpureRushesOut)
     applymovement(WILLOW, mFaceRight)
     waitmovement(AMPURE)
+    playmoncry(SPECIES_AMPURE, CRY_MODE_NORMAL)
+    waitmoncry
     msgbox(format("Willow: Watch out!"), MSGBOX_AUTOCLOSE)
     applymovement(AMPURE, mAmpureRushesOut2)
     delay(64)

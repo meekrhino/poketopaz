@@ -116,6 +116,7 @@ WillowsLab_EventScript_SelectVenap::
 	goto_if_ne WillowsLab_EventScript_SelectVenap_5
 WillowsLab_EventScript_SelectVenap_4:
 	playmoncry SPECIES_VENAP, CRY_MODE_NORMAL
+	waitmoncry
 	showmonpic SPECIES_VENAP, 10, 3
 	msgbox WillowsLab_DoYouWantVenap, MSGBOX_YESNO
 	waitmessage
@@ -146,6 +147,7 @@ WillowsLab_EventScript_SelectCelsinge::
 	goto_if_ne WillowsLab_EventScript_SelectCelsinge_5
 WillowsLab_EventScript_SelectCelsinge_4:
 	playmoncry SPECIES_CELSINGE, CRY_MODE_NORMAL
+	waitmoncry
 	showmonpic SPECIES_CELSINGE, 10, 3
 	msgbox WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO
 	waitmessage
@@ -176,6 +178,7 @@ WillowsLab_EventScript_SelectEchoise::
 	goto_if_ne WillowsLab_EventScript_SelectEchoise_5
 WillowsLab_EventScript_SelectEchoise_4:
 	playmoncry SPECIES_ECHOISE, CRY_MODE_NORMAL
+	waitmoncry
 	showmonpic SPECIES_ECHOISE, 10, 3
 	msgbox WillowsLab_DoYouWantEchoise, MSGBOX_YESNO
 	waitmessage
@@ -324,6 +327,8 @@ WillowIntroduction:
 	applymovement 6, mAmpureRushesOut
 	applymovement 4, mFaceRight
 	waitmovement 6
+	playmoncry SPECIES_AMPURE, CRY_MODE_NORMAL
+	waitmoncry
 	msgbox WillowIntroduction_Text_4, MSGBOX_AUTOCLOSE
 	applymovement 6, mAmpureRushesOut2
 	delay 64
