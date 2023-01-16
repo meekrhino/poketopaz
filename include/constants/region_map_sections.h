@@ -61,7 +61,7 @@
 #define MAPSEC_SAFARI_ZONE                  0x39
 #define MAPSEC_BATTLE_FRONTIER              0x3A
 #define MAPSEC_CHARTREE_FOREST              0x3B
-#define MAPSEC_RUSTURF_TUNNEL               0x3C
+#define MAPSEC_WILLOWS_LAB                  0x3C
 #define MAPSEC_ABANDONED_SHIP               0x3D
 #define MAPSEC_NEW_MAUVILLE                 0x3E
 #define MAPSEC_METEOR_FALLS                 0x3F

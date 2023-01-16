@@ -385,6 +385,8 @@ NeoBay_EventScript_AmpureCapture:
 	addobject 3
 	applymovement 3, mAmpureRunsUpToPlayer
 	waitmovement 3
+	delay 48
+	playse SE_PIN
 	applymovement 3, mExclamationPoint
 	applymovement 2, mLookUpStartled
 	applymovement OBJ_EVENT_ID_PLAYER, mLookUpStartled

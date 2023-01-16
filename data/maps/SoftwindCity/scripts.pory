@@ -175,9 +175,10 @@ script SoftwindCity_TriggerOrion_1 {
     waitmessage
     closemessage
     turnobject(DEFENDER, DIR_WEST)
+    playse(SE_PIN)
     applymovement(DEFENDER, mExclamationPoint)
     waitmovement(0)
-    delay(30)
+    delay(48)
     switch(var(VAR_TEMP_Y)) {
         case 34:
             applymovement(DEFENDER, mDefenderAprroachesPlayer_1)
@@ -210,6 +211,7 @@ script SoftwindCity_TriggerOrion_1 {
 
 script SoftwindCity_TriggerOrion_2 {
     lockall
+    playse(SE_PIN)
     applymovement(DEFENDER, mStartledWalkRight)
     waitmovement(0)
     msgbox(SoftwindCity_Text_DefenderScolds)
@@ -271,7 +273,8 @@ script SoftwindCity_TriggerOrion_2 {
     applymovement(GYM_DUDE, mWalkDown)
     closedoor(29, 32)
     waitdooranim
-    delay(15)
+    delay(48)
+    playse(SE_PIN)
     applymovement(GYM_DUDE, mExclamationPoint)
     waitmovement(0)
     msgbox("Man: Professor Willow!")

@@ -102,8 +102,10 @@ script SunsetVillage_OldMan {
         else {
             lock
             faceplayer
+            playse(SE_PIN)
             applymovement(OLD_MAN, mExclamationPoint)
             waitmovement(0)
+            delay(48)
             msgbox(format("Ah! Clever!\pYou're right, of course!\nIt's right behind me!"))
             waitmessage
             closemessage
@@ -212,11 +214,13 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
     waitmessage
     msgbox(SunsetVillage_HeadToSoftwind)
     waitmessage
+    playse(SE_PIN)
     applymovement(BRADLEY, mExclamationPoint)
+    waitmovement(0)
     msgbox("Bradley: WAIT!", MSGBOX_AUTOCLOSE)
     applymovement(BRADLEY, mBradleyPanics)
     turnobject(WILLOW, DIR_NORTH)
-    waitmovement(BRADLEY)
+    waitmovement(0)
     msgbox("Bradley: I left my bag at home!\nIt has my Pokédex in it and everything!")
     waitmessage
     msgbox(format("Willow: Ohoho, don't worry Bradley. We can go back for them now."))
@@ -238,6 +242,7 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
 }
 
 script(local) SunsetVillage_BradleyLooksAroundEastVer {
+    playse(SE_PIN)
     applymovement(WILLOW, mStartledWalkRight)
     applymovement(BRADLEY, mStartledWalkRight)
     waitmovement(BRADLEY)
@@ -260,10 +265,12 @@ script(local) SunsetVillage_BradleyLooksAroundEastVer {
     waitmessage
     msgbox(SunsetVillage_HeadToSoftwind)
     waitmessage
+    playse(SE_PIN)
     applymovement(BRADLEY, mExclamationPoint)
+    waitmovement(0)
     msgbox("Bradley: WAIT!", MSGBOX_AUTOCLOSE)
     applymovement(BRADLEY, mBradleyPanicsEastVer)
-    waitmovement(BRADLEY)
+    waitmovement(0)
     msgbox("Bradley: I left my bag at home!\nIt has my Pokédex in it and everything!")
     waitmessage
     msgbox(format("Willow: Ohoho, don't worry Bradley. We can go back for them now."))

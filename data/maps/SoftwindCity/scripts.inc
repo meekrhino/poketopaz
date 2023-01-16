@@ -166,9 +166,10 @@ SoftwindCity_TriggerOrion_1_1:
 	waitmessage
 	closemessage
 	turnobject 11, DIR_WEST
+	playse SE_PIN
 	applymovement 11, mExclamationPoint
 	waitmovement 0
-	delay 30
+	delay 48
 	switch VAR_TEMP_1
 	case 34, SoftwindCity_TriggerOrion_1_7
 	case 35, SoftwindCity_TriggerOrion_1_8
@@ -220,6 +221,7 @@ SoftwindCity_TriggerOrion_1_12:
 
 SoftwindCity_TriggerOrion_2::
 	lockall
+	playse SE_PIN
 	applymovement 11, mStartledWalkRight
 	waitmovement 0
 	msgbox SoftwindCity_Text_DefenderScolds
@@ -269,7 +271,8 @@ SoftwindCity_TriggerOrion_2_13:
 	applymovement 7, mWalkDown
 	closedoor 29, 32
 	waitdooranim
-	delay 15
+	delay 48
+	playse SE_PIN
 	applymovement 7, mExclamationPoint
 	waitmovement 0
 	msgbox SoftwindCity_TriggerOrion_2_Text_3

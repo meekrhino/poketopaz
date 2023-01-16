@@ -47,7 +47,9 @@ script(global) CranewingCity_Gentleman {
 
 script(global) CranewingCity_Escort {
     lockall
+    playse(SE_PIN)
     applymovement(ESCORT, mExclamationPoint)
+    waitmovement(0)
     delay(60)
     getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
     switch(var(VAR_TEMP_X)) {

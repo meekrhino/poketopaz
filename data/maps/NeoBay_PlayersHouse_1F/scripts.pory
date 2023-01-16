@@ -64,8 +64,10 @@ script(local) PlayersHouse_1F_OnTransition {
 script(local) BradleyWasLookingForYou {
     lockall
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_SPOKE_TO_MOM)
+    playse(SE_PIN)
     applymovement(MOM, mLookUpStartled)
-    delay(60)
+    waitmovement(0)
+    delay(48)
     applymovement(PLAYER, mPlayerWalksOverToMom)
     waitmovement(0)
     msgbox(PlayersHouse_1F_BradleyWasLookingForYou, MSGBOX_AUTOCLOSE)

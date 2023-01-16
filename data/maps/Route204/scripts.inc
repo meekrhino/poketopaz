@@ -56,6 +56,10 @@ Route204_MeetShookAndAllard::
 	addobject 1
 	applymovement 1, mShookAndAllardApproach1
 	waitmovement 0
+	playse SE_PIN
+	applymovement 2, mExclamationPoint
+	applymovement 1, mExclamationPoint
+	waitmovement 0
 	msgbox Route204_MeetShookAndAllard_Text_0
 	closemessage
 	applymovement 2, mShookAndAllardApproach2
@@ -71,6 +75,7 @@ Route204_MeetShookAndAllard::
 	closemessage
 	delay 15
 	msgbox Route204_MeetShookAndAllard_Text_4
+	playse SE_PIN
 	applymovement 2, mLookUpStartled
 	applymovement 1, mLookUpStartled
 	waitmovement 0
@@ -164,7 +169,6 @@ mShookAndAllardApproach1:
 	walk_down
 	walk_down
 	walk_down
-	emote_exclamation_mark
 	step_end
 
 mShookAndAllardApproach2:

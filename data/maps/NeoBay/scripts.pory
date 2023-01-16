@@ -381,6 +381,8 @@ script(local) NeoBay_EventScript_AmpureCapture {
     addobject(AMPURE)
     applymovement(AMPURE, mAmpureRunsUpToPlayer)
     waitmovement(AMPURE)
+    delay(48)
+    playse(SE_PIN)
     applymovement(AMPURE, mExclamationPoint)
     applymovement(BRADLEY, mLookUpStartled)
     applymovement(PLAYER, mLookUpStartled)

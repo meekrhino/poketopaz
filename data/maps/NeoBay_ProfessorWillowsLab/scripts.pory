@@ -270,12 +270,13 @@ script(local) WillowIntroduction {
     setvar(VAR_0x8007, 10)  // shake delay
     special(ShakeCamera)
     waitstate
-    applymovement(BRADLEY, mExclamationPoint)
-    applymovement(PLAYER, mExclamationPoint)
     msgbox("CRASH!!", MSGBOX_AUTOCLOSE)
     waitmessage
+    playse(SE_PIN)
+    applymovement(BRADLEY, mExclamationPoint)
+    applymovement(PLAYER, mExclamationPoint)
     applymovement(WILLOW, mFaceDown)
-    waitmovement(WILLOW)
+    waitmovement(0)
     msgbox(format("Willow: Come on, Ampure!\nThat's fragile!\pGet back in your Pokéball!"), MSGBOX_AUTOCLOSE)
     applymovement(AMPURE, mAmpureRunsAround)
     applymovement(BRADLEY, mBradleyRushesUp)
@@ -289,15 +290,18 @@ script(local) WillowIntroduction {
     waitstate
     waitmovement(AMPURE)
     msgbox(format("Bradley: Prof. Willow! What's going on!?"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement(AMPURE, mExclamationPoint)
+    waitmovement(0)
     applymovement(AMPURE, mAmpureRushesOut)
     applymovement(WILLOW, mFaceRight)
     waitmovement(AMPURE)
     msgbox(format("Willow: Watch out!"), MSGBOX_AUTOCLOSE)
     applymovement(AMPURE, mAmpureRushesOut2)
-    delay(60)
+    delay(64)
     applymovement(BRADLEY, mFaceRight)
     applymovement(PLAYER, mFaceLeft)
-    delay(15)
+    delay(16)
     applymovement(BRADLEY, mFaceUp)
     applymovement(PLAYER, mFaceUp)
     waitmovement(AMPURE)
@@ -307,12 +311,15 @@ script(local) WillowIntroduction {
     waitmovement(BRADLEY)
     msgbox(format("Bradley: Are you alright, Prof. Willow?"))
     msgbox(format("Willow: Ohohoho!\pThanks for showing concern, Bradley, but I'm fine.\pThis happens all the time."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement(WILLOW, mLookLeftStartled)
+    waitmovement(0)
     applymovement(WILLOW, mWillowComesUpToFriends)
-    delay(10)
+    delay(16)
     applymovement(BRADLEY, mFaceDown)
-    delay(30)
+    delay(32)
     applymovement(PLAYER, mFaceDown)
-    waitmovement(WILLOW)
+    waitmovement(0)
     msgbox(format("Oh? And who are you?"))
     msgbox(format("Bradley: This is {PLAYER}.\pThey've been my friend for as long as I can remember."))
     msgbox(WillowsLab_WillowIntroduction, MSGBOX_AUTOCLOSE)
@@ -333,6 +340,7 @@ script(local) WillowIntroduction {
     applymovement(BRADLEY, mBradleyDeliberates)
     waitmovement(BRADLEY)
     msgbox("Bradley: I want {PLAYER} to have the\nPokémon.", MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
     applymovement(PLAYER, mExclamationPoint)
     applymovement(PLAYER, mFaceLeft)
     applymovement(WILLOW, mExclamationPoint)
@@ -383,6 +391,7 @@ script(local) WillowsLab_GiveVenap {
     bufferspeciesname(0, SPECIES_VENAP)
     setvar(VAR_TEMP_1, SPECIES_VENAP)
     givemon(SPECIES_VENAP, 5, ITEM_NONE)
+    setmonmetlocation(0, MAPSEC_WILLOWS_LAB)
     removeobject(VENAP_BALL)
     call(WillowsLab_ReceivedStarter)
     setflag(FLAG_WILLOW_BALL_TAKEN_0)
@@ -396,6 +405,7 @@ script(local) WillowsLab_GiveCelsinge {
     bufferspeciesname(0, SPECIES_CELSINGE)
     setvar(VAR_TEMP_1, SPECIES_CELSINGE)
     givemon(SPECIES_CELSINGE, 5, ITEM_NONE)
+    setmonmetlocation(0, MAPSEC_WILLOWS_LAB)
     removeobject(CELSINGE_BALL)
     call(WillowsLab_ReceivedStarter)
     setflag(FLAG_WILLOW_BALL_TAKEN_1)
@@ -409,6 +419,7 @@ script(local) WillowsLab_GiveEchoise {
     bufferspeciesname(0, SPECIES_ECHOISE)
     setvar(VAR_TEMP_1, SPECIES_ECHOISE)
     givemon(SPECIES_ECHOISE, 5, ITEM_NONE)
+    setmonmetlocation(0, MAPSEC_WILLOWS_LAB)
     removeobject(ECHOISE_BALL)
     call(WillowsLab_ReceivedStarter)
     setflag(FLAG_WILLOW_BALL_TAKEN_2)
@@ -915,7 +926,6 @@ movement mPlayerWalksDown {
 }
 
 movement mAmpureRushesOut {
-    emote_exclamation_mark
     walk_up * 2
     walk_left
     face_up
@@ -929,9 +939,12 @@ movement mAmpureRushesOut2 {
     set_invisible
 }
 
-movement mWillowComesUpToFriends {
-    face_left
+movement mLookLeftStartled {
     emote_exclamation_mark
+    face_left
+}
+
+movement mWillowComesUpToFriends {
     walk_down
     walk_right * 4
     face_up

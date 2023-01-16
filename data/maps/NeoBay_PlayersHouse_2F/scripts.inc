@@ -10,11 +10,14 @@ NeoBay_PlayersHouse_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 PlayersHouse_WatchJirachiProgram:
 	lockall
 	setflag FLAG_SAW_JIRACHI_PROGRAM
-	delay 60
+	delay 64
 	special TurnOnTVScreen
-	delay 30
+	delay 64
+	playse SE_PIN
+	applymovement 0xFF, mLookUpStartled
+	waitmovement 0
 	applymovement 0xFF, mGoWatchJirachiProgram
-	waitmovement 0xFF
+	waitmovement 0
 	msgbox PlayersHouse_2F_JirachiProgram
 	waitmessage
 	closemessage
@@ -23,8 +26,6 @@ PlayersHouse_WatchJirachiProgram:
 
 
 mGoWatchJirachiProgram:
-	emote_exclamation_mark
-	face_up
 	delay_16
 	delay_16
 	delay_16

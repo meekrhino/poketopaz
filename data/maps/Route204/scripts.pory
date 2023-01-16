@@ -78,6 +78,10 @@ script(global) Route204_MeetShookAndAllard {
     addobject(ALLARD)
     applymovement(ALLARD, mShookAndAllardApproach1)
     waitmovement(0)
+    playse(SE_PIN)
+    applymovement(SHOOK, mExclamationPoint)
+    applymovement(ALLARD, mExclamationPoint)
+    waitmovement(0)
     msgbox("Grunt 1: Hey, you!")
     closemessage
     applymovement(SHOOK, mShookAndAllardApproach2)
@@ -93,6 +97,7 @@ script(global) Route204_MeetShookAndAllard {
     closemessage
     delay(15)
     msgbox("???: I don't think so!")
+    playse(SE_PIN)
     applymovement(SHOOK, mLookUpStartled)
     applymovement(ALLARD, mLookUpStartled)
     waitmovement(0)
@@ -309,7 +314,6 @@ text Route204_Text_ShookAndAllardNoMons {
 
 movement mShookAndAllardApproach1 {
     walk_down * 4
-    emote_exclamation_mark
 }
 
 movement mShookAndAllardApproach2 {

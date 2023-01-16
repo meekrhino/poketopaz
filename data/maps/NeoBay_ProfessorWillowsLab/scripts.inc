@@ -298,12 +298,13 @@ WillowIntroduction:
 	setvar VAR_0x8007, 10
 	special ShakeCamera
 	waitstate
-	applymovement 5, mExclamationPoint
-	applymovement OBJ_EVENT_ID_PLAYER, mExclamationPoint
 	msgbox WillowIntroduction_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
+	playse SE_PIN
+	applymovement 5, mExclamationPoint
+	applymovement OBJ_EVENT_ID_PLAYER, mExclamationPoint
 	applymovement 4, mFaceDown
-	waitmovement 4
+	waitmovement 0
 	msgbox WillowIntroduction_Text_2, MSGBOX_AUTOCLOSE
 	applymovement 6, mAmpureRunsAround
 	applymovement 5, mBradleyRushesUp
@@ -317,15 +318,18 @@ WillowIntroduction:
 	waitstate
 	waitmovement 6
 	msgbox WillowIntroduction_Text_3, MSGBOX_AUTOCLOSE
+	playse SE_PIN
+	applymovement 6, mExclamationPoint
+	waitmovement 0
 	applymovement 6, mAmpureRushesOut
 	applymovement 4, mFaceRight
 	waitmovement 6
 	msgbox WillowIntroduction_Text_4, MSGBOX_AUTOCLOSE
 	applymovement 6, mAmpureRushesOut2
-	delay 60
+	delay 64
 	applymovement 5, mFaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
-	delay 15
+	delay 16
 	applymovement 5, mFaceUp
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
 	waitmovement 6
@@ -335,12 +339,15 @@ WillowIntroduction:
 	waitmovement 5
 	msgbox WillowIntroduction_Text_6
 	msgbox WillowIntroduction_Text_7, MSGBOX_AUTOCLOSE
+	playse SE_PIN
+	applymovement 4, mLookLeftStartled
+	waitmovement 0
 	applymovement 4, mWillowComesUpToFriends
-	delay 10
+	delay 16
 	applymovement 5, mFaceDown
-	delay 30
+	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
-	waitmovement 4
+	waitmovement 0
 	msgbox WillowIntroduction_Text_8
 	msgbox WillowIntroduction_Text_9
 	msgbox WillowsLab_WillowIntroduction, MSGBOX_AUTOCLOSE
@@ -361,6 +368,7 @@ WillowIntroduction:
 	applymovement 5, mBradleyDeliberates
 	waitmovement 5
 	msgbox WillowIntroduction_Text_13, MSGBOX_AUTOCLOSE
+	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, mExclamationPoint
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	applymovement 4, mExclamationPoint
@@ -411,6 +419,7 @@ WillowsLab_GiveVenap:
 	bufferspeciesname 0, SPECIES_VENAP
 	setvar VAR_TEMP_1, SPECIES_VENAP
 	givemon SPECIES_VENAP, 5, ITEM_NONE
+	setmonmetlocation 0, MAPSEC_WILLOWS_LAB
 	removeobject 1
 	call WillowsLab_ReceivedStarter
 	setflag FLAG_WILLOW_BALL_TAKEN_0
@@ -425,6 +434,7 @@ WillowsLab_GiveCelsinge:
 	bufferspeciesname 0, SPECIES_CELSINGE
 	setvar VAR_TEMP_1, SPECIES_CELSINGE
 	givemon SPECIES_CELSINGE, 5, ITEM_NONE
+	setmonmetlocation 0, MAPSEC_WILLOWS_LAB
 	removeobject 2
 	call WillowsLab_ReceivedStarter
 	setflag FLAG_WILLOW_BALL_TAKEN_1
@@ -439,6 +449,7 @@ WillowsLab_GiveEchoise:
 	bufferspeciesname 0, SPECIES_ECHOISE
 	setvar VAR_TEMP_1, SPECIES_ECHOISE
 	givemon SPECIES_ECHOISE, 5, ITEM_NONE
+	setmonmetlocation 0, MAPSEC_WILLOWS_LAB
 	removeobject 3
 	call WillowsLab_ReceivedStarter
 	setflag FLAG_WILLOW_BALL_TAKEN_2
@@ -814,7 +825,6 @@ mPlayerWalksDown:
 	step_end
 
 mAmpureRushesOut:
-	emote_exclamation_mark
 	walk_up
 	walk_up
 	walk_left
@@ -843,9 +853,12 @@ mAmpureRushesOut2:
 	set_invisible
 	step_end
 
-mWillowComesUpToFriends:
-	face_left
+mLookLeftStartled:
 	emote_exclamation_mark
+	face_left
+	step_end
+
+mWillowComesUpToFriends:
 	walk_down
 	walk_right
 	walk_right

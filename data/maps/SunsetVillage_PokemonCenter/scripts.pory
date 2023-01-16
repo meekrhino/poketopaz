@@ -33,8 +33,9 @@ script(global) SunsetVillage_PokemonCenter_Girl {
         waitmessage
         closemessage
         faceplayer
+        playse(SE_PIN)
         applymovement(GIRL, mExclamationPoint)
-        delay(32)
+        delay(48)
         msgbox(SunsetVillage_Text_Girl_PC)
         waitmessage
         closemessage

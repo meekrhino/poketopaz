@@ -68,8 +68,10 @@ SunsetVillage_OldMan::
 	goto_if_ne SunsetVillage_OldMan_8
 	lock
 	faceplayer
+	playse SE_PIN
 	applymovement 6, mExclamationPoint
 	waitmovement 0
+	delay 48
 	msgbox SunsetVillage_OldMan_Text_3
 	waitmessage
 	closemessage
@@ -210,11 +212,13 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	waitmessage
 	msgbox SunsetVillage_HeadToSoftwind
 	waitmessage
+	playse SE_PIN
 	applymovement 3, mExclamationPoint
+	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3, MSGBOX_AUTOCLOSE
 	applymovement 3, mBradleyPanics
 	turnobject 1, DIR_NORTH
-	waitmovement 3
+	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
 	waitmessage
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_5
@@ -236,6 +240,7 @@ SunsetVillage_BradleyLooksAroundLabVer:
 
 
 SunsetVillage_BradleyLooksAroundEastVer:
+	playse SE_PIN
 	applymovement 1, mStartledWalkRight
 	applymovement 3, mStartledWalkRight
 	waitmovement 3
@@ -258,10 +263,12 @@ SunsetVillage_BradleyLooksAroundEastVer:
 	waitmessage
 	msgbox SunsetVillage_HeadToSoftwind
 	waitmessage
+	playse SE_PIN
 	applymovement 3, mExclamationPoint
+	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3, MSGBOX_AUTOCLOSE
 	applymovement 3, mBradleyPanicsEastVer
-	waitmovement 3
+	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
 	waitmessage
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_5

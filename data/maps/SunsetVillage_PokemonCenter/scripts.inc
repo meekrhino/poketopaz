@@ -31,8 +31,9 @@ SunsetVillage_PokemonCenter_Girl_2:
 	waitmessage
 	closemessage
 	faceplayer
+	playse SE_PIN
 	applymovement 3, mExclamationPoint
-	delay 32
+	delay 48
 	msgbox SunsetVillage_Text_Girl_PC
 	waitmessage
 	closemessage

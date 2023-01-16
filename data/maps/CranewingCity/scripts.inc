@@ -31,7 +31,9 @@ CranewingCity_Gentleman::
 
 CranewingCity_Escort::
 	lockall
+	playse SE_PIN
 	applymovement 4, mExclamationPoint
+	waitmovement 0
 	delay 60
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	switch VAR_TEMP_0

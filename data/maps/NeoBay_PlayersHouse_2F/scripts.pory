@@ -20,11 +20,14 @@ mapscripts NeoBay_PlayersHouse_2F_MapScripts {
 script(local) PlayersHouse_WatchJirachiProgram {
     lockall
     setflag(FLAG_SAW_JIRACHI_PROGRAM)
-    delay(60)
+    delay(64)
     special(TurnOnTVScreen)
-    delay(30)
+    delay(64)
+    playse(SE_PIN)
+    applymovement(PLAYER, mLookUpStartled)
+    waitmovement(0)
     applymovement(PLAYER, mGoWatchJirachiProgram)
-    waitmovement(PLAYER)
+    waitmovement(0)
     msgbox(PlayersHouse_2F_JirachiProgram)
     waitmessage
     closemessage
@@ -48,8 +51,6 @@ text PlayersHouse_2F_JirachiProgram {
 // Movement
 //=====================================
 movement mGoWatchJirachiProgram {
-    emote_exclamation_mark
-    face_up
     delay_16 * 4
     walk_up * 2
 }

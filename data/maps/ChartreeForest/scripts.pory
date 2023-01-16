@@ -156,6 +156,7 @@ script(global) ChartreeForest_RocketGrunt4 {
 
 script(global) ChartreeForest_Balfour {
     lock
+    playse(SE_PIN)
     applymovement(GRUNT, mLookRightStartled)
     waitmovement(0)
     msgbox(format("Grunt: Uh, Balfour sir?\pThis kid just beat all the workers that were left."))

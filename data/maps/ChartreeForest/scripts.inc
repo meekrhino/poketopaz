@@ -142,6 +142,7 @@ ChartreeForest_RocketGrunt4::
 
 ChartreeForest_Balfour::
 	lock
+	playse SE_PIN
 	applymovement 14, mLookRightStartled
 	waitmovement 0
 	msgbox ChartreeForest_Balfour_Text_0
