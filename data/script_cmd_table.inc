@@ -124,7 +124,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_givemon                   @ 0x79
 	.4byte ScrCmd_giveegg                   @ 0x7a
 	.4byte ScrCmd_setmonmove                @ 0x7b
-	.4byte ScrCmd_checkpartyhm            @ 0x7c
+	.4byte ScrCmd_checkpartyhm              @ 0x7c
 	.4byte ScrCmd_bufferspeciesname         @ 0x7d
 	.4byte ScrCmd_bufferleadmonspeciesname  @ 0x7e
 	.4byte ScrCmd_bufferpartymonnick        @ 0x7f
@@ -230,6 +230,8 @@ gScriptCmdTable::
     .4byte ScrCmd_bufferbankbalance         @ 0xe3
 	.4byte ScrCmd_questmenu                 @ 0xe4
     .4byte ScrCmd_subquestmenu              @ 0xe5
+	.4byte ScrCmd_showitemdesc              @ 0xe6
+	.4byte ScrCmd_hideitemdesc              @ 0xe7
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
