@@ -60,6 +60,7 @@ CranewingCity_Gym_FroyDefeated:
 	setflag FLAG_BADGE01_GET
 	setvar VAR_ROUTE204_STATE, 1
 	setvar VAR_0x8008, 1
+	subquest_finish SUB_QUEST_GYM_1_CRANEWING
 	call Common_EventScript_SetGymTrainers
 	goto CranewingCity_Gym_GiveFlare
 	end

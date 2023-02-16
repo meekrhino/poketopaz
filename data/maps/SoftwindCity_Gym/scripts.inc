@@ -71,6 +71,7 @@ SoftwindCity_Gym_ThermaDefeated:
 	setflag FLAG_BADGE02_GET
 	setvar VAR_SOFTWIND_CITY_STATE, 5
 	clearflag FLAG_HIDE_SOFTWIND_CITY_WILLOW
+	subquest_finish SUB_QUEST_GYM_2_SOFTWIND
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
 	goto SoftwindCity_Gym_GiveWindwhistle
