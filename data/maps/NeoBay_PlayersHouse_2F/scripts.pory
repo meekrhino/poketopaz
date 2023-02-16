@@ -20,7 +20,6 @@ mapscripts NeoBay_PlayersHouse_2F_MapScripts {
 script(local) PlayersHouse_WatchJirachiProgram {
     lockall
     setflag(FLAG_SAW_JIRACHI_PROGRAM)
-    delay(64)
     special(TurnOnTVScreen)
     delay(64)
     playse(SE_PIN)

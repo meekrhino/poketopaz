@@ -1,27 +1,27 @@
 #ifndef GUARD_CONSTANTS_QUESTS_H
 #define GUARD_CONSTANTS_QUESTS_H
 
-//questmenu scripting command params
-#define QUEST_MENU_OPEN                 0   //opens the quest menu (questId = 0)
-#define QUEST_MENU_UNLOCK_QUEST         1   //questId = QUEST_X (0-indexed)
-#define QUEST_MENU_SET_ACTIVE           2   //questId = QUEST_X (0-indexed)
-#define QUEST_MENU_SET_REWARD           3   //questId = QUEST_X (0-indexed)
-#define QUEST_MENU_COMPLETE_QUEST       4   //questId = QUEST_X (0-indexed)
-#define QUEST_MENU_CHECK_UNLOCKED       5   //checks if questId has been unlocked. Returns result to gSpecialVar_Result
-#define QUEST_MENU_CHECK_ACTIVE         6   //checks if questId has been unlocked. Returns result to gSpecialVar_Result
-#define QUEST_MENU_CHECK_REWARD         7   //checks if questId is in Reward state. Returns result to gSpecialVar_Result
-#define QUEST_MENU_CHECK_COMPLETE       8   //checks if questId has been completed. Returns result to gSpecialVar_Result
-#define QUEST_MENU_BUFFER_QUEST_NAME    9   //buffers a quest name to gStringVar1
+//quest scripting command modes
+#define QUEST_OPEN_MENU             0   //opens the quest menu (questId = 0)
+#define QUEST_REVEAL                1   //questId = QUEST_X (0-indexed)
+#define QUEST_START                 2   //questId = QUEST_X (0-indexed)
+#define QUEST_SET_REWARD_WAITING    3   //questId = QUEST_X (0-indexed)
+#define QUEST_FINISH                4   //questId = QUEST_X (0-indexed)
+#define QUEST_IS_REVEALED           5   //checks if questId has been unlocked. Returns result to gSpecialVar_Result
+#define QUEST_IS_STARTED            6   //checks if questId has been unlocked. Returns result to gSpecialVar_Result
+#define QUEST_IS_REWARD_WAITING     7   //checks if questId is in Reward state. Returns result to gSpecialVar_Result
+#define QUEST_IS_FINISHED           8   //checks if questId has been completed. Returns result to gSpecialVar_Result
+#define QUEST_BUFFER_NAME           9   //buffers a quest name to gStringVar1
 
 // quests
-#define QUEST_GETTING_STARTED        0
-#define QUEST_FINDING_SIMON          1
-#define QUEST_TRIUMPH_SPIRE          2
-#define QUEST_LOST_FISHING_POLE      3
-#define QUEST_HIDDEN_ITEMS           4
-#define QUEST_MOOCALF_ORPHAN         5
-#define QUEST_TRADE_LUPINE           6
-#define QUEST_CHARTREE_ROCKETS       7
+#define QUEST_GETTING_STARTED       0
+#define QUEST_FINDING_SIMON         1
+#define QUEST_TRIUMPH_SPIRE         2
+#define QUEST_LOST_FISHING_POLE     3
+#define QUEST_HIDDEN_ITEMS          4
+#define QUEST_MOOCALF_ORPHAN        5
+#define QUEST_TRADE_LUPINE          6
+#define QUEST_CHARTREE_ROCKETS      7
 #define QUEST_COUNT                 (QUEST_CHARTREE_ROCKETS + 1)
 
 // subquests

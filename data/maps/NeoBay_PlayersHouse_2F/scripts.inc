@@ -10,7 +10,6 @@ NeoBay_PlayersHouse_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 PlayersHouse_WatchJirachiProgram:
 	lockall
 	setflag FLAG_SAW_JIRACHI_PROGRAM
-	delay 64
 	special TurnOnTVScreen
 	delay 64
 	playse SE_PIN

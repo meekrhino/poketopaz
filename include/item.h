@@ -67,6 +67,7 @@ u16 ItemId_GetId(u16 itemId);
 u16 ItemId_GetPrice(u16 itemId);
 u8 ItemId_GetHoldEffect(u16 itemId);
 u8 ItemId_GetHoldEffectParam(u16 itemId);
+void ItemId_GetHoldEffectParam_Script();
 const u8 *ItemId_GetDescription(u16 itemId);
 u8 ItemId_GetImportance(u16 itemId);
 u8 ItemId_GetRegistrability(u16 itemId);

@@ -71,6 +71,9 @@ BradleyWasLookingForYou:
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalksOverToMom
 	waitmovement 0
 	msgbox PlayersHouse_1F_BradleyWasLookingForYou, MSGBOX_AUTOCLOSE
+	setflag FLAG_SYS_QUEST_MENU_GET
+	quest_start QUEST_GETTING_STARTED
+	openquestmenu
 	releaseall
 	end
 

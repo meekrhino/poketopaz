@@ -2366,54 +2366,54 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
 
     switch (caseId)
     {
-    case QUEST_MENU_OPEN:
+    case QUEST_OPEN_MENU:
     default:
         BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
         QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
         ScriptContext1_Stop();
         break;
-    case QUEST_MENU_UNLOCK_QUEST:
+    case QUEST_REVEAL:
         QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);
         break;
-    case QUEST_MENU_SET_ACTIVE:
+    case QUEST_START:
         QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);
         QuestMenu_GetSetQuestState(questId, FLAG_SET_ACTIVE);
         break;
-    case QUEST_MENU_SET_REWARD:
+    case QUEST_SET_REWARD_WAITING:
         QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);
         QuestMenu_GetSetQuestState(questId, FLAG_SET_REWARD);
         QuestMenu_GetSetQuestState(questId, FLAG_REMOVE_ACTIVE);
         break;
-    case QUEST_MENU_COMPLETE_QUEST:
+    case QUEST_FINISH:
         QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);
         QuestMenu_GetSetQuestState(questId, FLAG_SET_COMPLETED);
         QuestMenu_GetSetQuestState(questId, FLAG_REMOVE_REWARD);
         break;
-    case QUEST_MENU_CHECK_UNLOCKED:
+    case QUEST_IS_REVEALED:
         if (QuestMenu_GetSetQuestState(questId, FLAG_GET_UNLOCKED))
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
         break;
-    case QUEST_MENU_CHECK_ACTIVE:
+    case QUEST_IS_STARTED:
         if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
         break;
-    case QUEST_MENU_CHECK_REWARD:
+    case QUEST_IS_REWARD_WAITING:
         if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
         break;
-    case QUEST_MENU_CHECK_COMPLETE:
+    case QUEST_IS_FINISHED:
         if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
         break;
-    case QUEST_MENU_BUFFER_QUEST_NAME:
+    case QUEST_BUFFER_NAME:
             QuestMenu_CopyQuestName(gStringVar1, questId);
         break;
     }
@@ -2429,16 +2429,16 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
 
     switch (caseId)
     {
-        case QUEST_MENU_COMPLETE_QUEST:
+        case QUEST_FINISH:
             QuestMenu_GetSetSubquestState(FLAG_SET_COMPLETED,subquestId);
             break;
-        case QUEST_MENU_CHECK_COMPLETE:
+        case QUEST_IS_FINISHED:
             if (QuestMenu_GetSetSubquestState(FLAG_GET_COMPLETED,subquestId))
                 gSpecialVar_Result = TRUE;
             else
                 gSpecialVar_Result = FALSE;
             break;
-        case QUEST_MENU_BUFFER_QUEST_NAME:
+        case QUEST_BUFFER_NAME:
             for (i = 0; i < QUEST_COUNT; i++)
             {
                 QuestMenu_CopySubquestName(gStringVar1,subquestId);

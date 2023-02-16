@@ -21,7 +21,6 @@ mapscripts CranewingCity_MapScripts {
 // Global Scripts
 //=====================================
 script(global) CranewingCity_Sign {
-    setflag(FLAG_SYS_QUEST_MENU_GET)
     msgbox(CranewingCity_Text_TownSign, MSGBOX_SIGN)
     end
 }

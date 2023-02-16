@@ -1734,20 +1734,70 @@
 	.byte \out
 	.endm
 
-    .macro questmenu case:req, questId:req
+    @ Quest menu status management
+    .macro questmenu mode:req, questId:req
     .byte 0xe4
-    .byte \case
+    .byte \mode
     .byte \questId
     .endm
 
-    .macro subquestmenu case:req, subquestId:req
+    .macro openquestmenu
+    questmenu QUEST_OPEN_MENU 0
+    .endm
+
+    .macro quest_reveal questId:req
+    questmenu QUEST_REVEAL \questId
+    .endm
+
+    .macro quest_start questId:req
+    questmenu QUEST_START \questId
+    .endm
+
+    .macro quest_set_reward_waiting questId:req
+    questmenu QUEST_SET_REWARD_WAITING \questId
+    .endm
+
+    .macro quest_finish questId:req
+    questmenu QUEST_FINISH \questId
+    .endm
+
+    .macro quest_check_revealed questId:req
+    questmenu QUEST_IS_REVEALED \questId
+    .endm
+
+    .macro quest_check_started questId:req
+    questmenu QUEST_IS_STARTED \questId
+    .endm
+
+    .macro quest_check_reward_waiting questId:req
+    questmenu QUEST_IS_REWARD_WAITING \questId
+    .endm
+
+    .macro quest_check_finished questId:req
+    questmenu QUEST_IS_FINISHED \questId
+    .endm
+
+    .macro bufferquestname questId:req
+    questmenu QUEST_BUFFER_NAME \questId
+    .endm
+
+    @ Subquest management
+    .macro subquestmenu mode:req, subquestId:req
     .byte 0xe5
-    .byte \case
+    .byte \mode
     .2byte \subquestId
     .endm
 
-    .macro openquestmenu
-    questmenu 0 0
+    .macro subquest_finish subquestId:req
+    questmenu QUEST_FINISH \subquestId
+    .endm
+
+    .macro subquest_check_finished subquestId:req
+    questmenu QUEST_IS_FINISHED \subquestId
+    .endm
+
+    .macro buffersubquestname subquestId:req
+    questmenu QUEST_BUFFER_NAME \subquestId
     .endm
 
 	.macro showdescription

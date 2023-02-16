@@ -150,6 +150,9 @@ static bool8 IsQuestRewardState(s32 questId);
 static bool8 IsQuestCompletedState(s32 questId);
 static bool8 IsSubquestCompletedState(s32 questId);
 
+static bool8 ShouldShowSubquestData(s32 questId);
+static u8 GetActiveSubquest(u32 questId);
+
 static void DetermineSpriteType(s32 questId);
 static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType);
 static void ResetSpriteState(void);
@@ -208,28 +211,26 @@ static const u32 sQuestMenuTilemap[] =
 
 //Strings used for the Quest Menu
 static const u8 sText_Empty[] = _("");
-static const u8 sText_AllHeader[] = _("All Missions");
-static const u8 sText_InactiveHeader[] = _("Inactive Missions");
-static const u8 sText_ActiveHeader[] = _("Active Missions");
+static const u8 sText_AllHeader[] = _("All Quests");
+static const u8 sText_InactiveHeader[] = _("Hidden Quests");
+static const u8 sText_ActiveHeader[] = _("Active Quests");
 static const u8 sText_RewardHeader[] = _("Reward Available");
-static const u8 sText_CompletedHeader[] =
-      _("Completed Missions");
+static const u8 sText_CompletedHeader[] = _("Completed Quests");
 static const u8 sText_QuestNumberDisplay[] =
       _("{STR_VAR_1}/{STR_VAR_2}");
 static const u8 sText_Unk[] = _("??????");
 static const u8 sText_Active[] = _("Active");
 static const u8 sText_Reward[] = _("Reward");
-static const u8 sText_Complete[] = _("Done");
 static const u8 sText_ShowLocation[] =
       _("Location: {STR_VAR_2}");
-static const u8 sText_StartForMore[] =
-      _("Start for more details.");
+static const u8 sText_QuestLocked[] =
+      _("This quest is still locked!");
 static const u8 sText_ReturnRecieveReward[] =
       _("Return to {STR_VAR_2}\nto recieve your reward!");
-static const u8 sText_SubQuestButton[] = _("{A_BUTTON}");
+static const u8 sText_SubQuestButton[] = _(" {A_BUTTON}");
 static const u8 sText_Type[] = _("{R_BUTTON}Type");
 static const u8 sText_Caught[] = _("Caught");
-static const u8 sText_Found[] = _("Found");
+static const u8 sText_Done[] = _("Done");
 static const u8 sText_Read[] = _("Read");
 static const u8 sText_Back[] = _("Back");
 static const u8 sText_DotSpace[] = _(". ");
@@ -238,8 +239,8 @@ static const u8 sText_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_AZ[] = _(" A-Z");
 
 //Declaration of subquest structures. Edits to subquests are made here.
-
 static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
+
     [SUB_QUEST_FIND_BRADLEY] = {
 	    .id = SUB_QUEST_FIND_BRADLEY,
 	    .name = gText_SubQuest_FindBradleyName,
@@ -247,7 +248,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_GettingStartedMap,
 	    .sprite = OBJ_EVENT_GFX_BRADLEY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
 	[SUB_QUEST_RESCUE_AMPURE] = {
 	    .id = SUB_QUEST_RESCUE_AMPURE,
@@ -256,7 +257,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_GettingStartedMap,
 	    .sprite = SPECIES_AMPURE,
 	    .spritetype = PKMN,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
 	[SUB_QUEST_SAY_GOODBYE] = {
 	    .id = SUB_QUEST_SAY_GOODBYE,
@@ -265,7 +266,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_GettingStartedMap,
 	    .sprite = OBJ_EVENT_GFX_MOM,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
 	[SUB_QUEST_FIND_SIMON] = {
 	    .id = SUB_QUEST_FIND_SIMON,
@@ -274,7 +275,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_GettingStartedMap,
 	    .sprite = OBJ_EVENT_GFX_SIMON,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
 	[SUB_QUEST_GYM_1_CRANEWING] = {
 	    .id = SUB_QUEST_GYM_1_CRANEWING,
@@ -283,7 +284,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymCranewingName,
 	    .sprite = OBJ_EVENT_GFX_FROY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
 	[SUB_QUEST_GYM_2_SOFTWIND] = {
 	    .id = SUB_QUEST_GYM_2_SOFTWIND,
@@ -292,7 +293,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymSoftwindName,
 	    .sprite = OBJ_EVENT_GFX_THERMA,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
 	},
 	[SUB_QUEST_GYM_3_ROOTHAVEN] = {
 	    .id = SUB_QUEST_GYM_3_ROOTHAVEN,
@@ -301,7 +302,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymRoothavenName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
 	},
 	[SUB_QUEST_GYM_4_KALYPSO] = {
 	    .id = SUB_QUEST_GYM_4_KALYPSO,
@@ -310,7 +311,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymKalypsoName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
 	},
     [SUB_QUEST_GYM_5_GALLEA] = {
         .id = SUB_QUEST_GYM_5_GALLEA,
@@ -319,7 +320,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymGalleaName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_GYM_6_PORTWIND] = {
         .id = SUB_QUEST_GYM_6_PORTWIND,
@@ -328,7 +329,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymPortwindName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_GYM_7_SEDCINI] = {
         .id = SUB_QUEST_GYM_7_SEDCINI,
@@ -337,7 +338,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymSedciniName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_GYM_8_ENCHESTRA] = {
         .id = SUB_QUEST_GYM_8_ENCHESTRA,
@@ -346,7 +347,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymEnchestraName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_GYM_9_DYNAMO_GARDENS] = {
         .id = SUB_QUEST_GYM_9_DYNAMO_GARDENS,
@@ -355,7 +356,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymDynamoGardensName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_GYM_10_SKOBELOFF] = {
         .id = SUB_QUEST_GYM_10_SKOBELOFF,
@@ -364,7 +365,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymSkobeloffName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_GYM_11_SAHARAN] = {
         .id = SUB_QUEST_GYM_11_SAHARAN,
@@ -373,7 +374,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymSaharanName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_GYM_12_AQUAPOLIS] = {
         .id = SUB_QUEST_GYM_12_AQUAPOLIS,
@@ -382,7 +383,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_GymAquapolisName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_TRIUMPH_SPIRE] = {
         .id = SUB_QUEST_TRIUMPH_SPIRE,
@@ -391,7 +392,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_SubQuest_TriumphSpireName,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_FIND_MILK] = {
         .id = SUB_QUEST_FIND_MILK,
@@ -400,7 +401,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_MoocalfOrphanMap,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_FIND_BOTTLE] = {
         .id = SUB_QUEST_FIND_BOTTLE,
@@ -409,7 +410,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_MoocalfOrphanMap,
 	    .sprite = OBJ_EVENT_GFX_WALLY,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_DELIVER_ASH] = {
         .id = SUB_QUEST_DELIVER_ASH,
@@ -418,7 +419,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_MoocalfOrphanMap,
 	    .sprite = ITEM_SOOT_SACK,
 	    .spritetype = ITEM,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_GET_MILK] = {
         .id = SUB_QUEST_GET_MILK,
@@ -427,7 +428,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_HiddenItemsMap,
 	    .sprite = ITEM_MOOMOO_MILK,
 	    .spritetype = ITEM,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_DELIVER_MILK] = {
         .id = SUB_QUEST_DELIVER_MILK,
@@ -436,7 +437,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_MoocalfOrphanMap,
 	    .sprite = ITEM_MOOMOO_MILK,
 	    .spritetype = ITEM,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_INVESTIGATE_FOREST] = {
         .id = SUB_QUEST_INVESTIGATE_FOREST,
@@ -445,7 +446,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_ChartreeRocketsMap,
 	    .sprite = OBJ_EVENT_GFX_ROCKET_GRUNT_M,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
     [SUB_QUEST_DEFEAT_ROCKETS] = {
         .id = SUB_QUEST_DEFEAT_ROCKETS,
@@ -454,7 +455,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .map = gText_Quest_ChartreeRocketsMap,
 	    .sprite = OBJ_EVENT_GFX_ROCKET_GRUNT_M,
 	    .spritetype = OBJECT,
-	    .type = sText_Found
+	    .doneLabel = sText_Done
     },
 };
 
@@ -468,8 +469,9 @@ static const struct SideQuest sQuests[QUEST_COUNT] =
         .desc = gText_Quest_GettingStartedDesc,
         .donedesc = gText_Quest_GettingStartedDone,
         .map = gText_Quest_GettingStartedMap,
-        .sprite = OBJ_EVENT_GFX_WALLY,
+        .sprite = OBJ_EVENT_GFX_BRADLEY,
         .spritetype = OBJECT,
+        .isSequential = TRUE,
         .subquests = subquest_list(
             QUEST_GETTING_STARTED_SUB_COUNT,
             SUB_QUEST_FIND_BRADLEY,
@@ -485,6 +487,7 @@ static const struct SideQuest sQuests[QUEST_COUNT] =
         .map = gText_Quest_FindingSimonMap,
         .sprite = SPECIES_AMPURE,
         .spritetype = PKMN,
+        .isSequential = TRUE,
         .subquests = subquest_list(
             QUEST_FINDING_SIMON_SUB_COUNT,
             SUB_QUEST_FIND_SIMON
@@ -543,6 +546,7 @@ static const struct SideQuest sQuests[QUEST_COUNT] =
 	    .map = gText_Quest_MoocalfOrphanMap,
 	    .sprite = SPECIES_MOOCALF,
 	    .spritetype = PKMN,
+        .isSequential = TRUE,
 	    .subquests = subquest_list(
             QUEST_MOOCALF_ORPHAN_SUB_COUNT,
             SUB_QUEST_FIND_MILK,
@@ -570,6 +574,7 @@ static const struct SideQuest sQuests[QUEST_COUNT] =
 	    .map = gText_Quest_ChartreeRocketsMap,
 	    .sprite = OBJ_EVENT_GFX_ROCKET_GRUNT_M,
 	    .spritetype = OBJECT,
+        .isSequential = TRUE,
 	    .subquests = subquest_list(
             QUEST_CHARTREE_ROCKETS_SUB_COUNT,
             SUB_QUEST_INVESTIGATE_FOREST,
@@ -1617,13 +1622,13 @@ void PopulateQuestName(u8 countQuest)
 	}
 }
 
-void PopulateSubquestName(u8 parentQuest, u8 countQuest)
+void PopulateSubquestName(u8 parentQuest, u8 subquestIdx)
 {
-	if (IsSubquestCompletedState(countQuest))
+	if (ShouldShowSubquestData(subquestIdx))
 	{
 		questNamePointer = StringAppend(
             questNamePointer,
-		    sSubQuests[sQuests[parentQuest].subquests[countQuest]].name
+		    sSubQuests[sQuests[parentQuest].subquests[subquestIdx]].name
         );
 	}
 	else
@@ -1719,22 +1724,43 @@ void GenerateAndPrintQuestDetails(s32 questId)
 	GenerateQuestFlavorText(questId);
 	PrintQuestFlavorText(questId);
 }
+
 void GenerateQuestLocation(s32 questId)
 {
-	if (!IsSubquestMode())
+    const struct SideQuest * parentQuest;
+    u8 activeSubquestId;
+
+	if (IsSubquestMode() == FALSE)
 	{
-		StringCopy(gStringVar2, sQuests[questId].map);
+        if (IsQuestInactiveState(questId) == TRUE)
+        {
+		    StringCopy(gStringVar2, sText_Unk);
+        }
+        else
+        {
+		    StringCopy(gStringVar2, sQuests[questId].map);
+        }
 	}
 	else
 	{
-		StringCopy(
-            gStringVar2,
-		    sSubQuests[sQuests[sStateDataPtr->parentQuest].subquests[questId]].map
-        );
+        parentQuest = &sQuests[sStateDataPtr->parentQuest];
+        activeSubquestId = GetActiveSubquest(sStateDataPtr->parentQuest);
+        if (ShouldShowSubquestData(questId))
+        {
+            StringCopy(
+                gStringVar2,
+                sSubQuests[parentQuest->subquests[questId]].map
+            );
+        }
+        else
+        {
+		    StringCopy(gStringVar2, sText_Unk);
+        }
 	}
 
 	StringExpandPlaceholders(gStringVar4, sText_ShowLocation);
 }
+
 void PrintQuestLocation(s32 questId)
 {
 	FillWindowPixelBuffer(1, 0);
@@ -1747,7 +1773,7 @@ void GenerateQuestFlavorText(s32 questId)
 	{
 		if (IsQuestInactiveState(questId) == TRUE)
 		{
-			StringCopy(gStringVar1, sText_StartForMore);
+			StringCopy(gStringVar1, sText_QuestLocked);
 		}
 		if (IsQuestActiveState(questId) == TRUE)
 		{
@@ -1764,7 +1790,7 @@ void GenerateQuestFlavorText(s32 questId)
 	}
 	else
 	{
-		if (IsSubquestCompletedState(questId) == TRUE)
+		if (ShouldShowSubquestData(questId))
 		{
 			StringCopy(gStringVar1,
 			           sSubQuests[sQuests[sStateDataPtr->parentQuest].subquests[questId]].desc);
@@ -1779,7 +1805,16 @@ void GenerateQuestFlavorText(s32 questId)
 }
 void UpdateQuestFlavorText(s32 questId)
 {
-	StringCopy(gStringVar1, sQuests[questId].desc);
+    u8 activeSubquest = GetActiveSubquest(questId);
+    if (sQuests[questId].isSequential
+     && activeSubquest < sQuests[questId].numSubquests)
+    {
+        StringCopy(gStringVar1, sSubQuests[sQuests[questId].subquests[activeSubquest]].desc);
+    }
+    else
+    {
+	    StringCopy(gStringVar1, sQuests[questId].desc);
+    }
 }
 void PrintQuestFlavorText(s32 questId)
 {
@@ -1861,12 +1896,45 @@ bool8 IsQuestUnlocked(s32 questId)
 	}
 }
 
+static u8 GetActiveSubquest(u32 questId)
+{
+    const struct SideQuest * quest = &sQuests[questId];
+    s32 activeSubquest = 0;
+    if (quest->isSequential)
+    {
+        while( activeSubquest < quest->numSubquests
+            && IsSubquestCompletedState((s32) quest->subquests[activeSubquest]) == TRUE)
+        {
+            activeSubquest++;
+        }
+    }
+    return activeSubquest;
+}
+
+static bool8 ShouldShowSubquestData(s32 questId)
+{
+    const struct SideQuest * parentQuest = &sQuests[sStateDataPtr->parentQuest];
+    u8 activeSubquestId = GetActiveSubquest(sStateDataPtr->parentQuest);
+
+    if (IsSubquestCompletedState(questId)
+        || (parentQuest->isSequential
+        && questId <= activeSubquestId) )
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
 void DetermineSpriteType(s32 questId)
 {
 	u16 spriteId;
 	u8 spriteType;
 
-	if (IsSubquestMode() == FALSE)
+	if (IsSubquestMode() == FALSE
+     && IsQuestCompletedState(questId))
 	{
 		spriteId = sQuests[questId].sprite;
 		spriteType = sQuests[questId].spritetype;
@@ -1874,7 +1942,7 @@ void DetermineSpriteType(s32 questId)
 		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
 		                       spriteType);
 	}
-	else if (IsSubquestCompletedState(questId) == TRUE)
+	else if (ShouldShowSubquestData(questId))
 	{
         u8 subquestId = sQuests[sStateDataPtr->parentQuest].subquests[questId];
 		spriteId = sSubQuests[subquestId].sprite;
@@ -1977,14 +2045,11 @@ static void GenerateStateAndPrint(u8 windowId, u32 questId,
 
 u8 GenerateSubquestState(u8 questId)
 {
-	u8 parentQuest = sStateDataPtr->parentQuest;
+	const struct SideQuest * parentQuest = &sQuests[sStateDataPtr->parentQuest];
 
-	if (QuestMenu_GetSetSubquestState(
-        FLAG_GET_COMPLETED,
-	    sQuests[parentQuest].subquests[questId]
-    ))
+    if (IsSubquestCompletedState(questId))
 	{
-		StringCopy(gStringVar4, sSubQuests[sQuests[parentQuest].subquests[questId]].type);
+		StringCopy(gStringVar4, sSubQuests[parentQuest->subquests[questId]].doneLabel);
 	}
 	else
 	{
@@ -1998,7 +2063,7 @@ u8 GenerateQuestState(u8 questId)
 {
 	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
 	{
-		StringCopy(gStringVar4, sText_Complete);
+		StringCopy(gStringVar4, sText_Done);
 		return 2;
 	}
 	else if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))

@@ -1834,7 +1834,7 @@ const u8 gText_Quest_GettingStartedDone[] = _("Took the first step on an\nincred
 const u8 gText_Quest_GettingStartedMap[] = _("Neo Bay");
 
 const u8 gText_SubQuest_FindBradleyName[] = _("Find Bradley");
-const u8 gText_SubQuest_FindBradleyDesc[] = _("You know where to find him, of course.");
+const u8 gText_SubQuest_FindBradleyDesc[] = _("Mom asked you to find Bradley\nat his usual spot.");
 const u8 gText_SubQuest_RescueAmpureName[] = _("Return Ampure");
 const u8 gText_SubQuest_RescueAmpureDesc[] = _("Search the grass for the runaway Ampure.");
 const u8 gText_SubQuest_SayGoodbyeName[] = _("Say Goodbye");
