@@ -1738,7 +1738,6 @@ void GenerateAndPrintQuestDetails(s32 questId)
 void GenerateQuestLocation(s32 questId)
 {
     const struct SideQuest * parentQuest;
-    u8 activeSubquestId;
 
 	if (IsSubquestMode() == FALSE)
 	{
@@ -1754,7 +1753,6 @@ void GenerateQuestLocation(s32 questId)
 	else
 	{
         parentQuest = &sQuests[sStateDataPtr->parentQuest];
-        activeSubquestId = GetActiveSubquest(sStateDataPtr->parentQuest);
         if (ShouldShowSubquestData(questId))
         {
             StringCopy(
@@ -1945,11 +1943,20 @@ void DetermineSpriteType(s32 questId)
 	u16 spriteId;
 	u8 spriteType;
 
-	if (IsSubquestMode() == FALSE
-     && IsQuestCompletedState(questId))
+	if (IsSubquestMode() == FALSE)
 	{
-		spriteId = sQuests[questId].sprite;
-		spriteType = sQuests[questId].spritetype;
+        u8 activeSubquestId = GetActiveSubquest(questId);
+        if (sQuests[questId].isSequential
+         && activeSubquestId < sQuests[questId].numSubquests)
+        {
+            spriteId = sSubQuests[sQuests[questId].subquests[activeSubquestId]].sprite;
+            spriteType = sSubQuests[sQuests[questId].subquests[activeSubquestId]].spritetype;
+        }
+        else
+        {
+            spriteId = sQuests[questId].sprite;
+            spriteType = sQuests[questId].spritetype;
+        }
 
 		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
 		                       spriteType);

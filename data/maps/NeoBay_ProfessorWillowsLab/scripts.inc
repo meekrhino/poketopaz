@@ -577,7 +577,7 @@ WillowsLab_YourePokemonTrainersNow:
 	applymovement 5, mBradleyExits
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerExits
 	waitmovement OBJ_EVENT_ID_PLAYER
-	subquest_finish SUB_QUEST_RESCUE_AMPURE
+	subquest_finish SUB_QUEST_CHOOSE_POKEMON
 	warp MAP_NEO_BAY, 1, 0, 0
 	releaseall
 	end
