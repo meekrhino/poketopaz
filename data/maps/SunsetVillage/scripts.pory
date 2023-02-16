@@ -87,17 +87,18 @@ script SunsetVillage_OldMan {
             msgbox("Well done!\pYou should sell that.\nIt's worth quite a bit.", MSGBOX_NPC)
         }
         else {
-            msgbox("Go ahead!\pIt's hidden on the ground.", MSGBOX_NPC)
+            msgbox("Go ahead!\pIt's hidden on the ground,\njust there.", MSGBOX_NPC)
         }
     }
     else {
-        if(var(VAR_TEMP_2) != MAGIC_NUMBER) {
+        quest_check_started(QUEST_HIDDEN_ITEMS)
+        if(var(VAR_RESULT) != TRUE) {
             lock
             faceplayer
             msgbox(format("Fuhuhu! I've hidden an item somewhere in town!\pIf you can find it, it's yours!\nYou won't be able to just see it, though.\pYou'll have to search carefully!"))
             waitmessage
             closemessage
-            setvar(VAR_TEMP_2, MAGIC_NUMBER)
+            quest_start(QUEST_HIDDEN_ITEMS)
         }
         else {
             lock
@@ -120,6 +121,7 @@ script SunsetVillage_OldMan {
             setflag(FLAG_SOLVED_OLD_MAN)
             copyobjectxytoperm(OLD_MAN)
             setobjectmovementtype(OLD_MAN, MOVEMENT_TYPE_FACE_DOWN)
+            quest_finish(QUEST_HIDDEN_ITEMS)
             release
         }
     }
@@ -495,6 +497,7 @@ movement mStartledWalkRight {
 
 movement mPlayerStepsBack {
     slide_right
+    face_left
 }
 
 movement mOldManStepsAside {

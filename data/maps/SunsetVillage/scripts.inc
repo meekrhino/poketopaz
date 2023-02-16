@@ -64,7 +64,8 @@ SunsetVillage_OldWomanMailbox::
 
 SunsetVillage_OldMan::
 	goto_if_set FLAG_SOLVED_OLD_MAN, SunsetVillage_OldMan_2
-	compare VAR_TEMP_2, 17
+	quest_check_started QUEST_HIDDEN_ITEMS
+	compare VAR_RESULT, TRUE
 	goto_if_ne SunsetVillage_OldMan_8
 	lock
 	faceplayer
@@ -86,6 +87,7 @@ SunsetVillage_OldMan::
 	setflag FLAG_SOLVED_OLD_MAN
 	copyobjectxytoperm 6
 	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
+	quest_finish QUEST_HIDDEN_ITEMS
 	release
 SunsetVillage_OldMan_1:
 	end
@@ -105,7 +107,7 @@ SunsetVillage_OldMan_8:
 	msgbox SunsetVillage_OldMan_Text_2
 	waitmessage
 	closemessage
-	setvar VAR_TEMP_2, 17
+	quest_start QUEST_HIDDEN_ITEMS
 	goto SunsetVillage_OldMan_1
 
 
@@ -548,6 +550,7 @@ mStartledWalkRight:
 
 mPlayerStepsBack:
 	slide_right
+	face_left
 	step_end
 
 mOldManStepsAside:
@@ -578,7 +581,7 @@ SunsetVillage_OldMan_Text_0:
 	.string "Well done!\pYou should sell that.\nIt's worth quite a bit.$"
 
 SunsetVillage_OldMan_Text_1:
-	.string "Go ahead!\pIt's hidden on the ground.$"
+	.string "Go ahead!\pIt's hidden on the ground,\njust there.$"
 
 SunsetVillage_OldMan_Text_2:
 	.string "Fuhuhu! I've hidden an item somewhere\n"
