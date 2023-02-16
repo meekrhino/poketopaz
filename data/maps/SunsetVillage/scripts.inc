@@ -238,6 +238,7 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	waitmovement 1
 	subquest_finish SUB_QUEST_SAY_GOODBYE
 	quest_finish QUEST_GETTING_STARTED
+	quest_start QUEST_TRIUMPH_SPIRE
 	return
 
 
