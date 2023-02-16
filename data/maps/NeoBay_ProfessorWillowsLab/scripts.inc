@@ -632,6 +632,7 @@ WillowsLab_AfterFlashback:
 	delay 60
 	msgbox WillowsLab_AfterFlashback_Text_1
 	msgbox WillowsLab_AfterFlashback_Text_2
+	quest_start QUEST_FINDING_SIMON
 	msgbox WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE
 	releaseall
 	end

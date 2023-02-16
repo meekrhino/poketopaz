@@ -597,6 +597,7 @@ script(local) WillowsLab_AfterFlashback {
     delay(60)
     msgbox("Willow: …I'm so sorry.")
     msgbox(format("Bradley: That's why we have to get to the next town, Professor!\pSimon could be anywhere, and he could even be in danger."))
+    quest_start(QUEST_FINDING_SIMON)
     msgbox(WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE)
     releaseall
     end
