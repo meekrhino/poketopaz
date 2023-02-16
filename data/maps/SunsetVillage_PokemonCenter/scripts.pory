@@ -59,26 +59,34 @@ script(global) SunsetVillage_PokemonCenter_Girl {
 }
 
 script(global) SunsetVillage_PokemonCenter_Fisherman {
+    lock
+    faceplayer
     checkitem(ITEM_OLD_ROD, 1)
     if(var(VAR_RESULT) == TRUE) {
         if(flag(FLAG_COMPLETED_OLD_ROD_QUEST)) {
-            msgbox(format("I hope my Old Rod is treating you well!\pMake sure you try fishing in every body of water!"), MSGBOX_NPC)
+            msgbox(format("I hope my Old Rod is treating you well!\pMake sure you try fishing in every body of water!"))
         }
         else {
-            lock
-            faceplayer
             msgbox(format("That's it!\pThat's my Old Rod!\nThank you for finding it!\pAs a reward, take this!\pAnd keep the rod.\nI bought a nicer one!"))
             giveitem(ITEM_POTION)
             if(var(VAR_RESULT) == FALSE) {
                 goto(Common_EventScript_ShowBagIsFull)
             }
             setflag(FLAG_COMPLETED_OLD_ROD_QUEST)
-            release
+            quest_finish(QUEST_LOST_FISHING_POLE)
         }
     }
     else {
-        msgbox(SunsetVillage_Text_Fisherman, MSGBOX_NPC)
+        quest_check_started(QUEST_LOST_FISHING_POLE)
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox(format("Haven't found it yet?\nThat's a shame.\pI think I might have lost it somehwere near Softwind City?"))
+        }
+        else {
+            msgbox(SunsetVillage_Text_Fisherman)
+            quest_start(QUEST_LOST_FISHING_POLE)
+        }
     }
+    release
     end
 }
 

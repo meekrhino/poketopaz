@@ -55,33 +55,42 @@ SunsetVillage_PokemonCenter_Girl_6:
 
 
 SunsetVillage_PokemonCenter_Fisherman::
+	lock
+	faceplayer
 	checkitem ITEM_OLD_ROD, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunsetVillage_PokemonCenter_Fisherman_2
-	msgbox SunsetVillage_Text_Fisherman, MSGBOX_NPC
+	quest_check_started QUEST_LOST_FISHING_POLE
+	compare VAR_RESULT, TRUE
+	goto_if_eq SunsetVillage_PokemonCenter_Fisherman_8
+	msgbox SunsetVillage_Text_Fisherman
+	quest_start QUEST_LOST_FISHING_POLE
 SunsetVillage_PokemonCenter_Fisherman_1:
+	release
 	end
 
 SunsetVillage_PokemonCenter_Fisherman_2:
 	goto_if_set FLAG_COMPLETED_OLD_ROD_QUEST, SunsetVillage_PokemonCenter_Fisherman_5
-	lock
-	faceplayer
 	msgbox SunsetVillage_PokemonCenter_Fisherman_Text_1
 	giveitem ITEM_POTION
 	compare VAR_RESULT, FALSE
-	goto_if_eq SunsetVillage_PokemonCenter_Fisherman_9
-SunsetVillage_PokemonCenter_Fisherman_8:
+	goto_if_eq SunsetVillage_PokemonCenter_Fisherman_12
+SunsetVillage_PokemonCenter_Fisherman_11:
 	setflag FLAG_COMPLETED_OLD_ROD_QUEST
-	release
+	quest_finish QUEST_LOST_FISHING_POLE
 	goto SunsetVillage_PokemonCenter_Fisherman_1
 
 SunsetVillage_PokemonCenter_Fisherman_5:
-	msgbox SunsetVillage_PokemonCenter_Fisherman_Text_0, MSGBOX_NPC
+	msgbox SunsetVillage_PokemonCenter_Fisherman_Text_0
 	goto SunsetVillage_PokemonCenter_Fisherman_1
 
-SunsetVillage_PokemonCenter_Fisherman_9:
+SunsetVillage_PokemonCenter_Fisherman_8:
+	msgbox SunsetVillage_PokemonCenter_Fisherman_Text_2
+	goto SunsetVillage_PokemonCenter_Fisherman_1
+
+SunsetVillage_PokemonCenter_Fisherman_12:
 	goto Common_EventScript_ShowBagIsFull
-	goto SunsetVillage_PokemonCenter_Fisherman_8
+	goto SunsetVillage_PokemonCenter_Fisherman_11
 
 
 SunsetVillage_PokemonCenter_OnTransition:
@@ -124,6 +133,12 @@ SunsetVillage_PokemonCenter_Fisherman_Text_1:
 	.string "As a reward, take this!\p"
 	.string "And keep the rod.\n"
 	.string "I bought a nicer one!$"
+
+SunsetVillage_PokemonCenter_Fisherman_Text_2:
+	.string "Haven't found it yet?\n"
+	.string "That's a shame.\p"
+	.string "I think I might have lost it somehwere\n"
+	.string "near Softwind City?$"
 
 SunsetVillage_Text_Gentleman::
 	.string "A long time ago, Pokémon Centers\n"
