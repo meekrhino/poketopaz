@@ -254,6 +254,9 @@ script(local) WillowIntroduction {
     special(DrawWholeMapView)
     opendoor(DOOR_POS_X, DOOR_POS_Y)
     waitdooranim
+    setmetatile(8, 1, METATILE_Lab_Door_WillowsLabOpenTop, 0)
+    setmetatile(8, 2, METATILE_Lab_Door_WillowsLabOpenBottom, 0)
+    special(DrawWholeMapView)
     addobject(BRADLEY)
     setobjectxy(BRADLEY, DOOR_POS_X, DOOR_POS_Y)
     applymovement(BRADLEY, mBradleyEntersFirstTime)

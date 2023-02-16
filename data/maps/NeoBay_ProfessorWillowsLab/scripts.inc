@@ -282,6 +282,9 @@ WillowIntroduction:
 	special DrawWholeMapView
 	opendoor 8, 2
 	waitdooranim
+	setmetatile 8, 1, METATILE_Lab_Door_WillowsLabOpenTop, 0
+	setmetatile 8, 2, METATILE_Lab_Door_WillowsLabOpenBottom, 0
+	special DrawWholeMapView
 	addobject 5
 	setobjectxy 5, 8, 2
 	applymovement 5, mBradleyEntersFirstTime

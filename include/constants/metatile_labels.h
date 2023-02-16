@@ -278,8 +278,10 @@
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked  0x22B
 
 // gTileset_Lab
-#define METATILE_Lab_Door_WillowsLabExit    0x2A9
-#define METATILE_Lab_Door_WillowsLabNoWarp  0x2AD
+#define METATILE_Lab_Door_WillowsLabExit        0x2A9
+#define METATILE_Lab_Door_WillowsLabNoWarp      0x2AD
+#define METATILE_Lab_Door_WillowsLabOpenBottom  0x24E
+#define METATILE_Lab_Door_WillowsLabOpenTop     0x246
 
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
