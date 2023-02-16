@@ -19,28 +19,34 @@ CranewingCity_House1_Trader_4:
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT
-	msgbox CranewingCity_House1_Trader_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, NO
+	msgbox CranewingCity_House1_Trader_Text_0
+	waitmessage
+	quest_check_started QUEST_TRADE_LUPINE
+	compare VAR_RESULT, FALSE
 	goto_if_eq CranewingCity_House1_Trader_8
-CranewingCity_House1_Trader_7:
+	msgbox CranewingCity_House1_Trader_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq CranewingCity_House1_Trader_11
+CranewingCity_House1_Trader_10:
 	special ChoosePartyMon
 	waitstate
 	copyvar VAR_0x800A, VAR_0x8004
 	compare VAR_0x8004, 255
-	goto_if_eq CranewingCity_House1_Trader_11
-CranewingCity_House1_Trader_10:
+	goto_if_eq CranewingCity_House1_Trader_14
+CranewingCity_House1_Trader_13:
 	copyvar VAR_0x8005, VAR_0x800A
 	specialvar VAR_RESULT, GetTradeSpecies
 	copyvar VAR_0x800B, VAR_RESULT
 	compare VAR_RESULT, VAR_0x8009
-	goto_if_ne CranewingCity_House1_Trader_14
-CranewingCity_House1_Trader_13:
+	goto_if_ne CranewingCity_House1_Trader_17
+CranewingCity_House1_Trader_16:
 	copyvar VAR_0x8004, VAR_0x8008
 	copyvar VAR_0x8005, VAR_0x800A
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
 	waitstate
-	msgbox CranewingCity_House1_Trader_Text_1, MSGBOX_DEFAULT
+	quest_finish QUEST_TRADE_LUPINE
+	msgbox CranewingCity_House1_Trader_Text_3, MSGBOX_DEFAULT
 	setflag FLAG_CRANEWING_NPC_TRADE_COMPLETED
 	release
 	end
@@ -54,16 +60,22 @@ CranewingCity_House1_Trader_5:
 	goto CranewingCity_House1_Trader_4
 
 CranewingCity_House1_Trader_8:
-	goto CranewingCity_House1_DeclineTrade
-	goto CranewingCity_House1_Trader_7
+	quest_start QUEST_TRADE_LUPINE
+	msgbox CranewingCity_House1_Trader_Text_1
+	release
+	end
 
 CranewingCity_House1_Trader_11:
 	goto CranewingCity_House1_DeclineTrade
 	goto CranewingCity_House1_Trader_10
 
 CranewingCity_House1_Trader_14:
-	goto CranewingCity_House1_NotRequestedMon
+	goto CranewingCity_House1_DeclineTrade
 	goto CranewingCity_House1_Trader_13
+
+CranewingCity_House1_Trader_17:
+	goto CranewingCity_House1_NotRequestedMon
+	goto CranewingCity_House1_Trader_16
 
 
 CranewingCity_House1_TradeCompleted:
@@ -102,10 +114,16 @@ CranewingCity_House1_Trader_Text_0:
 	.string "I caught this {STR_VAR_2} on a ski\n"
 	.string "trip this year.\p"
 	.string "It's great and all, but I've always\n"
-	.string "wanted its rival, {STR_VAR_1}!\p"
-	.string "Will you trade me yours?$"
+	.string "wanted its rival, {STR_VAR_1}!$"
 
 CranewingCity_House1_Trader_Text_1:
+	.string "Come back when you've caught a\n"
+	.string "{STR_VAR_1}!$"
+
+CranewingCity_House1_Trader_Text_2:
+	.string "Will you trade me yours?$"
+
+CranewingCity_House1_Trader_Text_3:
 	.string "I can't wait to raise this Pokémon!\p"
 	.string "I hope you have fun raising that one!$"
 

@@ -26,7 +26,16 @@ script(global) CranewingCity_House1_Trader {
 	copyvar(VAR_0x8004, VAR_0x8008)
 	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
 	copyvar(VAR_0x8009, VAR_RESULT)
-	msgbox(format("I caught this {STR_VAR_2} on a ski trip this year.\pIt's great and all, but I've always wanted its rival, {STR_VAR_1}!\pWill you trade me yours?"), MSGBOX_YESNO)
+    msgbox(format("I caught this {STR_VAR_2} on a ski trip this year.\pIt's great and all, but I've always wanted its rival, {STR_VAR_1}!"))
+    waitmessage
+    quest_check_started(QUEST_TRADE_LUPINE)
+    if(var(VAR_RESULT) == FALSE) {
+        quest_start(QUEST_TRADE_LUPINE)
+        msgbox(format("Come back when you've caught a {STR_VAR_1}!"))
+        release
+        end
+    }
+	msgbox("Will you trade me yours?", MSGBOX_YESNO)
 	if(var(VAR_RESULT) == NO) {
         goto(CranewingCity_House1_DeclineTrade)
     }
@@ -47,6 +56,7 @@ script(global) CranewingCity_House1_Trader {
 	special(CreateInGameTradePokemon)
 	special(DoInGameTradeScene)
 	waitstate
+    quest_finish(QUEST_TRADE_LUPINE)
 	msgbox(format("I can't wait to raise this Pokémon!\pI hope you have fun raising that one!"), MSGBOX_DEFAULT)
 	setflag(FLAG_CRANEWING_NPC_TRADE_COMPLETED)
 	release
