@@ -250,6 +250,15 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .spritetype = OBJECT,
 	    .doneLabel = sText_Done
     },
+    [SUB_QUEST_CHOOSE_POKEMON] = {
+	    .id = SUB_QUEST_CHOOSE_POKEMON,
+	    .name = gText_SubQuest_ChoosePokemonName,
+	    .desc = gText_SubQuest_ChoosePokemonDesc,
+	    .map = gText_Quest_GettingStartedMap,
+	    .sprite = OBJ_EVENT_GFX_ITEM_BALL,
+	    .spritetype = OBJECT,
+	    .doneLabel = sText_Done
+    },
 	[SUB_QUEST_RESCUE_AMPURE] = {
 	    .id = SUB_QUEST_RESCUE_AMPURE,
 	    .name = gText_SubQuest_RescueAmpureName,
@@ -475,6 +484,7 @@ static const struct SideQuest sQuests[QUEST_COUNT] =
         .subquests = subquest_list(
             QUEST_GETTING_STARTED_SUB_COUNT,
             SUB_QUEST_FIND_BRADLEY,
+            SUB_QUEST_CHOOSE_POKEMON,
             SUB_QUEST_RESCUE_AMPURE,
             SUB_QUEST_SAY_GOODBYE
         ),
@@ -1803,6 +1813,7 @@ void GenerateQuestFlavorText(s32 questId)
 
 	StringExpandPlaceholders(gStringVar3, gStringVar1);
 }
+
 void UpdateQuestFlavorText(s32 questId)
 {
     u8 activeSubquest = GetActiveSubquest(questId);
@@ -1816,6 +1827,7 @@ void UpdateQuestFlavorText(s32 questId)
 	    StringCopy(gStringVar1, sQuests[questId].desc);
     }
 }
+
 void PrintQuestFlavorText(s32 questId)
 {
 	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,

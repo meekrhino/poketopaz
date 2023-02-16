@@ -265,6 +265,7 @@ script(local) NeoBay_EventScript_BradleyIntroText {
     applymovement(BRADLEY, mBradleyFidgetsRight)
     waitmovement(0)
     msgbox(NeoBay_Text_BradleyIntroStartLetsGo, MSGBOX_DEFAULT)
+    subquest_finish(SUB_QUEST_FIND_BRADLEY)
     waitmessage
     closemessage
     return
@@ -404,7 +405,9 @@ script(local) NeoBay_EventScript_AmpureCapture {
     turnobject(BRADLEY, DIR_SOUTH)
 	special(LoadPlayerParty)
     fadescreen(FADE_FROM_WHITE)
-    msgbox(format("Bradley: ALRIGHT! And that was my first time, too!\pLet's go back and return Ampure to Prof. Willow!"))
+    msgbox(format("Bradley: ALRIGHT! And that was my first time, too!\pLet's get back to Prof. Willow with the good news!"))
+    waitmessage
+    subquest_finish(SUB_QUEST_RESCUE_AMPURE)
     warp(MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6)
     releaseall
     return

@@ -542,6 +542,7 @@ script(local) WillowsLab_YourePokemonTrainersNow {
     applymovement(BRADLEY, mBradleyExits)
     applymovement(PLAYER, mPlayerExits)
     waitmovement(PLAYER)
+    subquest_finish(SUB_QUEST_CHOOSE_POKEMON)
     warp(MAP_NEO_BAY, 1, 0, 0)
     releaseall
     end
@@ -722,8 +723,8 @@ text WillowsLab_WillowConcedes {
         "… … … …\l"
         "… … … …\l"
         "… … … …\p"
-        "… Ohohohohoho! I see, I see. So that's how it is!\p"
-        "You're a subborn one, Bradley, but I like that.\p"
+        "… Ohohohohoho! I see, I see.\nSo that's how it is!\p"
+        "You're a subborn one, Bradley,\nbut I like that.\p"
         "{PLAYER}, you're lucky to have such a good friend.\p"
         "I must say, I'm a bit envious myself!"
     )
@@ -762,10 +763,10 @@ text WillowsLab_DoYouWantEchoise {
 text WillowsLab_AmpureMissionDescription {
     format(
         "Willow: Very well.\p"
-        "As you saw earlier, my Ampure has escaped…\n…again.\p"
+        "As you saw earlier, my Ampure has escaped…\p…again.\p"
         "I'd go find him myself, but with my luck,\n"
         "it would take a whole day for me to catch him.\p"
-        "That's where you two come in!\n"
+        "That's where you two come in!\p"
         "Please find my Ampure and bring him back to me.\p"
         "He couldn't have wandered off too far, "
         "so try searching between here and Sunset Village.\p"

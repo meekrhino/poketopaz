@@ -261,6 +261,7 @@ NeoBay_EventScript_BradleyIntroText:
 	applymovement 2, mBradleyFidgetsRight
 	waitmovement 0
 	msgbox NeoBay_Text_BradleyIntroStartLetsGo, MSGBOX_DEFAULT
+	subquest_finish SUB_QUEST_FIND_BRADLEY
 	waitmessage
 	closemessage
 	return
@@ -409,6 +410,8 @@ NeoBay_EventScript_AmpureCapture:
 	special LoadPlayerParty
 	fadescreen FADE_FROM_WHITE
 	msgbox NeoBay_EventScript_AmpureCapture_Text_1
+	waitmessage
+	subquest_finish SUB_QUEST_RESCUE_AMPURE
 	warp MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB, 0xFF, 8, 6
 	releaseall
 	return
@@ -827,8 +830,8 @@ NeoBay_EventScript_AmpureCapture_Text_0:
 NeoBay_EventScript_AmpureCapture_Text_1:
 	.string "Bradley: ALRIGHT! And that was my first\n"
 	.string "time, too!\p"
-	.string "Let's go back and return Ampure to\n"
-	.string "Prof. Willow!$"
+	.string "Let's get back to Prof. Willow with the\n"
+	.string "good news!$"
 
 NeoBay_EventScript_DoBradleyBattle_Text_0:
 	.string "Bradley: Alright!\p"

@@ -577,6 +577,7 @@ WillowsLab_YourePokemonTrainersNow:
 	applymovement 5, mBradleyExits
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerExits
 	waitmovement OBJ_EVENT_ID_PLAYER
+	subquest_finish SUB_QUEST_RESCUE_AMPURE
 	warp MAP_NEO_BAY, 1, 0, 0
 	releaseall
 	end
@@ -1421,10 +1422,10 @@ WillowsLab_WillowConcedes::
 	.string "… … … …\l"
 	.string "… … … …\l"
 	.string "… … … …\p"
-	.string "… Ohohohohoho! I see, I see. So that's\n"
-	.string "how it is!\p"
-	.string "You're a subborn one, Bradley, but I like\n"
-	.string "that.\p"
+	.string "… Ohohohohoho! I see, I see.\n"
+	.string "So that's how it is!\p"
+	.string "You're a subborn one, Bradley,\n"
+	.string "but I like that.\p"
 	.string "{PLAYER}, you're lucky to have such a\n"
 	.string "good friend.\p"
 	.string "I must say, I'm a bit envious myself!$"
@@ -1457,13 +1458,13 @@ WillowsLab_DoYouWantEchoise::
 WillowsLab_AmpureMissionDescription::
 	.string "Willow: Very well.\p"
 	.string "As you saw earlier, my Ampure has\n"
-	.string "escaped…\n"
+	.string "escaped…\p"
 	.string "…again.\p"
 	.string "I'd go find him myself, but with my luck,\n"
 	.string "it would take a whole day for me to\l"
 	.string "catch him.\p"
-	.string "That's where you two come in!\n"
-	.string "Please find my Ampure and bring him\l"
+	.string "That's where you two come in!\p"
+	.string "Please find my Ampure and bring him\n"
 	.string "back to me.\p"
 	.string "He couldn't have wandered off too far,\n"
 	.string "so try searching between here and\l"

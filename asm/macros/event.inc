@@ -1789,15 +1789,15 @@
     .endm
 
     .macro subquest_finish subquestId:req
-    questmenu QUEST_FINISH \subquestId
+    subquestmenu QUEST_FINISH \subquestId
     .endm
 
     .macro subquest_check_finished subquestId:req
-    questmenu QUEST_IS_FINISHED \subquestId
+    subquestmenu QUEST_IS_FINISHED \subquestId
     .endm
 
     .macro buffersubquestname subquestId:req
-    questmenu QUEST_BUFFER_NAME \subquestId
+    subquestmenu QUEST_BUFFER_NAME \subquestId
     .endm
 
 	.macro showdescription

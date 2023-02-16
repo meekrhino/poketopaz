@@ -238,6 +238,8 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
     giveitem(ITEM_POKE_BALL, 5)
     applymovement(WILLOW, mWillowWalksToLab)
     waitmovement(WILLOW)
+    subquest_finish(SUB_QUEST_SAY_GOODBYE)
+    quest_finish(QUEST_GETTING_STARTED)
     return
 }
 

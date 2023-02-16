@@ -236,6 +236,8 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	giveitem ITEM_POKE_BALL, 5
 	applymovement 1, mWillowWalksToLab
 	waitmovement 1
+	subquest_finish SUB_QUEST_SAY_GOODBYE
+	quest_finish QUEST_GETTING_STARTED
 	return
 
 

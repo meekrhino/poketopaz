@@ -3006,6 +3006,8 @@ extern const u8 gText_Quest_GettingStartedMap[];
 
 extern const u8 gText_SubQuest_FindBradleyName[];
 extern const u8 gText_SubQuest_FindBradleyDesc[];
+extern const u8 gText_SubQuest_ChoosePokemonName[];
+extern const u8 gText_SubQuest_ChoosePokemonDesc[];
 extern const u8 gText_SubQuest_RescueAmpureName[];
 extern const u8 gText_SubQuest_RescueAmpureDesc[];
 extern const u8 gText_SubQuest_SayGoodbyeName[];

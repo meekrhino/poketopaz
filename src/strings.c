@@ -1835,14 +1835,16 @@ const u8 gText_Quest_GettingStartedMap[] = _("Neo Bay");
 
 const u8 gText_SubQuest_FindBradleyName[] = _("Find Bradley");
 const u8 gText_SubQuest_FindBradleyDesc[] = _("Mom asked you to find Bradley\nat his usual spot.");
+const u8 gText_SubQuest_ChoosePokemonName[] = _("Choose a Pokémon");
+const u8 gText_SubQuest_ChoosePokemonDesc[] = _("Prof. Willow has offered you a\nPokémon, and you get first pick!");
 const u8 gText_SubQuest_RescueAmpureName[] = _("Return Ampure");
-const u8 gText_SubQuest_RescueAmpureDesc[] = _("Search the grass for the runaway Ampure.");
+const u8 gText_SubQuest_RescueAmpureDesc[] = _("Search the grass for the\nrunaway Ampure.");
 const u8 gText_SubQuest_SayGoodbyeName[] = _("Say Goodbye");
 const u8 gText_SubQuest_SayGoodbyeDesc[] = _("Say goodbye to Mom.\nYou'll come back to visit, right?");
 
 // Finding Simon
 const u8 gText_Quest_FindingSimonName[] = _("A Wayward Friend");
-const u8 gText_Quest_FindingSimonDesc[] = _("Find and return the Bradley's\nlong lost brother Simon.");
+const u8 gText_Quest_FindingSimonDesc[] = _("Find and return Bradley's\nlong lost brother, Simon.");
 const u8 gText_Quest_FindingSimonDone[] = _("TODO");
 const u8 gText_Quest_FindingSimonMap[] = _("Unknown");
 
