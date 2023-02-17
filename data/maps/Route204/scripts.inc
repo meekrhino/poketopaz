@@ -150,6 +150,7 @@ Route204_ShookAndAllardDefeated_1:
 	setvar VAR_CHARTREE_FOREST_STATE, 2
 	setflag FLAG_HIDE_SHOOK_ALLARD_ROUTE_204
 	closemessage
+	subquest_finish SUB_QUEST_INVESTIGATE_FOREST
 	release
 	end
 

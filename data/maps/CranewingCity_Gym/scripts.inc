@@ -40,15 +40,23 @@ CranewingCity_Gym_Girl::
 
 CranewingCity_Gym_Froy::
 	trainerbattle_single TRAINER_FROY, CranewingCity_Gym_Text_FroyIntro, CranewingCity_Gym_Text_FroyDefeated, CranewingCity_Gym_FroyDefeated, NO_MUSIC
-	goto_if_unset FLAG_RECEIVED_TM51, CranewingCity_Gym_Froy_2
+	quest_check_reward_waiting QUEST_CHARTREE_ROCKETS
+	compare VAR_RESULT, TRUE
+	goto_if_eq CranewingCity_Gym_Froy_2
 CranewingCity_Gym_Froy_1:
+	goto_if_unset FLAG_RECEIVED_TM51, CranewingCity_Gym_Froy_5
+CranewingCity_Gym_Froy_4:
 	msgbox CranewingCity_Gym_Text_FroyPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 CranewingCity_Gym_Froy_2:
-	goto CranewingCity_Gym_GiveFlare
+	goto CranewingCity_Gym_RewardQuest
 	goto CranewingCity_Gym_Froy_1
+
+CranewingCity_Gym_Froy_5:
+	goto CranewingCity_Gym_GiveFlare
+	goto CranewingCity_Gym_Froy_4
 
 
 CranewingCity_Gym_FroyDefeated:
@@ -80,6 +88,22 @@ CranewingCity_Gym_GiveFlare_1:
 CranewingCity_Gym_GiveFlare_2:
 	goto Common_EventScript_ShowBagIsFull
 	goto CranewingCity_Gym_GiveFlare_1
+
+
+CranewingCity_Gym_RewardQuest:
+	msgbox CranewingCity_Gym_Text_QuestResponse
+	waitmessage
+	delay 48
+	playse SE_PIN
+	applymovement 1, mExclamationPoint
+	waitmovement 0
+	msgbox CranewingCity_Gym_Text_CutExplanation
+	waitmessage
+	giveitem ITEM_HM01
+	setflag FLAG_RECEIVED_HM01
+	quest_finish QUEST_CHARTREE_ROCKETS
+	release
+	end
 
 
 CranewingCity_Gym_Text_GymStatue::
@@ -155,7 +179,7 @@ CranewingCity_Gym_Text_LolaPostBattle::
 	.string "battles and at glass-making!$"
 
 CranewingCity_Gym_Text_FroyIntro::
-	.string "Ah, {PLAYER}, we meet again!\p"
+	.string "Froy: Ah, {PLAYER}, we meet again!\p"
 	.string "As you can see, I am the Cranewing\n"
 	.string "Pokémon Gym Leader.\p"
 	.string "My Pokémon and I have honed our skills\n"
@@ -166,7 +190,7 @@ CranewingCity_Gym_Text_FroyIntro::
 	.string "of perfection!$"
 
 CranewingCity_Gym_Text_FroyDefeated::
-	.string "Well, well well…\p"
+	.string "Froy: Well, well well…\p"
 	.string "… … …ha!\p"
 	.string "Ha ha ha!\p"
 	.string "Incredible demonstration!\p"
@@ -179,7 +203,7 @@ CranewingCity_Gym_Text_FroyDefeated::
 	.string "League Char Badge!$"
 
 CranewingCity_Gym_Text_FroyPostBattle::
-	.string "I have no doubt that your\n"
+	.string "Froy: I have no doubt that your\n"
 	.string "determination will see you through the\l"
 	.string "Pokémon League challenge!\p"
 	.string "Battle as many Trainers as you can\n"
@@ -191,8 +215,9 @@ CranewingCity_Gym_Text_ReceivedBadge::
 	.string "{PLAYER} received the Char Badge\nfrom Froy.$"
 
 CranewingCity_Gym_Text_CharBadgeInfo::
-	.string "The Char Badge allows your Pokémon to\n"
-	.string "use the HM move Cut outside of battle.\p"
+	.string "Froy: The Char Badge allows your\n"
+	.string "Pokémon to use the HM move Cut outside\l"
+	.string "of battle.\p"
 	.string "It also means you are one step along\n"
 	.string "the road to the Triumph Spire and\l"
 	.string "becoming the Champion!\p"
@@ -200,7 +225,7 @@ CranewingCity_Gym_Text_CharBadgeInfo::
 	.string "please take this, as well.$"
 
 CranewingCity_Gym_Text_FlareExplanation::
-	.string "That Technical Machine, TM51,\n"
+	.string "Froy: That Technical Machine, TM51,\n"
 	.string "contains Flare.\p"
 	.string "It inflicts more and more damage with\n"
 	.string "each passing turn!\p"
@@ -209,3 +234,41 @@ CranewingCity_Gym_Text_FlareExplanation::
 	.string "Of course TMs can be used as many times\n"
 	.string "as you want, so you could be like me and\l"
 	.string "teach it to all of your Pokémon!$"
+
+CranewingCity_Gym_Text_QuestResponse::
+	.string "Froy: You managed to drive off those\n"
+	.string "monsters\n"
+	.string "that were terrorizing my forest?\p"
+	.string "Tell me everything! … … …\n"
+	.string "… … …\p"
+	.string "This Balfour has a great deal\n"
+	.string "to answer for!\p"
+	.string "You can bet they'll be hearing it from\n"
+	.string "me if I get my hands on them!\p"
+	.string "Team Rocket… I have a feeling this\n"
+	.string "won't be the last we hear of them.$"
+
+CranewingCity_Gym_Text_ReceiveCut::
+	.string "Froy: Wait, I have something that might\n"
+	.string "help you keep up!\p"
+	.string "Not that I think you'll need it, of\n"
+	.string "course…\p"
+	.string "$"
+
+CranewingCity_Gym_Text_CutExplanation::
+	.string "Froy: This is a Hidden Machine!\n"
+	.string "It's a very powerful and rare item.\p"
+	.string "HMs contain moves that can be used by\n"
+	.string "your Pokémon even outside of battle!\p"
+	.string "Moreover, you don't even need to teach\n"
+	.string "the move to your Pokémon!\p"
+	.string "As long as you have the appropriate Gym\n"
+	.string "Badge, an HM allows any compatible\l"
+	.string "Pokémon to use the move outside of\l"
+	.string "battle!\p"
+	.string "Cut will let your Pokémon chop down\n"
+	.string "some small trees that would block your\l"
+	.string "path!\p"
+	.string "Now get going!\p"
+	.string "You've got a long way to go yet.\n"
+	.string "Ha ha ha!$"

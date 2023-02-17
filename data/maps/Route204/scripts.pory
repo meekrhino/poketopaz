@@ -177,6 +177,7 @@ script(global) Route204_ShookAndAllardDefeated {
     setvar(VAR_CHARTREE_FOREST_STATE, CHARTREE_FOREST_ROCKETS_IN_FOREST)
     setflag(FLAG_HIDE_SHOOK_ALLARD_ROUTE_204)
     closemessage
+    subquest_finish(SUB_QUEST_INVESTIGATE_FOREST)
     release
     end
 }

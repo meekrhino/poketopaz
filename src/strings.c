@@ -1921,7 +1921,7 @@ const u8 gText_Quest_TradeLupineMap[] = _("Cranewing City");
 
 // Chartree Rockets
 const u8 gText_Quest_ChartreeRocketsName[] = _("Ash Agitators");
-const u8 gText_Quest_ChartreeRocketsDesc[] = _("Mysterious figures are disrupting\nthe Chartree Forest ecosystem!");
+const u8 gText_Quest_ChartreeRocketsDesc[] = _("Mysterious figures were disrupting\nthe Chartree Forest ecosystem!\nThey may come back…");
 const u8 gText_Quest_ChartreeRocketsDone[] = _("Chased Team Rocket out of Chartree Forest.");
 const u8 gText_Quest_ChartreeRocketsMap[] = _("Chartree Forest");
 

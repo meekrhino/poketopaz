@@ -26,6 +26,7 @@ ChartreeForest_TriggerFroy_1:
 	msgbox ChartreeForest_Text_FroyAboutAsh
 	waitmessage
 	closemessage
+	quest_start QUEST_CHARTREE_ROCKETS
 	switch VAR_TEMP_1
 	case 19, ChartreeForest_TriggerFroy_8
 	case 20, ChartreeForest_TriggerFroy_9
@@ -184,6 +185,8 @@ ChartreeForest_Balfour_5:
 	clearflag FLAG_HIDE_SOFTWIND_CITY_ORION
 	clearflag FLAG_HIDE_SOFTWIND_CITY_WILLOW
 	clearflag FLAG_HIDE_BRADLEY_CRANEWING_CENTER
+	subquest_finish SUB_QUEST_DEFEAT_ROCKETS
+	quest_set_reward_waiting QUEST_CHARTREE_ROCKETS
 	warp MAP_CRANEWING_CITY_POKEMON_CENTER, 2, 0, 0
 	release
 	end
@@ -423,8 +426,8 @@ ChartreeForest_Text_FroyAboutGym::
 	.string "there isn't much I can do…\p"
 	.string "Oh!\n"
 	.string "You're looking to challenge me?\p"
-	.string "Well, we can't do it here. Cranewing, my\n"
-	.string "home, is just past here.\p"
+	.string "Well, we can't do it here.\n"
+	.string "Cranewing, my home, is just past here.\p"
 	.string "If you can make it through the rest of\n"
 	.string "the forest yourself, you might have a\l"
 	.string "chance of beating me!$"

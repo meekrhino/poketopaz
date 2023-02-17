@@ -61,6 +61,7 @@ script(global) ChartreeForest_TriggerFroy {
     msgbox(ChartreeForest_Text_FroyAboutAsh)
     waitmessage
     closemessage
+    quest_start(QUEST_CHARTREE_ROCKETS)
     switch(var(VAR_TEMP_Y)) {
         case 19:
             applymovement(FROY, mFroyLeaves_1)
@@ -202,10 +203,12 @@ script(global) ChartreeForest_Balfour {
     setflag(FLAG_HIDE_BRADLEY_ROUTE_204)
     clearflag(FLAG_ROCKETS_IN_CHARTREE)
     setflag(FLAG_HIDE_ROCKETS_IN_CHARTREE)
-    setflag(FLAG_THERMA_RETURNED) //hides GYM DUDE in softwind
+    setflag(FLAG_THERMA_RETURNED) //hides GYM DUDE in softwindi
     clearflag(FLAG_HIDE_SOFTWIND_CITY_ORION)
     clearflag(FLAG_HIDE_SOFTWIND_CITY_WILLOW)
     clearflag(FLAG_HIDE_BRADLEY_CRANEWING_CENTER)
+    subquest_finish(SUB_QUEST_DEFEAT_ROCKETS)
+    quest_set_reward_waiting(QUEST_CHARTREE_ROCKETS)
     warp(MAP_CRANEWING_CITY_POKEMON_CENTER, 2, 0, 0)
     release
     end
@@ -238,7 +241,7 @@ text ChartreeForest_Text_FroyAboutGym {
         "the forest from harm, but if they've already gone, there "
         "isn't much I can do…\p"
         "Oh!\nYou're looking to challenge me?\p"
-        "Well, we can't do it here. Cranewing, my home, is just "
+        "Well, we can't do it here.\nCranewing, my home, is just "
         "past here.\pIf you can make it through the rest of the "
         "forest yourself, you might have a chance of beating me!"
     )
