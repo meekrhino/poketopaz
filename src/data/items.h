@@ -3284,13 +3284,13 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_10B] =
+    [ITEM_GLASS_BOTTLE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Glass Bottle"),
+        .itemId = ITEM_GLASS_BOTTLE,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sGlassBottleDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },

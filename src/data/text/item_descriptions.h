@@ -1167,6 +1167,10 @@ static const u8 sContestPassDesc[] = _(
     "for entering\n"
     "Pokémon Contests.");
 
+static const u8 sGlassBottleDesc[] = _(
+    "A resealable\n"
+    "glass container.\n" );
+
 static const u8 sWailmerPailDesc[] = _(
     "A tool used for\n"
     "watering Berries\n"
