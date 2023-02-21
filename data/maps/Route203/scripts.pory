@@ -1,3 +1,12 @@
+const FARMER = 11
+
+const VAR_TEMP_X = VAR_TEMP_0
+const VAR_TEMP_Y = VAR_TEMP_1
+
+// VAR_SOFTWIND_CITY_STATE values
+const ROUTE203_STATE_INIT = 0
+const ROUTE203_STATE_MET_FARMER = 1
+const ROUTE203_STATE_GOT_MOOCALF = 2
 
 //=====================================
 // Map Scripts
@@ -14,6 +23,16 @@ script(global) Route203_RouteSignSoftwindCity {
 
 script(global) Route203_RouteSignChartreeForest {
     msgbox("Chartree Forest\n“Tred carefully, preserve the balance”", MSGBOX_SIGN)
+    end
+}
+
+script(global) Route203_RouteSignFarmhouse {
+    msgbox("203 Farmhouse\p“Home of the best Moomoo Milk\nin all of Caldera!”\pNow CLOSED", MSGBOX_SIGN)
+    end
+}
+
+script(global) Route203_FarmhouseMailbox {
+    msgbox(Text_OtherMailbox, MSGBOX_SIGN)
     end
 }
 
@@ -57,9 +76,165 @@ script(global) Route203_Hiker {
     end
 }
 
+script(global) Route203_FarmerLadyNoticesYou {
+    lockall
+    setvar(VAR_ROUTE_203_STATE, ROUTE203_STATE_MET_FARMER)
+    delay(20)
+    playse(SE_PIN)
+    applymovement(FARMER, mLookRightStartled)
+    waitmovement(0)
+    applymovement(FARMER, mFarmerLadyApproaches)
+    waitmovement(0)
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    if(var(VAR_TEMP_X) == 22) {
+        applymovement(FARMER, mFaceUp)
+        waitmovement(0)
+    }
+    msgbox(Route203_Text_FarmerQuestIntro)
+    waitmessage
+    applymovement(FARMER, mFaceLeft)
+    waitmovement(0)
+    msgbox(Route203_Text_FarmerQuestConsider)
+    waitmessage
+    delay(30)
+    if(var(VAR_TEMP_X) == 22) {
+        applymovement(FARMER, mFaceUp)
+    }
+    else {
+        applymovement(FARMER, mFaceRight)
+    }
+    waitmovement(0)
+    quest_reveal(QUEST_MOOCALF_ORPHAN)
+    msgbox(Route203_Text_FarmerQuestIntro, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        quest_start(QUEST_MOOCALF_ORPHAN)
+    }
+    else {
+        msgbox(Route203_Text_FarmerQuestRejected)
+        waitmessage
+    }
+    applymovement(FARMER, mFarmerLadyWalksBack)
+    waitmovement(0)
+    releaseall
+    end
+}
+
+script(global) Route203_FarmerLady {
+    quest_check_finished(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_RESULT) == TRUE) {
+        if(var(VAR_ROUTE_203_STATE) == ROUTE203_STATE_GOT_MOOCALF) {
+            msgbox(Route203_Text_FarmerQuestFinished, MSGBOX_NPC)
+        }
+        else {
+            goto(Route203_FarmerLadyGiveMoocalfStandalone)
+        }
+    }
+    else {
+        checkitem(ITEM_MEDICINE_MILK, 1)
+        if(var(VAR_RESULT) == TRUE) {
+            goto(Route203_FarmerLadyResolveQuest)
+        }
+        quest_check_started(QUEST_MOOCALF_ORPHAN)
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox(Route203_Text_FarmerQuestInProgress, MSGBOX_NPC)
+        }
+        else {
+            msgbox(Route203_Text_FarmerQuestSecondChance, MSGBOX_NPC)
+        }
+    }
+    end
+}
+
 //=====================================
 // Local Scripts
 //=====================================
+script Route203_FarmerLadyResolveQuest {
+    lockall
+    quest_set_reward_waiting(QUEST_MOOCALF_ORPHAN)
+    msgbox(Route203_Text_FarmerQuestTurnIn)
+    waitmessage
+    applymovement(FARMER, mFaceUp)
+    waitmovement(0)
+    opendoor(17, 5)
+    waitdooranim
+    applymovement(FARMER, mFarmerLadyEntersHouse)
+    waitmovement(0)
+    closedoor(17, 5)
+    quest_finish(QUEST_MOOCALF_ORPHAN)
+    delay(60)
+    opendoor(17, 5)
+    waitdooranim
+    applymovement(FARMER, mFarmerLadyExitsHouse)
+    waitmovement(0)
+    closedoor(17, 5)
+    goto(Route203_FarmerLadyGiveMoocalfStandalone)
+    end
+}
+
+script Route203_FarmerLadyGiveMoocalfStandalone {
+    lockall
+    msgbox(Route203_Text_FarmQuestGiveMoocalf)
+    waitmessage
+    goto(Route203_FarmerLadyGiveMoocalf)
+}
+
+script Route203_FarmerLadyGiveMoocalf {
+	setvar(VAR_TEMP_1, SPECIES_MOOCALF)
+	givemon(SPECIES_MOOCALF, 7)
+    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+        goto(Route203_FarmerLadyGiveMoocalfParty)
+    }
+    elif(var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+        goto(Route203_FarmerLadyGiveMoocalfPC)
+    }
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
+}
+
+script Route203_FarmerLadyGiveMoocalfParty {
+	call(Route203_FarmerLadyGiveMoocalfFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        goto(Route203_FarmerLadyGiveMoocalfEnd)
+    }
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(Route203_FarmerLadyGiveMoocalfEnd)
+	end
+}
+
+script Route203_FarmerLadyGiveMoocalfPC {
+	call(Route203_FarmerLadyGiveMoocalfFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+	    goto(Route203_FarmerLadyGiveMoocalfTransferredToPC)
+    }
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(Route203_FarmerLadyGiveMoocalfTransferredToPC)
+	end
+}
+
+script Route203_FarmerLadyGiveMoocalfTransferredToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(Route203_FarmerLadyGiveMoocalfEnd)
+	end
+}
+
+script Route203_FarmerLadyGiveMoocalfFanfare {
+	bufferspeciesname(STR_VAR_2, SPECIES_MOOCALF)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(Route203_Text_ReceivedMoocalf)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_MOOCALF)
+	return
+}
+
+script Route203_FarmerLadyGiveMoocalfEnd {
+    setvar(VAR_ROUTE_203_STATE, ROUTE203_STATE_GOT_MOOCALF)
+	releaseall
+	end
+}
 
 //=====================================
 // Text
@@ -176,12 +351,122 @@ text Route203_Text_CliftonPostBattle {
     )
 }
 
+text Route203_Text_FarmerQuestIntro {
+    format(
+        "Oh, hello there!\p"
+        "I had hoped someone would stop by.\p"
+        "My husband and I used to operate "
+        "a Miltank farm here, but after the fire…\p"
+        "Well, we've only got one young Moocalf left.\p"
+        "And now this one has come down sick."
+    )
+}
+
+text Route203_Text_FarmerQuestConsider {
+    format(
+        "I just…\pI just don't know what to do."
+    )
+}
+
+text Route203_Text_FarmerQuestAsk {
+    format(
+        "Poor Moocalf needs milk, but without the "
+        "Miltank around we don't have any.\p"
+        "Please, will you find milk for us?"
+    )
+}
+
+text Route203_Text_FarmerQuestThankYou {
+    format(
+        "Oh, thank you!\nThank you!\p"
+        "I'm afraid I don't know where you "
+        "could find milk…\p"
+        "I'm sure if you ask around somebody "
+        "will be able to help you.\p"
+        "Moocalf is counting on you."
+    )
+}
+
+text Route203_Text_FarmerQuestRejected {
+    format(
+        "I…\nOkay.\p"
+        "That's fine.\p"
+        "I'm sure someone more kind will "
+        "come by soon."
+    )
+}
+
+text Route203_Text_FarmerQuestSecondChance {
+    format(
+        "What, back to laugh at our misfortune?\p"
+        "Or have you changed your mind?"
+    )
+}
+
+text Route203_Text_FarmerQuestInProgress {
+    format(
+        "Did you find the milk for Moocalf?\p"
+        "Oh…\n"
+        "I hope you can find it soon…"
+    )
+}
+
+text Route203_Text_FarmerQuestFinished {
+    format(
+        "Thank you again for your help.\p"
+        "Not a lot of folk your age would take "
+        "the time these days.\p"
+        "I hope Moocalf is well."
+    )
+}
+
+text Route203_Text_FarmerQuestTurnIn {
+    format(
+        "Did you find the milk for Moocalf?\p"
+        "You did!?\p"
+        "Thank you!\nI'll administer it right away!"
+    )
+}
+
+text Route203_Text_FarmQuestGiveMoocalf {
+    format(
+        "Thank you again for your help.\p"
+        "My husband and I have gotten too "
+        "old to properly care for Moocalf…\p"
+        "You're a Pokémon Trainer right?\p"
+        "Please, take it with you!"
+    )
+}
+
+text Route203_Text_ReceivedMoocalf {
+    "{PLAYER} obtained a {STR_VAR_2}.$"
+}
 
 //=====================================
 // Movement
 //=====================================
 
+movement mFarmerLadyApproaches {
+    walk_down
+    walk_right * 5
+}
 
+movement mFarmerLadyWalksBack {
+    walk_right * 5
+    walk_up
+    delay_16
+    face_down
+}
+
+movement mFarmerLadyEntersHouse {
+    walk_up
+    set_invisible
+}
+
+movement mFarmerLadyExitsHouse {
+    set_visible
+    walk_down
+}
 
 //=====================================
 // Raw

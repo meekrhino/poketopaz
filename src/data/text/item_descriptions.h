@@ -1171,6 +1171,10 @@ static const u8 sGlassBottleDesc[] = _(
     "A resealable\n"
     "glass container.\n" );
 
+static const u8 sMedicineMilkDesc[] = _(
+    "Medicinal milk for\n"
+    "a sick Moocalf.\n" );
+
 static const u8 sWailmerPailDesc[] = _(
     "A tool used for\n"
     "watering Berries\n"

@@ -12,6 +12,16 @@ Route203_RouteSignChartreeForest::
 	end
 
 
+Route203_RouteSignFarmhouse::
+	msgbox Route203_RouteSignFarmhouse_Text_0, MSGBOX_SIGN
+	end
+
+
+Route203_FarmhouseMailbox::
+	msgbox Text_OtherMailbox, MSGBOX_SIGN
+	end
+
+
 Route203_LittleBoy::
 	msgbox Route203_Text_LittleBoy, MSGBOX_NPC
 	end
@@ -52,11 +62,233 @@ Route203_Hiker::
 	end
 
 
+Route203_FarmerLadyNoticesYou::
+	lockall
+	setvar VAR_ROUTE_203_STATE, 1
+	delay 20
+	playse SE_PIN
+	applymovement 11, mLookRightStartled
+	waitmovement 0
+	applymovement 11, mFarmerLadyApproaches
+	waitmovement 0
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 22
+	goto_if_eq Route203_FarmerLadyNoticesYou_2
+Route203_FarmerLadyNoticesYou_1:
+	msgbox Route203_Text_FarmerQuestIntro
+	waitmessage
+	applymovement 11, mFaceLeft
+	waitmovement 0
+	msgbox Route203_Text_FarmerQuestConsider
+	waitmessage
+	delay 30
+	compare VAR_TEMP_0, 22
+	goto_if_eq Route203_FarmerLadyNoticesYou_5
+	applymovement 11, mFaceRight
+Route203_FarmerLadyNoticesYou_4:
+	waitmovement 0
+	quest_reveal QUEST_MOOCALF_ORPHAN
+	msgbox Route203_Text_FarmerQuestIntro, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Route203_FarmerLadyNoticesYou_9
+	msgbox Route203_Text_FarmerQuestRejected
+	waitmessage
+Route203_FarmerLadyNoticesYou_8:
+	applymovement 11, mFarmerLadyWalksBack
+	waitmovement 0
+	releaseall
+	end
+
+Route203_FarmerLadyNoticesYou_2:
+	applymovement 11, mFaceUp
+	waitmovement 0
+	goto Route203_FarmerLadyNoticesYou_1
+
+Route203_FarmerLadyNoticesYou_5:
+	applymovement 11, mFaceUp
+	goto Route203_FarmerLadyNoticesYou_4
+
+Route203_FarmerLadyNoticesYou_9:
+	quest_start QUEST_MOOCALF_ORPHAN
+	goto Route203_FarmerLadyNoticesYou_8
+
+
+Route203_FarmerLady::
+	quest_check_finished QUEST_MOOCALF_ORPHAN
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route203_FarmerLady_2
+	checkitem ITEM_MEDICINE_MILK, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route203_FarmerLady_9
+Route203_FarmerLady_8:
+	quest_check_started QUEST_MOOCALF_ORPHAN
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route203_FarmerLady_11
+	msgbox Route203_Text_FarmerQuestSecondChance, MSGBOX_NPC
+Route203_FarmerLady_1:
+	end
+
+Route203_FarmerLady_2:
+	compare VAR_ROUTE_203_STATE, 2
+	goto_if_eq Route203_FarmerLady_5
+	goto Route203_FarmerLadyGiveMoocalfStandalone
+	goto Route203_FarmerLady_1
+
+Route203_FarmerLady_5:
+	msgbox Route203_Text_FarmerQuestFinished, MSGBOX_NPC
+	goto Route203_FarmerLady_1
+
+Route203_FarmerLady_9:
+	goto Route203_FarmerLadyResolveQuest
+	goto Route203_FarmerLady_8
+
+Route203_FarmerLady_11:
+	msgbox Route203_Text_FarmerQuestInProgress, MSGBOX_NPC
+	goto Route203_FarmerLady_1
+
+
+Route203_FarmerLadyResolveQuest::
+	lockall
+	quest_set_reward_waiting QUEST_MOOCALF_ORPHAN
+	msgbox Route203_Text_FarmerQuestTurnIn
+	waitmessage
+	applymovement 11, mFaceUp
+	waitmovement 0
+	opendoor 17, 5
+	waitdooranim
+	applymovement 11, mFarmerLadyEntersHouse
+	waitmovement 0
+	closedoor 17, 5
+	quest_finish QUEST_MOOCALF_ORPHAN
+	delay 60
+	opendoor 17, 5
+	waitdooranim
+	applymovement 11, mFarmerLadyExitsHouse
+	waitmovement 0
+	closedoor 17, 5
+	goto Route203_FarmerLadyGiveMoocalfStandalone
+	end
+
+
+Route203_FarmerLadyGiveMoocalfStandalone::
+	lockall
+	msgbox Route203_Text_FarmQuestGiveMoocalf
+	waitmessage
+	goto Route203_FarmerLadyGiveMoocalf
+	return
+
+
+Route203_FarmerLadyGiveMoocalf::
+	setvar VAR_TEMP_1, SPECIES_MOOCALF
+	givemon SPECIES_MOOCALF, 7
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Route203_FarmerLadyGiveMoocalf_2
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Route203_FarmerLadyGiveMoocalf_3
+Route203_FarmerLadyGiveMoocalf_1:
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Route203_FarmerLadyGiveMoocalf_2:
+	goto Route203_FarmerLadyGiveMoocalfParty
+	goto Route203_FarmerLadyGiveMoocalf_1
+
+Route203_FarmerLadyGiveMoocalf_3:
+	goto Route203_FarmerLadyGiveMoocalfPC
+	goto Route203_FarmerLadyGiveMoocalf_1
+
+
+Route203_FarmerLadyGiveMoocalfParty::
+	call Route203_FarmerLadyGiveMoocalfFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Route203_FarmerLadyGiveMoocalfParty_2
+Route203_FarmerLadyGiveMoocalfParty_1:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Route203_FarmerLadyGiveMoocalfEnd
+	end
+
+Route203_FarmerLadyGiveMoocalfParty_2:
+	goto Route203_FarmerLadyGiveMoocalfEnd
+	goto Route203_FarmerLadyGiveMoocalfParty_1
+
+
+Route203_FarmerLadyGiveMoocalfPC::
+	call Route203_FarmerLadyGiveMoocalfFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Route203_FarmerLadyGiveMoocalfPC_2
+Route203_FarmerLadyGiveMoocalfPC_1:
+	call Common_EventScript_NameReceivedBoxMon
+	goto Route203_FarmerLadyGiveMoocalfTransferredToPC
+	end
+
+Route203_FarmerLadyGiveMoocalfPC_2:
+	goto Route203_FarmerLadyGiveMoocalfTransferredToPC
+	goto Route203_FarmerLadyGiveMoocalfPC_1
+
+
+Route203_FarmerLadyGiveMoocalfTransferredToPC::
+	call Common_EventScript_TransferredToPC
+	goto Route203_FarmerLadyGiveMoocalfEnd
+	end
+
+
+Route203_FarmerLadyGiveMoocalfFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MOOCALF
+	playfanfare MUS_OBTAIN_ITEM
+	message Route203_Text_ReceivedMoocalf
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MOOCALF
+	return
+
+
+Route203_FarmerLadyGiveMoocalfEnd::
+	setvar VAR_ROUTE_203_STATE, 2
+	releaseall
+	end
+
+
+mFarmerLadyApproaches:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+mFarmerLadyWalksBack:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	delay_16
+	face_down
+	step_end
+
+mFarmerLadyEntersHouse:
+	walk_up
+	set_invisible
+	step_end
+
+mFarmerLadyExitsHouse:
+	set_visible
+	walk_down
+	step_end
+
 Route203_RouteSignSoftwindCity_Text_0:
 	.string "Route 203\n{LEFT_ARROW} Softwind City$"
 
 Route203_RouteSignChartreeForest_Text_0:
 	.string "Chartree Forest\n“Tred carefully, preserve the balance”$"
+
+Route203_RouteSignFarmhouse_Text_0:
+	.string "203 Farmhouse\p“Home of the best Moomoo Milk\nin all of Caldera!”\pNow CLOSED$"
 
 Route203_Text_LittleBoy::
 	.string "After Pinedale Forest got burned up,\n"
@@ -160,3 +392,68 @@ Route203_Text_CliftonPostBattle::
 	.string "got bored in Softwind City.\p"
 	.string "Too quaint for my tastes.\p"
 	.string "City folk like hiking too, you know!$"
+
+Route203_Text_FarmerQuestIntro::
+	.string "Oh, hello there!\p"
+	.string "I had hoped someone would stop by.\p"
+	.string "My husband and I used to operate a\n"
+	.string "Miltank farm here, but after the fire…\p"
+	.string "Well, we've only got one young Moocalf\n"
+	.string "left.\p"
+	.string "And now this one has come down sick.$"
+
+Route203_Text_FarmerQuestConsider::
+	.string "I just…\p"
+	.string "I just don't know what to do.$"
+
+Route203_Text_FarmerQuestAsk::
+	.string "Poor Moocalf needs milk, but without\n"
+	.string "the Miltank around we don't have any.\p"
+	.string "Please, will you find milk for us?$"
+
+Route203_Text_FarmerQuestThankYou::
+	.string "Oh, thank you!\n"
+	.string "Thank you!\p"
+	.string "I'm afraid I don't know where you could\n"
+	.string "find milk…\p"
+	.string "I'm sure if you ask around somebody will\n"
+	.string "be able to help you.\p"
+	.string "Moocalf is counting on you.$"
+
+Route203_Text_FarmerQuestRejected::
+	.string "I…\n"
+	.string "Okay.\p"
+	.string "That's fine.\p"
+	.string "I'm sure someone more kind will come by\n"
+	.string "soon.$"
+
+Route203_Text_FarmerQuestSecondChance::
+	.string "What, back to laugh at our misfortune?\p"
+	.string "Or have you changed your mind?$"
+
+Route203_Text_FarmerQuestInProgress::
+	.string "Did you find the milk for Moocalf?\p"
+	.string "Oh…\n"
+	.string "I hope you can find it soon…$"
+
+Route203_Text_FarmerQuestFinished::
+	.string "Thank you again for your help.\p"
+	.string "Not a lot of folk your age would take\n"
+	.string "the time these days.\p"
+	.string "I hope Moocalf is well.$"
+
+Route203_Text_FarmerQuestTurnIn::
+	.string "Did you find the milk for Moocalf?\p"
+	.string "You did!?\p"
+	.string "Thank you!\n"
+	.string "I'll administer it right away!$"
+
+Route203_Text_FarmQuestGiveMoocalf::
+	.string "Thank you again for your help.\p"
+	.string "My husband and I have gotten too old to\n"
+	.string "properly care for Moocalf…\p"
+	.string "You're a Pokémon Trainer right?\p"
+	.string "Please, take it with you!$"
+
+Route203_Text_ReceivedMoocalf::
+	.string "{PLAYER} obtained a {STR_VAR_2}.$"

@@ -408,8 +408,8 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .name = gText_SubQuest_FindMilkName,
 	    .desc = gText_SubQuest_FindMilkDesc,
 	    .map = gText_Quest_MoocalfOrphanMap,
-	    .sprite = OBJ_EVENT_GFX_WALLY,
-	    .spritetype = OBJECT,
+	    .sprite = ITEM_MOOMOO_MILK,
+	    .spritetype = ITEM,
 	    .doneLabel = sText_Done
     },
     [SUB_QUEST_FIND_BOTTLE] = {
@@ -417,8 +417,8 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .name = gText_SubQuest_FindBottleName,
 	    .desc = gText_SubQuest_FindBottleDesc,
 	    .map = gText_Quest_MoocalfOrphanMap,
-	    .sprite = OBJ_EVENT_GFX_WALLY,
-	    .spritetype = OBJECT,
+	    .sprite = ITEM_GLASS_BOTTLE,
+	    .spritetype = ITEM,
 	    .doneLabel = sText_Done
     },
     [SUB_QUEST_DELIVER_ASH] = {
@@ -554,8 +554,8 @@ static const struct SideQuest sQuests[QUEST_COUNT] =
 	    .desc = gText_Quest_MoocalfOrphanDesc,
 	    .donedesc = gText_Quest_MoocalfOrphanDone,
 	    .map = gText_Quest_MoocalfOrphanMap,
-	    .sprite = SPECIES_MOOCALF,
-	    .spritetype = PKMN,
+	    .sprite = ITEM_MEDICINE_MILK,
+	    .spritetype = ITEM,
         .isSequential = TRUE,
 	    .subquests = subquest_list(
             QUEST_MOOCALF_ORPHAN_SUB_COUNT,

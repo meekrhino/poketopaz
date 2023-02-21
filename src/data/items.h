@@ -3111,17 +3111,6 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_0FD] =
-    {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
-
     [ITEM_RED_SCARF] =
     {
         .name = _("Red Scarf"),
@@ -3290,6 +3279,17 @@ const struct Item gItems[] =
         .itemId = ITEM_GLASS_BOTTLE,
         .price = 0,
         .description = sGlassBottleDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_MEDICINE_MILK] =
+    {
+        .name = _("Medicine Milk"),
+        .itemId = ITEM_MEDICINE_MILK,
+        .price = 0,
+        .description = sMedicineMilkDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

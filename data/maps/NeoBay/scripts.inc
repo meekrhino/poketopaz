@@ -69,7 +69,7 @@ NeoBay_EventScript_PlayerMailbox::
 
 
 NeoBay_EventScript_OtherMailbox::
-	msgbox NeoBay_Text_OtherMailbox, MSGBOX_SIGN
+	msgbox Text_OtherMailbox, MSGBOX_SIGN
 	end
 
 
@@ -855,7 +855,7 @@ NeoBay_Text_PlayerMailbox::
 	.string "{PLAYER}'s Mailbox:\n"
 	.string "Looks like there's no mail today…$"
 
-NeoBay_Text_OtherMailbox::
+Text_OtherMailbox::
 	.string "I shouldn't go snooping through other\n"
 	.string "people's mail!$"
 

@@ -115,7 +115,7 @@ script NeoBay_EventScript_PlayerMailbox {
 }
 
 script NeoBay_EventScript_OtherMailbox {
-    msgbox(NeoBay_Text_OtherMailbox, MSGBOX_SIGN)
+    msgbox(Text_OtherMailbox, MSGBOX_SIGN)
     end
 }
 
@@ -451,7 +451,7 @@ text NeoBay_Text_PlayerMailbox {
     )
 }
 
-text NeoBay_Text_OtherMailbox {
+text(global) Text_OtherMailbox {
     format(
         "I shouldn't go snooping through other people's mail!"
     )

@@ -101,6 +101,9 @@ const u32 gItemIconPalette_Lemonade[] = INCBIN_U32("graphics/items/icon_palettes
 const u32 gItemIcon_MoomooMilk[] = INCBIN_U32("graphics/items/icons/moomoo_milk.4bpp.lz");
 const u32 gItemIconPalette_MoomooMilk[] = INCBIN_U32("graphics/items/icon_palettes/moomoo_milk.gbapal.lz");
 
+const u32 gItemIcon_GlassBottle[] = INCBIN_U32("graphics/items/icons/glass_bottle.4bpp.lz");
+const u32 gItemIconPalette_GlassBottle[] = INCBIN_U32("graphics/items/icon_palettes/glass_bottle.gbapal.lz");
+
 const u32 gItemIcon_Powder[] = INCBIN_U32("graphics/items/icons/powder.4bpp.lz");
 const u32 gItemIconPalette_EnergyPowder[] = INCBIN_U32("graphics/items/icon_palettes/energy_powder.gbapal.lz");
 

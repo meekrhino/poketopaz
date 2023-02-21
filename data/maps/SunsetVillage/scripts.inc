@@ -38,7 +38,7 @@ SunsetVillage_DockSign::
 
 
 SunsetVillage_OtherMailbox::
-	msgbox NeoBay_Text_OtherMailbox, MSGBOX_SIGN
+	msgbox Text_OtherMailbox, MSGBOX_SIGN
 	end
 
 

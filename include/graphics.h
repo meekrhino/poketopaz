@@ -2088,6 +2088,8 @@ extern const u32 gItemIcon_Lemonade[];
 extern const u32 gItemIconPalette_Lemonade[];
 extern const u32 gItemIcon_MoomooMilk[];
 extern const u32 gItemIconPalette_MoomooMilk[];
+extern const u32 gItemIcon_GlassBottle[];
+extern const u32 gItemIconPalette_GlassBottle[];
 extern const u32 gItemIcon_Powder[];
 extern const u32 gItemIconPalette_EnergyPowder[];
 extern const u32 gItemIcon_EnergyRoot[];

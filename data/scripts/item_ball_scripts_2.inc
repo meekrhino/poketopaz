@@ -28,6 +28,11 @@ Route203_ItemNorthGrass::
 	end
 
 
+Route203_ItemFarmhouse::
+	finditem ITEM_POTION
+	end
+
+
 ChartreeForest_ItemLedge::
 	finditem ITEM_POTION
 	end
