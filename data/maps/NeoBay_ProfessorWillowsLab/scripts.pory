@@ -592,11 +592,11 @@ script(local) WillowsLab_AfterFlashback {
     lockall
     setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_SAW_FLASHBACK)
     turnobject(PLAYER, DIR_EAST)
-    msgbox("Bradley: …We never saw him again.")
+    msgbox(format("Bradley: By the time either of us looked back, he was gone…\pWe never saw him again."))
     closemessage
     delay(60)
-    msgbox("Willow: …I'm so sorry.")
-    msgbox(format("Bradley: That's why we have to get to the next town, Professor!\pSimon could be anywhere, and he could even be in danger."))
+    msgbox("Willow: I… I'm so sorry.")
+    msgbox(format("Bradley: That's why we have to get to the next town, Professor!\pI just know Simon is out there somewhere, and he could still be in danger."))
     quest_start(QUEST_FINDING_SIMON)
     msgbox(WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE)
     releaseall

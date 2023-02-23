@@ -1358,16 +1358,19 @@ WillowsLab_AmpureRescued_Text_6:
 	.string "Bradley: … … …\nHe was our friend…\p…and he was my brother.$"
 
 WillowsLab_AfterFlashback_Text_0:
-	.string "Bradley: …We never saw him again.$"
+	.string "Bradley: By the time either of us looked\n"
+	.string "back, he was gone…\p"
+	.string "We never saw him again.$"
 
 WillowsLab_AfterFlashback_Text_1:
-	.string "Willow: …I'm so sorry.$"
+	.string "Willow: I… I'm so sorry.$"
 
 WillowsLab_AfterFlashback_Text_2:
 	.string "Bradley: That's why we have to get to\n"
 	.string "the next town, Professor!\p"
-	.string "Simon could be anywhere, and he could\n"
-	.string "even be in danger.$"
+	.string "I just know Simon is out there\n"
+	.string "somewhere, and he could still be in\l"
+	.string "danger.$"
 
 WillowsLab_ReceivedPokedex_Text_0:
 	.string "{PLAYER} received the Pokédex!$"
