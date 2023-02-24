@@ -281,7 +281,7 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .id = SUB_QUEST_FIND_SIMON,
 	    .name = gText_SubQuest_FindSimonName,
 	    .desc = gText_SubQuest_FindSimonDesc,
-	    .map = gText_Quest_GettingStartedMap,
+	    .map = gText_Quest_FindingSimonMap,
 	    .sprite = OBJ_EVENT_GFX_SIMON,
 	    .spritetype = OBJECT,
 	    .doneLabel = sText_Done
@@ -495,8 +495,8 @@ static const struct SideQuest sQuests[QUEST_COUNT] =
         .desc = gText_Quest_FindingSimonDesc,
         .donedesc = gText_Quest_FindingSimonDone,
         .map = gText_Quest_FindingSimonMap,
-        .sprite = SPECIES_AMPURE,
-        .spritetype = PKMN,
+        .sprite = OBJ_EVENT_GFX_SIMON,
+        .spritetype = OBJECT,
         .isSequential = TRUE,
         .subquests = subquest_list(
             QUEST_FINDING_SIMON_SUB_COUNT,
@@ -1653,11 +1653,11 @@ u8 PopulateListRowNameAndId(u8 row, u8 countQuest)
 	sListMenuItems[row].id = countQuest;
 }
 
-static bool8 DoesQuestHaveChildrenAndNotInactive(u16 itemId)
+static bool8 DoesQuestHaveChildrenAndNotInactive(u16 questId)
 {
-	if (sQuests[itemId].numSubquests != 0
-	            && QuestMenu_GetSetQuestState(itemId, FLAG_GET_UNLOCKED)
-	            && !QuestMenu_GetSetQuestState(itemId, FLAG_GET_INACTIVE))
+	if (sQuests[questId].numSubquests != 0
+     && QuestMenu_GetSetQuestState(questId, FLAG_GET_UNLOCKED)
+     && !QuestMenu_GetSetQuestState(questId, FLAG_GET_INACTIVE))
 	{
 		return TRUE;
 	}
@@ -1946,7 +1946,8 @@ void DetermineSpriteType(s32 questId)
 	if (IsSubquestMode() == FALSE)
 	{
         u8 activeSubquestId = GetActiveSubquest(questId);
-        if (sQuests[questId].isSequential
+        if (QuestMenu_GetSetQuestState(questId, FLAG_GET_UNLOCKED) == TRUE
+         && sQuests[questId].isSequential
          && activeSubquestId < sQuests[questId].numSubquests)
         {
             spriteId = sSubQuests[sQuests[questId].subquests[activeSubquestId]].sprite;

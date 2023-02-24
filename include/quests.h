@@ -38,15 +38,15 @@ struct SubQuest
 
 struct SideQuest
 {
-	const u8 *name;
-	const u8 *desc;
-	const u8 *donedesc;
-	const u8 *map;
-	const u16 sprite;
+    const u8 *name;
+    const u8 *desc;
+    const u8 *donedesc;
+    const u8 *map;
+    const u16 sprite;
     const u8 spritetype;
     const u8 isSequential;
-	const u8 *subquests;
-	const u8 numSubquests;
+    const u8 *subquests;
+    const u8 numSubquests;
 };
 
 enum QuestCases
