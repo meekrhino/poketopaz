@@ -1746,39 +1746,39 @@
     .endm
 
     .macro quest_reveal questId:req
-    questmenu QUEST_REVEAL \questId
+    questmenu QUEST_REVEAL, \questId
     .endm
 
     .macro quest_start questId:req
-    questmenu QUEST_START \questId
+    questmenu QUEST_START, \questId
     .endm
 
     .macro quest_set_reward_waiting questId:req
-    questmenu QUEST_SET_REWARD_WAITING \questId
+    questmenu QUEST_SET_REWARD_WAITING, \questId
     .endm
 
     .macro quest_finish questId:req
-    questmenu QUEST_FINISH \questId
+    questmenu QUEST_FINISH, \questId
     .endm
 
     .macro quest_check_revealed questId:req
-    questmenu QUEST_IS_REVEALED \questId
+    questmenu QUEST_IS_REVEALED, \questId
     .endm
 
     .macro quest_check_started questId:req
-    questmenu QUEST_IS_STARTED \questId
+    questmenu QUEST_IS_STARTED, \questId
     .endm
 
     .macro quest_check_reward_waiting questId:req
-    questmenu QUEST_IS_REWARD_WAITING \questId
+    questmenu QUEST_IS_REWARD_WAITING, \questId
     .endm
 
     .macro quest_check_finished questId:req
-    questmenu QUEST_IS_FINISHED \questId
+    questmenu QUEST_IS_FINISHED, \questId
     .endm
 
     .macro bufferquestname questId:req
-    questmenu QUEST_BUFFER_NAME \questId
+    questmenu QUEST_BUFFER_NAME, \questId
     .endm
 
     @ Subquest management
@@ -1789,15 +1789,15 @@
     .endm
 
     .macro subquest_finish subquestId:req
-    subquestmenu QUEST_FINISH \subquestId
+    subquestmenu QUEST_FINISH, \subquestId
     .endm
 
     .macro subquest_check_finished subquestId:req
-    subquestmenu QUEST_IS_FINISHED \subquestId
+    subquestmenu QUEST_IS_FINISHED, \subquestId
     .endm
 
     .macro buffersubquestname subquestId:req
-    subquestmenu QUEST_BUFFER_NAME \subquestId
+    subquestmenu QUEST_BUFFER_NAME, \subquestId
     .endm
 
 	.macro showdescription
