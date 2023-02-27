@@ -24,7 +24,7 @@ static void FreeAndDestroyMonIconSprite_(struct Sprite *sprite);
 
 const u8 *const gMonIconTable[] =
 {
-    [SPECIES_NONE] = gMonIcon_Venap,
+    [SPECIES_NONE] = gMonIcon_QuestionMark,
     [SPECIES_VENAP] = gMonIcon_Venap,
     [SPECIES_TRAPLENT] = gMonIcon_Traplent,
     [SPECIES_DIONARE] = gMonIcon_Dionare,

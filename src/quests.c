@@ -1953,6 +1953,11 @@ void DetermineSpriteType(s32 questId)
             spriteId = sSubQuests[sQuests[questId].subquests[activeSubquestId]].sprite;
             spriteType = sSubQuests[sQuests[questId].subquests[activeSubquestId]].spritetype;
         }
+        else if(QuestMenu_GetSetQuestState(questId, FLAG_GET_UNLOCKED) == FALSE)
+        {
+            spriteId = SPECIES_NONE;
+            spriteType = PKMN;
+        }
         else
         {
             spriteId = sQuests[questId].sprite;
@@ -2002,7 +2007,7 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 				break;
 			case PKMN:
 				LoadMonIconPalettes();
-				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1, 1);
+				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 19, 132, 0, 1, 1);
 				break;
 			default:
 				break;
