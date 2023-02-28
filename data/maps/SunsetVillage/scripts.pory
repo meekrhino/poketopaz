@@ -181,7 +181,7 @@ script(local) SunsetVillage_IntroAfterExitLab {
 }
 
 script(local) SunsetVillage_IntroAfterArriveFromEast {
-    delay(30)
+    delay(60)
     getplayerxy(VAR_X_TEMP, VAR_Y_TEMP)
     switch(var(VAR_Y_TEMP)) {
         case 26:
@@ -238,6 +238,7 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
     waitmovement(WILLOW)
     msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
     giveitem(ITEM_POKE_BALL, 5)
+    waitmessage
     applymovement(WILLOW, mWillowWalksToLab)
     waitmovement(WILLOW)
     subquest_finish(SUB_QUEST_SAY_GOODBYE)
@@ -249,9 +250,10 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
 script(local) SunsetVillage_BradleyLooksAroundEastVer {
     playse(SE_PIN)
     applymovement(WILLOW, mStartledWalkRight)
-    applymovement(BRADLEY, mStartledWalkRight)
+    applymovement(BRADLEY, mWalkRight)
     waitmovement(BRADLEY)
-    msgbox(format("Willow: Ah, {PLAYER}!\nI'm glad to see you made it walking along Route 201.\pYou missed quite a discussion on the way!"))
+    delay(30)
+    msgbox(format("Willow: Ah, {PLAYER}!\nI'm glad to see you made it.\pYou must have walked along Route 201.\pYou missed quite a discussion on the way!"))
     waitmessage
     applymovement(BRADLEY, mBradleyFidgetsRight)
     waitmovement(BRADLEY)
@@ -287,11 +289,15 @@ script(local) SunsetVillage_BradleyLooksAroundEastVer {
     applymovement(PLAYER, mFaceLeft)
     waitmovement(BRADLEY)
     applymovement(WILLOW, mWalkRight)
-    waitmovement(PLAYER)
+    waitmovement(0)
+    delay(15)
     msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
     giveitem(ITEM_POKE_BALL, 5)
+    waitmessage
     applymovement(WILLOW, mWillowWalksToLabEastVer)
     waitmovement(WILLOW)
+    quest_finish(QUEST_GETTING_STARTED)
+    quest_start(QUEST_TRIUMPH_SPIRE)
     return
 }
 
@@ -322,14 +328,14 @@ text SunsetVillage_YouGoOnAhead {
         "you at the library in Softwind.\pYou can battle "
         "Therma and get stronger than Bradley!\pThen he'll "
         "have to catch up to you, and rivalry will make "
-        "you both stronger.\pOh, listen to me! Well, you "
+        "you both stronger.\pOh, listen to me go on.\pWell, you "
         "had better get a move on.\pOh!\n"
         "And take these!\pSee you soon!"
     )
 }
 text SunsetVillage_BradleyRecaps {
     format(
-        "Bradley: Yeah you did!\nI decided you and I are "
+        "Bradley: Yeah you did!\pI decided you and I are "
         "going to take on the Pokémon League challenge!\p"
         "We'll travel all over and beat all 12 gyms, even the ones on Kirant!\p"
         "If we do that, we'll definitely find Simon along "

@@ -164,7 +164,7 @@ SunsetVillage_IntroAfterExitLab:
 
 
 SunsetVillage_IntroAfterArriveFromEast:
-	delay 30
+	delay 60
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	switch VAR_TEMP_1
 	case 26, SunsetVillage_IntroAfterArriveFromEast_3
@@ -247,8 +247,9 @@ SunsetVillage_BradleyLooksAroundLabVer:
 SunsetVillage_BradleyLooksAroundEastVer:
 	playse SE_PIN
 	applymovement 1, mStartledWalkRight
-	applymovement 3, mStartledWalkRight
+	applymovement 3, mWalkRight
 	waitmovement 3
+	delay 30
 	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_0
 	waitmessage
 	applymovement 3, mBradleyFidgetsRight
@@ -290,6 +291,8 @@ SunsetVillage_BradleyLooksAroundEastVer:
 	giveitem ITEM_POKE_BALL, 5
 	applymovement 1, mWillowWalksToLabEastVer
 	waitmovement 1
+	quest_finish QUEST_GETTING_STARTED
+	quest_start QUEST_TRIUMPH_SPIRE
 	return
 
 
