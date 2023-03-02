@@ -13,14 +13,18 @@ script(global) SoftwindCity_House2_Gentleman {
 }
 
 script(global) SoftwindCity_House2_Woman {
+    lockall
+    faceplayer
     if(flag(FLAG_RECEIVED_SOFTWIND_GREAT_BALL)) {
-        msgbox(format("I hope your adventure is everything you dream of, and that you end up somewhere wonderful at the end of it.\pThat's what happened to me."), MSGBOX_NPC)
+        msgbox(format("I hope your adventure is everything you dream of, and that you end up somewhere wonderful at the end of it.\pThat's what happened to me."))
     }
     else {
-        msgbox(format("Now that I'm retired, I don't need this anymore.\pWhy don't you take it?"), MSGBOX_NPC)
+        msgbox(format("Now that I'm retired, I don't need this anymore.\pWhy don't you take it?"))
+        waitmessage
         giveitem(ITEM_GREAT_BALL)
         setflag(FLAG_RECEIVED_SOFTWIND_GREAT_BALL)
     }
+    releaseall
     end
 }
 

@@ -17,9 +17,12 @@ script(global) Route203_House_Woman2 {
         msgbox(format("Please remember to treat your Pokémon with love and respect.\pThey will return the favor."), MSGBOX_NPC)
     }
     else {
-    msgbox(format("My wife is incredible with plants.\nThere is nothing more wonderful than watching someone you love succeed!\pHere, why don't you take this?\pIt'll help your Pokémon grow closer to you."), MSGBOX_NPC)
+        lock
+        faceplayer
+        msgbox(format("My wife is incredible with plants.\nThere is nothing more wonderful than watching someone you love succeed!\pHere, why don't you take this?\pIt'll help your Pokémon grow closer to you."))
         giveitem(ITEM_SOOTHE_BELL)
         setflag(FLAG_RECEIVED_SOOTHE_BELL)
+        release
     }
     end
 }
