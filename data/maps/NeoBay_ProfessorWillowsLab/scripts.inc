@@ -234,6 +234,7 @@ WillowsLab_OnTransition_1:
 
 WillowsLab_OnTransition_2:
 	addobject 5
+	clearflag FLAG_HIDE_WILLOWS_LAB_BRADLEY
 	setobjectxyperm 5, 8, 7
 	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectxyperm 4, 11, 6
@@ -322,7 +323,7 @@ WillowIntroduction:
 	setvar VAR_0x8007, 5
 	special ShakeCamera
 	waitstate
-	waitmovement 6
+	waitmovement 0
 	msgbox WillowIntroduction_Text_3, MSGBOX_AUTOCLOSE
 	playse SE_PIN
 	applymovement 6, mExclamationPoint
@@ -601,13 +602,19 @@ WillowsLab_AmpureRescued:
 	msgbox WillowsLab_AmpureRescued_Text_2
 	waitmessage
 	closemessage
+	applymovement 4, mWillowGivesDexToPlayer
+	waitmovement 0
 	call WillowsLab_ReceivedPokedex
+	applymovement 4, mWillowGivesDexToBradley
+	waitmovement 0
 	msgbox WillowsLab_AmpureRescued_Text_3
 	msgbox WillowsLab_PokedexDescription
 	waitmessage
 	closemessage
 	applymovement 5, mBradleyFidgetsUp
 	waitmovement 5
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
+	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox WillowsLab_AmpureRescued_Text_4
 	waitmessage
 	closemessage
@@ -617,7 +624,6 @@ WillowsLab_AmpureRescued:
 	waitmessage
 	closemessage
 	call Script_SetGrayscaleTint
-	clearflag FLAG_HIDE_WILLOWS_LAB_BRADLEY
 	warpsilent MAP_NEO_BAY_FLASHBACK_BEACH, 0, 0, 0
 	releaseall
 	end
@@ -631,8 +637,11 @@ WillowsLab_AfterFlashback:
 	closemessage
 	delay 60
 	msgbox WillowsLab_AfterFlashback_Text_1
+	applymovement 5, mBradleyFidgetsRight
+	waitmovement 0
 	msgbox WillowsLab_AfterFlashback_Text_2
 	quest_start QUEST_FINDING_SIMON
+	applymovement 4, mWalkLeft
 	msgbox WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE
 	releaseall
 	end
@@ -677,11 +686,17 @@ WillowsLab_Departure:
 	waitmessage
 	applymovement 5, mFaceDown
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
-	waitmovement OBJ_EVENT_ID_PLAYER
+	waitmovement 0
 	msgbox WillowsLab_NotABadIdea
 	waitmessage
+	applymovement 5, mFaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement 0
 	msgbox WillowsLab_DescribePokemonLeague
 	waitmessage
+	applymovement 5, mFaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
+	waitmovement 0
 	msgbox WillowsLab_FroyLivesAway
 	waitmessage
 	applymovement 5, mBradleyFidgetsDown
@@ -698,6 +713,9 @@ WillowsLab_Departure:
 	playse SE_DING_DONG
 	waitse
 	closemessage
+	msgbox WillowsLab_Departure_Text_2
+	waitmessage
+	closemessage
 	applymovement 4, mWillowExitsInSunset
 	applymovement 5, mBradleyExitsInSunset
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerExitsInSunset
@@ -706,6 +724,9 @@ WillowsLab_Departure:
 	waitdooranim
 	applymovement 4, mWillowHoldsDoor
 	waitmovement 4
+	msgbox WillowsLab_Departure_Text_3
+	waitmessage
+	closemessage
 	applymovement 4, mWillowWalkOutDoorInSunset
 	applymovement 5, mBradleyWalkOutDoorInSunset
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalkOutDoorInSunset
@@ -1112,6 +1133,25 @@ mWillowWalkOutDoorInSunset:
 	set_invisible
 	step_end
 
+mWillowGivesDexToPlayer:
+	walk_left
+	walk_left
+	delay_16
+	delay_16
+	step_end
+
+mWillowGivesDexToBradley:
+	walk_down
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	walk_right
+	walk_up
+	walk_right
+	face_left
+	step_end
+
 WillowsLab_YouGoFirst_Text_0:
 	.string "Bradley: I guess we'd better go talk to\n"
 	.string "our folks like the Prof. said…$"
@@ -1384,6 +1424,14 @@ WillowsLab_Departure_Text_1:
 	.string "That's good, Bradley, because we've\n"
 	.string "arrived!$"
 
+WillowsLab_Departure_Text_2:
+	.string "Willow: Come on!\p"
+	.string "It's time for you to take your first\n"
+	.string "step in a new place!$"
+
+WillowsLab_Departure_Text_3:
+	.string "Willow: Go ahead!$"
+
 WillowsLab_WillowIntroduction::
 	.string "Willow: Ohoho, so you're {PLAYER}!\n"
 	.string "Bradley talks about you quite a lot.\p"
@@ -1504,18 +1552,19 @@ WillowsLab_SayGoodbyeToMom::
 	.string "both of you.\p"
 	.string "I'd be more than happy to take you\n"
 	.string "across the water to Sunset Village.\p"
-	.string "But before we leave you much promise me\n"
-	.string "you will say goodbye to your families.$"
+	.string "But before we leave, you must promise\n"
+	.string "me that you will say goodbye to your\l"
+	.string "families.$"
 
 WillowsLab_HowWasYourMom::
 	.string "Bradley: How was your mom?\p"
 	.string "… … …\n"
 	.string "… … …\p"
-	.string "Yeah…\n"
-	.string "Mine was pretty sad too, but she's sure\l"
+	.string "Yeah…\p"
+	.string "Mine was pretty sad too, but she's sure\n"
 	.string "we'll be fine.\p"
-	.string "Who knows?\n"
-	.string "Maybe we'll return as Pokémon Champions\l"
+	.string "Who knows?\p"
+	.string "Maybe we'll return as Pokémon Champions\n"
 	.string "and our parents will never have to\l"
 	.string "worry about us again!$"
 

@@ -8,6 +8,14 @@ mapscripts SoftwindCity_House1_MapScripts {}
 // Global Scripts
 //=====================================
 script(global) SoftwindCity_House1_Boy {
+    quest_check_started(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_RESULT) == TRUE) {
+        subquest_check_finished(SUB_QUEST_FIND_MILK)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("Ugh, no.\pI don't have any milk, or anything else for that matter.\pAsk somebody else."), MSGBOX_NPC)
+            end
+        }
+    }
     msgbox(format("I wasn't around for the big fire in Chartree Forest.\pThat was the last time anything interesting ever happened in this town!"), MSGBOX_NPC)
     end
 }

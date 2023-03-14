@@ -102,6 +102,7 @@ MomGivesRunningShoes:
 	msgbox PlayersHouse_1F_SayGoodbye
 	waitmessage
 	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
 	releaseall
 	return
 
@@ -207,4 +208,5 @@ PlayersHouse_1F_SayGoodbye::
 	.string "need to come home, these running shoes\l"
 	.string "will help you move much faster.\p"
 	.string "I'll miss you, {PLAYER}.\p"
-	.string "Make sure you come home once in a while.$"
+	.string "Make sure you come home once in a while.\p"
+	.string "And have a quick rest before you leave?$"

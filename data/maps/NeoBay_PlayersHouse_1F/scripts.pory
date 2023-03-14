@@ -102,6 +102,7 @@ script(local) MomGivesRunningShoes {
     msgbox(PlayersHouse_1F_SayGoodbye)
     waitmessage
     closemessage
+    call(Common_EventScript_OutOfCenterPartyHeal)
     releaseall
     return
 }
@@ -136,7 +137,7 @@ text PlayersHouse_1F_SayGoodbye {
         "Mom: If you're ever in danger, or you need to come home, "
         "these running shoes will help you move much faster.\p"
         "I'll miss you, {PLAYER}.\pMake sure you come home once in "
-        "a while."
+        "a while.\pAnd have a quick rest before you leave?"
     )
 }
 

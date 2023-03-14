@@ -3,11 +3,30 @@ Route201_House_MapScripts::
 
 
 Route201_House_Gentleman::
+	quest_check_started QUEST_MOOCALF_ORPHAN
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route201_House_Gentleman_2
+Route201_House_Gentleman_1:
+	msgbox Route201_House_Gentleman_Text_1, MSGBOX_NPC
+	end
+
+Route201_House_Gentleman_2:
+	subquest_check_finished SUB_QUEST_FIND_MILK
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route201_House_Gentleman_4
+	goto Route201_House_Gentleman_1
+
+Route201_House_Gentleman_4:
 	msgbox Route201_House_Gentleman_Text_0, MSGBOX_NPC
 	end
 
 
 Route201_House_Gentleman_Text_0:
+	.string "No, I'm sorry.\p"
+	.string "I don't have any milk that I care to\n"
+	.string "share.$"
+
+Route201_House_Gentleman_Text_1:
 	.string "I had this cottage built as a vacation\n"
 	.string "home where I can get away from city\l"
 	.string "life.\p"

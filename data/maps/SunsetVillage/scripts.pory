@@ -205,12 +205,15 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
     waitmessage
     closemessage
     applymovement(BRADLEY, mBradleyWalksOut)
-    waitmovement(BRADLEY)
-    msgbox("Bradley: Finally!\nI can't believe we've left Neo Bay!", MSGBOX_AUTOCLOSE)
-    applymovement(BRADLEY, mBradleyLooksAround)
-    delay(30)
-    applymovement(WILLOW, mFaceRight)
+    delay(32)
     applymovement(PLAYER, mFaceRight)
+    delay(16)
+    applymovement(WILLOW, mFaceRight)
+    waitmovement(0)
+    msgbox("Bradley: Finally!\nI can't believe we've left Neo Bay!")
+    waitmessage
+    closemessage
+    applymovement(BRADLEY, mBradleyLooksAround)
     waitmovement(BRADLEY)
     msgbox("Bradley: So this is Sunset Village, huh?")
     waitmessage
@@ -219,7 +222,9 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
     playse(SE_PIN)
     applymovement(BRADLEY, mExclamationPoint)
     waitmovement(0)
-    msgbox("Bradley: WAIT!", MSGBOX_AUTOCLOSE)
+    msgbox("Bradley: WAIT!")
+    waitmessage
+    closemessage
     applymovement(BRADLEY, mBradleyPanics)
     turnobject(WILLOW, DIR_NORTH)
     waitmovement(0)
@@ -236,9 +241,11 @@ script(local) SunsetVillage_BradleyLooksAroundLabVer {
     applymovement(WILLOW, mWalkLeftAndDown)
     applymovement(PLAYER, mFaceUp)
     waitmovement(WILLOW)
-    msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
+    msgbox(SunsetVillage_YouGoOnAhead)
+    waitmessage
     giveitem(ITEM_POKE_BALL, 5)
     waitmessage
+    closemessage
     applymovement(WILLOW, mWillowWalksToLab)
     waitmovement(WILLOW)
     subquest_finish(SUB_QUEST_SAY_GOODBYE)
@@ -255,6 +262,7 @@ script(local) SunsetVillage_BradleyLooksAroundEastVer {
     delay(30)
     msgbox(format("Willow: Ah, {PLAYER}!\nI'm glad to see you made it.\pYou must have walked along Route 201.\pYou missed quite a discussion on the way!"))
     waitmessage
+    closemessage
     applymovement(BRADLEY, mBradleyFidgetsRight)
     waitmovement(BRADLEY)
     msgbox(SunsetVillage_BradleyRecaps)
@@ -262,7 +270,9 @@ script(local) SunsetVillage_BradleyLooksAroundEastVer {
     closemessage
     applymovement(BRADLEY, mBradleyWalksOutEastVer)
     waitmovement(BRADLEY)
-    msgbox("Bradley: Look around!\nI can't believe we've left Neo Bay!", MSGBOX_AUTOCLOSE)
+    msgbox("Bradley: Look around!\nI can't believe we've left Neo Bay!")
+    waitmessage
+    closemessage
     applymovement(BRADLEY, mBradleyLooksAroundEastVer)
     delay(30)
     applymovement(WILLOW, mFaceUp)
@@ -275,7 +285,9 @@ script(local) SunsetVillage_BradleyLooksAroundEastVer {
     playse(SE_PIN)
     applymovement(BRADLEY, mExclamationPoint)
     waitmovement(0)
-    msgbox("Bradley: WAIT!", MSGBOX_AUTOCLOSE)
+    msgbox("Bradley: WAIT!")
+    waitmessage
+    closemessage
     applymovement(BRADLEY, mBradleyPanicsEastVer)
     waitmovement(0)
     msgbox("Bradley: I left my bag at home!\nIt has my Pokédex in it and everything!")
@@ -291,9 +303,11 @@ script(local) SunsetVillage_BradleyLooksAroundEastVer {
     applymovement(WILLOW, mWalkRight)
     waitmovement(0)
     delay(15)
-    msgbox(SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE)
+    msgbox(SunsetVillage_YouGoOnAhead)
+    waitmessage
     giveitem(ITEM_POKE_BALL, 5)
     waitmessage
+    closemessage
     applymovement(WILLOW, mWillowWalksToLabEastVer)
     waitmovement(WILLOW)
     quest_finish(QUEST_GETTING_STARTED)

@@ -58,6 +58,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_NEO_BAY_AMPURE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "x": 25,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_NEO_BAY_MOM"
     }
   ],
   "warp_events": [
@@ -174,6 +187,24 @@
       "var": "VAR_NEOBAY_STATE",
       "var_value": "8",
       "script": "NeoBay_EventScript_BradleyOptional"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "6",
+      "script": "NeoBay_EventScript_MomRunningShoes"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_NEOBAY_STATE",
+      "var_value": "6",
+      "script": "NeoBay_EventScript_MomRunningShoes"
     }
   ],
   "bg_events": [

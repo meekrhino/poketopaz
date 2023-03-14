@@ -63,6 +63,14 @@ script(global) SoftwindCity_ElderGuard {
 }
 
 script(global) SoftwindCity_WomanInFlowers {
+    quest_check_started(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_RESULT) == TRUE) {
+        subquest_check_finished(SUB_QUEST_FIND_MILK)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("Hmm…\nMilk…\pNo, I don't know anywhere you could find that."), MSGBOX_NPC)
+            end
+        }
+    }
     msgbox(format("I love the way the flowers sway in the breeze.\pI sit and watch them to help center myself."), MSGBOX_NPC)
     end
 }
@@ -73,11 +81,27 @@ script(global) SoftwindCity_GirlHiding {
 }
 
 script(global) SoftwindCity_GuyInFrontOfGym {
+    quest_check_started(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_RESULT) == TRUE) {
+        subquest_check_finished(SUB_QUEST_FIND_MILK)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("I'm working here.\pGo ask someone else about milk."), MSGBOX_NPC)
+            end
+        }
+    }
     msgbox(format("I'm sorry, Gym Leader Therma is currently away on research.\pShe will take your challenge when she returns."), MSGBOX_NPC)
     end
 }
 
 script(global) SoftwindCity_BaldingMan {
+    quest_check_started(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_RESULT) == TRUE) {
+        subquest_check_finished(SUB_QUEST_FIND_MILK)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("A sick Moocalf out at the old Farmhouse?\pI wish I could help you, but I don't have any milk."), MSGBOX_NPC)
+            end
+        }
+    }
     msgbox(format("I'm old enough to remember Pinedale Forest before the fire.\pNow…\pWell, let's just say this.\pIf you're heading east, I hope you have Burn Heals!"), MSGBOX_NPC)
     end
 }
@@ -199,6 +223,10 @@ script SoftwindCity_TriggerOrion_1 {
     else {
         applymovement(DEFENDER, mDefenderWalksPastPlayer_1)
     }
+    delay(32)
+    applymovement(PLAYER, mFaceDown)
+    delay(48)
+    applymovement(PLAYER, mFaceLeft)
     waitmovement(0)
     removeobject(DEFENDER)
     setflag(FLAG_HIDE_SOFTWIND_CITY_ROCKET)

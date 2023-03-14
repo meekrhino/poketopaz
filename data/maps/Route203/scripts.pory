@@ -1,3 +1,4 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
 const FARMER = 11
 
 const VAR_TEMP_X = VAR_TEMP_0
@@ -87,6 +88,7 @@ script(global) Route203_FarmerLadyNoticesYou {
     waitmovement(0)
     getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
     if(var(VAR_TEMP_X) == 22) {
+        applymovement(PLAYER, mFaceDown)
         applymovement(FARMER, mFaceUp)
         waitmovement(0)
     }
@@ -105,21 +107,29 @@ script(global) Route203_FarmerLadyNoticesYou {
     }
     waitmovement(0)
     quest_reveal(QUEST_MOOCALF_ORPHAN)
-    msgbox(Route203_Text_FarmerQuestIntro, MSGBOX_YESNO)
+    msgbox(Route203_Text_FarmerQuestAsk, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         quest_start(QUEST_MOOCALF_ORPHAN)
+        msgbox(Route203_Text_FarmerQuestThankYou)
+        waitmessage
+        closemessage
     }
     else {
         msgbox(Route203_Text_FarmerQuestRejected)
         waitmessage
+        closemessage
     }
     applymovement(FARMER, mFarmerLadyWalksBack)
-    waitmovement(0)
+    delay(16)
+    applymovement(PLAYER, mFaceLeft)
+    waitmovement(FARMER)
     releaseall
     end
 }
 
 script(global) Route203_FarmerLady {
+    lockall
+    faceplayer
     quest_check_finished(QUEST_MOOCALF_ORPHAN)
     if(var(VAR_RESULT) == TRUE) {
         if(var(VAR_ROUTE_203_STATE) == ROUTE203_STATE_GOT_MOOCALF) {
@@ -139,9 +149,19 @@ script(global) Route203_FarmerLady {
             msgbox(Route203_Text_FarmerQuestInProgress, MSGBOX_NPC)
         }
         else {
-            msgbox(Route203_Text_FarmerQuestSecondChance, MSGBOX_NPC)
+            msgbox(Route203_Text_FarmerQuestSecondChance, MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                quest_start(QUEST_MOOCALF_ORPHAN)
+                msgbox(format("Thank you for seeing sense."))
+                waitmessage
+            }
+            else {
+                msgbox(format("I should have known."))
+                waitmessage
+            }
         }
     }
+    releaseall
     end
 }
 
@@ -452,8 +472,8 @@ movement mFarmerLadyApproaches {
 }
 
 movement mFarmerLadyWalksBack {
-    walk_right * 5
-    walk_up
+    walk_slow_left * 5
+    walk_slow_up
     delay_16
     face_down
 }

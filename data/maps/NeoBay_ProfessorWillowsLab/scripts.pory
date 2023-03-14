@@ -215,6 +215,7 @@ script(local) WillowsLab_OnTransition {
       || var(VAR_NEOBAY_STATE) == NEOBAY_STATE_STARTED_FLASHBACK
       || var(VAR_NEOBAY_STATE) == NEOBAY_STATE_SAW_FLASHBACK) {
         addobject(BRADLEY)
+        clearflag(FLAG_HIDE_WILLOWS_LAB_BRADLEY)
         setobjectxyperm(BRADLEY, 8, 7)
         setobjectmovementtype(BRADLEY, MOVEMENT_TYPE_FACE_RIGHT)
         setobjectxyperm(WILLOW, 11, 6)
@@ -294,7 +295,7 @@ script(local) WillowIntroduction {
     setvar(VAR_0x8007, 5)   // shake delay
     special(ShakeCamera)
     waitstate
-    waitmovement(AMPURE)
+    waitmovement(0)
     msgbox(format("Bradley: Prof. Willow! What's going on!?"), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
     applymovement(AMPURE, mExclamationPoint)
@@ -566,13 +567,19 @@ script(local) WillowsLab_AmpureRescued {
     msgbox(format("Willow: I think I have the perfect way to reward you.\pEach of you can take one of these."))
     waitmessage
     closemessage
+    applymovement(WILLOW, mWillowGivesDexToPlayer)
+    waitmovement(0)
     call(WillowsLab_ReceivedPokedex)
+    applymovement(WILLOW, mWillowGivesDexToBradley)
+    waitmovement(0)
     msgbox(format("Bradley: This is one of those Pokédex things, right?"))
     msgbox(WillowsLab_PokedexDescription)
     waitmessage
     closemessage
     applymovement(BRADLEY, mBradleyFidgetsUp)
     waitmovement(BRADLEY)
+    applymovement(PLAYER, mFaceDown)
+    waitmovement(PLAYER)
     msgbox("Bradley: Did you hear that, {PLAYER}!?\pWe're finally going to be able\nto find Simon.")
     waitmessage
     closemessage
@@ -582,7 +589,6 @@ script(local) WillowsLab_AmpureRescued {
     waitmessage
     closemessage
     call(Script_SetGrayscaleTint)
-    clearflag(FLAG_HIDE_WILLOWS_LAB_BRADLEY)
     warpsilent(MAP_NEO_BAY_FLASHBACK_BEACH, 0, 0, 0)
     releaseall
     end
@@ -596,8 +602,11 @@ script(local) WillowsLab_AfterFlashback {
     closemessage
     delay(60)
     msgbox("Willow: I… I'm so sorry.")
+    applymovement(BRADLEY, mBradleyFidgetsRight)
+    waitmovement(0)
     msgbox(format("Bradley: That's why we have to get to the next town, Professor!\pI just know Simon is out there somewhere, and he could still be in danger."))
     quest_start(QUEST_FINDING_SIMON)
+    applymovement(WILLOW, mWalkLeft)
     msgbox(WillowsLab_SayGoodbyeToMom, MSGBOX_AUTOCLOSE)
     releaseall
     end
@@ -642,11 +651,17 @@ script(local) WillowsLab_Departure {
     waitmessage
     applymovement(BRADLEY, mFaceDown)
     applymovement(PLAYER, mFaceDown)
-    waitmovement(PLAYER)
+    waitmovement(0)
     msgbox(WillowsLab_NotABadIdea)
     waitmessage
+    applymovement(BRADLEY, mFaceRight)
+    applymovement(PLAYER, mFaceLeft)
+    waitmovement(0)
     msgbox(WillowsLab_DescribePokemonLeague)
     waitmessage
+    applymovement(BRADLEY, mFaceDown)
+    applymovement(PLAYER, mFaceDown)
+    waitmovement(0)
     msgbox(WillowsLab_FroyLivesAway)
     waitmessage
     applymovement(BRADLEY, mBradleyFidgetsDown)
@@ -663,6 +678,9 @@ script(local) WillowsLab_Departure {
     playse(SE_DING_DONG)
     waitse
     closemessage
+    msgbox(format("Willow: Come on!\pIt's time for you to take your first step in a new place!"))
+    waitmessage
+    closemessage
     applymovement(WILLOW, mWillowExitsInSunset)
     applymovement(BRADLEY, mBradleyExitsInSunset)
     applymovement(PLAYER, mPlayerExitsInSunset)
@@ -671,6 +689,9 @@ script(local) WillowsLab_Departure {
     waitdooranim
     applymovement(WILLOW, mWillowHoldsDoor)
     waitmovement(WILLOW)
+    msgbox(format("Willow: Go ahead!"))
+    waitmessage
+    closemessage
     applymovement(WILLOW, mWillowWalkOutDoorInSunset)
     applymovement(BRADLEY, mBradleyWalkOutDoorInSunset)
     applymovement(PLAYER, mPlayerWalkOutDoorInSunset)
@@ -800,8 +821,8 @@ text WillowsLab_SayGoodbyeToMom {
         "as I see right now in both of you.\p"
         "I'd be more than happy to take you across the "
         "water to Sunset Village.\p"
-        "But before we leave you much promise "
-        "me you will say goodbye to your families."
+        "But before we leave, you must promise "
+        "me that you will say goodbye to your families."
     )
 }
 
@@ -809,9 +830,9 @@ text WillowsLab_HowWasYourMom {
     format(
         "Bradley: How was your mom?\p"
         "… … …\n… … …\p"
-        "Yeah…\n"
+        "Yeah…\p"
         "Mine was pretty sad too, but she's sure we'll be fine.\p"
-        "Who knows?\n"
+        "Who knows?\p"
         "Maybe we'll return as Pokémon Champions "
         "and our parents will never have to worry about us again!"
     )
@@ -1113,6 +1134,21 @@ movement mWillowWalkOutDoorInSunset {
     walk_left
     walk_up * 1
     set_invisible
+}
+
+movement mWillowGivesDexToPlayer {
+    walk_left * 2
+    delay_16 * 2
+}
+
+movement mWillowGivesDexToBradley {
+    walk_down
+    face_left
+    delay_16 * 3
+    walk_right
+    walk_up
+    walk_right
+    face_left
 }
 
 //=====================================

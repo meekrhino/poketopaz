@@ -88,18 +88,22 @@ Route203_FarmerLadyNoticesYou_1:
 Route203_FarmerLadyNoticesYou_4:
 	waitmovement 0
 	quest_reveal QUEST_MOOCALF_ORPHAN
-	msgbox Route203_Text_FarmerQuestIntro, MSGBOX_YESNO
+	msgbox Route203_Text_FarmerQuestAsk, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Route203_FarmerLadyNoticesYou_9
 	msgbox Route203_Text_FarmerQuestRejected
 	waitmessage
+	closemessage
 Route203_FarmerLadyNoticesYou_8:
 	applymovement 11, mFarmerLadyWalksBack
-	waitmovement 0
+	delay 16
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
+	waitmovement 11
 	releaseall
 	end
 
 Route203_FarmerLadyNoticesYou_2:
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
 	applymovement 11, mFaceUp
 	waitmovement 0
 	goto Route203_FarmerLadyNoticesYou_1
@@ -110,10 +114,15 @@ Route203_FarmerLadyNoticesYou_5:
 
 Route203_FarmerLadyNoticesYou_9:
 	quest_start QUEST_MOOCALF_ORPHAN
+	msgbox Route203_Text_FarmerQuestThankYou
+	waitmessage
+	closemessage
 	goto Route203_FarmerLadyNoticesYou_8
 
 
 Route203_FarmerLady::
+	lockall
+	faceplayer
 	quest_check_finished QUEST_MOOCALF_ORPHAN
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route203_FarmerLady_2
@@ -124,8 +133,13 @@ Route203_FarmerLady_8:
 	quest_check_started QUEST_MOOCALF_ORPHAN
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route203_FarmerLady_11
-	msgbox Route203_Text_FarmerQuestSecondChance, MSGBOX_NPC
+	msgbox Route203_Text_FarmerQuestSecondChance, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Route203_FarmerLady_14
+	msgbox Route203_FarmerLady_Text_1
+	waitmessage
 Route203_FarmerLady_1:
+	releaseall
 	end
 
 Route203_FarmerLady_2:
@@ -144,6 +158,12 @@ Route203_FarmerLady_9:
 
 Route203_FarmerLady_11:
 	msgbox Route203_Text_FarmerQuestInProgress, MSGBOX_NPC
+	goto Route203_FarmerLady_1
+
+Route203_FarmerLady_14:
+	quest_start QUEST_MOOCALF_ORPHAN
+	msgbox Route203_FarmerLady_Text_0
+	waitmessage
 	goto Route203_FarmerLady_1
 
 
@@ -261,12 +281,12 @@ mFarmerLadyApproaches:
 	step_end
 
 mFarmerLadyWalksBack:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
 	delay_16
 	face_down
 	step_end
@@ -289,6 +309,12 @@ Route203_RouteSignChartreeForest_Text_0:
 
 Route203_RouteSignFarmhouse_Text_0:
 	.string "203 Farmhouse\p“Home of the best Moomoo Milk\nin all of Caldera!”\pNow CLOSED$"
+
+Route203_FarmerLady_Text_0:
+	.string "Thank you for seeing sense.$"
+
+Route203_FarmerLady_Text_1:
+	.string "I should have known.$"
 
 Route203_Text_LittleBoy::
 	.string "After Pinedale Forest got burned up,\n"

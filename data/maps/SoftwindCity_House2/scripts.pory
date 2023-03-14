@@ -1,3 +1,9 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const MAN = 1
+
+const VAR_TEMP_X = VAR_TEMP_0
+const VAR_TEMP_Y = VAR_TEMP_1
+
 
 //=====================================
 // Map Scripts
@@ -8,6 +14,60 @@ mapscripts SoftwindCity_House2_MapScripts {}
 // Global Scripts
 //=====================================
 script(global) SoftwindCity_House2_Gentleman {
+    quest_check_started(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_RESULT) == TRUE) {
+        subquest_check_finished(SUB_QUEST_FIND_MILK)
+        if(var(VAR_RESULT) == FALSE) {
+            lock
+            faceplayer
+            msgbox(format("Well now, milk for a sick Moocalf?\pWe don't have any, but…\pI'll run straight out and pick some up.\pJust pass me the bottle!"))
+            waitmessage
+            msgbox(format("You don't have a bottle?\pCome back with a bottle and I will gladly help you."))
+            waitmessage
+            subquest_finish(SUB_QUEST_FIND_MILK)
+            release
+            end
+        }
+        checkitem(ITEM_GLASS_BOTTLE, 1)
+        if(var(VAR_RESULT) == TRUE) {
+            subquest_check_finished(SUB_QUEST_GET_MILK)
+            if(var(VAR_RESULT) == FALSE) {
+                lock
+                faceplayer
+                msgbox(format("Well now, milk for a sick Moocalf?\pWe don't have any, but…\pI'll run straight out and pick some up.\pJust pass me the bottle!"))
+                waitmessage
+
+                getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+                if(var(VAR_TEMP_Y) == 3) {
+                    applymovement(MAN, mManLeavesForMilkPlayerBelow)
+                    waitmovement(MAN)
+                    delay(60)
+                    applymovement(MAN, mManReturnsWithMilkPlayerBelow)
+                    waitmovement(MAN)
+                }
+                else {
+                    applymovement(MAN, mManLeavesForMilk)
+                    delay(16)
+                    applymovement(PLAYER, mFaceRight)
+                    waitmovement(MAN)
+                    delay(60)
+                    applymovement(MAN, mManReturnsWithMilkPlayerBelow)
+                    waitmovement(MAN)
+                }
+                faceplayer
+                msgbox(format("Here you are!\pNow go help that Moocalf!"))
+                subquest_finish(SUB_QUEST_GET_MILK)
+                removeitem(ITEM_GLASS_BOTTLE, 1)
+                giveitem(ITEM_MEDICINE_MILK, 1)
+                release
+                end
+            }
+        }
+        checkitem(ITEM_MEDICINE_MILK, 1)
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox(format("Please deliver that milk to the Moocalf!"), MSGBOX_NPC)
+        }
+    }
     msgbox(format("Thanks to the low cost of living here, my wife and I were able to retire young!\pWe worked our years in Colossus City, and now we get to relax in this lovely town."), MSGBOX_NPC)
     end
 }
@@ -39,6 +99,60 @@ script(global) SoftwindCity_House2_Woman {
 //=====================================
 // Movement
 //=====================================
+
+movement mManLeavesForMilk {
+    walk_down
+    walk_right * 4
+    walk_down * 4
+    delay_16 * 2
+    walk_in_place_down * 2
+    delay_16 * 2
+    walk_left
+    walk_down
+    delay_16
+    set_invisible
+}
+
+movement mManLeavesForMilkPlayerBelow {
+    walk_right * 4
+    walk_down * 5
+    delay_16 * 2
+    walk_in_place_fast_down * 2
+    walk_left
+    walk_down
+    delay_16
+    set_invisible
+}
+
+movement mManReturnsWithMilk {
+    face_up
+    set_visible
+    delay_16
+    walk_up
+    walk_right
+    face_up
+    delay_16 * 2
+    walk_in_place_up * 2
+    delay_16 * 2
+    walk_up * 4
+    walk_left * 4
+    walk_up
+}
+
+movement mManReturnsWithMilkPlayerBelow {
+    face_up
+    set_visible
+    delay_16
+    walk_up
+    walk_right
+    face_up
+    delay_16 * 2
+    walk_in_place_up * 2
+    delay_16 * 2
+    walk_up * 5
+    walk_left * 4
+    face_down
+}
 
 //=====================================
 // Raw

@@ -8,6 +8,14 @@ mapscripts Route201_House_MapScripts {}
 // Global Scripts
 //=====================================
 script(global) Route201_House_Gentleman {
+    quest_check_started(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_RESULT) == TRUE) {
+        subquest_check_finished(SUB_QUEST_FIND_MILK)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("No, I'm sorry.\pI don't have any milk that I care to share."), MSGBOX_NPC)
+            end
+        }
+    }
     msgbox(format("I had this cottage built as a vacation home where I can get away from city life.\pI also had the bridge repaired so I could get out for walks.\pI wonder if anyone else will use it?"), MSGBOX_NPC)
     end
 }

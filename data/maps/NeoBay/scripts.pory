@@ -1,6 +1,7 @@
 const PLAYER = OBJ_EVENT_ID_PLAYER
 const BRADLEY = 2
 const AMPURE = 3
+const MOM = 4
 
 const WARP_RESCUE = 2
 
@@ -42,6 +43,9 @@ const AMPURE_RESCUE_RETURNED = 8
 // 5: Interim warp-setup state
 // 6: Finished capture
 // 7: Returned to Willow
+
+const VAR_TEMP_X = VAR_TEMP_0
+const VAR_TEMP_Y = VAR_TEMP_1
 
 //=====================================
 // Map Scripts
@@ -220,6 +224,35 @@ script(global) NeoBay_EventScript_BradleyBattle {
 	special(HealPlayerParty)
     goto(NeoBay_EventScript_DoBradleyBattle)
     end
+}
+
+script(global) NeoBay_EventScript_MomRunningShoes {
+    lockall
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_RECEIVED_RUNNING_SHOES)
+    msgbox("Mom: Wait!\p{PLAYER}!")
+    waitmessage
+    applymovement(PLAYER, mFaceRight)
+    waitmovement(0)
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    addobject(MOM)
+    setobjectxy(MOM, 25, VAR_TEMP_Y)
+    applymovement(MOM, mNeoBayMomWalksUpToPlayer)
+    waitmovement(0)
+    delay(30)
+    msgbox(NeoBay_Text_MomAngry)
+    waitmessage
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} put on the\nRunning Shoes.")
+	waitfanfare
+	setflag(FLAG_SYS_B_DASH)
+    msgbox(Neobay_Text_SayGoodbye)
+    waitmessage
+    closemessage
+    applymovement(MOM, mNeoBayMomStartsToLeave)
+    waitmovement(0)
+    setflag(FLAG_HIDE_NEO_BAY_MOM)
+    removeobject(MOM)
+    releaseall
 }
 
 //=====================================
@@ -511,6 +544,28 @@ text (global) Placeholder_Text {
     "Placeholder"
 }
 
+text NeoBay_Text_MomAngry {
+    format (
+        "Mom: That professor woman came looking for you.\p"
+        "She said you're leaving to search for Simon.\n"
+        "Is that true?\p"
+        "… … …\p"
+        "And you weren't even going to say goodbye…\p"
+        "I…\n"
+        "I guess I can't stop you.\p"
+        "Please… please come back to visit…\p"
+        "At least take these with you."
+    )
+}
+
+text Neobay_Text_SayGoodbye {
+    format(
+        "Mom: If you're ever in danger, or you want to come home, "
+        "these running shoes will help you move much faster.\p"
+        "I'll miss you, {PLAYER}.\p"
+    )
+}
+
 //=====================================
 // Movement
 //=====================================
@@ -666,6 +721,19 @@ movement mPlayerRematchesBradleyAfterLoss2 {
     walk_left * 3
     walk_up * 2
     walk_left
+}
+
+movement mNeoBayMomWalksUpToPlayer {
+    walk_left * 7
+}
+
+movement mNeoBayMomStartsToLeave {
+    walk_slow_right * 4
+    delay_16 * 4
+    face_left
+    delay_16 * 4
+    walk_slow_right * 4
+    set_invisible
 }
 
 //=====================================

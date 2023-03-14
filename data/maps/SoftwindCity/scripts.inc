@@ -39,6 +39,20 @@ SoftwindCity_ElderGuard::
 
 
 SoftwindCity_WomanInFlowers::
+	quest_check_started QUEST_MOOCALF_ORPHAN
+	compare VAR_RESULT, TRUE
+	goto_if_eq SoftwindCity_WomanInFlowers_2
+SoftwindCity_WomanInFlowers_1:
+	msgbox SoftwindCity_WomanInFlowers_Text_1, MSGBOX_NPC
+	end
+
+SoftwindCity_WomanInFlowers_2:
+	subquest_check_finished SUB_QUEST_FIND_MILK
+	compare VAR_RESULT, FALSE
+	goto_if_eq SoftwindCity_WomanInFlowers_4
+	goto SoftwindCity_WomanInFlowers_1
+
+SoftwindCity_WomanInFlowers_4:
 	msgbox SoftwindCity_WomanInFlowers_Text_0, MSGBOX_NPC
 	end
 
@@ -49,11 +63,39 @@ SoftwindCity_GirlHiding::
 
 
 SoftwindCity_GuyInFrontOfGym::
+	quest_check_started QUEST_MOOCALF_ORPHAN
+	compare VAR_RESULT, TRUE
+	goto_if_eq SoftwindCity_GuyInFrontOfGym_2
+SoftwindCity_GuyInFrontOfGym_1:
+	msgbox SoftwindCity_GuyInFrontOfGym_Text_1, MSGBOX_NPC
+	end
+
+SoftwindCity_GuyInFrontOfGym_2:
+	subquest_check_finished SUB_QUEST_FIND_MILK
+	compare VAR_RESULT, FALSE
+	goto_if_eq SoftwindCity_GuyInFrontOfGym_4
+	goto SoftwindCity_GuyInFrontOfGym_1
+
+SoftwindCity_GuyInFrontOfGym_4:
 	msgbox SoftwindCity_GuyInFrontOfGym_Text_0, MSGBOX_NPC
 	end
 
 
 SoftwindCity_BaldingMan::
+	quest_check_started QUEST_MOOCALF_ORPHAN
+	compare VAR_RESULT, TRUE
+	goto_if_eq SoftwindCity_BaldingMan_2
+SoftwindCity_BaldingMan_1:
+	msgbox SoftwindCity_BaldingMan_Text_1, MSGBOX_NPC
+	end
+
+SoftwindCity_BaldingMan_2:
+	subquest_check_finished SUB_QUEST_FIND_MILK
+	compare VAR_RESULT, FALSE
+	goto_if_eq SoftwindCity_BaldingMan_4
+	goto SoftwindCity_BaldingMan_1
+
+SoftwindCity_BaldingMan_4:
 	msgbox SoftwindCity_BaldingMan_Text_0, MSGBOX_NPC
 	end
 
@@ -184,6 +226,10 @@ SoftwindCity_TriggerOrion_1_5:
 	goto_if_eq SoftwindCity_TriggerOrion_1_12
 	applymovement 11, mDefenderWalksPastPlayer_1
 SoftwindCity_TriggerOrion_1_11:
+	delay 32
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
+	delay 48
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	waitmovement 0
 	removeobject 11
 	setflag FLAG_HIDE_SOFTWIND_CITY_ROCKET
@@ -819,6 +865,12 @@ SoftwindCity_ElderGuard_Text_0:
 	.string "doors shall remain closed.$"
 
 SoftwindCity_WomanInFlowers_Text_0:
+	.string "Hmm…\n"
+	.string "milk…\p"
+	.string "No, I don't know anywhere you could find\n"
+	.string "that.$"
+
+SoftwindCity_WomanInFlowers_Text_1:
 	.string "I love the way the flowers sway in the\n"
 	.string "breeze.\p"
 	.string "I sit and watch them to help center\n"
@@ -831,12 +883,22 @@ SoftwindCity_GirlHiding_Text_0:
 	.string "forgotten things a few times!$"
 
 SoftwindCity_GuyInFrontOfGym_Text_0:
+	.string "I'm working here.\p"
+	.string "Go ask someone else about milk.$"
+
+SoftwindCity_GuyInFrontOfGym_Text_1:
 	.string "I'm sorry, Gym Leader Therma is\n"
 	.string "currently away on research.\p"
 	.string "She will take your challenge when she\n"
 	.string "returns.$"
 
 SoftwindCity_BaldingMan_Text_0:
+	.string "A sick Moocalf out at the old\n"
+	.string "Farmhouse?\p"
+	.string "I wish I could help you, but I don't have\n"
+	.string "any milk.$"
+
+SoftwindCity_BaldingMan_Text_1:
 	.string "I'm old enough to remember Pinedale\n"
 	.string "Forest before the fire.\p"
 	.string "Now…\p"

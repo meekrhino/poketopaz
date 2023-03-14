@@ -203,12 +203,15 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	waitmessage
 	closemessage
 	applymovement 3, mBradleyWalksOut
-	waitmovement 3
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_1, MSGBOX_AUTOCLOSE
-	applymovement 3, mBradleyLooksAround
-	delay 30
-	applymovement 1, mFaceRight
+	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
+	delay 16
+	applymovement 1, mFaceRight
+	waitmovement 0
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_1
+	waitmessage
+	closemessage
+	applymovement 3, mBradleyLooksAround
 	waitmovement 3
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_2
 	waitmessage
@@ -217,7 +220,9 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	playse SE_PIN
 	applymovement 3, mExclamationPoint
 	waitmovement 0
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3, MSGBOX_AUTOCLOSE
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3
+	waitmessage
+	closemessage
 	applymovement 3, mBradleyPanics
 	turnobject 1, DIR_NORTH
 	waitmovement 0
@@ -234,8 +239,11 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	applymovement 1, mWalkLeftAndDown
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
 	waitmovement 1
-	msgbox SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE
+	msgbox SunsetVillage_YouGoOnAhead
+	waitmessage
 	giveitem ITEM_POKE_BALL, 5
+	waitmessage
+	closemessage
 	applymovement 1, mWillowWalksToLab
 	waitmovement 1
 	subquest_finish SUB_QUEST_SAY_GOODBYE
@@ -252,6 +260,7 @@ SunsetVillage_BradleyLooksAroundEastVer:
 	delay 30
 	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_0
 	waitmessage
+	closemessage
 	applymovement 3, mBradleyFidgetsRight
 	waitmovement 3
 	msgbox SunsetVillage_BradleyRecaps
@@ -259,7 +268,9 @@ SunsetVillage_BradleyLooksAroundEastVer:
 	closemessage
 	applymovement 3, mBradleyWalksOutEastVer
 	waitmovement 3
-	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_1, MSGBOX_AUTOCLOSE
+	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_1
+	waitmessage
+	closemessage
 	applymovement 3, mBradleyLooksAroundEastVer
 	delay 30
 	applymovement 1, mFaceUp
@@ -272,7 +283,9 @@ SunsetVillage_BradleyLooksAroundEastVer:
 	playse SE_PIN
 	applymovement 3, mExclamationPoint
 	waitmovement 0
-	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3, MSGBOX_AUTOCLOSE
+	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3
+	waitmessage
+	closemessage
 	applymovement 3, mBradleyPanicsEastVer
 	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
@@ -286,9 +299,13 @@ SunsetVillage_BradleyLooksAroundEastVer:
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
 	waitmovement 3
 	applymovement 1, mWalkRight
-	waitmovement OBJ_EVENT_ID_PLAYER
-	msgbox SunsetVillage_YouGoOnAhead, MSGBOX_AUTOCLOSE
+	waitmovement 0
+	delay 15
+	msgbox SunsetVillage_YouGoOnAhead
+	waitmessage
 	giveitem ITEM_POKE_BALL, 5
+	waitmessage
+	closemessage
 	applymovement 1, mWillowWalksToLabEastVer
 	waitmovement 1
 	quest_finish QUEST_GETTING_STARTED
@@ -625,8 +642,8 @@ SunsetVillage_BradleyLooksAroundLabVer_Text_5:
 
 SunsetVillage_BradleyLooksAroundEastVer_Text_0:
 	.string "Willow: Ah, {PLAYER}!\n"
-	.string "I'm glad to see you made it walking\l"
-	.string "along Route 201.\p"
+	.string "I'm glad to see you made it.\p"
+	.string "You must have walked along Route 201.\p"
 	.string "You missed quite a discussion on the\n"
 	.string "way!$"
 
@@ -661,15 +678,15 @@ SunsetVillage_YouGoOnAhead::
 	.string "than Bradley!\p"
 	.string "Then he'll have to catch up to you, and\n"
 	.string "rivalry will make you both stronger.\p"
-	.string "Oh, listen to me! Well, you had better\n"
-	.string "get a move on.\p"
+	.string "Oh, listen to me go on.\p"
+	.string "Well, you had better get a move on.\p"
 	.string "Oh!\n"
 	.string "And take these!\p"
 	.string "See you soon!$"
 
 SunsetVillage_BradleyRecaps::
-	.string "Bradley: Yeah you did!\n"
-	.string "I decided you and I are going to take on\l"
+	.string "Bradley: Yeah you did!\p"
+	.string "I decided you and I are going to take on\n"
 	.string "the Pokémon League challenge!\p"
 	.string "We'll travel all over and beat all 12\n"
 	.string "gyms, even the ones on Kirant!\p"

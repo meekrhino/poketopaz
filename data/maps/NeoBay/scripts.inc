@@ -206,6 +206,36 @@ NeoBay_EventScript_BradleyBattle::
 	end
 
 
+NeoBay_EventScript_MomRunningShoes::
+	lockall
+	setvar VAR_NEOBAY_STATE, 7
+	msgbox NeoBay_EventScript_MomRunningShoes_Text_0
+	waitmessage
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
+	waitmovement 0
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	addobject 4
+	setobjectxy 4, 25, VAR_TEMP_1
+	applymovement 4, mNeoBayMomWalksUpToPlayer
+	waitmovement 0
+	delay 30
+	msgbox NeoBay_Text_MomAngry
+	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
+	message NeoBay_EventScript_MomRunningShoes_Text_1
+	waitfanfare
+	setflag FLAG_SYS_B_DASH
+	msgbox Neobay_Text_SayGoodbye
+	waitmessage
+	closemessage
+	applymovement 4, mNeoBayMomStartsToLeave
+	waitmovement 0
+	setflag FLAG_HIDE_NEO_BAY_MOM
+	removeobject 4
+	releaseall
+	return
+
+
 NeoBay_OnTransition:
 	setflag FLAG_VISITED_NEOBAY_TOWN
 	call Common_EventScript_SetupRivalGfxId
@@ -759,6 +789,37 @@ mPlayerRematchesBradleyAfterLoss2:
 	walk_left
 	step_end
 
+mNeoBayMomWalksUpToPlayer:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+mNeoBayMomStartsToLeave:
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	set_invisible
+	step_end
+
 NeoBay_EventScript_BradleyStopsPlayer_Text_0:
 	.string "Bradley: Come on!\n"
 	.string "Let's battle!$"
@@ -793,6 +854,12 @@ NeoBay_EventScript_BradleyBattle_Text_0:
 	.string "Why don't we have a Pokémon battle\n"
 	.string "while we wait?\p"
 	.string "I'll heal you Pokémon first!$"
+
+NeoBay_EventScript_MomRunningShoes_Text_0:
+	.string "Mom: Wait!\p{PLAYER}!$"
+
+NeoBay_EventScript_MomRunningShoes_Text_1:
+	.string "{PLAYER} put on the\nRunning Shoes.$"
 
 NeoBay_EventScript_BradleyLeadsToGrass_Text_0:
 	.string "Bradley: I think I see some tracks here.\n"
@@ -906,3 +973,24 @@ Neobay_Text_BradleyDefeated2::
 
 Placeholder_Text::
 	.string "Placeholder$"
+
+NeoBay_Text_MomAngry::
+	.string "Mom: That professor woman came looking\n"
+	.string "for you.\p"
+	.string "She said you're leaving to search for\n"
+	.string "Simon.\n"
+	.string "Is that true?\p"
+	.string "… … …\p"
+	.string "And you weren't even going to say\n"
+	.string "goodbye…\p"
+	.string "I…\n"
+	.string "I guess I can't stop you.\p"
+	.string "Please… please come back to visit…\p"
+	.string "At least take these with you.$"
+
+Neobay_Text_SayGoodbye::
+	.string "Mom: If you're ever in danger, or you\n"
+	.string "want to come home, these running shoes\l"
+	.string "will help you move much faster.\p"
+	.string "I'll miss you, {PLAYER}.\p"
+	.string "$"

@@ -1900,7 +1900,7 @@ const u8 gText_Quest_HiddenItemsMap[] = _("Sunset Village");
 const u8 gText_Quest_MoocalfOrphanName[] = _("Veterinary Venture");
 const u8 gText_Quest_MoocalfOrphanDesc[] = _("Bring the ailing Moocalf some\nmilk to aid in its recovery.");
 const u8 gText_Quest_MoocalfOrphanDone[] = _("Restored the young Moocalf to health.");
-const u8 gText_Quest_MoocalfOrphanMap[] = _("Softwind City");
+const u8 gText_Quest_MoocalfOrphanMap[] = _("Route 203");
 
 const u8 gText_SubQuest_FindMilkName[] = _("Find Milk");
 const u8 gText_SubQuest_FindMilkDesc[] = _("The ailing Moocalf orphan needs milk\nto help it recover.");
