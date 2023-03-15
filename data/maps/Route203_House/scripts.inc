@@ -47,7 +47,7 @@ Route203_House_Woman2_6:
 	goto Route203_House_Woman2_5
 
 Route203_House_Woman2_8:
-	msgbox Route203_House_Woman2_Text_0
+	msgbox Route203_House_Woman2_Text_0, MSGBOX_NPC
 	end
 
 

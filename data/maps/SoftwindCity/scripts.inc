@@ -866,7 +866,7 @@ SoftwindCity_ElderGuard_Text_0:
 
 SoftwindCity_WomanInFlowers_Text_0:
 	.string "Hmm…\n"
-	.string "milk…\p"
+	.string "Milk…\p"
 	.string "No, I don't know anywhere you could find\n"
 	.string "that.$"
 
