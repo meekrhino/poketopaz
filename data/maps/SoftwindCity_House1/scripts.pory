@@ -15,6 +15,11 @@ script(global) SoftwindCity_House1_Boy {
             msgbox(format("Ugh, no.\pI don't have any milk, or anything else for that matter.\pAsk somebody else."), MSGBOX_NPC)
             end
         }
+        subquest_check_finished(SUB_QUEST_FIND_BOTTLE)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("Stop bothering me about your errands.\pI'm not giving a stranger a glass bottle.\pWho would do that?"), MSGBOX_NPC)
+            end
+        }
     }
     msgbox(format("I wasn't around for the big fire in Chartree Forest.\pThat was the last time anything interesting ever happened in this town!"), MSGBOX_NPC)
     end

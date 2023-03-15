@@ -15,6 +15,11 @@ script(global) Route203_House_Woman1 {
             msgbox(format("There is something so fulfilling about surrounding yourself with growing things.\pMilk?\nNo, why do you ask?\pThis is a garden, not a farm!"), MSGBOX_NPC)
             end
         }
+        subquest_check_finished(SUB_QUEST_FIND_BOTTLE)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("There is something so fulfilling about surrounding yourself with growing things.\pA glass bottle?\pYour best bet would be Cranewing City's Glassworks.\pJust head through the forest and past Route 204.\pYou can't miss it."), MSGBOX_NPC)
+            end
+        }
     }
     msgbox(format("There is something so fulfilling about surrounding yourself with growing things.\pIt's my second greatest joy in life."), MSGBOX_NPC)
     end
@@ -29,6 +34,11 @@ script(global) Route203_House_Woman2 {
                 msgbox(format("Oh, that poor thing!\nI would love to help.\pI'm so sorry, we don't have any milk…"), MSGBOX_NPC)
                 end
             }
+        subquest_check_finished(SUB_QUEST_FIND_BOTTLE)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("If I had a bottle I would give it to you without a second thought.\pI wish you luck, for that poor Pokémon's sake."), MSGBOX_NPC)
+            end
+        }
         }
         msgbox(format("Please remember to treat your Pokémon with love and respect.\pThey will return the favor."), MSGBOX_NPC)
     }

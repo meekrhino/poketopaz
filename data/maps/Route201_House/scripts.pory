@@ -15,6 +15,11 @@ script(global) Route201_House_Gentleman {
             msgbox(format("No, I'm sorry.\pI don't have any milk that I care to share."), MSGBOX_NPC)
             end
         }
+        subquest_check_finished(SUB_QUEST_FIND_BOTTLE)
+        if(var(VAR_RESULT) == FALSE) {
+            msgbox(format("A bottle to hold milk?\pJust go to Cranewing like everyone else."), MSGBOX_NPC)
+            end
+        }
     }
     msgbox(format("I had this cottage built as a vacation home where I can get away from city life.\pI also had the bridge repaired so I could get out for walks.\pI wonder if anyone else will use it?"), MSGBOX_NPC)
     end
