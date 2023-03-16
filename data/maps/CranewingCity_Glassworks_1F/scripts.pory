@@ -1,1 +1,249 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const TECH = 1
+const VISITOR = 2
+const LEAD_TECH = 3
+const VISITOR_MAN = 4
+
+// VAR_STATE_GLASSWORKS values
+const VAR_STATE_GLASSWORKS_INIT = 0
+const VAR_STATE_GLASSWORKS_GAVE_SOOT_SACK = 1
+const VAR_STATE_GLASSWORKS_GAVE_BOTTLE = 2
+
+const VAR_TEMP_X = VAR_TEMP_0
+const VAR_TEMP_Y = VAR_TEMP_1
+
+//=====================================
+// Map Scripts
+//=====================================
+
 mapscripts CranewingCity_Glassworks_1F_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+
+script(global) CranewingCity_Glassworks_1F_VisitorMan {
+    msgbox(format("I'm here on business from Gallea City.\pI'm hoping to place a large order for my company."), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_Visitor {
+    msgbox(format("The engineers do some excellent work here!\pLook at the beautiful pieces they have on display here!"), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_Tech {
+    msgbox(format("I helped develop the machinery here!\pIt can use templates to automatically convert ash into high quality glass items!\pIf you need something made, you should speak to my boss over there."), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_LeadTech {
+    lockall
+    faceplayer
+    if(var(VAR_STATE_GLASSWORKS) == VAR_STATE_GLASSWORKS_INIT) {
+        goto(CranewingCity_Glassworks_1F_MaybeGiveSootSack)
+    }
+    elif(var(VAR_STATE_GLASSWORKS) == VAR_STATE_GLASSWORKS_GAVE_SOOT_SACK) {
+        goto(CranewingCity_Glassworks_1F_MaybeGiveGlassBottle)
+    }
+    elif(var(VAR_STATE_GLASSWORKS) == VAR_STATE_GLASSWORKS_GAVE_BOTTLE) {
+        goto(CranewingCity_Glassworks_1F_AshStore)
+    }
+    goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
+}
+
+script(global) CranewingCity_Glassworks_1F_MaybeGiveSootSack {
+    quest_check_started(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_RESULT) == TRUE) {
+        subquest_check_finished(SUB_QUEST_FIND_MILK)
+        if(var(VAR_RESULT) == FALSE) {
+            goto(CranewingCity_Glassworks_1F_GiveSootSack)
+        }
+    }
+    msgbox(format("I'm sorry, but I can't help you.\pMaybe if you had a Soot Sack and some ash, I could work with that…\pUnfortunately we don't have any spares to give to just anyone right now."))
+    goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
+}
+
+script(global) CranewingCity_Glassworks_1F_GiveSootSack {
+    msgbox(format("I'm sorry, but I can't help you.\pMaybe if you had a Soot Sack and some ash…\pFor a sick Moocalf?\pI don't have a lot of spares, but…\pOkay, I'll give you a Soot Sack, but you'll have to gather the ash yourself."))
+    waitmessage
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    if(var(VAR_TEMP_X) == 3) {
+        applymovement(LEAD_TECH, mGlassworksTechGetsSootSackLoopAround)
+        delay(32)
+        applymovement(PLAYER, mFaceRight)
+        delay(32)
+        applymovement(PLAYER, mFaceDown)
+        delay(32)
+        applymovement(PLAYER, mFaceLeft)
+    }
+    else {
+        applymovement(LEAD_TECH, mGlassworksTechGetsSootSack)
+    }
+    waitmovement(LEAD_TECH)
+    delay(16)
+    playse(SE_DOOR)
+    waitse
+    delay(16)
+    if(var(VAR_TEMP_X) == 3) {
+        applymovement(LEAD_TECH, mGlassworksTechComesBack)
+    }
+    else {
+        applymovement(LEAD_TECH, mGlassworksTechComesBackLong)
+    }
+    waitmovement(LEAD_TECH)
+    msgbox(format("Here you go."))
+    waitmessage
+    giveitem(ITEM_SOOT_SACK)
+    setvar(VAR_STATE_GLASSWORKS, VAR_STATE_GLASSWORKS_GAVE_SOOT_SACK)
+    subquest_finish(SUB_QUEST_FIND_BOTTLE)
+    msgbox(format("Just go run about in Chartree Forest.\pCome back when you have 150.\pThat should cover one glass bottle."))
+    goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
+}
+
+script(global) CranewingCity_Glassworks_1F_MaybeGiveGlassBottle {
+    checkitem(ITEM_SOOT_SACK)
+    if(var(VAR_RESULT) == FALSE) {
+        goto(CranewingCity_Glassworks_1F_NoSootSack)
+    }
+    quest_check_started(QUEST_MOOCALF_ORPHAN)
+    if(var(VAR_ASH_GATHER_COUNT) >= 150) {
+        goto(CranewingCity_Glassworks_1F_GiveGlassBottle)
+    }
+    msgbox(format("You'll need to come back with at least 150 ash before I can make you your glass bottle."))
+    goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
+}
+
+script(global) CranewingCity_Glassworks_1F_GiveGlassBottle {
+    setvar(VAR_STATE_GLASSWORKS, VAR_STATE_GLASSWORKS_GAVE_BOTTLE)
+    subvar(VAR_ASH_GATHER_COUNT, 150)
+    msgbox(format("Ah, you have the ash!\nExcellent!\pI'll run that through the machine right away."))
+    waitmessage
+    getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
+    if(var(VAR_TEMP_X) == 3) {
+        applymovement(LEAD_TECH, mGlassworksTechWalksToMachine)
+    }
+    else {
+        applymovement(LEAD_TECH, mGlassworksTechWalksToMachineLoopAround)
+        delay(32)
+        applymovement(PLAYER, mFaceDown)
+        delay(32)
+        applymovement(PLAYER, mFaceRight)
+        delay(32)
+        applymovement(PLAYER, mFaceUp)
+    }
+    playse(SE_DOOR)
+    waitse
+    applymovement(LEAD_TECH, mGlassworksTechRunsMachine)
+    waitmovement(LEAD_TECH)
+    playse(SE_ELEVATOR)
+    waitse
+    playse(SE_DING_DONG)
+    waitse
+    if(var(VAR_TEMP_X) == 3) {
+        applymovement(LEAD_TECH, mGlassworksTechFinishesMachineLong)
+    }
+    else {
+        applymovement(LEAD_TECH, mGlassworksTechFinishesMachine)
+    }
+    waitmovement(LEAD_TECH)
+    delay(16)
+    msgbox(format("And that's all there is to it!\pHere's your bottle."))
+    waitmessage
+    subquest_finish(SUB_QUEST_FIND_BOTTLE)
+    giveitem(ITEM_GLASS_BOTTLE)
+    msgbox(format("I've got to get back to work, but I hope everything works out with that Moocalf."))
+    goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
+}
+
+script(global) CranewingCity_Glassworks_1F_NoSootSack {
+    msgbox(format("What's this?\nNo Soot Sack on you?\pYou'll have to bring the ash to me if you want me to make anything."))
+    goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
+}
+
+script(global) CranewingCity_Glassworks_1F_AshStore {
+    msgbox(format("I'm sorry, I just don't have time to work on requests just now.\pWe just got another order in for a full thousand pieces…"))
+    goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
+}
+
+script(global) CranewingCity_Glassworks_1F_LeadTechCleanup {
+    waitmessage
+    releaseall
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+movement mGlassworksTechGetsSootSack {
+    walk_down
+    walk_left * 3
+    walk_up
+}
+
+movement mGlassworksTechGetsSootSackLoopAround {
+    walk_right
+    walk_down * 2
+    walk_left * 4
+    walk_up * 2
+}
+
+movement mGlassworksTechComesBack {
+    walk_down
+    walk_right * 2
+}
+
+movement mGlassworksTechComesBackLong {
+    walk_down
+    walk_right * 3
+    face_up
+}
+
+movement mGlassworksTechWalksToMachine {
+    walk_right
+    walk_up * 2
+}
+
+movement mGlassworksTechWalksToMachineLoopAround {
+    walk_down
+    walk_right * 2
+    walk_up * 2
+    walk_left
+    walk_up
+}
+
+movement mGlassworksTechRunsMachine {
+    walk_right
+    face_up
+    delay_16 * 2
+    walk_right * 2
+    walk_up
+}
+
+movement mGlassworksTechFinishesMachineLong {
+    walk_down * 2
+    walk_left * 3
+    walk_down
+    walk_left
+    face_down
+}
+
+movement mGlassworksTechFinishesMachine {
+    walk_down * 2
+    walk_left * 3
+    face_down
+}
+
+//=====================================
+// Raw
+//=====================================
+
