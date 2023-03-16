@@ -40,11 +40,11 @@ script(global) ChartreeForest_TriggerFroy {
     turnobject(PLAYER, DIR_EAST)
     getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
     switch(var(VAR_TEMP_Y)) {
-        case 19:
-            applymovement(FROY, mFroyApproaches_1)
         case 20:
-            applymovement(FROY, mFroyApproaches_2)
+            applymovement(FROY, mFroyApproaches_1)
         case 21:
+            applymovement(FROY, mFroyApproaches_2)
+        case 22:
             applymovement(FROY, mFroyApproaches_3)
     }
     waitmovement(0)
@@ -63,11 +63,11 @@ script(global) ChartreeForest_TriggerFroy {
     closemessage
     quest_start(QUEST_CHARTREE_ROCKETS)
     switch(var(VAR_TEMP_Y)) {
-        case 19:
-            applymovement(FROY, mFroyLeaves_1)
         case 20:
-            applymovement(FROY, mFroyLeaves_2)
+            applymovement(FROY, mFroyLeaves_1)
         case 21:
+            applymovement(FROY, mFroyLeaves_2)
+        case 22:
             applymovement(FROY, mFroyLeaves_3)
     }
     waitmovement(0)
@@ -164,10 +164,10 @@ script(global) ChartreeForest_Balfour {
     closemessage
     getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
     switch(var(VAR_TEMP_Y)) {
-        case 6:
+        case 7:
             // Top spot
             applymovement(BALFOUR, mBalfourApproachesTop)
-        case 7:
+        case 8:
             // Bottom spot
             applymovement(BALFOUR, mBalfourApproachesBottom)
     }
@@ -183,10 +183,10 @@ script(global) ChartreeForest_Balfour {
     msgbox(ChartreeForest_Text_BalfourScoffsAtDefeat)
     closemessage
     switch(var(VAR_TEMP_Y)) {
-        case 6:
+        case 7:
             // Top spot
             applymovement(BALFOUR, mBalfourDepartsTop)
-        case 7:
+        case 8:
             // Bottom spot
             applymovement(BALFOUR, mBalfourDepartsBottom)
     }
@@ -226,7 +226,7 @@ script ChartreeForest_OnResume {
 //=====================================
 text ChartreeForest_Text_FroyIntroduction {
     format(
-        "Froy: Hey kid, I'm Froy.\pHave you seen any "
+        "Froy: Hey kid, the name's Froy.\pHave you seen any "
         "people in black around?\pThey've stirred up all "
         "of the ash, and I have to wait for it to fully settle "
         "again before it can be collected.\p"
@@ -237,10 +237,10 @@ text ChartreeForest_Text_FroyIntroduction {
 text ChartreeForest_Text_FroyAboutGym {
     format(
         "Froy: It looks like they've gone, at least for now.\p"
-        "At's supposed to be my job as gym leader to protect "
+        "It's supposed to be my job as gym leader to protect "
         "the forest from harm, but if they've already gone, there "
         "isn't much I can do…\p"
-        "Oh!\nYou're looking to challenge me?\p"
+        "Froy: Oh!\nYou're looking to challenge me?\p"
         "Well, we can't do it here.\nCranewing, my home, is just "
         "past here.\pIf you can make it through the rest of the "
         "forest yourself, you might have a chance of beating me!"
@@ -252,8 +252,8 @@ text ChartreeForest_Text_FroyAboutAsh {
         "Froy: The ash here is important for making glass.\p"
         "When you reach Cranewing, you'll appreciate why we "
         "value this ash so highly.\pBut to the common person, "
-        "there is nothing in the forest of worth\pI wonder what "
-        "those guys in black were doing here…"
+        "there is nothing in the forest of worth.\pI wonder what "
+        "those people in black were doing here…"
     )
 }
 

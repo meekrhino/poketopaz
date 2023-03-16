@@ -37,6 +37,56 @@ script(global) CranewingCity_Glassworks_1F_Tech {
     end
 }
 
+script(global) CranewingCity_Glassworks_1F_ControlPanel {
+    msgbox(format("It's some kind of high-tech control panel."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_FlashLights {
+    msgbox(format("There are tons of lights and number displays."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_TemplateReceptacle {
+    msgbox(format("There's a large opening and an empty clamp."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_Machinery {
+    msgbox(format("The massive machine is rumbling softly."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_Drawers {
+    msgbox(format("There are several locked drawers."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_Display {
+    msgbox(format("The case contains a beautiful piece of art made of glass."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_FancyDisplay {
+    msgbox(format("The case contains a stunning model of Jirachi made of glass."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_Blueprint {
+    msgbox(format("The table is covered in schematics for glass objects."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_Computer {
+    msgbox(format("The screen displays a continuous readout of data."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_1F_TrashCan {
+    msgbox(format("The bin is full of old scrap and other trash."), MSGBOX_SIGN)
+    end
+}
+
 script(global) CranewingCity_Glassworks_1F_LeadTech {
     lockall
     faceplayer
@@ -56,7 +106,7 @@ script(global) CranewingCity_Glassworks_1F_MaybeGiveSootSack {
     quest_check_started(QUEST_MOOCALF_ORPHAN)
     if(var(VAR_RESULT) == TRUE) {
         subquest_check_finished(SUB_QUEST_FIND_MILK)
-        if(var(VAR_RESULT) == FALSE) {
+        if(var(VAR_RESULT) == TRUE) {
             goto(CranewingCity_Glassworks_1F_GiveSootSack)
         }
     }
@@ -65,12 +115,13 @@ script(global) CranewingCity_Glassworks_1F_MaybeGiveSootSack {
 }
 
 script(global) CranewingCity_Glassworks_1F_GiveSootSack {
-    msgbox(format("I'm sorry, but I can't help you.\pMaybe if you had a Soot Sack and some ash…\pFor a sick Moocalf?\pI don't have a lot of spares, but…\pOkay, I'll give you a Soot Sack, but you'll have to gather the ash yourself."))
+    msgbox(format("I'm sorry, but I can't help you.\pMaybe if you had a Soot Sack and some ash…\p… …\n… …\pFor a sick Moocalf?\pI don't have a lot of spares, but…\pOkay, I'll give you a Soot Sack, but you'll have to gather the ash yourself."))
     waitmessage
+    closemessage
     getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
     if(var(VAR_TEMP_X) == 3) {
         applymovement(LEAD_TECH, mGlassworksTechGetsSootSackLoopAround)
-        delay(32)
+        delay(16)
         applymovement(PLAYER, mFaceRight)
         delay(32)
         applymovement(PLAYER, mFaceDown)
@@ -92,12 +143,14 @@ script(global) CranewingCity_Glassworks_1F_GiveSootSack {
         applymovement(LEAD_TECH, mGlassworksTechComesBackLong)
     }
     waitmovement(LEAD_TECH)
+    turnobject(PLAYER, DIR_SOUTH)
     msgbox(format("Here you go."))
     waitmessage
+    closemessage
     giveitem(ITEM_SOOT_SACK)
     setvar(VAR_STATE_GLASSWORKS, VAR_STATE_GLASSWORKS_GAVE_SOOT_SACK)
     subquest_finish(SUB_QUEST_FIND_BOTTLE)
-    msgbox(format("Just go run about in Chartree Forest.\pCome back when you have 150.\pThat should cover one glass bottle."))
+    msgbox(format("Just go run about in Chartree Forest.\pCome back when you have collected 150 ash.\pThat should cover one glass bottle."))
     goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
 }
 
@@ -119,6 +172,7 @@ script(global) CranewingCity_Glassworks_1F_GiveGlassBottle {
     subvar(VAR_ASH_GATHER_COUNT, 150)
     msgbox(format("Ah, you have the ash!\nExcellent!\pI'll run that through the machine right away."))
     waitmessage
+    closemessage
     getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
     if(var(VAR_TEMP_X) == 3) {
         applymovement(LEAD_TECH, mGlassworksTechWalksToMachine)
@@ -204,7 +258,7 @@ movement mGlassworksTechComesBack {
 
 movement mGlassworksTechComesBackLong {
     walk_down
-    walk_right * 3
+    walk_right * 4
     face_up
 }
 

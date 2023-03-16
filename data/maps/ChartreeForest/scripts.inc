@@ -8,9 +8,9 @@ ChartreeForest_TriggerFroy::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	switch VAR_TEMP_1
-	case 19, ChartreeForest_TriggerFroy_3
-	case 20, ChartreeForest_TriggerFroy_4
-	case 21, ChartreeForest_TriggerFroy_5
+	case 20, ChartreeForest_TriggerFroy_3
+	case 21, ChartreeForest_TriggerFroy_4
+	case 22, ChartreeForest_TriggerFroy_5
 ChartreeForest_TriggerFroy_1:
 	waitmovement 0
 	msgbox ChartreeForest_Text_FroyIntroduction
@@ -28,9 +28,9 @@ ChartreeForest_TriggerFroy_1:
 	closemessage
 	quest_start QUEST_CHARTREE_ROCKETS
 	switch VAR_TEMP_1
-	case 19, ChartreeForest_TriggerFroy_8
-	case 20, ChartreeForest_TriggerFroy_9
-	case 21, ChartreeForest_TriggerFroy_10
+	case 20, ChartreeForest_TriggerFroy_8
+	case 21, ChartreeForest_TriggerFroy_9
+	case 22, ChartreeForest_TriggerFroy_10
 ChartreeForest_TriggerFroy_6:
 	waitmovement 0
 	removeobject 1
@@ -150,8 +150,8 @@ ChartreeForest_Balfour::
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	switch VAR_TEMP_1
-	case 6, ChartreeForest_Balfour_3
-	case 7, ChartreeForest_Balfour_4
+	case 7, ChartreeForest_Balfour_3
+	case 8, ChartreeForest_Balfour_4
 ChartreeForest_Balfour_1:
 	waitmovement 0
 	msgbox ChartreeForest_Text_BalfourAttacks
@@ -165,8 +165,8 @@ ChartreeForest_Balfour_1:
 	msgbox ChartreeForest_Text_BalfourScoffsAtDefeat
 	closemessage
 	switch VAR_TEMP_1
-	case 6, ChartreeForest_Balfour_7
-	case 7, ChartreeForest_Balfour_8
+	case 7, ChartreeForest_Balfour_7
+	case 8, ChartreeForest_Balfour_8
 ChartreeForest_Balfour_5:
 	waitmovement 0
 	msgbox ChartreeForest_Balfour_Text_3
@@ -408,7 +408,7 @@ ChartreeForest_Balfour_Text_3:
 	.string "have collected so much more ash…$"
 
 ChartreeForest_Text_FroyIntroduction::
-	.string "Froy: Hey kid, I'm Froy.\p"
+	.string "Froy: Hey kid, the name's Froy.\p"
 	.string "Have you seen any people in black\n"
 	.string "around?\p"
 	.string "They've stirred up all of the ash, and I\n"
@@ -420,11 +420,11 @@ ChartreeForest_Text_FroyIntroduction::
 ChartreeForest_Text_FroyAboutGym::
 	.string "Froy: It looks like they've gone, at\n"
 	.string "least for now.\p"
-	.string "At's supposed to be my job as gym\n"
+	.string "It's supposed to be my job as gym\n"
 	.string "leader to protect the forest from\l"
 	.string "harm, but if they've already gone,\l"
 	.string "there isn't much I can do…\p"
-	.string "Oh!\n"
+	.string "Froy: Oh!\n"
 	.string "You're looking to challenge me?\p"
 	.string "Well, we can't do it here.\n"
 	.string "Cranewing, my home, is just past here.\p"
@@ -439,9 +439,9 @@ ChartreeForest_Text_FroyAboutAsh::
 	.string "appreciate why we value this ash so\l"
 	.string "highly.\p"
 	.string "But to the common person, there is\n"
-	.string "nothing in the forest of worth\p"
-	.string "I wonder what those guys in black were\n"
-	.string "doing here…$"
+	.string "nothing in the forest of worth.\p"
+	.string "I wonder what those people in black\n"
+	.string "were doing here…$"
 
 ChartreeForest_Text_FranklinIntro::
 	.string "Ahem!\p"

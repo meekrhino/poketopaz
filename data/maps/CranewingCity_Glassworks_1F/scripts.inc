@@ -17,6 +17,56 @@ CranewingCity_Glassworks_1F_Tech::
 	end
 
 
+CranewingCity_Glassworks_1F_ControlPanel::
+	msgbox CranewingCity_Glassworks_1F_ControlPanel_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_FlashLights::
+	msgbox CranewingCity_Glassworks_1F_FlashLights_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_TemplateReceptacle::
+	msgbox CranewingCity_Glassworks_1F_TemplateReceptacle_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_Machinery::
+	msgbox CranewingCity_Glassworks_1F_Machinery_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_Drawers::
+	msgbox CranewingCity_Glassworks_1F_Drawers_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_Display::
+	msgbox CranewingCity_Glassworks_1F_Display_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_FancyDisplay::
+	msgbox CranewingCity_Glassworks_1F_FancyDisplay_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_Blueprint::
+	msgbox CranewingCity_Glassworks_1F_Blueprint_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_Computer::
+	msgbox CranewingCity_Glassworks_1F_Computer_Text_0, MSGBOX_SIGN
+	end
+
+
+CranewingCity_Glassworks_1F_TrashCan::
+	msgbox CranewingCity_Glassworks_1F_TrashCan_Text_0, MSGBOX_SIGN
+	end
+
+
 CranewingCity_Glassworks_1F_LeadTech::
 	lockall
 	faceplayer
@@ -54,7 +104,7 @@ CranewingCity_Glassworks_1F_MaybeGiveSootSack_1:
 
 CranewingCity_Glassworks_1F_MaybeGiveSootSack_2:
 	subquest_check_finished SUB_QUEST_FIND_MILK
-	compare VAR_RESULT, FALSE
+	compare VAR_RESULT, TRUE
 	goto_if_eq CranewingCity_Glassworks_1F_MaybeGiveSootSack_4
 	goto CranewingCity_Glassworks_1F_MaybeGiveSootSack_1
 
@@ -66,6 +116,7 @@ CranewingCity_Glassworks_1F_MaybeGiveSootSack_4:
 CranewingCity_Glassworks_1F_GiveSootSack::
 	msgbox CranewingCity_Glassworks_1F_GiveSootSack_Text_0
 	waitmessage
+	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 3
 	goto_if_eq CranewingCity_Glassworks_1F_GiveSootSack_2
@@ -81,8 +132,10 @@ CranewingCity_Glassworks_1F_GiveSootSack_1:
 	applymovement 3, mGlassworksTechComesBackLong
 CranewingCity_Glassworks_1F_GiveSootSack_5:
 	waitmovement 3
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	msgbox CranewingCity_Glassworks_1F_GiveSootSack_Text_1
 	waitmessage
+	closemessage
 	giveitem ITEM_SOOT_SACK
 	setvar VAR_STATE_GLASSWORKS, 1
 	subquest_finish SUB_QUEST_FIND_BOTTLE
@@ -92,7 +145,7 @@ CranewingCity_Glassworks_1F_GiveSootSack_5:
 
 CranewingCity_Glassworks_1F_GiveSootSack_2:
 	applymovement 3, mGlassworksTechGetsSootSackLoopAround
-	delay 32
+	delay 16
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
 	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
@@ -132,6 +185,7 @@ CranewingCity_Glassworks_1F_GiveGlassBottle::
 	subvar VAR_ASH_GATHER_COUNT, 150
 	msgbox CranewingCity_Glassworks_1F_GiveGlassBottle_Text_0
 	waitmessage
+	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 3
 	goto_if_eq CranewingCity_Glassworks_1F_GiveGlassBottle_2
@@ -223,6 +277,7 @@ mGlassworksTechComesBackLong:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	face_up
 	step_end
 
@@ -291,6 +346,44 @@ CranewingCity_Glassworks_1F_Tech_Text_0:
 	.string "If you need something made, you should\n"
 	.string "speak to my boss over there.$"
 
+CranewingCity_Glassworks_1F_ControlPanel_Text_0:
+	.string "It's some kind of high-tech control\n"
+	.string "panel.$"
+
+CranewingCity_Glassworks_1F_FlashLights_Text_0:
+	.string "There are tons of lights and number\n"
+	.string "displays.$"
+
+CranewingCity_Glassworks_1F_TemplateReceptacle_Text_0:
+	.string "There's a large opening and an empty\n"
+	.string "clamp.$"
+
+CranewingCity_Glassworks_1F_Machinery_Text_0:
+	.string "The massive machine is rumbling softly.$"
+
+CranewingCity_Glassworks_1F_Drawers_Text_0:
+	.string "There are several locked drawers.$"
+
+CranewingCity_Glassworks_1F_Display_Text_0:
+	.string "The case contains a beautiful piece of\n"
+	.string "art made of glass.$"
+
+CranewingCity_Glassworks_1F_FancyDisplay_Text_0:
+	.string "The case contains a stunning model of\n"
+	.string "Jirachi made of glass.$"
+
+CranewingCity_Glassworks_1F_Blueprint_Text_0:
+	.string "The table is covered in schematics for\n"
+	.string "glass objects.$"
+
+CranewingCity_Glassworks_1F_Computer_Text_0:
+	.string "The screen displays a continuous\n"
+	.string "readout of data.$"
+
+CranewingCity_Glassworks_1F_TrashCan_Text_0:
+	.string "The bin is full of old scrap and other\n"
+	.string "trash.$"
+
 CranewingCity_Glassworks_1F_MaybeGiveSootSack_Text_0:
 	.string "I'm sorry, but I can't help you.\p"
 	.string "Maybe if you had a Soot Sack and some\n"
@@ -302,6 +395,8 @@ CranewingCity_Glassworks_1F_GiveSootSack_Text_0:
 	.string "I'm sorry, but I can't help you.\p"
 	.string "Maybe if you had a Soot Sack and some\n"
 	.string "ash…\p"
+	.string "… …\n"
+	.string "… …\p"
 	.string "For a sick Moocalf?\p"
 	.string "I don't have a lot of spares, but…\p"
 	.string "Okay, I'll give you a Soot Sack, but\n"
@@ -312,7 +407,8 @@ CranewingCity_Glassworks_1F_GiveSootSack_Text_1:
 
 CranewingCity_Glassworks_1F_GiveSootSack_Text_2:
 	.string "Just go run about in Chartree Forest.\p"
-	.string "Come back when you have 150.\p"
+	.string "Come back when you have collected 150\n"
+	.string "ash.\p"
 	.string "That should cover one glass bottle.$"
 
 CranewingCity_Glassworks_1F_MaybeGiveGlassBottle_Text_0:

@@ -1,1 +1,59 @@
+
+//=====================================
+// Map Scripts
+//=====================================
 mapscripts CranewingCity_Glassworks_2F_MapScripts {}
+
+//=====================================
+// Global Scripts
+//=====================================
+script(global) CranewingCity_Glassworks_2F_Executive {
+    msgbox(format("Welcome to Cranewing Glassworks!\pAre you here with your parents?\pI have a meeting with an important client soon, so go find them."), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Glassworks_2F_Tech {
+    msgbox(format("This is the public viewing area.\pFrom here, you can watch the magic happen!\pIt's not magic, though.\nIt's science."), MSGBOX_NPC)
+    end
+}
+
+script(global) CranewingCity_Glassworks_2F_TrashCan {
+    msgbox(format("The trash can is freshly cleaned."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_2F_TrashCanViewingArea {
+    msgbox(format("There's a crumbled piece of paper covered in doodles."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_2F_TrashCanBusinessOffice {
+    msgbox(format("There are lots of crumbed notes with names and times."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_2F_Computer {
+    msgbox(format("The screen is showing a list of numbers and dates.\pMany of the dates are colored red."), MSGBOX_SIGN)
+    end
+}
+
+script(global) CranewingCity_Glassworks_2F_Blueprint {
+    msgbox(format("The table is covered in schematics for glass objects.\pEach has several prices labeled, with many scratched out."), MSGBOX_SIGN)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+//=====================================
+// Raw
+//=====================================
