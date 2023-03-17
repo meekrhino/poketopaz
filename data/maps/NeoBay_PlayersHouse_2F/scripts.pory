@@ -1,4 +1,4 @@
-const PLAYER = 0xFF
+const PLAYER = OBJ_EVENT_ID_PLAYER
 
 //=====================================
 // Map Scripts
@@ -13,6 +13,69 @@ mapscripts NeoBay_PlayersHouse_2F_MapScripts {
 //=====================================
 // Global Scripts
 //=====================================
+
+script(global) NeoBay_PlayersHouse_2F_PC {
+	lockall
+	setvar(VAR_0x8004, PC_LOCATION_PLAYERS_HOUSE)
+	special(DoPCTurnOnEffect)
+	playse(SE_PC_ON)
+	msgbox(gText_PlayerHouseBootPC, MSGBOX_DEFAULT)
+	special(BedroomPC)
+	waitstate
+	releaseall
+	end
+}
+
+script(global) NeoBay_PlayersHouse_2F_TurnOffPlayerPC {
+	setvar(VAR_0x8004, PC_LOCATION_PLAYERS_HOUSE)
+	playse(SE_PC_OFF)
+	special(DoPCTurnOffEffect)
+	releaseall
+	end
+}
+
+script(global) NeoBay_PlayersHouse_2F_Notebook {
+    msgbox(NeoBay_PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN)
+    end
+}
+
+script(global) NeoBay_PlayersHouse_2F_GameCube {
+    msgbox(NeoBay_PlayersHouse_2F_Text_GameCube, MSGBOX_SIGN)
+    end
+}
+
+script(global) NeoBay_PlayersHouse_2F_Drawer {
+    msgbox(NeoBay_PlayersHouse_2F_Text_Drawer, MSGBOX_SIGN)
+    end
+}
+
+script(global) NeoBay_PlayersHouse_2F_WallClock {
+	if(flag(FLAG_SET_WALL_CLOCK)) {
+        goto(NeoBay_PlayersHouse_2F_CheckWallClock)
+    }
+	msgbox(NeoBay_PlayersHouse_2F_ClockStopped, MSGBOX_DEFAULT)
+	call(NeoBay_PlayersHouse_2F_SetWallClock)
+	delay(30)
+	setflag(FLAG_SET_WALL_CLOCK)
+	releaseall
+	end
+}
+
+script(global) NeoBay_PlayersHouse_2F_CheckWallClock {
+	incrementgamestat(GAME_STAT_CHECKED_CLOCK)
+	fadescreen(FADE_TO_BLACK)
+	special(Special_ViewWallClock)
+	waitstate
+	releaseall
+	end
+}
+
+script(global) NeoBay_PlayersHouse_2F_SetWallClock {
+	fadescreen(FADE_TO_BLACK)
+	special(StartWallClock)
+	waitstate
+	return
+}
 
 //=====================================
 // Local Scripts
@@ -44,6 +107,37 @@ text PlayersHouse_2F_JirachiProgram {
         "Music, food, and entertainment galore, featuring a live "
         "performance by\lDJ Dane!\pDon't miss out on the festivities!…"
     )
+}
+
+text NeoBay_PlayersHouse_2F_Text_Notebook {
+    format (
+        "{PLAYER} flipped open the notebook.\p"
+        "ADVENTURE RULE NO. 1\n"
+        "Open the MENU with START.\p"
+        "ADVENTURE RULE NO. 2\n"
+        "Record your progress with SAVE.\p"
+        "The remaining pages are blank…"
+    )
+}
+
+text NeoBay_PlayersHouse_2F_Text_GameCube {
+    format (
+	    "It's a Nintendo GameCube.\p"
+	    "A Game Boy Advance is connected to\n"
+	    "serve as the Controller.$"
+    )
+}
+
+text NeoBay_PlayersHouse_2F_Text_Drawer {
+    format (
+        "{PLAYER} pulled open the drawer.\p"
+        "The clothes inside are in complete disarray."
+    )
+}
+
+text NeoBay_PlayersHouse_2F_ClockStopped {
+	"The clock is stopped…\p"
+	"Better set it and start it!$"
 }
 
 //=====================================

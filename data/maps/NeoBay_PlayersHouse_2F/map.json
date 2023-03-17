@@ -29,6 +29,45 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NeoBay_PlayersHouse_2F_Drawer"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NeoBay_PlayersHouse_2F_GameCube"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NeoBay_PlayersHouse_2F_PC"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NeoBay_PlayersHouse_2F_Text_Notebook"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NeoBay_PlayersHouse_2F_WallClock"
+    }
   ]
 }

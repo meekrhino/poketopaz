@@ -15,7 +15,7 @@ SunsetVillage_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 SunsetVillage_WillowAndBradleyTrigger::
 	lockall
-	setvar VAR_NEOBAY_STATE, 6
+	setvar VAR_NEOBAY_STATE, 8
 	call SunsetVillage_IntroAfterArriveFromEast
 	call SunsetVillage_BradleyLooksAroundEastVer
 	setflag FLAG_HIDE_SUNSET_VILLAGE_WILLOW

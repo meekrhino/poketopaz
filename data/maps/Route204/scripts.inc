@@ -80,6 +80,7 @@ Route204_MeetShookAndAllard::
 	applymovement 1, mLookUpStartled
 	waitmovement 0
 	closemessage
+	setvar VAR_NEOBAY_STATE, 9
 	addobject 3
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 20
