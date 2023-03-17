@@ -102,6 +102,7 @@ script(global) Route204_MeetShookAndAllard {
     applymovement(ALLARD, mLookUpStartled)
     waitmovement(0)
     closemessage
+    setvar(VAR_NEOBAY_STATE, NEOBAY_STATE_OPTIONAL_RIVAL_DONE)
     addobject(BRADLEY)
     getplayerxy(VAR_X_TEMP, VAR_Y_TEMP)
     if(var(VAR_X_TEMP) == 20) {
