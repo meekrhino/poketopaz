@@ -22,6 +22,7 @@
 #include "trainer_see.h"
 #include "trainer_hill.h"
 #include "util.h"
+#include "field_torches.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/field_effects.h"
@@ -2184,7 +2185,9 @@ void UpdateObjectEventsForCameraUpdate(s16 x, s16 y)
 {
     UpdateObjectEventCoordsForCameraUpdate();
     TrySpawnObjectEvents(x, y);
+    TrySpawnTorchEvents(x, y);
     RemoveObjectEventsOutsideView();
+    RemoveTorchesIfOutsideView();
 }
 
 #define sLinkedSpriteId data[0]
