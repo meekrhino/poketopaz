@@ -112,6 +112,7 @@ struct BgEvent
             u16 hiddenItemId;
         } hiddenItem;
         u32 secretBaseId;
+        u32 torchType;
     } bgUnion;
 };
 

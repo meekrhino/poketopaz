@@ -339,8 +339,9 @@ SECTIONS {
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
         src/mgba.o(.text);
-	src/quests.o(.text);
+        src/quests.o(.text);
         src/printf.o(.text);
+        src/field_torches.o(.text);
     } =0
 
     script_data :
@@ -706,6 +707,7 @@ SECTIONS {
         data/sound_data.o(.rodata);
         src/quests.o(.rodata);
         src/printf.o(.rodata);
+        src/field_torches.o(.rodata);
     } =0
 
     song_data :

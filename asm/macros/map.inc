@@ -76,6 +76,16 @@
 	inc _num_signs
 	.endm
 
+	@ Defines a background torch event for map data. 'torch_type' is any of TORCH_NORMAL, TORCH_PULSE
+	.macro bg_torch_event x:req, y:req, torch_type:req
+	.2byte \x, \y
+	.byte 0
+	.byte BG_EVENT_TORCH
+	.space 2
+	.4byte \torch_type
+	inc _num_signs
+	.endm
+
 	@ Defines a background sign event for map data. 'facing_dir' is any of the BG_EVENT_PLAYER_FACING_* constants (see include/constants/event_bg.h)
 	.macro bg_sign_event x:req, y:req, elevation:req, facing_dir:req, script:req
 	bg_event \x, \y, \elevation, \facing_dir, \script

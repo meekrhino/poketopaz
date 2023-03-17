@@ -320,6 +320,8 @@ static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position
 
     if (bgEvent == NULL)
         return NULL;
+    if (bgEvent->kind == BG_EVENT_TORCH)
+        return NULL;
     if (bgEvent->bgUnion.script == NULL)
         return EventScript_TestSignpostMsg;
 
