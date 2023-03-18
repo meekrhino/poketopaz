@@ -49,32 +49,27 @@ script(global) NeoBay_PlayersHouse_2F_Drawer {
     end
 }
 
-script(global) NeoBay_PlayersHouse_2F_WallClock {
+script(global) NeoBay_PlayersHouse_WallClock {
 	if(flag(FLAG_SET_WALL_CLOCK)) {
-        goto(NeoBay_PlayersHouse_2F_CheckWallClock)
+        goto(NeoBay_PlayersHouse_CheckWallClock)
     }
 	msgbox(NeoBay_PlayersHouse_2F_ClockStopped, MSGBOX_DEFAULT)
-	call(NeoBay_PlayersHouse_2F_SetWallClock)
+	fadescreen(FADE_TO_BLACK)
+	special(StartWallClock)
+	waitstate
 	delay(30)
 	setflag(FLAG_SET_WALL_CLOCK)
 	releaseall
 	end
 }
 
-script(global) NeoBay_PlayersHouse_2F_CheckWallClock {
+script(global) NeoBay_PlayersHouse_CheckWallClock {
 	incrementgamestat(GAME_STAT_CHECKED_CLOCK)
 	fadescreen(FADE_TO_BLACK)
 	special(Special_ViewWallClock)
 	waitstate
 	releaseall
 	end
-}
-
-script(global) NeoBay_PlayersHouse_2F_SetWallClock {
-	fadescreen(FADE_TO_BLACK)
-	special(StartWallClock)
-	waitstate
-	return
 }
 
 //=====================================

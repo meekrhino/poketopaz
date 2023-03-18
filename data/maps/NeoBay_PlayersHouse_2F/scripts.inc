@@ -42,35 +42,30 @@ NeoBay_PlayersHouse_2F_Drawer::
 	end
 
 
-NeoBay_PlayersHouse_2F_WallClock::
-	goto_if_set FLAG_SET_WALL_CLOCK, NeoBay_PlayersHouse_2F_WallClock_2
-NeoBay_PlayersHouse_2F_WallClock_1:
+NeoBay_PlayersHouse_WallClock::
+	goto_if_set FLAG_SET_WALL_CLOCK, NeoBay_PlayersHouse_WallClock_2
+NeoBay_PlayersHouse_WallClock_1:
 	msgbox NeoBay_PlayersHouse_2F_ClockStopped, MSGBOX_DEFAULT
-	call NeoBay_PlayersHouse_2F_SetWallClock
+	fadescreen FADE_TO_BLACK
+	special StartWallClock
+	waitstate
 	delay 30
 	setflag FLAG_SET_WALL_CLOCK
 	releaseall
 	end
 
-NeoBay_PlayersHouse_2F_WallClock_2:
-	goto NeoBay_PlayersHouse_2F_CheckWallClock
-	goto NeoBay_PlayersHouse_2F_WallClock_1
+NeoBay_PlayersHouse_WallClock_2:
+	goto NeoBay_PlayersHouse_CheckWallClock
+	goto NeoBay_PlayersHouse_WallClock_1
 
 
-NeoBay_PlayersHouse_2F_CheckWallClock::
+NeoBay_PlayersHouse_CheckWallClock::
 	incrementgamestat GAME_STAT_CHECKED_CLOCK
 	fadescreen FADE_TO_BLACK
 	special Special_ViewWallClock
 	waitstate
 	releaseall
 	end
-
-
-NeoBay_PlayersHouse_2F_SetWallClock::
-	fadescreen FADE_TO_BLACK
-	special StartWallClock
-	waitstate
-	return
 
 
 PlayersHouse_WatchJirachiProgram:

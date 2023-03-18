@@ -42,6 +42,11 @@ PlayersHouse_1F_BradleyReminder_7:
 	goto PlayersHouse_1F_BradleyReminder_1
 
 
+NeoBay_PlayersHouse_1F_Cabinet::
+	msgbox NeoBay_PlayersHouse_1F_Cabinet_Text_0, MSGBOX_SIGN
+	end
+
+
 PlayersHouse_1F_OnTransition:
 	setrespawn HEAL_LOCATION_NEO_BAY
 	switch VAR_NEOBAY_STATE
@@ -159,6 +164,9 @@ PlayersHouse_1F_BradleyReminder_Text_3:
 	.string "Mom: How nice to see you!\n"
 	.string "I hope your adventure is going well.\p"
 	.string "Why not have a quick rest?$"
+
+NeoBay_PlayersHouse_1F_Cabinet_Text_0:
+	.string "The cabinet is full of dishware.$"
 
 MomGivesRunningShoes_Text_0:
 	.string "Mom: Hi {PLAYER}. Where have you been\n"

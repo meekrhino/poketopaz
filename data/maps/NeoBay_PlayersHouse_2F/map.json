@@ -59,7 +59,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NeoBay_PlayersHouse_2F_Text_Notebook"
+      "script": "NeoBay_PlayersHouse_2F_Notebook"
     },
     {
       "type": "sign",
@@ -67,7 +67,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NeoBay_PlayersHouse_2F_WallClock"
+      "script": "NeoBay_PlayersHouse_WallClock"
     }
   ]
 }

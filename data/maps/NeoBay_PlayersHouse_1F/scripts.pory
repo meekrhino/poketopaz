@@ -45,6 +45,11 @@ script(global) PlayersHouse_1F_BradleyReminder {
     end
 }
 
+script(global) NeoBay_PlayersHouse_1F_Cabinet {
+    msgbox(format("The cabinet is full of dishware."), MSGBOX_SIGN)
+    end
+}
+
 //=====================================
 // Local Scripts
 //=====================================
