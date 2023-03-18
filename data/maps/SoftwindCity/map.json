@@ -2,7 +2,7 @@
   "id": "MAP_SOFTWIND_CITY",
   "name": "SoftwindCity",
   "layout": "LAYOUT_SOFTWIND_CITY",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_DEWFORD",
   "region_map_section": "MAPSEC_SOFTWIND_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

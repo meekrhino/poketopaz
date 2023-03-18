@@ -2,7 +2,7 @@
   "id": "MAP_CRANEWING_CITY_POKEMON_CENTER",
   "name": "CranewingCity_PokemonCenter",
   "layout": "LAYOUT_CRANEWING_CITY_POKEMON_CENTER",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_POKE_CENTER",
   "region_map_section": "MAPSEC_CRANEWING_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

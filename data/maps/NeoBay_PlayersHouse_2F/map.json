@@ -2,7 +2,7 @@
   "id": "MAP_NEO_BAY_PLAYERS_HOUSE_2F",
   "name": "NeoBay_PlayersHouse_2F",
   "layout": "LAYOUT_PLAYERS_HOUSE_2F",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_LITTLEROOT",
   "region_map_section": "MAPSEC_NEO_BAY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

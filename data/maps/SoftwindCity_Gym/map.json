@@ -2,7 +2,7 @@
   "id": "MAP_SOFTWIND_CITY_GYM",
   "name": "SoftwindCity_Gym",
   "layout": "LAYOUT_SOFTWIND_CITY_GYM",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_GYM",
   "region_map_section": "MAPSEC_SOFTWIND_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

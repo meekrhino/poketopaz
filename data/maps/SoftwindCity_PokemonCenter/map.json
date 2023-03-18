@@ -2,7 +2,7 @@
   "id": "MAP_SOFTWIND_CITY_POKEMON_CENTER",
   "name": "SoftwindCity_PokemonCenter",
   "layout": "LAYOUT_SOFTWIND_CITY_POKEMON_CENTER",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_POKE_CENTER",
   "region_map_section": "MAPSEC_SOFTWIND_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

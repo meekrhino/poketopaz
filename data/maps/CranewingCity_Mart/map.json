@@ -2,7 +2,7 @@
   "id": "MAP_CRANEWING_CITY_MART",
   "name": "CranewingCity_Mart",
   "layout": "LAYOUT_CRANEWING_CITY_MART",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_POKE_MART",
   "region_map_section": "MAPSEC_CRANEWING_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
