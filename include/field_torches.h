@@ -8,7 +8,7 @@
 // the maximum number of torches on a single map
 #define MAX_TORCH_EVENTS 16
 
-#define TORCH_PULSE_SPEED 2
+#define TORCH_PULSE_SPEED 1
 
 // forward declarations
 

@@ -32,8 +32,8 @@ static const struct OamData sTorchMaskOam =
 
 static const union AffineAnimCmd sTorchPulsingAffineAnimCmds[] =
 {
-    AFFINEANIMCMD_FRAME(-TORCH_PULSE_SPEED, -TORCH_PULSE_SPEED, 0, 20),
-    AFFINEANIMCMD_FRAME( TORCH_PULSE_SPEED,  TORCH_PULSE_SPEED, 0, 20),
+    AFFINEANIMCMD_FRAME(-TORCH_PULSE_SPEED, -TORCH_PULSE_SPEED, 360 * TORCH_PULSE_SPEED / 40, 40 / TORCH_PULSE_SPEED),
+    AFFINEANIMCMD_FRAME( TORCH_PULSE_SPEED,  TORCH_PULSE_SPEED, 360 * TORCH_PULSE_SPEED / 40, 40 / TORCH_PULSE_SPEED),
     AFFINEANIMCMD_JUMP(0)
 };
 
@@ -155,9 +155,9 @@ void TrySpawnTorchEvents(s16 cameraX, s16 cameraY)
 static void RemoveTorchIfOutsideView(struct TorchEvent *torchEvent)
 {
     s32 left =   gSaveBlock1Ptr->pos.x - 2;
-    s32 right =  gSaveBlock1Ptr->pos.x + 17;
+    s32 right =  gSaveBlock1Ptr->pos.x + MAP_OFFSET_W + 2;
     s32 top =    gSaveBlock1Ptr->pos.y;
-    s32 bottom = gSaveBlock1Ptr->pos.y + 16;
+    s32 bottom = gSaveBlock1Ptr->pos.y + MAP_OFFSET_H + 2;
     s32 x = torchEvent->bgEvent->x + MAP_OFFSET;
     s32 y = torchEvent->bgEvent->y + MAP_OFFSET;
     if (x >= left && x <= right && y >= top && y <= bottom) return;
