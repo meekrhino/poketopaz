@@ -243,7 +243,7 @@
       "x": 1,
       "y": 32,
       "elevation": 3,
-      "item": "ITEM_POTION",
+      "item": "ITEM_POKE_BALL",
       "flag": "FLAG_HIDDEN_ITEM_CRANEWING_CITY"
     }
   ]

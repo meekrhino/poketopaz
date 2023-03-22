@@ -344,7 +344,7 @@
       "x": 9,
       "y": 18,
       "elevation": 3,
-      "item": "ITEM_POTION",
+      "item": "ITEM_RAWST_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_CHARTREE_FOREST_WEST"
     },
     {
@@ -360,7 +360,7 @@
       "x": 33,
       "y": 25,
       "elevation": 3,
-      "item": "ITEM_POTION",
+      "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_CHARTREE_FOREST_DEAD_END"
     }
   ]

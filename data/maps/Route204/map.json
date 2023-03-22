@@ -208,7 +208,7 @@
       "x": 31,
       "y": 36,
       "elevation": 3,
-      "item": "ITEM_POTION",
+      "item": "ITEM_STARDUST",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_204_SOUTH"
     },
     {
@@ -216,7 +216,7 @@
       "x": 24,
       "y": 27,
       "elevation": 3,
-      "item": "ITEM_POTION",
+      "item": "ITEM_GREAT_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_204_NORTH"
     }
   ]
