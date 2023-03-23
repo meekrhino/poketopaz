@@ -138,19 +138,20 @@ script(global) CranewingCity_Glassworks_1F_GiveSootSack {
     delay(16)
     if(var(VAR_TEMP_X) == 3) {
         applymovement(LEAD_TECH, mGlassworksTechComesBack)
+        waitmovement(LEAD_TECH)
     }
     else {
         applymovement(LEAD_TECH, mGlassworksTechComesBackLong)
+        waitmovement(LEAD_TECH)
+        turnobject(PLAYER, DIR_SOUTH)
     }
-    waitmovement(LEAD_TECH)
-    turnobject(PLAYER, DIR_SOUTH)
     msgbox(format("Here you go."))
     waitmessage
     closemessage
     giveitem(ITEM_SOOT_SACK)
     setvar(VAR_STATE_GLASSWORKS, VAR_STATE_GLASSWORKS_GAVE_SOOT_SACK)
     subquest_finish(SUB_QUEST_FIND_BOTTLE)
-    msgbox(format("Just go run about in Chartree Forest.\pCome back when you have collected 150 ash.\pThat should cover one glass bottle."))
+    msgbox(format("Just go run about in Chartree Forest.\pCome back when you have collected 100 ash.\pThat should cover one glass bottle."))
     goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
 }
 
@@ -160,16 +161,16 @@ script(global) CranewingCity_Glassworks_1F_MaybeGiveGlassBottle {
         goto(CranewingCity_Glassworks_1F_NoSootSack)
     }
     quest_check_started(QUEST_MOOCALF_ORPHAN)
-    if(var(VAR_ASH_GATHER_COUNT) >= 150) {
+    if(var(VAR_ASH_GATHER_COUNT) >= 100) {
         goto(CranewingCity_Glassworks_1F_GiveGlassBottle)
     }
-    msgbox(format("You'll need to come back with at least 150 ash before I can make you your glass bottle."))
+    msgbox(format("You'll need to come back with at least 100 ash before I can make you your glass bottle."))
     goto(CranewingCity_Glassworks_1F_LeadTechCleanup)
 }
 
 script(global) CranewingCity_Glassworks_1F_GiveGlassBottle {
     setvar(VAR_STATE_GLASSWORKS, VAR_STATE_GLASSWORKS_GAVE_BOTTLE)
-    subvar(VAR_ASH_GATHER_COUNT, 150)
+    subvar(VAR_ASH_GATHER_COUNT, 100)
     msgbox(format("Ah, you have the ash!\nExcellent!\pI'll run that through the machine right away."))
     waitmessage
     closemessage
@@ -204,7 +205,7 @@ script(global) CranewingCity_Glassworks_1F_GiveGlassBottle {
     delay(16)
     msgbox(format("And that's all there is to it!\pHere's your bottle."))
     waitmessage
-    subquest_finish(SUB_QUEST_FIND_BOTTLE)
+    subquest_finish(SUB_QUEST_DELIVER_ASH)
     giveitem(ITEM_GLASS_BOTTLE)
     msgbox(format("I've got to get back to work, but I hope everything works out with that Moocalf."))
     goto(CranewingCity_Glassworks_1F_LeadTechCleanup)

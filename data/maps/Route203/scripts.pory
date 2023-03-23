@@ -181,7 +181,7 @@ script Route203_FarmerLadyResolveQuest {
     waitmovement(0)
     closedoor(17, 5)
     quest_finish(QUEST_MOOCALF_ORPHAN)
-    delay(60)
+    delay(120)
     opendoor(17, 5)
     waitdooranim
     applymovement(FARMER, mFarmerLadyExitsHouse)
@@ -459,7 +459,7 @@ text Route203_Text_FarmQuestGiveMoocalf {
 }
 
 text Route203_Text_ReceivedMoocalf {
-    "{PLAYER} obtained a {STR_VAR_2}.$"
+    "{PLAYER} obtained the {STR_VAR_2}.$"
 }
 
 //=====================================

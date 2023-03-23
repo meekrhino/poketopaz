@@ -1469,7 +1469,7 @@ WillowsLab_BradleyIsReallySure::
 	.string "responsible than them, and they'd\l"
 	.string "definitely make a better Pokémon\l"
 	.string "Trainer than I would!\p"
-	.string "Please, professor.\n"
+	.string "Bradley: Please, professor.\n"
 	.string "Trust me on this one!$"
 
 WillowsLab_WillowConcedes::

@@ -42,13 +42,15 @@ SoftwindCity_House2_Gentleman_8:
 
 SoftwindCity_House2_Gentleman_10:
 	msgbox SoftwindCity_House2_Gentleman_Text_3, MSGBOX_NPC
-	goto SoftwindCity_House2_Gentleman_1
+	end
 
 SoftwindCity_House2_Gentleman_12:
 	lock
 	faceplayer
 	msgbox SoftwindCity_House2_Gentleman_Text_0
 	waitmessage
+	closemessage
+	removeitem ITEM_GLASS_BOTTLE, 1
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_1, 3
 	goto_if_eq SoftwindCity_House2_Gentleman_15
@@ -56,25 +58,45 @@ SoftwindCity_House2_Gentleman_12:
 	delay 16
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
 	waitmovement 1
+	playse SE_DOOR
+	waitse
 	delay 60
-	applymovement 1, mManReturnsWithMilkPlayerBelow
+	playse SE_DOOR
+	waitse
+	compare VAR_TEMP_0, 0
+	goto_if_eq SoftwindCity_House2_Gentleman_19
+	applymovement 1, mManReturnsWithMilk
 	waitmovement 1
+SoftwindCity_House2_Gentleman_18:
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
+	waitmovement OBJ_EVENT_ID_PLAYER
 SoftwindCity_House2_Gentleman_14:
-	faceplayer
 	msgbox SoftwindCity_House2_Gentleman_Text_2
 	subquest_finish SUB_QUEST_GET_MILK
-	removeitem ITEM_GLASS_BOTTLE, 1
 	giveitem ITEM_MEDICINE_MILK, 1
 	release
 	end
 
 SoftwindCity_House2_Gentleman_15:
 	applymovement 1, mManLeavesForMilkPlayerBelow
+	delay 16
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
 	waitmovement 1
+	playse SE_DOOR
+	waitse
 	delay 60
+	playse SE_DOOR
+	waitse
 	applymovement 1, mManReturnsWithMilkPlayerBelow
 	waitmovement 1
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SoftwindCity_House2_Gentleman_14
+
+SoftwindCity_House2_Gentleman_19:
+	applymovement 1, mManReturnsWithMilkPlayerLeft
+	waitmovement 1
+	goto SoftwindCity_House2_Gentleman_18
 
 
 SoftwindCity_House2_Woman::
@@ -106,8 +128,9 @@ mManLeavesForMilk:
 	walk_down
 	delay_16
 	delay_16
-	walk_in_place_down
-	walk_in_place_down
+	walk_in_place_slow_down
+	delay_16
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	walk_left
@@ -128,8 +151,9 @@ mManLeavesForMilkPlayerBelow:
 	walk_down
 	delay_16
 	delay_16
-	walk_in_place_fast_down
-	walk_in_place_fast_down
+	walk_in_place_slow_down
+	delay_16
+	walk_in_place_slow_down
 	walk_left
 	walk_down
 	delay_16
@@ -145,8 +169,33 @@ mManReturnsWithMilk:
 	face_up
 	delay_16
 	delay_16
-	walk_in_place_up
-	walk_in_place_up
+	walk_in_place_slow_up
+	delay_16
+	walk_in_place_slow_up
+	delay_16
+	delay_16
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_faster_up
+	step_end
+
+mManReturnsWithMilkPlayerLeft:
+	face_up
+	set_visible
+	delay_16
+	walk_up
+	walk_right
+	face_up
+	delay_16
+	delay_16
+	walk_in_place_slow_up
+	delay_16
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	walk_up
@@ -157,7 +206,8 @@ mManReturnsWithMilk:
 	walk_left
 	walk_left
 	walk_left
-	walk_up
+	walk_left
+	walk_in_place_faster_up
 	step_end
 
 mManReturnsWithMilkPlayerBelow:
@@ -169,20 +219,18 @@ mManReturnsWithMilkPlayerBelow:
 	face_up
 	delay_16
 	delay_16
-	walk_in_place_up
-	walk_in_place_up
+	walk_in_place_slow_up
+	delay_16
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	walk_up
 	walk_up
 	walk_up
 	walk_up
-	walk_up
 	walk_left
 	walk_left
 	walk_left
-	walk_left
-	face_down
 	step_end
 
 SoftwindCity_House2_Gentleman_Text_0:

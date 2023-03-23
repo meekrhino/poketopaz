@@ -130,9 +130,9 @@ CranewingCity_Glassworks_1F_GiveSootSack_1:
 	compare VAR_TEMP_0, 3
 	goto_if_eq CranewingCity_Glassworks_1F_GiveSootSack_6
 	applymovement 3, mGlassworksTechComesBackLong
-CranewingCity_Glassworks_1F_GiveSootSack_5:
 	waitmovement 3
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
+CranewingCity_Glassworks_1F_GiveSootSack_5:
 	msgbox CranewingCity_Glassworks_1F_GiveSootSack_Text_1
 	waitmessage
 	closemessage
@@ -155,6 +155,7 @@ CranewingCity_Glassworks_1F_GiveSootSack_2:
 
 CranewingCity_Glassworks_1F_GiveSootSack_6:
 	applymovement 3, mGlassworksTechComesBack
+	waitmovement 3
 	goto CranewingCity_Glassworks_1F_GiveSootSack_5
 
 
@@ -164,7 +165,7 @@ CranewingCity_Glassworks_1F_MaybeGiveGlassBottle::
 	goto_if_eq CranewingCity_Glassworks_1F_MaybeGiveGlassBottle_2
 CranewingCity_Glassworks_1F_MaybeGiveGlassBottle_1:
 	quest_check_started QUEST_MOOCALF_ORPHAN
-	compare VAR_ASH_GATHER_COUNT, 150
+	compare VAR_ASH_GATHER_COUNT, 100
 	goto_if_ge CranewingCity_Glassworks_1F_MaybeGiveGlassBottle_5
 CranewingCity_Glassworks_1F_MaybeGiveGlassBottle_4:
 	msgbox CranewingCity_Glassworks_1F_MaybeGiveGlassBottle_Text_0
@@ -182,7 +183,7 @@ CranewingCity_Glassworks_1F_MaybeGiveGlassBottle_5:
 
 CranewingCity_Glassworks_1F_GiveGlassBottle::
 	setvar VAR_STATE_GLASSWORKS, 2
-	subvar VAR_ASH_GATHER_COUNT, 150
+	subvar VAR_ASH_GATHER_COUNT, 100
 	msgbox CranewingCity_Glassworks_1F_GiveGlassBottle_Text_0
 	waitmessage
 	closemessage
@@ -213,7 +214,7 @@ CranewingCity_Glassworks_1F_GiveGlassBottle_5:
 	delay 16
 	msgbox CranewingCity_Glassworks_1F_GiveGlassBottle_Text_1
 	waitmessage
-	subquest_finish SUB_QUEST_FIND_BOTTLE
+	subquest_finish SUB_QUEST_DELIVER_ASH
 	giveitem ITEM_GLASS_BOTTLE
 	msgbox CranewingCity_Glassworks_1F_GiveGlassBottle_Text_2
 	goto CranewingCity_Glassworks_1F_LeadTechCleanup
@@ -407,13 +408,13 @@ CranewingCity_Glassworks_1F_GiveSootSack_Text_1:
 
 CranewingCity_Glassworks_1F_GiveSootSack_Text_2:
 	.string "Just go run about in Chartree Forest.\p"
-	.string "Come back when you have collected 150\n"
+	.string "Come back when you have collected 100\n"
 	.string "ash.\p"
 	.string "That should cover one glass bottle.$"
 
 CranewingCity_Glassworks_1F_MaybeGiveGlassBottle_Text_0:
 	.string "You'll need to come back with at least\n"
-	.string "150 ash before I can make you your\l"
+	.string "100 ash before I can make you your\l"
 	.string "glass bottle.$"
 
 CranewingCity_Glassworks_1F_GiveGlassBottle_Text_0:

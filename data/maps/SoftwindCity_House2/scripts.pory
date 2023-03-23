@@ -36,12 +36,19 @@ script(global) SoftwindCity_House2_Gentleman {
                 faceplayer
                 msgbox(format("Well now, milk for a sick Moocalf?\pWe don't have any, but…\pI'll run straight out and pick some up.\pJust pass me the bottle!"))
                 waitmessage
-
+                closemessage
+                removeitem(ITEM_GLASS_BOTTLE, 1)
                 getplayerxy(VAR_TEMP_X, VAR_TEMP_Y)
                 if(var(VAR_TEMP_Y) == 3) {
                     applymovement(MAN, mManLeavesForMilkPlayerBelow)
+                    delay(16)
+                    applymovement(PLAYER, mFaceRight)
                     waitmovement(MAN)
+                    playse(SE_DOOR)
+                    waitse
                     delay(60)
+                    playse(SE_DOOR)
+                    waitse
                     applymovement(MAN, mManReturnsWithMilkPlayerBelow)
                     waitmovement(MAN)
                 }
@@ -50,14 +57,24 @@ script(global) SoftwindCity_House2_Gentleman {
                     delay(16)
                     applymovement(PLAYER, mFaceRight)
                     waitmovement(MAN)
+                    playse(SE_DOOR)
+                    waitse
                     delay(60)
-                    applymovement(MAN, mManReturnsWithMilkPlayerBelow)
-                    waitmovement(MAN)
+                    playse(SE_DOOR)
+                    waitse
+                    if(var(VAR_TEMP_X) == 0) {
+                        applymovement(MAN, mManReturnsWithMilkPlayerLeft)
+                        waitmovement(MAN)
+                    }
+                    else {
+                        applymovement(MAN, mManReturnsWithMilk)
+                        waitmovement(MAN)
+                    }
+                    applymovement(PLAYER, mFaceDown)
+                    waitmovement(PLAYER)
                 }
-                faceplayer
                 msgbox(format("Here you are!\pNow go help that Moocalf!"))
                 subquest_finish(SUB_QUEST_GET_MILK)
-                removeitem(ITEM_GLASS_BOTTLE, 1)
                 giveitem(ITEM_MEDICINE_MILK, 1)
                 release
                 end
@@ -66,6 +83,7 @@ script(global) SoftwindCity_House2_Gentleman {
         checkitem(ITEM_MEDICINE_MILK, 1)
         if(var(VAR_RESULT) == TRUE) {
             msgbox(format("Please deliver that milk to the Moocalf!"), MSGBOX_NPC)
+            end
         }
     }
     msgbox(format("Thanks to the low cost of living here, my wife and I were able to retire young!\pWe worked our years in Colossus City, and now we get to relax in this lovely town."), MSGBOX_NPC)
@@ -105,7 +123,9 @@ movement mManLeavesForMilk {
     walk_right * 4
     walk_down * 4
     delay_16 * 2
-    walk_in_place_down * 2
+    walk_in_place_slow_down
+    delay_16
+    walk_in_place_slow_down
     delay_16 * 2
     walk_left
     walk_down
@@ -117,7 +137,9 @@ movement mManLeavesForMilkPlayerBelow {
     walk_right * 4
     walk_down * 5
     delay_16 * 2
-    walk_in_place_fast_down * 2
+    walk_in_place_slow_down
+    delay_16
+    walk_in_place_slow_down
     walk_left
     walk_down
     delay_16
@@ -132,11 +154,30 @@ movement mManReturnsWithMilk {
     walk_right
     face_up
     delay_16 * 2
-    walk_in_place_up * 2
+    walk_in_place_slow_up
+    delay_16
+    walk_in_place_slow_up
     delay_16 * 2
     walk_up * 4
-    walk_left * 4
+    walk_left * 3
+    walk_in_place_faster_up
+}
+
+movement mManReturnsWithMilkPlayerLeft {
+    face_up
+    set_visible
+    delay_16
     walk_up
+    walk_right
+    face_up
+    delay_16 * 2
+    walk_in_place_slow_up
+    delay_16
+    walk_in_place_slow_up
+    delay_16 * 2
+    walk_up * 4
+    walk_left * 5
+    walk_in_place_faster_up
 }
 
 movement mManReturnsWithMilkPlayerBelow {
@@ -147,11 +188,12 @@ movement mManReturnsWithMilkPlayerBelow {
     walk_right
     face_up
     delay_16 * 2
-    walk_in_place_up * 2
+    walk_in_place_slow_up
+    delay_16
+    walk_in_place_slow_up
     delay_16 * 2
-    walk_up * 5
-    walk_left * 4
-    face_down
+    walk_up * 4
+    walk_left * 3
 }
 
 //=====================================
