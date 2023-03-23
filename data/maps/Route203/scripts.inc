@@ -180,7 +180,7 @@ Route203_FarmerLadyResolveQuest::
 	waitmovement 0
 	closedoor 17, 5
 	quest_finish QUEST_MOOCALF_ORPHAN
-	delay 60
+	delay 120
 	opendoor 17, 5
 	waitdooranim
 	applymovement 11, mFarmerLadyExitsHouse
@@ -482,4 +482,4 @@ Route203_Text_FarmQuestGiveMoocalf::
 	.string "Please, take it with you!$"
 
 Route203_Text_ReceivedMoocalf::
-	.string "{PLAYER} obtained a {STR_VAR_2}.$"
+	.string "{PLAYER} obtained the {STR_VAR_2}.$"

@@ -89,8 +89,6 @@ SoftwindCity_House2_Gentleman_15:
 	waitse
 	applymovement 1, mManReturnsWithMilkPlayerBelow
 	waitmovement 1
-	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
-	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SoftwindCity_House2_Gentleman_14
 
 SoftwindCity_House2_Gentleman_19:

@@ -758,6 +758,11 @@
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
 
+// gTileset_Softwind
+#define METATILE_Softwind_Door_Blue    0x225
+#define METATILE_Softwind_Door_Brown   0x22B
+#define METATILE_Softwind_Door_Purple  0x22C
+
 // gTileset_SootopolisGym
 #define METATILE_SootopolisGym_Ice_Broken   0x206
 #define METATILE_SootopolisGym_Ice_Cracked  0x20E
