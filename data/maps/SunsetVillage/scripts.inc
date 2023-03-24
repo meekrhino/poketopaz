@@ -569,8 +569,10 @@ mStartledWalkRight:
 	step_end
 
 mPlayerStepsBack:
-	slide_right
 	face_left
+	lock_facing_direction
+	walk_fast_right
+	unlock_facing_direction
 	step_end
 
 mOldManStepsAside:

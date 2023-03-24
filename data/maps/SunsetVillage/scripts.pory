@@ -527,8 +527,10 @@ movement mStartledWalkRight {
 }
 
 movement mPlayerStepsBack {
-    slide_right
     face_left
+    lock_facing_direction
+    walk_fast_right
+    unlock_facing_direction
 }
 
 movement mOldManStepsAside {
