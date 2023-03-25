@@ -73,14 +73,14 @@
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     },
     {
       "x": 2,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_CRANEWING_CITY",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     }
   ],
   "coord_events": [

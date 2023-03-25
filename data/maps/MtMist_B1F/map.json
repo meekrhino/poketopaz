@@ -22,28 +22,28 @@
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 9,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 6,
       "y": 28,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 5,
       "y": 36,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [

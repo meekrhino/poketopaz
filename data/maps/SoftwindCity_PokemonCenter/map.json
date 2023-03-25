@@ -73,14 +73,14 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY",
-      "dest_warp_id": 7
+      "dest_warp_id": "7"
     },
     {
       "x": 3,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY",
-      "dest_warp_id": 7
+      "dest_warp_id": "7"
     }
   ],
   "coord_events": [

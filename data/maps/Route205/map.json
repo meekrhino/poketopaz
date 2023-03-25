@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_SOFTWIND_CITY",
       "offset": -24,
-      "map": "MAP_SOFTWIND_CITY"
+      "direction": "right"
     },
     {
-      "direction": "left",
+      "map": "MAP_ROUTE206",
       "offset": -2,
-      "map": "MAP_ROUTE206"
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -227,7 +227,7 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE205",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

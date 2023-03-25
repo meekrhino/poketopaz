@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_ROUTE203",
       "offset": -6,
-      "map": "MAP_ROUTE203"
+      "direction": "left"
     },
     {
-      "direction": "down",
+      "map": "MAP_CRANEWING_CITY",
       "offset": 16,
-      "map": "MAP_CRANEWING_CITY"
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -149,21 +149,21 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_CHARTREE_FOREST",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 21,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_CHARTREE_FOREST",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 22,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_CHARTREE_FOREST",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

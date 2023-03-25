@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_NEO_BAY",
       "offset": -9,
-      "map": "MAP_NEO_BAY"
+      "direction": "right"
     },
     {
-      "direction": "left",
+      "map": "MAP_SUNSET_VILLAGE",
       "offset": -14,
-      "map": "MAP_SUNSET_VILLAGE"
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -110,7 +110,7 @@
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ROUTE201_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

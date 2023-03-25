@@ -34,14 +34,14 @@
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_CLIFFSIDE_HOUSE_1F",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 15,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_CLIFFSIDE_HOUSE_1F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [

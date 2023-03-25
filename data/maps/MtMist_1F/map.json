@@ -60,56 +60,56 @@
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_B1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 34,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_B1F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 30,
       "y": 27,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_B1F",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 30,
       "y": 44,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_B1F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 53,
       "y": 39,
       "elevation": 0,
       "dest_map": "MAP_ROUTE206",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 40,
       "y": 42,
       "elevation": 0,
       "dest_map": "MAP_ROUTE206",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 22,
       "y": 44,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 10,
       "y": 34,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

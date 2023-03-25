@@ -22,28 +22,28 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     },
     {
       "x": 3,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     },
     {
       "x": 6,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_CLIFFSIDE_HOUSE_2F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 11,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_CLIFFSIDE_HOUSE_2F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

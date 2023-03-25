@@ -14,9 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_ROUTE201",
       "offset": 9,
-      "map": "MAP_ROUTE201"
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -79,49 +79,49 @@
       "y": 33,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 29,
       "y": 33,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 34,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_PLAYERS_HOUSE_1F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 26,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_BRADLEYS_HOUSE_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 21,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_HOUSE1",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 18,
       "y": 37,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_CLIFFSIDE_HOUSE_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 28,
       "y": 28,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_HOUSE2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

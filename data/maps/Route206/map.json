@@ -14,9 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_ROUTE205",
       "offset": 2,
-      "map": "MAP_ROUTE205"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -157,14 +157,14 @@
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 17,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

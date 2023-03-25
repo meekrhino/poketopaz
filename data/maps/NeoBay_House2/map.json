@@ -34,14 +34,14 @@
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     },
     {
       "x": 5,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     }
   ],
   "coord_events": [
