@@ -359,16 +359,16 @@
       "x": 52,
       "y": 7,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_SUPER_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_205_GRASS"
     },
     {
       "type": "hidden_item",
       "x": 42,
       "y": 1,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_PP_UP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_206_FENCE"
     }
   ]
 }

@@ -42,7 +42,7 @@
       "y": 40,
       "elevation": 0,
       "item": "ITEM_GREEN_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_205_GRASS"
     },
     {
       "type": "hidden_item",
@@ -50,7 +50,7 @@
       "y": 34,
       "elevation": 3,
       "item": "ITEM_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_205_FENCE"
     },
     {
       "type": "hidden_item",
