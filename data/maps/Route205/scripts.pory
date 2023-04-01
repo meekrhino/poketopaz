@@ -27,6 +27,48 @@ script(global) Route205_Woman {
     end
 }
 
+script(global) Route205_Francis {
+    trainerbattle_single(TRAINER_FRANCIS, Route205_Text_FrancisIntro, Route205_Text_FrancisDefeated)
+    msgbox(Route205_Text_FrancisPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route205_Amy {
+    trainerbattle_double(TRAINER_AMY_AND_ALLY, Route205_Text_AmyAndAllyIntro, Route205_Text_AmyAndAllyDefeated, Route205_Text_AmyAndAllyTooFewMons)
+    msgbox(Route205_Text_AmyPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route205_Ally {
+    trainerbattle_double(TRAINER_AMY_AND_ALLY, Route205_Text_AmyAndAllyIntro, Route205_Text_AmyAndAllyDefeated, Route205_Text_AmyAndAllyTooFewMons)
+    msgbox(Route205_Text_AllyPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route205_Travis {
+    trainerbattle_single(TRAINER_TRAVIS, Route205_Text_TravisIntro, Route205_Text_TravisDefeated)
+    msgbox(Route205_Text_TravisPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route205_Gwen {
+    trainerbattle_single(TRAINER_GWEN, Route205_Text_GwenIntro, Route205_Text_GwenDefeated)
+    msgbox(Route205_Text_GwenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route205_Percy {
+    trainerbattle_single(TRAINER_PERCY, Route205_Text_PercyIntro, Route205_Text_PercyDefeated)
+    msgbox(Route205_Text_PercyPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route205_Ishmael {
+    trainerbattle_single(TRAINER_ISHMAEL, Route205_Text_IshmaelIntro, Route205_Text_IshmaelDefeated)
+    msgbox(Route205_Text_IshmaelPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
 //=====================================
 // Local Scripts
 //=====================================
@@ -69,6 +111,127 @@ text Route205_Text_Woman {
         "This time is going to be different, though!"
     )
 }
+
+text Route205_Text_FrancisIntro {
+    format(
+        "My teacher has been talking about Pokémon adaptation in Caldera.\pApparently my Pokémon came from far away a long time ago!"
+    )
+}
+
+text Route205_Text_FrancisDefeated {
+    format(
+        "I guess Lotad adapted to its environment, but not to battle…"
+    )
+}
+
+text Route205_Text_FrancisPostBattle {
+    format(
+        "They say Lotad are actually water type in other regions.\pHow weird is that?"
+    )
+}
+
+text Route205_Text_AmyAndAllyIntro {
+    format(
+        "Hehe!\pWanna see some cute Pokémon?"
+    )
+}
+
+text Route205_Text_AmyAndAllyDefeated {
+    format(
+        "W…why would you hurt our cute Pokémon?"
+    )
+}
+
+text Route205_Text_AmyPostBattle {
+    format(
+        "It's okay…"
+    )
+}
+
+text Route205_Text_AllyPostBattle {
+    format(
+        "You hurt Amy's feelings!\pWhy would you do that?"
+    )
+}
+
+text Route205_Text_AmyAndAllyTooFewMons {
+    format (
+        "Only one Pokémon?\nUgh, lame.\pWe only battle together, so now you can't see our cute Pokémon."
+    )
+}
+
+text Route205_Text_TravisIntro {
+    format(
+        "Huff…puff…\nI feel unstoppable right now!\pBring it on!"
+    )
+}
+
+text Route205_Text_TravisDefeated {
+    format(
+        "I lost, but that won't keep me down!"
+    )
+}
+
+text Route205_Text_TravisPostBattle {
+    format(
+        "I'm just taking a quick break to catch my breath.\pWe had a great match, didn't we?"
+    )
+}
+
+text Route205_Text_GwenIntro {
+    format(
+        "What a beautiful day!\pWould you care to sit and enjoy nature with me?"
+    )
+}
+
+text Route205_Text_GwenDefeated {
+    format(
+        "So relaxing!\pIt's hard to be down from a loss when surrounded by such beauty."
+    )
+}
+
+text Route205_Text_GwenPostBattle {
+    format(
+        "I love to watch the Jalsida gather nectar from the flowers.\pNature is magical!"
+    )
+}
+
+text Route205_Text_PercyIntro {
+    format(
+        "I just evolved my first Pokémon ever!\pYou'll see what that means for you!"
+    )
+}
+
+text Route205_Text_PercyDefeated {
+    format(
+        "There is no way I lost that.\nYou must have cheated."
+    )
+}
+
+text Route205_Text_PercyPostBattle {
+    format(
+        "My mom bought me so many Rare Candies to evolve Firrel and I still lost?\pMaybe…\nNahhh.\pI just need more!"
+    )
+}
+
+text Route205_Text_IshmaelIntro {
+    format(
+        "Ahoy there!\pI finally managed to find the holy grail of all fisherman.\pIt's worth its weight in gold!"
+    )
+}
+
+text Route205_Text_IshmaelDefeated {
+    format(
+        "I didn't say it was strong, did I?"
+    )
+}
+
+text Route205_Text_IshmaelPostBattle {
+    format(
+        "Where did I catch it?\nHah!\pLike I would spill my secrets with a random child?\pYou've probably never heard of the place anyway."
+    )
+}
+
 
 //=====================================
 // Movement
