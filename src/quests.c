@@ -268,8 +268,8 @@ static const struct SubQuest sSubQuests[SUB_QUEST_COUNT] = {
 	    .name = gText_SubQuest_RescueAmpureName,
 	    .desc = gText_SubQuest_RescueAmpureDesc,
 	    .map = gText_Quest_GettingStartedMap,
-	    .sprite = SPECIES_AMPURE,
-	    .spritetype = PKMN,
+	    .sprite = OBJ_EVENT_GFX_AMPURE,
+	    .spritetype = OBJECT,
 	    .doneLabel = sText_Done
     },
 	[SUB_QUEST_SAY_GOODBYE] = {

@@ -251,8 +251,9 @@
 #define OBJ_EVENT_GFX_PROF_WILLOW                247
 #define OBJ_EVENT_GFX_FROY                       248
 #define OBJ_EVENT_GFX_THERMA                     249
+#define OBJ_EVENT_GFX_AMPURE                     250
 
-#define NUM_OBJ_EVENT_GFX                        250
+#define NUM_OBJ_EVENT_GFX                        251
 
 
 // These are dynamic object gfx ids.
