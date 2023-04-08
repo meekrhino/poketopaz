@@ -88,6 +88,11 @@ script(global) WillowsLab_TakeYourTime {
     end
 }
 
+script(global) NeoBay_ProfessorWillowsLab_Ampure {
+    msgbox(format("Ampure: Piu?"), MSGBOX_NPC)
+    end
+}
+
 script(global) WillowsLab_Books1 {
     msgbox(format("There's a book titled “People and Pokémon: Nature's Balance”…\pSounds a little dense…"), MSGBOX_SIGN)
     end
