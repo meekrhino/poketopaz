@@ -1,14 +1,23 @@
 const PLAYER = OBJ_EVENT_ID_PLAYER
 const FLOWER_GUY = 15
 
+const VAR_TEMP_X = VAR_TEMP_0
+const VAR_TEMP_Y = VAR_TEMP_1
+
 // VAR_ROUTE_205_STATE values
 const ROUTE205_STATE_INIT = 0
-const ROUTE205_STATE_SAW_FLOWER_SHOP = 1
+const ROUTE205_STATE_OUTSIDE_SHOP = 1
+const ROUTE205_STATE_INSIDE_SHOP = 2
 
 //=====================================
 // Map Scripts
 //=====================================
-mapscripts Route205_MapScripts {}
+mapscripts Route205_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_ROUTE_205_STATE, ROUTE205_STATE_INSIDE_SHOP: Route205_FlowerGuyComesOut
+    ]
+
+}
 
 //=====================================
 // Global Scripts
@@ -41,13 +50,15 @@ script(global) Route205_FlowerGirl {
 script(global) Route205_FlowerShopGuard {
     lockall
     faceplayer
-    if(var(VAR_ROUTE_205_STATE) == ROUTE205_STATE_SAW_FLOWER_SHOP) {
-        msgbox(format("Ah, it's you again.\pPlease come on inside."))
+    if(var(VAR_ROUTE_205_STATE) == ROUTE205_STATE_INIT) {
+        msgbox(format("Just keep moving, kid.\nNothing to see here!\p… … …\n… … …\pOh, who am I kidding, you're just a kid.\pWhat harm could you do?\pCome on in, I suppose."))
+        setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_OUTSIDE_SHOP)
     }
     else {
-        msgbox(format("Just keep moving, kid.\NNothing to see here!\p… … …\n… … …\pOh, who am I kidding, you're just a kid.\pWhat harm could you do?\pCome on in, I suppose."))
-        setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_SAW_FLOWER_SHOP)
+        msgbox(format("Ah, it's you again.\pPlease come on inside."))
     }
+    waitmessage
+    closemessage
     applymovement(FLOWER_GUY, mFaceUp)
     waitmovement(FLOWER_GUY)
     opendoor(34, 5)
@@ -56,7 +67,7 @@ script(global) Route205_FlowerShopGuard {
     waitmovement(FLOWER_GUY)
     closedoor(34, 5)
     waitdooranim
-    setvar(VAR_TEMP_0, 1)
+    setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_INSIDE_SHOP)
     setflag(FLAG_HIDE_ROUTE_205_FLOWER_GUY)
     releaseall
     end
@@ -64,6 +75,7 @@ script(global) Route205_FlowerShopGuard {
 // The Shadowy Cabal of Flower Folks (SCOFFs)
 script(global) Route205_FlowerGuyComesOut {
     lockall
+    setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_INSIDE_SHOP)
     opendoor(34, 5)
     waitdooranim
     addobject(FLOWER_GUY)
@@ -74,8 +86,12 @@ script(global) Route205_FlowerGuyComesOut {
     applymovement(PLAYER, mWalkDown)
     applymovement(FLOWER_GUY, mWalkDown)
     waitmovement(FLOWER_GUY)
+    applymovement(PLAYER, mFaceUp)
+    waitmovement(PLAYER)
     closedoor(34, 5)
     waitdooranim
+    msgbox("Come back any time.\pJust don't spill the beans…\nErr, that is…\pKeep your face shut!\nOr else!\p…Was that good?")
+    waitmessage
     clearflag(FLAG_HIDE_ROUTE_205_FLOWER_GUY)
     releaseall
     end

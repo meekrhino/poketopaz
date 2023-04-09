@@ -1055,8 +1055,8 @@
 #define FLAG_ITEM_ROUTE_204_WEST                                    0x3F2
 #define FLAG_ITEM_CRANEWING_WEST                                    0x3F3
 #define FLAG_ITEM_CRANEWING_NORTH                                   0x3F4
-#define FLAG_ITEM_ROUTE_113_SUPER_REPEL                             0x3F5
-#define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6
+#define FLAG_ITEM_ROUTE_205_SURF                                    0x3F5
+#define FLAG_ITEM_ROUTE_205_CORNER                                  0x3F6
 #define FLAG_ITEM_ROUTE_114_PROTEIN                                 0x3F7
 #define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
 #define FLAG_ITEM_ROUTE_115_TM_01                                   0x3F9

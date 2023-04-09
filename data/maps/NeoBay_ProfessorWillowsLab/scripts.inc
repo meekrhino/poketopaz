@@ -800,19 +800,19 @@ mExclamationPoint:
 	step_end
 
 mFaceDown:
-	face_down
+	walk_in_place_fast_down
 	step_end
 
 mFaceUp:
-	face_up
+	walk_in_place_fast_up
 	step_end
 
 mFaceRight:
-	face_right
+	walk_in_place_fast_right
 	step_end
 
 mFaceLeft:
-	face_left
+	walk_in_place_fast_left
 	step_end
 
 mAmpureMakesCrash:
