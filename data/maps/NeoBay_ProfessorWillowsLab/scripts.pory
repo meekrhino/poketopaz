@@ -913,6 +913,7 @@ movement mPlayerEntersSecondTime {
 
 movement mExclamationPoint {
     emote_exclamation_mark
+    delay_16 * 3
 }
 
 movement mFaceDown {

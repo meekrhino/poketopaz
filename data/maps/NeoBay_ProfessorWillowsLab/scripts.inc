@@ -62,6 +62,11 @@ WillowsLab_TakeYourTime_6:
 	goto WillowsLab_TakeYourTime_5
 
 
+NeoBay_ProfessorWillowsLab_Ampure::
+	msgbox NeoBay_ProfessorWillowsLab_Ampure_Text_0, MSGBOX_NPC
+	end
+
+
 WillowsLab_Books1::
 	msgbox WillowsLab_Books1_Text_0, MSGBOX_SIGN
 	end
@@ -789,6 +794,9 @@ mPlayerEntersSecondTime:
 
 mExclamationPoint:
 	emote_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
 	step_end
 
 mFaceDown:
@@ -1182,6 +1190,9 @@ WillowsLab_TakeYourTime_Text_2:
 WillowsLab_TakeYourTime_Text_3:
 	.string "Willow: Ohoho, can't decide?\p"
 	.string "Take your time, this is a big decision!$"
+
+NeoBay_ProfessorWillowsLab_Ampure_Text_0:
+	.string "Ampure: Piu?$"
 
 WillowsLab_Books1_Text_0:
 	.string "There's a book titled “People and\n"
