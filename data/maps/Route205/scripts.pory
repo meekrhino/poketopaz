@@ -1,3 +1,9 @@
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const FLOWER_GUY = 15
+
+// VAR_ROUTE_205_STATE values
+const ROUTE205_STATE_INIT = 0
+const ROUTE205_STATE_SAW_FLOWER_SHOP = 1
 
 //=====================================
 // Map Scripts
@@ -24,6 +30,54 @@ script(global) Route205_Scientist {
 
 script(global) Route205_Woman {
     msgbox(Route205_Text_Woman, MSGBOX_NPC)
+    end
+}
+
+script(global) Route205_FlowerGirl {
+    msgbox(format("I have a friend that lives in the Kanto region.\pShe said they have a Pokémon that's really similar to Ampure.\pPeek-o-something?\nisn't that silly?"), MSGBOX_NPC)
+    end
+}
+
+script(global) Route205_FlowerShopGuard {
+    lockall
+    faceplayer
+    if(var(VAR_ROUTE_205_STATE) == ROUTE205_STATE_SAW_FLOWER_SHOP) {
+        msgbox(format("Ah, it's you again.\pPlease come on inside."))
+    }
+    else {
+        msgbox(format("Just keep moving, kid.\NNothing to see here!\p… … …\n… … …\pOh, who am I kidding, you're just a kid.\pWhat harm could you do?\pCome on in, I suppose."))
+        setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_SAW_FLOWER_SHOP)
+    }
+    applymovement(FLOWER_GUY, mFaceUp)
+    waitmovement(FLOWER_GUY)
+    opendoor(34, 5)
+    waitdooranim
+    applymovement(FLOWER_GUY, mFlowerGuyEntersHouse)
+    waitmovement(FLOWER_GUY)
+    closedoor(34, 5)
+    waitdooranim
+    setvar(VAR_TEMP_0, 1)
+    setflag(FLAG_HIDE_ROUTE_205_FLOWER_GUY)
+    releaseall
+    end
+}
+// The Shadowy Cabal of Flower Folks (SCOFFs)
+script(global) Route205_FlowerGuyComesOut {
+    lockall
+    opendoor(34, 5)
+    waitdooranim
+    addobject(FLOWER_GUY)
+    setobjectxy(FLOWER_GUY, 34, 5)
+    msgbox(format("Excuse me, please."))
+    waitmessage
+    closemessage
+    applymovement(PLAYER, mWalkDown)
+    applymovement(FLOWER_GUY, mWalkDown)
+    waitmovement(FLOWER_GUY)
+    closedoor(34, 5)
+    waitdooranim
+    clearflag(FLAG_HIDE_ROUTE_205_FLOWER_GUY)
+    releaseall
     end
 }
 
@@ -236,6 +290,10 @@ text Route205_Text_IshmaelPostBattle {
 //=====================================
 // Movement
 //=====================================
+movement mFlowerGuyEntersHouse {
+    walk_up
+    set_invisible
+} 
 
 //=====================================
 // Raw

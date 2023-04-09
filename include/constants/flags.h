@@ -772,7 +772,7 @@
 
 #define FLAG_HIDE_NEO_BAY_AMPURE                                    0x2DA
 #define FLAG_HIDE_WILLOWS_LAB_BRADLEY                               0x2DB
-#define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1                    0x2DC
+#define FLAG_HIDE_ROUTE_205_FLOWER_GUY                              0x2DC
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP              0x2DD
 #define FLAG_HIDE_PLAYERS_HOUSE_DAD                                 0x2DE
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING      0x2DF

@@ -917,19 +917,19 @@ movement mExclamationPoint {
 }
 
 movement mFaceDown {
-    face_down
+    walk_in_place_fast_down
 }
 
 movement mFaceUp {
-    face_up
+    walk_in_place_fast_up
 }
 
 movement mFaceRight {
-    face_right
+    walk_in_place_fast_right
 }
 
 movement mFaceLeft {
-    face_left
+    walk_in_place_fast_left
 }
 
 movement mAmpureMakesCrash {
