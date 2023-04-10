@@ -1,0 +1,14 @@
+
+// VAR_ROUTE_205_STATE values
+const ROUTE205_STATE_INIT = 0
+const ROUTE205_STATE_OUTSIDE_SHOP = 1
+const ROUTE205_STATE_INSIDE_SHOP = 2
+
+mapscripts Route205_FlowerShop_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: Route205_FlowerShop_OnTransition
+}
+
+script(local) Route205_FlowerShop_OnTransition {
+    setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_INSIDE_SHOP)
+    setflag(FLAG_HIDE_ROUTE_205_FLOWER_GUY)
+}

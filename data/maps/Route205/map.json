@@ -210,7 +210,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 34,
-      "y": 5,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -330,20 +330,12 @@
       "x": 34,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE205",
+      "dest_map": "MAP_ROUTE205_FLOWER_SHOP",
       "dest_warp_id": "0"
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 34,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Route205_FlowerGuyComesOut"
-    }
+
   ],
   "bg_events": [
     {

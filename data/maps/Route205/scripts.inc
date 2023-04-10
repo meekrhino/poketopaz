@@ -3,7 +3,7 @@ Route205_MapScripts::
 	.byte 0
 
 Route205_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_TEMP_0, 0, Route205_FlowerGuyComesOut
+	map_script_2 VAR_ROUTE_205_STATE, 2, Route205_FlowerGuyComesOut
 	.2byte 0
 
 
@@ -35,10 +35,9 @@ Route205_FlowerGirl::
 Route205_FlowerShopGuard::
 	lockall
 	faceplayer
-	compare VAR_ROUTE_205_STATE, 1
+	compare VAR_ROUTE_205_STATE, 0
 	goto_if_eq Route205_FlowerShopGuard_2
 	msgbox Route205_FlowerShopGuard_Text_1
-	setvar VAR_ROUTE_205_STATE, 1
 Route205_FlowerShopGuard_1:
 	waitmessage
 	closemessage
@@ -50,26 +49,21 @@ Route205_FlowerShopGuard_1:
 	waitmovement 15
 	closedoor 34, 5
 	waitdooranim
-	setvar VAR_TEMP_0, 1
-	setflag FLAG_HIDE_ROUTE_205_FLOWER_GUY
 	releaseall
 	end
 
 Route205_FlowerShopGuard_2:
 	msgbox Route205_FlowerShopGuard_Text_0
+	setvar VAR_ROUTE_205_STATE, 1
 	goto Route205_FlowerShopGuard_1
 
 
 Route205_FlowerGuyComesOut::
-	setvar VAR_TEMP_0, 1
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_TEMP_0, 34
-	goto_if_eq Route205_FlowerGuyComesOut_3
-Route205_FlowerGuyComesOut_1:
-	end
-
-Route205_FlowerGuyComesOut_2:
 	lockall
+	setvar VAR_ROUTE_205_STATE, 1
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
+	waitmovement OBJ_EVENT_ID_PLAYER
 	opendoor 34, 5
 	waitdooranim
 	addobject 15
@@ -77,23 +71,16 @@ Route205_FlowerGuyComesOut_2:
 	msgbox Route205_FlowerGuyComesOut_Text_0
 	waitmessage
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, mWalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerSlidesDown
 	applymovement 15, mWalkDown
 	waitmovement 15
-	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
-	waitmovement OBJ_EVENT_ID_PLAYER
 	closedoor 34, 5
 	waitdooranim
 	msgbox Route205_FlowerGuyComesOut_Text_1
 	waitmessage
 	clearflag FLAG_HIDE_ROUTE_205_FLOWER_GUY
 	releaseall
-	goto Route205_FlowerGuyComesOut_1
-
-Route205_FlowerGuyComesOut_3:
-	compare VAR_TEMP_1, 6
-	goto_if_eq Route205_FlowerGuyComesOut_2
-	goto Route205_FlowerGuyComesOut_1
+	end
 
 
 Route205_Francis::
@@ -143,6 +130,12 @@ mFlowerGuyEntersHouse:
 	set_invisible
 	step_end
 
+mPlayerSlidesDown:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
 Route205_FlowerGirl_Text_0:
 	.string "I have a friend that lives in the Kanto\n"
 	.string "region.\p"
@@ -152,10 +145,6 @@ Route205_FlowerGirl_Text_0:
 	.string "isn't that silly?$"
 
 Route205_FlowerShopGuard_Text_0:
-	.string "Ah, it's you again.\p"
-	.string "Please come on inside.$"
-
-Route205_FlowerShopGuard_Text_1:
 	.string "Just keep moving, kid.\n"
 	.string "Nothing to see here!\p"
 	.string "… … …\n"
@@ -164,11 +153,15 @@ Route205_FlowerShopGuard_Text_1:
 	.string "What harm could you do?\p"
 	.string "Come on in, I suppose.$"
 
+Route205_FlowerShopGuard_Text_1:
+	.string "Ah, it's you again.\p"
+	.string "Please come on inside.$"
+
 Route205_FlowerGuyComesOut_Text_0:
 	.string "Excuse me, please.$"
 
 Route205_FlowerGuyComesOut_Text_1:
-	.string "Come back any time.\pJust don't spill the beans…\nErr, that is…\pKeep your face shut!\nOr else!\p…Was that good?$"
+	.string "Come back any time.\pJust don't spill the beans…\nErr, that is…\pKeep your face shut!\nOr… um… else!\p…How was that?$"
 
 Route205_Text_RichBoy::
 	.string "My friend and I are arguing about what\n"

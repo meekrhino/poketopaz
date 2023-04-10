@@ -317,6 +317,7 @@
 // gMapGroup_IndoorRoute112
 #define MAP_ROUTE112_CABLE_CAR_STATION   (0 | (19 << 8))
 #define MAP_MT_CHIMNEY_CABLE_CAR_STATION (1 | (19 << 8))
+#define MAP_ROUTE205_FLOWER_SHOP         (2 | (19 << 8))
 
 // gMapGroup_IndoorRoute114
 #define MAP_ROUTE114_FOSSIL_MANIACS_HOUSE  (0 | (20 << 8))

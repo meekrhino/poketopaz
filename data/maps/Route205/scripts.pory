@@ -16,7 +16,6 @@ mapscripts Route205_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_ROUTE_205_STATE, ROUTE205_STATE_INSIDE_SHOP: Route205_FlowerGuyComesOut
     ]
-
 }
 
 //=====================================
@@ -67,15 +66,18 @@ script(global) Route205_FlowerShopGuard {
     waitmovement(FLOWER_GUY)
     closedoor(34, 5)
     waitdooranim
-    setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_INSIDE_SHOP)
-    setflag(FLAG_HIDE_ROUTE_205_FLOWER_GUY)
     releaseall
     end
 }
+
 // The Shadowy Cabal of Flower Folks (SCOFFs)
+// The Society for the Cultivation of Fabulous Flora
 script(global) Route205_FlowerGuyComesOut {
     lockall
-    setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_INSIDE_SHOP)
+    setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_OUTSIDE_SHOP)
+    delay(60)
+    applymovement(PLAYER, mFaceUp)
+    waitmovement(PLAYER)
     opendoor(34, 5)
     waitdooranim
     addobject(FLOWER_GUY)
@@ -83,14 +85,12 @@ script(global) Route205_FlowerGuyComesOut {
     msgbox(format("Excuse me, please."))
     waitmessage
     closemessage
-    applymovement(PLAYER, mWalkDown)
+    applymovement(PLAYER, mPlayerSlidesDown)
     applymovement(FLOWER_GUY, mWalkDown)
     waitmovement(FLOWER_GUY)
-    applymovement(PLAYER, mFaceUp)
-    waitmovement(PLAYER)
     closedoor(34, 5)
     waitdooranim
-    msgbox("Come back any time.\pJust don't spill the beans…\nErr, that is…\pKeep your face shut!\nOr else!\p…Was that good?")
+    msgbox("Come back any time.\pJust don't spill the beans…\nErr, that is…\pKeep your face shut!\nOr… um… else!\p…How was that?")
     waitmessage
     clearflag(FLAG_HIDE_ROUTE_205_FLOWER_GUY)
     releaseall
@@ -138,10 +138,6 @@ script(global) Route205_Ishmael {
     msgbox(Route205_Text_IshmaelPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
-
-//=====================================
-// Local Scripts
-//=====================================
 
 //=====================================
 // Text
@@ -310,6 +306,12 @@ movement mFlowerGuyEntersHouse {
     walk_up
     set_invisible
 } 
+
+movement mPlayerSlidesDown {
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
+}
 
 //=====================================
 // Raw

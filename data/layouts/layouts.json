@@ -5820,6 +5820,18 @@
       "secondary_tileset": "gTileset_Glassworks",
       "border_filepath": "data/layouts/CranewingCity_Glassworks_2F/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity_Glassworks_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE205_FLOWER_SHOP",
+      "name": "Route205_FlowerShop_Layout",
+      "width": 12,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route205_FlowerShop/border.bin",
+      "blockdata_filepath": "data/layouts/Route205_FlowerShop/map.bin"
     }
   ]
 }
