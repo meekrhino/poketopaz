@@ -73,27 +73,6 @@ script(global) Route205_FlowerShopGuard {
     end
 }
 
-// Ideas -- sneak in a really sneaky O like in "Community Farming Federation"
-// then it'll get "corrected" but then re-corrected
-// From chatGPT
-// Here are some possible guesses for the acronym SCOFF:
-//    Sensitive Community Of Feline Friends
-//    Society of Creative Organic Food Fans
-//    Self-Care Options for Family and Friends
-//    Scottish Coalition Of Football Fans`
-//    Soil Cultivation and Organic Farming Foundation
-//    Sustainable Community Orchard and Farming Fellowship
-//    Seed Conservation and Organic Farming Forum
-//    Scientific Cultivation of Organic Farming and Forestry
-//    Smallholding and Community Organic Farming Federation.
-//    Seed Collection and Farming Foundation
-//    Sustainable Crop Optimization and Farming Forum
-//    Soil Conservation and Farming Fellowship
-//    Scientific Cultivation of Food Forestry
-//    Smallholding and Community Farming Federation.
-
-// The Shadowy Cabal of Flower Fanatics (SCOFFs)
-// The Society for the Cultivation of Fabulous Flora
 script(global) Route205_FlowerGuyComesOut {
     lockall
     setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_OUTSIDE_SHOP)

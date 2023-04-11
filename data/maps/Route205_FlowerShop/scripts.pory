@@ -1,14 +1,171 @@
+const MANIAC = 3
+const LOUD_MAN = 5
 
 // VAR_ROUTE_205_STATE values
 const ROUTE205_STATE_INIT = 0
 const ROUTE205_STATE_OUTSIDE_SHOP = 1
 const ROUTE205_STATE_INSIDE_SHOP = 2
 
+// Used:
+//    - Society for the Cultivation of Fascinating Flora
+//    - The Shadowy Cabal of Flower Fanatics
+//    - Secret Collaborator in Fostering Flora
+
+
+// Ideas -- sneak in a really sneaky O like in "Community Farming Federation"
+// then it'll get "corrected" but then re-corrected
+// From chatGPT
+// Here are some possible guesses for the acronym SCOFF:
+//    Sensitive Community Of Feline Friends
+//    Society of Creative Organic Food Fans
+//    Self-Care Options for Family and Friends
+//    Scottish Coalition Of Football Fans`
+//    Soil Cultivation and Organic Farming Foundation
+//    Sustainable Community Orchard and Farming Fellowship
+//    Seed Conservation and Organic Farming Forum
+//    Scientific Cultivation of Organic Farming and Forestry
+//    Smallholding and Community Organic Farming Federation.
+//    Seed Collection and Farming Foundation
+//    Sustainable Crop Optimization and Farming Forum
+//    Soil Conservation and Farming Fellowship
+//    Scientific Cultivation of Food Forestry
+//    Smallholding and Community Farming Federation.
+
+// The Shadowy Cabal of Flower Fanatics (SCOFFs)
+// The Society for the Cultivation of Fabulous Flora
+
+//=====================================
+// Map Scripts
+//=====================================
 mapscripts Route205_FlowerShop_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Route205_FlowerShop_OnTransition
 }
+
+//=====================================
+// Global Scripts
+//=====================================
+
+script(global) Route205_FlowerShop_Urn {
+    msgbox(format("It looks a freshly planted flower pot."), MSGBOX_SIGN)
+    end
+}
+
+script(global) Route205_FlowerShop_Cabinet {
+    msgbox(format("The cabinet is filled with jars full of seeds."), MSGBOX_SIGN)
+    end
+}
+
+script(global) Route205_FlowerShop_Bookshelf {
+    msgbox(format("There's a book labeled “So-Called Overly Fruitful Flora”.\pWhat a strange title for a book."), MSGBOX_SIGN)
+    end
+}
+
+script(global) Route205_FlowerShop_Tree {
+    msgbox(format("This doesn't seem to be a rare or unusual plant."), MSGBOX_SIGN)
+    end
+}
+
+script(global) Route205_FlowerShop_Guard {
+    msgbox(format("Welcome to the headquarters of our secret underground organization!\pTogether we are the Society for the Cultivation of Fascinating Flora!\pOr SCOFF for short.\pWhy are you laughing?\nThis is serious!"), MSGBOX_NPC)
+    end
+}
+
+script(global) Route205_FlowerShop_Maniac {
+    lock
+    faceplayer
+    msgbox(format("A new member?\pSorry, we don't just take anyone into our organization."))
+    waitmessage
+    closemessage
+    applymovement(LOUD_MAN, mTalkLeft)
+    waitmovement(LOUD_MAN)
+    msgbox(format("Yes!\pThe Shadowy Cabal of Flower Fanatics is a prestigious group!"))
+    waitmessage
+    closemessage
+    applymovement(MANIAC, mTalkRight)
+    waitmovement(MANIAC)
+    msgbox(format("Oh come on.\nThat's not what SCOFF stands for!\pWhat a ridiculous idea."))
+    waitmessage
+    closemessage
+    applymovement(LOUD_MAN, mTalkLeft)
+    waitmovement(LOUD_MAN)
+    msgbox(format("It so is!\pWe lurk in the shadows, planting beautiful things from just out of sight!\pCould we GET any cooler?"))
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script(global) Route205_FlowerShop_LoudMan {
+    lock
+    faceplayer
+    msgbox(format("Welcome, newcomer!\pAlas, our illustrious crew is not taking new members just now!"))
+    waitmessage
+    closemessage
+    applymovement(MANIAC, mTalkRight)
+    waitmovement(MANIAC)
+    msgbox(format("I'm afraid he's right.\pThe Science-based Cultivators of Food and Forestry have a complete team at this time."))
+    waitmessage
+    closemessage
+    applymovement(LOUD_MAN, mTalkLeft)
+    waitmovement(LOUD_MAN)
+    msgbox(format("What!?\nThat's not our name!\pNobody uses that ridiculous title.\pThat's not what SCOFF stands for!"))
+    waitmessage
+    closemessage
+    applymovement(MANIAC, mTalkRight)
+    waitmovement(MANIAC)
+    msgbox(format("Of course it is.\pClearly you have not been paying attention."))
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script(global) Route205_FlowerShop_LurkingMan {
+    if(flag(FLAG_RECEIVED_PAIL)) {
+	    msgbox(format("Think of yourself as a Secret Collaborator in Fostering Flora.\pKeep it on the low, though.\pThe others wouldn't approve."), MSGBOX_NPC)
+    }
+    else {
+        lock
+        faceplayer
+        msgbox(format("Psst!\nHey, you!\pYes, you!\pListen, kid.\pNobody here will give you the time of day.\pBut between you and me, I figure you don't need to be a member to do some good out there."), MSGBOX_DEFAULT)
+	    giveitem(ITEM_WAILMER_PAIL)
+	    msgbox(format("Use that to water seeds and make them grow.\pOne seed becomes many, and together we fill the world with plants!"), MSGBOX_DEFAULT)
+	    setflag(FLAG_RECEIVED_PAIL)
+        release
+    }
+    end
+}
+
+script(global) Route205_FlowerShop_Ninja {
+    msgbox(format("Fu fu fu!\pI have the most importantest job!\pI'm s'posed to keep people out of the back room.\pWhat's back there?\nI wouldn't know."), MSGBOX_NPC)
+    end
+}
+
+//=====================================
+// Local Scripts
+//=====================================
 
 script(local) Route205_FlowerShop_OnTransition {
     setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_INSIDE_SHOP)
     setflag(FLAG_HIDE_ROUTE_205_FLOWER_GUY)
 }
+
+//=====================================
+// Text
+//=====================================
+
+//=====================================
+// Movement
+//=====================================
+
+movement mTalkLeft {
+    walk_in_place_fast_left * 4
+}
+
+movement mTalkRight {
+    walk_in_place_fast_right * 4
+}
+
+//=====================================
+// Raw
+//=====================================

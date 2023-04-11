@@ -128,6 +128,11 @@ Route205_Ishmael::
 	end
 
 
+Route205_FlowerShop::
+	msgbox Route205_FlowerShop_Text_0, MSGBOX_SIGN
+	end
+
+
 mFlowerGuyEntersHouse:
 	walk_up
 	set_invisible
@@ -171,6 +176,10 @@ Route205_FlowerGuyComesOut_Text_0:
 
 Route205_FlowerGuyComesOut_Text_1:
 	.string "Come back any time.\pJust don't spill the beans…\nErr, that is…\pKeep your face shut!\nOr… um… else!\p…How was that?$"
+
+Route205_FlowerShop_Text_0:
+	.string "Small Cottage\n"
+	.string "Only For Friends$"
 
 Route205_Text_RichBoy::
 	.string "My friend and I are arguing about what\n"
