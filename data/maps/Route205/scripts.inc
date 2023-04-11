@@ -46,9 +46,12 @@ Route205_FlowerShopGuard_1:
 	opendoor 34, 5
 	waitdooranim
 	applymovement 15, mFlowerGuyEntersHouse
-	waitmovement 15
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEntersHouse
+	waitmovement OBJ_EVENT_ID_PLAYER
 	closedoor 34, 5
 	waitdooranim
+	warp MAP_ROUTE205_FLOWER_SHOP, 0, 0, 0
 	releaseall
 	end
 
@@ -61,7 +64,7 @@ Route205_FlowerShopGuard_2:
 Route205_FlowerGuyComesOut::
 	lockall
 	setvar VAR_ROUTE_205_STATE, 1
-	delay 60
+	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
 	waitmovement OBJ_EVENT_ID_PLAYER
 	opendoor 34, 5
@@ -126,6 +129,12 @@ Route205_Ishmael::
 
 
 mFlowerGuyEntersHouse:
+	walk_up
+	set_invisible
+	step_end
+
+mPlayerEntersHouse:
+	walk_up
 	walk_up
 	set_invisible
 	step_end

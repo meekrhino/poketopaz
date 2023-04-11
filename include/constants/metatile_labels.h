@@ -760,7 +760,7 @@
 
 // gTileset_Softwind
 #define METATILE_Softwind_Door_Blue    0x225
-#define METATILE_Softwind_Door_Brown   0x22B
+#define METATILE_Softwind_Door_Brown   0x22A
 #define METATILE_Softwind_Door_Purple  0x22C
 
 // gTileset_SootopolisGym

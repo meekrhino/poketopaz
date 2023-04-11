@@ -63,19 +63,41 @@ script(global) Route205_FlowerShopGuard {
     opendoor(34, 5)
     waitdooranim
     applymovement(FLOWER_GUY, mFlowerGuyEntersHouse)
-    waitmovement(FLOWER_GUY)
+    delay(30)
+    applymovement(PLAYER, mPlayerEntersHouse)
+    waitmovement(PLAYER)
     closedoor(34, 5)
     waitdooranim
+    warp(MAP_ROUTE205_FLOWER_SHOP, 0, 0, 0)
     releaseall
     end
 }
 
-// The Shadowy Cabal of Flower Folks (SCOFFs)
+// Ideas -- sneak in a really sneaky O like in "Community Farming Federation"
+// then it'll get "corrected" but then re-corrected
+// From chatGPT
+// Here are some possible guesses for the acronym SCOFF:
+//    Sensitive Community Of Feline Friends
+//    Society of Creative Organic Food Fans
+//    Self-Care Options for Family and Friends
+//    Scottish Coalition Of Football Fans`
+//    Soil Cultivation and Organic Farming Foundation
+//    Sustainable Community Orchard and Farming Fellowship
+//    Seed Conservation and Organic Farming Forum
+//    Scientific Cultivation of Organic Farming and Forestry
+//    Smallholding and Community Organic Farming Federation.
+//    Seed Collection and Farming Foundation
+//    Sustainable Crop Optimization and Farming Forum
+//    Soil Conservation and Farming Fellowship
+//    Scientific Cultivation of Food Forestry
+//    Smallholding and Community Farming Federation.
+
+// The Shadowy Cabal of Flower Fanatics (SCOFFs)
 // The Society for the Cultivation of Fabulous Flora
 script(global) Route205_FlowerGuyComesOut {
     lockall
     setvar(VAR_ROUTE_205_STATE, ROUTE205_STATE_OUTSIDE_SHOP)
-    delay(60)
+    delay(30)
     applymovement(PLAYER, mFaceUp)
     waitmovement(PLAYER)
     opendoor(34, 5)
@@ -136,6 +158,11 @@ script(global) Route205_Percy {
 script(global) Route205_Ishmael {
     trainerbattle_single(TRAINER_ISHMAEL, Route205_Text_IshmaelIntro, Route205_Text_IshmaelDefeated)
     msgbox(Route205_Text_IshmaelPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route205_FlowerShop {
+    msgbox(format("Small Cottage\nOnly For Friends"), MSGBOX_SIGN)
     end
 }
 
@@ -305,7 +332,12 @@ text Route205_Text_IshmaelPostBattle {
 movement mFlowerGuyEntersHouse {
     walk_up
     set_invisible
-} 
+}
+
+movement mPlayerEntersHouse {
+    walk_up * 2
+    set_invisible
+}
 
 movement mPlayerSlidesDown {
     lock_facing_direction
