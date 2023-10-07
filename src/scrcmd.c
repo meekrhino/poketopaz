@@ -2387,6 +2387,7 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
     case QUEST_FINISH:
         QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);
         QuestMenu_GetSetQuestState(questId, FLAG_SET_COMPLETED);
+        QuestMenu_GetSetQuestState(questId, FLAG_REMOVE_ACTIVE);
         QuestMenu_GetSetQuestState(questId, FLAG_REMOVE_REWARD);
         break;
     case QUEST_IS_REVEALED:

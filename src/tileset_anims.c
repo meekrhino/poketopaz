@@ -43,6 +43,7 @@ static void TilesetAnim_MauvilleGym(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
+static void TilesetAnim_MtMist(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -73,6 +74,8 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+static void QueueAnimTiles_MtMist_Steam(u8);
+static void QueueAnimTiles_MtMist_Lava(u16);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -544,6 +547,35 @@ static const u16 *const sTilesetAnims_BattleDomeFloorLightPals[] = {
     gTilesetAnims_BattleDomePals0_3,
 };
 
+const u16 gTilesetAnims_MtMist_Steam_Frame0[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/steam/0.4bpp");
+const u16 gTilesetAnims_MtMist_Steam_Frame1[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/steam/1.4bpp");
+const u16 gTilesetAnims_MtMist_Steam_Frame2[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/steam/2.4bpp");
+const u16 gTilesetAnims_MtMist_Steam_Frame3[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/steam/3.4bpp");
+
+const u16 *const gTilesetAnims_MtMist_Steam[] = {
+    gTilesetAnims_MtMist_Steam_Frame0,
+    gTilesetAnims_MtMist_Steam_Frame1,
+    gTilesetAnims_MtMist_Steam_Frame2,
+    gTilesetAnims_MtMist_Steam_Frame3
+};
+
+const u16 gTilesetAnims_MtMist_Cave_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/0.4bpp");
+const u16 gTilesetAnims_MtMist_Cave_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/1.4bpp");
+const u16 gTilesetAnims_MtMist_Cave_Lava_Frame2[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/2.4bpp");
+const u16 gTilesetAnims_MtMist_Cave_Lava_Frame3[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/3.4bpp");
+const u16 gTilesetAnims_MtMist_Cave_Lava_Frame4[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/4.4bpp");
+const u16 gTilesetAnims_MtMist_Cave_Lava_Frame5[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/5.4bpp");
+const u16 gTilesetAnims_MtMist_Cave_Lava_Frame6[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/6.4bpp");
+const u16 gTilesetAnims_MtMist_Cave_Lava_Frame7[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/7.4bpp");
+const u16 tileset_anims_space_3[16] = {};
+
+const u16 *const gTilesetAnims_MtMist_Cave_Lava[] = {
+    gTilesetAnims_MtMist_Cave_Lava_Frame0,
+    gTilesetAnims_MtMist_Cave_Lava_Frame1,
+    gTilesetAnims_MtMist_Cave_Lava_Frame2,
+    gTilesetAnims_MtMist_Cave_Lava_Frame3
+};
+
 static void ResetTilesetAnimBuffer(void)
 {
     sTilesetDMA3TransferBufferSize = 0;
@@ -834,6 +866,13 @@ void InitTilesetAnim_BattleDome(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_BattleDome;
 }
 
+void InitTilesetAnim_MtMist(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_MtMist;
+}
+
 static void TilesetAnim_Rustboro(u16 timer)
 {
     if (timer % 8 == 0)
@@ -1063,6 +1102,21 @@ static void QueueAnimTiles_Slateport_Balloons(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_Slateport_Balloons[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 224)), 4 * TILE_SIZE_4BPP);
 }
 
+static void QueueAnimTiles_MtMist_Steam(u8 timer)
+{
+    u8 i = timer % ARRAY_COUNT(gTilesetAnims_MtMist_Steam);
+    AppendTilesetAnimToBuffer(gTilesetAnims_MtMist_Steam[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 288)), 4 * TILE_SIZE_4BPP);
+
+    i = (timer + 2) % (int)ARRAY_COUNT(gTilesetAnims_MtMist_Steam);
+    AppendTilesetAnimToBuffer(gTilesetAnims_MtMist_Steam[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 292)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_MtMist_Lava(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_MtMist_Cave_Lava);
+    AppendTilesetAnimToBuffer(gTilesetAnims_MtMist_Cave_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 160)), 4 * TILE_SIZE_4BPP);
+}
+
 static void TilesetAnim_MauvilleGym(u16 timer)
 {
     if (timer % 2 == 0)
@@ -1108,6 +1162,14 @@ static void TilesetAnim_BattleDome2(u16 timer)
 {
     if (timer % 4 == 0)
         BlendAnimPalette_BattleDome_FloorLightsNoBlend(timer / 4);
+}
+
+static void TilesetAnim_MtMist(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_MtMist_Steam(timer / 16);
+    if (timer % 16 == 1)
+        QueueAnimTiles_MtMist_Lava(timer / 16);
 }
 
 static void QueueAnimTiles_Building_TVTurnedOn(u16 timer)

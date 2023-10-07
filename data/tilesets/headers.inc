@@ -884,7 +884,7 @@ gTileset_MtMist::
 	.4byte gTilesetPalettes_MtMist
 	.4byte gMetatiles_MtMist
 	.4byte gMetatileAttributes_MtMist
-	.4byte NULL
+	.4byte InitTilesetAnim_MtMist
 
 	.align 2
 gTileset_Glassworks::
