@@ -567,7 +567,7 @@ const u16 gTilesetAnims_MtMist_Cave_Lava_Frame4[] = INCBIN_U16("data/tilesets/se
 const u16 gTilesetAnims_MtMist_Cave_Lava_Frame5[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/5.4bpp");
 const u16 gTilesetAnims_MtMist_Cave_Lava_Frame6[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/6.4bpp");
 const u16 gTilesetAnims_MtMist_Cave_Lava_Frame7[] = INCBIN_U16("data/tilesets/secondary/mtmist/anim/lava/7.4bpp");
-const u16 tileset_anims_space_3[16] = {};
+const u16 tileset_anims_space_12[16] = {};
 
 const u16 *const gTilesetAnims_MtMist_Cave_Lava[] = {
     gTilesetAnims_MtMist_Cave_Lava_Frame0,
