@@ -322,7 +322,7 @@ mWillowWalksOffOfDock:
 	walk_up
 	walk_right
 	walk_right
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mBradleyWalksOffOfDock:
@@ -334,7 +334,7 @@ mBradleyWalksOffOfDock:
 	walk_up
 	walk_up
 	walk_right
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mPlayerWalksOffOfDock:
@@ -345,7 +345,7 @@ mPlayerWalksOffOfDock:
 	walk_up
 	walk_up
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 mPlayerEntersFromEast1:
@@ -399,36 +399,36 @@ mBradleyWalksOut:
 	delay_16
 	walk_in_place_fast_left
 	walk_in_place_fast_left
-	face_left
+	walk_in_place_slow_left
 	step_end
 
 mBradleyLooksAround:
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	delay_16
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	step_end
 
 mBradleyPanics:
 	walk_in_place_fast_left
 	walk_in_place_fast_left
 	walk_in_place_fast_left
-	face_right
+	walk_in_place_slow_right
 	delay_16
-	face_up
+	walk_in_place_slow_up
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
@@ -473,36 +473,36 @@ mBradleyWalksOutEastVer:
 	walk_up
 	walk_in_place_fast_down
 	walk_in_place_fast_down
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mBradleyLooksAroundEastVer:
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mBradleyPanicsEastVer:
 	walk_in_place_fast_down
 	walk_in_place_fast_down
 	walk_in_place_fast_down
-	face_right
+	walk_in_place_slow_right
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
-	face_up
+	walk_in_place_slow_up
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
@@ -578,7 +578,7 @@ mPlayerStepsBack:
 mOldManStepsAside:
 	walk_slow_right
 	walk_slow_up
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 SunsetVillage_DockSign_Text_0:

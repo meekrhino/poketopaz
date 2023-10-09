@@ -641,7 +641,7 @@ movement mShiftCameraToLeft {
 
 movement mDefenderRunsIntoTown {
     walk_fast_left * 8
-    face_right
+    walk_in_place_slow_right
 }
 
 movement mRocketFollows {
@@ -795,7 +795,7 @@ movement mAlisaWalksOffAfterBattle {
 
 movement mWalkRightLookUp {
     walk_right
-    face_up
+    walk_in_place_slow_up
 }
 
 //=====================================

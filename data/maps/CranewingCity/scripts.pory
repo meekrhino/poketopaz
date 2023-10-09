@@ -228,14 +228,14 @@ movement mEscortFullMovement {
     walk_right * 8
     walk_up * 17
     walk_left * 9
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mPlayerFollowsEscortFull {
     walk_right * 9
     walk_up * 17
     walk_left * 8
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mEscortLeavesTheArea {

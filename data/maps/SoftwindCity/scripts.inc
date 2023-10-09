@@ -593,7 +593,7 @@ mDefenderRunsIntoTown:
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
-	face_right
+	walk_in_place_slow_right
 	step_end
 
 mRocketFollows:
@@ -855,7 +855,7 @@ mAlisaWalksOffAfterBattle:
 
 mWalkRightLookUp:
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 SoftwindCity_ElderGuard_Text_0:

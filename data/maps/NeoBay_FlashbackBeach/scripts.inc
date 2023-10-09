@@ -36,7 +36,7 @@ NeoBay_FlashbackBeach_DoFlashback::
 
 
 mBradleyRandomSpinning:
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
@@ -53,7 +53,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
@@ -64,7 +64,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
@@ -77,7 +77,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
@@ -92,7 +92,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
@@ -109,7 +109,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
@@ -118,7 +118,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
@@ -131,7 +131,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
@@ -142,7 +142,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
@@ -157,7 +157,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
@@ -168,7 +168,7 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
@@ -183,11 +183,11 @@ mBradleyRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mSimonRandomSpinning:
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
@@ -198,7 +198,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
@@ -209,7 +209,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
@@ -226,7 +226,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
@@ -243,7 +243,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
@@ -256,7 +256,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	delay_16
@@ -267,7 +267,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
@@ -278,7 +278,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
@@ -291,7 +291,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	delay_16
@@ -308,7 +308,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
@@ -321,7 +321,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
@@ -338,7 +338,7 @@ mSimonRandomSpinning:
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mWalkDownSlow2:

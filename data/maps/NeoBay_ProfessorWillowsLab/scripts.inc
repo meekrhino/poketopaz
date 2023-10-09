@@ -752,7 +752,7 @@ mBradleyEntersFirstTime:
 	walk_left
 	walk_left
 	walk_left
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mBradleyEntersSecondTime:
@@ -764,7 +764,7 @@ mBradleyEntersSecondTime:
 	walk_left
 	walk_left
 	walk_up
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mEntersDoorFromTop:
@@ -780,7 +780,7 @@ mPlayerEntersFirstTime:
 	walk_down
 	walk_left
 	walk_left
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mPlayerEntersSecondTime:
@@ -789,7 +789,7 @@ mPlayerEntersSecondTime:
 	walk_down
 	walk_left
 	walk_left
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mExclamationPoint:
@@ -867,7 +867,7 @@ mAmpureRushesOut:
 	walk_up
 	walk_up
 	walk_left
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 mAmpureRushesOut2:
@@ -894,7 +894,7 @@ mAmpureRushesOut2:
 
 mLookLeftStartled:
 	emote_exclamation_mark
-	face_left
+	walk_in_place_slow_left
 	step_end
 
 mWillowComesUpToFriends:
@@ -903,7 +903,7 @@ mWillowComesUpToFriends:
 	walk_right
 	walk_right
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 mWillowGoesToTable:
@@ -915,12 +915,12 @@ mWillowGoesToTable:
 	step_end
 
 mBradleyDeliberates:
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mBradleyWalksToVenap:
@@ -930,7 +930,7 @@ mBradleyWalksToVenap:
 	walk_right
 	walk_down
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 mBradleyWalksToCelsinge:
@@ -941,7 +941,7 @@ mBradleyWalksToCelsinge:
 	walk_down
 	walk_right
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 mBradleyWalksToEchoise:
@@ -964,7 +964,7 @@ mBradleyRegroupsAfterVenap:
 	walk_left
 	walk_left
 	walk_up
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mBradleyRegroupsAfterCelsinge:
@@ -975,7 +975,7 @@ mBradleyRegroupsAfterCelsinge:
 	walk_left
 	walk_left
 	walk_up
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mBradleyRegroupsAfterEchoise:
@@ -987,7 +987,7 @@ mBradleyRegroupsAfterEchoise:
 	walk_left
 	walk_left
 	walk_up
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mPlayerRegroupsAfterVenap:
@@ -996,7 +996,7 @@ mPlayerRegroupsAfterVenap:
 	walk_up
 	walk_up
 	walk_left
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mPlayerRegroupsAfterCelsinge:
@@ -1006,7 +1006,7 @@ mPlayerRegroupsAfterCelsinge:
 	walk_up
 	walk_up
 	walk_left
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mPlayerRegroupsAfterEchoise:
@@ -1017,7 +1017,7 @@ mPlayerRegroupsAfterEchoise:
 	walk_up
 	walk_up
 	walk_left
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mWillowRegroupsAfterStarter:
@@ -1062,12 +1062,12 @@ mPlayerExits:
 	step_end
 
 mWillowDeliberates:
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	step_end
 
 mPlayerExitsInSunset:
@@ -1114,7 +1114,7 @@ mWillowExitsInSunset:
 
 mWillowHoldsDoor:
 	walk_right
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	step_end
@@ -1150,14 +1150,14 @@ mWillowGivesDexToPlayer:
 
 mWillowGivesDexToBradley:
 	walk_down
-	face_left
+	walk_in_place_slow_left
 	delay_16
 	delay_16
 	delay_16
 	walk_right
 	walk_up
 	walk_right
-	face_left
+	walk_in_place_slow_left
 	step_end
 
 WillowsLab_YouGoFirst_Text_0:

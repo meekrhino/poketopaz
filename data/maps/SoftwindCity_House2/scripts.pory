@@ -152,7 +152,7 @@ movement mManReturnsWithMilk {
     delay_16
     walk_up
     walk_right
-    face_up
+    walk_in_place_slow_up
     delay_16 * 2
     walk_in_place_slow_up
     delay_16
@@ -169,7 +169,7 @@ movement mManReturnsWithMilkPlayerLeft {
     delay_16
     walk_up
     walk_right
-    face_up
+    walk_in_place_slow_up
     delay_16 * 2
     walk_in_place_slow_up
     delay_16
@@ -186,7 +186,7 @@ movement mManReturnsWithMilkPlayerBelow {
     delay_16
     walk_up
     walk_right
-    face_up
+    walk_in_place_slow_up
     delay_16 * 2
     walk_in_place_slow_up
     delay_16

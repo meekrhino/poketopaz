@@ -288,7 +288,7 @@ mFarmerLadyWalksBack:
 	walk_slow_left
 	walk_slow_up
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mFarmerLadyEntersHouse:

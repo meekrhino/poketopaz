@@ -317,7 +317,7 @@ mEscortFullMovement:
 	walk_left
 	walk_left
 	walk_left
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 mPlayerFollowsEscortFull:
@@ -355,7 +355,7 @@ mPlayerFollowsEscortFull:
 	walk_left
 	walk_left
 	walk_left
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 mEscortLeavesTheArea:

@@ -279,7 +279,7 @@ mGlassworksTechComesBackLong:
 	walk_right
 	walk_right
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	step_end
 
 mGlassworksTechWalksToMachine:
@@ -300,7 +300,7 @@ mGlassworksTechWalksToMachineLoopAround:
 
 mGlassworksTechRunsMachine:
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	walk_right
@@ -316,7 +316,7 @@ mGlassworksTechFinishesMachineLong:
 	walk_left
 	walk_down
 	walk_left
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mGlassworksTechFinishesMachine:
@@ -325,7 +325,7 @@ mGlassworksTechFinishesMachine:
 	walk_left
 	walk_left
 	walk_left
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 CranewingCity_Glassworks_1F_VisitorMan_Text_0:

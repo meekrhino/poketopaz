@@ -475,7 +475,7 @@ movement mFarmerLadyWalksBack {
     walk_slow_left * 5
     walk_slow_up
     delay_16
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mFarmerLadyEntersHouse {

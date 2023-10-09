@@ -883,14 +883,14 @@ movement mBradleyEntersFirstTime {
     set_visible
     walk_down * 4
     walk_left * 3
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mBradleyEntersSecondTime {
     walk_down * 4
     walk_left * 3
     walk_up
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mEntersDoorFromTop {
@@ -902,13 +902,13 @@ movement mPlayerEntersFirstTime {
     delay_16 * 2
     walk_down * 3
     walk_left * 2
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mPlayerEntersSecondTime {
     walk_down * 3
     walk_left * 2
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mExclamationPoint {
@@ -965,7 +965,7 @@ movement mPlayerWalksDown {
 movement mAmpureRushesOut {
     walk_up * 2
     walk_left
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mAmpureRushesOut2 {
@@ -978,13 +978,13 @@ movement mAmpureRushesOut2 {
 
 movement mLookLeftStartled {
     emote_exclamation_mark
-    face_left
+    walk_in_place_slow_left
 }
 
 movement mWillowComesUpToFriends {
     walk_down
     walk_right * 4
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mWillowGoesToTable {
@@ -993,9 +993,9 @@ movement mWillowGoesToTable {
 }
 
 movement mBradleyDeliberates {
-    face_right
+    walk_in_place_slow_right
     delay_16 * 4
-    face_down
+    walk_in_place_slow_down
 }
 
 // Bradley goes to pick a starter
@@ -1004,7 +1004,7 @@ movement mBradleyWalksToVenap {
     walk_right * 2
     walk_down
     walk_right
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mBradleyWalksToCelsinge {
@@ -1012,7 +1012,7 @@ movement mBradleyWalksToCelsinge {
     walk_right * 2
     walk_down
     walk_right * 2
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mBradleyWalksToEchoise {
@@ -1029,7 +1029,7 @@ movement mBradleyRegroupsAfterVenap {
     walk_up * 2
     walk_left * 2
     walk_up
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mBradleyRegroupsAfterCelsinge {
@@ -1037,7 +1037,7 @@ movement mBradleyRegroupsAfterCelsinge {
     walk_up * 2
     walk_left * 2
     walk_up
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mBradleyRegroupsAfterEchoise {
@@ -1045,28 +1045,28 @@ movement mBradleyRegroupsAfterEchoise {
     walk_up * 2
     walk_left * 2
     walk_up
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mPlayerRegroupsAfterVenap {
     walk_left
     walk_up * 3
     walk_left
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mPlayerRegroupsAfterCelsinge {
     walk_left * 2
     walk_up * 3
     walk_left
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mPlayerRegroupsAfterEchoise {
     walk_left * 3
     walk_up * 3
     walk_left
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mWillowRegroupsAfterStarter {
@@ -1096,9 +1096,9 @@ movement mPlayerExits {
 }
 
 movement mWillowDeliberates {
-    face_right
+    walk_in_place_slow_right
     delay_16 * 4
-    face_left
+    walk_in_place_slow_left
 }
 
 movement mPlayerExitsInSunset {
@@ -1121,7 +1121,7 @@ movement mWillowExitsInSunset {
 
 movement mWillowHoldsDoor {
     walk_right
-    face_left
+    walk_in_place_slow_left
     delay_16 * 2
 }
 
@@ -1149,12 +1149,12 @@ movement mWillowGivesDexToPlayer {
 
 movement mWillowGivesDexToBradley {
     walk_down
-    face_left
+    walk_in_place_slow_left
     delay_16 * 3
     walk_right
     walk_up
     walk_right
-    face_left
+    walk_in_place_slow_left
 }
 
 //=====================================

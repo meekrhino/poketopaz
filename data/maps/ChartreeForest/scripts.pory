@@ -443,20 +443,20 @@ movement mFroyApproaches_3 {
 }
 
 movement mFroyLooksAround {
-    face_right
+    walk_in_place_slow_right
     delay_16 * 3
-    face_up
+    walk_in_place_slow_up
     delay_16 * 3
-    face_down
+    walk_in_place_slow_down
     delay_16 * 3
-    face_right
+    walk_in_place_slow_right
     delay_16 * 3
-    face_left
+    walk_in_place_slow_left
 }
 
 movement mFroyStartsToLeave {
     walk_right * 2
-    face_left
+    walk_in_place_slow_left
 }
 
 movement mFroyLeaves_1 {
@@ -482,7 +482,7 @@ movement mFroyLeaves_3 {
 }
 
 movement mLookRightStartled {
-    face_right
+    walk_in_place_slow_right
     emote_exclamation_mark
 }
 

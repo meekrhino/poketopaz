@@ -236,29 +236,29 @@ mFroyApproaches_3:
 	step_end
 
 mFroyLooksAround:
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	delay_16
-	face_down
+	walk_in_place_slow_down
 	delay_16
 	delay_16
 	delay_16
-	face_right
+	walk_in_place_slow_right
 	delay_16
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	step_end
 
 mFroyStartsToLeave:
 	walk_right
 	walk_right
-	face_left
+	walk_in_place_slow_left
 	step_end
 
 mFroyLeaves_1:
@@ -306,7 +306,7 @@ mFroyLeaves_3:
 	step_end
 
 mLookRightStartled:
-	face_right
+	walk_in_place_slow_right
 	emote_exclamation_mark
 	step_end
 

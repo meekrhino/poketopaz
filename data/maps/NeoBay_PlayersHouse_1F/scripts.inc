@@ -115,18 +115,18 @@ MomGivesRunningShoes:
 mMomDeliberates1:
 	walk_slow_left
 	walk_slow_left
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	walk_in_place_slow_up
 	walk_in_place_slow_up
 	delay_16
 	walk_slow_right
-	face_up
+	walk_in_place_slow_up
 	walk_in_place_slow_up
 	walk_in_place_slow_up
 	delay_16
 	delay_16
-	face_left
+	walk_in_place_slow_left
 	step_end
 
 mMomDeliberates2:
@@ -135,7 +135,7 @@ mMomDeliberates2:
 	delay_16
 	delay_16
 	walk_right
-	face_down
+	walk_in_place_slow_down
 	step_end
 
 mPlayerWalksOverToMom:

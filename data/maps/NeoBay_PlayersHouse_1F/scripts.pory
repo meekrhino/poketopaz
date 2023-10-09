@@ -151,21 +151,21 @@ text PlayersHouse_1F_SayGoodbye {
 //=====================================
 movement mMomDeliberates1 {
     walk_slow_left * 2
-    face_up
+    walk_in_place_slow_up
     delay_16
     walk_in_place_slow_up * 2
     delay_16
     walk_slow_right
-    face_up
+    walk_in_place_slow_up
     walk_in_place_slow_up * 2
     delay_16 * 2
-    face_left
+    walk_in_place_slow_left
 }
 
 movement mMomDeliberates2 {
     delay_16 * 4
     walk_right
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mPlayerWalksOverToMom {

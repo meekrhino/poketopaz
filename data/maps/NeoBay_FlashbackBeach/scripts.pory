@@ -69,55 +69,55 @@ script NeoBay_FlashbackBeach_DoFlashback {
 // Movement
 //=====================================
 movement mBradleyRandomSpinning {
-    face_right
+    walk_in_place_slow_right
     delay_16 * 16
-    face_left
+    walk_in_place_slow_left
     delay_16 * 10
-    face_down
+    walk_in_place_slow_down
     delay_16 * 12
-    face_left
+    walk_in_place_slow_left
     delay_16 * 14
-    face_down
+    walk_in_place_slow_down
     delay_16 * 16
-    face_right
+    walk_in_place_slow_right
     delay_16 * 8
-    face_left
+    walk_in_place_slow_left
     delay_16 * 12
-    face_right
+    walk_in_place_slow_right
     delay_16 * 10
-    face_down
+    walk_in_place_slow_down
     delay_16 * 14
-    face_left
+    walk_in_place_slow_left
     delay_16 * 10
-    face_right
+    walk_in_place_slow_right
     delay_16 * 14
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mSimonRandomSpinning {
-    face_down
+    walk_in_place_slow_down
     delay_16 * 10
-    face_right
+    walk_in_place_slow_right
     delay_16 * 10
-    face_down
+    walk_in_place_slow_down
     delay_16 * 16
-    face_left
+    walk_in_place_slow_left
     delay_16 * 16
-    face_down
+    walk_in_place_slow_down
     delay_16 * 12
-    face_up
+    walk_in_place_slow_up
     delay_16 * 10
-    face_left
+    walk_in_place_slow_left
     delay_16 * 10
-    face_right
+    walk_in_place_slow_right
     delay_16 * 12
-    face_up
+    walk_in_place_slow_up
     delay_16 * 16
-    face_down
+    walk_in_place_slow_down
     delay_16 * 12
-    face_right
+    walk_in_place_slow_right
     delay_16 * 16
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mWalkDownSlow2 {

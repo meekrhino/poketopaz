@@ -164,7 +164,7 @@ mManReturnsWithMilk:
 	delay_16
 	walk_up
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	walk_in_place_slow_up
@@ -188,7 +188,7 @@ mManReturnsWithMilkPlayerLeft:
 	delay_16
 	walk_up
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	walk_in_place_slow_up
@@ -214,7 +214,7 @@ mManReturnsWithMilkPlayerBelow:
 	delay_16
 	walk_up
 	walk_right
-	face_up
+	walk_in_place_slow_up
 	delay_16
 	delay_16
 	walk_in_place_slow_up

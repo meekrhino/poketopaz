@@ -636,12 +636,12 @@ movement mEnterShip {
 
 movement mBradleyWalksUpAndLooksAtPlayer {
     walk_up
-    face_right
+    walk_in_place_slow_right
 }
 
 movement mPlayerWalksUpAndLooksAtBradley {
     walk_up
-    face_left
+    walk_in_place_slow_left
 }
 
 movement mBradleyEscortsPlayerToMeadow {
@@ -657,28 +657,28 @@ movement mPlayerEscortsBradleyToMeadow {
     walk_left * 5
     walk_up * 4
     walk_left * 12
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mBradleyLooksAroundAndFidgets {
-    face_right
+    walk_in_place_slow_right
     delay_16 * 4
     walk_left
     walk_up * 2
-    face_left
+    walk_in_place_slow_left
     delay_16 * 3
-    face_up
+    walk_in_place_slow_up
     delay_16 * 3
-    face_right
+    walk_in_place_slow_right
     delay_16 * 3
-    face_up
+    walk_in_place_slow_up
     delay_16 * 3
     walk_in_place_fast_down * 4
     walk_left
     delay_16 * 3
-    face_up
+    walk_in_place_slow_up
     delay_16 * 3
-    face_left
+    walk_in_place_slow_left
     delay_16 * 3
     walk_right
     walk_down
@@ -694,12 +694,12 @@ movement mAmpureRunsUpToPlayer {
 
 movement mLookUpStartled {
     emote_exclamation_mark
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mWalkUpLookRight {
     walk_up
-    face_right
+    walk_in_place_slow_right
 }
 
 movement mBradleyApproachesForOptionalFight {
@@ -730,7 +730,7 @@ movement mNeoBayMomWalksUpToPlayer {
 movement mNeoBayMomStartsToLeave {
     walk_slow_right * 4
     delay_16 * 4
-    face_left
+    walk_in_place_slow_left
     delay_16 * 4
     walk_slow_right * 4
     set_invisible

@@ -260,7 +260,7 @@ movement mGlassworksTechComesBack {
 movement mGlassworksTechComesBackLong {
     walk_down
     walk_right * 4
-    face_up
+    walk_in_place_slow_up
 }
 
 movement mGlassworksTechWalksToMachine {
@@ -278,7 +278,7 @@ movement mGlassworksTechWalksToMachineLoopAround {
 
 movement mGlassworksTechRunsMachine {
     walk_right
-    face_up
+    walk_in_place_slow_up
     delay_16 * 2
     walk_right * 2
     walk_up
@@ -289,13 +289,13 @@ movement mGlassworksTechFinishesMachineLong {
     walk_left * 3
     walk_down
     walk_left
-    face_down
+    walk_in_place_slow_down
 }
 
 movement mGlassworksTechFinishesMachine {
     walk_down * 2
     walk_left * 3
-    face_down
+    walk_in_place_slow_down
 }
 
 //=====================================

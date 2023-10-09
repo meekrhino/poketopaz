@@ -210,7 +210,7 @@ Route205_FlowerShop_LurkingMan_Text_2:
 	.string "Use that to water seeds and make them\n"
 	.string "grow.\p"
 	.string "One seed becomes many, and together we\n"
-	.string "can fill the world with plants!$"
+	.string "fill the world with plants!$"
 
 Route205_FlowerShop_Ninja_Text_0:
 	.string "Fu fu fu!\p"
