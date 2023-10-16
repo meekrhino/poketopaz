@@ -7,6 +7,52 @@ mapscripts Route206_MapScripts {}
 //=====================================
 // Global Scripts
 //=====================================
+script(global) Route206_Mikael {
+    trainerbattle_single(TRAINER_MIKAEL, Route206_Text_MikaelIntro, Route206_Text_MikaelDefeated)
+    msgbox(Route206_Text_MikaelPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route206_Jurgen {
+    trainerbattle_single(TRAINER_JURGEN, Route206_Text_JurgenIntro, Route206_Text_JurgenDefeated)
+    msgbox(Route206_Text_JurgenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route206_Winston {
+    trainerbattle_single(TRAINER_WINSTON, Route206_Text_WinstonIntro, Route206_Text_WinstonDefeated)
+    msgbox(Route206_Text_WinstonPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route206_Eli {
+    trainerbattle_single(TRAINER_ELI, Route206_Text_EliIntro, Route206_Text_EliDefeated)
+    msgbox(Route206_Text_EliPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route206_Sierra {
+    trainerbattle_single(TRAINER_SIERRA, Route206_Text_SierraIntro, Route206_Text_SierraDefeated)
+    msgbox(Route206_Text_SierraPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route206_Wanda {
+    trainerbattle_single(TRAINER_WANDA, Route206_Text_WandaIntro, Route206_Text_WandaDefeated)
+    msgbox(Route206_Text_WandaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script(global) Route206_Man {
+    msgbox(format(""), MSGBOX_NPC)
+    end
+}
+
+script(global) Route206_Fisherman {
+    msgbox(format(""), MSGBOX_NPC)
+    end
+}
+
 
 //=====================================
 // Local Scripts

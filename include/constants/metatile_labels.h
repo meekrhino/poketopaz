@@ -137,10 +137,19 @@
 // gTileset_ChartreeForest
 #define METATILE_ChartreeForest_AshField       0x200
 #define METATILE_ChartreeForest_AshField_2     0x201
+#define METATILE_ChartreeForest_AshField_3     0x220
+#define METATILE_ChartreeForest_AshField_4     0x221
+#define METATILE_ChartreeForest_AshField_5     0x222
 #define METATILE_ChartreeForest_AshGrass       0x23D
 #define METATILE_ChartreeForest_AshGrass_2     0x213
+#define METATILE_ChartreeForest_AshGrass_3     0x295
+#define METATILE_ChartreeForest_AshGrass_4     0x296
+#define METATILE_ChartreeForest_AshGrass_5     0x297
 #define METATILE_ChartreeForest_NormalGrass    0x245
 #define METATILE_ChartreeForest_NormalGrass_2  0x227
+#define METATILE_ChartreeForest_NormalGrass_3  0x28D
+#define METATILE_ChartreeForest_NormalGrass_4  0x28E
+#define METATILE_ChartreeForest_NormalGrass_5  0x28F
 
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9

@@ -46,6 +46,10 @@ script(global) ChartreeForest_TriggerFroy {
             applymovement(FROY, mFroyApproaches_2)
         case 22:
             applymovement(FROY, mFroyApproaches_3)
+        case 23:
+            applymovement(FROY, mFroyApproaches_4)
+        case 24:
+            applymovement(FROY, mFroyApproaches_5)
     }
     waitmovement(0)
     msgbox(ChartreeForest_Text_FroyIntroduction)
@@ -69,6 +73,10 @@ script(global) ChartreeForest_TriggerFroy {
             applymovement(FROY, mFroyLeaves_2)
         case 22:
             applymovement(FROY, mFroyLeaves_3)
+        case 22:
+            applymovement(FROY, mFroyLeaves_4)
+        case 22:
+            applymovement(FROY, mFroyLeaves_5)
     }
     waitmovement(0)
     removeobject(FROY)
@@ -438,8 +446,22 @@ movement mFroyApproaches_2 {
 }
 
 movement mFroyApproaches_3 {
+    walk_left * 2
     walk_down
-    walk_left * 4
+    walk_left * 2
+}
+
+movement mFroyApproaches_4 {
+    walk_left * 2
+    walk_down * 2
+    walk_left * 2
+}
+
+movement mFroyApproaches_5 {
+    walk_left * 2
+    walk_down * 2
+    walk_left * 2
+    walk_in_place_slow_down
 }
 
 movement mFroyLooksAround {
@@ -478,6 +500,20 @@ movement mFroyLeaves_3 {
     walk_right * 5
     walk_down * 3
     walk_right * 2
+    set_invisible
+}
+
+movement mFroyLeaves_4 {
+    walk_right * 5
+    walk_down * 2
+    walk_right * 3
+    set_invisible
+}
+
+movement mFroyLeaves_3 {
+    walk_right * 5
+    walk_down * 2
+    walk_right * 3
     set_invisible
 }
 
