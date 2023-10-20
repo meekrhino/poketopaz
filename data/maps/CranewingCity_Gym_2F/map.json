@@ -1,0 +1,28 @@
+{
+  "id": "MAP_CRANEWING_CITY_GYM_2F",
+  "name": "CranewingCity_Gym_2F",
+  "layout": "LAYOUT_CRANEWING_CITY_GYM_2F",
+  "music": "MUS_GYM",
+  "region_map_section": "MAPSEC_CRANEWING_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}
