@@ -399,7 +399,7 @@ static void SetCutGrassMetatile(s16 x, s16 y)
     case METATILE_ChartreeForest_NormalGrass_5:
     case METATILE_ChartreeForest_AshGrass_5:
         MapGridSetMetatileIdAt(x, y, METATILE_ChartreeForest_AshField_5);
-        break
+        break;
     case METATILE_General_TallGrass_TreeUp:
         MapGridSetMetatileIdAt(x, y, METATILE_General_Grass_TreeUp);
         break;

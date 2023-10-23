@@ -73,9 +73,9 @@ script(global) ChartreeForest_TriggerFroy {
             applymovement(FROY, mFroyLeaves_2)
         case 22:
             applymovement(FROY, mFroyLeaves_3)
-        case 22:
+        case 23:
             applymovement(FROY, mFroyLeaves_4)
-        case 22:
+        case 24:
             applymovement(FROY, mFroyLeaves_5)
     }
     waitmovement(0)
@@ -510,7 +510,7 @@ movement mFroyLeaves_4 {
     set_invisible
 }
 
-movement mFroyLeaves_3 {
+movement mFroyLeaves_5 {
     walk_right * 5
     walk_down * 2
     walk_right * 3

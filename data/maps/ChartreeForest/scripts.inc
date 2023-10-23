@@ -11,6 +11,8 @@ ChartreeForest_TriggerFroy::
 	case 20, ChartreeForest_TriggerFroy_3
 	case 21, ChartreeForest_TriggerFroy_4
 	case 22, ChartreeForest_TriggerFroy_5
+	case 23, ChartreeForest_TriggerFroy_6
+	case 24, ChartreeForest_TriggerFroy_7
 ChartreeForest_TriggerFroy_1:
 	waitmovement 0
 	msgbox ChartreeForest_Text_FroyIntroduction
@@ -28,10 +30,12 @@ ChartreeForest_TriggerFroy_1:
 	closemessage
 	quest_start QUEST_CHARTREE_ROCKETS
 	switch VAR_TEMP_1
-	case 20, ChartreeForest_TriggerFroy_8
-	case 21, ChartreeForest_TriggerFroy_9
-	case 22, ChartreeForest_TriggerFroy_10
-ChartreeForest_TriggerFroy_6:
+	case 20, ChartreeForest_TriggerFroy_10
+	case 21, ChartreeForest_TriggerFroy_11
+	case 22, ChartreeForest_TriggerFroy_12
+	case 23, ChartreeForest_TriggerFroy_13
+	case 24, ChartreeForest_TriggerFroy_14
+ChartreeForest_TriggerFroy_8:
 	waitmovement 0
 	removeobject 1
 	setvar VAR_CHARTREE_FOREST_STATE, 1
@@ -50,17 +54,33 @@ ChartreeForest_TriggerFroy_5:
 	applymovement 1, mFroyApproaches_3
 	goto ChartreeForest_TriggerFroy_1
 
-ChartreeForest_TriggerFroy_8:
-	applymovement 1, mFroyLeaves_1
-	goto ChartreeForest_TriggerFroy_6
+ChartreeForest_TriggerFroy_6:
+	applymovement 1, mFroyApproaches_4
+	goto ChartreeForest_TriggerFroy_1
 
-ChartreeForest_TriggerFroy_9:
-	applymovement 1, mFroyLeaves_2
-	goto ChartreeForest_TriggerFroy_6
+ChartreeForest_TriggerFroy_7:
+	applymovement 1, mFroyApproaches_5
+	goto ChartreeForest_TriggerFroy_1
 
 ChartreeForest_TriggerFroy_10:
+	applymovement 1, mFroyLeaves_1
+	goto ChartreeForest_TriggerFroy_8
+
+ChartreeForest_TriggerFroy_11:
+	applymovement 1, mFroyLeaves_2
+	goto ChartreeForest_TriggerFroy_8
+
+ChartreeForest_TriggerFroy_12:
 	applymovement 1, mFroyLeaves_3
-	goto ChartreeForest_TriggerFroy_6
+	goto ChartreeForest_TriggerFroy_8
+
+ChartreeForest_TriggerFroy_13:
+	applymovement 1, mFroyLeaves_4
+	goto ChartreeForest_TriggerFroy_8
+
+ChartreeForest_TriggerFroy_14:
+	applymovement 1, mFroyLeaves_5
+	goto ChartreeForest_TriggerFroy_8
 
 
 ChartreeForest_SignRoute203::
@@ -228,11 +248,30 @@ mFroyApproaches_2:
 	step_end
 
 mFroyApproaches_3:
+	walk_left
+	walk_left
 	walk_down
 	walk_left
 	walk_left
+	step_end
+
+mFroyApproaches_4:
 	walk_left
 	walk_left
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	step_end
+
+mFroyApproaches_5:
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_in_place_slow_down
 	step_end
 
 mFroyLooksAround:
@@ -300,6 +339,34 @@ mFroyLeaves_3:
 	walk_down
 	walk_down
 	walk_down
+	walk_right
+	walk_right
+	set_invisible
+	step_end
+
+mFroyLeaves_4:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	set_invisible
+	step_end
+
+mFroyLeaves_5:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
 	walk_right
 	walk_right
 	set_invisible
