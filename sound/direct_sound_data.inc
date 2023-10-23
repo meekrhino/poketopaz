@@ -516,7 +516,7 @@ Cry_Embear::
 
     .align 2
 Cry_Grizlare::
-    .incbin "sound/direct_sound_samples/cries/growlithe.bin"
+    .incbin "sound/direct_sound_samples/cries/grizlare.bin"
 
     .align 2
 Cry_Mankey::
@@ -744,7 +744,7 @@ Cry_Ludicolo::
 
     .align 2
 Cry_Trillogill::
-    .incbin "sound/direct_sound_samples/cries/tidasale.bin"
+    .incbin "sound/direct_sound_samples/cries/trillogill.bin"
 
     .align 2
 Cry_Tidasale::
