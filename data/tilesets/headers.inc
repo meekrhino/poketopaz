@@ -896,3 +896,14 @@ gTileset_Glassworks::
 	.4byte gMetatiles_Glassworks
 	.4byte gMetatileAttributes_Glassworks
 	.4byte NULL
+
+	.align 2
+gTileset_CranewingGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_CranewingGym
+	.4byte gTilesetPalettes_CranewingGym
+	.4byte gMetatiles_CranewingGym
+	.4byte gMetatileAttributes_CranewingGym
+	.4byte NULL @ animation callback

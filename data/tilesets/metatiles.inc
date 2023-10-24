@@ -600,3 +600,10 @@ gMetatiles_Glassworks::
 	.align 1
 gMetatileAttributes_Glassworks::
 	.incbin "data/tilesets/secondary/glassworks/metatile_attributes.bin"
+	.align 1
+gMetatiles_CranewingGym::
+	.incbin "data/tilesets/secondary/cranewing_gym/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CranewingGym::
+	.incbin "data/tilesets/secondary/cranewing_gym/metatile_attributes.bin"

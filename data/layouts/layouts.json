@@ -5500,12 +5500,12 @@
     {
       "id": "LAYOUT_CRANEWING_CITY_GYM",
       "name": "CranewingCity_Gym_Layout",
-      "width": 17,
-      "height": 15,
+      "width": 21,
+      "height": 16,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_ChartreeForest",
+      "secondary_tileset": "gTileset_CranewingGym",
       "border_filepath": "data/layouts/CranewingCity_Gym/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity_Gym/map.bin"
     },
@@ -5836,12 +5836,12 @@
     {
       "id": "LAYOUT_CRANEWING_CITY_GYM_2F",
       "name": "CranewingCity_Gym_2F_Layout",
-      "width": 17,
-      "height": 17,
+      "width": 21,
+      "height": 18,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_ChartreeForest",
+      "secondary_tileset": "gTileset_CranewingGym",
       "border_filepath": "data/layouts/CranewingCity_Gym_2F/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity_Gym_2F/map.bin"
     }

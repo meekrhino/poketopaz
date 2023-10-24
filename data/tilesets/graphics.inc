@@ -1849,3 +1849,23 @@ gTilesetPalettes_Glassworks::
 	.align 2
 gTilesetTiles_Glassworks::
 	.incbin "data/tilesets/secondary/glassworks/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_CranewingGym::
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/cranewing_gym/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_CranewingGym::
+	.incbin "data/tilesets/secondary/cranewing_gym/tiles.4bpp.lz"
