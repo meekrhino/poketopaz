@@ -44,7 +44,7 @@ script(global) Route206_Wanda {
 }
 
 script(global) Route206_Man {
-    msgbox(format(""), MSGBOX_NPC)
+    msgbox(Route206_Text_Man, MSGBOX_NPC)
     end
 }
 
@@ -61,6 +61,140 @@ script(global) Route206_Fisherman {
 //=====================================
 // Text
 //=====================================
+text Route206_Text_Man {
+    format (
+        "I heard some kind of shouting\n"
+        "coming from further down the route earlier."
+        "I hope everyone is okay.\p"
+        "Have I investigated?\p"
+        "No, no, I'm sure somebody closer…"
+    )
+}
+
+text Route206_Text_Fisherman {
+    format (
+        "There is nothing more relaxing\n"
+        "than spending a lazy afternoon by the water.\p"
+        "I actually forgot my fishing pole today,"
+        "but to be honest it was never about the fishing."
+    )
+}
+
+text Route206_Text_MikaelIntro {
+    format(
+        "I came here to find inspiration\nfor my painting."
+    )
+}
+
+text Route206_Text_MikaelDefeated {
+    format(
+        "I'm overwhelmed with the natural beauty of this area."
+    )
+}
+
+text Route206_Text_MikaelPostBattle {
+    format(
+        "I still haven't decided what I want to paint…"
+    )
+}
+
+text Route206_Text_JurgenIntro {
+    format(
+        "The secret to fishing is finding the right spot.\p"
+        "I picked this place because it's perfectly secluded."
+    )
+}
+
+text Route206_Text_JurgenDefeated {
+    format(
+        "How about you go fish over there?\pOr anywhere else but here."
+    )
+}
+
+text Route206_Text_JurgenPostBattle {
+    format(
+        "What, come back to try taking my fishing spot again?"
+    )
+}
+
+text Route206_Text_WinstonIntro {
+    format(
+        "I sure do love fishing, but I suppose I could take a short break."
+    )
+}
+
+text Route206_Text_WinstonDefeated {
+    format(
+        "Yep, a break is just want I needed."
+    )
+}
+
+text Route206_Text_WinstonPostBattle {
+    format(
+        "Nothing like a nice, long break from fishing."
+    )
+}
+
+text Route206_Text_EliIntro {
+    format(
+        "zzz… Huh?\p"
+        "I keep dozing off while fishing.\p"
+        "Maybe you can help me wake up."
+    )
+}
+
+text Route206_Text_EliDefeated {
+    format(
+        "Now that I'm awake, maybe I will actually catch something!"
+    )
+}
+
+text Route206_Text_EliPostBattle {
+    format(
+        "zzz… Oh?\p"
+        "I guess I must have fallen asleep again."
+    )
+}
+
+text Route206_Text_WandaIntro {
+    format(
+        "I came out here to plant berries and raise Pokémon…\p"
+        "And I'm all out of berries."
+    )
+}
+
+text Route206_Text_WandaDefeated {
+    format(
+        "Well, I suppose I can still enjoy the scenery."
+    )
+}
+
+text Route206_Text_WandaPostBattle {
+    format(
+        "I'm still out of berries, but always ready to train!"
+    )
+}
+
+text Route206_Text_SierraIntro {
+    format(
+        "I've been hunting for Bug Pokémon in these trees."
+    )
+}
+
+text Route206_Text_SierraDefeated {
+    format(
+        "I'm so clumsy…\p"
+        "I keep tripping and scaring the bugs away with all my noise."
+    )
+}
+
+text Route206_Text_SierraPostBattle {
+    format(
+        "I've heard there are Jalsida\n"
+        "in the area, but I just can't seem to find them."
+    )
+}
+
 
 //=====================================
 // Movement
