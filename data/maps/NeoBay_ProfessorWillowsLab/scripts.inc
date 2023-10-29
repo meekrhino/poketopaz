@@ -361,7 +361,7 @@ WillowIntroduction:
 	applymovement 5, mFaceDown
 	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceDown
-	waitmovement 0
+	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox WillowIntroduction_Text_8
 	msgbox WillowIntroduction_Text_9
 	msgbox WillowsLab_WillowIntroduction, MSGBOX_AUTOCLOSE

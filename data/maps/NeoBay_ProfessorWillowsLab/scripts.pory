@@ -333,7 +333,7 @@ script(local) WillowIntroduction {
     applymovement(BRADLEY, mFaceDown)
     delay(32)
     applymovement(PLAYER, mFaceDown)
-    waitmovement(0)
+    waitmovement(PLAYER)
     msgbox(format("Oh? And who are you?"))
     msgbox(format("Bradley: This is {PLAYER}.\pThey've been my friend for as long as I can remember."))
     msgbox(WillowsLab_WillowIntroduction, MSGBOX_AUTOCLOSE)
