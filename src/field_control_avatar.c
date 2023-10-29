@@ -35,12 +35,14 @@
 #include "constants/map_types.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
+#include "field_message_box.h"
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPreviousPlayerMetatileBehavior = 0;
 
 u8 gSelectedObjectEvent;
 
+static void ToggleMsgBoxPosition(void);
 static void GetPlayerPosition(struct MapPosition *);
 static void GetInFrontOfPlayerPosition(struct MapPosition *);
 static u16 GetPlayerCurMetatileBehavior(int);
@@ -105,10 +107,6 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
                 input->pressedAButton = TRUE;
             if (newKeys & B_BUTTON)
                 input->pressedBButton = TRUE;
-            if (newKeys & L_BUTTON)
-                input->pressedLButton = TRUE;
-            if (newKeys & R_BUTTON)
-                input->pressedRButton = TRUE;
         }
 
         if (heldKeys & (DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT))
@@ -134,6 +132,11 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         input->dpadDirection = DIR_WEST;
     else if (heldKeys & DPAD_RIGHT)
         input->dpadDirection = DIR_EAST;
+
+    if (newKeys & L_BUTTON)
+        input->pressedLButton = TRUE;
+    if (newKeys & R_BUTTON)
+        input->pressedRButton = TRUE;
 }
 
 int ProcessPlayerFieldInput(struct FieldInput *input)
@@ -192,12 +195,20 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     }
     if (input->pressedLButton || input->pressedRButton)
     {
-        //TODO
+        ToggleMsgBoxPosition();
     }
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
         return TRUE;
 
     return FALSE;
+}
+
+static void ToggleMsgBoxPosition(void)
+{
+    if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
+        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_TOP;
+    else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
+        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
 }
 
 static void GetPlayerPosition(struct MapPosition *position)

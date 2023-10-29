@@ -8,6 +8,8 @@
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 
+u8 gMessageBoxPosition;
+
 static void ExpandStringAndStartDrawFieldMessage(const u8*, bool32);
 static void StartDrawFieldMessage(void);
 
@@ -18,6 +20,7 @@ void InitFieldMessageBox(void)
     gTextFlags.useAlternateDownArrow = FALSE;
     gTextFlags.autoScroll = FALSE;
     gTextFlags.forceMidTextSpeed = FALSE;
+    gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
 }
 
 #define tState data[0]
@@ -61,7 +64,14 @@ static void DestroyTask_DrawFieldMessage(void)
 
 bool8 ShowFieldMessage(const u8 *str)
 {
-    //SetWindowAttribute(0, WINDOW_TILEMAP_TOP, 1);
+    if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
+    {
+        SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_BOTTOM);
+    }
+    else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
+    {
+        SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_TOP);
+    }
     if (sFieldMessageBoxMode != FIELD_MESSAGE_BOX_HIDDEN)
         return FALSE;
     ExpandStringAndStartDrawFieldMessage(str, TRUE);

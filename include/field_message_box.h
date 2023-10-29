@@ -9,6 +9,14 @@ enum
     FIELD_MESSAGE_BOX_AUTO_SCROLL,
 };
 
+enum
+{
+    FIELD_MSG_BOX_POSITION_BOTTOM,
+    FIELD_MSG_BOX_POSITION_TOP,
+};
+
+extern u8 gMessageBoxPosition;
+
 bool8 ShowFieldMessage(const u8 *message);
 bool8 ShowPokenavFieldMessage(const u8 *message);
 bool8 ShowFieldMessageFromBuffer(void);
