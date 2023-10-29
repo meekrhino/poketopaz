@@ -176,7 +176,7 @@ void StopFieldMessage(void)
 void UpdateMsgBoxPosition(void)
 {
     mgba_printf(MGBA_LOG_DEBUG, "UpdateMsgBoxPosition");
-    if (!sAllowMsgBoxMove || gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM) 
+    if (!sAllowMsgBoxMove || gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
         SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_BOTTOM);
     else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
         SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_TOP);
@@ -187,13 +187,16 @@ void ToggleMsgBoxPosition(void)
     mgba_printf(MGBA_LOG_DEBUG, "ToggleMsgBoxPosition");
     if (sFieldMessageBoxMode != FIELD_MESSAGE_BOX_HIDDEN)
     {
-        ClearDialogWindowAndFrame(0, TRUE);
+        CallWindowFunction(0, WindowFunc_ClearDialogWindowAndFrame);
+        ClearWindowTilemap(0);
         if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
             gMessageBoxPosition = FIELD_MSG_BOX_POSITION_TOP;
         else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
             gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
         UpdateMsgBoxPosition();
-        DrawDialogueFrame(0, TRUE);
+        CallWindowFunction(0, WindowFunc_DrawDialogueFrame);
+        PutWindowTilemap(0);
+        ScheduleBgCopyTilemapToVram(0);
     }
 }
 
