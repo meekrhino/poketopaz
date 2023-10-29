@@ -185,19 +185,16 @@ void UpdateMsgBoxPosition(void)
 void ToggleMsgBoxPosition(void)
 {
     mgba_printf(MGBA_LOG_DEBUG, "ToggleMsgBoxPosition");
-    if (sFieldMessageBoxMode != FIELD_MESSAGE_BOX_HIDDEN)
-    {
-        CallWindowFunction(0, WindowFunc_ClearDialogWindowAndFrame);
-        ClearWindowTilemap(0);
-        if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
-            gMessageBoxPosition = FIELD_MSG_BOX_POSITION_TOP;
-        else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
-            gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
-        UpdateMsgBoxPosition();
-        CallWindowFunction(0, WindowFunc_DrawDialogueFrame);
-        PutWindowTilemap(0);
-        ScheduleBgCopyTilemapToVram(0);
-    }
+    CallWindowFunction(0, WindowFunc_ClearDialogWindowAndFrame);
+    ClearWindowTilemap(0);
+    if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
+        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_TOP;
+    else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
+        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
+    UpdateMsgBoxPosition();
+    CallWindowFunction(0, WindowFunc_DrawDialogueFrame);
+    PutWindowTilemap(0);
+    ScheduleBgCopyTilemapToVram(0);
 }
 
 void AllowMsgBoxMove(void)
