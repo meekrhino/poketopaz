@@ -36,13 +36,14 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "field_message_box.h"
+#include "printf.h"
+#include "mgba.h"
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPreviousPlayerMetatileBehavior = 0;
 
 u8 gSelectedObjectEvent;
 
-static void ToggleMsgBoxPosition(void);
 static void GetPlayerPosition(struct MapPosition *);
 static void GetInFrontOfPlayerPosition(struct MapPosition *);
 static u16 GetPlayerCurMetatileBehavior(int);
@@ -193,22 +194,10 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         ShowStartMenu();
         return TRUE;
     }
-    if (input->pressedLButton || input->pressedRButton)
-    {
-        ToggleMsgBoxPosition();
-    }
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
         return TRUE;
 
     return FALSE;
-}
-
-static void ToggleMsgBoxPosition(void)
-{
-    if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
-        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_TOP;
-    else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
-        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
 }
 
 static void GetPlayerPosition(struct MapPosition *position)
@@ -244,8 +233,7 @@ static bool8 TryStartInteractionScript(struct MapPosition *position, u16 metatil
         return FALSE;
 
     // Don't play interaction sound for certain scripts.
-    if (script != LittlerootTown_BrendansHouse_2F_EventScript_PC
-     && script != LittlerootTown_MaysHouse_2F_EventScript_PC
+    if (script != NeoBay_PlayersHouse_2F_PC
      && script != SecretBase_EventScript_PC
      && script != SecretBase_EventScript_RecordMixingPC
      && script != SecretBase_EventScript_DollInteract

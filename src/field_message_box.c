@@ -1,10 +1,13 @@
 #include "global.h"
 #include "menu.h"
+#include "main.h"
 #include "string_util.h"
 #include "task.h"
 #include "text.h"
 #include "match_call.h"
 #include "field_message_box.h"
+#include "printf.h"
+#include "mgba.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 static EWRAM_DATA bool8 sAllowMsgBoxMove = FALSE;
@@ -22,6 +25,7 @@ void InitFieldMessageBox(void)
     gTextFlags.useAlternateDownArrow = FALSE;
     gTextFlags.autoScroll = FALSE;
     gTextFlags.forceMidTextSpeed = FALSE;
+    mgba_printf(MGBA_LOG_DEBUG, "InitFieldMessageBox");
     gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
 }
 
@@ -34,16 +38,17 @@ static void Task_DrawFieldMessage(u8 taskId)
     switch (task->tState)
     {
         case 0:
-           LoadMessageBoxAndBorderGfx();
-           task->tState++;
-           break;
+            LoadMessageBoxAndBorderGfx();
+            task->tState++;
+            break;
         case 1:
-           DrawDialogueFrame(0, TRUE);
-           task->tState++;
-           break;
+            DrawDialogueFrame(0, TRUE);
+            task->tState++;
+            break;
         case 2:
             if (RunTextPrintersAndIsPrinter0Active() != TRUE)
             {
+                mgba_printf(MGBA_LOG_DEBUG, "End Task");
                 sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
                 DestroyTask(taskId);
             }
@@ -66,11 +71,7 @@ static void DestroyTask_DrawFieldMessage(void)
 
 bool8 ShowFieldMessage(const u8 *str)
 {
-    if (!sAllowMsgBoxMove || gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM) 
-        SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_BOTTOM);
-    else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
-        SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_TOP);
-    
+    UpdateMsgBoxPosition();
     if (sFieldMessageBoxMode != FIELD_MESSAGE_BOX_HIDDEN)
         return FALSE;
     ExpandStringAndStartDrawFieldMessage(str, TRUE);
@@ -170,6 +171,30 @@ void StopFieldMessage(void)
 {
     DestroyTask_DrawFieldMessage();
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
+}
+
+void UpdateMsgBoxPosition(void)
+{
+    mgba_printf(MGBA_LOG_DEBUG, "UpdateMsgBoxPosition");
+    if (!sAllowMsgBoxMove || gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM) 
+        SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_BOTTOM);
+    else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
+        SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_TOP);
+}
+
+void ToggleMsgBoxPosition(void)
+{
+    mgba_printf(MGBA_LOG_DEBUG, "ToggleMsgBoxPosition");
+    if (sFieldMessageBoxMode != FIELD_MESSAGE_BOX_HIDDEN)
+    {
+        ClearDialogWindowAndFrame(0, TRUE);
+        if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
+            gMessageBoxPosition = FIELD_MSG_BOX_POSITION_TOP;
+        else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
+            gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
+        UpdateMsgBoxPosition();
+        DrawDialogueFrame(0, TRUE);
+    }
 }
 
 void AllowMsgBoxMove(void)

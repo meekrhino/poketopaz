@@ -342,6 +342,7 @@ SECTIONS {
         src/quests.o(.text);
         src/printf.o(.text);
         src/field_torches.o(.text);
+        src/field_message_box.o(.text);
     } =0
 
     script_data :
@@ -708,6 +709,7 @@ SECTIONS {
         src/quests.o(.rodata);
         src/printf.o(.rodata);
         src/field_torches.o(.rodata);
+        src/field_message_box.o(.rodata);
     } =0
 
     song_data :

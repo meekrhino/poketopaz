@@ -26,6 +26,9 @@ bool8 IsFieldMessageBoxHidden(void);
 u8 GetFieldMessageBoxMode(void);
 void StopFieldMessage(void);
 void InitFieldMessageBox(void);
+void StopFieldMessage(void);
+void ToggleMsgBoxPosition(void);
+void UpdateMsgBoxPosition(void);
 void AllowMsgBoxMove(void);
 void LockMsgBoxPosition(void);
 

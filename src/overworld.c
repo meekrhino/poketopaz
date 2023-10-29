@@ -1453,6 +1453,13 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
             PlayerStep(inputStruct.dpadDirection, newKeys, heldKeys);
         }
     }
+    else 
+    {
+        if (inputStruct.pressedLButton || inputStruct.pressedRButton)
+        {
+            ToggleMsgBoxPosition();
+        }
+    }
 }
 
 void CB1_Overworld(void)
