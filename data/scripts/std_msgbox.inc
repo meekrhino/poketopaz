@@ -1,5 +1,6 @@
 Std_MsgboxNPC:
 	lock
+	special AllowMsgBoxMove
 	faceplayer
 	message NULL
 	waitmessage

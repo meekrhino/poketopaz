@@ -7,6 +7,7 @@
 #include "field_message_box.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
+static EWRAM_DATA bool8 sAllowMsgBoxMove = FALSE;
 
 u8 gMessageBoxPosition;
 
@@ -16,6 +17,7 @@ static void StartDrawFieldMessage(void);
 void InitFieldMessageBox(void)
 {
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
+    sAllowMsgBoxMove = TRUE;
     gTextFlags.canABSpeedUpPrint = FALSE;
     gTextFlags.useAlternateDownArrow = FALSE;
     gTextFlags.autoScroll = FALSE;
@@ -64,14 +66,11 @@ static void DestroyTask_DrawFieldMessage(void)
 
 bool8 ShowFieldMessage(const u8 *str)
 {
-    if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
-    {
+    if (!sAllowMsgBoxMove || gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM) 
         SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_BOTTOM);
-    }
     else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
-    {
         SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_TOP);
-    }
+    
     if (sFieldMessageBoxMode != FIELD_MESSAGE_BOX_HIDDEN)
         return FALSE;
     ExpandStringAndStartDrawFieldMessage(str, TRUE);
@@ -171,4 +170,14 @@ void StopFieldMessage(void)
 {
     DestroyTask_DrawFieldMessage();
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
+}
+
+void AllowMsgBoxMove(void)
+{
+    sAllowMsgBoxMove = TRUE;
+}
+
+void LockMsgBoxPosition(void)
+{
+    sAllowMsgBoxMove = FALSE;
 }

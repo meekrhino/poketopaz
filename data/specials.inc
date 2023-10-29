@@ -537,3 +537,5 @@ gSpecials::
 	def_special TrySetBattleTowerLinkType
     def_special Bank
     def_special PrintTest
+	def_special AllowMsgBoxMove
+	def_special LockMsgBoxPosition
