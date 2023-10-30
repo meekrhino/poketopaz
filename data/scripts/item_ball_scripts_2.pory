@@ -69,3 +69,11 @@ script(global) Route205_ItemSurfSpot {
 script(global) Route205_ItemCorner {
     finditem(ITEM_AWAKENING)
 }
+
+script(global) Route206_ItemFlowers {
+    finditem(ITEM_POTION)
+}
+
+script(global) Route206_ItemSouth {
+    finditem(X_SPEED)
+}

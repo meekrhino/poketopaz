@@ -548,8 +548,8 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_205_GRASS                     (FLAG_HIDDEN_ITEMS_START + 0x09)
 #define FLAG_HIDDEN_ITEM_ROUTE_205_FENCE                     (FLAG_HIDDEN_ITEMS_START + 0x0A)
 #define FLAG_HIDDEN_ITEM_ROUTE_205_FLOWER_SHOP               (FLAG_HIDDEN_ITEMS_START + 0x0B)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD           (FLAG_HIDDEN_ITEMS_START + 0x0C)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1        (FLAG_HIDDEN_ITEMS_START + 0x0D)
+#define FLAG_HIDDEN_ITEM_206_TREE                            (FLAG_HIDDEN_ITEMS_START + 0x0C)
+#define FLAG_HIDDEN_ITEM_206_ROCK                            (FLAG_HIDDEN_ITEMS_START + 0x0D)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE          (FLAG_HIDDEN_ITEMS_START + 0x0E)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL           (FLAG_HIDDEN_ITEMS_START + 0x0F)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST             (FLAG_HIDDEN_ITEMS_START + 0x10)
@@ -1057,8 +1057,8 @@
 #define FLAG_ITEM_CRANEWING_NORTH                                   0x3F4
 #define FLAG_ITEM_ROUTE_205_SURF                                    0x3F5
 #define FLAG_ITEM_ROUTE_205_CORNER                                  0x3F6
-#define FLAG_ITEM_ROUTE_114_PROTEIN                                 0x3F7
-#define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
+#define FLAG_ITEM_ROUTE_206_FLOWERS                                 0x3F7
+#define FLAG_ITEM_ROUTE_206_SOUTH                                   0x3F8
 #define FLAG_ITEM_ROUTE_115_TM_01                                   0x3F9
 #define FLAG_ITEM_ROUTE_115_IRON                                    0x3FA
 #define FLAG_ITEM_ROUTE_116_ETHER                                   0x3FB

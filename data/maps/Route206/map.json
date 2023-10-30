@@ -30,8 +30,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route206_ItemSouth",
+      "flag": "FLAG_ITEM_ROUTE_206_SOUTH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -43,8 +43,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route206_ItemFlowers",
+      "flag": "FLAG_ITEM_ROUTE_206_FLOWERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
@@ -275,16 +275,16 @@
       "x": 20,
       "y": 14,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_206_ROCK"
     },
     {
       "type": "hidden_item",
       "x": 34,
       "y": 29,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_IRON",
+      "flag": "FLAG_HIDDEN_ITEM_206_TREE"
     }
   ]
 }
