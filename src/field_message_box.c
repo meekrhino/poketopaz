@@ -10,7 +10,7 @@
 #include "mgba.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
-static EWRAM_DATA bool8 sAllowMsgBoxMove = FALSE;
+static EWRAM_DATA u8 sMsgBoxMovement = FALSE;
 
 u8 gMessageBoxPosition;
 
@@ -20,7 +20,7 @@ static void StartDrawFieldMessage(void);
 void InitFieldMessageBox(void)
 {
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
-    sAllowMsgBoxMove = TRUE;
+    sMsgBoxMovement = FIELD_MSG_BOX_MOVEMENT_FREE;
     gTextFlags.canABSpeedUpPrint = FALSE;
     gTextFlags.useAlternateDownArrow = FALSE;
     gTextFlags.autoScroll = FALSE;
@@ -176,7 +176,21 @@ void StopFieldMessage(void)
 void UpdateMsgBoxPosition(void)
 {
     mgba_printf(MGBA_LOG_DEBUG, "UpdateMsgBoxPosition");
-    if (!sAllowMsgBoxMove || gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
+    if (sMsgBoxMovement  == FIELD_MSG_BOX_MOVEMENT_LOCK_BOTTOM)
+    {
+        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
+    }
+    else if(sMsgBoxMovement  == FIELD_MSG_BOX_MOVEMENT_LOCK_TOP)
+    {
+        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_TOP;
+    }
+    else if (sMsgBoxMovement  == FIELD_MSG_BOX_MOVEMENT_START_TOP)
+    {
+        gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
+        sMsgBoxMovement = FIELD_MSG_BOX_MOVEMENT_FREE;
+    }
+
+    if(gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
         SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_BOTTOM);
     else if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
         SetWindowAttribute(0, WINDOW_TILEMAP_TOP, TEXT_BOX_POSITION_TOP);
@@ -199,10 +213,30 @@ void ToggleMsgBoxPosition(void)
 
 void AllowMsgBoxMove(void)
 {
-    sAllowMsgBoxMove = TRUE;
+    sMsgBoxMovement = FIELD_MSG_BOX_MOVEMENT_FREE;
+    UpdateMsgBoxPosition();
 }
 
-void LockMsgBoxPosition(void)
+void LockMsgBoxBottom(void)
 {
-    sAllowMsgBoxMove = FALSE;
+    sMsgBoxMovement = FIELD_MSG_BOX_MOVEMENT_LOCK_BOTTOM;
+    if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_TOP)
+    {
+        ToggleMsgBoxPosition();
+    }
+}
+
+void LockMsgBoxTop(void)
+{
+    sMsgBoxMovement = FIELD_MSG_BOX_MOVEMENT_LOCK_TOP;
+    if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)
+    {
+        ToggleMsgBoxPosition();
+    }
+}
+
+void StartMsgBoxBottom(void)
+{
+    sMsgBoxMovement = FIELD_MSG_BOX_MOVEMENT_START_TOP;
+    UpdateMsgBoxPosition();
 }

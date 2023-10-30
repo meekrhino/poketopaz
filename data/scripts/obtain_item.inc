@@ -54,6 +54,7 @@ EventScript_ObtainedItem::
 	compare VAR_0x8001, 1
 	goto_if_eq EventScript_ObtainedItemMessage
 	buffernumberstring 0, VAR_0x8001
+    special LockMsgBoxBottom
 	message gText_ObtainedTheItems
 	goto EventScript_ContinueObtainedItem
 EventScript_ObtainedItemMessage:
@@ -64,6 +65,7 @@ EventScript_ContinueObtainedItem:
 	waitfanfare
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	hideitemdesc
+    special AllowMsgBoxMove
 	setvar VAR_RESULT, TRUE
 	return
 
@@ -122,6 +124,7 @@ Std_FindItem::
 
 EventScript_PickUpItem::
 	removeobject VAR_LAST_TALKED
+	special LockMsgBoxBottom
 	additem VAR_0x8004, VAR_0x8005
 	copyvar VAR_0x8006 VAR_0x8004
 	specialvar VAR_RESULT, BufferTMHMMoveName
@@ -135,14 +138,15 @@ EventScript_PickUpItem::
 	bufferitemnameplural STR_VAR_2, VAR_0x8004, VAR_0x8005
 	pyramid_inchallenge
 	goto_if_eq VAR_RESULT, TRUE, EventScript_PutBattlePyramidItemInBag
-	special LockMsgBoxPosition
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	special AllowMsgBoxMove
 	hideitemdesc
 	return
 
 EventScript_PutBattlePyramidItemInBag::
+	special LockMsgBoxBottom
 	msgbox gText_PlayerPutItemInBag, MSGBOX_DEFAULT
+	special AllowMsgBoxMove
 	hideitemdesc
 	return
 
@@ -190,11 +194,13 @@ EventScript_PickUpHiddenItem::
 
 EventScript_FoundHiddenTMHM::
 	bufferitemnameplural STR_VAR_1, VAR_0x8004, 1
+    special LockMsgBoxBottom
 	message gText_PlayerFoundOneTMHM
 	goto EventScript_PutHiddenItemInPocket
 	end
 
 EventScript_FoundHiddenItem::
+    special LockMsgBoxBottom
 	message gText_PlayerFoundOneItem
 	goto EventScript_PutHiddenItemInPocket
 	end
@@ -208,6 +214,7 @@ EventScript_PutHiddenItemInPocket::
 	copyvar VAR_0x8004, VAR_0x8008
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	hideitemdesc
+	special AllowMsgBoxMove
 	special TryPutTreasureInvestigatorsOnAir
 	special SetHiddenItemFlag
 	releaseall

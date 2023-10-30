@@ -538,4 +538,6 @@ gSpecials::
     def_special Bank
     def_special PrintTest
 	def_special AllowMsgBoxMove
-	def_special LockMsgBoxPosition
+	def_special LockMsgBoxBottom
+    def_special LockMsgBoxTop
+    def_special StartMsgBoxBottom

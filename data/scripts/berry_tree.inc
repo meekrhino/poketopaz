@@ -112,6 +112,7 @@ BerryTree_EventScript_PickBerry::
 	goto_if_eq VAR_0x8004, 0, BerryTree_EventScript_BerryPocketFull
 	special IncrementDailyPickedBerries
 	special ObjectEventInteractionRemoveBerryTree
+    special LockMsgBoxBottom
 	message BerryTree_Text_PickedTheBerry
     delay 10
 	showberrydesc
@@ -123,6 +124,7 @@ BerryTree_EventScript_PickBerry::
 	waitmessage
 	waitbuttonpress
 	hideitemdesc
+    special AllowMsgBoxMove
 	release
 	end
 

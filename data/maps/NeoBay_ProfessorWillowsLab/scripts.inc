@@ -123,7 +123,7 @@ WillowsLab_EventScript_SelectVenap_4:
 	playmoncry SPECIES_VENAP, CRY_MODE_NORMAL
 	waitmoncry
 	showmonpic SPECIES_VENAP, 10, 3
-	special LockMsgBoxPosition
+	special LockMsgBoxBottom
 	msgbox WillowsLab_DoYouWantVenap, MSGBOX_YESNO
 	special AllowMsgBoxMove
 	waitmessage
@@ -156,7 +156,7 @@ WillowsLab_EventScript_SelectCelsinge_4:
 	playmoncry SPECIES_CELSINGE, CRY_MODE_NORMAL
 	waitmoncry
 	showmonpic SPECIES_CELSINGE, 10, 3
-	special LockMsgBoxPosition
+	special LockMsgBoxBottom
 	msgbox WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO
 	special AllowMsgBoxMove
 	waitmessage
@@ -189,7 +189,7 @@ WillowsLab_EventScript_SelectEchoise_4:
 	playmoncry SPECIES_ECHOISE, CRY_MODE_NORMAL
 	waitmoncry
 	showmonpic SPECIES_ECHOISE, 10, 3
-	special LockMsgBoxPosition
+	special LockMsgBoxBottom
 	msgbox WillowsLab_DoYouWantEchoise, MSGBOX_YESNO
 	special AllowMsgBoxMove
 	waitmessage

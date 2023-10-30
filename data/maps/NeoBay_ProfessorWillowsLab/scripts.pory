@@ -146,7 +146,7 @@ script(global) WillowsLab_EventScript_SelectVenap {
     playmoncry(SPECIES_VENAP, CRY_MODE_NORMAL)
     waitmoncry
     showmonpic(SPECIES_VENAP, 10, 3)
-    special(LockMsgBoxPosition)
+    special(LockMsgBoxBottom)
     msgbox(WillowsLab_DoYouWantVenap, MSGBOX_YESNO)
     special(AllowMsgBoxMove)
     waitmessage
@@ -168,7 +168,7 @@ script(global) WillowsLab_EventScript_SelectCelsinge {
     playmoncry(SPECIES_CELSINGE, CRY_MODE_NORMAL)
     waitmoncry
     showmonpic(SPECIES_CELSINGE, 10, 3)
-    special(LockMsgBoxPosition)
+    special(LockMsgBoxBottom)
     msgbox(WillowsLab_DoYouWantCelsinge, MSGBOX_YESNO)
     special(AllowMsgBoxMove)
     waitmessage
@@ -190,7 +190,7 @@ script(global) WillowsLab_EventScript_SelectEchoise {
     playmoncry(SPECIES_ECHOISE, CRY_MODE_NORMAL)
     waitmoncry
     showmonpic(SPECIES_ECHOISE, 10, 3)
-    special(LockMsgBoxPosition)
+    special(LockMsgBoxBottom)
     msgbox(WillowsLab_DoYouWantEchoise, MSGBOX_YESNO)
     special(AllowMsgBoxMove)
     waitmessage

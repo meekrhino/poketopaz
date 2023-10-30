@@ -10,6 +10,7 @@ Std_MsgboxNPC:
 
 Std_MsgboxSign:
 	lockall
+	special AllowMsgBoxMove
 	message NULL
 	waitmessage
 	waitbuttonpress
@@ -39,9 +40,6 @@ Std_MsgboxGetPoints:
 Std_MsgboxPokenav:
 	pokenavcall NULL
 	waitmessage
-	return
-
-EventScript_UnusedReturn:
 	return
 
 Common_EventScript_SaveGame::

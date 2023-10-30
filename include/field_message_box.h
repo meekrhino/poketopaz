@@ -15,6 +15,14 @@ enum
     FIELD_MSG_BOX_POSITION_TOP,
 };
 
+enum
+{
+    FIELD_MSG_BOX_MOVEMENT_FREE,
+    FIELD_MSG_BOX_MOVEMENT_START_TOP,
+    FIELD_MSG_BOX_MOVEMENT_LOCK_TOP,
+    FIELD_MSG_BOX_MOVEMENT_LOCK_BOTTOM,
+};
+
 extern u8 gMessageBoxPosition;
 
 bool8 ShowFieldMessage(const u8 *message);
@@ -30,6 +38,8 @@ void StopFieldMessage(void);
 void ToggleMsgBoxPosition(void);
 void UpdateMsgBoxPosition(void);
 void AllowMsgBoxMove(void);
-void LockMsgBoxPosition(void);
+void LockMsgBoxBottom(void);
+void LockMsgBoxTop(void);
+void StartMsgBoxBottom(void);
 
 #endif // GUARD_FIELD_MESSAGE_BOX_H
