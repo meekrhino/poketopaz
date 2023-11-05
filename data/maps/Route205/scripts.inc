@@ -133,6 +133,11 @@ Route205_FlowerShop::
 	end
 
 
+Route205_DEBUG::
+	givemon SPECIES_JALSIDA, 5
+	end
+
+
 mFlowerGuyEntersHouse:
 	walk_up
 	set_invisible

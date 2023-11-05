@@ -145,6 +145,11 @@ script(global) Route205_FlowerShop {
     end
 }
 
+script(global) Route205_DEBUG {
+    givemon( SPECIES_JALSIDA, 5)
+    end
+}
+
 //=====================================
 // Text
 //=====================================
