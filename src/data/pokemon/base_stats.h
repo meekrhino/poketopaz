@@ -6216,7 +6216,7 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_NEICHIA] =
     {
-        .baseHP        = 100,
+        .baseHP        = 90,
         .baseAttack    = 125,
         .baseDefense   = 100,
         .baseSpeed     = 90,
