@@ -125,6 +125,7 @@ static void Anim_HorizontalSlide_Slow(struct Sprite *sprite);
 static void Anim_VerticalSlide_Slow(struct Sprite *sprite);
 static void Anim_BounceRotateToSides_Small(struct Sprite *sprite);
 static void Anim_BounceRotateToSides_Slow(struct Sprite *sprite);
+static void Anim_BounceRotateToSides_ShortSlow(struct Sprite *sprite);
 static void Anim_BounceRotateToSides_SmallSlow(struct Sprite *sprite);
 static void Anim_ZigzagSlow(struct Sprite *sprite);
 static void Anim_HorizontalShake_Slow(struct Sprite *sprite);
@@ -202,6 +203,7 @@ static void Anim_ShakeGlowGreen_Slow(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue_Fast(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue_Slow(struct Sprite *sprite);
+static void Anim_TeleportFourTimes(struct Sprite *sprite);
 
 static void WaitAnimEnd(struct Sprite *sprite);
 
@@ -516,6 +518,7 @@ static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_V_SLIDE_SLOW]                      = Anim_VerticalSlide_Slow,
     [ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL]      = Anim_BounceRotateToSides_Small,
     [ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW]       = Anim_BounceRotateToSides_Slow,
+    [ANIM_BOUNCE_ROTATE_TO_SIDES_SHORT_SLOW] = Anim_BounceRotateToSides_ShortSlow,
     [ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW] = Anim_BounceRotateToSides_SmallSlow,
     [ANIM_ZIGZAG_SLOW]                       = Anim_ZigzagSlow,
     [ANIM_H_SHAKE_SLOW]                      = Anim_HorizontalShake_Slow,
@@ -592,7 +595,8 @@ static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_SHAKE_GLOW_GREEN_SLOW]             = Anim_ShakeGlowGreen_Slow,
     [ANIM_SHAKE_GLOW_BLUE_FAST]              = Anim_ShakeGlowBlue_Fast,
     [ANIM_SHAKE_GLOW_BLUE]                   = Anim_ShakeGlowBlue,
-    [ANIM_SHAKE_GLOW_BLUE_SLOW]              = Anim_ShakeGlowBlue_Slow
+    [ANIM_SHAKE_GLOW_BLUE_SLOW]              = Anim_ShakeGlowBlue_Slow,
+    [ANIM_TELEPORT_FOUR_TIMES]               = Anim_TeleportFourTimes,
 };
 
 // Each back anim set has 3 possible animations depending on nature
@@ -1741,6 +1745,14 @@ static const s8 sBounceRotateToSidesData[][8][3] =
         { 0,  8, 16},
         { 8, -8, 24},
         {-8,  8, 24},
+        { 8, -8, 24},
+        {-8,  8, 24},
+        { 8, -8, 24},
+        {-8,  0, 24},
+        { 0,  0,  0}
+    },
+    {
+        { 0,  8, 16},
         { 8, -8, 24},
         {-8,  8, 24},
         { 8, -8, 24},
@@ -3502,6 +3514,12 @@ static void Anim_BounceRotateToSides_Small(struct Sprite *sprite)
 static void Anim_BounceRotateToSides_Slow(struct Sprite *sprite)
 {
     sprite->data[6] = 1;
+    Anim_BounceRotateToSides(sprite);
+}
+
+static void Anim_BounceRotateToSides_ShortSlow(struct Sprite *sprite)
+{
+    sprite->data[6] = 2;
     Anim_BounceRotateToSides(sprite);
 }
 
@@ -5351,6 +5369,38 @@ static void Anim_ShakeGlowBlue_Slow(struct Sprite *sprite)
 
     if (sprite->data[2] >= (128 - sprite->data[0] * sprite->data[4]) / 2)
         ShakeGlow_Move(sprite);
+
+    sprite->data[2]++;
+}
+
+static void Anim_TeleportFourTimes(struct Sprite *sprite)
+{
+    if (sprite->data[2] >= 64)
+    {
+        sprite->callback = WaitAnimEnd;
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+    }
+    else if(sprite->data[2] >= 48)
+    {
+        sprite->x2 = 16;
+        sprite->y2 =  -8;
+    }
+    else if(sprite->data[2] >= 32)
+    {
+        sprite->x2 = -16;
+        sprite->y2 =  -16;
+    }
+    else if(sprite->data[2] >= 16)
+    {
+        sprite->x2 = 8;
+        sprite->y2 =  2;
+    }
+    else
+    {
+        sprite->x2 = -12;
+        sprite->y2 =  -8;
+    }
 
     sprite->data[2]++;
 }

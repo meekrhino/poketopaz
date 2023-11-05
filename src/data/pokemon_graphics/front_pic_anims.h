@@ -64,8 +64,9 @@ static const union AnimCmd sAnim_Echoise_1[] =
 
 static const union AnimCmd sAnim_Mermeidon_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 25),
+    ANIMCMD_FRAME(1, 15),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
@@ -114,29 +115,15 @@ static const union AnimCmd sAnim_Pyreign_1[] =
 
 static const union AnimCmd sAnim_Fincherp_1[] =
 {
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
@@ -175,8 +162,11 @@ static const union AnimCmd sAnim_Firrel_1[] =
 
 static const union AnimCmd sAnim_Ampure_1[] =
 {
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_FRAME(1, 75),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
@@ -210,9 +200,9 @@ static const union AnimCmd sAnim_Sandslash_1[] =
 
 static const union AnimCmd sAnim_Lupine_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 35),
+    ANIMCMD_FRAME(0, 15),
     ANIMCMD_END,
 };
 
@@ -234,6 +224,7 @@ static const union AnimCmd sAnim_Wolvine_1[] =
 
 static const union AnimCmd sAnim_Jalsida_1[] =
 {
+    ANIMCMD_FRAME(0, 2),    /* Before it moves */
     ANIMCMD_FRAME(1, 2),
     ANIMCMD_FRAME(0, 2),
     ANIMCMD_FRAME(1, 2),
@@ -241,11 +232,8 @@ static const union AnimCmd sAnim_Jalsida_1[] =
     ANIMCMD_FRAME(1, 2),
     ANIMCMD_FRAME(0, 2),
     ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(0, 2),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(0, 20),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(0, 2),
+
+    ANIMCMD_FRAME(0, 2),    /* First position */
     ANIMCMD_FRAME(1, 2),
     ANIMCMD_FRAME(0, 2),
     ANIMCMD_FRAME(1, 2),
@@ -253,9 +241,50 @@ static const union AnimCmd sAnim_Jalsida_1[] =
     ANIMCMD_FRAME(1, 2),
     ANIMCMD_FRAME(0, 2),
     ANIMCMD_FRAME(1, 2),
+
+    ANIMCMD_FRAME(0, 4),    /* Second position */
+    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+
+    ANIMCMD_FRAME(0, 1),    /* Third position */
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
     ANIMCMD_FRAME(0, 2),
     ANIMCMD_FRAME(1, 2),
     ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+
+    ANIMCMD_FRAME(0, 2),    /* Fourth position*/
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(1, 4),
+
+    ANIMCMD_FRAME(0, 4),   /* Starting position */
+    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+
+    ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
