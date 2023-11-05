@@ -75,5 +75,5 @@ script(global) Route206_ItemFlowers {
 }
 
 script(global) Route206_ItemSouth {
-    finditem(X_SPEED)
+    finditem(ITEM_X_SPEED)
 }

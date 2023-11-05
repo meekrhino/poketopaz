@@ -67,3 +67,13 @@ Route205_ItemCorner::
 	finditem ITEM_AWAKENING
 	return
 
+
+Route206_ItemFlowers::
+	finditem ITEM_POTION
+	return
+
+
+Route206_ItemSouth::
+	finditem ITEM_X_SPEED
+	return
+
