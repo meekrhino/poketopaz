@@ -347,6 +347,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
 {
+    [SPECIES_AMPURE - 1]     = 30,
     [SPECIES_JALSIDA - 1]    = 16,
     [SPECIES_VENONAT - 1]    = 20,
     [SPECIES_MEOWTH - 1]     = 40,

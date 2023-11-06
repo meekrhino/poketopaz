@@ -162,11 +162,12 @@ static const union AnimCmd sAnim_Firrel_1[] =
 
 static const union AnimCmd sAnim_Ampure_1[] =
 {
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 75),
-    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 60),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
