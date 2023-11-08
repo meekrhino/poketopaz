@@ -13,6 +13,17 @@ Creating a spritesheet
 sudo montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent front-sprites.png
 sudo montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent back-sprites.png
 
+
 Regenerating front.png from anim_front.png
 
-while read p; do sudo chmod +777 "$p/front.png"; sudo chmod +777 "$p/anim_front.4bpp"; sudo chmod +777 "$p/front.4bpp"; sudo rm "$p/front.png"; sudo ../../tools/gbagfx/gbagfx $p/anim_front.png $p/anim_front.4bpp; sudo dd if=$p/anim_front.4bpp bs=$(($(stat -c %s $p/anim_front.4bpp) / 2)) count=1 > $p/front.4bpp; sudo ../../tools/gbagfx/gbagfx $p/front.4bpp $p/front.png -palette $p/normal.pal -object -width 8;done < pokemonlist-new.txt
+while read p; \
+	do sudo chmod +777 "$p/front.png"; \
+	sudo chmod +777 "$p/anim_front.4bpp"; \
+    sudo chmod +777 "$p/front.4bpp"; \
+    sudo rm "$p/front.png"; \
+    sudo ../../tools/gbagfx/gbagfx $p/anim_front.png $p/anim_front.4bpp; \
+    sudo dd if=$p/anim_front.4bpp bs=$(($(stat -c %s $p/anim_front.4bpp) / 2)) count=1 > $p/front.4bpp; \
+    sudo ../../tools/gbagfx/gbagfx $p/front.4bpp $p/front.png -palette $p/normal.pal -object -width 8; \
+    sudo ../../tools/gbagfx/gbagfx $p/front.4bpp $p/front-shiny.png -palette $p/shiny.pal -object -width 8; \
+    done \
+< pokemonlist-new.txt
