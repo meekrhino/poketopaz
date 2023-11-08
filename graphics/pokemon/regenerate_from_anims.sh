@@ -50,5 +50,5 @@ if [ -n "$1" ]; then
 else
     while read -r p; do
         process_p "$p"
-    done < pokemonlist-new.txt
+    done < pokemonlist.txt
 fi
