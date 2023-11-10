@@ -12,7 +12,9 @@ process_p() {
     sudo chmod +777 "$p/front-shiny-frame-2.png"
     sudo chmod +777 "$p/anim_front.4bpp"
     sudo chmod +777 "$p/anim_front.png"
+    sudo chmod +777 "$p/anim_front.gif"
     sudo chmod +777 "$p/anim_front_shiny.png"
+    sudo chmod +777 "$p/anim_front_shiny.gif"
     sudo chmod +777 "$p/back.4bpp"
     
     sudo rm "$p/front.png"
