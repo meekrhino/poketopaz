@@ -392,7 +392,7 @@ Cry_Venap::
 
     .align 2
 Cry_Traplent::
-    .incbin "sound/direct_sound_samples/cries/ivysaur.bin"
+    .incbin "sound/direct_sound_samples/cries/traplent.bin"
 
     .align 2
 Cry_Dionare::
