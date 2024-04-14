@@ -10,7 +10,7 @@ for d in *; do sudo ../../tools/gbagfx/gbagfx ${d}/back.png ${d}/back.4bpp; sudo
 
 Creating a spritesheet
 
-sudo montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent front-sprites.png
+sudo montage @pokemonlist.txt -tile 10x15 -geometry 64x128+0+0 -background transparent front-sprites.png
 sudo montage @pokemonlist.txt -tile 15x15 -geometry 64x64+0+0 -background transparent back-sprites.png
 
 
