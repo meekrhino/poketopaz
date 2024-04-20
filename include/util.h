@@ -19,5 +19,6 @@ void DoBgAffineSet(struct BgAffineDstData *dest, u32 texX, u32 texY, s16 scrX, s
 void CopySpriteTiles(u8 shape, u8 size, u8 *tiles, u16 *tilemap, u8 *output);
 u32 ConvertBcdToBinary(u32 bcd);
 u32 ChangeBcdDigit(u32 val, u8 which, s8 delta);
+u32 CalcCRC32(const u8 *data, u32 length);
 
 #endif // GUARD_UTIL_H
