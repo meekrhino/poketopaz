@@ -24,3 +24,42 @@ static const struct TrainerMon sPartnerParty_Steven[MULTI_PARTY_SIZE] = {
     .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 6)
     }
 };
+
+static const struct TrainerMon sPartnerParty_BradleRoute204Venap[MULTI_PARTY_SIZE] = {
+    {
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_AMPURE
+    },
+    {
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_ECHOISE
+    }
+};
+
+static const struct TrainerMon sPartnerParty_BradleRoute204Celsinge[MULTI_PARTY_SIZE] = {
+    {
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_AMPURE
+    },
+    {
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_VENAP
+    }
+};
+
+static const struct TrainerMon sPartnerParty_BradleRoute204Echoise[MULTI_PARTY_SIZE] = {
+    {
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_AMPURE
+    },
+    {
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_CELSINGE
+    }
+};

@@ -134,8 +134,26 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_JALSIDA, 5
+	lockall
+	switch VAR_STARTER_MON
+	case 0, Route205_DEBUG_3
+	case 1, Route205_DEBUG_4
+	case 2, Route205_DEBUG_5
+Route205_DEBUG_1:
+	releaseall
 	end
+
+Route205_DEBUG_3:
+	trainerbattle_multi TRAINER_PERCY, Route205_Text_DebugDefeatedEnemy1, TRAINER_ISHMAEL, Route205_Text_DebugDefeatedEnemy2, PARTNER_BRADLEY_ROUTE_204_VENAP
+	goto Route205_DEBUG_1
+
+Route205_DEBUG_4:
+	trainerbattle_multi TRAINER_PERCY, Route205_Text_DebugDefeatedEnemy1, TRAINER_ISHMAEL, Route205_Text_DebugDefeatedEnemy2, PARTNER_BRADLEY_ROUTE_204_CELSINGE
+	goto Route205_DEBUG_1
+
+Route205_DEBUG_5:
+	trainerbattle_multi TRAINER_PERCY, Route205_Text_DebugDefeatedEnemy1, TRAINER_ISHMAEL, Route205_Text_DebugDefeatedEnemy2, PARTNER_BRADLEY_ROUTE_204_ECHOISE
+	goto Route205_DEBUG_1
 
 
 mFlowerGuyEntersHouse:
@@ -306,3 +324,9 @@ Route205_Text_IshmaelPostBattle::
 	.string "random child?\p"
 	.string "You've probably never heard of the\n"
 	.string "place anyway.$"
+
+Route205_Text_DebugDefeatedEnemy1::
+	.string "I'm enemy 1 and you win!$"
+
+Route205_Text_DebugDefeatedEnemy2::
+	.string "I'm enemy 2 and you win!$"
