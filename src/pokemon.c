@@ -4899,7 +4899,7 @@ const u8 *GetTrainerPartnerName(void)
     {
         if (gPartnerTrainerId >= TRAINER_PARTNER(PARTNER_NONE))
         {
-            return gPartners[gPartnerTrainerId].trainerName;
+            return gPartners[gPartnerTrainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerName;
         }
         else
         {
