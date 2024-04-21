@@ -1211,7 +1211,7 @@ static void ShowDecorationOnMap_(u16 mapX, u16 mapY, u8 decWidth, u8 decHeight, 
         {
             x = mapX + i;
             attributes = GetMetatileAttributesById(NUM_TILES_IN_PRIMARY + gDecorations[decoration].tiles[j * decWidth + i]);
-            if (MetatileBehavior_IsSecretBaseImpassable(attributes & METATILE_ATTR_BEHAVIOR_MASK) == TRUE 
+            if (MetatileBehavior_IsSecretBaseImpassable(attributes & METATILE_ATTR_BEHAVIOR_MASK) == TRUE
              || (gDecorations[decoration].permission != DECORPERM_PASS_FLOOR && (attributes >> METATILE_ATTR_LAYER_SHIFT) != METATILE_LAYER_TYPE_NORMAL))
                 impassableFlag = MAPGRID_COLLISION_MASK;
             else
@@ -1395,7 +1395,7 @@ static void SetUpPlacingDecorationPlayerAvatar(u8 taskId, struct PlaceDecoration
     if (data->decoration->shape == DECORSHAPE_3x1 || data->decoration->shape == DECORSHAPE_3x3 || data->decoration->shape == DECORSHAPE_3x2)
         x -= 8;
 
-    if (gSaveBlock2Ptr->playerGender == MALE)
+    if (gSaveBlock2Ptr->playerGender != FEMALE)
         sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BRENDAN_DECORATING, SpriteCallbackDummy, x, 72, 0);
     else
         sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAY_DECORATING, SpriteCallbackDummy, x, 72, 0);
@@ -1482,7 +1482,7 @@ static bool8 IsSecretBaseTrainerSpot(u8 behaviorAt, u16 layerType)
 // Can't place decoration where the player was standing when they interacted with the PC
 static bool8 IsntInitialPosition(u8 taskId, s16 x, s16 y, u16 layerType)
 {
-    if (x == gTasks[taskId].tInitialX + MAP_OFFSET 
+    if (x == gTasks[taskId].tInitialX + MAP_OFFSET
      && y == gTasks[taskId].tInitialY + MAP_OFFSET
      && layerType != METATILE_LAYER_TYPE_NORMAL)
         return FALSE;
@@ -2682,7 +2682,7 @@ static void InitializeCameraSprite1(struct Sprite *sprite)
 
 static void LoadPlayerSpritePalette(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
+    if (gSaveBlock2Ptr->playerGender != FEMALE)
         LoadSpritePalette(&sSpritePal_PuttingAwayCursorBrendan);
     else
         LoadSpritePalette(&sSpritePal_PuttingAwayCursorMay);

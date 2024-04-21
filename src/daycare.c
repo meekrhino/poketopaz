@@ -1108,7 +1108,7 @@ bool8 NameHasGenderSymbol(const u8 *name, u8 genderRatio)
 {
     u8 i;
     u8 symbolsCount[GENDER_COUNT];
-    symbolsCount[MALE] = symbolsCount[FEMALE] = 0;
+    symbolsCount[MALE] = symbolsCount[FEMALE] = symbolsCount[NONBINARY] = 0;
 
     for (i = 0; name[i] != EOS; i++)
     {

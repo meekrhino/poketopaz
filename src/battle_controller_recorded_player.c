@@ -1674,9 +1674,9 @@ static void RecordedPlayerHandleIntroTrainerBallThrow(void)
 
     paletteNum = AllocSpritePalette(0xD6F9);
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED_LINK)
-        trainerPicId = gLinkPlayers[GetBattlerMultiplayerId(gActiveBattler)].gender;
+        trainerPicId = gPlayerBackPicGenderTable[gLinkPlayers[GetBattlerMultiplayerId(gActiveBattler)].gender];
     else
-        trainerPicId = gSaveBlock2Ptr->playerGender;
+        trainerPicId = gPlayerBackPicGenderTable[gSaveBlock2Ptr->playerGender];
 
     LoadCompressedPalette(gTrainerBackPicPaletteTable[trainerPicId].data, 0x100 + paletteNum * 16, 32);
 

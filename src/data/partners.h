@@ -29,7 +29,7 @@ const struct Trainer gPartners[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_BACK_PIC_MAY,
+        .trainerPic = TRAINER_BACK_PIC_BRADLEY,
         .trainerName = gTrainerNameString_Bradley,
         .trainerType = TRAINER(.items = {},
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY),
@@ -40,7 +40,7 @@ const struct Trainer gPartners[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_BACK_PIC_MAY,
+        .trainerPic = TRAINER_BACK_PIC_BRADLEY,
         .trainerName = gTrainerNameString_Bradley,
         .trainerType = TRAINER(.items = {},
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY),
@@ -51,7 +51,7 @@ const struct Trainer gPartners[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_BACK_PIC_MAY,
+        .trainerPic = TRAINER_BACK_PIC_BRADLEY,
         .trainerName = gTrainerNameString_Bradley,
         .trainerType = TRAINER(.items = {},
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY),

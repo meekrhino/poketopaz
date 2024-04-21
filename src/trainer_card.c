@@ -281,13 +281,15 @@ static const u8 sTrainerPicOffset[2][GENDER_COUNT][2] =
 {
     // Kanto
     {
-        [MALE]   = {13, 4},
-        [FEMALE] = {13, 4}
+        [MALE]      = {13, 4},
+        [FEMALE]    = {13, 4},
+        [NONBINARY] = {13, 4},
     },
     // Hoenn
     {
-        [MALE]   = {1, 0},
-        [FEMALE] = {1, 0}
+        [MALE]      = {1, 0},
+        [FEMALE]    = {1, 0},
+        [NONBINARY] = {1, 0}
     },
 };
 
@@ -295,18 +297,21 @@ static const u8 sTrainerPicFacilityClass[][GENDER_COUNT] =
 {
     [CARD_TYPE_FRLG] =
     {
-        [MALE]   = FACILITY_CLASS_RED,
-        [FEMALE] = FACILITY_CLASS_LEAF
+        [MALE]      = FACILITY_CLASS_RED,
+        [FEMALE]    = FACILITY_CLASS_LEAF,
+        [NONBINARY] = FACILITY_CLASS_LEAF
     },
     [CARD_TYPE_RS] =
     {
-        [MALE]   = FACILITY_CLASS_RS_BRENDAN,
-        [FEMALE] = FACILITY_CLASS_RS_MAY
+        [MALE]      = FACILITY_CLASS_RS_BRENDAN,
+        [FEMALE]    = FACILITY_CLASS_RS_MAY,
+        [NONBINARY] = FACILITY_CLASS_RS_MAY
     },
     [CARD_TYPE_EMERALD] =
     {
-        [MALE]   = FACILITY_CLASS_PLAYER_N,
-        [FEMALE] = FACILITY_CLASS_PLAYER_N
+        [MALE]      = FACILITY_CLASS_PLAYER_N,
+        [FEMALE]    = FACILITY_CLASS_PLAYER_N,
+        [NONBINARY] = FACILITY_CLASS_PLAYER_N
     }
 };
 
@@ -1423,14 +1428,14 @@ static u8 SetCardBgsAndPals(void)
         {
             LoadPalette(sHoennTrainerCardStarPals[sData->trainerCard.stars], 0, 96);
             LoadPalette(sHoennTrainerCardBadges_Pal, 48, 32);
-            if (sData->trainerCard.gender != MALE)
+            if (sData->trainerCard.gender == FEMALE)
                 LoadPalette(sHoennTrainerCardFemaleBg_Pal, 16, 32);
         }
         else
         {
             LoadPalette(sKantoTrainerCardStarPals[sData->trainerCard.stars], 0, 96);
             LoadPalette(sKantoTrainerCardBadges_Pal, 48, 32);
-            if (sData->trainerCard.gender != MALE)
+            if (sData->trainerCard.gender == FEMALE)
                 LoadPalette(sKantoTrainerCardFemaleBg_Pal, 16, 32);
         }
         LoadPalette(sTrainerCardGold_Pal, 64, 32);

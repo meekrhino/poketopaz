@@ -1135,7 +1135,7 @@ static void LinkPartnerHandleDrawTrainerPic(void)
     }
     else
     {
-        trainerPicId = gLinkPlayers[GetBattlerMultiplayerId(gActiveBattler)].gender;
+        trainerPicId = gLinkPlayers[GetBattlerMultiplayerId(gActiveBattler)].gender + TRAINER_BACK_PIC_BRENDAN;
     }
 
     DecompressTrainerBackPic(trainerPicId, gActiveBattler);

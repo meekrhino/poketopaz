@@ -51,32 +51,6 @@ static const struct UCoords8 sBattlerCoords[][MAX_BATTLERS_COUNT] =
     },
 };
 
-// One entry for each of the four Castform forms.
-const struct MonCoords gCastformFrontSpriteCoords[NUM_CASTFORM_FORMS] =
-{
-    [CASTFORM_NORMAL] = { .size = MON_COORDS_SIZE(32, 32), .y_offset = 17 },
-    [CASTFORM_FIRE]   = { .size = MON_COORDS_SIZE(48, 48), .y_offset =  9 },
-    [CASTFORM_WATER]  = { .size = MON_COORDS_SIZE(32, 48), .y_offset =  9 },
-    [CASTFORM_ICE]    = { .size = MON_COORDS_SIZE(64, 48), .y_offset =  8 },
-};
-
-static const u8 sCastformElevations[NUM_CASTFORM_FORMS] =
-{
-    [CASTFORM_NORMAL] = 13,
-    [CASTFORM_FIRE]   = 14,
-    [CASTFORM_WATER]  = 13,
-    [CASTFORM_ICE]    = 13,
-};
-
-// Y position of the backsprite for each of the four Castform forms.
-static const u8 sCastformBackSpriteYCoords[NUM_CASTFORM_FORMS] =
-{
-    [CASTFORM_NORMAL] = 0,
-    [CASTFORM_FIRE]   = 0,
-    [CASTFORM_WATER]  = 0,
-    [CASTFORM_ICE]    = 0,
-};
-
 // Placeholders for pokemon sprites to be created for a move animation effect (e.g. Role Play / Snatch)
 #define TAG_MOVE_EFFECT_MON_1 55125
 #define TAG_MOVE_EFFECT_MON_2 55126
@@ -447,7 +421,7 @@ static void TranslateSpriteInWavePattern(struct Sprite *sprite)
         sprite->y2 = Cos(sprite->sCirclePosY, sprite->sAmplitude);
         sprite->sCirclePosX += sprite->sCircleSpeedX;
         sprite->sCirclePosY += sprite->sCircleSpeedY;
-        
+
         if (sprite->sCirclePosX >= 0x100)
             sprite->sCirclePosX -= 0x100;
         else if (sprite->sCirclePosX < 0)
@@ -2337,7 +2311,7 @@ void AnimTask_AttackerPunchWithTrace(u8 taskId)
 
     dest = (task->tPaletteNum + 16) * 16;
     src = (gSprites[task->tBattlerSpriteId].oam.paletteNum + 0x10) * 0x10;
-    
+
     // Set trace's priority based on battler's subpriority
     task->tPriority = GetBattlerSpriteSubpriority(gBattleAnimAttacker);
     if (task->tPriority == 20 || task->tPriority == 40)

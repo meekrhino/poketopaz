@@ -181,9 +181,11 @@ ALIGNED(4) static const u8 sText_HiDoSomethingAgainFemale[] = _("{STR_VAR_1}: Oh
 static const u8 *const sHiDoSomethingTexts[][GENDER_COUNT] = {
     {
         sText_HiDoSomethingMale,
+        sText_HiDoSomethingFemale,
         sText_HiDoSomethingFemale
     }, {
         sText_HiDoSomethingAgainMale,
+        sText_HiDoSomethingAgainFemale,
         sText_HiDoSomethingAgainFemale
     }
 };
@@ -197,10 +199,12 @@ ALIGNED(4) static const u8 sText_DoSomethingAgainFemale[] = _("{STR_VAR_1}: Want
 static const u8 *const sDoSomethingTexts[][GENDER_COUNT] = {
     {
         sText_DoSomethingMale,
+        sText_DoSomethingFemale,
         sText_DoSomethingFemale
     }, {
         sText_DoSomethingAgainMale,
-        sText_DoSomethingAgainMale // was probably supposed to be sText_DoSomethingAgainFemale
+        sText_DoSomethingAgainFemale,
+        sText_DoSomethingAgainFemale
     }
 };
 
@@ -246,9 +250,11 @@ ALIGNED(4) static const u8 sText_PlayerJoinChatFemale[] = _("{STR_VAR_1}: Oh, hi
 static const u8 *const sJoinChatTexts[][GENDER_COUNT] = {
     {
         sText_JoinChatMale,
+        sText_JoinChatFemale,
         sText_JoinChatFemale
     }, {
         sText_PlayerJoinChatMale,
+        sText_PlayerJoinChatFemale,
         sText_PlayerJoinChatFemale
     }
 };
@@ -267,6 +273,11 @@ static const u8 *const sText_WaitOrShowCardTexts[GENDER_COUNT][4] = {
         sText_WaitForChatMale,
         NULL,
         sText_ShowTrainerCardMale
+    }, {
+        sText_WaitForBattleFemale,
+        sText_WaitForChatFemale,
+        NULL,
+        sText_ShowTrainerCardFemale
     }, {
         sText_WaitForBattleFemale,
         sText_WaitForChatFemale,
@@ -294,11 +305,19 @@ static const u8 *const sStartActivityTexts[][GENDER_COUNT][3] = {
             sText_BattleWillBeStarted,
             sText_EnteringChat,
             sText_TradeWillBeStarted
+        }, {
+            sText_BattleWillBeStarted,
+            sText_EnteringChat,
+            sText_TradeWillBeStarted
         }
     }, {
         {
             sText_DoneWaitingBattleMale,
             sText_DoneWaitingChatMale,
+            sText_TradeWillBeStarted
+        }, {
+            sText_DoneWaitingBattleFemale,
+            sText_DoneWaitingChatFemale,
             sText_TradeWillBeStarted
         }, {
             sText_DoneWaitingBattleFemale,
@@ -313,6 +332,7 @@ ALIGNED(4) static const u8 sText_BattleDeclinedFemale[] = _("I'm terribly sorry,
 
 static const u8 *const sBattleDeclinedTexts[GENDER_COUNT] = {
     sText_BattleDeclinedMale,
+    sText_BattleDeclinedFemale,
     sText_BattleDeclinedFemale
 };
 
@@ -321,6 +341,7 @@ ALIGNED(4) static const u8 sText_ShowTrainerCardDeclinedFemale[] = _("Oh? Now wh
 
 static const u8 *const sShowTrainerCardDeclinedTexts[GENDER_COUNT] = {
     sText_ShowTrainerCardDeclinedMale,
+    sText_ShowTrainerCardDeclinedFemale,
     sText_ShowTrainerCardDeclinedFemale
 };
 
@@ -329,6 +350,7 @@ ALIGNED(4) static const u8 sText_IfYouWantToDoSomethingFemale[] = _("If you want
 
 static const u8 *const sIfYouWantToDoSomethingTexts[GENDER_COUNT] = {
     sText_IfYouWantToDoSomethingMale,
+    sText_IfYouWantToDoSomethingFemale,
     sText_IfYouWantToDoSomethingFemale
 };
 
@@ -342,6 +364,7 @@ ALIGNED(4) static const u8 stext_DeclineChatFemale[] = _("Oh…\nPlease come by 
 // Response from partner when player declines chat
 static const u8 *const sDeclineChatTexts[GENDER_COUNT] = {
     sText_DeclineChatMale,
+    stext_DeclineChatFemale,
     stext_DeclineChatFemale
 };
 
@@ -351,6 +374,7 @@ ALIGNED(4) static const u8 sText_ChatDeclinedFemale[] = _("Oh, I'm sorry.\nI hav
 // Response from partner when they decline chat
 static const u8 *const sChatDeclinedTexts[GENDER_COUNT] = {
     sText_ChatDeclinedMale,
+    sText_ChatDeclinedFemale,
     sText_ChatDeclinedFemale
 };
 
@@ -369,6 +393,12 @@ static const u8 *const sBattleReactionTexts[GENDER_COUNT][4] = {
         sText_UsedGoodMoveMale,
         sText_BattleSurpriseMale,
         sText_SwitchedMonsMale
+    },
+    {
+        sText_YoureToughFemale,
+        sText_UsedGoodMoveFemale,
+        sText_BattleSurpriseFemale,
+        sText_SwitchedMonsFemale
     },
     {
         sText_YoureToughFemale,
@@ -399,6 +429,12 @@ static const u8 *const sChatReactionTexts[GENDER_COUNT][4] = {
         sText_ThatsFunnyFemale,
         sText_RandomChatFemale1,
         sText_RandomChatFemale2
+    },
+    {
+        sText_LearnedSomethingFemale,
+        sText_ThatsFunnyFemale,
+        sText_RandomChatFemale1,
+        sText_RandomChatFemale2
     }
 };
 
@@ -415,6 +451,10 @@ static const u8 *const sTrainerCardReactionTexts[GENDER_COUNT][2] = {
     {
         sText_ShowedTrainerCardFemale1,
         sText_ShowedTrainerCardFemale2
+    },
+    {
+        sText_ShowedTrainerCardFemale1,
+        sText_ShowedTrainerCardFemale2
     }
 };
 
@@ -427,6 +467,10 @@ static const u8 *const sTradeReactionTexts[GENDER_COUNT][4] = {
     {
         sText_MaleTraded1,
         sText_MaleTraded2
+    },
+    {
+        sText_FemaleTraded1,
+        sText_FemaleTraded2
     },
     {
         sText_FemaleTraded1,
@@ -584,6 +628,7 @@ ALIGNED(4) static const u8 sText_GladToMeetYouFemale[] = _("{DYNAMIC 1}: Glad to
 
 static const u8 *const sGladToMeetYouTexts[GENDER_COUNT] = {
     sText_GladToMeetYouMale,
+    sText_GladToMeetYouFemale,
     sText_GladToMeetYouFemale
 };
 

@@ -93,6 +93,10 @@ extern const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireBrendan[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireMay[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Wally[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Steven[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_PlayerN[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_Bradley[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_Alisa[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_Simon[];
 
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpritePlayerSide[];
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpriteOpponentSide[];
@@ -113,6 +117,7 @@ extern const union AnimCmd *const *const gTrainerBackAnimsPtrTable[];
 extern const struct MonCoords gTrainerBackPicCoords[];
 extern const struct CompressedSpriteSheet gTrainerBackPicTable[]; // functionally unused
 extern const struct CompressedSpritePalette gTrainerBackPicPaletteTable[];
+extern const u32 gPlayerBackPicGenderTable[GENDER_COUNT];
 
 extern const u8 gEnemyMonElevation[NUM_SPECIES];
 

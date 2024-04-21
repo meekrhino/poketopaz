@@ -570,6 +570,42 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
         .affineAnims = gAffineAnims_BattleSpritePlayerSide,
         .callback = SpriteCB_BattleSpriteStartSlideLeft,
     },
+    [TRAINER_BACK_PIC_PLAYER_N] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_PlayerN,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
+    [TRAINER_BACK_PIC_BRADLEY] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_Bradley,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
+    [TRAINER_BACK_PIC_ALISA] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_Alisa,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
+    [TRAINER_BACK_PIC_SIMON] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_Simon,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
 };
 
 #define NUM_SECRET_BASE_CLASSES 5
@@ -583,6 +619,13 @@ static const u8 sSecretBaseFacilityClasses[GENDER_COUNT][NUM_SECRET_BASE_CLASSES
         FACILITY_CLASS_COOLTRAINER_M
     },
     [FEMALE] = {
+        FACILITY_CLASS_LASS,
+        FACILITY_CLASS_SCHOOL_KID_F,
+        FACILITY_CLASS_LADY,
+        FACILITY_CLASS_PICNICKER,
+        FACILITY_CLASS_COOLTRAINER_F
+    },
+    [NONBINARY] = {
         FACILITY_CLASS_LASS,
         FACILITY_CLASS_SCHOOL_KID_F,
         FACILITY_CLASS_LADY,
@@ -5099,7 +5142,7 @@ u16 FacilityClassToPicIndex(u16 facilityClass)
 
 u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 {
-    if (playerGender != MALE)
+    if (playerGender == FEMALE)
         return FacilityClassToPicIndex(FACILITY_CLASS_MAY);
     else
         return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);

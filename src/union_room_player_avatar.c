@@ -44,6 +44,16 @@ static const u16 sUnionRoomObjGfxIds[GENDER_COUNT][MAX_UNION_ROOM_LEADERS + 2] =
         OBJ_EVENT_GFX_GIRL_3,
         OBJ_EVENT_GFX_WOMAN_2,
         OBJ_EVENT_GFX_BEAUTY
+    },
+    [NONBINARY] = {
+        OBJ_EVENT_GFX_WOMAN_5,
+        OBJ_EVENT_GFX_HEX_MANIAC,
+        OBJ_EVENT_GFX_PICNICKER,
+        OBJ_EVENT_GFX_LASS,
+        OBJ_EVENT_GFX_LASS,
+        OBJ_EVENT_GFX_GIRL_3,
+        OBJ_EVENT_GFX_WOMAN_2,
+        OBJ_EVENT_GFX_BEAUTY
     }
 };
 
@@ -568,7 +578,7 @@ bool32 TryInteractWithUnionRoomMember(struct RfuPlayerList *list, s16 *memberIdP
         for (memberId = 0; memberId < MAX_RFU_PLAYERS; memberId++)
         {
             s32 id = UR_PLAYER_SPRITE_ID(i, memberId);
-            
+
             // Is the player in front of a group member position?
             if (x != sUnionRoomPlayerCoords[i][0] + sUnionRoomGroupOffsets[memberId][0] + 7)
                 continue;
