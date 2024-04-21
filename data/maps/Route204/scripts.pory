@@ -155,7 +155,16 @@ script(global) Route204_MeetShookAndAllard {
     copyobjectxytoperm(SHOOK)
     copyobjectxytoperm(ALLARD)
     setrespawn(HEAL_LOCATION_CRANEWING_CITY)
-    trainerbattle_double(TRAINER_SHOOK_AND_ALLARD_1, Route204_Text_ShookAndAllardIntro, Route204_Text_ShookAndAllardDefeated, Route204_Text_ShookAndAllardNoMons, Route204_ShookAndAllardDefeated, NO_MUSIC)
+    switch(var(VAR_STARTER_MON)) {
+        case 0:
+	        trainerbattle_multi(TRAINER_SHOOK_1, Route204_Text_ShookDefeated, TRAINER_ALLARD_1, Route204_Text_AllardDefeated, PARTNER_BRADLEY_ROUTE_204_VENAP)
+        case 1:
+	        trainerbattle_multi(TRAINER_SHOOK_1, Route204_Text_ShookDefeated, TRAINER_ALLARD_1, Route204_Text_AllardDefeated, PARTNER_BRADLEY_ROUTE_204_CELSINGE)
+        case 2:
+	        trainerbattle_multi(TRAINER_SHOOK_1, Route204_Text_ShookDefeated, TRAINER_ALLARD_1, Route204_Text_AllardDefeated, PARTNER_BRADLEY_ROUTE_204_ECHOISE)
+    }
+    goto(Route204_ShookAndAllardDefeated)
+
 }
 
 script(global) Route204_ShookAndAllardDefeated {
@@ -309,15 +318,15 @@ text Route204_Text_ShookAndAllardIntro {
     )
 }
 
-text Route204_Text_ShookAndAllardDefeated {
+text Route204_Text_ShookDefeated {
     format(
-        "Allard: Not good, not good!"
+        "Shook: You've got to be kidding me!"
     )
 }
 
-text Route204_Text_ShookAndAllardNoMons {
+text Route204_Text_AllardDefeated {
     format(
-        "placeholder no mons"
+        "Allard: Not good, not good!"
     )
 }
 

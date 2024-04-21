@@ -146,16 +146,6 @@ script(global) Route205_FlowerShop {
 }
 
 script(global) Route205_DEBUG {
-    lockall
-    switch(var(VAR_STARTER_MON)) {
-        case 0:
-	        trainerbattle_multi(TRAINER_PERCY, Route205_Text_DebugDefeatedEnemy1, TRAINER_ISHMAEL, Route205_Text_DebugDefeatedEnemy2, PARTNER_BRADLEY_ROUTE_204_VENAP)
-        case 1:
-	        trainerbattle_multi(TRAINER_PERCY, Route205_Text_DebugDefeatedEnemy1, TRAINER_ISHMAEL, Route205_Text_DebugDefeatedEnemy2, PARTNER_BRADLEY_ROUTE_204_CELSINGE)
-        case 2:
-	        trainerbattle_multi(TRAINER_PERCY, Route205_Text_DebugDefeatedEnemy1, TRAINER_ISHMAEL, Route205_Text_DebugDefeatedEnemy2, PARTNER_BRADLEY_ROUTE_204_ECHOISE)
-    }
-    releaseall
     end
 }
 

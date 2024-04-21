@@ -398,16 +398,28 @@ const struct Trainer gTrainers[] = {
     // Route 204 Shook and Allard
     //=====================================================
 
-    [TRAINER_SHOOK_AND_ALLARD_1] =
+    [TRAINER_SHOOK_1] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .trainerPic = TRAINER_PIC_SHOOK_AND_ALLARD,
-        .trainerName = gTrainerNameString_Recruits,
+        .trainerName = gTrainerNameString_Shook,
         .trainerType = TRAINER(.items = {},
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE),
         .doubleBattle = TRUE,
-        .party = TRAINER_PARTY(sParty_ShookAndAllard1),
+        .party = TRAINER_PARTY(sParty_Shook1),
+    },
+
+    [TRAINER_ALLARD_1] =
+    {
+        .trainerClass = TRAINER_CLASS_TEAM_ROCKET,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_SHOOK_AND_ALLARD,
+        .trainerName = gTrainerNameString_Allard,
+        .trainerType = TRAINER(.items = {},
+                               .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE),
+        .doubleBattle = TRUE,
+        .party = TRAINER_PARTY(sParty_Allard1),
     },
 
     //=====================================================

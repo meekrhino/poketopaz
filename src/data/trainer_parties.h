@@ -401,7 +401,7 @@ static const struct TrainerMon sParty_Froy[] = {
 // Route 204  Rocket Encounter
 //=====================================================
 
-static const struct TrainerMon sParty_ShookAndAllard1[] = {
+static const struct TrainerMon sParty_Shook1[] = {
     {
     .iv = 0,
     .lvl = 12,
@@ -411,7 +411,10 @@ static const struct TrainerMon sParty_ShookAndAllard1[] = {
     .iv = 0,
     .lvl = 12,
     .species = SPECIES_CACNEA,
-    },
+    }
+};
+
+static const struct TrainerMon sParty_Allard1[] = {
     {
     .iv = 0,
     .lvl = 13,

@@ -111,7 +111,12 @@ Route204_MeetShookAndAllard_5:
 	copyobjectxytoperm 2
 	copyobjectxytoperm 1
 	setrespawn HEAL_LOCATION_CRANEWING_CITY
-	trainerbattle_double TRAINER_SHOOK_AND_ALLARD_1, Route204_Text_ShookAndAllardIntro, Route204_Text_ShookAndAllardDefeated, Route204_Text_ShookAndAllardNoMons, Route204_ShookAndAllardDefeated, NO_MUSIC
+	switch VAR_STARTER_MON
+	case 0, Route204_MeetShookAndAllard_11
+	case 1, Route204_MeetShookAndAllard_12
+	case 2, Route204_MeetShookAndAllard_13
+Route204_MeetShookAndAllard_9:
+	goto Route204_ShookAndAllardDefeated
 	return
 
 Route204_MeetShookAndAllard_2:
@@ -122,6 +127,18 @@ Route204_MeetShookAndAllard_6:
 	applymovement 2, mFaceDown
 	applymovement 1, mFaceUp
 	goto Route204_MeetShookAndAllard_5
+
+Route204_MeetShookAndAllard_11:
+	trainerbattle_multi TRAINER_SHOOK_1, Route204_Text_ShookDefeated, TRAINER_ALLARD_1, Route204_Text_AllardDefeated, PARTNER_BRADLEY_ROUTE_204_VENAP
+	goto Route204_MeetShookAndAllard_9
+
+Route204_MeetShookAndAllard_12:
+	trainerbattle_multi TRAINER_SHOOK_1, Route204_Text_ShookDefeated, TRAINER_ALLARD_1, Route204_Text_AllardDefeated, PARTNER_BRADLEY_ROUTE_204_CELSINGE
+	goto Route204_MeetShookAndAllard_9
+
+Route204_MeetShookAndAllard_13:
+	trainerbattle_multi TRAINER_SHOOK_1, Route204_Text_ShookDefeated, TRAINER_ALLARD_1, Route204_Text_AllardDefeated, PARTNER_BRADLEY_ROUTE_204_ECHOISE
+	goto Route204_MeetShookAndAllard_9
 
 
 Route204_ShookAndAllardDefeated::
@@ -390,8 +407,8 @@ Route204_Text_BradleyDontWorryAboutMe::
 Route204_Text_ShookAndAllardIntro::
 	.string "Shook: Here we come!$"
 
-Route204_Text_ShookAndAllardDefeated::
-	.string "Allard: Not good, not good!$"
+Route204_Text_ShookDefeated::
+	.string "Shook: You've got to be kidding me!$"
 
-Route204_Text_ShookAndAllardNoMons::
-	.string "placeholder no mons$"
+Route204_Text_AllardDefeated::
+	.string "Allard: Not good, not good!$"
