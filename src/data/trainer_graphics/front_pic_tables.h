@@ -104,7 +104,8 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_ORION_GRUNT_M] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_ORION_GRUNT_F] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_WOLSEY] = {.size = 8, .y_offset = 1},
-    [TRAINER_PIC_SHOOK_AND_ALLARD] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_SHOOK] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_ALLARD] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_BALFOUR] = {.size = 8, .y_offset = 1},
 };
 
@@ -216,7 +217,8 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(ORION_GRUNT_M, gTrainerFrontPic_OrionGruntM, 0x800),
     TRAINER_SPRITE(ORION_GRUNT_F, gTrainerFrontPic_OrionGruntF, 0x800),
     TRAINER_SPRITE(WOLSEY, gTrainerFrontPic_Wolsey, 0x800),
-    TRAINER_SPRITE(SHOOK_AND_ALLARD, gTrainerFrontPic_ShookAndAllard, 0x800),
+    TRAINER_SPRITE(SHOOK, gTrainerFrontPic_Shook, 0x800),
+    TRAINER_SPRITE(ALLARD, gTrainerFrontPic_Allard, 0x800),
     TRAINER_SPRITE(BALFOUR, gTrainerFrontPic_Balfour, 0x800),
 };
 
@@ -328,6 +330,7 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(ORION_GRUNT_M, gTrainerPalette_OrionGruntM),
     TRAINER_PAL(ORION_GRUNT_F, gTrainerPalette_OrionGruntF),
     TRAINER_PAL(WOLSEY, gTrainerPalette_Wolsey),
-    TRAINER_PAL(SHOOK_AND_ALLARD, gTrainerPalette_ShookAndAllard),
+    TRAINER_PAL(SHOOK, gTrainerPalette_Shook),
+    TRAINER_PAL(ALLARD, gTrainerPalette_Allard),
     TRAINER_PAL(BALFOUR, gTrainerPalette_Balfour),
 };

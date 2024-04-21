@@ -414,7 +414,11 @@ static const union AnimCmd *const sAnims_Wolsey[] ={
     sAnim_GeneralFrame0,
 };
 
-static const union AnimCmd *const sAnims_ShookAndAllard[] ={
+static const union AnimCmd *const sAnims_Shook[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Allard[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -528,6 +532,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_ORION_GRUNT_M] = sAnims_OrionGruntM,
     [TRAINER_PIC_ORION_GRUNT_F] = sAnims_OrionGruntF,
     [TRAINER_PIC_WOLSEY] = sAnims_Wolsey,
-    [TRAINER_PIC_SHOOK_AND_ALLARD] = sAnims_ShookAndAllard,
+    [TRAINER_PIC_SHOOK] = sAnims_Shook,
+    [TRAINER_PIC_ALLARD] = sAnims_Allard,
     [TRAINER_PIC_BALFOUR] = sAnims_Balfour,
 };

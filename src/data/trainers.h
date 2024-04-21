@@ -402,7 +402,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
-        .trainerPic = TRAINER_PIC_SHOOK_AND_ALLARD,
+        .trainerPic = TRAINER_PIC_SHOOK,
         .trainerName = gTrainerNameString_Shook,
         .trainerType = TRAINER(.items = {},
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE),
@@ -414,7 +414,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
-        .trainerPic = TRAINER_PIC_SHOOK_AND_ALLARD,
+        .trainerPic = TRAINER_PIC_ALLARD,
         .trainerName = gTrainerNameString_Allard,
         .trainerType = TRAINER(.items = {},
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE),

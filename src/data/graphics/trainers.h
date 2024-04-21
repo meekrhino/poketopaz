@@ -310,8 +310,11 @@ const u32 gTrainerPalette_OrionGruntF[] = INCBIN_U32("graphics/trainers/palettes
 const u32 gTrainerFrontPic_Wolsey[] = INCBIN_U32("graphics/trainers/front_pics/wolsey_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Wolsey[] = INCBIN_U32("graphics/trainers/palettes/wolsey.gbapal.lz");
 
-const u32 gTrainerFrontPic_ShookAndAllard[] = INCBIN_U32("graphics/trainers/front_pics/shook_and_allard_front_pic.4bpp.lz");
-const u32 gTrainerPalette_ShookAndAllard[] = INCBIN_U32("graphics/trainers/palettes/shook_and_allard.gbapal.lz");
+const u32 gTrainerFrontPic_Shook[] = INCBIN_U32("graphics/trainers/front_pics/shook_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Shook[] = INCBIN_U32("graphics/trainers/palettes/shook.gbapal.lz");
+
+const u32 gTrainerFrontPic_Allard[] = INCBIN_U32("graphics/trainers/front_pics/allard_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Allard[] = INCBIN_U32("graphics/trainers/palettes/allard.gbapal.lz");
 
 const u32 gTrainerFrontPic_Balfour[] = INCBIN_U32("graphics/trainers/front_pics/balfour_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Balfour[] = INCBIN_U32("graphics/trainers/palettes/balfour.gbapal.lz");

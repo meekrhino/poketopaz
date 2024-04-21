@@ -121,8 +121,9 @@
 #define TRAINER_PIC_ORION_GRUNT_M         101
 #define TRAINER_PIC_ORION_GRUNT_F         102
 #define TRAINER_PIC_WOLSEY                103
-#define TRAINER_PIC_SHOOK_AND_ALLARD      104
-#define TRAINER_PIC_BALFOUR               105
+#define TRAINER_PIC_SHOOK                 104
+#define TRAINER_PIC_ALLARD                105
+#define TRAINER_PIC_BALFOUR               106
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
