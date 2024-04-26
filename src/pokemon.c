@@ -143,9 +143,9 @@ const s8 gNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
 
 static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
 {
-    [SPECIES_VENAP - 1]       = ANIM_V_JUMPS_H_JUMPS,
-    [SPECIES_TRAPLENT - 1]    = ANIM_V_STRETCH,
-    [SPECIES_DIONARE - 1]     = ANIM_ROTATE_UP_SLAM_DOWN,
+    [SPECIES_VENAP - 1]       = ANIM_H_SLIDE,
+    [SPECIES_TRAPLENT - 1]    = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_DIONARE - 1]     = ANIM_GROW_IN_STAGES,
     [SPECIES_CELSINGE - 1]    = ANIM_V_JUMPS_SMALL,
     [SPECIES_FAHRAMANE - 1]   = ANIM_BACK_AND_LUNGE,
     [SPECIES_KELVOYANT - 1]   = ANIM_V_SHAKE,
@@ -347,6 +347,8 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
 {
+    [SPECIES_VENAP - 1]      = 10,
+    [SPECIES_DIONARE - 1]    = 20,
     [SPECIES_AMPURE - 1]     = 30,
     [SPECIES_JALSIDA - 1]    = 16,
     [SPECIES_VENONAT - 1]    = 20,
