@@ -134,8 +134,7 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_VENAP, 5
-	givemon SPECIES_DIONARE, 5
+	givemon SPECIES_KELVOYANT, 5
 	end
 
 
