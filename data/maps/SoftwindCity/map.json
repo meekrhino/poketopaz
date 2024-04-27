@@ -228,8 +228,8 @@
       "x": 23,
       "y": 41,
       "elevation": 0,
-      "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": "4"
+      "dest_map": "MAP_SOFTWIND_CITY_POKEMON_CENTER",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
