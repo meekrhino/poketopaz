@@ -130,11 +130,10 @@ static const union AnimCmd sAnim_Pyroon_1[] =
 
 static const union AnimCmd sAnim_Pyreign_1[] =
 {
-    ANIMCMD_FRAME(0, 11),
-    ANIMCMD_FRAME(1, 10),
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 10),
-    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(2, 20),
     ANIMCMD_END,
 };
 
@@ -155,17 +154,16 @@ static const union AnimCmd sAnim_Fincherp_1[] =
 
 static const union AnimCmd sAnim_Gashawk_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 55),
+    ANIMCMD_FRAME(0, 15),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Eaglair_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 

@@ -83,6 +83,7 @@ static void Anim_VerticalSlideWobble(struct Sprite *sprite);
 static void Anim_HorizontalSlideWobble(struct Sprite *sprite);
 static void Anim_VerticalJumps_Big(struct Sprite *sprite);
 static void Anim_Spin_Long(struct Sprite *sprite);
+static void Anim_GrowThenSpin(struct Sprite *sprite);
 static void Anim_GlowOrange(struct Sprite *sprite);
 static void Anim_GlowRed(struct Sprite *sprite);
 static void Anim_GlowBlue(struct Sprite *sprite);
@@ -476,6 +477,7 @@ static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_H_SLIDE_WOBBLE]                    = Anim_HorizontalSlideWobble,
     [ANIM_V_JUMPS_BIG]                       = Anim_VerticalJumps_Big,
     [ANIM_SPIN_LONG]                         = Anim_Spin_Long, // Unused
+    [ANIM_GROW_THEN_SPIN]                    = Anim_GrowThenSpin,
     [ANIM_GLOW_ORANGE]                       = Anim_GlowOrange,
     [ANIM_GLOW_RED]                          = Anim_GlowRed, // Unused
     [ANIM_GLOW_BLUE]                         = Anim_GlowBlue,
@@ -1308,6 +1310,32 @@ static void Spin(struct Sprite *sprite)
     sprite->data[2]++;
 }
 
+static void GrowThenSpin(struct Sprite *sprite)
+{
+    u8 id = sprite->data[0];
+
+    if (sprite->data[2] == 0)
+        HandleStartAffineAnim(sprite);
+    else if (sprite->data[2] > 50)
+    {
+        HandleSetAffineData(sprite, 256, 256, 0);
+        ResetSpriteAfterAnim(sprite);
+        sprite->callback = WaitAnimEnd;
+    }
+    else if (sprite->data[2] < 40)
+    {
+        sprite->data[6] = 256 - sprite->data[2];
+        HandleSetAffineData(sprite, sprite->data[6], sprite->data[6], 0);
+    }
+    else
+    {
+        sprite->data[6] = (6554) * (sprite->data[2] - 40);
+        HandleSetAffineData(sprite, 256, 256, sprite->data[6]);
+    }
+
+    sprite->data[2]++;
+}
+
 static void Anim_Spin_Long(struct Sprite *sprite)
 {
     u8 id = sprite->data[0] = AddNewAnim();
@@ -1316,6 +1344,14 @@ static void Anim_Spin_Long(struct Sprite *sprite)
     sAnims[id].data = 20;
     Spin(sprite);
     sprite->callback = Spin;
+}
+
+static void Anim_GrowThenSpin(struct Sprite *sprite)
+{
+    u8 id = sprite->data[0] = AddNewAnim();
+
+    GrowThenSpin(sprite);
+    sprite->callback = GrowThenSpin;
 }
 
 static void CircleCounterclockwise(struct Sprite *sprite)
