@@ -543,7 +543,7 @@ void ShowRegionMapForPokedexAreaScreen(struct RegionMap *regionMap)
     sRegionMap = regionMap;
     InitMapBasedOnPlayerLocation();
     sRegionMap->playerIconSpritePosX = sRegionMap->cursorPosX;
-    sRegionMap->playerIconSpritePosY = sRegionMap->cursorPosY;
+    sRegionMap->playerIconSpritePosY = sRegionMap->cursorPosY + 1;
 }
 
 bool8 LoadRegionMapGfx(void)

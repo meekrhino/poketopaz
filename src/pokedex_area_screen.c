@@ -19,6 +19,7 @@
 #include "constants/region_map_sections.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "mgba.h"
 
 // There are two types of indicators for the area screen to show where a Pokémon can occur:
 // - Area glows, which highlight any of the maps in MAP_GROUP_TOWNS_AND_ROUTES that have the species.
@@ -433,8 +434,8 @@ static void BuildAreaGlowTilemap(void)
         {
             for (x = 0; x < AREA_SCREEN_WIDTH; x++)
             {
-                if (GetRegionMapSecIdAt(x, y) == sPokedexAreaScreen->overworldAreasWithMons[i].regionMapSectionId)
-                    sPokedexAreaScreen->areaGlowTilemap[j] = GLOW_TILE_FULL;
+                if (y > 0 && GetRegionMapSecIdAt(x, y - 1) == sPokedexAreaScreen->overworldAreasWithMons[i].regionMapSectionId)
+                    sPokedexAreaScreen->areaGlowTilemap[j] = GLOW_FULL;
                 j++;
             }
         }
@@ -450,25 +451,24 @@ static void BuildAreaGlowTilemap(void)
             {
                 // The "tile != GLOW_FULL" check is pointless in all of these conditionals,
                 // since there's no harm in OR'ing 0xFFFF with anything else.
-
                 // Edges
-                if (x != 0 && sPokedexAreaScreen->areaGlowTilemap[j - 1] != GLOW_FULL)
+                if (x != 0)
                     sPokedexAreaScreen->areaGlowTilemap[j - 1] |= GLOW_EDGE_L;
-                if (x != AREA_SCREEN_WIDTH - 1 && sPokedexAreaScreen->areaGlowTilemap[j + 1] != GLOW_FULL)
+                if (x != AREA_SCREEN_WIDTH - 1)
                     sPokedexAreaScreen->areaGlowTilemap[j + 1] |= GLOW_EDGE_R;
-                if (y != 0 && sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH] != GLOW_FULL)
+                if (y != 0)
                     sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH] |= GLOW_EDGE_T;
-                if (y != AREA_SCREEN_HEIGHT - 1 && sPokedexAreaScreen->areaGlowTilemap[j + AREA_SCREEN_WIDTH] != GLOW_FULL)
+                if (y != AREA_SCREEN_HEIGHT - 1)
                     sPokedexAreaScreen->areaGlowTilemap[j + AREA_SCREEN_WIDTH] |= GLOW_EDGE_B;
 
                 // Corners
-                if (x != 0 && y != 0 && sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH - 1] != GLOW_FULL)
+                if (x != 0)
                     sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH - 1] |= GLOW_CORNER_TL;
-                if (x != AREA_SCREEN_WIDTH - 1 && y != 0 && sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH + 1] != GLOW_FULL)
+                if (x != AREA_SCREEN_WIDTH - 1)
                     sPokedexAreaScreen->areaGlowTilemap[j - AREA_SCREEN_WIDTH + 1] |= GLOW_CORNER_TR;
-                if (x != 0 && y != AREA_SCREEN_HEIGHT - 1 && sPokedexAreaScreen->areaGlowTilemap[j + AREA_SCREEN_WIDTH - 1] != GLOW_FULL)
+                if (x != 0)
                     sPokedexAreaScreen->areaGlowTilemap[j + AREA_SCREEN_WIDTH - 1] |= GLOW_CORNER_BL;
-                if (x != AREA_SCREEN_WIDTH - 1 && y != AREA_SCREEN_HEIGHT - 1 && sPokedexAreaScreen->areaGlowTilemap[j + AREA_SCREEN_WIDTH + 1] != GLOW_FULL)
+                if (x != AREA_SCREEN_WIDTH - 1)
                     sPokedexAreaScreen->areaGlowTilemap[j + AREA_SCREEN_WIDTH + 1] |= GLOW_CORNER_BR;
             }
 
@@ -560,7 +560,7 @@ static void DoAreaGlow(void)
         if (sPokedexAreaScreen->markerTimer > 12)
         {
             sPokedexAreaScreen->markerTimer = 0;
-            
+
             // Flash the marker
             // With a max of 4, the marker will disappear twice
             sPokedexAreaScreen->markerFlashCounter++;
@@ -737,7 +737,7 @@ static void CreateAreaMarkerSprites(void)
 static void DestroyAreaScreenSprites(void)
 {
     u16 i;
-    
+
     // Destroy area marker sprites
     FreeSpriteTilesByTag(TAG_AREA_MARKER);
     FreeSpritePaletteByTag(TAG_AREA_MARKER);
@@ -772,7 +772,7 @@ static void CreateAreaUnknownSprites(void)
 
     if (sPokedexAreaScreen->numOverworldAreas || sPokedexAreaScreen->numSpecialAreas)
     {
-        // The current species is present on the map, don't create any "Area Unknown" sprites 
+        // The current species is present on the map, don't create any "Area Unknown" sprites
         for (i = 0; i < ARRAY_COUNT(sPokedexAreaScreen->areaUnknownSprites); i++)
             sPokedexAreaScreen->areaUnknownSprites[i] = NULL;
     }
