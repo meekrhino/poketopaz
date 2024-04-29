@@ -63,16 +63,20 @@ static const union AnimCmd sAnim_Kelvoyant_1[] =
 
 static const union AnimCmd sAnim_Echoise_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 22),
+    ANIMCMD_FRAME(1, 22),
+    ANIMCMD_FRAME(0, 26),
+    ANIMCMD_FRAME(1, 22),
+    ANIMCMD_FRAME(0, 26),
+    ANIMCMD_FRAME(1, 22),
+    ANIMCMD_FRAME(0, 26),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Mermeidon_1[] =
 {
     ANIMCMD_FRAME(1, 15),
-    ANIMCMD_FRAME(0, 25),
+    ANIMCMD_FRAME(0, 20),
     ANIMCMD_FRAME(1, 15),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
@@ -80,8 +84,8 @@ static const union AnimCmd sAnim_Mermeidon_1[] =
 
 static const union AnimCmd sAnim_Dolphure_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(1, 60),
+    ANIMCMD_FRAME(1, 40),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
