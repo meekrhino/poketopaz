@@ -267,7 +267,7 @@ static const struct WindowTemplate sOptionDescWindowTemplate =
 
 static const u8 *const sPageDescriptions[] =
 {
-    [POKENAV_MENUITEM_MAP]                     = gText_CheckMapOfHoenn,
+    [POKENAV_MENUITEM_MAP]                     = gText_CheckMapOfRegion,
     [POKENAV_MENUITEM_CONDITION]               = gText_CheckPokemonInDetail,
     [POKENAV_MENUITEM_MATCH_CALL]              = gText_CallRegisteredTrainer,
     [POKENAV_MENUITEM_RIBBONS]                 = gText_CheckObtainedRibbons,
@@ -904,7 +904,7 @@ static void StartOptionAnimations_Enter(void)
                 // Not selected, set default position
                 x = OPTION_DEFAULT_X;
             }
-            
+
             // Slide new options in
             StartOptionSlide(gfx->iconSprites[i], OPTION_EXIT_X, x, 12);
             SetOptionInvisibility(gfx->iconSprites[i], FALSE);

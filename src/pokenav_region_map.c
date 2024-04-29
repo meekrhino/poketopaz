@@ -16,6 +16,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/region_map_sections.h"
+#include "mgba.h"
 
 #define GFXTAG_CITY_ZOOM 6
 #define PALTAG_CITY_ZOOM 11
@@ -58,7 +59,7 @@ static void DecompressCityMaps(void);
 static bool32 IsDecompressCityMapsActive(void);
 static void LoadPokenavRegionMapGfx(struct Pokenav_RegionMapGfx *);
 static bool32 TryFreeTempTileDataBuffers(void);
-static void UpdateMapSecInfoWindow(struct Pokenav_RegionMapGfx *);
+static void UpdateMapSecInfoWindow(struct Pokenav_RegionMapGfx *, bool32 forceRight);
 static bool32 IsDma3ManagerBusyWithBgCopy_(struct Pokenav_RegionMapGfx *);
 static void ChangeBgYForZoom(bool32);
 static bool32 IsChangeBgYForZoomActive(void);
@@ -348,7 +349,7 @@ static u32 LoopedTask_OpenRegionMap(s32 taskState)
         if (TryFreeTempTileDataBuffers())
             return LT_PAUSE;
 
-        UpdateMapSecInfoWindow(state);
+        UpdateMapSecInfoWindow(state, FALSE);
         FadeToBlackExceptPrimary();
         return LT_INC_AND_PAUSE;
     case 5:
@@ -365,8 +366,6 @@ static u32 LoopedTask_OpenRegionMap(s32 taskState)
         else
             menuGfxId = POKENAV_GFX_MAP_MENU_ZOOMED_IN;
 
-        LoadLeftHeaderGfxForIndex(menuGfxId);
-        ShowLeftHeaderGfx(menuGfxId, TRUE, TRUE);
         PokenavFadeScreen(POKENAV_FADE_FROM_BLACK);
         return LT_INC_AND_PAUSE;
     case 7:
@@ -384,7 +383,7 @@ static u32 LoopedTask_UpdateInfoAfterCursorMove(s32 taskState)
     switch (taskState)
     {
     case 0:
-        UpdateMapSecInfoWindow(state);
+        UpdateMapSecInfoWindow(state, FALSE);
         return LT_INC_AND_PAUSE;
     case 1:
         if (IsDma3ManagerBusyWithBgCopy_(state))
@@ -397,6 +396,7 @@ static u32 LoopedTask_UpdateInfoAfterCursorMove(s32 taskState)
 
 static u32 LoopedTask_RegionMapZoomOut(s32 taskState)
 {
+    struct Pokenav_RegionMapGfx *state = GetSubstructPtr(POKENAV_SUBSTRUCT_REGION_MAP_ZOOM);
     switch (taskState)
     {
     case 0:
@@ -414,6 +414,7 @@ static u32 LoopedTask_RegionMapZoomOut(s32 taskState)
         if (WaitForHelpBar())
             return LT_PAUSE;
 
+        UpdateMapSecInfoWindow(state, FALSE);
         UpdateRegionMapRightHeaderTiles(POKENAV_GFX_MAP_MENU_ZOOMED_OUT);
         break;
     }
@@ -428,7 +429,7 @@ static u32 LoopedTask_RegionMapZoomIn(s32 taskState)
     {
     case 0:
         PlaySE(SE_SELECT);
-        UpdateMapSecInfoWindow(state);
+        UpdateMapSecInfoWindow(state, TRUE);
         return LT_INC_AND_PAUSE;
     case 1:
         if (IsDma3ManagerBusyWithBgCopy_(state))
@@ -530,9 +531,49 @@ static bool32 TryFreeTempTileDataBuffers(void)
     return FreeTempTileDataBuffersIfPossible();
 }
 
-static void UpdateMapSecInfoWindow(struct Pokenav_RegionMapGfx *state)
+static void UpdateMapSecInfoWindow(struct Pokenav_RegionMapGfx *state, bool32 forceRight)
 {
     struct RegionMap *regionMap = GetSubstructPtr(POKENAV_SUBSTRUCT_REGION_MAP);
+
+    mgba_printf(MGBA_LOG_DEBUG, "Cursor (%d, %d), Tilemap (%d, %d)",
+        regionMap->cursorPosX,
+        regionMap->cursorPosY,
+        GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT),
+        GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_TOP));
+
+    // When Cursor is over the details window, move it elsewhere
+    // Do not move when zoomed (cursor is locked to left side anyway)
+    if(!regionMap->zoomed
+     && regionMap->cursorPosX > 14 && regionMap->cursorPosY > 14
+     && GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT) != 1)
+    {
+        mgba_printf(MGBA_LOG_DEBUG, "Branch A, %d", regionMap->zoomed);
+        CallWindowFunction(state->infoWindowId, WindowFunc_ClearDialogWindowAndFrame);
+        ClearWindowTilemap(state->infoWindowId);
+        SetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT, 1);
+        LoadUserWindowBorderGfx_(state->infoWindowId, 0x42, 0x40);
+        DrawTextBorderOuter(state->infoWindowId, 0x42, 4);
+        FillWindowPixelBuffer(state->infoWindowId, PIXEL_FILL(1));
+        PutWindowTilemap(state->infoWindowId);
+        CopyWindowToVram(state->infoWindowId, COPYWIN_FULL);
+    }
+    else if((forceRight ||
+        regionMap->zoomed ||
+        regionMap->cursorPosX <= 14 ||
+        regionMap->cursorPosY <= 14)
+     && GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT) != 17)
+    {
+        mgba_printf(MGBA_LOG_DEBUG, "Branch B, %d", regionMap->zoomed);
+        CallWindowFunction(state->infoWindowId, WindowFunc_ClearDialogWindowAndFrame);
+        ClearWindowTilemap(state->infoWindowId);
+        SetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT, 17);
+        LoadUserWindowBorderGfx_(state->infoWindowId, 0x42, 0x40);
+        DrawTextBorderOuter(state->infoWindowId, 0x42, 4);
+        FillWindowPixelBuffer(state->infoWindowId, PIXEL_FILL(1));
+        PutWindowTilemap(state->infoWindowId);
+        CopyWindowToVram(state->infoWindowId, COPYWIN_FULL);
+    }
+
     switch (regionMap->mapSecType)
     {
     case MAPSECTYPE_CITY_CANFLY:
@@ -561,7 +602,12 @@ static void UpdateMapSecInfoWindow(struct Pokenav_RegionMapGfx *state)
         SetCityZoomTextInvisibility(TRUE);
         break;
     case MAPSECTYPE_NONE:
-        FillBgTilemapBufferRect(1, 0x1041, 17, 4, 12, 13, 17);
+        FillBgTilemapBufferRect(
+            1,
+            0x1041,
+            GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT),
+            GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_TOP),
+            12, 13, 17);
         CopyBgTilemapBufferToVram(1);
         SetCityZoomTextInvisibility(TRUE);
         break;

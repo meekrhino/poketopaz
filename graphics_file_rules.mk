@@ -641,7 +641,7 @@ $(BATTRANSGFXDIR)/frontier_logo_center.4bpp: %.4bpp: %.png
 
 ### Pokenav ###
 
-$(PKNAVOPTIONSGFXDIR)/options.4bpp: $(PKNAVOPTIONSGFXDIR)/hoenn_map.4bpp \
+$(PKNAVOPTIONSGFXDIR)/options.4bpp: $(PKNAVOPTIONSGFXDIR)/caldera_kirant_map.4bpp \
                                     $(PKNAVOPTIONSGFXDIR)/condition.4bpp \
                                     $(PKNAVOPTIONSGFXDIR)/match_call.4bpp \
                                     $(PKNAVOPTIONSGFXDIR)/ribbons.4bpp \

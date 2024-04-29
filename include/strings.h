@@ -2970,7 +2970,7 @@ extern const u8 gText_Check[];
 extern const u8 gText_Cancel6[];
 
 // Pokenav Menu Handler
-extern const u8 gText_CheckMapOfHoenn[];
+extern const u8 gText_CheckMapOfRegion[];
 extern const u8 gText_CheckPokemonInDetail[];
 extern const u8 gText_CallRegisteredTrainer[];
 extern const u8 gText_CheckObtainedRibbons[];
