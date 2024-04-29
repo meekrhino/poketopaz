@@ -723,7 +723,7 @@ static void CreateAreaMarkerSprites(void)
         y = 8 * (gRegionMapEntries[mapSecId].y - 1) + 28;
         x += 4 * (gRegionMapEntries[mapSecId].width - 1);
         y += 4 * (gRegionMapEntries[mapSecId].height - 1);
-        spriteId = CreateSprite(&sAreaMarkerSpriteTemplate, x, y, 0);
+        spriteId = CreateSprite(&sAreaMarkerSpriteTemplate, x, y + 8, 0);
         if (spriteId != MAX_SPRITES)
         {
             gSprites[spriteId].invisible = TRUE;
