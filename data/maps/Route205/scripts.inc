@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_EMBEAR, 5
-	givemon SPECIES_GRIZLARE, 5
+	givemon SPECIES_FLAAFFY, 5
+	givemon SPECIES_AMPHAROS, 5
 	end
 
 
