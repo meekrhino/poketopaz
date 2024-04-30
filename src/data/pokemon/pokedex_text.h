@@ -438,7 +438,7 @@ const u8 gSkalloyPokedexText[] = _(
 const u8 gSkarmoryPokedexText[] = _(
     "Skarmory's feathers are harder than any\n"
     "man-made substance in the world. In\n"
-    "ancient days, these feathers were used"
+    "ancient days, these feathers were used\n"
     "as the blade for swords and daggers.");
 
 const u8 gDuskullPokedexText[] = _(
@@ -733,7 +733,7 @@ const u8 gTogepiPokedexText[] = _(
     "The geode that forms its body gives\n"
     "Togepi a natural protection as it grows.\n"
     "When light reflected from the amethysts\n"
-    "lands on person, it said to bring a\n"
+    "lands on a person, it said to bring a\n"
     "feeling of peace and acceptance.");
 
 const u8 gTogeticPokedexText[] = _(
