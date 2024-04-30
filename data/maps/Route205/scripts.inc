@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_FLAAFFY, 5
-	givemon SPECIES_AMPHAROS, 5
+	givemon SPECIES_WHISPAW, 5
+	givemon SPECIES_COROONA, 5
 	end
 
 
