@@ -169,15 +169,18 @@ static const union AnimCmd sAnim_Eaglair_1[] =
 
 static const union AnimCmd sAnim_Mogel_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(0, 45),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Firrel_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
     ANIMCMD_FRAME(1, 30),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,

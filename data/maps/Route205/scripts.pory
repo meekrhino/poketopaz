@@ -146,8 +146,8 @@ script(global) Route205_FlowerShop {
 }
 
 script(global) Route205_DEBUG {
-    givemon(SPECIES_GASHAWK, 5)
-    givemon(SPECIES_EAGLAIR, 5)
+    givemon(SPECIES_MOGEL, 5)
+    givemon(SPECIES_FIRREL, 5)
     end
 }
 

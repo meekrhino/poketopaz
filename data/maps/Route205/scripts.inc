@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_GASHAWK, 5
-	givemon SPECIES_EAGLAIR, 5
+	givemon SPECIES_MOGEL, 5
+	givemon SPECIES_FIRREL, 5
 	end
 
 
