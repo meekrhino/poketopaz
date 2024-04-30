@@ -1496,7 +1496,7 @@ WillowsLab_WillowConcedes::
 	.string "… … … …\p"
 	.string "… Ohohohohoho! I see, I see.\n"
 	.string "So that's how it is!\p"
-	.string "You're a subborn one, Bradley,\n"
+	.string "You're a stubborn one, Bradley,\n"
 	.string "but I like that.\p"
 	.string "{PLAYER}, you're lucky to have such a\n"
 	.string "good friend.\p"

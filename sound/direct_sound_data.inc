@@ -608,7 +608,7 @@ Cry_Arcanine::
 
     .align 2
 Cry_Vixun::
-    .incbin "sound/direct_sound_samples/cries/vulpix.bin"
+    .incbin "sound/direct_sound_samples/cries/vixun.bin"
 
     .align 2
 Cry_Vulpix::
@@ -1172,7 +1172,7 @@ Cry_Kuranpu::
 
     .align 2
 Cry_Typhidna::
-    .incbin "sound/direct_sound_samples/cries/unicrown.bin"
+    .incbin "sound/direct_sound_samples/cries/typhidna.bin"
 
     .align 2
 Cry_Unicrown::

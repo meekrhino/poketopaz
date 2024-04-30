@@ -289,7 +289,7 @@ const u8 gIngeroPokedexText[] = _(
 
 const u8 gDrowzeePokedexText[] = _(
     "Drowzee eats dreams in order to achieve\n"
-    "Rem in its own sleep. If it has not fed\n"
+    "REM in its own sleep. If it has not fed\n"
     "in a while, it becomes ill-tempered and\n"
     "can cause much damage due to its bulk.");
 

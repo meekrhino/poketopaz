@@ -853,7 +853,7 @@ NeoBay_EventScript_BradleyBattle_Text_0:
 	.string "I'm tired of looking…\p"
 	.string "Why don't we have a Pokémon battle\n"
 	.string "while we wait?\p"
-	.string "I'll heal you Pokémon first!$"
+	.string "I'll heal your Pokémon first!$"
 
 NeoBay_EventScript_MomRunningShoes_Text_0:
 	.string "Mom: Wait!\p{PLAYER}!$"

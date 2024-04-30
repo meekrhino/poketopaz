@@ -218,7 +218,7 @@ script NeoBay_EventScript_BradleyOptional {
 script(global) NeoBay_EventScript_BradleyBattle {
     lockall
     setvar(VAR_AMPURE_RESCUE_STATE, AMPURE_RESCUE_BRADLEY_FIGHT)
-    msgbox(format("Bradley: Still nothing?\nI'm tired of looking…\pWhy don't we have a Pokémon battle while we wait?\pI'll heal you Pokémon first!"))
+    msgbox(format("Bradley: Still nothing?\nI'm tired of looking…\pWhy don't we have a Pokémon battle while we wait?\pI'll heal your Pokémon first!"))
 	playfanfare(MUS_HEAL)
 	waitfanfare
 	special(HealPlayerParty)
