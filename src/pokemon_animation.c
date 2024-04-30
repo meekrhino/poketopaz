@@ -5417,17 +5417,37 @@ static void Anim_TeleportFourTimes(struct Sprite *sprite)
         sprite->x2 = 0;
         sprite->y2 = 0;
     }
-    else if(sprite->data[2] >= 48)
+    else if(sprite->data[2] == 62
+        || sprite->data[2] == 60
+        || sprite->data[2] == 58
+        || sprite->data[2] == 56)
+    {
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+    }
+    else if(sprite->data[2] >= 48
+        || sprite->data[2] == 46
+        || sprite->data[2] == 44
+        || sprite->data[2] == 42
+        || sprite->data[2] == 40)
     {
         sprite->x2 = 16;
         sprite->y2 =  -8;
     }
-    else if(sprite->data[2] >= 32)
+    else if(sprite->data[2] >= 32
+        || sprite->data[2] == 30
+        || sprite->data[2] == 28
+        || sprite->data[2] == 26
+        || sprite->data[2] == 24)
     {
         sprite->x2 = -16;
         sprite->y2 =  -16;
     }
-    else if(sprite->data[2] >= 16)
+    else if(sprite->data[2] >= 16
+        || sprite->data[2] == 14
+        || sprite->data[2] == 12
+        || sprite->data[2] == 10
+        || sprite->data[2] == 8)
     {
         sprite->x2 = 8;
         sprite->y2 =  2;
