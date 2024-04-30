@@ -959,7 +959,7 @@ const u8 gScizorPokedexText[] = _(
 
 const u8 gBakurgePokedexText[] = _(
     "The stronger the glow of the gems on\n"
-    "Bakurge'S arms, the more energy is stored\n"
+    "Bakurge's arms, the more energy is stored\n"
     "in its body. When angry, the sound of its\n"
     "pounding fists is oft mistaken for thunder.");
 
@@ -1148,7 +1148,7 @@ const u8 gKraklawPokedexText[] = _(
 const u8 gLeoraclePokedexText[] = _(
     "Leoracle can use telepathy to project\n"
     "thoughts into the minds of humans. The\n"
-    "Oracles of The Frost Shrine hold it in\n"
+    "Oracles of the Frost Shrine hold it in\n"
     "high regard for this purpose.");
 
 const u8 gKhaphixPokedexText[] = _(
