@@ -522,9 +522,8 @@ static const union AnimCmd sAnim_Coroona_1[] =
 
 static const union AnimCmd sAnim_Moocalf_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 33),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
@@ -546,17 +545,18 @@ static const union AnimCmd sAnim_Miltank_1[] =
 
 static const union AnimCmd sAnim_Inflare_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 32),
+    ANIMCMD_FRAME(1, 32),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Ingero_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(0, 20),
     ANIMCMD_END,
 };
 

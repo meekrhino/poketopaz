@@ -191,5 +191,6 @@ void SetSpriteCB_MonAnimDummy(struct Sprite *sprite);
 #define ANIM_SHAKE_GLOW_BLUE_SLOW               151
 #define ANIM_TELEPORT_FOUR_TIMES                152
 #define ANIM_GROW_THEN_SPIN                     153
+#define ANIM_V_SQUISH_BOUNCE_SPIN               154
 
 #endif // GUARD_POKEMON_ANIMATION_H

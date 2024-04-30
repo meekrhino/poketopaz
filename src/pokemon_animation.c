@@ -122,6 +122,7 @@ static void Anim_CircleIntoBackground(struct Sprite *sprite);
 static void Anim_RapidHorizontalHops(struct Sprite *sprite);
 static void Anim_FourPetal(struct Sprite *sprite);
 static void Anim_VerticalSquishBounce_Slow(struct Sprite *sprite);
+static void Anim_SquishBounceSpin(struct Sprite *sprite);
 static void Anim_HorizontalSlide_Slow(struct Sprite *sprite);
 static void Anim_VerticalSlide_Slow(struct Sprite *sprite);
 static void Anim_BounceRotateToSides_Small(struct Sprite *sprite);
@@ -599,6 +600,7 @@ static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_SHAKE_GLOW_BLUE]                   = Anim_ShakeGlowBlue,
     [ANIM_SHAKE_GLOW_BLUE_SLOW]              = Anim_ShakeGlowBlue_Slow,
     [ANIM_TELEPORT_FOUR_TIMES]               = Anim_TeleportFourTimes,
+    [ANIM_V_SQUISH_BOUNCE_SPIN]              = Anim_SquishBounceSpin,
 };
 
 // Each back anim set has 3 possible animations depending on nature
@@ -3521,6 +3523,56 @@ static void Anim_VerticalSquishBounce_Slow(struct Sprite *sprite)
     sprite->data[0] = 32;
     VerticalSquishBounce(sprite);
     sprite->callback = VerticalSquishBounce;
+}
+
+static void VerticalSquishBounceSpin(struct Sprite *sprite)
+{
+    s16 posY = 0;
+
+    if (sprite->data[2] == 0)
+    {
+        HandleStartAffineAnim(sprite);
+        sprite->data[3] = 0;
+    }
+
+    TryFlipX(sprite);
+
+    if (sprite->data[2] > sprite->data[0] * 3)
+    {
+        HandleSetAffineData(sprite, 256, 256, 0);
+        sprite->y2 = 0;
+        ResetSpriteAfterAnim(sprite);
+        sprite->callback = WaitAnimEnd;
+    }
+    else
+    {
+        s16 yScale = Sin(sprite->data[4], 32) + 256;
+        u16 rotation =(65536 / 32) * sprite->data[2];
+
+        HandleSetAffineData(sprite, 256, 256, sprite->data[6]);
+
+        if (sprite->data[2] > sprite->data[0] && sprite->data[2] < sprite->data[0] * 2)
+            sprite->data[3] += (128 / sprite->data[0]);
+        if (yScale > 256)
+            posY = (256 - yScale) / 8;
+
+        sprite->y2 = -(Sin(sprite->data[3], 10)) - posY;
+        if (sprite->data[2] > sprite->data[0] && sprite->data[2] < sprite->data[0] * 2)
+            HandleSetAffineData(sprite, 256 - Sin(sprite->data[4], 32), yScale, rotation);
+        else
+            HandleSetAffineData(sprite, 256 - Sin(sprite->data[4], 32), yScale, 0);
+        sprite->data[2]++;
+        sprite->data[4] = (sprite->data[4] + 128 / sprite->data[0]) & 0xFF;
+    }
+
+    TryFlipX(sprite);
+}
+
+static void Anim_SquishBounceSpin(struct Sprite *sprite)
+{
+    sprite->data[0] = 32;
+    VerticalSquishBounceSpin(sprite);
+    sprite->callback = VerticalSquishBounceSpin;
 }
 
 static void Anim_HorizontalSlide_Slow(struct Sprite *sprite)
