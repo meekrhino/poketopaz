@@ -706,7 +706,7 @@ const u8 gCorphishPokedexText[] = _(
 const u8 gCrawdauntPokedexText[] = _(
     "Crawdaunt is highly aggressive, always\n"
     "searching for a fight. Its sense of honor\n"
-    "keeps it from picking fights with Pokémon"
+    "keeps it from picking fights with Pokémon\n"
     "smaller than itself, instead honing its\n"
     "skill to tackle ever larger opponents.");
 
@@ -953,7 +953,7 @@ const u8 gScytherPokedexText[] = _(
 const u8 gScizorPokedexText[] = _(
     "The eyelike markings on Scizor's claws\n"
     "give enemies the impression that it has\n"
-    "three heads. Upon sight of the snapping"
+    "three heads. Upon sight of the snapping\n"
     "heads, foes often flee in terror\n"
     "rather than attempt to fight.");
 
@@ -986,7 +986,7 @@ const u8 gStantlerPokedexText[] = _(
     "Stantler's magnificent antlers were traded\n"
     "at high prices as works of art. As a\n"
     "result, this Pokémon was hunted close\n"
-    "to extinction by those who were after"
+    "to extinction by those who were after\n"
     "the priceless antlers.");
 
 const u8 gCaribriskPokedexText[] = _(
@@ -1003,9 +1003,9 @@ const u8 gHuskiiPokedexText[] = _(
     "snow on sleds.");
 
 const u8 gTundrolfPokedexText[] = _(
-    "This Pokémon lives upon the cold, empty"
-    "slopes of Mt. Frost. On crystal-clear"
-    "nights, the sound of Tundrolf's lonely"
+    "This Pokémon lives upon the cold, empty\n"
+    "slopes of Mt. Frost. On crystal-clear\n"
+    "nights, the sound of Tundrolf's lonely\n"
     "howl echoes for miles.");
 
 const u8 gWolfrostPokedexText[] = _(
