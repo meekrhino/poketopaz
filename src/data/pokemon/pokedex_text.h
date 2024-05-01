@@ -156,9 +156,10 @@ const u8 gWolvinePokedexText[] = _(
 
 const u8 gJalsidaPokedexText[] = _(
     "Jalsida's flight speed has been clocked\n"
-    "in excess of 130 km/h. Often, bug catchers\n"
-    "hunting for one will only hear a faint\n"
-    "buzzing before it has already passed them by.");
+    "in excess of 130 km/h. Often, bug\n"
+    "catchers hunting for one will only hear\n"
+    "a faint buzzing before it has already\n"
+    "passed them by.");
 
 const u8 gSpoinkPokedexText[] = _(
     "Spoink treasures the pearl that it carries\n"
@@ -214,7 +215,7 @@ const u8 gMankeyPokedexText[] = _(
     "A tribe of Mankey will pick a single tree\n"
     "to live in. The Pokemon that live in the\n"
     "areas around the tree are forced to move\n"
-    "somewhere else due to fear of being attacked.");
+    "somewhere else due to fear of attck.");
 
 const u8 gPrimeapePokedexText[] = _(
     "Primeape is capable of sending extra blood\n"
@@ -377,7 +378,7 @@ const u8 gKondriaPokedexText[] = _(
     "with a debilitating poison.");
 
 const u8 gWhismurPokedexText[] = _(
-    "Whismur emit extremely high-pitched and loud\n"
+    "Whismur emit extremely high-pitched, loud\n"
     "noises to frighten and disorient their\n"
     "enemies. It can end up frightening itself\n"
     "if the echos in the cave are too strong.");
@@ -505,7 +506,7 @@ const u8 gKoffingPokedexText[] = _(
     "Koffing absorbs toxic gasses from the air\n"
     "to keep itself inflated. Since it releases\n"
     "these gasses in the same form, Koffing's\n"
-    "effect on the environment is heavily debated.");
+    "environmental effects are heavily debated.");
 
 const u8 gWeezingPokedexText[] = _(
     "Weezing is a fusion of the waste material\n"
@@ -667,9 +668,9 @@ const u8 gSeraphPokedexText[] = _(
 
 const u8 gDunsparcePokedexText[] = _(
     "Dunsparce burrow underground using their\n"
-    "tails when being chased or when they are\n"
-    "in danger. The holes left behind are often\n"
-    "used for placing signposts or planting crops.");
+    "tails when being chased or in danger.\n"
+    "The holes left behind are often used\n"
+    "for placing signposts or planting crops.");
 
 const u8 gAbsolPokedexText[] = _(
     "For centuries there have been tales of the\n"
