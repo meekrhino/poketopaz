@@ -140,6 +140,14 @@
       "elevation": 3,
       "item": "ITEM_ANTIDOTE",
       "flag": "FLAG_ITEM_ROUTE_201_ANTIDOTE"
+    },
+    {
+      "type": "sign",
+      "x": 40,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route201_DEBUG"
     }
   ]
 }

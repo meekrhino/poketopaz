@@ -34,6 +34,11 @@ Route201_BugCatcher::
 	end
 
 
+Route201_DEBUG::
+	givemon SPECIES_VENAP, 5
+	end
+
+
 Route201_RouteSignNeoBay_Text_0:
 	.string "Route 201\n{RIGHT_ARROW} Neo Bay$"
 

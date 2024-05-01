@@ -38,6 +38,11 @@ script(global) Route201_BugCatcher {
     end
 }
 
+script(global) Route201_DEBUG {
+    givemon(SPECIES_VENAP, 5)
+    end
+}
+
 //=====================================
 // Local Scripts
 //=====================================
