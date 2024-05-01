@@ -99,6 +99,7 @@ static void Anim_Figure8(struct Sprite *sprite);
 static void Anim_FlashYellow(struct Sprite *sprite);
 static void Anim_SwingConcave_FastShort(struct Sprite *sprite);
 static void Anim_SwingConvex_FastShort(struct Sprite *sprite);
+static void Anim_SwingConvex_SlowReverse(struct Sprite *sprite);
 static void Anim_RotateUpSlamDown(struct Sprite *sprite);
 static void Anim_DeepVerticalSquishBounce(struct Sprite *sprite);
 static void Anim_HorizontalJumps(struct Sprite *sprite);
@@ -601,6 +602,7 @@ static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_SHAKE_GLOW_BLUE_SLOW]              = Anim_ShakeGlowBlue_Slow,
     [ANIM_TELEPORT_FOUR_TIMES]               = Anim_TeleportFourTimes,
     [ANIM_V_SQUISH_BOUNCE_SPIN]              = Anim_SquishBounceSpin,
+    [ANIM_SWING_CONVEX_SLOW_REVERSE]         = Anim_SwingConvex_SlowReverse,
 };
 
 // Each back anim set has 3 possible animations depending on nature
@@ -2436,8 +2438,14 @@ static void SwingConvex(struct Sprite *sprite)
     else
     {
         s16 index = (sprite->data[2] * 256) / sAnims[sprite->data[0]].data;
-        sprite->x2 = -(Sin(index, 10));
-        HandleSetAffineData(sprite, 256, 256, -(Sin(index, 3276)));
+        if (sprite->data[6] == 1) {
+            sprite->x2 = Sin(index, 10);
+            HandleSetAffineData(sprite, 256, 256, Sin(index, 3276));
+        }
+        else {
+            sprite->x2 = -(Sin(index, 10));
+            HandleSetAffineData(sprite, 256, 256, -(Sin(index, 3276)));
+        }
     }
 
     sprite->data[2]++;
@@ -2448,6 +2456,15 @@ static void Anim_SwingConvex_FastShort(struct Sprite *sprite)
 {
     u8 id = sprite->data[0] = AddNewAnim();
     sAnims[id].data = 50;
+    SwingConvex(sprite);
+    sprite->callback = SwingConvex;
+}
+
+static void Anim_SwingConvex_SlowReverse(struct Sprite *sprite)
+{
+    u8 id = sprite->data[0] = AddNewAnim();
+    sAnims[id].data = 128;
+    sprite->data[6] = 1;
     SwingConvex(sprite);
     sprite->callback = SwingConvex;
 }

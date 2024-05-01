@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_INFLARE, 5
-	givemon SPECIES_INGERO, 5
+	givemon SPECIES_BARKUB, 5
+	givemon SPECIES_VIXUN, 5
 	end
 
 
