@@ -207,6 +207,7 @@ static void Anim_ShakeGlowBlue_Fast(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue_Slow(struct Sprite *sprite);
 static void Anim_TeleportFourTimes(struct Sprite *sprite);
+static void Anim_CircleIntoBackgroundShake(struct Sprite *sprite);
 
 static void WaitAnimEnd(struct Sprite *sprite);
 
@@ -603,6 +604,7 @@ static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_TELEPORT_FOUR_TIMES]               = Anim_TeleportFourTimes,
     [ANIM_V_SQUISH_BOUNCE_SPIN]              = Anim_SquishBounceSpin,
     [ANIM_SWING_CONVEX_SLOW_REVERSE]         = Anim_SwingConvex_SlowReverse,
+    [ANIM_CIRCLE_INTO_BG_SHAKE]              = Anim_CircleIntoBackgroundShake,
 };
 
 // Each back anim set has 3 possible animations depending on nature
@@ -3430,6 +3432,43 @@ static void Anim_CircleIntoBackground(struct Sprite *sprite)
         ResetSpriteAfterAnim(sprite);
         HandleSetAffineData(sprite, 256, 256, 0);
         sprite->callback = WaitAnimEnd;
+    }
+    else
+    {
+        s16 scale;
+
+        sprite->x2 = -(Sin(sprite->data[7] % 256 , 8));
+        sprite->data[7] += 8;
+        scale = Sin((sprite->data[7] % 256) / 2, 96);
+        HandleSetAffineData(sprite, 256 + scale, 256 + scale, 0);
+    }
+
+    TryFlipX(sprite);
+}
+
+static void Anim_CircleIntoBackgroundShake(struct Sprite *sprite)
+{
+    TryFlipX(sprite);
+    if (sprite->data[2] == 0)
+    {
+        HandleStartAffineAnim(sprite);
+        sprite->data[2]++;
+        sprite->data[7] = 0;
+    }
+
+    if (sprite->data[7] > 512)
+    {
+        if (sprite->data[2] > 2304)
+        {
+            sprite->callback = WaitAnimEnd;
+            sprite->x2 = 0;
+        }
+        else
+        {
+            sprite->x2 = Sin(sprite->data[2] % 256, 3);
+        }
+
+        sprite->data[2] += 60;
     }
     else
     {

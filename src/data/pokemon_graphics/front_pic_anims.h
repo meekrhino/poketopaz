@@ -939,9 +939,8 @@ static const union AnimCmd sAnim_Zangoose_1[] =
 
 static const union AnimCmd sAnim_Zantilidae_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
@@ -959,9 +958,13 @@ static const union AnimCmd sAnim_Seviper_1[] =
 
 static const union AnimCmd sAnim_Pythang_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 35),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
