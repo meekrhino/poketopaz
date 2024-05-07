@@ -208,6 +208,7 @@ static void Anim_ShakeGlowBlue(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue_Slow(struct Sprite *sprite);
 static void Anim_TeleportFourTimes(struct Sprite *sprite);
 static void Anim_CircleIntoBackgroundShake(struct Sprite *sprite);
+static void Anim_GrowVibrateRiseFall(struct Sprite *sprite);
 
 static void WaitAnimEnd(struct Sprite *sprite);
 
@@ -605,6 +606,7 @@ static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_V_SQUISH_BOUNCE_SPIN]              = Anim_SquishBounceSpin,
     [ANIM_SWING_CONVEX_SLOW_REVERSE]         = Anim_SwingConvex_SlowReverse,
     [ANIM_CIRCLE_INTO_BG_SHAKE]              = Anim_CircleIntoBackgroundShake,
+    [ANIM_GROW_VIBRATE_RISE_FALL]            = Anim_GrowVibrateRiseFall,
 };
 
 // Each back anim set has 3 possible animations depending on nature
@@ -1106,6 +1108,46 @@ static void Anim_GrowVibrate(struct Sprite *sprite)
         }
 
         HandleSetAffineData(sprite, sprite->data[4], sprite->data[5], 0);
+    }
+
+    sprite->data[2]++;
+}
+
+static void Anim_GrowVibrateRiseFall(struct Sprite *sprite)
+{
+    if (sprite->data[2] == 0)
+        HandleStartAffineAnim(sprite);
+
+    if (sprite->data[2] > 96)
+    {
+        HandleSetAffineData(sprite, 256, 256, 0);
+        sprite->y2 = 0;
+        ResetSpriteAfterAnim(sprite);
+        sprite->callback = WaitAnimEnd;
+    }
+    else
+    {
+        s16 index = (sprite->data[2] * 256 / 96) % 256;
+
+        if (sprite->data[2] % 2 == 0)
+        {
+            sprite->data[4] = Sin(index, 32) + 256;
+            sprite->data[5] = Sin(index, 32) + 256;
+        }
+        else
+        {
+            sprite->data[4] = Sin(index, 8) + 256;
+            sprite->data[5] = Sin(index, 8) + 256;
+        }
+
+        HandleSetAffineData(sprite, sprite->data[4], sprite->data[5], 0);
+
+        if (sprite->data[2] < 32)
+            sprite->y2 = -Sin(sprite->data[2] * 2, 8);
+        else if (sprite->data[2] >= 64)
+            sprite->y2 = -Sin((sprite->data[2] - 32) * 2, 8);
+        else
+            sprite->y2 = -8;
     }
 
     sprite->data[2]++;

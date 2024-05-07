@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_QUIISORD, 5
-	givemon SPECIES_TSUNALL, 5
+	givemon SPECIES_SLOWPRIEST, 5
+	givemon SPECIES_PHANTASOMO, 5
 	end
 
 

@@ -1110,8 +1110,10 @@ static const union AnimCmd sAnim_Slowking_1[] =
 
 static const union AnimCmd sAnim_Slowpriest_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(1, 60),
+    ANIMCMD_FRAME(1, 32),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
@@ -1136,9 +1138,10 @@ static const union AnimCmd sAnim_Octillery_1[] =
 
 static const union AnimCmd sAnim_Phantasomo_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 50),
     ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
