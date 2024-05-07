@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_ZANTILIDAE, 5
-	givemon SPECIES_PYTHANG, 5
+	givemon SPECIES_QUIISORD, 5
+	givemon SPECIES_TSUNALL, 5
 	end
 
 
