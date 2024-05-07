@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_SKALLOY, 5
-	givemon SPECIES_CASCADET, 5
+	givemon SPECIES_SMALLARD, 5
+	givemon SPECIES_MALLARGE, 5
 	end
 
 
