@@ -162,8 +162,10 @@ static const union AnimCmd sAnim_Gashawk_1[] =
 
 static const union AnimCmd sAnim_Eaglair_1[] =
 {
-    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(1, 20),
     ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
@@ -693,9 +695,10 @@ static const union AnimCmd sAnim_Ninetales_1[] =
 
 static const union AnimCmd sAnim_Kondria_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 3),
+    ANIMCMD_FRAME(1, 50),
+    ANIMCMD_FRAME(1, 28),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
@@ -734,9 +737,9 @@ static const union AnimCmd sAnim_Exploud_1[] =
 
 static const union AnimCmd sAnim_Stribra_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 

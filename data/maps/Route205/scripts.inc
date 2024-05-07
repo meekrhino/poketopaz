@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_BARKUB, 5
-	givemon SPECIES_VIXUN, 5
+	givemon SPECIES_KONDRIA, 5
+	givemon SPECIES_EAGLAIR, 5
 	end
 
 
