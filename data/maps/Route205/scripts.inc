@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_EQUILL, 5
-	givemon SPECIES_TELLURE, 5
+	givemon SPECIES_GARGOTH, 5
+	givemon SPECIES_CRAGOYLE, 5
 	end
 
 
