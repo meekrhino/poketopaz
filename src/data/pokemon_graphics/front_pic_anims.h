@@ -1356,8 +1356,10 @@ static const union AnimCmd sAnim_Nimbolt_1[] =
 
 static const union AnimCmd sAnim_Drakodo_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 25),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
@@ -1407,9 +1409,9 @@ static const union AnimCmd sAnim_Umbreon_1[] =
 
 static const union AnimCmd sAnim_Illumeon_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 20),
     ANIMCMD_END,
 };
 
