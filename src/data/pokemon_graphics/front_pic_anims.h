@@ -1280,41 +1280,77 @@ static const union AnimCmd sAnim_Togetic_1[] =
 
 static const union AnimCmd sAnim_Cirroft_1[] =
 {
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 40),
     ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(1, 20),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Cumuloft_1[] =
 {
+    ANIMCMD_FRAME(1, 20),
     ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(1, 20),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Destado_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Frostorm_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 20),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Nimbolt_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 

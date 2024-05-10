@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_GARGOTH, 5
-	givemon SPECIES_CRAGOYLE, 5
+	givemon SPECIES_FROSTORM, 5
+	givemon SPECIES_NIMBOLT, 5
 	end
 
 
