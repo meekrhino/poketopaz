@@ -1649,9 +1649,8 @@ static const union AnimCmd sAnim_Sirene_1[] =
 
 static const union AnimCmd sAnim_Iglonia_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 32),
+    ANIMCMD_FRAME(0, 20),
     ANIMCMD_END,
 };
 
@@ -1664,9 +1663,9 @@ static const union AnimCmd sAnim_Stantler_1[] =
 
 static const union AnimCmd sAnim_Caribrisk_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(0, 20),
     ANIMCMD_END,
 };
 
