@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_IGLONIA, 5
-	givemon SPECIES_CARIBRISK, 5
+	givemon SPECIES_WOLFROST, 5
+	givemon SPECIES_TUNDROLF, 5
 	end
 
 
