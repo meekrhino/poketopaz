@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_ENGIL, 5
-	givemon SPECIES_BENENGIL, 5
+	givemon SPECIES_DUVAL, 5
+	givemon SPECIES_MALDUVAL, 5
 	end
 
 
