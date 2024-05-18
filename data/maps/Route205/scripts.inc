@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_SINESTRIL, 5
-	givemon SPECIES_MALISTRIL, 5
+	givemon SPECIES_BAKURGE, 5
+	givemon SPECIES_SIRENE, 5
 	end
 
 
