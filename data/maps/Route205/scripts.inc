@@ -134,8 +134,8 @@ Route205_FlowerShop::
 
 
 Route205_DEBUG::
-	givemon SPECIES_DRAKODO, 5
-	givemon SPECIES_ILLUMEON, 5
+	givemon SPECIES_CHIARAME, 5
+	givemon SPECIES_SERBERINE, 5
 	end
 
 
