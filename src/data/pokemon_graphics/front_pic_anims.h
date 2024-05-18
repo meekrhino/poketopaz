@@ -1522,9 +1522,9 @@ static const union AnimCmd sAnim_Tropius_1[] =
 
 static const union AnimCmd sAnim_Brontogon_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 18),
+    ANIMCMD_FRAME(1, 44),
+    ANIMCMD_FRAME(0, 22),
     ANIMCMD_END,
 };
 
