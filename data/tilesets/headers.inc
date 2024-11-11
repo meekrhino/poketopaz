@@ -907,3 +907,14 @@ gTileset_CranewingGym::
 	.4byte gMetatiles_CranewingGym
 	.4byte gMetatileAttributes_CranewingGym
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_SoftwindGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_SoftwindGym
+	.4byte gTilesetPalettes_SoftwindGym
+	.4byte gMetatiles_SoftwindGym
+	.4byte gMetatileAttributes_SoftwindGym
+	.4byte NULL @ animation callback

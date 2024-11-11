@@ -607,3 +607,11 @@ gMetatiles_CranewingGym::
 	.align 1
 gMetatileAttributes_CranewingGym::
 	.incbin "data/tilesets/secondary/cranewing_gym/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_SoftwindGym::
+	.incbin "data/tilesets/secondary/softwind_gym/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_SoftwindGym::
+	.incbin "data/tilesets/secondary/softwind_gym/metatile_attributes.bin"
