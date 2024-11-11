@@ -27,3 +27,7 @@ while read p; \
     sudo ../../tools/gbagfx/gbagfx $p/front.4bpp $p/front-shiny.png -palette $p/shiny.pal -object -width 8; \
     done \
 < pokemonlist-new.txt
+
+compiling tiles
+
+porytiles compile-secondary -Wall -disable-metatile-generation -disable-attribute-generation . ../../primary/building/ ../../../../include/constants/metatile_behaviors.h
