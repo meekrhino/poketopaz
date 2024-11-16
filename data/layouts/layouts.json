@@ -5844,6 +5844,18 @@
       "secondary_tileset": "gTileset_CranewingGym",
       "border_filepath": "data/layouts/CranewingCity_Gym_2F/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity_Gym_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MISTVALE_CITY",
+      "name": "MistvaleCity_Layout",
+      "width": 55,
+      "height": 47,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MistvaleCity",
+      "border_filepath": "data/layouts/MistvaleCity/border.bin",
+      "blockdata_filepath": "data/layouts/MistvaleCity/map.bin"
     }
   ]
 }

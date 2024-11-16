@@ -73,6 +73,7 @@
 #define MAP_UNDERWATER_ROUTE129 (64 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (65 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (66 | (0 << 8))
+#define MAP_MISTVALE_CITY       (67 | (0 << 8))
 
 // gMapGroup_IndoorNeoBay
 #define MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB        (0 | (1 << 8))

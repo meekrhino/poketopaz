@@ -1889,3 +1889,23 @@ gTilesetPalettes_SoftwindGym::
 	.align 2
 gTilesetTiles_SoftwindGym::
 	.incbin "data/tilesets/secondary/softwind_gym/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_MistvaleCity::
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/mistvale_city/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_MistvaleCity::
+	.incbin "data/tilesets/secondary/mistvale_city/tiles.4bpp.lz"

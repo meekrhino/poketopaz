@@ -918,3 +918,14 @@ gTileset_SoftwindGym::
 	.4byte gMetatiles_SoftwindGym
 	.4byte gMetatileAttributes_SoftwindGym
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_MistvaleCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_MistvaleCity
+	.4byte gTilesetPalettes_MistvaleCity
+	.4byte gMetatiles_MistvaleCity
+	.4byte gMetatileAttributes_MistvaleCity
+	.4byte NULL @ animation callback

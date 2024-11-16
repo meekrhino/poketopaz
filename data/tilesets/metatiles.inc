@@ -615,3 +615,11 @@ gMetatiles_SoftwindGym::
 	.align 1
 gMetatileAttributes_SoftwindGym::
 	.incbin "data/tilesets/secondary/softwind_gym/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_MistvaleCity::
+	.incbin "data/tilesets/secondary/mistvale_city/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_MistvaleCity::
+	.incbin "data/tilesets/secondary/mistvale_city/metatile_attributes.bin"
