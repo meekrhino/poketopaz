@@ -5680,12 +5680,12 @@
     {
       "id": "LAYOUT_SOFTWIND_CITY_GYM",
       "name": "SoftwindCity_Gym_Layout",
-      "width": 7,
-      "height": 15,
+      "width": 17,
+      "height": 31,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_FortreeGym",
+      "secondary_tileset": "gTileset_SoftwindGym",
       "border_filepath": "data/layouts/SoftwindCity_Gym/border.bin",
       "blockdata_filepath": "data/layouts/SoftwindCity_Gym/map.bin"
     },
