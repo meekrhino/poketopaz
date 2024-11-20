@@ -5848,8 +5848,8 @@
     {
       "id": "LAYOUT_MISTVALE_CITY",
       "name": "MistvaleCity_Layout",
-      "width": 55,
-      "height": 47,
+      "width": 57,
+      "height": 51,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
