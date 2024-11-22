@@ -1169,3 +1169,9 @@ Script_RemoveTint::
 	.include "data/maps/CranewingCity_Gym_2F/scripts.inc"
 
 	.include "data/maps/MistvaleCity/scripts.inc"
+
+	.include "data/maps/MtMist_West/scripts.inc"
+
+	.include "data/maps/Route207/scripts.inc"
+
+	.include "data/maps/MtMist_WestB/scripts.inc"

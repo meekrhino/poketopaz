@@ -1,0 +1,41 @@
+{
+  "id": "MAP_MT_MIST_WEST",
+  "name": "MtMist_West",
+  "layout": "LAYOUT_MT_MIST_WEST",
+  "music": "MUS_MT_CHIMNEY",
+  "region_map_section": "MAPSEC_MT_MIST",
+  "requires_flash": true,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MISTVALE_CITY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE207",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

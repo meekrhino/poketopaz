@@ -5856,6 +5856,42 @@
       "secondary_tileset": "gTileset_MistvaleCity",
       "border_filepath": "data/layouts/MistvaleCity/border.bin",
       "blockdata_filepath": "data/layouts/MistvaleCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_MIST_WEST",
+      "name": "MtMist_West_Layout",
+      "width": 22,
+      "height": 28,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MtMist",
+      "border_filepath": "data/layouts/MtMist_West/border.bin",
+      "blockdata_filepath": "data/layouts/MtMist_West/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE207",
+      "name": "Route207_Layout",
+      "width": 32,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MistvaleCity",
+      "border_filepath": "data/layouts/Route207/border.bin",
+      "blockdata_filepath": "data/layouts/Route207/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_MIST_WEST_B",
+      "name": "MtMist_WestB_Layout",
+      "width": 25,
+      "height": 25,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MtMist",
+      "border_filepath": "data/layouts/MtMist_WestB/border.bin",
+      "blockdata_filepath": "data/layouts/MtMist_WestB/map.bin"
     }
   ]
 }

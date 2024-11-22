@@ -101,15 +101,15 @@
       "x": 22,
       "y": 44,
       "elevation": 0,
-      "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MISTVALE_CITY",
+      "dest_warp_id": "2"
     },
     {
       "x": 10,
       "y": 34,
       "elevation": 0,
-      "dest_map": "MAP_MT_MIST_1F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MISTVALE_CITY",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

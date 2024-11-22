@@ -55,7 +55,27 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 7,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_MT_MIST_WEST",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 37,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_MT_MIST_1F",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 41,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_MT_MIST_1F",
+      "dest_warp_id": "6"
+    }
   ],
   "coord_events": [
 

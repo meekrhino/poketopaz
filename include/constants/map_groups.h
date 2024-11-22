@@ -74,6 +74,7 @@
 #define MAP_UNDERWATER_ROUTE105 (65 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (66 | (0 << 8))
 #define MAP_MISTVALE_CITY       (67 | (0 << 8))
+#define MAP_ROUTE207            (68 | (0 << 8))
 
 // gMapGroup_IndoorNeoBay
 #define MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB        (0 | (1 << 8))
@@ -447,6 +448,8 @@
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (108 | (24 << 8))
 #define MAP_MT_MIST_1F                               (109 | (24 << 8))
 #define MAP_MT_MIST_B1F                              (110 | (24 << 8))
+#define MAP_MT_MIST_WEST                             (111 | (24 << 8))
+#define MAP_MT_MIST_WEST_B                           (112 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

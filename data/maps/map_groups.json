@@ -103,7 +103,8 @@
     "Underwater_Route129",
     "Underwater_Route105",
     "Underwater_Route125",
-    "MistvaleCity"
+    "MistvaleCity",
+    "Route207"
   ],
   "gMapGroup_IndoorNeoBay": [
     "NeoBay_ProfessorWillowsLab",
@@ -476,7 +477,9 @@
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "MtMist_1F",
-    "MtMist_B1F"
+    "MtMist_B1F",
+    "MtMist_West",
+    "MtMist_WestB"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
