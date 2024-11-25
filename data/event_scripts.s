@@ -1175,3 +1175,5 @@ Script_RemoveTint::
 	.include "data/maps/Route207/scripts.inc"
 
 	.include "data/maps/MtMist_WestB/scripts.inc"
+
+	.include "data/maps/RoothavenCity/scripts.inc"

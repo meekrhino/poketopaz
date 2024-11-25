@@ -5892,6 +5892,18 @@
       "secondary_tileset": "gTileset_MtMist",
       "border_filepath": "data/layouts/MtMist_WestB/border.bin",
       "blockdata_filepath": "data/layouts/MtMist_WestB/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY",
+      "name": "RoothavenCity_Layout",
+      "width": 48,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RoothavenCity",
+      "border_filepath": "data/layouts/RoothavenCity/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity/map.bin"
     }
   ]
 }

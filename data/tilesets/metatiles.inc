@@ -623,3 +623,11 @@ gMetatiles_MistvaleCity::
 	.align 1
 gMetatileAttributes_MistvaleCity::
 	.incbin "data/tilesets/secondary/mistvale_city/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_RoothavenCity::
+	.incbin "data/tilesets/secondary/roothaven_city/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_RoothavenCity::
+	.incbin "data/tilesets/secondary/roothaven_city/metatile_attributes.bin"

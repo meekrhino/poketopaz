@@ -929,3 +929,14 @@ gTileset_MistvaleCity::
 	.4byte gMetatiles_MistvaleCity
 	.4byte gMetatileAttributes_MistvaleCity
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_RoothavenCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_RoothavenCity
+	.4byte gTilesetPalettes_RoothavenCity
+	.4byte gMetatiles_RoothavenCity
+	.4byte gMetatileAttributes_RoothavenCity
+	.4byte NULL @ animation callback
