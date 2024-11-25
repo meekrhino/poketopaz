@@ -5884,8 +5884,8 @@
     {
       "id": "LAYOUT_MT_MIST_WEST_B",
       "name": "MtMist_WestB_Layout",
-      "width": 25,
-      "height": 25,
+      "width": 20,
+      "height": 18,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
