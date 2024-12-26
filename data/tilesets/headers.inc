@@ -940,3 +940,14 @@ gTileset_RoothavenCity::
 	.4byte gMetatiles_RoothavenCity
 	.4byte gMetatileAttributes_RoothavenCity
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_AbaddonSwamp::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_AbaddonSwamp
+	.4byte gTilesetPalettes_AbaddonSwamp
+	.4byte gMetatiles_AbaddonSwamp
+	.4byte gMetatileAttributes_AbaddonSwamp
+	.4byte NULL @ animation callback

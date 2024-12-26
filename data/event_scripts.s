@@ -1177,3 +1177,5 @@ Script_RemoveTint::
 	.include "data/maps/MtMist_WestB/scripts.inc"
 
 	.include "data/maps/RoothavenCity/scripts.inc"
+
+	.include "data/maps/AbaddonSwamp/scripts.inc"

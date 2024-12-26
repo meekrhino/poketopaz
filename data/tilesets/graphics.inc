@@ -1929,3 +1929,23 @@ gTilesetPalettes_RoothavenCity::
 	.align 2
 gTilesetTiles_RoothavenCity::
 	.incbin "data/tilesets/secondary/roothaven_city/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_AbaddonSwamp::
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/abaddon_swamp/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_AbaddonSwamp::
+	.incbin "data/tilesets/secondary/abaddon_swamp/tiles.4bpp.lz"

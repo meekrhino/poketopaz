@@ -480,7 +480,8 @@
     "MtMist_1F",
     "MtMist_B1F",
     "MtMist_West",
-    "MtMist_WestB"
+    "MtMist_WestB",
+    "AbaddonSwamp"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

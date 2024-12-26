@@ -631,3 +631,11 @@ gMetatiles_RoothavenCity::
 	.align 1
 gMetatileAttributes_RoothavenCity::
 	.incbin "data/tilesets/secondary/roothaven_city/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_AbaddonSwamp::
+	.incbin "data/tilesets/secondary/abaddon_swamp/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_AbaddonSwamp::
+	.incbin "data/tilesets/secondary/abaddon_swamp/metatile_attributes.bin"

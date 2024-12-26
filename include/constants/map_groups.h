@@ -451,6 +451,7 @@
 #define MAP_MT_MIST_B1F                              (110 | (24 << 8))
 #define MAP_MT_MIST_WEST                             (111 | (24 << 8))
 #define MAP_MT_MIST_WEST_B                           (112 | (24 << 8))
+#define MAP_ABADDON_SWAMP                            (113 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

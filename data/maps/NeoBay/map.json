@@ -96,14 +96,14 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 26,
+      "x": 27,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_BRADLEYS_HOUSE_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 21,
+      "x": 22,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_NEO_BAY_HOUSE1",
@@ -181,7 +181,7 @@
     },
     {
       "type": "trigger",
-      "x": 26,
+      "x": 27,
       "y": 17,
       "elevation": 0,
       "var": "VAR_NEOBAY_STATE",

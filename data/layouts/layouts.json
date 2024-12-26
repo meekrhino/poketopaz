@@ -5904,6 +5904,18 @@
       "secondary_tileset": "gTileset_RoothavenCity",
       "border_filepath": "data/layouts/RoothavenCity/border.bin",
       "blockdata_filepath": "data/layouts/RoothavenCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ABADDON_SWAMP",
+      "name": "AbaddonSwamp_Layout",
+      "width": 51,
+      "height": 64,
+      "border_width": 3,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_AbaddonSwamp",
+      "border_filepath": "data/layouts/AbaddonSwamp/border.bin",
+      "blockdata_filepath": "data/layouts/AbaddonSwamp/map.bin"
     }
   ]
 }
