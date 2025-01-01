@@ -1949,3 +1949,23 @@ gTilesetPalettes_AbaddonSwamp::
 	.align 2
 gTilesetTiles_AbaddonSwamp::
 	.incbin "data/tilesets/secondary/abaddon_swamp/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_general_porytiles::
+	.incbin "data/tilesets/primary/general_porytiles/palettes/00.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/01.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/02.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/03.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/04.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/05.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/06.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/07.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/08.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/09.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/10.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/11.gbapal"
+	.incbin "data/tilesets/primary/general_porytiles/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_general_porytiles::
+	.incbin "data/tilesets/primary/general_porytiles/tiles.4bpp.lz"

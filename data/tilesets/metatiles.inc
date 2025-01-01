@@ -639,3 +639,11 @@ gMetatiles_AbaddonSwamp::
 	.align 1
 gMetatileAttributes_AbaddonSwamp::
 	.incbin "data/tilesets/secondary/abaddon_swamp/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_general_porytiles::
+	.incbin "data/tilesets/primary/general_porytiles/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_general_porytiles::
+	.incbin "data/tilesets/primary/general_porytiles/metatile_attributes.bin"

@@ -5300,7 +5300,7 @@
       "height": 48,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_general_porytiles",
       "secondary_tileset": "gTileset_NeoBay",
       "border_filepath": "data/layouts/NeoBay/border.bin",
       "blockdata_filepath": "data/layouts/NeoBay/map.bin"

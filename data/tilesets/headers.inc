@@ -951,3 +951,14 @@ gTileset_AbaddonSwamp::
 	.4byte gMetatiles_AbaddonSwamp
 	.4byte gMetatileAttributes_AbaddonSwamp
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_general_porytiles::
+	.byte TRUE @ is compressed
+	.byte FALSE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_general_porytiles
+	.4byte gTilesetPalettes_general_porytiles
+	.4byte gMetatiles_general_porytiles
+	.4byte gMetatileAttributes_general_porytiles
+	.4byte NULL @ animation callback
