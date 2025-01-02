@@ -961,4 +961,4 @@ gTileset_general_porytiles::
 	.4byte gTilesetPalettes_general_porytiles
 	.4byte gMetatiles_general_porytiles
 	.4byte gMetatileAttributes_general_porytiles
-	.4byte NULL @ animation callback
+	.4byte InitTilesetAnim_GeneralPorytiles @ animation callback
