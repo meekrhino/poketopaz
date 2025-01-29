@@ -809,7 +809,7 @@ static void QueueAnimTiles_General_Waterfall(u16 timer)
 static void QueueAnimTiles_GeneralPorytiles_Flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_GeneralPorytiles_Flower);
-    AppendTilesetAnimToBuffer(gTilesetAnims_GeneralPorytiles_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_GeneralPorytiles_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_GeneralPorytiles_Water(u16 timer)
@@ -827,7 +827,7 @@ static void QueueAnimTiles_GeneralPorytiles_SandWaterEdge(u16 timer)
 static void QueueAnimTiles_GeneralPorytiles_Waterfall(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_GeneralPorytiles_Waterfall);
-    AppendTilesetAnimToBuffer(gTilesetAnims_GeneralPorytiles_Waterfall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(496)), 6 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_GeneralPorytiles_Waterfall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(55)), 6 * TILE_SIZE_4BPP);
 }
 
 void InitTilesetAnim_Petalburg(void)
@@ -1128,7 +1128,7 @@ static void QueueAnimTiles_General_LandWaterEdge(u16 timer)
 static void QueueAnimTiles_GeneralPorytiles_LandWaterEdge(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_GeneralPorytiles_LandWaterEdge);
-    AppendTilesetAnimToBuffer(gTilesetAnims_GeneralPorytiles_LandWaterEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(480)), 10 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_GeneralPorytiles_LandWaterEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(5)), 10 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Lavaridge_Steam(u8 timer)
