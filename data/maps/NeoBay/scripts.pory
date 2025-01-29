@@ -1,7 +1,7 @@
 const PLAYER = OBJ_EVENT_ID_PLAYER
-const BRADLEY = 2
-const AMPURE = 3
-const MOM = 4
+const BRADLEY = 1
+const AMPURE = 2
+const MOM = 3
 
 const WARP_RESCUE = 2
 
