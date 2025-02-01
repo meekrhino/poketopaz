@@ -20,5 +20,5 @@ fi
 if [ "$action" == "decompile" ]; then
     porytiles decompile-secondary -Wall -o ./porytiles/secondary/$tileset/ ./data/tilesets/secondary/$tileset/ ./data/tilesets/primary/general_porytiles/ ./include/constants/metatile_behaviors.h
 elif [ "$action" == "compile" ]; then
-    compile-secondary -Wall -Wno-color-precision-loss -o ./data/tilesets/secondary/$tileset/ ./porytiles/secondary/$tileset/ ./porytiles/primary/general_porytiles/ ./include/constants/metatile_behaviors.h
+    porytiles compile-secondary -Wall -Wno-color-precision-loss -o ./data/tilesets/secondary/$tileset/ ./porytiles/secondary/$tileset/ ./porytiles/primary/general_porytiles/ ./include/constants/metatile_behaviors.h
 fi
