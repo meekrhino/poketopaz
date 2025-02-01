@@ -5336,7 +5336,7 @@
       "height": 52,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_general_porytiles",
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/SoftwindCity/border.bin",
       "blockdata_filepath": "data/layouts/SoftwindCity/map.bin"
@@ -5348,7 +5348,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_general_porytiles",
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/Route203/border.bin",
       "blockdata_filepath": "data/layouts/Route203/map.bin"
@@ -5408,7 +5408,7 @@
       "height": 34,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_general_porytiles",
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/Route205/border.bin",
       "blockdata_filepath": "data/layouts/Route205/map.bin"
@@ -5420,7 +5420,7 @@
       "height": 30,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_general_porytiles",
       "secondary_tileset": "gTileset_NeoBay",
       "border_filepath": "data/layouts/Route206/border.bin",
       "blockdata_filepath": "data/layouts/Route206/map.bin"
