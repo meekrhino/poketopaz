@@ -761,8 +761,8 @@
 
 // gTileset_Softwind
 #define METATILE_Softwind_Door_Blue    0x225
-#define METATILE_Softwind_Door_Brown   0x22A
-#define METATILE_Softwind_Door_Purple  0x22C
+#define METATILE_Softwind_Door_Brown   0x222
+#define METATILE_Softwind_Door_Purple  0x224
 
 // gTileset_Sootopolis
 #define METATILE_Sootopolis_Door             0x21E

@@ -33,7 +33,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 7,
-      "y": 15,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -46,7 +46,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 17,
-      "y": 15,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -59,7 +59,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 27,
-      "y": 15,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -72,7 +72,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 21,
-      "y": 31,
+      "y": 37,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -84,8 +84,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 11,
-      "y": 30,
+      "x": 10,
+      "y": 36,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -98,7 +98,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 20,
-      "y": 45,
+      "y": 51,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -111,7 +111,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_3",
       "x": 29,
-      "y": 33,
+      "y": 39,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -124,7 +124,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_WILLOW",
       "x": 25,
-      "y": 35,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -137,7 +137,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ALISA",
       "x": 15,
-      "y": 36,
+      "y": 42,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -150,7 +150,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_GRUNT_M",
       "x": 30,
-      "y": 35,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -163,7 +163,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ORION_DEFENDER_M",
       "x": 30,
-      "y": 36,
+      "y": 42,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -177,56 +177,56 @@
   "warp_events": [
     {
       "x": 7,
-      "y": 14,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY",
       "dest_warp_id": "0"
     },
     {
       "x": 17,
-      "y": 14,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY",
       "dest_warp_id": "1"
     },
     {
       "x": 27,
-      "y": 14,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY",
       "dest_warp_id": "2"
     },
     {
-      "x": 11,
-      "y": 33,
+      "x": 10,
+      "y": 39,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY_MART",
       "dest_warp_id": "0"
     },
     {
       "x": 29,
-      "y": 32,
+      "y": 38,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY_GYM",
       "dest_warp_id": "0"
     },
     {
       "x": 7,
-      "y": 44,
+      "y": 50,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
       "x": 30,
-      "y": 41,
+      "y": 47,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_1F",
       "dest_warp_id": "0"
     },
     {
       "x": 23,
-      "y": 41,
+      "y": 47,
       "elevation": 0,
       "dest_map": "MAP_SOFTWIND_CITY_POKEMON_CENTER",
       "dest_warp_id": "0"
@@ -236,7 +236,7 @@
     {
       "type": "trigger",
       "x": 18,
-      "y": 38,
+      "y": 44,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "0",
@@ -245,7 +245,7 @@
     {
       "type": "trigger",
       "x": 16,
-      "y": 40,
+      "y": 46,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "0",
@@ -254,7 +254,7 @@
     {
       "type": "trigger",
       "x": 15,
-      "y": 40,
+      "y": 46,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "0",
@@ -263,7 +263,7 @@
     {
       "type": "trigger",
       "x": 14,
-      "y": 40,
+      "y": 46,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "0",
@@ -272,7 +272,7 @@
     {
       "type": "trigger",
       "x": 13,
-      "y": 40,
+      "y": 46,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "0",
@@ -281,7 +281,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 39,
+      "y": 45,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "0",
@@ -290,7 +290,7 @@
     {
       "type": "trigger",
       "x": 33,
-      "y": 34,
+      "y": 40,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "1",
@@ -299,7 +299,7 @@
     {
       "type": "trigger",
       "x": 33,
-      "y": 35,
+      "y": 41,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "1",
@@ -308,7 +308,7 @@
     {
       "type": "trigger",
       "x": 33,
-      "y": 36,
+      "y": 42,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "1",
@@ -317,7 +317,7 @@
     {
       "type": "trigger",
       "x": 33,
-      "y": 37,
+      "y": 43,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "1",
@@ -326,7 +326,7 @@
     {
       "type": "trigger",
       "x": 34,
-      "y": 34,
+      "y": 40,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "3",
@@ -335,7 +335,7 @@
     {
       "type": "trigger",
       "x": 34,
-      "y": 35,
+      "y": 41,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "3",
@@ -344,7 +344,7 @@
     {
       "type": "trigger",
       "x": 34,
-      "y": 36,
+      "y": 42,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "3",
@@ -353,7 +353,7 @@
     {
       "type": "trigger",
       "x": 34,
-      "y": 37,
+      "y": 43,
       "elevation": 0,
       "var": "VAR_SOFTWIND_CITY_STATE",
       "var_value": "3",
@@ -364,7 +364,7 @@
     {
       "type": "sign",
       "x": 9,
-      "y": 17,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SoftwindCity_MoltresSign"
@@ -372,7 +372,7 @@
     {
       "type": "sign",
       "x": 19,
-      "y": 17,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SoftwindCity_ArticunoSign"
@@ -380,7 +380,7 @@
     {
       "type": "sign",
       "x": 29,
-      "y": 17,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SoftwindCity_ZapdosSign"
@@ -388,15 +388,15 @@
     {
       "type": "sign",
       "x": 39,
-      "y": 34,
+      "y": 40,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route203_RouteSignSoftwindCity"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 39,
+      "x": 18,
+      "y": 37,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SoftwindCity_TownSign"
@@ -404,7 +404,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 54,
+      "y": 58,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route202_RouteSignSoftwindCity"
@@ -412,7 +412,7 @@
     {
       "type": "sign",
       "x": 27,
-      "y": 33,
+      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SoftwindCity_GymSign"
