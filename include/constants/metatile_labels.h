@@ -470,6 +470,9 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
+// gTileset_Route203
+#define METATILE_Route203_Door_Barn  0x3DB
+
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
 #define METATILE_Rustboro_Door_Tan   0x22F

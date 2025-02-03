@@ -655,3 +655,11 @@ gMetatiles_SunsetVillage::
 	.align 1
 gMetatileAttributes_SunsetVillage::
 	.incbin "data/tilesets/secondary/sunset_village/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_Route203::
+	.incbin "data/tilesets/secondary/route_203/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Route203::
+	.incbin "data/tilesets/secondary/route_203/metatile_attributes.bin"

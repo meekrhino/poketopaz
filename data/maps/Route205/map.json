@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_SOFTWIND_CITY",
-      "offset": -24,
+      "offset": -28,
       "direction": "right"
     },
     {

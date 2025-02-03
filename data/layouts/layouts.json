@@ -5345,11 +5345,11 @@
       "id": "LAYOUT_ROUTE203",
       "name": "Route203_Layout",
       "width": 60,
-      "height": 40,
+      "height": 42,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_general_porytiles",
-      "secondary_tileset": "gTileset_Softwind",
+      "secondary_tileset": "gTileset_Route203",
       "border_filepath": "data/layouts/Route203/border.bin",
       "blockdata_filepath": "data/layouts/Route203/map.bin"
     },
