@@ -1,9 +1,8 @@
 const PLAYER = OBJ_EVENT_ID_PLAYER
 const WILLOW = 1
-const LAB = 2
-const BRADLEY = 3
-const OLD_WOMAN = 5
-const OLD_MAN = 6
+const BRADLEY = 2
+const OLD_WOMAN = 4
+const OLD_MAN = 5
 const VAR_X_TEMP = VAR_TEMP_0
 const VAR_Y_TEMP = VAR_TEMP_1
 const X_AFTER_LAB = 11
@@ -52,7 +51,7 @@ script(global) SunsetVillage_WillowAndBradleyTrigger {
     setvar(VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_BRADLEY_LEFT)
     removeobject(BRADLEY)
     removeobject(WILLOW)
-    removeobject(LAB)
+    //Remove lab tiles
     releaseall
     end
 }
@@ -172,7 +171,7 @@ script(local) SunsetVillage_ArriveByBoat {
         setvar(VAR_SUNSET_VILLAGE_STATE, SUNSET_VILLAGE_STATE_BRADLEY_LEFT)
         removeobject(BRADLEY)
         removeobject(WILLOW)
-        removeobject(LAB)
+        // Remove lab tiles
     }
     releaseall
     end
