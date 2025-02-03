@@ -5385,7 +5385,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_general_porytiles",
-      "secondary_tileset": "gTileset_Softwind",
+      "secondary_tileset": "gTileset_SunsetVillage",
       "border_filepath": "data/layouts/SunsetVillage/border.bin",
       "blockdata_filepath": "data/layouts/SunsetVillage/map.bin"
     },

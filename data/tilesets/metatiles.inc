@@ -647,3 +647,11 @@ gMetatiles_general_porytiles::
 	.align 1
 gMetatileAttributes_general_porytiles::
 	.incbin "data/tilesets/primary/general_porytiles/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_SunsetVillage::
+	.incbin "data/tilesets/secondary/sunset_village/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_SunsetVillage::
+	.incbin "data/tilesets/secondary/sunset_village/metatile_attributes.bin"

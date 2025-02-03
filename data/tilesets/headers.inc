@@ -962,3 +962,14 @@ gTileset_general_porytiles::
 	.4byte gMetatiles_general_porytiles
 	.4byte gMetatileAttributes_general_porytiles
 	.4byte InitTilesetAnim_GeneralPorytiles @ animation callback
+
+	.align 2
+gTileset_SunsetVillage::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_SunsetVillage
+	.4byte gTilesetPalettes_SunsetVillage
+	.4byte gMetatiles_SunsetVillage
+	.4byte gMetatileAttributes_SunsetVillage
+	.4byte NULL @ animation callback

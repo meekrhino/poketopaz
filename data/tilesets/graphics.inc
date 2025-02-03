@@ -1969,3 +1969,23 @@ gTilesetPalettes_general_porytiles::
 	.align 2
 gTilesetTiles_general_porytiles::
 	.incbin "data/tilesets/primary/general_porytiles/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_SunsetVillage::
+	.incbin "data/tilesets/secondary/sunset_village/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/sunset_village/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_SunsetVillage::
+	.incbin "data/tilesets/secondary/sunset_village/tiles.4bpp.lz"
