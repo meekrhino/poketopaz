@@ -5392,8 +5392,8 @@
     {
       "id": "LAYOUT_CRANEWING_CITY",
       "name": "CranewingCity_Layout",
-      "width": 36,
-      "height": 38,
+      "width": 42,
+      "height": 40,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
