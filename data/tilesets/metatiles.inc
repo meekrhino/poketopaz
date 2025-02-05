@@ -663,3 +663,11 @@ gMetatiles_Route203::
 	.align 1
 gMetatileAttributes_Route203::
 	.incbin "data/tilesets/secondary/route_203/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_Route206::
+	.incbin "data/tilesets/secondary/route_206/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Route206::
+	.incbin "data/tilesets/secondary/route_206/metatile_attributes.bin"

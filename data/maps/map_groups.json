@@ -40,12 +40,15 @@
     "SunsetVillage",
     "SoftwindCity",
     "CranewingCity",
+    "MistvaleCity",
+    "RoothavenCity",
     "Route201",
     "Route202",
     "Route203",
     "Route204",
     "Route205",
     "Route206",
+    "Route207",
     "PetalburgCity",
     "SlateportCity",
     "MauvilleCity",
@@ -102,10 +105,7 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125",
-    "MistvaleCity",
-    "Route207",
-    "RoothavenCity"
+    "Underwater_Route125"
   ],
   "gMapGroup_IndoorNeoBay": [
     "NeoBay_ProfessorWillowsLab",
@@ -339,14 +339,14 @@
     "EverGrandeCity_PokemonLeague_2F"
   ],
   "gMapGroup_IndoorRoute201": [
+    "Route201_House",
     "Route104_MrBrineysHouse",
-    "Route104_PrettyPetalFlowerShop",
-    "Route201_House"
+    "Route104_PrettyPetalFlowerShop"
   ],
   "gMapGroup_IndoorRoute203": [
+    "Route203_House",
     "Route111_WinstrateFamilysHouse",
-    "Route111_OldLadysRestStop",
-    "Route203_House"
+    "Route111_OldLadysRestStop"
   ],
   "gMapGroup_IndoorRoute112": [
     "Route112_CableCarStation",
@@ -369,6 +369,7 @@
   ],
   "gMapGroup_Dungeons": [
     "ChartreeForest",
+    "AbaddonSwamp",
     "MeteorFalls_1F_1R",
     "MeteorFalls_1F_2R",
     "MeteorFalls_B1F_1R",
@@ -480,8 +481,7 @@
     "MtMist_1F",
     "MtMist_B1F",
     "MtMist_West",
-    "MtMist_WestB",
-    "AbaddonSwamp"
+    "MtMist_WestB"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

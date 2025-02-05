@@ -5421,7 +5421,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_general_porytiles",
-      "secondary_tileset": "gTileset_NeoBay",
+      "secondary_tileset": "gTileset_Route206",
       "border_filepath": "data/layouts/Route206/border.bin",
       "blockdata_filepath": "data/layouts/Route206/map.bin"
     },
@@ -5852,7 +5852,7 @@
       "height": 51,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_general_porytiles",
       "secondary_tileset": "gTileset_MistvaleCity",
       "border_filepath": "data/layouts/MistvaleCity/border.bin",
       "blockdata_filepath": "data/layouts/MistvaleCity/map.bin"
