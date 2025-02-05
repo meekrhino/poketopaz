@@ -5873,10 +5873,10 @@
       "id": "LAYOUT_ROUTE207",
       "name": "Route207_Layout",
       "width": 32,
-      "height": 54,
+      "height": 55,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_general_porytiles",
       "secondary_tileset": "gTileset_MistvaleCity",
       "border_filepath": "data/layouts/Route207/border.bin",
       "blockdata_filepath": "data/layouts/Route207/map.bin"
