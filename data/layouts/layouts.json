@@ -5912,7 +5912,7 @@
       "height": 64,
       "border_width": 3,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_general_porytiles",
       "secondary_tileset": "gTileset_AbaddonSwamp",
       "border_filepath": "data/layouts/AbaddonSwamp/border.bin",
       "blockdata_filepath": "data/layouts/AbaddonSwamp/map.bin"
