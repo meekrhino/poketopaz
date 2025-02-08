@@ -2029,3 +2029,23 @@ gTilesetPalettes_Route206::
 	.align 2
 gTilesetTiles_Route206::
 	.incbin "data/tilesets/secondary/route_206/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Outpost::
+	.incbin "data/tilesets/primary/outpost/palettes/00.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/01.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/02.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/03.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/04.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/05.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/06.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/07.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/08.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/09.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/10.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/11.gbapal"
+	.incbin "data/tilesets/primary/outpost/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Outpost::
+	.incbin "data/tilesets/primary/outpost/tiles.4bpp.lz"

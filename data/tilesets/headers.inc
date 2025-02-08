@@ -995,3 +995,14 @@ gTileset_Route206::
 	.4byte gMetatiles_Route206
 	.4byte gMetatileAttributes_Route206
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_Outpost::
+	.byte TRUE @ is compressed
+	.byte FALSE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_Outpost
+	.4byte gTilesetPalettes_Outpost
+	.4byte gMetatiles_Outpost
+	.4byte gMetatileAttributes_Outpost
+	.4byte NULL @ animation callback

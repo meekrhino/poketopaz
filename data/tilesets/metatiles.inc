@@ -671,3 +671,11 @@ gMetatiles_Route206::
 	.align 1
 gMetatileAttributes_Route206::
 	.incbin "data/tilesets/secondary/route_206/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_Outpost::
+	.incbin "data/tilesets/primary/outpost/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Outpost::
+	.incbin "data/tilesets/primary/outpost/metatile_attributes.bin"
