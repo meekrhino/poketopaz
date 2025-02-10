@@ -679,3 +679,19 @@ gMetatiles_Outpost::
 	.align 1
 gMetatileAttributes_Outpost::
 	.incbin "data/tilesets/primary/outpost/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_HollowlogCity::
+	.incbin "data/tilesets/secondary/hollowlog_city/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_HollowlogCity::
+	.incbin "data/tilesets/secondary/hollowlog_city/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_HollowlogForest::
+	.incbin "data/tilesets/primary/hollowlog_forest/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_HollowlogForest::
+	.incbin "data/tilesets/primary/hollowlog_forest/metatile_attributes.bin"

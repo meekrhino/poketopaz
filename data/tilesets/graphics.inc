@@ -2049,3 +2049,43 @@ gTilesetPalettes_Outpost::
 	.align 2
 gTilesetTiles_Outpost::
 	.incbin "data/tilesets/primary/outpost/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_HollowlogCity::
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_city/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_HollowlogCity::
+	.incbin "data/tilesets/secondary/hollowlog_city/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_HollowlogForest::
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/00.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/01.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/02.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/03.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/04.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/05.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/06.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/07.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/08.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/09.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/10.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/11.gbapal"
+	.incbin "data/tilesets/primary/hollowlog_forest/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_HollowlogForest::
+	.incbin "data/tilesets/primary/hollowlog_forest/tiles.4bpp.lz"

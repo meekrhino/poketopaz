@@ -1179,3 +1179,5 @@ Script_RemoveTint::
 	.include "data/maps/RoothavenCity/scripts.inc"
 
 	.include "data/maps/AbaddonSwamp/scripts.inc"
+
+	.include "data/maps/HollowlogCity/scripts.inc"

@@ -1006,3 +1006,25 @@ gTileset_Outpost::
 	.4byte gMetatiles_Outpost
 	.4byte gMetatileAttributes_Outpost
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_HollowlogCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_HollowlogCity
+	.4byte gTilesetPalettes_HollowlogCity
+	.4byte gMetatiles_HollowlogCity
+	.4byte gMetatileAttributes_HollowlogCity
+	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_HollowlogForest::
+	.byte TRUE @ is compressed
+	.byte FALSE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_HollowlogForest
+	.4byte gTilesetPalettes_HollowlogForest
+	.4byte gMetatiles_HollowlogForest
+	.4byte gMetatileAttributes_HollowlogForest
+	.4byte NULL @ animation callback

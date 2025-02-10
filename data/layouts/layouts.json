@@ -5916,6 +5916,18 @@
       "secondary_tileset": "gTileset_AbaddonSwamp",
       "border_filepath": "data/layouts/AbaddonSwamp/border.bin",
       "blockdata_filepath": "data/layouts/AbaddonSwamp/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOLLOWLOG_CITY",
+      "name": "HollowlogCity_Layout",
+      "width": 21,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_HollowlogForest",
+      "secondary_tileset": "gTileset_HollowlogCity",
+      "border_filepath": "data/layouts/HollowlogCity/border.bin",
+      "blockdata_filepath": "data/layouts/HollowlogCity/map.bin"
     }
   ]
 }
