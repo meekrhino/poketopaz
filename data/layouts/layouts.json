@@ -5873,7 +5873,7 @@
       "id": "LAYOUT_ROUTE207",
       "name": "Route207_Layout",
       "width": 32,
-      "height": 55,
+      "height": 58,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_general_porytiles",
@@ -5928,6 +5928,18 @@
       "secondary_tileset": "gTileset_HollowlogCity",
       "border_filepath": "data/layouts/HollowlogCity/border.bin",
       "blockdata_filepath": "data/layouts/HollowlogCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE208",
+      "name": "Route208_Layout",
+      "width": 64,
+      "height": 44,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_general_porytiles",
+      "secondary_tileset": "gTileset_NeoBay",
+      "border_filepath": "data/layouts/Route208/border.bin",
+      "blockdata_filepath": "data/layouts/Route208/map.bin"
     }
   ]
 }

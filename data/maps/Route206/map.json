@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE205",
       "offset": 2,
       "direction": "right"
+    },
+    {
+      "map": "MAP_MISTVALE_CITY",
+      "offset": -4,
+      "direction": "left"
     }
   ],
   "object_events": [

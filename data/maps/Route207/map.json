@@ -17,13 +17,18 @@
       "map": "MAP_ROOTHAVEN_CITY",
       "offset": 2,
       "direction": "down"
+    },
+    {
+      "map": "MAP_MISTVALE_CITY",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 23,
-      "y": 9,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -36,7 +41,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 7,
-      "y": 9,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -49,7 +54,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 11,
-      "y": 9,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -62,7 +67,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 11,
-      "y": 47,
+      "y": 50,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -76,21 +81,21 @@
   "warp_events": [
     {
       "x": 16,
-      "y": 5,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_WEST",
       "dest_warp_id": "1"
     },
     {
       "x": 16,
-      "y": 11,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_WEST_B",
       "dest_warp_id": "0"
     },
     {
       "x": 16,
-      "y": 24,
+      "y": 27,
       "elevation": 0,
       "dest_map": "MAP_MT_MIST_WEST_B",
       "dest_warp_id": "1"
@@ -103,7 +108,7 @@
     {
       "type": "hidden_item",
       "x": 23,
-      "y": 38,
+      "y": 41,
       "elevation": 0,
       "item": "ITEM_NONE",
       "flag": "FLAG_TEMP_1"
@@ -111,7 +116,7 @@
     {
       "type": "hidden_item",
       "x": 7,
-      "y": 29,
+      "y": 32,
       "elevation": 0,
       "item": "ITEM_NONE",
       "flag": "FLAG_TEMP_1"
