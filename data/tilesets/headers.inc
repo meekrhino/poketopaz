@@ -1028,3 +1028,14 @@ gTileset_HollowlogForest::
 	.4byte gMetatiles_HollowlogForest
 	.4byte gMetatileAttributes_HollowlogForest
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_Route208::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_Route208
+	.4byte gTilesetPalettes_Route208
+	.4byte gMetatiles_Route208
+	.4byte gMetatileAttributes_Route208
+	.4byte NULL @ animation callback

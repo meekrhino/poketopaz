@@ -2089,3 +2089,23 @@ gTilesetPalettes_HollowlogForest::
 	.align 2
 gTilesetTiles_HollowlogForest::
 	.incbin "data/tilesets/primary/hollowlog_forest/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Route208::
+	.incbin "data/tilesets/secondary/route_208/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/route_208/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Route208::
+	.incbin "data/tilesets/secondary/route_208/tiles.4bpp.lz"

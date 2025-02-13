@@ -5937,7 +5937,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_general_porytiles",
-      "secondary_tileset": "gTileset_NeoBay",
+      "secondary_tileset": "gTileset_Route208",
       "border_filepath": "data/layouts/Route208/border.bin",
       "blockdata_filepath": "data/layouts/Route208/map.bin"
     }

@@ -695,3 +695,11 @@ gMetatiles_HollowlogForest::
 	.align 1
 gMetatileAttributes_HollowlogForest::
 	.incbin "data/tilesets/primary/hollowlog_forest/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_Route208::
+	.incbin "data/tilesets/secondary/route_208/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Route208::
+	.incbin "data/tilesets/secondary/route_208/metatile_attributes.bin"
