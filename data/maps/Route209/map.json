@@ -1,9 +1,9 @@
 {
-  "id": "MAP_ROUTE208",
-  "name": "Route208",
-  "layout": "LAYOUT_ROUTE208",
-  "music": "MUS_ROUTE111",
-  "region_map_section": "MAPSEC_ROUTE_208",
+  "id": "MAP_ROUTE209",
+  "name": "Route209",
+  "layout": "LAYOUT_ROUTE209",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_BIRTH_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROOTHAVEN_CITY",
-      "offset": -8,
+      "map": "MAP_ROUTE208",
+      "offset": 0,
       "direction": "left"
     },
     {
-      "map": "MAP_ROUTE209",
+      "map": "MAP_ABADDON_SWAMP",
       "offset": 0,
-      "direction": "right"
+      "direction": "down"
     }
   ],
   "object_events": [
