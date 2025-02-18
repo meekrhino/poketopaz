@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE201",
-      "offset": 14,
+      "offset": 16,
       "direction": "right"
     },
     {
@@ -28,7 +28,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_WILLOW",
       "x": 15,
-      "y": 26,
+      "y": 28,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -41,7 +41,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BRADLEY",
       "x": 15,
-      "y": 27,
+      "y": 29,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -54,7 +54,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
       "x": 23,
-      "y": 21,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -67,7 +67,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 9,
-      "y": 19,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -80,7 +80,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 10,
-      "y": 12,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -94,59 +94,41 @@
   "warp_events": [
     {
       "x": 27,
-      "y": 22,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_SUNSET_VILLAGE_POKEMON_CENTER",
       "dest_warp_id": "0"
     },
     {
       "x": 26,
-      "y": 8,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_SUNSET_VILLAGE_HOUSE3",
       "dest_warp_id": "0"
     },
     {
       "x": 11,
-      "y": 16,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_SUNSET_VILLAGE_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 13,
-      "y": 8,
+      "x": 15,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_SUNSET_VILLAGE_HOUSE2",
       "dest_warp_id": "0"
     },
     {
       "x": 11,
-      "y": 24,
+      "y": 26,
       "elevation": 0,
       "dest_map": "MAP_SUNSET_VILLAGE_MART",
       "dest_warp_id": "0"
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 26,
-      "elevation": 0,
-      "var": "VAR_SUNSET_VILLAGE_STATE",
-      "var_value": "1",
-      "script": "SunsetVillage_WillowAndBradleyTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 27,
-      "elevation": 0,
-      "var": "VAR_SUNSET_VILLAGE_STATE",
-      "var_value": "1",
-      "script": "SunsetVillage_WillowAndBradleyTrigger"
-    },
     {
       "type": "trigger",
       "x": 21,
@@ -173,13 +155,31 @@
       "var": "VAR_SUNSET_VILLAGE_STATE",
       "var_value": "1",
       "script": "SunsetVillage_WillowAndBradleyTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_SUNSET_VILLAGE_STATE",
+      "var_value": "1",
+      "script": "SunsetVillage_WillowAndBradleyTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_SUNSET_VILLAGE_STATE",
+      "var_value": "1",
+      "script": "SunsetVillage_WillowAndBradleyTrigger"
     }
   ],
   "bg_events": [
     {
       "type": "hidden_item",
       "x": 8,
-      "y": 12,
+      "y": 14,
       "elevation": 3,
       "item": "ITEM_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_SUNSET_VILLAGE_PEARL"
@@ -187,7 +187,7 @@
     {
       "type": "sign",
       "x": 24,
-      "y": 8,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "SunsetVillage_OtherMailbox"
@@ -195,7 +195,7 @@
     {
       "type": "sign",
       "x": 9,
-      "y": 18,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SunsetVillage_EmptyMailbox"
@@ -203,7 +203,7 @@
     {
       "type": "sign",
       "x": 16,
-      "y": 22,
+      "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SunsetVillage_TownSign"
@@ -211,7 +211,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 32,
+      "y": 34,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SunsetVillage_DockSign"
