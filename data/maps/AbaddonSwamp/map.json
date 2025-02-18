@@ -17,11 +17,6 @@
       "map": "MAP_ROUTE209",
       "offset": 0,
       "direction": "up"
-    },
-    {
-      "map": "MAP_HOLLOWLOG_CITY",
-      "offset": 13,
-      "direction": "down"
     }
   ],
   "object_events": [
