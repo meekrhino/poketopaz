@@ -191,7 +191,10 @@
     "VerdanturfTown_WandasHouse",
     "VerdanturfTown_FriendshipRatersHouse",
     "VerdanturfTown_House",
-    "RoothavenCity_HobbitHole"
+    "RoothavenCity_Inn_1F",
+    "RoothavenCity_Inn_B1F",
+    "RoothavenCity_House1",
+    "RoothavenCity_House2"
   ],
   "gMapGroup_IndoorHollowlog": [
     "PacifidlogTown_PokemonCenter_1F",
