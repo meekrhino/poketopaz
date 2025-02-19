@@ -1185,3 +1185,5 @@ Script_RemoveTint::
 	.include "data/maps/Route208/scripts.inc"
 
 	.include "data/maps/Route209/scripts.inc"
+
+	.include "data/maps/RoothavenCity_HobbitHole/scripts.inc"

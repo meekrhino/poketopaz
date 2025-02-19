@@ -5952,6 +5952,18 @@
       "secondary_tileset": "gTileset_Route208",
       "border_filepath": "data/layouts/Route209/border.bin",
       "blockdata_filepath": "data/layouts/Route209/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_HOBBIT_HOLE",
+      "name": "RoothavenCity_HobbitHole_Layout",
+      "width": 12,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RoothavenInside",
+      "border_filepath": "data/layouts/RoothavenCity_HobbitHole/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_HobbitHole/map.bin"
     }
   ]
 }

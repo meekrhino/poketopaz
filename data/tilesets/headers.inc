@@ -1050,3 +1050,14 @@ gTileset_GeneralKirant::
 	.4byte gMetatiles_GeneralKirant
 	.4byte gMetatileAttributes_GeneralKirant
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_RoothavenInside::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_RoothavenInside
+	.4byte gTilesetPalettes_RoothavenInside
+	.4byte gMetatiles_RoothavenInside
+	.4byte gMetatileAttributes_RoothavenInside
+	.4byte NULL @ animation callback

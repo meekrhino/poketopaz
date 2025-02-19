@@ -711,3 +711,11 @@ gMetatiles_GeneralKirant::
 	.align 1
 gMetatileAttributes_GeneralKirant::
 	.incbin "data/tilesets/primary/general_kirant/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_RoothavenInside::
+	.incbin "data/tilesets/secondary/roothaven_inside/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_RoothavenInside::
+	.incbin "data/tilesets/secondary/roothaven_inside/metatile_attributes.bin"
