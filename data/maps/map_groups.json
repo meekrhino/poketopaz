@@ -5,9 +5,9 @@
     "gMapGroup_IndoorSunsetVillage",
     "gMapGroup_IndoorSoftwind",
     "gMapGroup_IndoorCranewing",
-    "gMapGroup_IndoorFallarbor",
-    "gMapGroup_IndoorVerdanturf",
-    "gMapGroup_IndoorPacifidlog",
+    "gMapGroup_IndoorMistvale",
+    "gMapGroup_IndoorRoothaven",
+    "gMapGroup_IndoorHollowlog",
     "gMapGroup_IndoorPetalburg",
     "gMapGroup_IndoorSlateport",
     "gMapGroup_IndoorMauville",
@@ -171,7 +171,7 @@
     "CranewingCity_Glassworks_2F",
     "CranewingCity_Gym_2F"
   ],
-  "gMapGroup_IndoorFallarbor": [
+  "gMapGroup_IndoorMistvale": [
     "FallarborTown_Mart",
     "FallarborTown_BattleTentLobby",
     "FallarborTown_BattleTentCorridor",
@@ -181,7 +181,7 @@
     "FallarborTown_CozmosHouse",
     "FallarborTown_MoveRelearnersHouse"
   ],
-  "gMapGroup_IndoorVerdanturf": [
+  "gMapGroup_IndoorRoothaven": [
     "VerdanturfTown_BattleTentLobby",
     "VerdanturfTown_BattleTentCorridor",
     "VerdanturfTown_BattleTentBattleRoom",
@@ -192,7 +192,7 @@
     "VerdanturfTown_FriendshipRatersHouse",
     "VerdanturfTown_House"
   ],
-  "gMapGroup_IndoorPacifidlog": [
+  "gMapGroup_IndoorHollowlog": [
     "PacifidlogTown_PokemonCenter_1F",
     "PacifidlogTown_PokemonCenter_2F",
     "PacifidlogTown_House1",
