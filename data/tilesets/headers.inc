@@ -953,15 +953,15 @@ gTileset_AbaddonSwamp::
 	.4byte NULL @ animation callback
 
 	.align 2
-gTileset_general_porytiles::
+gTileset_general_caldera::
 	.byte TRUE @ is compressed
 	.byte FALSE @ is secondary
 	.2byte 0 @ padding
-	.4byte gTilesetTiles_general_porytiles
-	.4byte gTilesetPalettes_general_porytiles
-	.4byte gMetatiles_general_porytiles
-	.4byte gMetatileAttributes_general_porytiles
-	.4byte InitTilesetAnim_GeneralPorytiles @ animation callback
+	.4byte gTilesetTiles_general_caldera
+	.4byte gTilesetPalettes_general_caldera
+	.4byte gMetatiles_general_caldera
+	.4byte gMetatileAttributes_general_caldera
+	.4byte InitTilesetAnim_GeneralCaldera @ animation callback
 
 	.align 2
 gTileset_SunsetVillage::
