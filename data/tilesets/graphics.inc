@@ -2109,3 +2109,23 @@ gTilesetPalettes_Route208::
 	.align 2
 gTilesetTiles_Route208::
 	.incbin "data/tilesets/secondary/route_208/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_GeneralKirant::
+	.incbin "data/tilesets/primary/general_kirant/palettes/00.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/01.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/02.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/03.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/04.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/05.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/06.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/07.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/08.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/09.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/10.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/11.gbapal"
+	.incbin "data/tilesets/primary/general_kirant/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_GeneralKirant::
+	.incbin "data/tilesets/primary/general_kirant/tiles.4bpp.lz"

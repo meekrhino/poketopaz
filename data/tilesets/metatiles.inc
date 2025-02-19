@@ -703,3 +703,11 @@ gMetatiles_Route208::
 	.align 1
 gMetatileAttributes_Route208::
 	.incbin "data/tilesets/secondary/route_208/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_GeneralKirant::
+	.incbin "data/tilesets/primary/general_kirant/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_GeneralKirant::
+	.incbin "data/tilesets/primary/general_kirant/metatile_attributes.bin"

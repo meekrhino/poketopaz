@@ -1039,3 +1039,14 @@ gTileset_Route208::
 	.4byte gMetatiles_Route208
 	.4byte gMetatileAttributes_Route208
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_GeneralKirant::
+	.byte TRUE @ is compressed
+	.byte FALSE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_GeneralKirant
+	.4byte gTilesetPalettes_GeneralKirant
+	.4byte gMetatiles_GeneralKirant
+	.4byte gMetatileAttributes_GeneralKirant
+	.4byte NULL @ animation callback
