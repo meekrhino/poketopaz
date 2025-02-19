@@ -5300,7 +5300,7 @@
       "height": 48,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_NeoBay",
       "border_filepath": "data/layouts/NeoBay/border.bin",
       "blockdata_filepath": "data/layouts/NeoBay/map.bin"
@@ -5312,7 +5312,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_NeoBay",
       "border_filepath": "data/layouts/Route201/border.bin",
       "blockdata_filepath": "data/layouts/Route201/map.bin"
@@ -5324,7 +5324,7 @@
       "height": 38,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/Route202/border.bin",
       "blockdata_filepath": "data/layouts/Route202/map.bin"
@@ -5336,7 +5336,7 @@
       "height": 56,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/SoftwindCity/border.bin",
       "blockdata_filepath": "data/layouts/SoftwindCity/map.bin"
@@ -5348,7 +5348,7 @@
       "height": 42,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_Route203",
       "border_filepath": "data/layouts/Route203/border.bin",
       "blockdata_filepath": "data/layouts/Route203/map.bin"
@@ -5384,7 +5384,7 @@
       "height": 42,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_SunsetVillage",
       "border_filepath": "data/layouts/SunsetVillage/border.bin",
       "blockdata_filepath": "data/layouts/SunsetVillage/map.bin"
@@ -5408,7 +5408,7 @@
       "height": 34,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_Softwind",
       "border_filepath": "data/layouts/Route205/border.bin",
       "blockdata_filepath": "data/layouts/Route205/map.bin"
@@ -5420,7 +5420,7 @@
       "height": 30,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_Route206",
       "border_filepath": "data/layouts/Route206/border.bin",
       "blockdata_filepath": "data/layouts/Route206/map.bin"
@@ -5852,7 +5852,7 @@
       "height": 51,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_MistvaleCity",
       "border_filepath": "data/layouts/MistvaleCity/border.bin",
       "blockdata_filepath": "data/layouts/MistvaleCity/map.bin"
@@ -5876,7 +5876,7 @@
       "height": 58,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_MistvaleCity",
       "border_filepath": "data/layouts/Route207/border.bin",
       "blockdata_filepath": "data/layouts/Route207/map.bin"
@@ -5900,7 +5900,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_RoothavenCity",
       "border_filepath": "data/layouts/RoothavenCity/border.bin",
       "blockdata_filepath": "data/layouts/RoothavenCity/map.bin"
@@ -5936,7 +5936,7 @@
       "height": 44,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_Route208",
       "border_filepath": "data/layouts/Route208/border.bin",
       "blockdata_filepath": "data/layouts/Route208/map.bin"
@@ -5948,7 +5948,7 @@
       "height": 42,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_general_caldera",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_Route208",
       "border_filepath": "data/layouts/Route209/border.bin",
       "blockdata_filepath": "data/layouts/Route209/map.bin"

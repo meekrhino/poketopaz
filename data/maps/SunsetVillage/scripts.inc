@@ -20,9 +20,8 @@ SunsetVillage_WillowAndBradleyTrigger::
 	call SunsetVillage_BradleyLooksAroundEastVer
 	setflag FLAG_HIDE_SUNSET_VILLAGE_WILLOW
 	setvar VAR_SUNSET_VILLAGE_STATE, 2
-	removeobject 3
-	removeobject 1
 	removeobject 2
+	removeobject 1
 	releaseall
 	end
 
@@ -58,7 +57,7 @@ SunsetVillage_OldWomanMailbox::
 	msgbox SunsetVillage_OldWomanMailbox_Text_0
 	waitmessage
 	closemessage
-	applymovement 5, Common_Movement_FaceOriginalDirection
+	applymovement 4, Common_Movement_FaceOriginalDirection
 	end
 
 
@@ -70,7 +69,7 @@ SunsetVillage_OldMan::
 	lock
 	faceplayer
 	playse SE_PIN
-	applymovement 6, mExclamationPoint
+	applymovement 5, mExclamationPoint
 	waitmovement 0
 	delay 48
 	msgbox SunsetVillage_OldMan_Text_3
@@ -82,11 +81,11 @@ SunsetVillage_OldMan::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerStepsBack
 	delay 32
-	applymovement 6, mOldManStepsAside
+	applymovement 5, mOldManStepsAside
 	waitmovement 0
 	setflag FLAG_SOLVED_OLD_MAN
-	copyobjectxytoperm 6
-	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
+	copyobjectxytoperm 5
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_DOWN
 	quest_finish QUEST_HIDDEN_ITEMS
 	release
 SunsetVillage_OldMan_1:
@@ -123,9 +122,9 @@ SunsetVillage_OnWarpFromLab:
 	addobject 1
 	setobjectxy 1, 11, 32
 	turnobject 1, DIR_SOUTH
-	addobject 3
-	setobjectxy 3, 10, 32
-	turnobject 3, DIR_SOUTH
+	addobject 2
+	setobjectxy 2, 10, 32
+	turnobject 2, DIR_SOUTH
 	return
 
 
@@ -144,9 +143,8 @@ SunsetVillage_ArriveByBoat_2:
 	call SunsetVillage_BradleyLooksAroundLabVer
 	setflag FLAG_HIDE_SUNSET_VILLAGE_WILLOW
 	setvar VAR_SUNSET_VILLAGE_STATE, 2
-	removeobject 3
-	removeobject 1
 	removeobject 2
+	removeobject 1
 	goto SunsetVillage_ArriveByBoat_1
 
 
@@ -156,7 +154,7 @@ SunsetVillage_IntroAfterExitLab:
 	waitmessage
 	closemessage
 	applymovement 1, mWillowWalksOffOfDock
-	applymovement 3, mBradleyWalksOffOfDock
+	applymovement 2, mBradleyWalksOffOfDock
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalksOffOfDock
 	waitmovement OBJ_EVENT_ID_PLAYER
@@ -202,7 +200,7 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_0
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyWalksOut
+	applymovement 2, mBradleyWalksOut
 	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
 	delay 16
@@ -211,19 +209,19 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_1
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyLooksAround
-	waitmovement 3
+	applymovement 2, mBradleyLooksAround
+	waitmovement 2
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_2
 	waitmessage
 	msgbox SunsetVillage_HeadToSoftwind
 	waitmessage
 	playse SE_PIN
-	applymovement 3, mExclamationPoint
+	applymovement 2, mExclamationPoint
 	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyPanics
+	applymovement 2, mBradleyPanics
 	turnobject 1, DIR_NORTH
 	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
@@ -231,11 +229,11 @@ SunsetVillage_BradleyLooksAroundLabVer:
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_5
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyRunsToLab
+	applymovement 2, mBradleyRunsToLab
 	delay 15
 	applymovement 1, mFaceLeft
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
-	waitmovement 3
+	waitmovement 2
 	applymovement 1, mWalkLeftAndDown
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
 	waitmovement 1
@@ -255,49 +253,49 @@ SunsetVillage_BradleyLooksAroundLabVer:
 SunsetVillage_BradleyLooksAroundEastVer:
 	playse SE_PIN
 	applymovement 1, mStartledWalkRight
-	applymovement 3, mWalkRight
-	waitmovement 3
+	applymovement 2, mWalkRight
+	waitmovement 2
 	delay 30
 	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_0
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyFidgetsRight
-	waitmovement 3
+	applymovement 2, mBradleyFidgetsRight
+	waitmovement 2
 	msgbox SunsetVillage_BradleyRecaps
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyWalksOutEastVer
-	waitmovement 3
+	applymovement 2, mBradleyWalksOutEastVer
+	waitmovement 2
 	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_1
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyLooksAroundEastVer
+	applymovement 2, mBradleyLooksAroundEastVer
 	delay 30
 	applymovement 1, mFaceUp
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceUp
-	waitmovement 3
+	waitmovement 2
 	msgbox SunsetVillage_BradleyLooksAroundEastVer_Text_2
 	waitmessage
 	msgbox SunsetVillage_HeadToSoftwind
 	waitmessage
 	playse SE_PIN
-	applymovement 3, mExclamationPoint
+	applymovement 2, mExclamationPoint
 	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_3
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyPanicsEastVer
+	applymovement 2, mBradleyPanicsEastVer
 	waitmovement 0
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_4
 	waitmessage
 	msgbox SunsetVillage_BradleyLooksAroundLabVer_Text_5
 	waitmessage
 	closemessage
-	applymovement 3, mBradleyRunsToLabEastVer
+	applymovement 2, mBradleyRunsToLabEastVer
 	delay 30
 	applymovement 1, mFaceLeft
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
-	waitmovement 3
+	waitmovement 2
 	applymovement 1, mWalkRight
 	waitmovement 0
 	delay 15

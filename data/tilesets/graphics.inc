@@ -1951,7 +1951,7 @@ gTilesetTiles_AbaddonSwamp::
 	.incbin "data/tilesets/secondary/abaddon_swamp/tiles.4bpp.lz"
 
 	.align 2
-gTilesetPalettes_general_caldera::
+gTilesetPalettes_GeneralCaldera::
 	.incbin "data/tilesets/primary/general_caldera/palettes/00.gbapal"
 	.incbin "data/tilesets/primary/general_caldera/palettes/01.gbapal"
 	.incbin "data/tilesets/primary/general_caldera/palettes/02.gbapal"
@@ -1967,7 +1967,7 @@ gTilesetPalettes_general_caldera::
 	.incbin "data/tilesets/primary/general_caldera/palettes/12.gbapal"
 
 	.align 2
-gTilesetTiles_general_caldera::
+gTilesetTiles_GeneralCaldera::
 	.incbin "data/tilesets/primary/general_caldera/tiles.4bpp.lz"
 
 	.align 2

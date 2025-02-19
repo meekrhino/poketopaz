@@ -21,16 +21,16 @@ NeoBay_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 NeoBay_EventScript_GoToWillowBradleyTriggerTop::
 	lockall
-	addobject 2
+	addobject 1
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
-	setobjectxy 2, 12, 18
-	applymovement 2, mBradleyApproachPlayerTop
+	setobjectxy 1, 12, 18
+	applymovement 1, mBradleyApproachPlayerTop
 	waitmovement 0
 	call NeoBay_EventScript_BradleyIntroText
-	applymovement 2, mBradleyEscortsPlayerTop
+	applymovement 1, mBradleyEscortsPlayerTop
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEscortedByBradleyTop
 	waitmovement 0
-	turnobject 2, DIR_WEST
+	turnobject 1, DIR_WEST
 	call NeoBay_EventScript_BradleyShowBoatText
 	releaseall
 	end
@@ -38,16 +38,16 @@ NeoBay_EventScript_GoToWillowBradleyTriggerTop::
 
 NeoBay_EventScript_GoToWillowBradleyTriggerBottom::
 	lockall
-	addobject 2
+	addobject 1
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceLeft
-	setobjectxy 2, 12, 18
-	applymovement 2, mBradleyApproachPlayerBottom
+	setobjectxy 1, 12, 18
+	applymovement 1, mBradleyApproachPlayerBottom
 	waitmovement 0
 	call NeoBay_EventScript_BradleyIntroText
-	applymovement 2, mBradleyEscortsPlayerBottom
+	applymovement 1, mBradleyEscortsPlayerBottom
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEscortedByBradleyBottom
 	waitmovement 0
-	turnobject 2, DIR_WEST
+	turnobject 1, DIR_WEST
 	call NeoBay_EventScript_BradleyShowBoatText
 	releaseall
 	end
@@ -75,7 +75,7 @@ NeoBay_EventScript_OtherMailbox::
 
 NeoBay_EventScript_BradleyStopsPlayer::
 	lockall
-	applymovement 2, mFaceRight
+	applymovement 1, mFaceRight
 	waitmovement 0
 	compare VAR_AMPURE_RESCUE_STATE, 6
 	goto_if_eq NeoBay_EventScript_BradleyStopsPlayer_1
@@ -150,9 +150,9 @@ NeoBay_EventScript_BradleyOptional::
 
 NeoBay_EventScript_BradleyOptional_1:
 	lock
-	addobject 2
-	setobjectxy 2, 26, 23
-	applymovement 2, mBradleyApproachesForOptionalFight
+	addobject 1
+	setobjectxy 1, 26, 23
+	applymovement 1, mBradleyApproachesForOptionalFight
 	delay 32
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	waitmovement 0
@@ -170,15 +170,15 @@ NeoBay_EventScript_BradleyOptional_3:
 	applymovement OBJ_EVENT_ID_PLAYER, mWalkLeft
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-	applymovement 2, Common_Movement_WalkUp
+	applymovement 1, Common_Movement_WalkUp
 	waitmovement 0
 	opendoor 26, 16
 	waitdooranim
-	applymovement 2, mBradleyLeavesAfterOptionalFight
+	applymovement 1, mBradleyLeavesAfterOptionalFight
 	waitmovement 0
 	closedoor 26, 16
 	waitdooranim
-	removeobject 2
+	removeobject 1
 	release
 	return
 
@@ -214,9 +214,9 @@ NeoBay_EventScript_MomRunningShoes::
 	applymovement OBJ_EVENT_ID_PLAYER, mFaceRight
 	waitmovement 0
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	addobject 4
-	setobjectxy 4, 25, VAR_TEMP_1
-	applymovement 4, mNeoBayMomWalksUpToPlayer
+	addobject 3
+	setobjectxy 3, 25, VAR_TEMP_1
+	applymovement 3, mNeoBayMomWalksUpToPlayer
 	waitmovement 0
 	delay 30
 	msgbox NeoBay_Text_MomAngry
@@ -228,10 +228,10 @@ NeoBay_EventScript_MomRunningShoes::
 	msgbox Neobay_Text_SayGoodbye
 	waitmessage
 	closemessage
-	applymovement 4, mNeoBayMomStartsToLeave
+	applymovement 3, mNeoBayMomStartsToLeave
 	waitmovement 0
 	setflag FLAG_HIDE_NEO_BAY_MOM
-	removeobject 4
+	removeobject 3
 	releaseall
 	return
 
@@ -288,7 +288,7 @@ NeoBay_OnResume_5:
 
 NeoBay_EventScript_BradleyIntroText:
 	msgbox NeoBay_Text_BradleyIntroStart, MSGBOX_DEFAULT
-	applymovement 2, mBradleyFidgetsRight
+	applymovement 1, mBradleyFidgetsRight
 	waitmovement 0
 	msgbox NeoBay_Text_BradleyIntroStartLetsGo, MSGBOX_DEFAULT
 	subquest_finish SUB_QUEST_FIND_BRADLEY
@@ -301,7 +301,7 @@ NeoBay_EventScript_BradleyShowBoatText:
 	msgbox NeoBay_Text_BradleyShowBoatStart, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	applymovement 2, mEnterShip
+	applymovement 1, mEnterShip
 	applymovement OBJ_EVENT_ID_PLAYER, mEnterShip
 	waitmovement 0
 	setflag FLAG_SPAWN_INVISIBLE
@@ -311,30 +311,30 @@ NeoBay_EventScript_BradleyShowBoatText:
 
 NeoBay_EventScript_BradleyLeadsToGrass:
 	lockall
-	applymovement 2, mBradleyWalksUpAndLooksAtPlayer
+	applymovement 1, mBradleyWalksUpAndLooksAtPlayer
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerWalksUpAndLooksAtBradley
 	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox NeoBay_EventScript_BradleyLeadsToGrass_Text_0
 	msgbox NeoBay_EventScript_BradleyLeadsToGrass_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 2, mBradleyEscortsPlayerToMeadow
+	applymovement 1, mBradleyEscortsPlayerToMeadow
 	applymovement OBJ_EVENT_ID_PLAYER, mPlayerEscortsBradleyToMeadow
 	waitmovement OBJ_EVENT_ID_PLAYER
-	applymovement 2, mBradleyLooksAroundAndFidgets
-	waitmovement 2
+	applymovement 1, mBradleyLooksAroundAndFidgets
+	waitmovement 1
 	msgbox NeoBay_EventScript_BradleyLeadsToGrass_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
 	setvar VAR_AMPURE_RESCUE_STATE, 2
-	copyobjectxytoperm 2
+	copyobjectxytoperm 1
 	releaseall
 	end
 
 
 NeoBay_EventScript_SetupBradleyAtBoat:
 	setrespawn HEAL_LOCATION_NEO_BAY
-	addobject 2
-	setobjectxy 2, 28, 33
-	turnobject 2, DIR_NORTH
+	addobject 1
+	setobjectxy 1, 28, 33
+	turnobject 1, DIR_NORTH
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	return
 
@@ -360,9 +360,9 @@ NeoBay_UpdateBradleyPositionAfterEncounter:
 	special PrintTest
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	addvar VAR_TEMP_0, 1
-	setobjectxy 2, VAR_TEMP_0, VAR_TEMP_1
-	copyobjectxytoperm 2
-	turnobject 2, DIR_WEST
+	setobjectxy 1, VAR_TEMP_0, VAR_TEMP_1
+	copyobjectxytoperm 1
+	turnobject 1, DIR_WEST
 	return
 
 
@@ -395,48 +395,48 @@ NeoBay_EventScript_AmpureRescueAfterSecond:
 
 
 NeoBay_EventScript_SetupBradleyForAmpure:
+	addobject 1
 	addobject 2
-	addobject 3
-	setobjectxy 2, 11, 23
-	turnobject 2, DIR_EAST
+	setobjectxy 1, 11, 23
+	turnobject 1, DIR_EAST
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	setvar VAR_AMPURE_RESCUE_STATE, 4
 	return
 
 
 NeoBay_EventScript_SetupBradleyForFight:
-	addobject 2
-	setobjectxyperm 2, 11, 23
+	addobject 1
+	setobjectxyperm 1, 11, 23
 	return
 
 
 NeoBay_EventScript_AmpureCapture:
 	lockall
 	setvar VAR_AMPURE_RESCUE_STATE, 7
-	addobject 3
-	applymovement 3, mAmpureRunsUpToPlayer
-	waitmovement 3
+	addobject 2
+	applymovement 2, mAmpureRunsUpToPlayer
+	waitmovement 2
 	delay 48
 	playse SE_PIN
-	applymovement 3, mExclamationPoint
-	applymovement 2, mLookUpStartled
+	applymovement 2, mExclamationPoint
+	applymovement 1, mLookUpStartled
 	applymovement OBJ_EVENT_ID_PLAYER, mLookUpStartled
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playmoncry SPECIES_AMPURE, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox NeoBay_EventScript_AmpureCapture_Text_0
 	waitmessage
-	applymovement 2, mWalkUpLookRight
-	waitmovement 2
+	applymovement 1, mWalkUpLookRight
+	waitmovement 1
 	special SavePlayerParty
 	special PutRivalMonInPlayerParty
 	special StartBradleyAmpureCatch
 	waitstate
 	delay 60
 	fadescreen FADE_TO_WHITE
-	removeobject 3
-	setobjectxy 2, 12, 22
-	turnobject 2, DIR_SOUTH
+	removeobject 2
+	setobjectxy 1, 12, 22
+	turnobject 1, DIR_SOUTH
 	special LoadPlayerParty
 	fadescreen FADE_FROM_WHITE
 	msgbox NeoBay_EventScript_AmpureCapture_Text_1

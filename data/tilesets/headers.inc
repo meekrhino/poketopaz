@@ -953,14 +953,14 @@ gTileset_AbaddonSwamp::
 	.4byte NULL @ animation callback
 
 	.align 2
-gTileset_general_caldera::
+gTileset_GeneralCaldera::
 	.byte TRUE @ is compressed
 	.byte FALSE @ is secondary
 	.2byte 0 @ padding
-	.4byte gTilesetTiles_general_caldera
-	.4byte gTilesetPalettes_general_caldera
-	.4byte gMetatiles_general_caldera
-	.4byte gMetatileAttributes_general_caldera
+	.4byte gTilesetTiles_GeneralCaldera
+	.4byte gTilesetPalettes_GeneralCaldera
+	.4byte gMetatiles_GeneralCaldera
+	.4byte gMetatileAttributes_GeneralCaldera
 	.4byte InitTilesetAnim_GeneralCaldera @ animation callback
 
 	.align 2
