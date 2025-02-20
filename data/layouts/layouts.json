@@ -5956,7 +5956,7 @@
     {
       "id": "LAYOUT_ROOTHAVEN_CITY_INN_1F",
       "name": "RoothavenCity_Inn_1F_Layout",
-      "width": 18,
+      "width": 20,
       "height": 11,
       "border_width": 2,
       "border_height": 2,
@@ -5968,7 +5968,7 @@
     {
       "id": "LAYOUT_ROOTHAVEN_CITY_INN_B1F",
       "name": "RoothavenCity_Inn_B1F_Layout",
-      "width": 18,
+      "width": 20,
       "height": 11,
       "border_width": 2,
       "border_height": 2,
@@ -5980,7 +5980,7 @@
     {
       "id": "LAYOUT_ROOTHAVEN_CITY_HOUSE1",
       "name": "RoothavenCity_House1_Layout",
-      "width": 12,
+      "width": 14,
       "height": 10,
       "border_width": 2,
       "border_height": 2,
@@ -5992,7 +5992,7 @@
     {
       "id": "LAYOUT_ROOTHAVEN_CITY_HOUSE2",
       "name": "RoothavenCity_House2_Layout",
-      "width": 9,
+      "width": 11,
       "height": 10,
       "border_width": 2,
       "border_height": 2,
