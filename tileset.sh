@@ -13,7 +13,7 @@ tileset=$3
 if [ "$#" == 4 ]; then
     primary_tileset=$4
 else
-    primary_tileset="GeneralCaldera"
+    primary_tileset="general_caldera"
 fi
 
 echo "using primary $primary_tileset"
