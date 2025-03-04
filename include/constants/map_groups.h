@@ -79,6 +79,7 @@
 #define MAP_UNDERWATER_ROUTE129 (70 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (71 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (72 | (0 << 8))
+#define MAP_KALYPSO_CITY        (73 | (0 << 8))
 
 // gMapGroup_IndoorNeoBay
 #define MAP_NEO_BAY_PROFESSOR_WILLOWS_LAB        (0 | (1 << 8))

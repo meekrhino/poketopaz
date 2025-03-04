@@ -1193,3 +1193,5 @@ Script_RemoveTint::
 	.include "data/maps/RoothavenCity_House1/scripts.inc"
 
 	.include "data/maps/RoothavenCity_House2/scripts.inc"
+
+	.include "data/maps/KalypsoCity/scripts.inc"
