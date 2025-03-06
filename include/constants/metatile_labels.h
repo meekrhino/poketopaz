@@ -268,7 +268,7 @@
 #define METATILE_General_YellowCaveOpen        0x1A9
 
 // gTileset_GeneralKirant
-#define METATILE_GeneralKirant_Door_Gym         0x1CD
+#define METATILE_GeneralKirant_Door_Gym         0x1B1
 #define METATILE_GeneralKirant_Door_PokeCenter  0x061
 #define METATILE_GeneralKirant_Door_PokeMart    0x042
 
