@@ -1061,3 +1061,14 @@ gTileset_RoothavenInside::
 	.4byte gMetatiles_RoothavenInside
 	.4byte gMetatileAttributes_RoothavenInside
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_CyclingRoad::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_CyclingRoad
+	.4byte gTilesetPalettes_CyclingRoad
+	.4byte gMetatiles_CyclingRoad
+	.4byte gMetatileAttributes_CyclingRoad
+	.4byte NULL @ animation callback

@@ -2149,3 +2149,23 @@ gTilesetPalettes_RoothavenInside::
 	.align 2
 gTilesetTiles_RoothavenInside::
 	.incbin "data/tilesets/secondary/roothaven_inside/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_CyclingRoad::
+	.incbin "data/tilesets/secondary/cycling_road/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/cycling_road/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_CyclingRoad::
+	.incbin "data/tilesets/secondary/cycling_road/tiles.4bpp.lz"

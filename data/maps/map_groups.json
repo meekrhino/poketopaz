@@ -1,6 +1,8 @@
 {
   "group_order": [
     "gMapGroup_TownsAndRoutes",
+    "gMapGroup_Dungeons",
+    "gMapGroup_OldTownsAndRegions",
     "gMapGroup_IndoorNeoBay",
     "gMapGroup_IndoorSunsetVillage",
     "gMapGroup_IndoorSoftwind",
@@ -24,7 +26,7 @@
     "gMapGroup_IndoorRoute116",
     "gMapGroup_IndoorRoute117",
     "gMapGroup_IndoorRoute121",
-    "gMapGroup_Dungeons",
+    "gMapGroup_OldDungeons",
     "gMapGroup_IndoorDynamic",
     "gMapGroup_SpecialArea",
     "gMapGroup_IndoorRoute201Prototype",
@@ -43,6 +45,7 @@
     "MistvaleCity",
     "RoothavenCity",
     "HollowlogCity",
+    "KalypsoCity",
     "Route201",
     "Route202",
     "Route203",
@@ -52,6 +55,18 @@
     "Route207",
     "Route208",
     "Route209",
+    "Route210North",
+    "Route210South"
+  ],
+  "gMapGroup_Dungeons": [
+    "ChartreeForest",
+    "AbaddonSwamp",
+    "MtMist_1F",
+    "MtMist_B1F",
+    "MtMist_West",
+    "MtMist_WestB"
+  ],
+  "gMapGroup_OldTownsAndRegions": [
     "PetalburgCity",
     "SlateportCity",
     "MauvilleCity",
@@ -108,8 +123,7 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125",
-    "KalypsoCity"
+    "Underwater_Route125"
   ],
   "gMapGroup_IndoorNeoBay": [
     "NeoBay_ProfessorWillowsLab",
@@ -375,9 +389,7 @@
   "gMapGroup_IndoorRoute121": [
     "Route121_SafariZoneEntrance"
   ],
-  "gMapGroup_Dungeons": [
-    "ChartreeForest",
-    "AbaddonSwamp",
+  "gMapGroup_OldDungeons": [
     "MeteorFalls_1F_1R",
     "MeteorFalls_1F_2R",
     "MeteorFalls_B1F_1R",
@@ -485,11 +497,7 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave",
-    "MtMist_1F",
-    "MtMist_B1F",
-    "MtMist_West",
-    "MtMist_WestB"
+    "MeteorFalls_StevensCave"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

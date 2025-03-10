@@ -6012,6 +6012,42 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/KalypsoCity/border.bin",
       "blockdata_filepath": "data/layouts/KalypsoCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE210NORTH",
+      "name": "Route210North_Layout",
+      "width": 36,
+      "height": 48,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_GeneralCaldera",
+      "secondary_tileset": "gTileset_CyclingRoad",
+      "border_filepath": "data/layouts/Route210North/border.bin",
+      "blockdata_filepath": "data/layouts/Route210North/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE201SOUTH",
+      "name": "Route201South_Layout",
+      "width": 36,
+      "height": 30,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_GeneralKirant",
+      "secondary_tileset": "gTileset_CyclingRoad",
+      "border_filepath": "data/layouts/Route201South/border.bin",
+      "blockdata_filepath": "data/layouts/Route201South/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE210SOUTH",
+      "name": "Route210South_Layout",
+      "width": 36,
+      "height": 30,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_GeneralKirant",
+      "secondary_tileset": "gTileset_CyclingRoad",
+      "border_filepath": "data/layouts/Route210South/border.bin",
+      "blockdata_filepath": "data/layouts/Route210South/map.bin"
     }
   ]
 }

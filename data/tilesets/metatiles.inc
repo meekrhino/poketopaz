@@ -719,3 +719,11 @@ gMetatiles_RoothavenInside::
 	.align 1
 gMetatileAttributes_RoothavenInside::
 	.incbin "data/tilesets/secondary/roothaven_inside/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_CyclingRoad::
+	.incbin "data/tilesets/secondary/cycling_road/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CyclingRoad::
+	.incbin "data/tilesets/secondary/cycling_road/metatile_attributes.bin"
