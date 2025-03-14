@@ -1199,3 +1199,5 @@ Script_RemoveTint::
 	.include "data/maps/Route210North/scripts.inc"
 
 	.include "data/maps/Route210South/scripts.inc"
+
+	.include "data/maps/MistvaleCity_House1/scripts.inc"

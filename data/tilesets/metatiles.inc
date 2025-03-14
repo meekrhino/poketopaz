@@ -727,3 +727,11 @@ gMetatiles_CyclingRoad::
 	.align 1
 gMetatileAttributes_CyclingRoad::
 	.incbin "data/tilesets/secondary/cycling_road/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_MistvaleInside::
+	.incbin "data/tilesets/secondary/mistvale_inside/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_MistvaleInside::
+	.incbin "data/tilesets/secondary/mistvale_inside/metatile_attributes.bin"

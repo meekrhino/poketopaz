@@ -1072,3 +1072,14 @@ gTileset_CyclingRoad::
 	.4byte gMetatiles_CyclingRoad
 	.4byte gMetatileAttributes_CyclingRoad
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_MistvaleInside::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_MistvaleInside
+	.4byte gTilesetPalettes_MistvaleInside
+	.4byte gMetatiles_MistvaleInside
+	.4byte gMetatileAttributes_MistvaleInside
+	.4byte NULL @ animation callback

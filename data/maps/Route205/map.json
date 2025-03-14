@@ -210,7 +210,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 34,
-      "y": 6,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
