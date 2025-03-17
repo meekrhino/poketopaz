@@ -98,8 +98,8 @@
       "x": 44,
       "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_MISTVALE_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MISTVALE_CITY_POKEMON_CENTER",
+      "dest_warp_id": "1"
     },
     {
       "x": 43,

@@ -74,17 +74,19 @@
 #define MAP_CRANEWING_CITY_GYM_2F         (9 | (7 << 8))
 
 // gMapGroup_IndoorMistvale
-#define MAP_MISTVALE_CITY_HOUSE1 (0 | (8 << 8))
-#define MAP_MISTVALE_CITY_HOUSE2 (1 | (8 << 8))
-#define MAP_MISTVALE_CITY_HOUSE3 (2 | (8 << 8))
-#define MAP_MISTVALE_CITY_HOUSE4 (3 | (8 << 8))
-#define MAP_MISTVALE_CITY_HOUSE5 (4 | (8 << 8))
+#define MAP_MISTVALE_CITY_HOUSE1         (0 | (8 << 8))
+#define MAP_MISTVALE_CITY_HOUSE2         (1 | (8 << 8))
+#define MAP_MISTVALE_CITY_HOUSE3         (2 | (8 << 8))
+#define MAP_MISTVALE_CITY_HOUSE4         (3 | (8 << 8))
+#define MAP_MISTVALE_CITY_HOUSE5         (4 | (8 << 8))
+#define MAP_MISTVALE_CITY_POKEMON_CENTER (5 | (8 << 8))
 
 // gMapGroup_IndoorRoothaven
-#define MAP_ROOTHAVEN_CITY_INN_1F  (0 | (9 << 8))
-#define MAP_ROOTHAVEN_CITY_INN_B1F (1 | (9 << 8))
-#define MAP_ROOTHAVEN_CITY_HOUSE1  (2 | (9 << 8))
-#define MAP_ROOTHAVEN_CITY_HOUSE2  (3 | (9 << 8))
+#define MAP_ROOTHAVEN_CITY_INN_1F         (0 | (9 << 8))
+#define MAP_ROOTHAVEN_CITY_INN_B1F        (1 | (9 << 8))
+#define MAP_ROOTHAVEN_CITY_HOUSE1         (2 | (9 << 8))
+#define MAP_ROOTHAVEN_CITY_HOUSE2         (3 | (9 << 8))
+#define MAP_ROOTHAVEN_CITY_POKEMON_CENTER (4 | (9 << 8))
 
 // gMapGroup_IndoorHollowlog
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (10 << 8))
@@ -94,6 +96,7 @@
 #define MAP_PACIFIDLOG_TOWN_HOUSE3            (4 | (10 << 8))
 #define MAP_PACIFIDLOG_TOWN_HOUSE4            (5 | (10 << 8))
 #define MAP_PACIFIDLOG_TOWN_HOUSE5            (6 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_POKEMON_CENTER     (7 | (10 << 8))
 
 // gMapGroup_Dungeons
 #define MAP_CHARTREE_FOREST (0 | (11 << 8))

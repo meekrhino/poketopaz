@@ -111,13 +111,15 @@
     "MistvaleCity_House2",
     "MistvaleCity_House3",
     "MistvaleCity_House4",
-    "MistvaleCity_House5"
+    "MistvaleCity_House5",
+    "MistvaleCity_PokemonCenter"
   ],
   "gMapGroup_IndoorRoothaven": [
     "RoothavenCity_Inn_1F",
     "RoothavenCity_Inn_B1F",
     "RoothavenCity_House1",
-    "RoothavenCity_House2"
+    "RoothavenCity_House2",
+    "RoothavenCity_PokemonCenter"
   ],
   "gMapGroup_IndoorHollowlog": [
     "PacifidlogTown_PokemonCenter_1F",
@@ -126,7 +128,8 @@
     "PacifidlogTown_House2",
     "PacifidlogTown_House3",
     "PacifidlogTown_House4",
-    "PacifidlogTown_House5"
+    "PacifidlogTown_House5",
+    "HollowlogCity_PokemonCenter"
   ],
   "gMapGroup_Dungeons": [
     "ChartreeForest",

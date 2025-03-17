@@ -19,14 +19,14 @@
   "warp_events": [
     {
       "x": 4,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_MISTVALE_CITY",
       "dest_warp_id": "8"
     },
     {
       "x": 5,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_MISTVALE_CITY",
       "dest_warp_id": "8"
