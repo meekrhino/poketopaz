@@ -6052,14 +6052,62 @@
     {
       "id": "LAYOUT_MISTVALE_CITY_HOUSE1",
       "name": "MistvaleCity_House1_Layout",
-      "width": 14,
-      "height": 9,
+      "width": 13,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_MistvaleInside",
       "border_filepath": "data/layouts/MistvaleCity_House1/border.bin",
       "blockdata_filepath": "data/layouts/MistvaleCity_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_MISTVALE_CITY_HOUSE2",
+      "name": "MistvaleCity_House2_Layout",
+      "width": 11,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MistvaleInside",
+      "border_filepath": "data/layouts/MistvaleCity_House2/border.bin",
+      "blockdata_filepath": "data/layouts/MistvaleCity_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MISTVALE_CITY_HOUSE3",
+      "name": "MistvaleCity_House3_Layout",
+      "width": 11,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MistvaleInside",
+      "border_filepath": "data/layouts/MistvaleCity_House3/border.bin",
+      "blockdata_filepath": "data/layouts/MistvaleCity_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_MISTVALE_CITY_HOUSE4",
+      "name": "MistvaleCity_House4_Layout",
+      "width": 11,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MistvaleInside",
+      "border_filepath": "data/layouts/MistvaleCity_House4/border.bin",
+      "blockdata_filepath": "data/layouts/MistvaleCity_House4/map.bin"
+    },
+    {
+      "id": "LAYOUT_MISTVALE_CITY_HOUSE5",
+      "name": "MistvaleCity_House5_Layout",
+      "width": 11,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MistvaleInside",
+      "border_filepath": "data/layouts/MistvaleCity_House5/border.bin",
+      "blockdata_filepath": "data/layouts/MistvaleCity_House5/map.bin"
     }
   ]
 }
