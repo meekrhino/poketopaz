@@ -1245,3 +1245,5 @@ Script_RemoveTint::
 	.include "data/maps/HollowlogCity_SpecialtyShop/scripts.inc"
 
 	.include "data/maps/HollowlogCity_Speakeasy/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Mart/scripts.inc"

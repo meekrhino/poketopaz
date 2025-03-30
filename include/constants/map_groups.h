@@ -105,6 +105,7 @@
 #define MAP_HOLLOWLOG_CITY_HOUSE2         (10 | (10 << 8))
 #define MAP_HOLLOWLOG_CITY_SPECIALTY_SHOP (11 | (10 << 8))
 #define MAP_HOLLOWLOG_CITY_SPEAKEASY      (12 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_MART           (13 | (10 << 8))
 
 // gMapGroup_Dungeons
 #define MAP_CHARTREE_FOREST (0 | (11 << 8))

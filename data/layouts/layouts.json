@@ -6324,6 +6324,18 @@
       "secondary_tileset": "gTileset_HollowlogInside",
       "border_filepath": "data/layouts/HollowlogCity_Speakeasy/border.bin",
       "blockdata_filepath": "data/layouts/HollowlogCity_Speakeasy/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOLLOWLOG_CITY_MART",
+      "name": "HollowlogCity_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/HollowlogCity_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/HollowlogCity_Mart/map.bin"
     }
   ]
 }

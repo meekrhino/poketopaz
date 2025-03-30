@@ -137,7 +137,8 @@
     "HollowlogCity_House1",
     "HollowlogCity_House2",
     "HollowlogCity_SpecialtyShop",
-    "HollowlogCity_Speakeasy"
+    "HollowlogCity_Speakeasy",
+    "HollowlogCity_Mart"
   ],
   "gMapGroup_Dungeons": [
     "ChartreeForest",
