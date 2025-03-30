@@ -96,7 +96,6 @@
   ],
   "gMapGroup_IndoorCranewing": [
     "CranewingCity_PokemonCenter",
-    "CranewingCity_Gym",
     "CranewingCity_Mart",
     "CranewingCity_House1",
     "CranewingCity_House2",
@@ -104,6 +103,7 @@
     "CranewingCity_Bank",
     "CranewingCity_Glassworks_1F",
     "CranewingCity_Glassworks_2F",
+    "CranewingCity_Gym",
     "CranewingCity_Gym_2F"
   ],
   "gMapGroup_IndoorMistvale": [
@@ -125,13 +125,6 @@
     "RoothavenCity_Mart"
   ],
   "gMapGroup_IndoorHollowlog": [
-    "PacifidlogTown_PokemonCenter_1F",
-    "PacifidlogTown_PokemonCenter_2F",
-    "PacifidlogTown_House1",
-    "PacifidlogTown_House2",
-    "PacifidlogTown_House3",
-    "PacifidlogTown_House4",
-    "PacifidlogTown_House5",
     "HollowlogCity_PokemonCenter"
   ],
   "gMapGroup_Dungeons": [
@@ -701,6 +694,13 @@
     "Route111_WinstrateFamilysHouse",
     "Route111_OldLadysRestStop",
     "Route112_CableCarStation",
-    "MtChimney_CableCarStation"
+    "MtChimney_CableCarStation",
+    "PacifidlogTown_PokemonCenter_1F",
+    "PacifidlogTown_PokemonCenter_2F",
+    "PacifidlogTown_House1",
+    "PacifidlogTown_House2",
+    "PacifidlogTown_House3",
+    "PacifidlogTown_House4",
+    "PacifidlogTown_House5"
   ]
 }
