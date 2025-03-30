@@ -125,7 +125,19 @@
     "RoothavenCity_Mart"
   ],
   "gMapGroup_IndoorHollowlog": [
-    "HollowlogCity_PokemonCenter"
+    "HollowlogCity_PokemonCenter",
+    "HollowlogCity_Apartment_1F",
+    "HollowlogCity_Apartment_2F",
+    "HollowlogCity_Apartment_3F",
+    "HollowlogCity_Apartment_4F",
+    "HollowlogCity_Apartment_5F",
+    "HollowlogCity_Office_1F",
+    "HollowlogCity_Office_2F",
+    "HollowlogCity_Office_3F",
+    "HollowlogCity_House1",
+    "HollowlogCity_House2",
+    "HollowlogCity_SpecialtyShop",
+    "HollowlogCity_Speakeasy"
   ],
   "gMapGroup_Dungeons": [
     "ChartreeForest",

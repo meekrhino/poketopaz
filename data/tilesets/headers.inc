@@ -1083,3 +1083,14 @@ gTileset_MistvaleInside::
 	.4byte gMetatiles_MistvaleInside
 	.4byte gMetatileAttributes_MistvaleInside
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_HollowlogInside::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_HollowlogInside
+	.4byte gTilesetPalettes_HollowlogInside
+	.4byte gMetatiles_HollowlogInside
+	.4byte gMetatileAttributes_HollowlogInside
+	.4byte NULL @ animation callback

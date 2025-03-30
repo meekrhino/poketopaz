@@ -63,14 +63,14 @@
 
 // gMapGroup_IndoorCranewing
 #define MAP_CRANEWING_CITY_POKEMON_CENTER (0 | (7 << 8))
-#define MAP_CRANEWING_CITY_GYM            (1 | (7 << 8))
-#define MAP_CRANEWING_CITY_MART           (2 | (7 << 8))
-#define MAP_CRANEWING_CITY_HOUSE1         (3 | (7 << 8))
-#define MAP_CRANEWING_CITY_HOUSE2         (4 | (7 << 8))
-#define MAP_CRANEWING_CITY_HOUSE3         (5 | (7 << 8))
-#define MAP_CRANEWING_CITY_BANK           (6 | (7 << 8))
-#define MAP_CRANEWING_CITY_GLASSWORKS_1F  (7 | (7 << 8))
-#define MAP_CRANEWING_CITY_GLASSWORKS_2F  (8 | (7 << 8))
+#define MAP_CRANEWING_CITY_MART           (1 | (7 << 8))
+#define MAP_CRANEWING_CITY_HOUSE1         (2 | (7 << 8))
+#define MAP_CRANEWING_CITY_HOUSE2         (3 | (7 << 8))
+#define MAP_CRANEWING_CITY_HOUSE3         (4 | (7 << 8))
+#define MAP_CRANEWING_CITY_BANK           (5 | (7 << 8))
+#define MAP_CRANEWING_CITY_GLASSWORKS_1F  (6 | (7 << 8))
+#define MAP_CRANEWING_CITY_GLASSWORKS_2F  (7 | (7 << 8))
+#define MAP_CRANEWING_CITY_GYM            (8 | (7 << 8))
 #define MAP_CRANEWING_CITY_GYM_2F         (9 | (7 << 8))
 
 // gMapGroup_IndoorMistvale
@@ -92,14 +92,19 @@
 #define MAP_ROOTHAVEN_CITY_MART           (5 | (9 << 8))
 
 // gMapGroup_IndoorHollowlog
-#define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (10 << 8))
-#define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_2F (1 | (10 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE1            (2 | (10 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE2            (3 | (10 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE3            (4 | (10 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE4            (5 | (10 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE5            (6 | (10 << 8))
-#define MAP_HOLLOWLOG_CITY_POKEMON_CENTER     (7 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_POKEMON_CENTER (0 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_APARTMENT_1F   (1 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_APARTMENT_2F   (2 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_APARTMENT_3F   (3 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_APARTMENT_4F   (4 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_APARTMENT_5F   (5 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_OFFICE_1F      (6 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_OFFICE_2F      (7 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_OFFICE_3F      (8 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_HOUSE1         (9 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_HOUSE2         (10 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_SPECIALTY_SHOP (11 | (10 << 8))
+#define MAP_HOLLOWLOG_CITY_SPEAKEASY      (12 | (10 << 8))
 
 // gMapGroup_Dungeons
 #define MAP_CHARTREE_FOREST (0 | (11 << 8))
@@ -669,6 +674,13 @@
 #define MAP_ROUTE111_OLD_LADYS_REST_STOP            (43 | (36 << 8))
 #define MAP_ROUTE112_CABLE_CAR_STATION              (44 | (36 << 8))
 #define MAP_MT_CHIMNEY_CABLE_CAR_STATION            (45 | (36 << 8))
+#define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F       (46 | (36 << 8))
+#define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_2F       (47 | (36 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE1                  (48 | (36 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE2                  (49 | (36 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE3                  (50 | (36 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE4                  (51 | (36 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE5                  (52 | (36 << 8))
 
 #define MAP_GROUPS_COUNT 37
 

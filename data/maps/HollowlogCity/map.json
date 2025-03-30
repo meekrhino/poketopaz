@@ -21,92 +21,92 @@
       "x": 4,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_map": "MAP_ABADDON_SWAMP",
       "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_map": "MAP_ABADDON_SWAMP",
       "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_map": "MAP_ABADDON_SWAMP",
       "dest_warp_id": "0"
     },
     {
       "x": 7,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_map": "MAP_ABADDON_SWAMP",
       "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "1"
     },
     {
       "x": 9,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "1"
     },
     {
       "x": 10,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "1"
     },
     {
       "x": 11,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "2"
     },
     {
       "x": 12,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "2"
     },
     {
       "x": 13,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "3"
     },
     {
       "x": 14,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "3"
     },
     {
       "x": 15,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "3"
     },
     {
       "x": 16,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ABADDON_SWAMP",
+      "dest_warp_id": "3"
     },
     {
       "x": 4,
@@ -133,7 +133,7 @@
       "x": 15,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_map": "MAP_HOLLOWLOG_CITY_APARTMENT_1F",
       "dest_warp_id": "0"
     },
     {

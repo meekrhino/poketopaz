@@ -65,29 +65,29 @@
       "x": 22,
       "y": 59,
       "elevation": 0,
-      "dest_map": "MAP_ABADDON_SWAMP",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_warp_id": "3"
     },
     {
       "x": 23,
       "y": 59,
       "elevation": 0,
-      "dest_map": "MAP_ABADDON_SWAMP",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_warp_id": "5"
     },
     {
       "x": 24,
       "y": 59,
       "elevation": 0,
-      "dest_map": "MAP_ABADDON_SWAMP",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_warp_id": "7"
     },
     {
       "x": 25,
       "y": 59,
       "elevation": 0,
-      "dest_map": "MAP_ABADDON_SWAMP",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_HOLLOWLOG_CITY",
+      "dest_warp_id": "9"
     }
   ],
   "coord_events": [

@@ -2189,3 +2189,23 @@ gTilesetPalettes_MistvaleInside::
 	.align 2
 gTilesetTiles_MistvaleInside::
 	.incbin "data/tilesets/secondary/mistvale_inside/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_HollowlogInside::
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/hollowlog_inside/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_HollowlogInside::
+	.incbin "data/tilesets/secondary/hollowlog_inside/tiles.4bpp.lz"

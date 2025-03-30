@@ -1221,3 +1221,27 @@ Script_RemoveTint::
 	.include "data/maps/RoothavenCity_Mart/scripts.inc"
 
 	.include "data/maps/MistvaleCity_Bank/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Apartment_1F/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Apartment_2F/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Apartment_3F/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Apartment_4F/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Apartment_5F/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Office_1F/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Office_2F/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Office_3F/scripts.inc"
+
+	.include "data/maps/HollowlogCity_House1/scripts.inc"
+
+	.include "data/maps/HollowlogCity_House2/scripts.inc"
+
+	.include "data/maps/HollowlogCity_SpecialtyShop/scripts.inc"
+
+	.include "data/maps/HollowlogCity_Speakeasy/scripts.inc"

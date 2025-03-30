@@ -735,3 +735,11 @@ gMetatiles_MistvaleInside::
 	.align 1
 gMetatileAttributes_MistvaleInside::
 	.incbin "data/tilesets/secondary/mistvale_inside/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_HollowlogInside::
+	.incbin "data/tilesets/secondary/hollowlog_inside/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_HollowlogInside::
+	.incbin "data/tilesets/secondary/hollowlog_inside/metatile_attributes.bin"
