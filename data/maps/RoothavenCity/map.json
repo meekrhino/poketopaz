@@ -78,15 +78,15 @@
       "x": 37,
       "y": 26,
       "elevation": 0,
-      "dest_map": "MAP_ROOTHAVEN_CITY",
+      "dest_map": "MAP_ROOTHAVEN_CITY_MART",
       "dest_warp_id": "0"
     },
     {
       "x": 43,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_ROOTHAVEN_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROOTHAVEN_CITY_POKEMON_CENTER",
+      "dest_warp_id": "1"
     },
     {
       "x": 21,

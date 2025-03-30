@@ -1215,3 +1215,9 @@ Script_RemoveTint::
 	.include "data/maps/RoothavenCity_PokemonCenter/scripts.inc"
 
 	.include "data/maps/HollowlogCity_PokemonCenter/scripts.inc"
+
+	.include "data/maps/MistvaleCity_Mart/scripts.inc"
+
+	.include "data/maps/RoothavenCity_Mart/scripts.inc"
+
+	.include "data/maps/MistvaleCity_Bank/scripts.inc"

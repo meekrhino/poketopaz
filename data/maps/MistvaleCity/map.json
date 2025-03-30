@@ -91,7 +91,7 @@
       "x": 50,
       "y": 29,
       "elevation": 0,
-      "dest_map": "MAP_MISTVALE_CITY",
+      "dest_map": "MAP_MISTVALE_CITY_MART",
       "dest_warp_id": "0"
     },
     {
@@ -134,6 +134,13 @@
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_MISTVALE_CITY_HOUSE5",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_MISTVALE_CITY_BANK",
       "dest_warp_id": "0"
     }
   ],

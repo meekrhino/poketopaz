@@ -112,14 +112,17 @@
     "MistvaleCity_House3",
     "MistvaleCity_House4",
     "MistvaleCity_House5",
-    "MistvaleCity_PokemonCenter"
+    "MistvaleCity_PokemonCenter",
+    "MistvaleCity_Mart",
+    "MistvaleCity_Bank"
   ],
   "gMapGroup_IndoorRoothaven": [
     "RoothavenCity_Inn_1F",
     "RoothavenCity_Inn_B1F",
     "RoothavenCity_House1",
     "RoothavenCity_House2",
-    "RoothavenCity_PokemonCenter"
+    "RoothavenCity_PokemonCenter",
+    "RoothavenCity_Mart"
   ],
   "gMapGroup_IndoorHollowlog": [
     "PacifidlogTown_PokemonCenter_1F",

@@ -1,0 +1,41 @@
+{
+  "id": "MAP_ROOTHAVEN_CITY_MART",
+  "name": "RoothavenCity_Mart",
+  "layout": "LAYOUT_ROOTHAVEN_CITY_MART",
+  "music": "MUS_POKE_MART",
+  "region_map_section": "MAPSEC_ROOTHAVEN_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROOTHAVEN_CITY",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROOTHAVEN_CITY",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

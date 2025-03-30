@@ -80,6 +80,8 @@
 #define MAP_MISTVALE_CITY_HOUSE4         (3 | (8 << 8))
 #define MAP_MISTVALE_CITY_HOUSE5         (4 | (8 << 8))
 #define MAP_MISTVALE_CITY_POKEMON_CENTER (5 | (8 << 8))
+#define MAP_MISTVALE_CITY_MART           (6 | (8 << 8))
+#define MAP_MISTVALE_CITY_BANK           (7 | (8 << 8))
 
 // gMapGroup_IndoorRoothaven
 #define MAP_ROOTHAVEN_CITY_INN_1F         (0 | (9 << 8))
@@ -87,6 +89,7 @@
 #define MAP_ROOTHAVEN_CITY_HOUSE1         (2 | (9 << 8))
 #define MAP_ROOTHAVEN_CITY_HOUSE2         (3 | (9 << 8))
 #define MAP_ROOTHAVEN_CITY_POKEMON_CENTER (4 | (9 << 8))
+#define MAP_ROOTHAVEN_CITY_MART           (5 | (9 << 8))
 
 // gMapGroup_IndoorHollowlog
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (10 << 8))

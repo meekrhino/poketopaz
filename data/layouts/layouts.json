@@ -5396,7 +5396,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_Cranewing",
       "border_filepath": "data/layouts/CranewingCity/border.bin",
       "blockdata_filepath": "data/layouts/CranewingCity/map.bin"
@@ -6144,6 +6144,42 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/HollowlogCity_PokemonCenter/border.bin",
       "blockdata_filepath": "data/layouts/HollowlogCity_PokemonCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_MISTVALE_CITY_MART",
+      "name": "MistvaleCity_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/MistvaleCity_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/MistvaleCity_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_MART",
+      "name": "RoothavenCity_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/RoothavenCity_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_MISTVALE_CITY_BANK",
+      "name": "MistvaleCity_Bank_Layout",
+      "width": 12,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/MistvaleCity_Bank/border.bin",
+      "blockdata_filepath": "data/layouts/MistvaleCity_Bank/map.bin"
     }
   ]
 }
