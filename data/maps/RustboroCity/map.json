@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_ROUTE115",
       "offset": 0,
-      "map": "MAP_ROUTE115"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_ROUTE104",
       "offset": 0,
-      "map": "MAP_ROUTE104"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE116",
       "offset": 0,
-      "map": "MAP_ROUTE116"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -596,6 +596,13 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_EventScript_CuttersHouseSign"
+    }
+  ],
+  "heal_locations": [
+    {
+      "id": "HEAL_LOCATION_RUSTBORO_CITY",
+      "x": 16,
+      "y": 39
     }
   ]
 }

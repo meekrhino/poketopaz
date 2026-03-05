@@ -7,6 +7,13 @@
 
 #define MAX_TRAINER_ITEMS 4
 
+#define TRAINER_PIC_WIDTH 64
+#define TRAINER_PIC_HEIGHT 64
+#define TRAINER_PIC_SIZE (TRAINER_PIC_WIDTH * TRAINER_PIC_HEIGHT / 2)
+
+// Red and Leaf's back pics have 5 frames, but this is presumably irrelevant in the places this is used.
+#define MAX_TRAINER_PIC_FRAMES 4
+
 enum {
     BATTLER_AFFINE_NORMAL,
     BATTLER_AFFINE_EMERGE,
@@ -76,7 +83,7 @@ struct Trainer
     /*0x14*/ const struct TrainerMon *party;
 };
 
-#define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
+#define TRAINER_ENCOUNTER_MUSIC(trainer) ((gTrainers[trainer].encounterMusic_gender & 0x7F))
 
 extern const u16 gMinigameDigits_Pal[];
 extern const u32 gMinigameDigits_Gfx[];

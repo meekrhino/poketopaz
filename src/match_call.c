@@ -131,7 +131,7 @@ static EWRAM_DATA struct MatchCallState sMatchCallState = {0};
 static EWRAM_DATA struct BattleFrontierStreakInfo sBattleFrontierStreakInfo = {0};
 
 static u32 GetCurrentTotalMinutes(struct Time *);
-static u32 GetNumRegisteredNPCs(void);
+static u32 GetNumRegisteredTrainers(void);
 static u32 GetActiveMatchCallTrainerId(u32);
 static int GetTrainerMatchCallId(int);
 static u16 GetRematchTrainerLocation(int);
@@ -1098,7 +1098,7 @@ static bool32 UpdateMatchCallStepCounter(void)
 static bool32 SelectMatchCallTrainer(void)
 {
     u32 matchCallId;
-    u32 numRegistered = GetNumRegisteredNPCs();
+    u32 numRegistered = GetNumRegisteredTrainers();
     if (numRegistered == 0)
         return FALSE;
 
@@ -1114,12 +1114,13 @@ static bool32 SelectMatchCallTrainer(void)
     return TRUE;
 }
 
-static u32 GetNumRegisteredNPCs(void)
+// Ignores registrable non-trainer NPCs, and special trainers like Wally and the gym leaders.
+static u32 GetNumRegisteredTrainers(void)
 {
     u32 i, count;
     for (i = 0, count = 0; i < REMATCH_SPECIAL_TRAINER_START; i++)
     {
-        if (FlagGet(FLAG_MATCH_CALL_REGISTERED + i))
+        if (FlagGet(TRAINER_REGISTERED_FLAGS_START + i))
             count++;
     }
 
@@ -1131,7 +1132,7 @@ static u32 GetActiveMatchCallTrainerId(u32 activeMatchCallId)
     u32 i;
     for (i = 0; i < REMATCH_SPECIAL_TRAINER_START; i++)
     {
-        if (FlagGet(FLAG_MATCH_CALL_REGISTERED + i))
+        if (FlagGet(TRAINER_REGISTERED_FLAGS_START + i))
         {
             if (!activeMatchCallId)
                 return gRematchTable[i].trainerIds[0];
@@ -1183,7 +1184,7 @@ static void StartMatchCall(void)
 {
     if (!sMatchCallState.triggeredFromScript)
     {
-        ScriptContext2_Enable();
+        LockPlayerFieldControls();
         FreezeObjectEvents();
         PlayerFreeze();
         StopPlayerAvatar();
@@ -1267,8 +1268,8 @@ static bool32 MatchCall_LoadGfx(u8 taskId)
     }
 
     FillWindowPixelBuffer(tWindowId, PIXEL_FILL(8));
-    LoadPalette(sMatchCallWindow_Pal, 0xE0, sizeof(sMatchCallWindow_Pal));
-    LoadPalette(sPokenavIcon_Pal, 0xF0, sizeof(sPokenavIcon_Pal));
+    LoadPalette(sMatchCallWindow_Pal, BG_PLTT_ID(14), sizeof(sMatchCallWindow_Pal));
+    LoadPalette(sPokenavIcon_Pal, BG_PLTT_ID(15), sizeof(sPokenavIcon_Pal));
     ChangeBgY(0, -0x2000, BG_COORD_SET);
     return TRUE;
 }
@@ -1371,7 +1372,7 @@ static bool32 MatchCall_EndCall(u8 taskId)
             ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
             ScriptMovement_UnfreezeObjectEvents();
             UnfreezeObjectEvents();
-            ScriptContext2_Disable();
+            UnlockPlayerFieldControls();
         }
 
         return TRUE;
@@ -1747,9 +1748,9 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
     u8 slot;
     int i = 0;
 
-    if (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED)) // ??? This check is nonsense.
+    if (gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED)) // ??? This check is nonsense.
     {
-        while (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED))
+        while (gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED))
         {
             if (gWildMonHeaders[i].mapGroup == gRematchTable[matchCallId].mapGroup
              && gWildMonHeaders[i].mapNum == gRematchTable[matchCallId].mapNum)
@@ -1758,7 +1759,7 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
             i++;
         }
 
-        if (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED))
+        if (gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED))
         {
             numSpecies = 0;
             if (gWildMonHeaders[i].landMonsInfo)
@@ -2072,7 +2073,7 @@ void LoadMatchCallWindowGfx(u32 windowId, u32 destOffset, u32 paletteId)
 {
     u8 bg = GetWindowAttribute(windowId, WINDOW_BG);
     LoadBgTiles(bg, sMatchCallWindow_Gfx, 0x100, destOffset);
-    LoadPalette(sMatchCallWindow_Pal, paletteId << 4, sizeof(sMatchCallWindow_Pal));
+    LoadPalette(sMatchCallWindow_Pal, BG_PLTT_ID(paletteId), sizeof(sMatchCallWindow_Pal));
 }
 
 void DrawMatchCallTextBoxBorder(u32 windowId, u32 tileOffset, u32 paletteId)

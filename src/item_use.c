@@ -166,7 +166,7 @@ static void Task_CloseCantUseKeyItemMessage(u8 taskId)
     ClearDialogWindowAndFrame(0, TRUE);
     DestroyTask(taskId);
     ScriptUnfreezeObjectEvents();
-    ScriptContext2_Disable();
+    UnlockPlayerFieldControls();
 }
 
 u8 CheckIfItemIsTMHMOrEvolutionStone(u16 itemId)
@@ -195,7 +195,7 @@ void ItemUseOutOfBattle_Mail(u8 taskId)
 
 void ItemUseOutOfBattle_Bike(u8 taskId)
 {
-    s16* data = gTasks[taskId].data;
+    s16 *data = gTasks[taskId].data;
     s16 coordsY;
     s16 coordsX;
     u8 behavior;
@@ -222,7 +222,7 @@ static void ItemUseOnFieldCB_Bike(u8 taskId)
     else // ACRO_BIKE
         GetOnOffBike(PLAYER_AVATAR_FLAG_ACRO_BIKE);
     ScriptUnfreezeObjectEvents();
-    ScriptContext2_Disable();
+    UnlockPlayerFieldControls();
     DestroyTask(taskId);
 }
 
@@ -247,7 +247,7 @@ static bool32 CanFish(void)
     }
     else
     {
-        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && !MapGridIsImpassableAt(x, y))
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && MapGridGetCollisionAt(x, y) == 0)
             return TRUE;
         if (MetatileBehavior_IsBridgeOverWaterNoEdge(tileBehavior) == TRUE)
             return TRUE;
@@ -301,7 +301,7 @@ static void Task_UseItemfinder(u8 taskId)
     u8 playerDir;
     u8 playerDirToItem;
     u8 i;
-    s16* data = gTasks[taskId].data;
+    s16 *data = gTasks[taskId].data;
     if (tCounter == 0)
     {
         if (tItemfinderBeeps == 4)
@@ -337,7 +337,7 @@ static void Task_CloseItemfinderMessage(u8 taskId)
 {
     ClearDialogWindowAndFrame(0, TRUE);
     ScriptUnfreezeObjectEvents();
-    ScriptContext2_Disable();
+    UnlockPlayerFieldControls();
     DestroyTask(taskId);
 }
 
@@ -375,7 +375,7 @@ static bool8 ItemfinderCheckForHiddenItems(const struct MapEvents *events, u8 ta
 static bool8 IsHiddenItemPresentAtCoords(const struct MapEvents *events, s16 x, s16 y)
 {
     u8 bgEventCount = events->bgEventCount;
-    struct BgEvent *bgEvent = events->bgEvents;
+    const struct BgEvent *bgEvent = events->bgEvents;
     int i;
 
     for (i = 0; i < bgEventCount; i++)
@@ -391,47 +391,44 @@ static bool8 IsHiddenItemPresentAtCoords(const struct MapEvents *events, s16 x, 
     return FALSE;
 }
 
-static bool8 IsHiddenItemPresentInConnection(struct MapConnection *connection, int x, int y)
+static bool8 IsHiddenItemPresentInConnection(const struct MapConnection *connection, int x, int y)
 {
+    s16 connectionX, connectionY;
+    struct MapHeader const *const connectionHeader = GetMapHeaderFromConnection(connection);
 
-    u16 localX, localY;
-    u32 localOffset;
-    s32 localLength;
-
-    struct MapHeader const *const mapHeader = GetMapHeaderFromConnection(connection);
-
+// To convert our x/y into coordinates that are relative to the connected map, we must:
+//  - Subtract the virtual offset used for the border buffer (MAP_OFFSET).
+//  - Subtract the horizontal offset between North/South connections, or the vertical offset for East/West
+//  - Account for map size. (0,0) is in the NW corner of our map, so when looking North/West we have to add the height/width of the connected map,
+//     and when looking South/East we have to subtract the height/width of our current map.
+#define localX (x - MAP_OFFSET)
+#define localY (y - MAP_OFFSET)
     switch (connection->direction)
     {
-    // same weird temp variable behavior seen in IsHiddenItemPresentAtCoords
     case CONNECTION_NORTH:
-        localOffset = connection->offset + MAP_OFFSET;
-        localX = x - localOffset;
-        localLength = mapHeader->mapLayout->height - MAP_OFFSET;
-        localY = localLength + y; // additions are reversed for some reason
+        connectionX = localX - connection->offset;
+        connectionY = connectionHeader->mapLayout->height + localY;
         break;
     case CONNECTION_SOUTH:
-        localOffset = connection->offset + MAP_OFFSET;
-        localX = x - localOffset;
-        localLength = gMapHeader.mapLayout->height + MAP_OFFSET;
-        localY = y - localLength;
+        connectionX = localX - connection->offset;
+        connectionY = localY - gMapHeader.mapLayout->height;
         break;
     case CONNECTION_WEST:
-        localLength = mapHeader->mapLayout->width - MAP_OFFSET;
-        localX = localLength + x; // additions are reversed for some reason
-        localOffset = connection->offset + MAP_OFFSET;
-        localY = y - localOffset;
+        connectionX = connectionHeader->mapLayout->width + localX;
+        connectionY = localY - connection->offset;
         break;
     case CONNECTION_EAST:
-        localLength = gMapHeader.mapLayout->width + MAP_OFFSET;
-        localX = x - localLength;
-        localOffset = connection->offset + MAP_OFFSET;
-        localY = y - localOffset;
+        connectionX = localX - gMapHeader.mapLayout->width;
+        connectionY = localY - connection->offset;
         break;
     default:
         return FALSE;
     }
-    return IsHiddenItemPresentAtCoords(mapHeader->events, localX, localY);
+    return IsHiddenItemPresentAtCoords(connectionHeader->events, connectionX, connectionY);
 }
+
+#undef localX
+#undef localY
 
 static void CheckForHiddenItemsInMapConnection(u8 taskId)
 {
@@ -456,7 +453,7 @@ static void CheckForHiddenItemsInMapConnection(u8 taskId)
              || var2 > y
              || y >= height)
             {
-                struct MapConnection *conn = GetConnectionAtCoords(x, y);
+                const struct MapConnection *conn = GetMapConnectionAtPos(x, y);
                 if (conn && IsHiddenItemPresentInConnection(conn, x, y) == TRUE)
                     SetDistanceOfClosestHiddenItem(taskId, x - playerX, y - playerY);
             }
@@ -692,8 +689,8 @@ void ItemUseOutOfBattle_Berry(u8 taskId)
 static void ItemUseOnFieldCB_Berry(u8 taskId)
 {
     RemoveBagItem(gSpecialVar_ItemId, 1);
-    ScriptContext2_Enable();
-    ScriptContext1_SetupScript(BerryTree_EventScript_ItemUsePlantBerry);
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(BerryTree_EventScript_ItemUsePlantBerry);
     DestroyTask(taskId);
 }
 
@@ -717,14 +714,14 @@ void ItemUseOutOfBattle_WailmerPail(u8 taskId)
 
 static void ItemUseOnFieldCB_WailmerPailBerry(u8 taskId)
 {
-    ScriptContext2_Enable();
-    ScriptContext1_SetupScript(BerryTree_EventScript_ItemUseWailmerPail);
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(BerryTree_EventScript_ItemUseWailmerPail);
     DestroyTask(taskId);
 }
 
 static bool8 TryToWaterSudowoodo(void)
 {
-    u16 x, y;
+    s16 x, y;
     u8 elevation;
     u8 objId;
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
@@ -738,8 +735,8 @@ static bool8 TryToWaterSudowoodo(void)
 
 static void ItemUseOnFieldCB_WailmerPailSudowoodo(u8 taskId)
 {
-    ScriptContext2_Enable();
-    ScriptContext1_SetupScript(BattleFrontier_OutsideEast_EventScript_WaterSudowoodo);
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(BattleFrontier_OutsideEast_EventScript_WaterSudowoodo);
     DestroyTask(taskId);
 }
 
@@ -781,7 +778,7 @@ void ItemUseOutOfBattle_RareCandy(u8 taskId)
 
 void ItemUseOutOfBattle_TMHM(u8 taskId)
 {
-    if (gSpecialVar_ItemId >= ITEM_HM01_CUT)
+    if (gSpecialVar_ItemId >= ITEM_HM01)
         DisplayItemMessage(taskId, FONT_NORMAL, gText_BootedUpHM, BootUpSoundTMHM); // HM
     else
         DisplayItemMessage(taskId, FONT_NORMAL, gText_BootedUpTM, BootUpSoundTMHM); // TM
@@ -843,7 +840,7 @@ void ItemUseOutOfBattle_Repel(u8 taskId)
 
 static void Task_StartUseRepel(u8 taskId)
 {
-    s16* data = gTasks[taskId].data;
+    s16 *data = gTasks[taskId].data;
 
     if (++data[8] > 7)
     {

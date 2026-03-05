@@ -164,7 +164,7 @@ static const match_call_text_data_t sMrStoneTextScripts[] = {
     { MatchCall_Text_MrStone2,  FLAG_ENABLE_MR_STONE_POKENAV,        0xFFFF },
     { MatchCall_Text_MrStone3,  FLAG_DELIVERED_STEVEN_LETTER,        0xFFFF },
     { MatchCall_Text_MrStone4,  FLAG_RECEIVED_EXP_SHARE,             0xFFFF },
-    { MatchCall_Text_MrStone5,  FLAG_RECEIVED_HM04,                  0xFFFF },
+    { MatchCall_Text_MrStone5,  FLAG_RECEIVED_HM_STRENGTH,           0xFFFF },
     { MatchCall_Text_MrStone6,  FLAG_DEFEATED_PETALBURG_GYM,         0xFFFF },
     { MatchCall_Text_MrStone7,  FLAG_RECEIVED_CASTFORM,              0xFFFF },
     { MatchCall_Text_MrStone8,  FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, 0xFFFF },
@@ -260,7 +260,7 @@ static const match_call_text_data_t sMayTextScripts[] = {
     { MatchCall_Text_May2,  FLAG_DEFEATED_SOFTWIND_GYM,           0xFFFF },
     { MatchCall_Text_May3,  FLAG_DELIVERED_DEVON_GOODS,          0xFFFF },
     { MatchCall_Text_May4,  FLAG_HIDE_MAUVILLE_CITY_WALLY,       0xFFFF },
-    { MatchCall_Text_May5,  FLAG_RECEIVED_HM04,                  0xFFFF },
+    { MatchCall_Text_May5,  FLAG_RECEIVED_HM_STRENGTH,           0xFFFF },
     { MatchCall_Text_May6,  FLAG_DEFEATED_LAVARIDGE_GYM,         0xFFFF },
     { MatchCall_Text_May7,  FLAG_DEFEATED_PETALBURG_GYM,         0xFFFF },
     { MatchCall_Text_May8,  FLAG_RECEIVED_CASTFORM,              0xFFFF },
@@ -289,7 +289,7 @@ static const match_call_text_data_t sBrendanTextScripts[] = {
     { MatchCall_Text_Brendan2,  FLAG_DEFEATED_SOFTWIND_GYM,           0xFFFF },
     { MatchCall_Text_Brendan3,  FLAG_DELIVERED_DEVON_GOODS,          0xFFFF },
     { MatchCall_Text_Brendan4,  FLAG_HIDE_MAUVILLE_CITY_WALLY,       0xFFFF },
-    { MatchCall_Text_Brendan5,  FLAG_RECEIVED_HM04,                  0xFFFF },
+    { MatchCall_Text_Brendan5,  FLAG_RECEIVED_HM_STRENGTH,           0xFFFF },
     { MatchCall_Text_Brendan6,  FLAG_DEFEATED_LAVARIDGE_GYM,         0xFFFF },
     { MatchCall_Text_Brendan7,  FLAG_DEFEATED_PETALBURG_GYM,         0xFFFF },
     { MatchCall_Text_Brendan8,  FLAG_RECEIVED_CASTFORM,              0xFFFF },
@@ -506,7 +506,7 @@ static const struct MatchCallStructTrainer sSidneyMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_COLOSSUS_CITY,
-    .flag = FLAG_REMATCH_SIDNEY,
+    .flag = FLAG_REGISTERED_SIDNEY,
     .rematchTableIdx = REMATCH_SIDNEY,
     .desc = gText_EliteFourMatchCallDesc,
     .name = NULL,
@@ -522,7 +522,7 @@ static const struct MatchCallStructTrainer sPhoebeMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_COLOSSUS_CITY,
-    .flag = FLAG_REMATCH_PHOEBE,
+    .flag = FLAG_REGISTERED_PHOEBE,
     .rematchTableIdx = REMATCH_PHOEBE,
     .desc = gText_EliteFourMatchCallDesc,
     .name = NULL,
@@ -538,7 +538,7 @@ static const struct MatchCallStructTrainer sGlaciaMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_COLOSSUS_CITY,
-    .flag = FLAG_REMATCH_GLACIA,
+    .flag = FLAG_REGISTERED_GLACIA,
     .rematchTableIdx = REMATCH_GLACIA,
     .desc = gText_EliteFourMatchCallDesc,
     .name = NULL,
@@ -554,7 +554,7 @@ static const struct MatchCallStructTrainer sDrakeMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_COLOSSUS_CITY,
-    .flag = FLAG_REMATCH_DRAKE,
+    .flag = FLAG_REGISTERED_DRAKE,
     .rematchTableIdx = REMATCH_DRAKE,
     .desc = gText_EliteFourMatchCallDesc,
     .name = NULL,
@@ -570,7 +570,7 @@ static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_COLOSSUS_CITY,
-    .flag = FLAG_REMATCH_WALLACE,
+    .flag = FLAG_REGISTERED_WALLACE,
     .rematchTableIdx = REMATCH_WALLACE,
     .desc = gText_ChampionMatchCallDesc,
     .name = NULL,
@@ -1136,7 +1136,7 @@ bool32 MatchCall_HasRematchId(u32 idx)
 
 void SetMatchCallRegisteredFlag(void)
 {
-    int r0 = GetRematchIdxByTrainerIdx(gSpecialVar_0x8004);
-    if (r0 >= 0)
-        FlagSet(FLAG_MATCH_CALL_REGISTERED + r0);
+    int index = GetRematchIdxByTrainerIdx(gSpecialVar_0x8004);
+    if (index >= 0)
+        FlagSet(TRAINER_REGISTERED_FLAGS_START + index);
 }

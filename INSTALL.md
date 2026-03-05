@@ -9,7 +9,7 @@ If you run into trouble, ask for help on Discord or IRC (see [README.md](README.
 
 ## Windows
 Windows has instructions for building with three possible terminals, providing 3 different options in case the user stumbles upon unexpected errors.
-- [Windows 10 (WSL1)](#windows-10-wsl1) (**Fastest, highly recommended**, Windows 10 only)
+- [Windows 10/11 (WSL1)](#windows-1011-wsl1) (**Fastest, highly recommended**, Windows 10 and 11 only)
 - [Windows (msys2)](#windows-msys2) (Second fastest)
 - [Windows (Cygwin)](#windows-cygwin) (Slowest)
 
@@ -24,36 +24,32 @@ Unscientific benchmarks suggest **msys2 is 2x slower** than WSL1, and **Cygwin i
 
 All of the Windows instructions assume that the default drive is C:\\. If this differs to your actual drive letter, then replace C with the correct drive letter when reading the instructions.
 
-**A note of caution**: As Windows 7 is officially unsupported by Microsoft and Windows 8 has very little usage, some maintainers are unwilling to maintain the Windows 7/8 instructions. Thus, these instructions may break in the future with fixes taking longer than fixes to the Windows 10 instructions.
+**A note of caution**: As Windows 7 and Windows 8 are officially unsupported by Microsoft, some maintainers are unwilling to maintain the Windows 7/8 instructions. Thus, these instructions may break in the future with fixes taking longer than fixes to the Windows 10/11 instructions.
 
-## Windows 10 (WSL1)
+## Windows 10/11 (WSL1)
 WSL1 is the preferred terminal to build **pokeemerald**. The following instructions will explain how to install WSL1 (referred to interchangeably as WSL).
 - If WSL (Debian or Ubuntu) is **not installed**, then go to [Installing WSL1](#Installing-WSL1).
 - Otherwise, if WSL is installed, but it **hasn't previously been set up for another decompilation project**, then go to [Setting up WSL1](#Setting-up-WSL1).
 - Otherwise, **open WSL** and go to [Choosing where to store pokeemerald (WSL1)](#Choosing-where-to-store-pokeemerald-WSL1).
 
 ### Installing WSL1
-1. Open [Windows Powershell **as Administrator**](https://i.imgur.com/QKmVbP9.png), and run the following command (Right Click or Shift+Insert is paste in the Powershell).
+1. Open [Windows Powershell **as Administrator**](https://i.imgur.com/QKmVbP9.png), and run the following commands (Right Click or Shift+Insert is paste in the Powershell).
 
     ```powershell
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+	wsl --install -d Ubuntu --enable-wsl1
     ```
 
 2. Once the process finishes, restart your machine.
 
-3. The next step is to choose and install a Linux distribution from the Microsoft Store. The following instructions will assume Ubuntu as the Linux distribution of choice.
-    <details>
-        <summary><i>Note for advanced users...</i></summary>
-    
-    >   You can pick a preferred Linux distribution, but setup instructions may differ. Debian should work with the given instructions, but has not been tested. 
-    </details>
+3. Open Windows Powershell **as Administrator** again (after restarting), and run the following command to configure Ubuntu to use WSL1.
 
-4. Open the [Microsoft Store Linux Selection](https://aka.ms/wslstore), click Ubuntu, then click Get, which will install the Ubuntu distribution.
+    ```powershell
+    wsl --set-version Ubuntu 1
+    ```
     <details>
-        <summary><i>Notes...</i></summary>
+        <summary><i>Note...</i></summary>
 
-    >   Note 1: If a dialog pops up asking for you to sign into a Microsoft Account, then just close the dialog.  
-    >   Note 2: If the link does not work, then open the Microsoft Store manually, and search for the Ubuntu app (choose the one with no version number).
+    >   WSL may open automatically after restarting, but you can ignore it for now.
     </details>
 
 ### Setting up WSL1
@@ -102,11 +98,11 @@ cd /mnt/c/Users/<user>/Desktop/decomps
 <details>
     <summary><i>Notes...</i></summary>
 
->   Note 1: The Windows C:\ drive is called /mnt/c/ in WSL.  
->   Note 2: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "/mnt/c/users/<user>/Desktop/decomp folder"`.  
+>   Note 1: The Windows C:\ drive is called /mnt/c/ in WSL.
+>   Note 2: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "/mnt/c/users/<user>/Desktop/decomp folder"`.
 >   Note 3: Windows path names are case-insensitive so adhering to capitalization isn't needed
 </details>
-    
+
 If this works, then proceed to [Installation](#installation).
 
 Otherwise, ask for help on Discord or IRC (see [README.md](README.md)), or continue reading below for [Windows instructions using msys2](#windows-msys2).
@@ -125,18 +121,52 @@ Otherwise, ask for help on Discord or IRC (see [README.md](README.md)), or conti
 
 Note that in msys2, Copy is Ctrl+Insert and Paste is Shift+Insert.
 
-1. Open msys2 at C:\devkitPro\msys2\mingw64.exe or run `C:\devkitPro\msys2\msys2_shell.bat -mingw64`.
+1. Open msys2 at C:\devkitPro\msys2\msys2_shell.bat.
 
-2. Certain packages are required to build pokeemerald. Install these by running the following command:
+2. Certain packages are required to build pokeemerald. Install these by running the following two commands:
 
     ```bash
-    pacman -S make zlib-devel git mingw-w64-x86_64-gcc mingw-w64-x86_64-libpng
+    pacman -Sy msys2-keyring
+    pacman -S make gcc zlib-devel git
     ```
     <details>
         <summary><i>Note...</i></summary>
 
-    >   This command will ask for confirmation, just enter the yes action when prompted.
+    >   The commands will ask for confirmation, just enter the yes action when prompted.
     </details>
+
+3. Download [libpng](https://sourceforge.net/projects/libpng/files/libpng16/1.6.37/libpng-1.6.37.tar.xz/download).
+
+4. Change directory to where libpng was downloaded. By default, msys2 will start in the current user's profile folder, located at **C:\Users\\&#8288;_\<user>_**, where *\<user>* is your Windows username. In most cases, libpng should be saved within a subfolder of the profile folder. For example, if libpng was saved to **C:\Users\\_\<user>_\Downloads** (the Downloads location for most users), enter this command:
+
+    ```bash
+    cd Downloads
+    ```
+
+    <details>
+        <summary><i>Notes...</i></summary>
+
+    >   Note 1: While not shown, msys uses forward slashes `/` instead of backwards slashes `\` as the directory separator.
+    >   Note 2: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "Downloads/My Downloads"`.
+    >   Note 3: Windows path names are case-insensitive so adhering to capitalization isn’t needed.
+    >   Note 4: If libpng was saved elsewhere, you will need to specify the full path to where libpng was downloaded, e.g. `cd c:/devkitpro/msys2` if it was saved there.
+    </details>
+
+5. Run the following commands to uncompress and install libpng.
+
+    ```bash
+    tar xf libpng-1.6.37.tar.xz
+    cd libpng-1.6.37
+    ./configure --prefix=/usr
+    make check
+    make install
+    ```
+
+6. Then finally, run the following command to change back to the user profile folder.
+
+    ```bash
+    cd
+    ```
 
 ### Choosing where to store pokeemerald (msys2)
 At this point, you can choose a folder to store pokeemerald into. If you're okay with storing pokeemerald in the user profile folder, then proceed to [Installation](#installation). Otherwise, you'll need to account for where pokeemerald is stored when changing directory to the pokeemerald folder.
@@ -213,10 +243,10 @@ Note that the directory **must exist** in Windows. If you want to store pokeemer
 <details>
     <summary><i>Notes...</i></summary>
 
->   Note 1: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "c:/users/<user>/Desktop/decomp folder"`.  
->   Note 2: Windows path names are case-insensitive so adhering to capitalization isn't needed  
+>   Note 1: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "c:/users/<user>/Desktop/decomp folder"`.
+>   Note 2: Windows path names are case-insensitive so adhering to capitalization isn't needed
 </details>
-    
+
 If this works, then proceed to [Installation](#installation). Otherwise, ask for help on Discord or IRC (see [README.md](README.md)).
 
 ## macOS
@@ -283,8 +313,8 @@ Note that the directory **must exist** in the folder system. If you want to stor
 
 <details>
     <summary><i>Note..</i>.</summary>
-    
->   Note: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "Desktop/decomp folder"`  
+
+>   Note: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "Desktop/decomp folder"`
 </details>
 
 If this works, then proceed to [Installation](#installation). Otherwise, ask for help on Discord or IRC (see [README.md](README.md)).
@@ -305,7 +335,7 @@ Then proceed to [Choosing where to store pokeemerald (Linux)](#choosing-where-to
 >   then you will have to install devkitARM. Install all the above packages except binutils-arm-none-eabi, and follow the instructions to
 >   [install devkitARM on Debian/Ubuntu-based distributions](#installing-devkitarm-on-debianubuntu-based-distributions).
 </details>
-    
+
 ### Arch Linux
 Run this command as root to install the necessary packages:
 ```bash
@@ -319,6 +349,13 @@ Then proceed to [Choosing where to store pokeemerald (Linux)](#choosing-where-to
 >   then you will have to install devkitARM. Install all the above packages except binutils-arm-none-eabi, and follow the instructions to
 >   [install devkitARM on Arch Linux](#installing-devkitarm-on-arch-linux).
 </details>
+
+### NixOS
+Run the following command to start an interactive shell with the necessary packages:
+```bash
+nix-shell -p pkgsCross.arm-embedded.stdenv.cc git pkg-config libpng
+```
+Then proceed to [Choosing where to store pokeemerald (Linux)](#choosing-where-to-store-pokeemerald-linux).
 
 ### Other distributions
 _(Specific instructions for other distributions would be greatly appreciated!)_
@@ -539,7 +576,7 @@ devkitARM is now installed.
 devkitARM is now installed.
 
 ### Installing devkitARM on Arch Linux
-        
+
 1. Follow [devkitPro's instructions](https://devkitpro.org/wiki/devkitPro_pacman#Customising_Existing_Pacman_Install) to configure `pacman` to download devkitPro packages.
 2. Install `gba-dev`: run the following command as root.
 

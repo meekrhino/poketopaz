@@ -144,7 +144,7 @@ RustboroCity_DevonCorp_2F_EventScript_AllufangReady::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveFlintusk::
-	setvar VAR_TEMP_1, SPECIES_FLINTUSK
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FLINTUSK
 	givemon SPECIES_FLINTUSK, 20
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveFlintuskParty
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveFlintuskPC
@@ -189,7 +189,7 @@ RustboroCity_DevonCorp_2F_EventScript_FinishReceivingFlintusk::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveAllufang::
-	setvar VAR_TEMP_1, SPECIES_ALLUFANG
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ALLUFANG
 	givemon SPECIES_ALLUFANG, 20
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveAllufangParty
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveAllufangPC

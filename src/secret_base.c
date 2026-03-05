@@ -47,6 +47,8 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 
+#define TAG_SCROLL_ARROW 5112
+
 // Values for registryStatus
 enum {
     UNREGISTERED,
@@ -108,30 +110,30 @@ static const struct SecretBaseEntranceMetatiles sSecretBaseEntranceMetatiles[] =
 // x, y positions are for when the player warps in for the first time (in front of the computer)
 static const u8 sSecretBaseEntrancePositions[NUM_SECRET_BASE_GROUPS * 4] =
 {
-    [SECRET_BASE_RED_CAVE1]    = MAP_NUM(SECRET_BASE_RED_CAVE1),    0,  1,  3,
-    [SECRET_BASE_RED_CAVE2]    = MAP_NUM(SECRET_BASE_RED_CAVE2),    0,  5,  9,
-    [SECRET_BASE_RED_CAVE3]    = MAP_NUM(SECRET_BASE_RED_CAVE3),    0,  1,  3,
-    [SECRET_BASE_RED_CAVE4]    = MAP_NUM(SECRET_BASE_RED_CAVE4),    0,  7, 13,
-    [SECRET_BASE_BROWN_CAVE1]  = MAP_NUM(SECRET_BASE_BROWN_CAVE1),  0,  2,  3,
-    [SECRET_BASE_BROWN_CAVE2]  = MAP_NUM(SECRET_BASE_BROWN_CAVE2),  0,  9,  2,
-    [SECRET_BASE_BROWN_CAVE3]  = MAP_NUM(SECRET_BASE_BROWN_CAVE3),  0, 13,  4,
-    [SECRET_BASE_BROWN_CAVE4]  = MAP_NUM(SECRET_BASE_BROWN_CAVE4),  0,  1,  2,
-    [SECRET_BASE_BLUE_CAVE1]   = MAP_NUM(SECRET_BASE_BLUE_CAVE1),   0,  1,  3,
-    [SECRET_BASE_BLUE_CAVE2]   = MAP_NUM(SECRET_BASE_BLUE_CAVE2),   0,  1,  2,
-    [SECRET_BASE_BLUE_CAVE3]   = MAP_NUM(SECRET_BASE_BLUE_CAVE3),   0,  3, 15,
-    [SECRET_BASE_BLUE_CAVE4]   = MAP_NUM(SECRET_BASE_BLUE_CAVE4),   0,  3, 14,
-    [SECRET_BASE_YELLOW_CAVE1] = MAP_NUM(SECRET_BASE_YELLOW_CAVE1), 0,  9,  3,
-    [SECRET_BASE_YELLOW_CAVE2] = MAP_NUM(SECRET_BASE_YELLOW_CAVE2), 0,  8,  7,
-    [SECRET_BASE_YELLOW_CAVE3] = MAP_NUM(SECRET_BASE_YELLOW_CAVE3), 0,  3,  6,
-    [SECRET_BASE_YELLOW_CAVE4] = MAP_NUM(SECRET_BASE_YELLOW_CAVE4), 0,  5,  9,
-    [SECRET_BASE_TREE1]        = MAP_NUM(SECRET_BASE_TREE1),        0,  2,  3,
-    [SECRET_BASE_TREE2]        = MAP_NUM(SECRET_BASE_TREE2),        0,  5,  6,
-    [SECRET_BASE_TREE3]        = MAP_NUM(SECRET_BASE_TREE3),        0, 15,  3,
-    [SECRET_BASE_TREE4]        = MAP_NUM(SECRET_BASE_TREE4),        0,  4, 10,
-    [SECRET_BASE_SHRUB1]       = MAP_NUM(SECRET_BASE_SHRUB1),       0,  3,  3,
-    [SECRET_BASE_SHRUB2]       = MAP_NUM(SECRET_BASE_SHRUB2),       0,  1,  2,
-    [SECRET_BASE_SHRUB3]       = MAP_NUM(SECRET_BASE_SHRUB3),       0,  7,  8,
-    [SECRET_BASE_SHRUB4]       = MAP_NUM(SECRET_BASE_SHRUB4),       0,  9,  6,
+    [SECRET_BASE_RED_CAVE1]    = MAP_NUM(MAP_SECRET_BASE_RED_CAVE1),    0,  1,  3,
+    [SECRET_BASE_RED_CAVE2]    = MAP_NUM(MAP_SECRET_BASE_RED_CAVE2),    0,  5,  9,
+    [SECRET_BASE_RED_CAVE3]    = MAP_NUM(MAP_SECRET_BASE_RED_CAVE3),    0,  1,  3,
+    [SECRET_BASE_RED_CAVE4]    = MAP_NUM(MAP_SECRET_BASE_RED_CAVE4),    0,  7, 13,
+    [SECRET_BASE_BROWN_CAVE1]  = MAP_NUM(MAP_SECRET_BASE_BROWN_CAVE1),  0,  2,  3,
+    [SECRET_BASE_BROWN_CAVE2]  = MAP_NUM(MAP_SECRET_BASE_BROWN_CAVE2),  0,  9,  2,
+    [SECRET_BASE_BROWN_CAVE3]  = MAP_NUM(MAP_SECRET_BASE_BROWN_CAVE3),  0, 13,  4,
+    [SECRET_BASE_BROWN_CAVE4]  = MAP_NUM(MAP_SECRET_BASE_BROWN_CAVE4),  0,  1,  2,
+    [SECRET_BASE_BLUE_CAVE1]   = MAP_NUM(MAP_SECRET_BASE_BLUE_CAVE1),   0,  1,  3,
+    [SECRET_BASE_BLUE_CAVE2]   = MAP_NUM(MAP_SECRET_BASE_BLUE_CAVE2),   0,  1,  2,
+    [SECRET_BASE_BLUE_CAVE3]   = MAP_NUM(MAP_SECRET_BASE_BLUE_CAVE3),   0,  3, 15,
+    [SECRET_BASE_BLUE_CAVE4]   = MAP_NUM(MAP_SECRET_BASE_BLUE_CAVE4),   0,  3, 14,
+    [SECRET_BASE_YELLOW_CAVE1] = MAP_NUM(MAP_SECRET_BASE_YELLOW_CAVE1), 0,  9,  3,
+    [SECRET_BASE_YELLOW_CAVE2] = MAP_NUM(MAP_SECRET_BASE_YELLOW_CAVE2), 0,  8,  7,
+    [SECRET_BASE_YELLOW_CAVE3] = MAP_NUM(MAP_SECRET_BASE_YELLOW_CAVE3), 0,  3,  6,
+    [SECRET_BASE_YELLOW_CAVE4] = MAP_NUM(MAP_SECRET_BASE_YELLOW_CAVE4), 0,  5,  9,
+    [SECRET_BASE_TREE1]        = MAP_NUM(MAP_SECRET_BASE_TREE1),        0,  2,  3,
+    [SECRET_BASE_TREE2]        = MAP_NUM(MAP_SECRET_BASE_TREE2),        0,  5,  6,
+    [SECRET_BASE_TREE3]        = MAP_NUM(MAP_SECRET_BASE_TREE3),        0, 15,  3,
+    [SECRET_BASE_TREE4]        = MAP_NUM(MAP_SECRET_BASE_TREE4),        0,  4, 10,
+    [SECRET_BASE_SHRUB1]       = MAP_NUM(MAP_SECRET_BASE_SHRUB1),       0,  3,  3,
+    [SECRET_BASE_SHRUB2]       = MAP_NUM(MAP_SECRET_BASE_SHRUB2),       0,  1,  2,
+    [SECRET_BASE_SHRUB3]       = MAP_NUM(MAP_SECRET_BASE_SHRUB3),       0,  7,  8,
+    [SECRET_BASE_SHRUB4]       = MAP_NUM(MAP_SECRET_BASE_SHRUB4),       0,  9,  6,
 };
 
 #define GET_BASE_MAP_NUM(group)    (sSecretBaseEntrancePositions[(group) + 0])
@@ -214,7 +216,7 @@ static const struct ListMenuTemplate sRegistryListMenuTemplate =
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
     .fontId = FONT_NORMAL,
-    .cursorKind = 0,
+    .cursorKind = CURSOR_BLACK_ARROW,
 };
 
 static void ClearSecretBase(struct SecretBase *secretBase)
@@ -410,7 +412,7 @@ void SetOccupiedSecretBaseEntranceMetatiles(struct MapEvents const *events)
 static void SetSecretBaseWarpDestination(void)
 {
     s8 secretBaseGroup = SECRET_BASE_ID_TO_GROUP(sCurSecretBaseId);
-    SetWarpDestinationToMapWarp(MAP_GROUP(SECRET_BASE_RED_CAVE1), GET_BASE_MAP_NUM(secretBaseGroup), GET_BASE_WARP_ID(secretBaseGroup));
+    SetWarpDestinationToMapWarp(MAP_GROUP(MAP_SECRET_BASE_RED_CAVE1), GET_BASE_MAP_NUM(secretBaseGroup), GET_BASE_WARP_ID(secretBaseGroup));
 }
 
 #define tState data[0]
@@ -461,7 +463,7 @@ static void EnterNewlyCreatedSecretBase_WaitFadeIn(u8 taskId)
     ObjectEventTurn(&gObjectEvents[gPlayerAvatar.objectEventId], DIR_NORTH);
     if (IsWeatherNotFadingIn() == TRUE)
     {
-        EnableBothScriptContexts();
+        ScriptContext_Enable();
         DestroyTask(taskId);
     }
 }
@@ -470,7 +472,7 @@ static void EnterNewlyCreatedSecretBase_StartFadeIn(void)
 {
     s16 x, y;
 
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
     HideMapNamePopUpWindow();
     FindMetatileIdMapCoords(&x, &y, METATILE_SecretBase_PC);
     x += MAP_OFFSET;
@@ -507,8 +509,8 @@ void EnterNewlyCreatedSecretBase(void)
 
 bool8 CurMapIsSecretBase(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SECRET_BASE_RED_CAVE1)
-     && (u8)gSaveBlock1Ptr->location.mapNum <= MAP_NUM(SECRET_BASE_SHRUB4))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SECRET_BASE_RED_CAVE1)
+     && (u8)gSaveBlock1Ptr->location.mapNum <= MAP_NUM(MAP_SECRET_BASE_SHRUB4))
         return TRUE;
     else
         return FALSE;
@@ -673,7 +675,7 @@ void WarpIntoSecretBase(const struct MapPosition *position, const struct MapEven
 {
     SetCurSecretBaseIdFromPosition(position, events);
     TrySetCurSecretBaseIndex();
-    ScriptContext1_SetupScript(SecretBase_EventScript_Enter);
+    ScriptContext_SetupScript(SecretBase_EventScript_Enter);
 }
 
 bool8 TrySetCurSecretBase(void)
@@ -691,7 +693,7 @@ static void Task_WarpOutOfSecretBase(u8 taskId)
     switch (gTasks[taskId].data[0])
     {
     case 0:
-        ScriptContext2_Enable();
+        LockPlayerFieldControls();
         gTasks[taskId].data[0] = 1;
         break;
     case 1:
@@ -703,7 +705,7 @@ static void Task_WarpOutOfSecretBase(u8 taskId)
         WarpIntoMap();
         gFieldCallback = FieldCB_DefaultWarpExit;
         SetMainCallback2(CB2_LoadMap);
-        ScriptContext2_Disable();
+        UnlockPlayerFieldControls();
         DestroyTask(taskId);
         break;
     }
@@ -914,14 +916,14 @@ void ShowSecretBaseRegistryMenu(void)
 static void Task_ShowSecretBaseRegistryMenu(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
     tNumBases = GetNumRegisteredSecretBases();
     if (tNumBases != 0)
     {
         tSelectedRow = 0;
         tScrollOffset = 0;
         ClearDialogWindowAndFrame(0, FALSE);
-        sRegistryMenu = calloc(1, sizeof(*sRegistryMenu));
+        sRegistryMenu = AllocZeroed(sizeof(*sRegistryMenu));
         tMainWindowId = AddWindow(&sRegistryWindowTemplates[0]);
         BuildRegistryMenuItems(taskId);
         FinalizeRegistryMenu(taskId);
@@ -953,7 +955,7 @@ static void BuildRegistryMenuItems(u8 taskId)
     }
 
     sRegistryMenu->items[count].name = gText_Cancel;
-    sRegistryMenu->items[count].id = -2;
+    sRegistryMenu->items[count].id = LIST_CANCEL;
     tNumBases = count + 1;
     if (tNumBases < 8)
         tMaxShownItems = tNumBases;
@@ -985,7 +987,7 @@ static void FinalizeRegistryMenu(u8 taskId)
 static void AddRegistryMenuScrollArrows(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    tArrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 188, 12, 148, tNumBases - tMaxShownItems, 0x13f8, 0x13f8, &tScrollOffset);
+    tArrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 188, 12, 148, tNumBases - tMaxShownItems, TAG_SCROLL_ARROW, TAG_SCROLL_ARROW, &tScrollOffset);
 }
 
 static void HandleRegistryMenuInput(u8 taskId)
@@ -1006,7 +1008,7 @@ static void HandleRegistryMenuInput(u8 taskId)
         ClearWindowTilemap(tMainWindowId);
         RemoveWindow(tMainWindowId);
         ScheduleBgCopyTilemapToVram(0);
-        free(sRegistryMenu);
+        Free(sRegistryMenu);
         GoToSecretBasePCRegisterMenu(taskId);
         break;
     default:
@@ -1110,9 +1112,9 @@ static void ReturnToMainRegistryMenu(u8 taskId)
 static void GoToSecretBasePCRegisterMenu(u8 taskId)
 {
     if (VarGet(VAR_CURRENT_SECRET_BASE) == 0)
-        ScriptContext1_SetupScript(SecretBase_EventScript_PCCancel);
+        ScriptContext_SetupScript(SecretBase_EventScript_PCCancel);
     else
-        ScriptContext1_SetupScript(SecretBase_EventScript_ShowRegisterMenu);
+        ScriptContext_SetupScript(SecretBase_EventScript_ShowRegisterMenu);
 
     DestroyTask(taskId);
 }

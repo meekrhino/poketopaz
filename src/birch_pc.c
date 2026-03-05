@@ -12,7 +12,7 @@ bool16 ScriptGetPokedexInfo(void)
     return TRUE;
 }
 
-// This shows your Hoenn Pokedex rating and not your National Dex.
+// This shows your Hoenn Pokédex rating and not your National Dex.
 const u8 *GetPokedexRatingText(u16 count)
 {
     if (count < 10)

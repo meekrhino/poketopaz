@@ -14,7 +14,7 @@
 // Each parent player can lead a group of up to MAX_RFU_PLAYERS (including themselves).
 // Multiply the leader's id by MAX_RFU_PLAYERS and add the member's id (0 if the leader) to
 // get the sprite index of that player.
-#define UR_PLAYER_SPRITE_ID(leaderId, memberId)(MAX_RFU_PLAYERS * leaderId + memberId)
+#define UR_PLAYER_SPRITE_ID(leaderId, memberId) (MAX_RFU_PLAYERS * leaderId + memberId)
 
 static EWRAM_DATA struct UnionRoomObject * sUnionObjWork = NULL;
 static EWRAM_DATA u32 sUnionObjRefreshTimer = 0;
@@ -24,7 +24,8 @@ static u32 IsUnionRoomPlayerInvisible(u32, u32);
 static void SetUnionRoomObjectFacingDirection(s32, s32, u8);
 
 // + 2 is just to match, those elements are empty and never read
-static const u16 sUnionRoomObjGfxIds[GENDER_COUNT][MAX_UNION_ROOM_LEADERS + 2] = {
+// Graphics ids should correspond with the classes in gUnionRoomFacilityClasses
+static const u16 sUnionRoomObjGfxIds[GENDER_COUNT][NUM_UNION_ROOM_CLASSES + 2] = {
     [MALE] = {
         OBJ_EVENT_GFX_MAN_3,
         OBJ_EVENT_GFX_BLACK_BELT,
@@ -142,7 +143,7 @@ static bool32 IsPlayerStandingStill(void)
 // Gender and trainer id are used to determine which sprite a player appears as
 static u16 GetUnionRoomPlayerGraphicsId(u32 gender, u32 id)
 {
-    return sUnionRoomObjGfxIds[gender][id % MAX_UNION_ROOM_LEADERS];
+    return sUnionRoomObjGfxIds[gender][id % NUM_UNION_ROOM_CLASSES];
 }
 
 static void GetUnionRoomPlayerCoords(u32 leaderId, u32 memberId, s32 * x, s32 * y)
@@ -215,7 +216,7 @@ static bool32 TryReleaseUnionRoomPlayerObjectEvent(u32 leaderId)
     if (!ObjectEventClearHeldMovementIfFinished(object))
         return FALSE;
 
-    if (!ScriptContext2_IsEnabled())
+    if (!ArePlayerFieldControlsLocked())
         UnfreezeObjectEvent(object);
     else
         FreezeObjectEvent(object);
@@ -349,15 +350,10 @@ static void AnimateUnionRoomPlayer(u32 leaderId, struct UnionRoomObject * object
         }
         break;
     case 1:
-        if (object->schedAnim == UNION_ROOM_SPAWN_OUT)
-        {
-            object->state = 3;
-            object->animState = 0;
-        }
-        else
-        {
+        if (object->schedAnim != UNION_ROOM_SPAWN_OUT)
             break;
-        }
+        object->state = 3;
+        object->animState = 0;
         // fallthrough
     case 3:
         if (AnimateUnionRoomPlayerDespawn(&object->animState, leaderId, object) == 1)

@@ -22,7 +22,6 @@ sound/songs/midi/*.s
 tools/agbcc
 tools/poryscript
 *.map
-*.ld
 *.bat
 *.dump
 *.sa*
@@ -31,6 +30,8 @@ build/
 .DS_Store
 *.ddump
 .idea/
+porymap.*.cfg
+prefabs.json
 .vscode/
 *.a
 .fuse_hidden*
@@ -39,3 +40,5 @@ build/
 *.sym
 *.js
 *.mp4
+/pokeemerald-*.png
+/pokeemerald_modern-*.png

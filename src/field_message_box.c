@@ -14,7 +14,7 @@ static EWRAM_DATA u8 sMsgBoxMovement = FALSE;
 
 u8 gMessageBoxPosition;
 
-static void ExpandStringAndStartDrawFieldMessage(const u8*, bool32);
+static void ExpandStringAndStartDrawFieldMessage(const u8 *, bool32);
 static void StartDrawFieldMessage(void);
 
 void InitFieldMessageBox(void)
@@ -95,7 +95,7 @@ bool8 ShowPokenavFieldMessage(const u8 *str)
     StringExpandPlaceholders(gStringVar4, str);
     CreateTask(Task_HidePokenavMessageWhenDone, 0);
     StartMatchCallFromScript(str);
-    sFieldMessageBoxMode = 2;
+    sFieldMessageBoxMode = FIELD_MESSAGE_BOX_NORMAL;
     return TRUE;
 }
 
@@ -108,8 +108,7 @@ bool8 ShowFieldAutoScrollMessage(const u8 *str)
     return TRUE;
 }
 
-// Unused
-static bool8 ForceShowFieldAutoScrollMessage(const u8 *str)
+static bool8 UNUSED ForceShowFieldAutoScrollMessage(const u8 *str)
 {
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_AUTO_SCROLL;
     ExpandStringAndStartDrawFieldMessage(str, TRUE);
@@ -127,7 +126,7 @@ bool8 ShowFieldMessageFromBuffer(void)
     return TRUE;
 }
 
-static void ExpandStringAndStartDrawFieldMessage(const u8* str, bool32 allowSkippingDelayWithButtonPress)
+static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
     StringExpandPlaceholders(gStringVar4, str);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
@@ -159,8 +158,7 @@ bool8 IsFieldMessageBoxHidden(void)
     return FALSE;
 }
 
-// Unused
-static void ReplaceFieldMessageWithFrame(void)
+static void UNUSED ReplaceFieldMessageWithFrame(void)
 {
     DestroyTask_DrawFieldMessage();
     DrawStdWindowFrame(0, TRUE);

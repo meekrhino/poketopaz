@@ -23,26 +23,20 @@
 #include "printf.h"
 #include "mgba.h"
 
-extern u16 gUnknown_0203CF30[];
-
-// this file's functions
 static bool8 CheckPyramidBagHasItem(u16 itemId, u16 count);
 static bool8 CheckPyramidBagHasSpace(u16 itemId, u16 count);
 static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash);
 static void DestroyItemIconSprite(void);
 
-// EWRAM variables
 EWRAM_DATA struct BagPocket gBagPockets[POCKETS_COUNT] = {0};
 EWRAM_DATA struct ItemSlot gTmHmItemSlots[BAG_TMHM_COUNT] = {0};
 EWRAM_DATA static u8 sHeaderBoxWindowId = 0;
 EWRAM_DATA u8 sItemIconSpriteId = 0;
 EWRAM_DATA u8 sItemIconSpriteId2 = 0;
 
-// rodata
 #include "data/text/item_descriptions.h"
 #include "data/items.h"
 
-// code
 static u16 GetBagItemQuantity(u16 *quantity)
 {
     return gSaveBlock2Ptr->encryptionKey ^ *quantity;
@@ -782,11 +776,11 @@ bool8 AddPyramidBagItem(u16 itemId, u16 count)
     u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
     u8 *quantities = gSaveBlock2Ptr->frontier.pyramidBag.quantity[gSaveBlock2Ptr->frontier.lvlMode];
 
-    u16 *newItems = Alloc(PYRAMID_BAG_ITEMS_COUNT * sizeof(u16));
-    u8 *newQuantities = Alloc(PYRAMID_BAG_ITEMS_COUNT * sizeof(u8));
+    u16 *newItems = Alloc(PYRAMID_BAG_ITEMS_COUNT * sizeof(*newItems));
+    u8 *newQuantities = Alloc(PYRAMID_BAG_ITEMS_COUNT * sizeof(*newQuantities));
 
-    memcpy(newItems, items, PYRAMID_BAG_ITEMS_COUNT * sizeof(u16));
-    memcpy(newQuantities, quantities, PYRAMID_BAG_ITEMS_COUNT * sizeof(u8));
+    memcpy(newItems, items, PYRAMID_BAG_ITEMS_COUNT * sizeof(*newItems));
+    memcpy(newQuantities, quantities, PYRAMID_BAG_ITEMS_COUNT * sizeof(*newQuantities));
 
     for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
     {
@@ -834,8 +828,8 @@ bool8 AddPyramidBagItem(u16 itemId, u16 count)
 
     if (count == 0)
     {
-        memcpy(items, newItems, PYRAMID_BAG_ITEMS_COUNT * sizeof(u16));
-        memcpy(quantities, newQuantities, PYRAMID_BAG_ITEMS_COUNT * sizeof(u8));
+        memcpy(items, newItems, PYRAMID_BAG_ITEMS_COUNT * sizeof(*items));
+        memcpy(quantities, newQuantities, PYRAMID_BAG_ITEMS_COUNT * sizeof(*quantities));
         Free(newItems);
         Free(newQuantities);
         return TRUE;
@@ -865,11 +859,11 @@ bool8 RemovePyramidBagItem(u16 itemId, u16 count)
     }
     else
     {
-        u16 *newItems = Alloc(PYRAMID_BAG_ITEMS_COUNT * sizeof(u16));
-        u8 *newQuantities = Alloc(PYRAMID_BAG_ITEMS_COUNT * sizeof(u8));
+        u16 *newItems = Alloc(PYRAMID_BAG_ITEMS_COUNT * sizeof(*newItems));
+        u8 *newQuantities = Alloc(PYRAMID_BAG_ITEMS_COUNT * sizeof(*newQuantities));
 
-        memcpy(newItems, items, PYRAMID_BAG_ITEMS_COUNT * sizeof(u16));
-        memcpy(newQuantities, quantities, PYRAMID_BAG_ITEMS_COUNT * sizeof(u8));
+        memcpy(newItems, items, PYRAMID_BAG_ITEMS_COUNT * sizeof(*newItems));
+        memcpy(newQuantities, quantities, PYRAMID_BAG_ITEMS_COUNT * sizeof(*newQuantities));
 
         for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
         {
@@ -896,8 +890,8 @@ bool8 RemovePyramidBagItem(u16 itemId, u16 count)
 
         if (count == 0)
         {
-            memcpy(items, newItems, PYRAMID_BAG_ITEMS_COUNT * sizeof(u16));
-            memcpy(quantities, newQuantities, PYRAMID_BAG_ITEMS_COUNT * sizeof(u8));
+            memcpy(items, newItems, PYRAMID_BAG_ITEMS_COUNT * sizeof(*items));
+            memcpy(quantities, newQuantities, PYRAMID_BAG_ITEMS_COUNT * sizeof(*quantities));
             Free(newItems);
             Free(newQuantities);
             return TRUE;
@@ -924,6 +918,7 @@ const u8 *ItemId_GetName(u16 itemId)
     return gItems[SanitizeItemId(itemId)].name;
 }
 
+// Unused
 u16 ItemId_GetId(u16 itemId)
 {
     return gItems[SanitizeItemId(itemId)].itemId;
@@ -959,7 +954,7 @@ u8 ItemId_GetImportance(u16 itemId)
     return gItems[SanitizeItemId(itemId)].importance;
 }
 
-// unused
+// Unused
 u8 ItemId_GetRegistrability(u16 itemId)
 {
     return gItems[SanitizeItemId(itemId)].registrability;

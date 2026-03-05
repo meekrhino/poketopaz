@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_POKEDEX_H
 #define GUARD_CONSTANTS_POKEDEX_H
 
-// National Pokedex order
+// National Pokédex order
 enum {
     CALDERA_KIRANT_DEX_NONE,
     CALDERA_KIRANT_DEX_VENAP,
@@ -208,4 +208,6 @@ enum {
 
 #define CALDERA_KIRANT_DEX_COUNT     CALDERA_KIRANT_DEX_JIRACHI
 
+// Hoenn Pokedex order
+    // Here below have values but are excluded from the Pokedex
 #endif // GUARD_CONSTANTS_POKEDEX_H

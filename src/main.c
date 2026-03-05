@@ -60,15 +60,15 @@ const IntrFunc gIntrTableTemplate[] =
 
 static u16 sUnusedVar; // Never read
 
-u16 gKeyRepeatStartDelay;
-bool8 gLinkTransferringData;
-struct Main gMain;
-u16 gKeyRepeatContinueDelay;
-bool8 gSoftResetDisabled;
-IntrFunc gIntrTable[INTR_COUNT];
-u8 gLinkVSyncDisabled;
-u32 IntrMain_Buffer[0x200];
-s8 gPcmDmaCounter;
+COMMON_DATA u16 gKeyRepeatStartDelay = 0;
+COMMON_DATA bool8 gLinkTransferringData = 0;
+COMMON_DATA struct Main gMain = {0};
+COMMON_DATA u16 gKeyRepeatContinueDelay = 0;
+COMMON_DATA bool8 gSoftResetDisabled = 0;
+COMMON_DATA IntrFunc gIntrTable[INTR_COUNT] = {0};
+COMMON_DATA u8 gLinkVSyncDisabled = 0;
+COMMON_DATA u32 IntrMain_Buffer[0x200] = {0};
+COMMON_DATA s8 gPcmDmaCounter = 0;
 
 static EWRAM_DATA u16 sTrainerId = 0;
 
@@ -77,7 +77,9 @@ static EWRAM_DATA u16 sTrainerId = 0;
 static void UpdateLinkAndCallCallbacks(void);
 static void InitMainCallbacks(void);
 static void CallCallbacks(void);
+#ifdef BUGFIX
 static void SeedRngWithRtc(void);
+#endif
 static void ReadKeys(void);
 void InitIntrHandlers(void);
 static void WaitForVBlank(void);
@@ -121,13 +123,20 @@ void AgbMain()
     gLinkTransferringData = FALSE;
     sUnusedVar = 0xFC0;
 
+#ifndef NDEBUG
+#if (LOG_HANDLER == LOG_HANDLER_MGBA_PRINT)
+    (void) MgbaOpen();
+#elif (LOG_HANDLER == LOG_HANDLER_AGB_PRINT)
+    AGBPrintfInit();
+#endif
+#endif
     for (;;)
     {
         ReadKeys();
 
         if (gSoftResetDisabled == FALSE
-         && (gMain.heldKeysRaw & A_BUTTON)
-         && (gMain.heldKeysRaw & B_START_SELECT) == B_START_SELECT)
+         && JOY_HELD_RAW(A_BUTTON)
+         && JOY_HELD_RAW(B_START_SELECT) == B_START_SELECT)
         {
             rfu_REQ_stopMode();
             rfu_waitREQComplete();
@@ -280,7 +289,7 @@ static void ReadKeys(void)
             gMain.heldKeys |= A_BUTTON;
     }
 
-    if (gMain.newKeys & gMain.watchedKeysMask)
+    if (JOY_NEW(gMain.watchedKeysMask))
         gMain.watchedKeysPressed = TRUE;
 }
 

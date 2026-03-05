@@ -252,8 +252,8 @@ static const u8 *const sRecordsWindowChallengeTexts[][2] =
 
 static const u8 *const sLevelModeText[] =
 {
-    gText_RecordsLv50,
-    gText_RecordsOpenLevel,
+    [FRONTIER_LVL_50]   = gText_RecordsLv50,
+    [FRONTIER_LVL_OPEN] = gText_RecordsOpenLevel,
 };
 
 static const u8 *const sHallFacilityToRecordsText[] =
@@ -332,28 +332,28 @@ void CallFrontierUtilFunc(void)
     sFrontierUtilFuncs[gSpecialVar_0x8004]();
 }
 
-// Buffers into VAR_TEMP_0 specifically because this is used to react to the status in OnFrame map scripts
+// VAR_TEMP_CHALLENGE_STATUS is used to react to the status in OnFrame map scripts
 static void GetChallengeStatus(void)
 {
-    VarSet(VAR_TEMP_0, 0xFF);
+    VarSet(VAR_TEMP_CHALLENGE_STATUS, 0xFF);
     switch (gSaveBlock2Ptr->frontier.challengeStatus)
     {
     case 0:
         break;
     case CHALLENGE_STATUS_SAVING:
         FrontierGamblerSetWonOrLost(FALSE);
-        VarSet(VAR_TEMP_0, gSaveBlock2Ptr->frontier.challengeStatus);
+        VarSet(VAR_TEMP_CHALLENGE_STATUS, gSaveBlock2Ptr->frontier.challengeStatus);
         break;
     case CHALLENGE_STATUS_LOST:
         FrontierGamblerSetWonOrLost(FALSE);
-        VarSet(VAR_TEMP_0, gSaveBlock2Ptr->frontier.challengeStatus);
+        VarSet(VAR_TEMP_CHALLENGE_STATUS, gSaveBlock2Ptr->frontier.challengeStatus);
         break;
     case CHALLENGE_STATUS_WON:
         FrontierGamblerSetWonOrLost(TRUE);
-        VarSet(VAR_TEMP_0, gSaveBlock2Ptr->frontier.challengeStatus);
+        VarSet(VAR_TEMP_CHALLENGE_STATUS, gSaveBlock2Ptr->frontier.challengeStatus);
         break;
     case CHALLENGE_STATUS_PAUSED:
-        VarSet(VAR_TEMP_0, gSaveBlock2Ptr->frontier.challengeStatus);
+        VarSet(VAR_TEMP_CHALLENGE_STATUS, gSaveBlock2Ptr->frontier.challengeStatus);
         break;
     }
 }
@@ -1551,7 +1551,7 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
 
 // gSpecialVar_Result is the level mode before and after calls to this function
 // gSpecialVar_0x8004 is used to store the return value instead (TRUE if there are insufficient eligible mons)
-// The names of ineligible pokemon that have been caught are also buffered to print
+// The names of ineligible Pokémon that have been caught are also buffered to print
 static void CheckPartyIneligibility(void)
 {
     u16 speciesArray[PARTY_SIZE];
@@ -1589,7 +1589,7 @@ static void CheckPartyIneligibility(void)
         numEligibleMons = 0;
         do
         {
-            u16 species = GetMonData(&gPlayerParty[monId], MON_DATA_SPECIES2);
+            u16 species = GetMonData(&gPlayerParty[monId], MON_DATA_SPECIES_OR_EGG);
             u16 heldItem = GetMonData(&gPlayerParty[monId], MON_DATA_HELD_ITEM);
             u8 level = GetMonData(&gPlayerParty[monId], MON_DATA_LEVEL);
             u16 hp = GetMonData(&gPlayerParty[monId], MON_DATA_HP);
@@ -1667,7 +1667,7 @@ static void IncrementWinStreak(void)
             gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode]++;
             if (battleMode == FRONTIER_MODE_SINGLES)
             {
-                SetGameStat(GAME_STAT_BATTLE_TOWER_BEST_STREAK, gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode]);
+                SetGameStat(GAME_STAT_BATTLE_TOWER_SINGLES_STREAK, gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode]);
                 gSaveBlock2Ptr->frontier.towerSinglesStreak = gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode];
             }
         }
@@ -1816,7 +1816,7 @@ static void Fill1PRecords(struct RankingHall1P *dst, s32 hallFacilityId, s32 lvl
 {
     s32 i, j;
     struct RankingHall1P record1P[HALL_RECORDS_COUNT + 1];
-    struct PlayerHallRecords *playerHallRecords = calloc(1, sizeof(struct PlayerHallRecords));
+    struct PlayerHallRecords *playerHallRecords = AllocZeroed(sizeof(struct PlayerHallRecords));
     GetPlayerHallRecords(playerHallRecords);
 
     for (i = 0; i < HALL_RECORDS_COUNT; i++)
@@ -1843,14 +1843,14 @@ static void Fill1PRecords(struct RankingHall1P *dst, s32 hallFacilityId, s32 lvl
         record1P[highestId].winStreak = 0;
     }
 
-    free(playerHallRecords);
+    Free(playerHallRecords);
 }
 
 static void Fill2PRecords(struct RankingHall2P *dst, s32 lvlMode)
 {
     s32 i, j;
     struct RankingHall2P record2P[HALL_RECORDS_COUNT + 1];
-    struct PlayerHallRecords *playerHallRecords = calloc(1, sizeof(struct PlayerHallRecords));
+    struct PlayerHallRecords *playerHallRecords = AllocZeroed(sizeof(struct PlayerHallRecords));
     GetPlayerHallRecords(playerHallRecords);
 
     for (i = 0; i < HALL_RECORDS_COUNT; i++)
@@ -1877,7 +1877,7 @@ static void Fill2PRecords(struct RankingHall2P *dst, s32 lvlMode)
         record2P[highestId].winStreak = 0;
     }
 
-    free(playerHallRecords);
+    Free(playerHallRecords);
 }
 
 static void PrintHallRecords(s32 hallFacilityId, s32 lvlMode)
@@ -1966,7 +1966,7 @@ void ClearRankingHallRecords(void)
 void SaveGameFrontier(void)
 {
     s32 i;
-    struct Pokemon *monsParty = calloc(PARTY_SIZE, sizeof(struct Pokemon));
+    struct Pokemon *monsParty = AllocZeroed(sizeof(struct Pokemon) * PARTY_SIZE);
 
     for (i = 0; i < PARTY_SIZE; i++)
         monsParty[i] = gPlayerParty[i];
@@ -1981,7 +1981,7 @@ void SaveGameFrontier(void)
     for (i = 0; i < PARTY_SIZE; i++)
         gPlayerParty[i] = monsParty[i];
 
-    free(monsParty);
+    Free(monsParty);
 }
 
 // Frontier Brain functions.

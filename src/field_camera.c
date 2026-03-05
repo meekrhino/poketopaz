@@ -30,7 +30,7 @@ static void RedrawMapSliceWest(struct FieldCameraOffset *, const struct MapLayou
 static s32 MapPosToBgTilemapOffset(struct FieldCameraOffset *, s32, s32);
 static void DrawWholeMapViewInternal(int, int, const struct MapLayout *);
 static void DrawMetatileAt(const struct MapLayout *, u16, int, int);
-static void DrawMetatile(s32, u16 *, u16);
+static void DrawMetatile(s32, const u16 *, u16);
 static void CameraPanningCB_PanAhead(void);
 
 static struct FieldCameraOffset sFieldCameraOffset;
@@ -39,9 +39,9 @@ static s16 sVerticalCameraPan;
 static bool8 sBikeCameraPanFlag;
 static void (*sFieldCameraPanningCallback)(void);
 
-struct CameraObject gFieldCamera;
-u16 gTotalCameraPixelOffsetY;
-u16 gTotalCameraPixelOffsetX;
+COMMON_DATA struct CameraObject gFieldCamera = {0};
+COMMON_DATA u16 gTotalCameraPixelOffsetY = 0;
+COMMON_DATA u16 gTotalCameraPixelOffsetX = 0;
 
 static void ResetCameraOffset(struct FieldCameraOffset *cameraOffset)
 {
@@ -226,7 +226,7 @@ void DrawDoorMetatileAt(int x, int y, u16 *tiles)
 static void DrawMetatileAt(const struct MapLayout *mapLayout, u16 offset, int x, int y)
 {
     u16 metatileId = MapGridGetMetatileIdAt(x, y);
-    u16 *metatiles;
+    const u16 *metatiles;
 
     if (metatileId > NUM_METATILES_TOTAL)
         metatileId = 0;
@@ -237,10 +237,10 @@ static void DrawMetatileAt(const struct MapLayout *mapLayout, u16 offset, int x,
         metatiles = mapLayout->secondaryTileset->metatiles;
         metatileId -= NUM_METATILES_IN_PRIMARY;
     }
-    DrawMetatile(MapGridGetMetatileLayerTypeAt(x, y), metatiles + metatileId * 12, offset);
+    DrawMetatile(MapGridGetMetatileLayerTypeAt(x, y), metatiles + metatileId * NUM_TILES_PER_METATILE, offset);
 }
 
-static void DrawMetatile(s32 metatileLayerType, u16 *tiles, u16 offset)
+static void DrawMetatile(s32 metatileLayerType, const u16 *tiles, u16 offset)
 {
     if(metatileLayerType == 0xFF)
     {
@@ -313,8 +313,8 @@ static void CameraUpdateCallback(struct CameraObject *fieldCamera)
 {
     if (fieldCamera->spriteId != 0)
     {
-        fieldCamera->movementSpeedX = gSprites[fieldCamera->spriteId].data[2];
-        fieldCamera->movementSpeedY = gSprites[fieldCamera->spriteId].data[3];
+        fieldCamera->movementSpeedX = gSprites[fieldCamera->spriteId].sCamera_MoveX;
+        fieldCamera->movementSpeedY = gSprites[fieldCamera->spriteId].sCamera_MoveY;
     }
 }
 

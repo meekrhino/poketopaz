@@ -85,6 +85,7 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_ZANTILIDAE] = gMonFootprint_Zantilidae,
     [SPECIES_SEVIPER] = gMonFootprint_Seviper,
     [SPECIES_PYTHANG] = gMonFootprint_Pythang,
+    [SPECIES_MR_MIME] = gMonFootprint_Mrmime,
     [SPECIES_MEOWTH] = gMonFootprint_Meowth,
     [SPECIES_PERSIAN] = gMonFootprint_Persian,
     [SPECIES_LOTAD] = gMonFootprint_Lotad,

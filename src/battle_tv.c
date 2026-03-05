@@ -563,7 +563,7 @@ static const u16 *const sPointsArray[] =
 };
 
 // Points will always be calculated for these messages
-// even if current pokemon does not have corresponding move
+// even if current Pokémon does not have corresponding move
 static const u16 sSpecialBattleStrings[] =
 {
     STRINGID_PKMNPERISHCOUNTFELL, STRINGID_PKMNWISHCAMETRUE, STRINGID_PKMNLOSTPPGRUDGE,

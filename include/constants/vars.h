@@ -9,7 +9,7 @@
 #define VAR_TEMP_0                 (TEMP_VARS_START + 0x0)
 #define VAR_TEMP_1                 (TEMP_VARS_START + 0x1)
 #define VAR_TEMP_2                 (TEMP_VARS_START + 0x2)
-#define VAR_TEMP_3                 (TEMP_VARS_START + 0x3)
+#define VAR_TEMP_3                 (TEMP_VARS_START + 0x3) // Note: Used when the player checks a TV
 #define VAR_TEMP_4                 (TEMP_VARS_START + 0x4)
 #define VAR_TEMP_5                 (TEMP_VARS_START + 0x5)
 #define VAR_TEMP_6                 (TEMP_VARS_START + 0x6)
@@ -23,6 +23,7 @@
 #define VAR_TEMP_E                 (TEMP_VARS_START + 0xE)
 #define VAR_TEMP_F                 (TEMP_VARS_START + 0xF)
 #define TEMP_VARS_END              VAR_TEMP_F
+#define NUM_TEMP_VARS              (TEMP_VARS_END - TEMP_VARS_START + 1)
 
 // object gfx id vars
 // These 0x10 vars are used to dynamically control a map object's sprite.
@@ -60,7 +61,7 @@
 #define VAR_POISON_STEP_COUNTER              0x402B
 #define VAR_RESET_RTC_ENABLE                 0x402C
 #define VAR_ENIGMA_BERRY_AVAILABLE           0x402D
-#define VAR_WONDER_NEWS_COUNTER              0x402E
+#define VAR_WONDER_NEWS_STEP_COUNTER         0x402E
 
 #define VAR_FRONTIER_MANIAC_FACILITY         0x402F
 #define VAR_FRONTIER_GAMBLER_CHALLENGE       0x4030
@@ -231,7 +232,7 @@
 #define VAR_SS_TIDAL_SCOTT_STATE             0x40D4 // Always equal to FLAG_MET_SCOTT_ON_SS_TIDAL
 #define VAR_ROAMER_POKEMON                   0x40D5 // 0 = Latias, 1 = Latios
 #define VAR_TRAINER_HILL_IS_ACTIVE           0x40D6
-#define VAR_SKY_PILLAR_RAQUAZA_CRY_DONE      0x40D7
+#define VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE     0x40D7
 #define VAR_SOOTOPOLIS_WALLACE_STATE         0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE             0x40DA
@@ -303,5 +304,24 @@
 #define VAR_TRAINER_BATTLE_OPPONENT_A 0x8015 // Alias of gTrainerBattleOpponent_A
 
 #define SPECIAL_VARS_END              0x8015
+
+// If an overworld trigger uses this pseudo-variable as the trigger check,
+// then the script will be run using RunScriptImmediately instead of in the
+// global script context. This means it will run faster, but cannot do any
+// cutscenes nor call a wait command. Used for weather effects in vanilla.
+#define TRIGGER_RUN_IMMEDIATELY   0
+
+// Temp var aliases
+#define VAR_TEMP_CHALLENGE_STATUS  VAR_TEMP_0
+
+#define VAR_TEMP_MIXED_RECORDS         VAR_TEMP_0
+#define VAR_TEMP_RECORD_MIX_GIFT_ITEM  VAR_TEMP_1
+
+#define VAR_TEMP_PLAYING_PYRAMID_MUSIC  VAR_TEMP_E
+
+#define VAR_TEMP_FRONTIER_TUTOR_SELECTION  VAR_TEMP_D
+#define VAR_TEMP_FRONTIER_TUTOR_ID         VAR_TEMP_E
+
+#define VAR_TEMP_TRANSFERRED_SPECIES  VAR_TEMP_1
 
 #endif // GUARD_CONSTANTS_VARS_H
