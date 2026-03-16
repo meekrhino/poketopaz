@@ -20,6 +20,7 @@ struct PartyMenu
     s16 learnMoveState;  // data2, used only as a learn move state
 };
 
+// In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
 enum
 {
     FIELD_MOVE_CUT,
@@ -36,6 +37,7 @@ enum
     FIELD_MOVE_MILK_DRINK,
     FIELD_MOVE_SOFT_BOILED,
     FIELD_MOVE_SWEET_SCENT,
+    FIELD_MOVES_COUNT
 };
 
 #define FIELD_MOVE_HM_COUNT FIELD_MOVE_WATERFALL + 1

@@ -35,8 +35,6 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/weather.h"
-#include "printf.h"
-#include "mgba.h"
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable

@@ -16,7 +16,6 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/region_map_sections.h"
-#include "mgba.h"
 
 #define GFXTAG_CITY_ZOOM 6
 #define PALTAG_CITY_ZOOM 11
@@ -535,19 +534,12 @@ static void UpdateMapSecInfoWindow(struct Pokenav_RegionMapGfx *state, bool32 fo
 {
     struct RegionMap *regionMap = GetSubstructPtr(POKENAV_SUBSTRUCT_REGION_MAP);
 
-    mgba_printf(MGBA_LOG_DEBUG, "Cursor (%d, %d), Tilemap (%d, %d)",
-        regionMap->cursorPosX,
-        regionMap->cursorPosY,
-        GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT),
-        GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_TOP));
-
     // When Cursor is over the details window, move it elsewhere
     // Do not move when zoomed (cursor is locked to left side anyway)
     if(!regionMap->zoomed
      && regionMap->cursorPosX > 14 && regionMap->cursorPosY > 14
      && GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT) != 1)
     {
-        mgba_printf(MGBA_LOG_DEBUG, "Branch A, %d", regionMap->zoomed);
         CallWindowFunction(state->infoWindowId, WindowFunc_ClearDialogWindowAndFrame);
         ClearWindowTilemap(state->infoWindowId);
         SetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT, 1);
@@ -563,7 +555,6 @@ static void UpdateMapSecInfoWindow(struct Pokenav_RegionMapGfx *state, bool32 fo
         regionMap->cursorPosY <= 14)
      && GetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT) != 17)
     {
-        mgba_printf(MGBA_LOG_DEBUG, "Branch B, %d", regionMap->zoomed);
         CallWindowFunction(state->infoWindowId, WindowFunc_ClearDialogWindowAndFrame);
         ClearWindowTilemap(state->infoWindowId);
         SetWindowAttribute(state->infoWindowId, WINDOW_TILEMAP_LEFT, 17);

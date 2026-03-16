@@ -80,7 +80,7 @@ script(local) CranewingCity_Gym_FroyDefeated {
 }
 
 script(local) CranewingCity_Gym_GiveFlare {
-	giveitem(ITEM_TM51_FLARE)
+	giveitem(ITEM_TM_FLARE)
 	compare(VAR_RESULT, FALSE)
     if(var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)

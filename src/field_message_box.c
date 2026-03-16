@@ -6,8 +6,6 @@
 #include "text.h"
 #include "match_call.h"
 #include "field_message_box.h"
-#include "printf.h"
-#include "mgba.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 static EWRAM_DATA u8 sMsgBoxMovement = FALSE;
@@ -25,7 +23,6 @@ void InitFieldMessageBox(void)
     gTextFlags.useAlternateDownArrow = FALSE;
     gTextFlags.autoScroll = FALSE;
     gTextFlags.forceMidTextSpeed = FALSE;
-    mgba_printf(MGBA_LOG_DEBUG, "InitFieldMessageBox");
     gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
 }
 
@@ -48,7 +45,6 @@ static void Task_DrawFieldMessage(u8 taskId)
         case 2:
             if (RunTextPrintersAndIsPrinter0Active() != TRUE)
             {
-                mgba_printf(MGBA_LOG_DEBUG, "End Task");
                 sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
                 DestroyTask(taskId);
             }
@@ -173,7 +169,6 @@ void StopFieldMessage(void)
 
 void UpdateMsgBoxPosition(void)
 {
-    mgba_printf(MGBA_LOG_DEBUG, "UpdateMsgBoxPosition");
     if (sMsgBoxMovement  == FIELD_MSG_BOX_MOVEMENT_LOCK_BOTTOM)
     {
         gMessageBoxPosition = FIELD_MSG_BOX_POSITION_BOTTOM;
@@ -196,7 +191,6 @@ void UpdateMsgBoxPosition(void)
 
 void ToggleMsgBoxPosition(void)
 {
-    mgba_printf(MGBA_LOG_DEBUG, "ToggleMsgBoxPosition");
     CallWindowFunction(0, WindowFunc_ClearDialogWindowAndFrame);
     ClearWindowTilemap(0);
     if (gMessageBoxPosition == FIELD_MSG_BOX_POSITION_BOTTOM)

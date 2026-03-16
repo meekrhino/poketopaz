@@ -1352,15 +1352,15 @@ static void Task_ExitStairs(u8 taskId)
     default:
         if (WaitForWeatherFadeIn() == TRUE)
         {
-            CameraObjectReset1();
-            ScriptContext2_Disable();
+            CameraObjectReset();
+            UnlockPlayerFieldControls();
             DestroyTask(taskId);
         }
         break;
     case 0:
         Overworld_PlaySpecialMapMusic();
         WarpFadeInScreen();
-        ScriptContext2_Enable();
+        LockPlayerFieldControls();
         ExitStairsMovement(&data[1], &data[2], &data[3], &data[4], &data[5]);
         data[0]++;
         break;
@@ -1422,9 +1422,9 @@ static void Task_StairWarp(u8 taskId)
     switch (data[0])
     {
     case 0:
-        ScriptContext2_Enable();
+        LockPlayerFieldControls();
         FreezeObjectEvents();
-        CameraObjectReset2();
+        CameraObjectFreeze();
         data[0]++;
         break;
     case 1:

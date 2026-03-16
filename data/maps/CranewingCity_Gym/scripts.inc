@@ -75,7 +75,7 @@ CranewingCity_Gym_FroyDefeated:
 
 
 CranewingCity_Gym_GiveFlare:
-	giveitem ITEM_TM51_FLARE
+	giveitem ITEM_TM_FLARE
 	compare VAR_RESULT, FALSE
 	compare VAR_RESULT, FALSE
 	goto_if_eq CranewingCity_Gym_GiveFlare_2

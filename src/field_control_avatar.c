@@ -36,8 +36,6 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "field_message_box.h"
-#include "printf.h"
-#include "mgba.h"
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;

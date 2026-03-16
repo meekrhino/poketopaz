@@ -48,8 +48,6 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/union_room.h"
-#include "printf.h"
-#include "mgba.h"
 
 #define DAY_EVO_HOUR_BEGIN       12
 #define DAY_EVO_HOUR_END         HOURS_PER_DAY
@@ -4544,28 +4542,23 @@ u32 CanMonLearnTMHMMove(struct Pokemon *mon, u16 move)
     return CanMonLearnTMHM(mon, tm);
 }
 
-u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
+u32 CanMonLearnTMHM(struct Pokemon *mon, u16 tm)
 {
-    u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
     return CanSpeciesLearnTMHM(species, tm);
 }
 
 u32 CanSpeciesLearnTMHM(u16 species, u8 tm)
 {
-    const u8 *learnableMoves;
+    u32 index, mask;
     if (species == SPECIES_EGG)
     {
         return 0;
     }
 
-    learnableMoves = gTMHMLearnsets[species];
-    while (*learnableMoves != 0xFF)
-    {
-        if (*learnableMoves == tm)
-            return TRUE;
-        learnableMoves++;
-    }
-    return FALSE;
+    index = tm / 32;
+    mask = 1 << (tm % 32);
+    return gTMHMLearnsets[species].as_u32s[index] & mask;
 }
 
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)

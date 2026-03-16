@@ -341,7 +341,6 @@ SECTIONS {
         src/gym_leader_rematch.o(.text);
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
-        src/mgba.o(.text);
         src/quests.o(.text);
         src/printf.o(.text);
         src/field_torches.o(.text);

@@ -294,7 +294,7 @@ const struct MonCoords gMonFrontPicCoords[] =
 
     [SPECIES_CLEFFA] =
     {
-        .size = MON_COORDS_SIZE(44,
+        .size = MON_COORDS_SIZE(32, 32),
         .y_offset = 20,
     },
 

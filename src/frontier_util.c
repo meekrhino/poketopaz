@@ -2064,7 +2064,7 @@ void CreateFrontierBrainPokemon(void)
             } while (IsShinyOtIdPersonality(FRONTIER_BRAIN_OTID, j));
             enemyParty = &gEnemyParty[monPartyId];
             CreateTrainerMon(enemyParty, frontierBrain, i + slot, j, FRONTIER_BRAIN_OTID);
-            SetMonData(enemyParty, MON_DATA_EXP, &gExperienceTables[gBaseStats[GetFrontierBrainMonSpecies(i)].growthRate][monLevel]);
+            SetMonData(enemyParty, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[GetFrontierBrainMonSpecies(i)].growthRate][monLevel]);
             CalculateMonStats(enemyParty);
             monPartyId++;
         }

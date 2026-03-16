@@ -370,7 +370,7 @@ static void Bank_AcceptTransaction(u8 taskId)
 
 static void Bank_Exit(u8 taskId)
 {
-    EnableBothScriptContexts();
+    ScriptContext_Enable();
     DestroyTask(taskId);
 }
 

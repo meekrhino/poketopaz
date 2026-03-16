@@ -48,8 +48,6 @@
 #include "constants/map_types.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
-#include "printf.h"
-#include "mgba.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -1277,8 +1275,8 @@ static void Cmd_accuracycheck(void)
         if (gBattleMons[gBattlerAttacker].ability == ABILITY_HUSTLE && IS_MOVE_PHYSICAL(gBattleMoves[move]))
             calc = (calc * 80) / 100; // 1.2 hustle loss
         if ((WEATHER_HAS_EFFECT && gBattleWeather & B_WEATHER_DARKNESS)
-         && (gBattleMons[gBattlerAttacker].type1 != TYPE_DARK && gBattleMons[gBattlerAttacker].type1 != TYPE_LIGHT
-          && gBattleMons[gBattlerAttacker].type2 != TYPE_DARK && gBattleMons[gBattlerAttacker].type2 != TYPE_LIGHT
+         && (gBattleMons[gBattlerAttacker].types[0] != TYPE_DARK && gBattleMons[gBattlerAttacker].types[0] != TYPE_LIGHT
+          && gBattleMons[gBattlerAttacker].types[1] != TYPE_DARK && gBattleMons[gBattlerAttacker].types[1] != TYPE_LIGHT
           && gBattleMons[gBattlerAttacker].ability != ABILITY_NIGHT_VISION))
             calc = (calc * 80) / 100; // 1.2 darkness loss
 
@@ -6060,8 +6058,8 @@ static void Cmd_getmoneyreward(void)
         s32 i, count;
         for (i = 0; i < PARTY_SIZE; i++)
         {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2) != SPECIES_NONE
-             && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2) != SPECIES_EGG)
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_NONE
+             && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG)
             {
                 if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) > sPartyLevel)
                     sPartyLevel = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
@@ -6592,7 +6590,7 @@ static void PutMonIconOnLvlUpBanner(void)
     u16 species = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPECIES);
     u32 personality = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_PERSONALITY);
 
-    const u8 *iconPtr = GetMonIconPtr(species, personality, 1);
+    const u8 *iconPtr = GetMonIconPtr(species, personality);
     iconSheet.data = iconPtr;
     iconSheet.size = 0x200;
     iconSheet.tag = TAG_LVLUP_BANNER_MON_ICON;

@@ -33,8 +33,6 @@
 #include "constants/event_objects.h"
 #include "event_object_movement.h"
 #include "pokemon_icon.h"
-#include "printf.h"
-#include "mgba.h"
 
 #include "random.h"
 

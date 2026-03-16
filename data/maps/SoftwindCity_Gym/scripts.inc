@@ -79,7 +79,7 @@ SoftwindCity_Gym_ThermaDefeated:
 
 
 SoftwindCity_Gym_GiveWindwhistle:
-	giveitem ITEM_TM56_WINDWHISTLE
+	giveitem ITEM_TM_WINDWHISTLE
 	compare VAR_RESULT, FALSE
 	compare VAR_RESULT, FALSE
 	goto_if_eq SoftwindCity_Gym_GiveWindwhistle_2

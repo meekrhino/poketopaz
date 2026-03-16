@@ -50,8 +50,6 @@
 #include "window.h"
 #include "quests.h"
 #include "constants/event_objects.h"
-#include "printf.h"
-#include "mgba.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
@@ -1088,8 +1086,6 @@ bool8 ScrCmd_setobjectxy(struct ScriptContext *ctx)
     u16 localId = VarGet(ScriptReadHalfword(ctx));
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
-
-    mgba_printf(MGBA_LOG_DEBUG, "Moving object %d to (%d, %d)", localId, x, y);
 
     TryMoveObjectEventToMapCoords(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
     return FALSE;
@@ -2362,7 +2358,7 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
     default:
         BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
         QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
-        ScriptContext1_Stop();
+        ScriptContext_Stop();
         break;
     case QUEST_REVEAL:
         QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);

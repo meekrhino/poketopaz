@@ -91,7 +91,7 @@ script(local) SoftwindCity_Gym_ThermaDefeated {
 }
 
 script(local) SoftwindCity_Gym_GiveWindwhistle {
-	giveitem(ITEM_TM56_WINDWHISTLE)
+	giveitem(ITEM_TM_WINDWHISTLE)
 	compare(VAR_RESULT, FALSE)
     if(var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)

@@ -50,8 +50,6 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/union_room.h"
-#include "printf.h"
-#include "mgba.h"
 
 // IDs for RunTradeMenuCallback
 enum {
@@ -3837,9 +3835,9 @@ static bool8 DoTradeAnim_Cable(void)
         else if (JOY_NEW(A_BUTTON))
             sTradeAnim->state++;
         break;
-    case TS_STATE_FADE_OUT_DO_TRADE:
+    case STATE_FADE_OUT_DO_TRADE:
         TradeMons(gSpecialVar_0x8005, 0);
-        sTradeData->state++;
+        sTradeAnim->state++;
         break;
     case STATE_FADE_OUT_END:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
@@ -4330,9 +4328,9 @@ static bool8 DoTradeAnim_Wireless(void)
         else if (JOY_NEW(A_BUTTON))
             sTradeAnim->state++;
         break;
-    case TS_STATE_FADE_OUT_DO_TRADE:
+    case STATE_FADE_OUT_DO_TRADE:
         TradeMons(gSpecialVar_0x8005, 0);
-        sTradeData->state++;
+        sTradeAnim->state++;
         break;
     case STATE_FADE_OUT_END:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);

@@ -20,8 +20,6 @@
 #include "overworld.h"
 #include "constants/items.h"
 #include "constants/hold_effects.h"
-#include "printf.h"
-#include "mgba.h"
 
 static bool8 CheckPyramidBagHasItem(u16 itemId, u16 count);
 static bool8 CheckPyramidBagHasSpace(u16 itemId, u16 count);

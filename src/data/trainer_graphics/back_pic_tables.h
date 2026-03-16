@@ -70,12 +70,12 @@ const struct CompressedSpriteSheet gTrainerBackPicTable[] =
 		.tag = TRAINER_BACK_PIC_BRADLEY
 	},
 	[TRAINER_BACK_PIC_ALISA] = {
-		.data = gTrainerBackPic_Alisa
+		.data = (const u32 *)gTrainerBackPic_Alisa,
 		.size = TRAINER_PIC_SIZE * ARRAY_COUNT(gTrainerBackPic_Alisa),
 		.tag = TRAINER_BACK_PIC_ALISA
 	},
 	[TRAINER_BACK_PIC_SIMON] = {
-		.data = gTrainerBackPic_Simon
+		.data = (const u32 *)gTrainerBackPic_Simon,
 		.size = TRAINER_PIC_SIZE * ARRAY_COUNT(gTrainerBackPic_Simon),
 		.tag = TRAINER_BACK_PIC_SIMON
 	},

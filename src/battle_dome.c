@@ -2604,7 +2604,7 @@ static void CalcDomeMonStats(u16 species, int level, int ivs, u8 evBits, u8 natu
             evs[i] = resultingEvs;
     }
 
-    int n = 2 * gSpeciesInfo[species].baseHP;
+    n = 2 * gSpeciesInfo[species].baseHP;
     stats[STAT_HP] = (((n + ivs + evs[STAT_HP] / 4) * level) / 100) + level + 10;
 
     CALC_STAT(baseAttack, STAT_ATK);

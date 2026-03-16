@@ -4,7 +4,7 @@ Route201_ItemPotion::
 
 
 Route201_ItemSurfSpot::
-	finditem ITEM_TM65_ZIGZAG
+	finditem ITEM_TM_ZIGZAG
 	end
 
 

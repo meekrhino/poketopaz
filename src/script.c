@@ -5,8 +5,6 @@
 #include "util.h"
 #include "constants/event_objects.h"
 #include "constants/map_scripts.h"
-#include "printf.h"
-#include "mgba.h"
 
 #define RAM_SCRIPT_MAGIC 51
 
@@ -329,11 +327,9 @@ u8 *MapHeaderCheckScriptTable(u8 tag)
         if (isFlag
          && ((VarGet(varIndex2) != 0 && flagSet)
           || (VarGet(varIndex2) == 0 && !flagSet))) {
-            mgba_printf(MGBA_LOG_DEBUG, "%d: triggering a flag-based script flag: %d = %d", tag, varIndex1, varIndex2);
             return T2_READ_PTR(ptr);
         }
         else if (VarGet(varIndex1) == VarGet(varIndex2)) {
-            mgba_printf(MGBA_LOG_DEBUG, "%d: triggering a var-based script var: %d = %d", tag, varIndex1, varIndex2);
             return T2_READ_PTR(ptr);
         }
         ptr += 4;

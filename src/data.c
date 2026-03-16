@@ -115,31 +115,34 @@ const struct SpriteFrameImage gTrainerBackPicTable_Steven[] =
 
 const struct SpriteFrameImage gTrainerBackPicTable_PlayerN[] =
 {
-    gTrainerBackPic_PlayerN, 0x0800,
-    gTrainerBackPic_PlayerN + 0x0800, 0x0800,
-    gTrainerBackPic_PlayerN + 0x1000, 0x0800,
-    gTrainerBackPic_PlayerN + 0x1800, 0x0800,
+    {gTrainerBackPic_PlayerN + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_PlayerN + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_PlayerN + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_PlayerN + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
 };
+
 const struct SpriteFrameImage gTrainerBackPicTable_Bradley[] =
 {
-    gTrainerBackPic_Bradley, 0x0800,
-    gTrainerBackPic_Bradley + 0x0800, 0x0800,
-    gTrainerBackPic_Bradley + 0x1000, 0x0800,
-    gTrainerBackPic_Bradley + 0x1800, 0x0800,
+    {gTrainerBackPic_Bradley + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Bradley + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Bradley + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Bradley + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
 };
+
 const struct SpriteFrameImage gTrainerBackPicTable_Alisa[] =
 {
-    gTrainerBackPic_Alisa, 0x0800,
-    gTrainerBackPic_Alisa + 0x0800, 0x0800,
-    gTrainerBackPic_Alisa + 0x1000, 0x0800,
-    gTrainerBackPic_Alisa + 0x1800, 0x0800,
+    {gTrainerBackPic_Alisa + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Alisa + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Alisa + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Alisa + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
 };
+
 const struct SpriteFrameImage gTrainerBackPicTable_Simon[] =
 {
-    gTrainerBackPic_Simon, 0x0800,
-    gTrainerBackPic_Simon + 0x0800, 0x0800,
-    gTrainerBackPic_Simon + 0x1000, 0x0800,
-    gTrainerBackPic_Simon + 0x1800, 0x0800,
+    {gTrainerBackPic_Simon + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Simon + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Simon + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Simon + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
 };
 
 static const union AnimCmd sAnim_GeneralFrame0[] =

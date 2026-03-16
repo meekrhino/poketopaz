@@ -51,7 +51,37 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(FLARE) \
+    F(FALSE_SWIPE) \
+    F(FOCUS_SIGHT) \
+    F(ICICLE_WHIP) \
+    F(ENDURE) \
+    F(WINDWHISTLE) \
+    F(IRON_FIST) \
+    F(NIGHTFALL) \
+    F(SOUL_BURN) \
+    F(MEGAFRICTION) \
+    F(UMBRAGE) \
+    F(CHERRY_BOMB) \
+    F(WATER_WALL) \
+    F(FLORAL_STORM) \
+    F(ZIGZAG) \
+    F(HOLY_FIST) \
+    F(SILVER_WIND) \
+    F(VENOM_STRIKE) \
+    F(CALM_WIND) \
+    F(FAULT_LINE) \
+    F(STATRONOME) \
+    F(INITIATIVE) \
+    F(MAGNET_BLAST) \
+    F(BUG_BURN) \
+    F(SLEEP_TALK) \
+    F(TEMPEST) \
+    F(OVERLOAD) \
+    F(SUBSTITUTE) \
+    F(ROCKET_PUNCH) \
+    F(ORION_SWORD)
 
 #define FOREACH_HM(F) \
     F(CUT) \

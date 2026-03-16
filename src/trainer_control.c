@@ -16,7 +16,7 @@ void CreateTrainerMon(struct Pokemon *party, const struct Trainer *trainer, u32 
     if (partyData->gender != 0)
     {
         u32 newPersonality = personalityValue & 0xFFFFFF00;
-        u32 genderRatio = gBaseStats[partyData->species].genderRatio;
+        u32 genderRatio = gSpeciesInfo[partyData->species].genderRatio;
         if (partyData->gender == TRAINER_PARTY_GENDER(MALE))
             newPersonality |= ((255 - genderRatio) / 2) + genderRatio;
         else
@@ -66,7 +66,7 @@ void CreateTrainerMon(struct Pokemon *party, const struct Trainer *trainer, u32 
         for (i = 0; i < NUM_STATS; i++)
             SetMonData(party, MON_DATA_HP_EV + i, &partyData->ev[i]);
     }
-    if (gBaseStats[partyData->species].abilities[1])
+    if (gSpeciesInfo[partyData->species].abilities[1])
     {
         u32 abilityNum = partyData->abilityNum;
         SetMonData(party, MON_DATA_ABILITY_NUM, &abilityNum);

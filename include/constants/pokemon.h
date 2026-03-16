@@ -40,7 +40,8 @@
 #define EGG_GROUP_WATER_2             12
 #define EGG_GROUP_DITTO               13
 #define EGG_GROUP_DRAGON              14
-#define EGG_GROUP_NO_EGGS_DISCOVERED  15
+#define EGG_GROUP_GROUND              15
+#define EGG_GROUP_NO_EGGS_DISCOVERED  16
 
 #define EGG_GROUPS_PER_MON            2
 
