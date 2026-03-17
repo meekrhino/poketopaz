@@ -994,7 +994,7 @@ const struct Tileset gTileset_Route206 =
 const struct Tileset gTileset_Outpost =
 {
 	.isCompressed = TRUE,
-	.isSecondary = TRUE,
+	.isSecondary = FALSE,
 	.tiles = gTilesetTiles_Outpost,
 	.palettes = gTilesetPalettes_Outpost,
 	.metatiles = gMetatiles_Outpost,
@@ -1016,7 +1016,7 @@ const struct Tileset gTileset_HollowlogCity =
 const struct Tileset gTileset_HollowlogForest =
 {
 	.isCompressed = TRUE,
-	.isSecondary = TRUE,
+	.isSecondary = FALSE,
 	.tiles = gTilesetTiles_HollowlogForest,
 	.palettes = gTilesetPalettes_HollowlogForest,
 	.metatiles = gMetatiles_HollowlogForest,

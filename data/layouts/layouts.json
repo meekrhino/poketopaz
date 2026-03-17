@@ -5696,7 +5696,7 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralCaldera",
       "secondary_tileset": "gTileset_NeoBay",
       "border_filepath": "data/layouts/NeoBay_FlashbackBeach/border.bin",
       "blockdata_filepath": "data/layouts/NeoBay_FlashbackBeach/map.bin"
