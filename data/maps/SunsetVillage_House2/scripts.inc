@@ -3,16 +3,19 @@ SunsetVillage_House2_MapScripts::
 
 
 SunsetVillage_House2_Boy::
+# 11 "data/maps/SunsetVillage_House2/scripts.pory"
 	msgbox SunsetVillage_House2_Boy_Text_0, MSGBOX_NPC
 	end
 
 
 SunsetVillage_House2_LittleBoy::
+# 16 "data/maps/SunsetVillage_House2/scripts.pory"
 	msgbox SunsetVillage_House2_LittleBoy_Text_0, MSGBOX_NPC
 	end
 
 
 SunsetVillage_House2_Boy_Text_0:
+# 11 "data/maps/SunsetVillage_House2/scripts.pory"
 	.string "I'm one of the only young folks in town,\n"
 	.string "so I always get stuck babysitting the\l"
 	.string "grandchildren.\p"
@@ -20,6 +23,7 @@ SunsetVillage_House2_Boy_Text_0:
 	.string "It pays well!$"
 
 SunsetVillage_House2_LittleBoy_Text_0:
+# 16 "data/maps/SunsetVillage_House2/scripts.pory"
 	.string "My grandpa went shopping for my\n"
 	.string "birthday.\p"
 	.string "I hope I get the new video game I asked\n"
