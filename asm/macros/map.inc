@@ -24,7 +24,6 @@
 	.byte \index
 	.byte OBJ_KIND_NORMAL
 	.2byte \gfx
-
 	.2byte \x, \y
 	.byte \elevation
 	.byte \movement_type

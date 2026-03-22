@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE208",
   "name": "Route208",
   "layout": "LAYOUT_ROUTE208",
-  "music": "MUS_ROUTE111",
+  "music": "MUS_ROUTE201",
   "region_map_section": "MAPSEC_ROUTE_208",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

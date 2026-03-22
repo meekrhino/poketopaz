@@ -1635,7 +1635,7 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_NeoBay[][16] = 
+const u16 gTilesetPalettes_NeoBay[][16] = 
 {
 	INCBIN_U16("data/tilesets/secondary/neobay/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/neobay/palettes/01.gbapal"),
@@ -1677,7 +1677,7 @@ const u16 gTilesetPalettes_Softwind[][16] =
 };
 const u32 gTilesetTiles_Softwind[] = INCBIN_U32("data/tilesets/secondary/softwind/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_ChartreeForest[][16] =
+const u16 gTilesetPalettes_ChartreeForest[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/chartreeforest/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/chartreeforest/palettes/01.gbapal"),
@@ -1699,7 +1699,7 @@ const u32 gTilesetPalettes_ChartreeForest[][16] =
 
 const u32 gTilesetTiles_ChartreeForest[] = INCBIN_U32("data/tilesets/secondary/chartreeforest/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_Cranewing[][16] =
+const u16 gTilesetPalettes_Cranewing[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/cranewing/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/cranewing/palettes/01.gbapal"),
@@ -1721,7 +1721,7 @@ const u32 gTilesetPalettes_Cranewing[][16] =
 
 const u32 gTilesetTiles_Cranewing[] = INCBIN_U32("data/tilesets/secondary/cranewing/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_MtMist[][16] =
+const u16 gTilesetPalettes_MtMist[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/mtmist/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/mtmist/palettes/01.gbapal"),
@@ -1743,7 +1743,7 @@ const u32 gTilesetPalettes_MtMist[][16] =
 
 const u32 gTilesetTiles_MtMist[] = INCBIN_U32("data/tilesets/secondary/mtmist/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_Glassworks[][16] =
+const u16 gTilesetPalettes_Glassworks[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/glassworks/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/glassworks/palettes/01.gbapal"),
@@ -1765,7 +1765,7 @@ const u32 gTilesetPalettes_Glassworks[][16] =
 
 const u32 gTilesetTiles_Glassworks[] = INCBIN_U32("data/tilesets/secondary/glassworks/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_CranewingGym[][16] =
+const u16 gTilesetPalettes_CranewingGym[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/cranewing_gym/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/cranewing_gym/palettes/01.gbapal"),
@@ -1787,7 +1787,7 @@ const u32 gTilesetPalettes_CranewingGym[][16] =
 
 const u32 gTilesetTiles_CranewingGym[] = INCBIN_U32("data/tilesets/secondary/cranewing_gym/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_SoftwindGym[][16] =
+const u16 gTilesetPalettes_SoftwindGym[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/softwind_gym/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/softwind_gym/palettes/01.gbapal"),
@@ -1809,7 +1809,7 @@ const u32 gTilesetPalettes_SoftwindGym[][16] =
 
 const u32 gTilesetTiles_SoftwindGym[] = INCBIN_U32("data/tilesets/secondary/softwind_gym/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_MistvaleCity[][16] =
+const u16 gTilesetPalettes_MistvaleCity[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/mistvale_city/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/mistvale_city/palettes/01.gbapal"),
@@ -1831,7 +1831,7 @@ const u32 gTilesetPalettes_MistvaleCity[][16] =
 
 const u32 gTilesetTiles_MistvaleCity[] = INCBIN_U32("data/tilesets/secondary/mistvale_city/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_RoothavenCity[][16] =
+const u16 gTilesetPalettes_RoothavenCity[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/roothaven_city/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/roothaven_city/palettes/01.gbapal"),
@@ -1853,7 +1853,7 @@ const u32 gTilesetPalettes_RoothavenCity[][16] =
 
 const u32 gTilesetTiles_RoothavenCity[] = INCBIN_U32("data/tilesets/secondary/roothaven_city/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_AbaddonSwamp[][16] =
+const u16 gTilesetPalettes_AbaddonSwamp[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/abaddon_swamp/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/abaddon_swamp/palettes/01.gbapal"),
@@ -1875,7 +1875,7 @@ const u32 gTilesetPalettes_AbaddonSwamp[][16] =
 
 const u32 gTilesetTiles_AbaddonSwamp[] = INCBIN_U32("data/tilesets/secondary/abaddon_swamp/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_GeneralCaldera[][16] =
+const u16 gTilesetPalettes_GeneralCaldera[][16] =
 {
 	INCBIN_U16("data/tilesets/primary/general_caldera/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/primary/general_caldera/palettes/01.gbapal"),
@@ -1897,7 +1897,7 @@ const u32 gTilesetPalettes_GeneralCaldera[][16] =
 
 const u32 gTilesetTiles_GeneralCaldera[] = INCBIN_U32("data/tilesets/primary/general_caldera/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_SunsetVillage[][16] =
+const u16 gTilesetPalettes_SunsetVillage[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/sunset_village/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/sunset_village/palettes/01.gbapal"),
@@ -1919,7 +1919,7 @@ const u32 gTilesetPalettes_SunsetVillage[][16] =
 
 const u32 gTilesetTiles_SunsetVillage[] = INCBIN_U32("data/tilesets/secondary/sunset_village/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_Route203[][16] =
+const u16 gTilesetPalettes_Route203[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/route_203/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/route_203/palettes/01.gbapal"),
@@ -1941,7 +1941,7 @@ const u32 gTilesetPalettes_Route203[][16] =
 
 const u32 gTilesetTiles_Route203[] = INCBIN_U32("data/tilesets/secondary/route_203/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_Route206[][16] =
+const u16 gTilesetPalettes_Route206[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/route_206/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/route_206/palettes/01.gbapal"),
@@ -1963,7 +1963,7 @@ const u32 gTilesetPalettes_Route206[][16] =
 
 const u32 gTilesetTiles_Route206[] = INCBIN_U32("data/tilesets/secondary/route_206/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_Outpost[][16] =
+const u16 gTilesetPalettes_Outpost[][16] =
 {
 	INCBIN_U16("data/tilesets/primary/outpost/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/primary/outpost/palettes/01.gbapal"),
@@ -1985,7 +1985,7 @@ const u32 gTilesetPalettes_Outpost[][16] =
 
 const u32 gTilesetTiles_Outpost[] = INCBIN_U32("data/tilesets/primary/outpost/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_HollowlogCity[][16] =
+const u16 gTilesetPalettes_HollowlogCity[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/hollowlog_city/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/hollowlog_city/palettes/01.gbapal"),
@@ -2007,7 +2007,7 @@ const u32 gTilesetPalettes_HollowlogCity[][16] =
 
 const u32 gTilesetTiles_HollowlogCity[] = INCBIN_U32("data/tilesets/secondary/hollowlog_city/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_HollowlogForest[][16] =
+const u16 gTilesetPalettes_HollowlogForest[][16] =
 {
 	INCBIN_U16("data/tilesets/primary/hollowlog_forest/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/primary/hollowlog_forest/palettes/01.gbapal"),
@@ -2029,7 +2029,7 @@ const u32 gTilesetPalettes_HollowlogForest[][16] =
 
 const u32 gTilesetTiles_HollowlogForest[] = INCBIN_U32("data/tilesets/primary/hollowlog_forest/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_Route208[][16] =
+const u16 gTilesetPalettes_Route208[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/route_208/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/route_208/palettes/01.gbapal"),
@@ -2051,7 +2051,7 @@ const u32 gTilesetPalettes_Route208[][16] =
 
 const u32 gTilesetTiles_Route208[] = INCBIN_U32("data/tilesets/secondary/route_208/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_GeneralKirant[][16] =
+const u16 gTilesetPalettes_GeneralKirant[][16] =
 {
 	INCBIN_U16("data/tilesets/primary/general_kirant/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/primary/general_kirant/palettes/01.gbapal"),
@@ -2073,7 +2073,7 @@ const u32 gTilesetPalettes_GeneralKirant[][16] =
 
 const u32 gTilesetTiles_GeneralKirant[] = INCBIN_U32("data/tilesets/primary/general_kirant/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_RoothavenInside[][16] =
+const u16 gTilesetPalettes_RoothavenInside[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/roothaven_inside/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/roothaven_inside/palettes/01.gbapal"),
@@ -2095,7 +2095,7 @@ const u32 gTilesetPalettes_RoothavenInside[][16] =
 
 const u32 gTilesetTiles_RoothavenInside[] = INCBIN_U32("data/tilesets/secondary/roothaven_inside/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_CyclingRoad[][16] =
+const u16 gTilesetPalettes_CyclingRoad[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/cycling_road/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/cycling_road/palettes/01.gbapal"),
@@ -2117,7 +2117,7 @@ const u32 gTilesetPalettes_CyclingRoad[][16] =
 
 const u32 gTilesetTiles_CyclingRoad[] = INCBIN_U32("data/tilesets/secondary/cycling_road/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_MistvaleInside[][16] =
+const u16 gTilesetPalettes_MistvaleInside[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/mistvale_inside/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/mistvale_inside/palettes/01.gbapal"),
@@ -2139,7 +2139,7 @@ const u32 gTilesetPalettes_MistvaleInside[][16] =
 
 const u32 gTilesetTiles_MistvaleInside[] = INCBIN_U32("data/tilesets/secondary/mistvale_inside/tiles.4bpp.lz");
 
-const u32 gTilesetPalettes_HollowlogInside[][16] =
+const u16 gTilesetPalettes_HollowlogInside[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/hollowlog_inside/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/hollowlog_inside/palettes/01.gbapal"),

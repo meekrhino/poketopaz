@@ -64,7 +64,7 @@ script(global) SoftwindCity_Gym_Gregor {
 
 script(global) SoftwindCity_Gym_Therma {
     trainerbattle_single(TRAINER_THERMA, SoftwindCity_Gym_Text_ThermaIntro, SoftwindCity_Gym_Text_ThermaDefeated, SoftwindCity_Gym_ThermaDefeated, NO_MUSIC)
-    if(!(flag(FLAG_RECEIVED_TM56))) {
+    if(!(flag(FLAG_RECEIVED_TM_WINDWHISTLE))) {
         goto(SoftwindCity_Gym_GiveWindwhistle)
     }
     msgbox(SoftwindCity_Gym_Text_ThermaPostBattle, MSGBOX_AUTOCLOSE)
@@ -96,7 +96,7 @@ script(local) SoftwindCity_Gym_GiveWindwhistle {
     if(var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
-	setflag(FLAG_RECEIVED_TM56)
+	setflag(FLAG_RECEIVED_TM_WINDWHISTLE)
 	msgbox(SoftwindCity_Gym_Text_WindwhistleExplanation, MSGBOX_DEFAULT)
 	release
 	end

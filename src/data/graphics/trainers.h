@@ -25,10 +25,10 @@ const u32 gTrainerPalette_SwimmerM[] = INCBIN_U32("graphics/trainers/front_pics/
 const u32 gTrainerFrontPic_MagmaGruntM[] = INCBIN_U32("graphics/trainers/front_pics/magma_grunt_m.4bpp.lz");
 const u32 gTrainerPalette_MagmaGruntM[] = INCBIN_U32("graphics/trainers/front_pics/magma_grunt_m.gbapal.lz");
 
-const u32 gTrainerFrontPic_RocketGruntM[] = INCBIN_U32("graphics/trainers/front_pics/rocket_grunt_m_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_RocketGruntM[] = INCBIN_U32("graphics/trainers/front_pics/rocket_grunt_m.4bpp.lz");
 const u32 gTrainerPalette_RocketGruntM[] = INCBIN_U32("graphics/trainers/palettes/rocket_grunt_m.gbapal.lz");
 
-const u32 gTrainerFrontPic_RocketGruntF[] = INCBIN_U32("graphics/trainers/front_pics/rocket_grunt_f_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_RocketGruntF[] = INCBIN_U32("graphics/trainers/front_pics/rocket_grunt_f.4bpp.lz");
 const u32 gTrainerPalette_RocketGruntF[] = INCBIN_U32("graphics/trainers/palettes/rocket_grunt_f.gbapal.lz");
 
 const u32 gTrainerFrontPic_ExpertM[] = INCBIN_U32("graphics/trainers/front_pics/expert_m.4bpp.lz");
@@ -124,10 +124,10 @@ const u32 gTrainerPalette_EliteFourGlacia[] = INCBIN_U32("graphics/trainers/fron
 const u32 gTrainerFrontPic_EliteFourDrake[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_drake.4bpp.lz");
 const u32 gTrainerPalette_EliteFourDrake[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_drake.gbapal.lz");
 
-const u32 gTrainerFrontPic_LeaderFroy[] = INCBIN_U32("graphics/trainers/front_pics/leader_froy_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_LeaderFroy[] = INCBIN_U32("graphics/trainers/front_pics/leader_froy.4bpp.lz");
 const u32 gTrainerPalette_LeaderFroy[] = INCBIN_U32("graphics/trainers/palettes/leader_froy.gbapal.lz");
 
-const u32 gTrainerFrontPic_LeaderTherma[] = INCBIN_U32("graphics/trainers/front_pics/leader_therma_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_LeaderTherma[] = INCBIN_U32("graphics/trainers/front_pics/leader_therma.4bpp.lz");
 const u32 gTrainerPalette_LeaderTherma[] = INCBIN_U32("graphics/trainers/palettes/leader_therma.gbapal.lz");
 
 const u32 gTrainerFrontPic_LeaderRoxanne[] = INCBIN_U32("graphics/trainers/front_pics/leader_roxanne.4bpp.lz");

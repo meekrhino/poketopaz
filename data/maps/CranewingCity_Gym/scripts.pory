@@ -53,7 +53,7 @@ script(global) CranewingCity_Gym_Froy {
     if(var(VAR_RESULT) == TRUE) {
         goto(CranewingCity_Gym_RewardQuest)
     }
-    if(!(flag(FLAG_RECEIVED_TM51))) {
+    if(!(flag(FLAG_RECEIVED_TM_FLARE))) {
         goto(CranewingCity_Gym_GiveFlare)
     }
 	msgbox(CranewingCity_Gym_Text_FroyPostBattle, MSGBOX_DEFAULT)
@@ -85,7 +85,7 @@ script(local) CranewingCity_Gym_GiveFlare {
     if(var(VAR_RESULT) == FALSE) {
         goto(Common_EventScript_ShowBagIsFull)
     }
-	setflag(FLAG_RECEIVED_TM51)
+	setflag(FLAG_RECEIVED_TM_FLARE)
 	msgbox(CranewingCity_Gym_Text_FlareExplanation, MSGBOX_DEFAULT)
 	release
 	end
@@ -101,7 +101,7 @@ script(local) CranewingCity_Gym_RewardQuest {
     msgbox(CranewingCity_Gym_Text_CutExplanation)
     waitmessage
     giveitem(ITEM_HM01)
-	setflag(FLAG_RECEIVED_HM01)
+	setflag(FLAG_RECEIVED_HM_CUT)
     quest_finish(QUEST_CHARTREE_ROCKETS)
     release
     end

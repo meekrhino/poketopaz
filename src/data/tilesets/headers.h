@@ -955,8 +955,8 @@ const struct Tileset gTileset_GeneralCaldera =
 	.palettes = gTilesetPalettes_GeneralCaldera,
 	.metatiles = gMetatiles_GeneralCaldera,
 	.metatileAttributes = gMetatileAttributes_GeneralCaldera,
-	.callback =  InitTilesetAnim_GeneralCaldera,
-};k
+	.callback = InitTilesetAnim_GeneralCaldera,
+};
 
 const struct Tileset gTileset_SunsetVillage =
 {

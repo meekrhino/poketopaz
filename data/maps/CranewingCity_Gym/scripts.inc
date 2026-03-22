@@ -3,118 +3,171 @@ CranewingCity_Gym_MapScripts::
 
 
 CranewingCity_Gym_GymStatue::
+# 17 "data/maps/CranewingCity_Gym/scripts.pory"
 	lockall
+# 18 "data/maps/CranewingCity_Gym/scripts.pory"
 	goto_if_set FLAG_BADGE01_GET, CranewingCity_Gym_GymStatue_2
+# 22 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
 CranewingCity_Gym_GymStatue_1:
+# 24 "data/maps/CranewingCity_Gym/scripts.pory"
 	releaseall
 	end
 
 CranewingCity_Gym_GymStatue_2:
+# 19 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
 	goto CranewingCity_Gym_GymStatue_1
 
 
 CranewingCity_Gym_GymGuide::
+# 29 "data/maps/CranewingCity_Gym/scripts.pory"
 	goto_if_set FLAG_BADGE01_GET, CranewingCity_Gym_GymGuide_2
+# 33 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Text_GymGuide, MSGBOX_NPC
 CranewingCity_Gym_GymGuide_1:
 	end
 
 CranewingCity_Gym_GymGuide_2:
+# 30 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Text_GymGuidePostVictory, MSGBOX_NPC
 	goto CranewingCity_Gym_GymGuide_1
 
 
 CranewingCity_Gym_Man::
+# 39 "data/maps/CranewingCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_SLADE, CranewingCity_Gym_Text_SladeIntro, CranewingCity_Gym_Text_SladeDefeated
+# 40 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_SladePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 CranewingCity_Gym_Girl::
+# 45 "data/maps/CranewingCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_LOLA, CranewingCity_Gym_Text_LolaIntro, CranewingCity_Gym_Text_LolaDefeated
+# 46 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_LolaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 CranewingCity_Gym_Froy::
+# 51 "data/maps/CranewingCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_FROY, CranewingCity_Gym_Text_FroyIntro, CranewingCity_Gym_Text_FroyDefeated, CranewingCity_Gym_FroyDefeated, NO_MUSIC
+# 52 "data/maps/CranewingCity_Gym/scripts.pory"
 	quest_check_reward_waiting QUEST_CHARTREE_ROCKETS
+# 53 "data/maps/CranewingCity_Gym/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq CranewingCity_Gym_Froy_2
 CranewingCity_Gym_Froy_1:
-	goto_if_unset FLAG_RECEIVED_TM51, CranewingCity_Gym_Froy_5
+# 56 "data/maps/CranewingCity_Gym/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_TM_FLARE, CranewingCity_Gym_Froy_5
 CranewingCity_Gym_Froy_4:
+# 59 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_FroyPostBattle, MSGBOX_DEFAULT
+# 60 "data/maps/CranewingCity_Gym/scripts.pory"
 	release
 	end
 
 CranewingCity_Gym_Froy_2:
+# 54 "data/maps/CranewingCity_Gym/scripts.pory"
 	goto CranewingCity_Gym_RewardQuest
 	goto CranewingCity_Gym_Froy_1
 
 CranewingCity_Gym_Froy_5:
+# 57 "data/maps/CranewingCity_Gym/scripts.pory"
 	goto CranewingCity_Gym_GiveFlare
 	goto CranewingCity_Gym_Froy_4
 
 
 CranewingCity_Gym_FroyDefeated:
+# 68 "data/maps/CranewingCity_Gym/scripts.pory"
 	message CranewingCity_Gym_Text_ReceivedBadge
+# 69 "data/maps/CranewingCity_Gym/scripts.pory"
 	waitmessage
+# 70 "data/maps/CranewingCity_Gym/scripts.pory"
 	call Common_EventScript_PlayGymBadgeFanfare
+# 71 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_CharBadgeInfo, MSGBOX_DEFAULT
+# 72 "data/maps/CranewingCity_Gym/scripts.pory"
 	setflag FLAG_DEFEATED_CRANEWING_GYM
+# 73 "data/maps/CranewingCity_Gym/scripts.pory"
 	setflag FLAG_BADGE01_GET
+# 74 "data/maps/CranewingCity_Gym/scripts.pory"
 	setvar VAR_ROUTE204_STATE, 1
+# 75 "data/maps/CranewingCity_Gym/scripts.pory"
 	setvar VAR_0x8008, 1
+# 76 "data/maps/CranewingCity_Gym/scripts.pory"
 	subquest_finish SUB_QUEST_GYM_1_CRANEWING
+# 77 "data/maps/CranewingCity_Gym/scripts.pory"
 	call Common_EventScript_SetGymTrainers
+# 78 "data/maps/CranewingCity_Gym/scripts.pory"
 	goto CranewingCity_Gym_GiveFlare
 	end
 
 
 CranewingCity_Gym_GiveFlare:
+# 83 "data/maps/CranewingCity_Gym/scripts.pory"
 	giveitem ITEM_TM_FLARE
+# 84 "data/maps/CranewingCity_Gym/scripts.pory"
 	compare VAR_RESULT, FALSE
+# 85 "data/maps/CranewingCity_Gym/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CranewingCity_Gym_GiveFlare_2
 CranewingCity_Gym_GiveFlare_1:
-	setflag FLAG_RECEIVED_TM51
+# 88 "data/maps/CranewingCity_Gym/scripts.pory"
+	setflag FLAG_RECEIVED_TM_FLARE
+# 89 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_FlareExplanation, MSGBOX_DEFAULT
+# 90 "data/maps/CranewingCity_Gym/scripts.pory"
 	release
 	end
 
 CranewingCity_Gym_GiveFlare_2:
+# 86 "data/maps/CranewingCity_Gym/scripts.pory"
 	goto Common_EventScript_ShowBagIsFull
 	goto CranewingCity_Gym_GiveFlare_1
 
 
 CranewingCity_Gym_RewardQuest:
+# 95 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_QuestResponse
+# 96 "data/maps/CranewingCity_Gym/scripts.pory"
 	waitmessage
+# 97 "data/maps/CranewingCity_Gym/scripts.pory"
 	delay 48
+# 98 "data/maps/CranewingCity_Gym/scripts.pory"
 	playse SE_PIN
+# 99 "data/maps/CranewingCity_Gym/scripts.pory"
 	applymovement 1, mExclamationPoint
+# 100 "data/maps/CranewingCity_Gym/scripts.pory"
 	waitmovement 0
+# 101 "data/maps/CranewingCity_Gym/scripts.pory"
 	msgbox CranewingCity_Gym_Text_CutExplanation
+# 102 "data/maps/CranewingCity_Gym/scripts.pory"
 	waitmessage
+# 103 "data/maps/CranewingCity_Gym/scripts.pory"
 	giveitem ITEM_HM01
-	setflag FLAG_RECEIVED_HM01
+# 104 "data/maps/CranewingCity_Gym/scripts.pory"
+	setflag FLAG_RECEIVED_HM_CUT
+# 105 "data/maps/CranewingCity_Gym/scripts.pory"
 	quest_finish QUEST_CHARTREE_ROCKETS
+# 106 "data/maps/CranewingCity_Gym/scripts.pory"
 	release
 	end
 
 
 CranewingCity_Gym_Text_GymStatue::
+# 113 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Cranewing City Pokémon Gym$"
 
 CranewingCity_Gym_Text_GymStatueCertified::
+# 117 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Cranewing City Pokémon Gym\p"
 	.string "Froy's Certified Trainers:\n"
 	.string "{PLAYER}$"
 
 CranewingCity_Text_GymGuide::
+# 123 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Yo, how's it going?\p"
 	.string "Listen, my friend!\n"
 	.string "Would you like to climb the Triumph Spire?\p"
@@ -134,6 +187,7 @@ CranewingCity_Text_GymGuide::
 	.string "and see me after.\pGo get 'em, champ!$"
 
 CranewingCity_Text_GymGuidePostVictory::
+# 143 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Wow! What a match!\n"
 	.string "We make a heck of a team, we do!\p"
 	.string "Listen, listen!\n"
@@ -150,19 +204,23 @@ CranewingCity_Text_GymGuidePostVictory::
 	.string "You're off to a fantastic start, champ!$"
 
 CranewingCity_Gym_Text_SladeIntro::
+# 160 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Leader Froy runs his gym just like he\n"
 	.string "runs the glass business.\p"
 	.string "Absolutely no room for error!$"
 
 CranewingCity_Gym_Text_SladeDefeated::
+# 166 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "I think I made a mistake…$"
 
 CranewingCity_Gym_Text_SladePostBattle::
+# 172 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Go on then!\p"
 	.string "If anyone can stand up to Froy's\n"
 	.string "exacting standards, it's you!$"
 
 CranewingCity_Gym_Text_LolaIntro::
+# 178 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "There's a reason Froy asked me to be\n"
 	.string "the last step before him!\p"
 	.string "If you thought your last fight was\n"
@@ -170,15 +228,18 @@ CranewingCity_Gym_Text_LolaIntro::
 	.string "challenge!$"
 
 CranewingCity_Gym_Text_LolaDefeated::
+# 184 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "You're still no match for Froy!$"
 
 CranewingCity_Gym_Text_LolaPostBattle::
+# 190 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy's completely mastered the Fire\n"
 	.string "type.\p"
 	.string "He's the best there is, at Pokémon\n"
 	.string "battles and at glass-making!$"
 
 CranewingCity_Gym_Text_FroyIntro::
+# 196 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy: Ah, {PLAYER}, we meet again!\p"
 	.string "As you can see, I am the Cranewing\n"
 	.string "Pokémon Gym Leader.\p"
@@ -190,6 +251,7 @@ CranewingCity_Gym_Text_FroyIntro::
 	.string "of perfection!$"
 
 CranewingCity_Gym_Text_FroyDefeated::
+# 208 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy: Well, well well…\p"
 	.string "… … …ha!\p"
 	.string "Ha ha ha!\p"
@@ -203,6 +265,7 @@ CranewingCity_Gym_Text_FroyDefeated::
 	.string "League Char Badge!$"
 
 CranewingCity_Gym_Text_FroyPostBattle::
+# 221 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy: I have no doubt that your\n"
 	.string "determination will see you through the\l"
 	.string "Pokémon League challenge!\p"
@@ -212,9 +275,11 @@ CranewingCity_Gym_Text_FroyPostBattle::
 	.string "teach you and your Pokémon.$"
 
 CranewingCity_Gym_Text_ReceivedBadge::
+# 231 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "{PLAYER} received the Char Badge\nfrom Froy.$"
 
 CranewingCity_Gym_Text_CharBadgeInfo::
+# 235 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy: The Char Badge allows your\n"
 	.string "Pokémon to use the HM move Cut outside\l"
 	.string "of battle.\p"
@@ -225,6 +290,7 @@ CranewingCity_Gym_Text_CharBadgeInfo::
 	.string "please take this, as well.$"
 
 CranewingCity_Gym_Text_FlareExplanation::
+# 247 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy: That Technical Machine, TM51,\n"
 	.string "contains Flare.\p"
 	.string "It inflicts more and more damage with\n"
@@ -236,6 +302,7 @@ CranewingCity_Gym_Text_FlareExplanation::
 	.string "teach it to all of your Pokémon!$"
 
 CranewingCity_Gym_Text_QuestResponse::
+# 261 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy: You managed to drive off those\n"
 	.string "monsters\n"
 	.string "that were terrorizing my forest?\p"
@@ -249,6 +316,7 @@ CranewingCity_Gym_Text_QuestResponse::
 	.string "won't be the last we hear of them.$"
 
 CranewingCity_Gym_Text_ReceiveCut::
+# 277 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy: Wait, I have something that might\n"
 	.string "help you keep up!\p"
 	.string "Not that I think you'll need it, of\n"
@@ -256,6 +324,7 @@ CranewingCity_Gym_Text_ReceiveCut::
 	.string "$"
 
 CranewingCity_Gym_Text_CutExplanation::
+# 285 "data/maps/CranewingCity_Gym/scripts.pory"
 	.string "Froy: This is a Hidden Machine!\n"
 	.string "It's a very powerful and rare item.\p"
 	.string "HMs contain moves that can be used by\n"
