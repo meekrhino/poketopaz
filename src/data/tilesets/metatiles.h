@@ -279,3 +279,6 @@ const u16 gMetatileAttributes_MistvaleInside[] = INCBIN_U16("data/tilesets/secon
 
 const u16 gMetatiles_HollowlogInside[] = INCBIN_U16("data/tilesets/secondary/hollowlog_inside/metatiles.bin");
 const u16 gMetatileAttributes_HollowlogInside[] = INCBIN_U16("data/tilesets/secondary/hollowlog_inside/metatile_attributes.bin");
+
+const u16 gMetatiles_KalypsoCity[] = INCBIN_U16("data/tilesets/secondary/kalypso_city/metatiles.bin");
+const u16 gMetatileAttributes_KalypsoCity[] = INCBIN_U16("data/tilesets/secondary/kalypso_city/metatile_attributes.bin");

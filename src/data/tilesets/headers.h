@@ -1089,3 +1089,14 @@ const struct Tileset gTileset_HollowlogInside =
 	.metatileAttributes = gMetatileAttributes_HollowlogInside,
 	.callback = NULL,
 };
+
+const struct Tileset gTileset_KalypsoCity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_KalypsoCity,
+    .palettes = gTilesetPalettes_KalypsoCity,
+    .metatiles = gMetatiles_KalypsoCity,
+    .metatileAttributes = gMetatileAttributes_KalypsoCity,
+    .callback = NULL,
+};
