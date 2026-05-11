@@ -57,7 +57,8 @@
     "Route208",
     "Route209",
     "Route210North",
-    "Route210South"
+    "Route210South",
+    "Route211"
   ],
   "gMapGroup_IndoorRoute201": [
     "Route201_House"
@@ -122,7 +123,8 @@
     "RoothavenCity_House1",
     "RoothavenCity_House2",
     "RoothavenCity_PokemonCenter",
-    "RoothavenCity_Mart"
+    "RoothavenCity_Mart",
+    "RoothavenCity_House3"
   ],
   "gMapGroup_IndoorHollowlog": [
     "HollowlogCity_PokemonCenter",

@@ -6004,12 +6004,12 @@
     {
       "id": "LAYOUT_KALYPSO_CITY",
       "name": "KalypsoCity_Layout",
-      "width": 40,
-      "height": 40,
+      "width": 46,
+      "height": 60,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_GeneralKirant",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_KalypsoCity",
       "border_filepath": "data/layouts/KalypsoCity/border.bin",
       "blockdata_filepath": "data/layouts/KalypsoCity/map.bin"
     },
@@ -6336,6 +6336,30 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/HollowlogCity_Mart/border.bin",
       "blockdata_filepath": "data/layouts/HollowlogCity_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE211",
+      "name": "Route211_Layout",
+      "width": 64,
+      "height": 32,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_GeneralKirant",
+      "secondary_tileset": "gTileset_KalypsoCity",
+      "border_filepath": "data/layouts/Route211/border.bin",
+      "blockdata_filepath": "data/layouts/Route211/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_HOUSE3",
+      "name": "RoothavenCity_House3_Layout",
+      "width": 12,
+      "height": 12,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RoothavenInside",
+      "border_filepath": "data/layouts/RoothavenCity_House3/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_House3/map.bin"
     }
   ]
 }

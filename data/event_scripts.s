@@ -1248,3 +1248,7 @@ Script_RemoveTint::
 	.include "data/maps/HollowlogCity_Speakeasy/scripts.inc"
 
 	.include "data/maps/HollowlogCity_Mart/scripts.inc"
+
+	.include "data/maps/Route211/scripts.inc"
+
+	.include "data/maps/RoothavenCity_House3/scripts.inc"

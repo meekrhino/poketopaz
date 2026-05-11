@@ -158,12 +158,6 @@
 #define METATILE_Contest_FloorShadow         0x261
 #define METATILE_Contest_WallShadow          0x221
 
-// gTileset_Contest
-#define METATILE_Contest_CounterFlap_Bottom  0x2D9
-#define METATILE_Contest_CounterFlap_Top     0x2D1
-#define METATILE_Contest_FloorShadow         0x261
-#define METATILE_Contest_WallShadow          0x221
-
 // gTileset_Cranewing
 #define METATILE_Cranewing_Door             0x2AE
 #define METATILE_Cranewing_Door_Bank        0x2B2
@@ -482,12 +476,12 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
+// gTileset_Route203
+#define METATILE_Route203_Door_Barn  0x3DB
+
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
 #define METATILE_Rustboro_Door_Tan   0x22F
-
-// gTileset_Route203
-#define METATILE_Route203_Door_Barn  0x3DB
 
 // gTileset_SecretBase
 #define METATILE_SecretBase_AttractMat_BottomLeft       0x313
