@@ -1100,3 +1100,14 @@ const struct Tileset gTileset_KalypsoCity =
     .metatileAttributes = gMetatileAttributes_KalypsoCity,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RoothavenGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RoothavenGym,
+    .palettes = gTilesetPalettes_RoothavenGym,
+    .metatiles = gMetatiles_RoothavenGym,
+    .metatileAttributes = gMetatileAttributes_RoothavenGym,
+    .callback = NULL,
+};

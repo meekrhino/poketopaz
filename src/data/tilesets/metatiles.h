@@ -282,3 +282,6 @@ const u16 gMetatileAttributes_HollowlogInside[] = INCBIN_U16("data/tilesets/seco
 
 const u16 gMetatiles_KalypsoCity[] = INCBIN_U16("data/tilesets/secondary/kalypso_city/metatiles.bin");
 const u16 gMetatileAttributes_KalypsoCity[] = INCBIN_U16("data/tilesets/secondary/kalypso_city/metatile_attributes.bin");
+
+const u16 gMetatiles_RoothavenGym[] = INCBIN_U16("data/tilesets/secondary/roothaven_gym/metatiles.bin");
+const u16 gMetatileAttributes_RoothavenGym[] = INCBIN_U16("data/tilesets/secondary/roothaven_gym/metatile_attributes.bin");

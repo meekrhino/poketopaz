@@ -6360,6 +6360,78 @@
       "secondary_tileset": "gTileset_RoothavenInside",
       "border_filepath": "data/layouts/RoothavenCity_House3/border.bin",
       "blockdata_filepath": "data/layouts/RoothavenCity_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_GYM_1F",
+      "name": "RoothavenCity_Gym_1F_Layout",
+      "width": 13,
+      "height": 14,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RoothavenGym",
+      "border_filepath": "data/layouts/RoothavenCity_Gym_1F/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_Gym_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_GYM_B2F",
+      "name": "RoothavenCity_Gym_B2F_Layout",
+      "width": 13,
+      "height": 14,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RoothavenGym",
+      "border_filepath": "data/layouts/RoothavenCity_Gym_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_Gym_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_GYM_B1F",
+      "name": "RoothavenCity_Gym_B1F_Layout",
+      "width": 13,
+      "height": 14,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RoothavenGym",
+      "border_filepath": "data/layouts/RoothavenCity_Gym_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_Gym_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_GYM_2F",
+      "name": "RoothavenCity_Gym_2F_Layout",
+      "width": 13,
+      "height": 14,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RoothavenGym",
+      "border_filepath": "data/layouts/RoothavenCity_Gym_2F/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_Gym_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_GYM_B3F",
+      "name": "RoothavenCity_Gym_B3F_Layout",
+      "width": 13,
+      "height": 14,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RoothavenGym",
+      "border_filepath": "data/layouts/RoothavenCity_Gym_B3F/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_Gym_B3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROOTHAVEN_CITY_GYM_B4F",
+      "name": "RoothavenCity_Gym_B4F_Layout",
+      "width": 13,
+      "height": 14,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RoothavenGym",
+      "border_filepath": "data/layouts/RoothavenCity_Gym_B4F/border.bin",
+      "blockdata_filepath": "data/layouts/RoothavenCity_Gym_B4F/map.bin"
     }
   ]
 }

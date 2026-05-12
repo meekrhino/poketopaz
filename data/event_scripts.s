@@ -1252,3 +1252,15 @@ Script_RemoveTint::
 	.include "data/maps/Route211/scripts.inc"
 
 	.include "data/maps/RoothavenCity_House3/scripts.inc"
+
+	.include "data/maps/RoothavenCity_Gym_1F/scripts.inc"
+
+	.include "data/maps/RoothavenCity_Gym_B2F/scripts.inc"
+
+	.include "data/maps/RoothavenCity_Gym_B1F/scripts.inc"
+
+	.include "data/maps/RoothavenCity_Gym_2F/scripts.inc"
+
+	.include "data/maps/RoothavenCity_Gym_B3F/scripts.inc"
+
+	.include "data/maps/RoothavenCity_Gym_B4F/scripts.inc"

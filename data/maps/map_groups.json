@@ -124,7 +124,13 @@
     "RoothavenCity_House2",
     "RoothavenCity_PokemonCenter",
     "RoothavenCity_Mart",
-    "RoothavenCity_House3"
+    "RoothavenCity_House3",
+    "RoothavenCity_Gym_2F",
+    "RoothavenCity_Gym_1F",
+    "RoothavenCity_Gym_B1F",
+    "RoothavenCity_Gym_B2F",
+    "RoothavenCity_Gym_B3F",
+    "RoothavenCity_Gym_B4F"
   ],
   "gMapGroup_IndoorHollowlog": [
     "HollowlogCity_PokemonCenter",
