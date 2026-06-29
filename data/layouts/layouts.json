@@ -6340,8 +6340,8 @@
     {
       "id": "LAYOUT_ROUTE211",
       "name": "Route211_Layout",
-      "width": 64,
-      "height": 32,
+      "width": 74,
+      "height": 37,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_GeneralKirant",

@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_KALYPSO_CITY",
-      "offset": -34,
+      "offset": -32,
       "direction": "left"
     }
   ],
