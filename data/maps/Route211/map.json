@@ -17,6 +17,11 @@
       "map": "MAP_KALYPSO_CITY",
       "offset": -32,
       "direction": "left"
+    },
+    {
+      "map": "MAP_LAYSAN_TOWN",
+      "offset": 42,
+      "direction": "down"
     }
   ],
   "object_events": [],

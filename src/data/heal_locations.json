@@ -179,6 +179,12 @@
       "map": "MAP_KALYPSO_CITY",
       "x": 20,
       "y": 20
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE211",
+      "map": "MAP_ROUTE211",
+      "x": 37,
+      "y": 18
     }
   ]
 }

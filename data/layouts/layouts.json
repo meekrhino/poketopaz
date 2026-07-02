@@ -6432,6 +6432,30 @@
       "secondary_tileset": "gTileset_RoothavenGym",
       "border_filepath": "data/layouts/RoothavenCity_Gym_B4F/border.bin",
       "blockdata_filepath": "data/layouts/RoothavenCity_Gym_B4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAYSAN_TOWN",
+      "name": "LaysanTown_Layout",
+      "width": 44,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_GeneralKirant",
+      "secondary_tileset": "gTileset_LaysanTown",
+      "border_filepath": "data/layouts/LaysanTown/border.bin",
+      "blockdata_filepath": "data/layouts/LaysanTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE212",
+      "name": "Route212_Layout",
+      "width": 40,
+      "height": 60,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_GeneralKirant",
+      "secondary_tileset": "gTileset_LaysanTown",
+      "border_filepath": "data/layouts/Route212/border.bin",
+      "blockdata_filepath": "data/layouts/Route212/map.bin"
     }
   ]
 }

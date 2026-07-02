@@ -47,6 +47,7 @@
     "RoothavenCity",
     "HollowlogCity",
     "KalypsoCity",
+    "LaysanTown",
     "Route201",
     "Route202",
     "Route203",
@@ -58,7 +59,8 @@
     "Route209",
     "Route210North",
     "Route210South",
-    "Route211"
+    "Route211",
+    "Route212"
   ],
   "gMapGroup_IndoorRoute201": [
     "Route201_House"

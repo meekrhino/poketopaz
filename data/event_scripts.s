@@ -1264,3 +1264,7 @@ Script_RemoveTint::
 	.include "data/maps/RoothavenCity_Gym_B3F/scripts.inc"
 
 	.include "data/maps/RoothavenCity_Gym_B4F/scripts.inc"
+
+	.include "data/maps/LaysanTown/scripts.inc"
+
+	.include "data/maps/Route212/scripts.inc"

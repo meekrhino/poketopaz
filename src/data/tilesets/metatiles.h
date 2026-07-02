@@ -285,3 +285,6 @@ const u16 gMetatileAttributes_KalypsoCity[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_RoothavenGym[] = INCBIN_U16("data/tilesets/secondary/roothaven_gym/metatiles.bin");
 const u16 gMetatileAttributes_RoothavenGym[] = INCBIN_U16("data/tilesets/secondary/roothaven_gym/metatile_attributes.bin");
+
+const u16 gMetatiles_LaysanTown[] = INCBIN_U16("data/tilesets/secondary/laysan_town/metatiles.bin");
+const u16 gMetatileAttributes_LaysanTown[] = INCBIN_U16("data/tilesets/secondary/laysan_town/metatile_attributes.bin");

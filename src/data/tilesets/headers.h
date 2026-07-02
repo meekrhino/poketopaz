@@ -1111,3 +1111,14 @@ const struct Tileset gTileset_RoothavenGym =
     .metatileAttributes = gMetatileAttributes_RoothavenGym,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_LaysanTown =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LaysanTown,
+    .palettes = gTilesetPalettes_LaysanTown,
+    .metatiles = gMetatiles_LaysanTown,
+    .metatileAttributes = gMetatileAttributes_LaysanTown,
+    .callback = NULL,
+};
