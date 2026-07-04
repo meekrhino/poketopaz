@@ -6456,6 +6456,30 @@
       "secondary_tileset": "gTileset_LaysanTown",
       "border_filepath": "data/layouts/Route212/border.bin",
       "blockdata_filepath": "data/layouts/Route212/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE213",
+      "name": "Route213_Layout",
+      "width": 78,
+      "height": 30,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_GeneralKirant",
+      "secondary_tileset": "gTileset_KalypsoCity",
+      "border_filepath": "data/layouts/Route213/border.bin",
+      "blockdata_filepath": "data/layouts/Route213/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE226",
+      "name": "Route226_Layout",
+      "width": 148,
+      "height": 32,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_GeneralKirant",
+      "secondary_tileset": "gTileset_LaysanTown",
+      "border_filepath": "data/layouts/Route226/border.bin",
+      "blockdata_filepath": "data/layouts/Route226/map.bin"
     }
   ]
 }

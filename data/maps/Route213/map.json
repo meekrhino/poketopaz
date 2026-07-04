@@ -1,27 +1,22 @@
 {
-  "id": "MAP_ROUTE212",
-  "name": "Route212",
-  "layout": "LAYOUT_ROUTE212",
+  "id": "MAP_ROUTE213",
+  "name": "Route213",
+  "layout": "LAYOUT_ROUTE213",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ROUTE_212",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
-  "allow_cycling": true,
+  "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": true,
+  "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_LAYSAN_TOWN",
-      "offset": 0,
+      "map": "MAP_ROUTE212",
+      "offset": 38,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE213",
-      "offset": -38,
-      "direction": "down"
     }
   ],
   "object_events": [],

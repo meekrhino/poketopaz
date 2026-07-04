@@ -1268,3 +1268,7 @@ Script_RemoveTint::
 	.include "data/maps/LaysanTown/scripts.inc"
 
 	.include "data/maps/Route212/scripts.inc"
+
+	.include "data/maps/Route213/scripts.inc"
+
+	.include "data/maps/Route226/scripts.inc"

@@ -60,7 +60,9 @@
     "Route210North",
     "Route210South",
     "Route211",
-    "Route212"
+    "Route212",
+    "Route213",
+    "Route226"
   ],
   "gMapGroup_IndoorRoute201": [
     "Route201_House"
